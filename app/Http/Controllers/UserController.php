@@ -18,4 +18,29 @@ class UserController extends Controller
     {
         return view('users.index');
     }
+    public function index_all()
+    {
+        $variables=[
+            'menu'=>'users_all',
+            'title_page'=>'Roles',
+
+
+        ];
+        return view('users.users.index')->with($variables);
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

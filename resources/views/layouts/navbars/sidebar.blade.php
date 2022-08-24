@@ -175,7 +175,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('home') }}">
+                    <a class="nav-link @if($menu === 'users_all') active @endif"  href="{{ route('users_all_index') }}">
                         <i class="fa fa-users text-primary" aria-hidden="true"></i>
                         Usuarios
                     </a>
