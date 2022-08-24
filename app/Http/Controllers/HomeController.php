@@ -29,4 +29,64 @@ class HomeController extends Controller
         ];
         return view('dashboard')->with($variables);
     }
+    public function home()
+    {
+        $variables=[
+            'menu'=>'dashboard',
+            'title_page'=>'dashboard',
+
+
+        ];
+        return view('dashboard')->with($variables);
+    }
+    public function school_secretary()
+    {
+        $variables=[
+            'menu'=>'dashboard',
+            'title_page'=>'dashboard',
+
+
+        ];
+        return view('dashboard')->with($variables);
+    }
+    public function about_us()
+    {
+        $variables=[
+            'menu'=>'dashboard',
+            'title_page'=>'dashboard',
+
+
+        ];
+        return view('dashboard')->with($variables);
+    }
+    public function school_services()
+    {
+        $variables=[
+            'menu'=>'dashboard',
+            'title_page'=>'dashboard',
+
+
+        ];
+        return view('dashboard')->with($variables);
+    }
+    public function school_galery()
+    {
+        $variables=[
+            'menu'=>'dashboard',
+            'title_page'=>'dashboard',
+
+
+        ];
+        return view('dashboard')->with($variables);
+    }
+    public function school_institution()
+    {
+        $variables=[
+            'menu'=>'dashboard',
+            'title_page'=>'dashboard',
+
+
+        ];
+        return view('dashboard')->with($variables);
+    }
 }

@@ -18,7 +18,6 @@ class CreateRelrolmenuTable extends Migration
             $table->unsignedBigInteger('menu_id');//referens in what mnodule is
             $table->unsignedBigInteger('role_id');
             $table->unsignedBigInteger('status')->default(2);
-
             $table->timestamps();
         });
     }

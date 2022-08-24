@@ -27,6 +27,15 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link nav-link-icon" href="{{ route('home') }}">
+                        <i class="ni ni-world"></i>
+                        <span class="nav-link-inner--text">Página princial</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+
+
+                    <a class="nav-link nav-link-icon" href="{{ route('home') }}">
                         <i class="ni ni-planet"></i>
                         <span class="nav-link-inner--text">{{ __('Dashboard') }}</span>
                     </a>
