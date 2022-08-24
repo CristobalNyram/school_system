@@ -37,7 +37,7 @@ class HomeController extends Controller
 
 
         ];
-        return view('dashboard')->with($variables);
+        return view('home_page.index')->with($variables);
     }
     public function school_secretary()
     {
@@ -47,7 +47,7 @@ class HomeController extends Controller
 
 
         ];
-        return view('dashboard')->with($variables);
+        return view('home_page.index')->with($variables);
     }
     public function about_us()
     {
@@ -57,7 +57,7 @@ class HomeController extends Controller
 
 
         ];
-        return view('dashboard')->with($variables);
+        return view('home_page.index')->with($variables);
     }
     public function school_services()
     {
@@ -67,7 +67,7 @@ class HomeController extends Controller
 
 
         ];
-        return view('dashboard')->with($variables);
+        return view('home_page.index')->with($variables);
     }
     public function school_galery()
     {
@@ -77,7 +77,7 @@ class HomeController extends Controller
 
 
         ];
-        return view('dashboard')->with($variables);
+        return view('home_page.index')->with($variables);
     }
     public function school_institution()
     {
@@ -87,6 +87,6 @@ class HomeController extends Controller
 
 
         ];
-        return view('dashboard')->with($variables);
+        return view('home_page.index')->with($variables);
     }
 }

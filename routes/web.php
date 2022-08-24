@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LogbookController;
 use App\Http\Controllers\RoleController;
@@ -15,9 +16,14 @@ use App\Http\Controllers\RoleController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/',[HomeController::class,"home"])->name('home_page_index');
+Route::get('/about',[HomeController::class,"home"])->name('home_page_index');
+Route::get('/services',[HomeController::class,"home"])->name('home_page_index');
+Route::get('/galery',[HomeController::class,"home"])->name('home_page_index');
+Route::get('/instution',[HomeController::class,"home"])->name('home_page_index');
+
+
 
 Auth::routes();
 
@@ -26,7 +32,7 @@ Auth::routes();
 
 Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
 
-Route::prefix('admin')->group(function () {
+
         Route::group(['middleware' => 'auth'], function () {
 
             //logbook start-----------------------------------------------
@@ -45,5 +51,5 @@ Route::prefix('admin')->group(function () {
             Route::get('table-list', function () {return view('pages.tables');})->name('table');
             Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
          });
-});
+
 
