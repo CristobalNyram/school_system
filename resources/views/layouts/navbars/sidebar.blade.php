@@ -77,7 +77,7 @@
             <!-- Navigation -->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('home') }}">
+                    <a class="nav-link @if($menu === 'dashboard') active @endif"  href="{{ route('home') }}">
                         <i class="ni ni-tv-2 text-primary"></i> {{ __('Dashboard') }}
                     </a>
                 </li>
@@ -165,12 +165,12 @@
 
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('logbook_index') }}">
+                    <a class="nav-link @if($menu === 'logbook') active @endif " href="{{ route('logbook_index') }}">
                         <i class="ni ni-books text-primary"></i>Bitácora
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('home') }}">
+                    <a class="nav-link  @if($menu === 'role') active @endif " href="{{ route('role_index') }}">
                         <i class="ni ni-single-02 text-primary"></i>Roles
                     </a>
                 </li>

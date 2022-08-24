@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LogbookController;
+use App\Http\Controllers\RoleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,8 @@ Route::group(['middleware' => 'auth'], function () {
 
     //logbook start-----------------------------------------------
     Route::get('/logbook',[LogbookController::class,"index"])->name('logbook_index');
+    Route::get('/role',[RoleController::class,"index"])->name('role_index');
+
 
     // logbook end--------------------------------
 

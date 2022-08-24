@@ -21,6 +21,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        $variables=[
+            'menu'=>'dashboard',
+            'title_page'=>'dashboard',
+
+
+        ];
+        return view('dashboard')->with($variables);
     }
 }

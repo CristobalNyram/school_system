@@ -2,24 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Logbook;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-class LogbookController extends Controller
+
+class RoleController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $variables=[
-            'menu'=>'logbook',
-            'title_page'=>'Bitácora'
+            'menu'=>'role',
+            'title_page'=>'Roles',
+
 
         ];
-         return view('logbook.index')->with($variables);
+         return view('role.index')->with($variables);
     }
 
     /**
