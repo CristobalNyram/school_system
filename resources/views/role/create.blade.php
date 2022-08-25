@@ -46,7 +46,7 @@
 
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Nivel</label>
-                                <input type="" class="form-control form-control-lg" id="level"  name="level" placeholder="Nivel de acceso" max="50">
+                                <input type="number" class="form-control form-control-lg" id="level"  name="level" placeholder="Nivel de acceso" max="50">
                             </div>
 
 

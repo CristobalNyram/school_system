@@ -53,6 +53,19 @@ class RoleController extends Controller
         ];
         $this->validate(request(),$validaciones);
 
+        $role= new Role();
+
+        if ($role->new_registration($request) === true) {
+
+
+            return back()->with('success','Se ha registrado el rol exitosamente...');
+
+        }
+        else
+        {
+            return  back()->withErrors('No se ha registrado el rol...');
+
+        }
     }
 
     /**

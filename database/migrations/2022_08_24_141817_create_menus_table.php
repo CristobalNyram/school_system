@@ -15,12 +15,13 @@ class CreateMenusTable extends Migration
     {
         Schema::create('menus', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->string('title');
             $table->string('description')->nullable();
             $table->string('menu_parent')->default(0);
             $table->string('order');
             $table->string('status',2)->default(2);
+            $table->timestamps();
+
 
         });
     }
