@@ -37,8 +37,6 @@ class MenuController extends Controller
         $variables=[
             'menu'=>'menus',
             'title_page'=>'Menús',
-
-
         ];
         return view('menu.create')->with($variables);
     }

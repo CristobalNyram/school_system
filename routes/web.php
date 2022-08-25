@@ -34,7 +34,6 @@ Route::group(['middleware' => 'auth'], function () {
 
         //logbook start-----------------------------------------------
         Route::get('/logbook',[LogbookController::class,"index"])->name('logbook_index');
-        Route::get('/role',[RoleController::class,"index"])->name('role_index');
 
 
         // logbook end--------------------------------
@@ -51,6 +50,14 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/menu/store',[MenuController::class,"store"])->name('menu_store');
 
         // menu end----------------------------------------
+
+        //role start-------------------------------------------
+        Route::get('/role',[RoleController::class,"index"])->name('role_index');
+        Route::get('/role/create',[RoleController::class,"create"])->name('role_create');
+
+        // role end---------------------------------------------
+
+
 
         Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
         Route::get('profile', ['as' => 'profile.edit', 'uses' => 'App\Http\Controllers\ProfileController@edit']);

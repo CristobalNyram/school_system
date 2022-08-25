@@ -2,15 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Role;
 use Illuminate\Http\Request;
 
 class RoleController extends Controller
 {
     public function index()
     {
+        $roles=Role::all();
+        $roles_numbers=Role::all()->count();
         $variables=[
             'menu'=>'role',
             'title_page'=>'Roles',
+            'roles'=>$roles,
+            'roles_numbers'=>$roles_numbers,
 
 
         ];
@@ -24,7 +29,13 @@ class RoleController extends Controller
      */
     public function create()
     {
-        //
+        $variables=[
+            'menu'=>'role',
+            'title_page'=>'Roles',
+
+
+        ];
+        return view('role.create')->with($variables);
     }
 
     /**
