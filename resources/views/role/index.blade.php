@@ -79,7 +79,7 @@
                               </a>
                               <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                 <a class="dropdown-item" href="#">Editar</a>
-                                <a class="dropdown-item text-danger" href="#">Borrar</a>
+                                <a class="dropdown-item text-danger"  data-toggle="modal" data-target="#modal-notification" href="#" >Borrar</a>
                                 <a class="dropdown-item " href="#">Asignar permisos</a>
                               </div>
                             </div>
@@ -124,6 +124,8 @@
 
 
         @include('layouts.footers.auth')
+        @include('role.eliminar-modal-js')
+
     </div>
 @endsection
 
