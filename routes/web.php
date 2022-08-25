@@ -54,6 +54,7 @@ Route::group(['middleware' => 'auth'], function () {
         //role start-------------------------------------------
         Route::get('/role',[RoleController::class,"index"])->name('role_index');
         Route::get('/role/create',[RoleController::class,"create"])->name('role_create');
+        Route::post('/role/store',[RoleController::class,"store"])->name('role_store');
 
         // role end---------------------------------------------
 

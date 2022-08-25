@@ -46,7 +46,13 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validaciones = [
+            'name' => 'required|string',
+            'description' => 'required|string',
+            'level'=>'required|min:1|max:50|numeric',
+        ];
+        $this->validate(request(),$validaciones);
+
     }
 
     /**
