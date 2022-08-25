@@ -47,6 +47,7 @@ Route::group(['middleware' => 'auth'], function () {
 
         // menu start---------------------------------------
         Route::get('/menu',[MenuController::class,"index"])->name('menu_index');
+        Route::get('/menu/create',[MenuController::class,"create"])->name('menu_create');
 
         // menu end----------------------------------------
 

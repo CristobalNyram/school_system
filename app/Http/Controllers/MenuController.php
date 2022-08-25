@@ -30,7 +30,13 @@ class MenuController extends Controller
      */
     public function create()
     {
-        //
+        $variables=[
+            'menu'=>'menus',
+            'title_page'=>'Menus',
+
+
+        ];
+        return view('menu.create')->with($variables);
     }
 
     /**
