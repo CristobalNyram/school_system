@@ -14,9 +14,13 @@ class MenuController extends Controller
      */
     public function index()
     {
+        $menus=Menu::all();
+        $menus_numbers=Menu::all()->count();
         $variables=[
             'menu'=>'menus',
             'title_page'=>'Menus',
+            'menus'=>$menus,
+            'menus_numbers'=>$menus_numbers,
 
 
         ];
@@ -58,7 +62,7 @@ class MenuController extends Controller
          $validaciones = [
             'title' => 'required|string',
             'description' => 'required',
-            'menu_parent' => 'required|min:1|max:50|numeric',
+            'menu_parent' => 'required|min:0|max:50|numeric',
             'order'=>'required|min:1|max:50|numeric',
         ];
 
@@ -75,7 +79,6 @@ class MenuController extends Controller
          $this->validate(request(),$validaciones,$mensajes);
 
          $menu= new Menu();
-         $menu->new_registration($request);
 
 
         if ($menu->new_registration($request) === true) {

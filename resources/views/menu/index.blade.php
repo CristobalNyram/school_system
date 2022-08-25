@@ -32,11 +32,57 @@
                       <th scope="col" class="sort" data-sort="name">ID</th>
                       <th scope="col" class="sort" data-sort="budget">Nombre</th>
                       <th scope="col" class="sort" data-sort="budget">Descripción</th>
-
+                      <th  scope="col" class="sort" data-sort="budget">Acciones</th>
 
                     </tr>
                   </thead>
                   <tbody class="list">
+                    @foreach ($menus as $men )
+                    <tr>
+                        <th scope="row">
+                          <div class="media align-items-center">
+
+                            <div class="media-body">
+                              <span class="name mb-0 text-sm">  {{ $men->id }}</span>
+                            </div>
+                          </div>
+                        </th>
+
+
+                        <th scope="row">
+                            <div class="media align-items-center">
+
+                              <div class="media-body">
+                                <span class="name mb-0 text-sm">  {{ $men->title }}</span>
+                              </div>
+                            </div>
+                        </th>
+
+                        <th scope="row">
+                            <div class="media align-items-center">
+
+                              <div class="media-body">
+                                <span class="name mb-0 text-sm">  {{ $men->description }}</span>
+                              </div>
+                            </div>
+                        </th>
+
+                        <td class="text-cener">
+                            <div class="dropdown">
+                              <a class="btn btn-sm btn-icon-only text-danger" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-ellipsis-v"></i>
+                              </a>
+                              <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                              </div>
+                            </div>
+                        </td>
+
+
+                    </tr>
+                    @endforeach
 
                   </tbody>
                 </table>

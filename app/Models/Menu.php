@@ -20,9 +20,23 @@ class Menu extends Model
         if( $menu->save()===true)
         {
           $list_of_rol = Role::all();
-            for ($i=0; $i < count($list_of_rol) ; $i++) {
-                # code...
-            }
+                for ($i=0; $i < count($list_of_rol) ; $i++) {
+
+                     $relrolmenu=new Relrolmenu();
+                    $relrolmenu->menu_id=$menu->id;
+                    $relrolmenu->role_id=$list_of_rol[$i]->id;
+                    $relrolmenu->status=$menu->id;
+                     $relrolmenu->created_at=now();
+
+                    if(!$relrolmenu->save())
+                    {
+                         return false;
+
+
+                    }
+
+                }
+                return true;
         }
         else
         {

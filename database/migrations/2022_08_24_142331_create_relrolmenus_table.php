@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMenusTable extends Migration
+class CreateRelrolmenusTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,15 @@ class CreateMenusTable extends Migration
      */
     public function up()
     {
-        Schema::create('menus', function (Blueprint $table) {
+        Schema::create('relrolmenus', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('menu_id');//referens in what mnodule is
+            $table->unsignedBigInteger('role_id');
+            $table->unsignedBigInteger('status')->default(2);
             $table->timestamps();
-            $table->string('title');
-            $table->string('description')->nullable();
-            $table->string('menu_parent')->default(0);
-            $table->string('order');
-            $table->string('status',2)->default(2);
-
         });
+
+
     }
 
     /**
@@ -32,6 +31,6 @@ class CreateMenusTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('menus');
+        Schema::dropIfExists('relrolmenus');
     }
 }
