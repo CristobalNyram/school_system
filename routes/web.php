@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LogbookController;
+use App\Http\Controllers\MenuController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 
@@ -42,6 +43,12 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/users',[UserController::class,"index_all"])->name('users_all_index');
 
         // users end--------------------------------------------
+
+
+        // menu start---------------------------------------
+        Route::get('/menu',[MenuController::class,"index"])->name('menu_index');
+
+        // menu end----------------------------------------
 
         Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
         Route::get('profile', ['as' => 'profile.edit', 'uses' => 'App\Http\Controllers\ProfileController@edit']);

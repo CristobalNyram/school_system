@@ -180,6 +180,13 @@
                         Usuarios
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link @if($menu === 'menus') active @endif"  href="{{ route('menu_index') }}">
+                        <i class="fa fa-bars text-primary" aria-hidden="true"></i>
+
+                        Menus
+                    </a>
+                </li>
 
 
 

@@ -22,7 +22,7 @@ class UserController extends Controller
     {
         $variables=[
             'menu'=>'users_all',
-            'title_page'=>'Roles',
+            'title_page'=>'Usuarios',
 
 
         ];
