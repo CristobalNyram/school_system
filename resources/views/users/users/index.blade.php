@@ -4,6 +4,13 @@
     @include('users.users.headers_cards')
 
     <div class="container-fluid mt--6">
+        <div class="row d-flex mb-3 mr-5 justify-content-end">
+
+            <a href="{{ route('menu_create') }}" type="button" class="btn btn-info">Agregar</a>
+
+
+      </div>
+
         <div class="row">
           <div class="col">
             <div class="card">

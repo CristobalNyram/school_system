@@ -13,15 +13,25 @@
               <!-- Card header -->
 
               <div class="card-header border-0">
-                <h1 class="mb-0">Nuevo menu</h1>
+                <h2 class="mb-0">Nuevo menú</h2>
 
               </div>
 
 
-                        <form class="m-5">
+                        <form class="m-5"  action="{{route('menu_store')}}"  method="POST">
+                            @csrf
+                            @if ($errors->any())
+
+                                        @foreach ($errors->all() as $error)
+                                        <div class="alert alert-danger" role="alert">
+                                            <strong> {{ $error }}</strong>
+                                        </div>
+
+                                        @endforeach
+                           @endif
                             <div class="form-group">
                             <label for="exampleFormControlInput1">Nombre</label>
-                            <input type="text" class="form-control form-control-lg" id="title" name="title" placeholder="Nombre de menu" required max="50">
+                            <input type="text" class="form-control form-control-lg" id="title" name="title" placeholder="Nombre de menu"  max="50" required>
                             </div>
 
                             <div class="form-group">
@@ -31,15 +41,15 @@
 
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Menu padre</label>
-                                <input type="number" class="form-control form-control-lg" id="menu_parent"  name="menu_parent" placeholder="Menu padre (menu raíz 0)" max="3">
+                                <input type="number" class="form-control form-control-lg" id="menu_parent"  name="menu_parent" placeholder="Menu padre (menu raíz 0)" max="50">
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Menu orden</label>
-                                <input type="number" class="form-control form-control-lg" id="order" name="order" placeholder="Menu orden (de acuerdo a la base de datos)" max="3">
+                                <input type="number" class="form-control form-control-lg" id="order" name="order" placeholder="Menu orden (de acuerdo a la base de datos)" max="50">
                             </div>
 
                             <div class="form-group row d-flex justify-content-center">
-                                <button type="button" class="btn btn-default">Agregar</button>
+                                <button type="submit" class="btn btn-default">Agregar</button>
 
                             </div>
 

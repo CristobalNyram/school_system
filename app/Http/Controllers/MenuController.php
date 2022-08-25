@@ -32,7 +32,7 @@ class MenuController extends Controller
     {
         $variables=[
             'menu'=>'menus',
-            'title_page'=>'Menus',
+            'title_page'=>'Menús',
 
 
         ];
@@ -47,7 +47,28 @@ class MenuController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $validaciones = [
+            'title' => 'required|string',
+            'description' => 'required',
+            'menu_parent' => 'required|min:1|numeric',
+            'order'=>'required|numeric',
+        ];
+
+         $mensajes = [
+            'title.required' => 'No puedes dejar vacío, necesitas agregar un nombre al menú.',
+            'title.string' => 'No se permitén caracteres extaños al nombre del menú.',
+            'menu_parent.required' => 'Ingresa un número en el menu padre.',
+            'order.required' => 'Ingresa un número en orden del menu.',
+            'menu_parent.numeric' => 'Ingresa un número en el menu padre.',
+            'order.numeric' => 'Ingresa un número en orden del menu.'
+
+        ];
+
+         $this->validate(request(),$validaciones,$mensajes);
+
+    //    $menu= new Menu();
+
+
     }
 
     /**
@@ -58,7 +79,8 @@ class MenuController extends Controller
      */
     public function show(Menu $menu)
     {
-        //
+
+
     }
 
     /**
