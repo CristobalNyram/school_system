@@ -20,6 +20,11 @@
 
                         <form class="m-5"  action="{{route('menu_store')}}"  method="POST">
                             @csrf
+                            @if(session('success'))
+                            <div class="alert alert-success" role="alert">
+                                <strong>{{ session('success') }}</strong>
+                            </div>
+                            @endif
                             @if ($errors->any())
 
                                         @foreach ($errors->all() as $error)
@@ -36,7 +41,7 @@
 
                             <div class="form-group">
                                     <label for="exampleFormControlInput1">Descripción</label>
-                                    <input type="text" class="form-control form-control-lg" id="description" name="description" placeholder="Descripción de menu" required max="50">
+                                    <input type="text" class="form-control form-control-lg" id="description" name="description" placeholder="Descripción de menu" required maxlength="50">
                             </div>
 
                             <div class="form-group">

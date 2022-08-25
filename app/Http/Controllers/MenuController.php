@@ -47,11 +47,19 @@ class MenuController extends Controller
      */
     public function store(Request $request)
     {
+
+        $variables=[
+                'menu'=>'menus',
+                'title_page'=>'Menus',
+
+
+         ];
+
          $validaciones = [
             'title' => 'required|string',
             'description' => 'required',
-            'menu_parent' => 'required|min:1|numeric',
-            'order'=>'required|numeric',
+            'menu_parent' => 'required|min:1|max:50|numeric',
+            'order'=>'required|min:1|max:50|numeric',
         ];
 
          $mensajes = [
@@ -66,7 +74,22 @@ class MenuController extends Controller
 
          $this->validate(request(),$validaciones,$mensajes);
 
-    //    $menu= new Menu();
+         $menu= new Menu();
+         $menu->new_registration($request);
+
+
+        if ($menu->new_registration($request) === true) {
+
+
+            return back()->with('success','Se ha registrado el menú exitosamente...');
+
+        }
+        else
+        {
+            return  back()->withErrors('No se ha registrado el menú...');
+
+        }
+
 
 
     }
