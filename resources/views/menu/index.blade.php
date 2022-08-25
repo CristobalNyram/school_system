@@ -4,13 +4,26 @@
     @include('menu.headers_cards')
 
     <div class="container-fluid mt--6">
+        <div class="row d-flex mb-3 mr-5 justify-content-end">
+
+                <button type="button" class="btn btn-info">Agregar</button>
+
+
+        </div>
+
+
         <div class="row">
           <div class="col">
             <div class="card">
               <!-- Card header -->
+
               <div class="card-header border-0">
                 <h3 class="mb-0">Menu registrados</h3>
+
               </div>
+
+
+
               <!-- Light table -->
               <div class="table-responsive">
                 <table class="table align-items-center table-flush">
@@ -18,6 +31,8 @@
                     <tr>
                       <th scope="col" class="sort" data-sort="name">ID</th>
                       <th scope="col" class="sort" data-sort="budget">Nombre</th>
+                      <th scope="col" class="sort" data-sort="budget">Descripción</th>
+
 
                     </tr>
                   </thead>
