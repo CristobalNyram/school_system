@@ -46,6 +46,21 @@ class Role extends Model
 
     }
 
+    public function checkAccesToThisFunctionality($role_id,$menu_id)
+    {
+
+        $haveThispermission= Relrolmenu::where('role_id',$role_id)->where('menu_id',$menu_id)->where('status',2)->first();
+
+        if($haveThispermission==null)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+
     public function relrolmenu()
     {
         return $this->hasMany(Relrolmenu::class,'id');

@@ -33,6 +33,60 @@
                   </thead>
                   <tbody class="list">
 
+                    @foreach ($users_actives as $user )
+                    <tr>
+                        <th scope="row">
+                          <div class="media align-items-center">
+
+                            <div class="media-body">
+                              <span class="name mb-0 text-sm">  {{ $user->id }}</span>
+                            </div>
+                          </div>
+                        </th>
+
+
+                        <th scope="row">
+                            <div class="media align-items-center">
+
+                              <div class="media-body">
+                                <span class="name mb-0 text-sm">{{ $user->name }} {{ $user->first_surname }} {{ $user->second_surname }}  </span>
+                              </div>
+                            </div>
+                        </th>
+                        <th scope="row">
+                            <div class="media align-items-center">
+
+                              <div class="media-body">
+                                <span class="name mb-0 text-sm">{{ $user->roles->name }} </span>
+                              </div>
+                            </div>
+                        </th>
+
+                        <th scope="row">
+                            <div class="media align-items-center">
+
+                              <div class="media-body">
+                                <span class="name mb-0 text-sm"> {{ $user->created_at }}</span>
+                              </div>
+                            </div>
+                        </th>
+
+                        <td class="text-cener">
+                            <div class="dropdown">
+                              <a class="btn btn-sm btn-icon-only text-danger" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-ellipsis-v"></i>
+                              </a>
+                              <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                <a class="dropdown-item" href="#">Editar</a>
+                                <a class="dropdown-item text-danger"  data-toggle="modal" data-target="#modal-notification" href="#" >Borrar</a>
+                              </div>
+                            </div>
+                        </td>
+
+
+                    </tr>
+                    @endforeach
+
                   </tbody>
                 </table>
               </div>

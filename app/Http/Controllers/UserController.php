@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Http\Requests\UserRequest;
 use App\Models\Role;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
@@ -21,9 +22,31 @@ class UserController extends Controller
     }
     public function index_all()
     {
+        $users_active=User::all()->where('status','=','2');
+        $users_active_number=User::all()->where('status','=','2')->count();
+
+        if(Role::checkAccesToThisFunctionality(Auth::user()->role_id,4)==null)
+        {
+            $variables=[
+                'menu'=>'',
+                'title_page'=>'Acceso denegado',
+
+
+            ];
+            return view('errors.notaccess')->with($variables);
+
+        }
+
+
+
+
+
         $variables=[
             'menu'=>'users_all',
             'title_page'=>'Usuarios',
+            'users_actives'=>$users_active,
+            'users_active_number'=> $users_active_number,
+
 
 
         ];
