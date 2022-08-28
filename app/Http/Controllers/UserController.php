@@ -46,6 +46,26 @@ class UserController extends Controller
     public function store(UserRequest $request)
     {
 
+       $user =new User();
+       $user->name = $request->name;
+       $user->first_surname = $request->first_surname;
+       $user->second_surname = $request->second_surname;
+       $user->gender = $request->gender;
+       $user->role_id = $request->role_id;
+       $user->email = $request->email;
+       $user->password = Hash::make($request->password) ;
+
+        if ($user->save()) {
+            return back()->with('success','Se ha registrado el usuario exitosamente...');
+
+        }
+        else
+        {
+            return  back()->withErrors('No se ha registrado el usuario...');
+
+        }
+
+
     }
 }
 
