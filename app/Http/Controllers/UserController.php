@@ -22,8 +22,9 @@ class UserController extends Controller
     }
     public function index_all()
     {
-        $users_active=User::all()->where('status','=','2');
-        $users_active_number=User::all()->where('status','=','2')->count();
+
+
+
 
         if(Role::checkAccesToThisFunctionality(Auth::user()->role_id,4)==null)
         {
@@ -37,7 +38,8 @@ class UserController extends Controller
 
         }
 
-
+        $users_active=User::all()->where('status','=','2');
+        $users_active_number=User::all()->where('status','=','2')->count();
 
 
 
@@ -54,6 +56,18 @@ class UserController extends Controller
     }
     public function create()
     {
+        if(Role::checkAccesToThisFunctionality(Auth::user()->role_id,4)==null)
+        {
+            $variables=[
+                'menu'=>'',
+                'title_page'=>'Acceso denegado',
+
+
+            ];
+            return view('errors.notaccess')->with($variables);
+
+        }
+
         $rol_available=Role::all()->where('status','=','2');
         $variables=[
             'menu'=>'users_all',

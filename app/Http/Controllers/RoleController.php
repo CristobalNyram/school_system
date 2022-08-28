@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Relrolmenu;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Role;
 use Illuminate\Http\Request;
 use SebastianBergmann\Environment\Runtime;
@@ -11,6 +12,18 @@ class RoleController extends Controller
 {
     public function index()
     {
+        if(Role::checkAccesToThisFunctionality(Auth::user()->role_id,2)==null)
+        {
+            $variables=[
+                'menu'=>'',
+                'title_page'=>'Acceso denegado',
+
+
+            ];
+            return view('errors.notaccess')->with($variables);
+
+        }
+
         $roles=Role::all();
         $roles_numbers=Role::all()->count();
         $variables=[
@@ -31,6 +44,18 @@ class RoleController extends Controller
      */
     public function create()
     {
+        if(Role::checkAccesToThisFunctionality(Auth::user()->role_id,2)==null)
+        {
+            $variables=[
+                'menu'=>'',
+                'title_page'=>'Acceso denegado',
+
+
+            ];
+            return view('errors.notaccess')->with($variables);
+
+        }
+
         $variables=[
             'menu'=>'role',
             'title_page'=>'Roles',
@@ -119,6 +144,17 @@ class RoleController extends Controller
     //when we indicate the object this object has a funtion for default and this is findOrFail
     public function assign($role_id)
     {
+        if(Role::checkAccesToThisFunctionality(Auth::user()->role_id,2)==null)
+        {
+            $variables=[
+                'menu'=>'',
+                'title_page'=>'Acceso denegado',
+
+
+            ];
+            return view('errors.notaccess')->with($variables);
+
+        }
 
         $current_role_name=  Role::findOrFail($role_id);
         $menus_and_roles=Relrolmenu::all()->where('role_id',$role_id);

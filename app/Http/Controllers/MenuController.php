@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Menu;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Role;
 
 class MenuController extends Controller
 {
@@ -14,6 +16,18 @@ class MenuController extends Controller
      */
     public function index()
     {
+        if(Role::checkAccesToThisFunctionality(Auth::user()->role_id,3)==null)
+        {
+            $variables=[
+                'menu'=>'',
+                'title_page'=>'Acceso denegado',
+
+
+            ];
+            return view('errors.notaccess')->with($variables);
+
+        }
+
         $menus=Menu::all();
         $menus_numbers=Menu::all()->count();
         $variables=[
@@ -34,6 +48,18 @@ class MenuController extends Controller
      */
     public function create()
     {
+        if(Role::checkAccesToThisFunctionality(Auth::user()->role_id,3)==null)
+        {
+            $variables=[
+                'menu'=>'',
+                'title_page'=>'Acceso denegado',
+
+
+            ];
+            return view('errors.notaccess')->with($variables);
+
+        }
+
         $variables=[
             'menu'=>'menus',
             'title_page'=>'Menús',
