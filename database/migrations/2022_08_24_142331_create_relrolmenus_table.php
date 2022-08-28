@@ -19,6 +19,10 @@ class CreateRelrolmenusTable extends Migration
             $table->unsignedBigInteger('role_id');
             $table->string('status')->default(-2);
             $table->timestamps();
+
+            $table->foreign('role_id')->references('id')->on('roles');
+            $table->foreign('menu_id')->references('id')->on('menus');
+
         });
 
 

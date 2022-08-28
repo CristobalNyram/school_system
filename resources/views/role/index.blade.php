@@ -1,3 +1,8 @@
+<script  src='/assets/libraries/Jquery/jquery-3.6.0.min.js'></script>
+<script  src='/assets/libraries/DataTablesJs/datatables.js'></script>
+
+<link rel="stylesheet" type="text/css" href="/assets/libraries/DataTablesJs/datatables.css">
+
 @extends('layouts.app')
 
 @section('content')
@@ -20,7 +25,12 @@
               </div>
               <!-- Light table -->
               <div class="table-responsive">
-                <table class="table align-items-center table-flush">
+                <script>
+$(document).ready( function () {
+    $('#myTable').DataTable();
+} );
+                </script>
+                <table class="table align-items-center table-flush" id="myTable">
                   <thead class="thead-light">
                     <tr>
                       <th scope="col" class="sort" data-sort="name">Id</th>
@@ -127,9 +137,15 @@
         @include('role.eliminar-modal-js')
 
     </div>
+
+
+
 @endsection
 
 @push('js')
+
+
+
     <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.min.js"></script>
     <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.extension.js"></script>
 @endpush
