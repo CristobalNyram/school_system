@@ -54,7 +54,7 @@
                                 <label for="role_id">Rol</label>
 
                                 <select class="form-control form-control-lg  " data-toggle="select2"  name="role_id" id="role_id" >
-                                    <option value="-1" selected>Seleccionar</option>
+                                    <option value="-2" selected>Seleccionar</option>
                                     @foreach ($rol_available as $rol )
                                     <option value="{{ $rol->id }}" >{{ $rol->name }}</option>
 

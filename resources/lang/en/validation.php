@@ -87,7 +87,7 @@ return [
     'min' => [
         'numeric' => 'El :attribute no puede ser más chico que :min.',
         'file' => 'El :attribute no puede ser más chico que :min kilobytes.',
-        'string' => 'El :attribute no puede ser más chico que :min characters.',
+        'string' => 'El :attribute no puede ser más chico que :min caracteres.',
         'array' => 'El :attribute no puede ser más chico que :min items.',
     ],
     'not_in' => 'The selected :attribute is invalid.',
