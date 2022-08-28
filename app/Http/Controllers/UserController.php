@@ -42,6 +42,11 @@ class UserController extends Controller
 
         return view('users.users.create')->with($variables);
     }
+
+    public function store(UserRequest $request)
+    {
+
+    }
 }
 
 

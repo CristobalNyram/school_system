@@ -18,7 +18,7 @@
               </div>
 
 
-                        <form class="m-5"  action="{{route('role_store')}}"  method="POST">
+                        <form class="m-5"  action="{{route('user_store')}}"  method="POST">
                             @csrf
                             @if(session('success'))
                             <div class="alert alert-success" role="alert">
@@ -35,25 +35,25 @@
                                         @endforeach
                            @endif
                             <div class="form-group">
-                            <label for="exampleFormControlInput1">Nombre</label>
+                            <label for="name">Nombre</label>
                             <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Nombre de usuario"  max="50" required oninput="uppercaseLetters(event);">
                             </div>
 
                             <div class="form-group">
-                                <label for="exampleFormControlInput1">Apellido de parterno</label>
-                                <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Apellido paterno de usuario"  max="50" required  oninput="uppercaseLetters(event);">
+                                <label for="first_surname">Apellido de parterno</label>
+                                <input type="text" class="form-control form-control-lg" id="first_surname" name="first_surname" placeholder="Apellido paterno de usuario"  max="50" required  oninput="uppercaseLetters(event);">
                             </div>
                             <div class="form-group">
-                                <label for="exampleFormControlInput1">Apellido de materno</label>
-                                <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Apellido materno de usuario"  max="50"  required oninput="uppercaseLetters(event);">
+                                <label for="second_surname">Apellido de materno</label>
+                                <input type="text" class="form-control form-control-lg" id="second_surname" name="second_surname" placeholder="Apellido materno de usuario"  max="50"  required oninput="uppercaseLetters(event);">
                             </div>
 
 
 
                             <div class="form-group">
-                                <label for="exampleFormControlInput1">Rol</label>
+                                <label for="role_id">Rol</label>
 
-                                <select class="form-control form-control-lg  " data-toggle="select2"  >
+                                <select class="form-control form-control-lg  " data-toggle="select2"  name="role_id" id="role_id" >
                                     <option value="-1" selected>Seleccionar</option>
                                     @foreach ($rol_available as $rol )
                                     <option value="{{ $rol->id }}" >{{ $rol->name }}</option>
@@ -62,13 +62,13 @@
                                   </select>
                             </div>
                             <div class="form-group">
-                                <label for="exampleFormControlInput1">Genero</label>
+                                <label for="gender">Genero</label>
 
-                                <select class="form-control form-control-lg  " data-toggle="select2"  >
+                                <select class="form-control form-control-lg  " data-toggle="select2" id="gender" name="gender" >
                                     <option value="-1" selected>Seleccionar</option>
-                                    <option value="1" >Masculino</option>
-                                    <option value="2" >Feminino</option>
-                                    <option value="3" >No binario</option>
+                                    <option value="H" >Masculino</option>
+                                    <option value="M" >Feminino</option>
+                                    <option value="N/A" >No binario</option>
 
 
                                   </select>
@@ -76,8 +76,16 @@
 
 
                             <div class="form-group">
-                                <label for="exampleFormControlInput1">Email</label>
-                                <input  type="email" class="form-control form-control-lg" id="description" name="description" placeholder="Correo electronico del usuario." required maxlength="50">
+                                <label for="email">Correo electronico</label>
+                                <input  type="email" class="form-control form-control-lg" id="email" name="email" placeholder="Correo electronico del usuario." required maxlength="50">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input  type="password" class="form-control form-control-lg" id="password" name="password" placeholder="Contraseña para este usuario." required maxlength="50">
+                            </div>
+                            <div class="form-group">
+                                <label for="password_confirmation">Confirmar contraseña</label>
+                                <input  type="password" class="form-control form-control-lg" id=" password_confirmation" name="password_confirmation" placeholder="Confirmar la contraseña para este usuario." required maxlength="50">
                             </div>
 
 
