@@ -36,16 +36,16 @@
                            @endif
                             <div class="form-group">
                             <label for="name">Nombre</label>
-                            <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Nombre de usuario"  max="50" required oninput="uppercaseLetters(event);">
+                            <input type="text" class="form-control form-control-lg" id="name" name="name" value="{{   old('name') }}" placeholder="Nombre de usuario"  max="50" required oninput="uppercaseLetters(event);">
                             </div>
 
                             <div class="form-group">
                                 <label for="first_surname">Apellido de parterno</label>
-                                <input type="text" class="form-control form-control-lg" id="first_surname" name="first_surname" placeholder="Apellido paterno de usuario"  max="50" required  oninput="uppercaseLetters(event);">
+                                <input type="text" class="form-control form-control-lg" id="first_surname" name="first_surname" value="{{ old('first_surname') }}" placeholder="Apellido paterno de usuario"  max="50" required  oninput="uppercaseLetters(event);">
                             </div>
                             <div class="form-group">
                                 <label for="second_surname">Apellido de materno</label>
-                                <input type="text" class="form-control form-control-lg" id="second_surname" name="second_surname" placeholder="Apellido materno de usuario"  max="50"  required oninput="uppercaseLetters(event);">
+                                <input type="text" class="form-control form-control-lg" id="second_surname" name="second_surname" value="{{ old('second_surname') }}" placeholder="Apellido materno de usuario"  max="50"  required oninput="uppercaseLetters(event);">
                             </div>
 
 
@@ -77,11 +77,11 @@
 
                             <div class="form-group">
                                 <label for="email">Correo electronico</label>
-                                <input  type="email" class="form-control form-control-lg" id="email" name="email" placeholder="Correo electronico del usuario." required maxlength="50">
+                                <input  type="email" class="form-control form-control-lg" id="email" name="email" value=" {{ old('email') }}" placeholder="Correo electronico del usuario." required maxlength="50">
                             </div>
                             <div class="form-group">
                                 <label for="password">Password</label>
-                                <input  type="password" class="form-control form-control-lg" id="password" name="password" placeholder="Contraseña para este usuario." required maxlength="50">
+                                <input  type="password" class="form-control form-control-lg" id="password" value="{{ old('password') }}" name="password" placeholder="Contraseña para este usuario." required maxlength="50">
                             </div>
                             <div class="form-group">
                                 <label for="password_confirmation">Confirmar contraseña</label>

@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use App\Models\User;
+use App\Rules\NotNegativeNumbersSelect;
 use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -33,7 +34,12 @@ class UserRequest extends FormRequest
                 'required', 'email', Rule::unique((new User)->getTable())->ignore($this->route()->user->id ?? null)
             ],
             'role_id' => [
-                'required','min:1'
+                'required',
+                new NotNegativeNumbersSelect(),
+            ],
+            'gender' => [
+                'required',
+                new NotNegativeNumbersSelect(),
             ],
             'password' => [
                 $this->route()->user ? 'nullable' : 'required', 'confirmed', 'min:6'
