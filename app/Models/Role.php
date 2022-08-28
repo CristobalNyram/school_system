@@ -14,6 +14,7 @@ class Role extends Model
         $role= new Role();
         $role->name=$request->name;
         $role->description=$request->description;
+
         $role->level=$request->level;
         $role->created_at=now();
 
@@ -44,4 +45,13 @@ class Role extends Model
         }
 
     }
+
+    public function relrolmenu()
+    {
+        return $this->hasMany(Relrolmenu::class,'id');
+    }
+
+
+
+
 }

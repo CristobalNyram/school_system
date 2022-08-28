@@ -22,6 +22,7 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 1,
             'role_id' => 1,
+            'menu' => 1,
             'status' => 2,
         ]);
         DB::table('relrolmenus')->insert([

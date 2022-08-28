@@ -22,7 +22,10 @@
                         <form class="m-5"  action="{{route('role_assign_permission')}}"  method="POST">
                             @csrf
 
+                            @foreach ($menus as  $menu)
+                            {{ $menu->menus->title }}
 
+                            @endforeach
 
 
                         </form>

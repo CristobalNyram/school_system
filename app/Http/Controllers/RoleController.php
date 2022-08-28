@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Relrolmenu;
 use App\Models\Role;
 use Illuminate\Http\Request;
 use SebastianBergmann\Environment\Runtime;
@@ -120,11 +121,15 @@ class RoleController extends Controller
     {
 
         $current_role_name=  Role::findOrFail($role_id);
+        $menus_and_roles=Relrolmenu::all()->where('role_id',$role_id);
 
+        // return $menus_and_roles;
+        // die();
         $variables=[
             'menu'=>'role',
             'title_page'=>'Roles',
             'current_role_name'=>$current_role_name,
+            'menus'=>$menus_and_roles,
 
 
         ];
