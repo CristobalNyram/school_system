@@ -15,7 +15,7 @@
               <div class="card-header border-0">
                 <h2 class="mb-0">Asignar permisos al rol:
 
-                  <span class="badge badge-default pt-3 pb-3 font-weight-700"> {{ $current_role_name[0]->name }}</span>
+                  <span class="badge badge-default pt-3 pb-3 font-weight-700"> {{ $current_role_name->name }}</span>
               </div>
 
 

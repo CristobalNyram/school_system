@@ -115,13 +115,11 @@ class RoleController extends Controller
     }
 
 
-
-    public function assign(Request $role_id)
+    //when we indicate the object this object has a funtion for default and this is findOrFail
+    public function assign($role_id)
     {
-        $current_role_name=  Role::where('id', 1)
-        ->select('name')
-        ->first()
-        ->get();
+
+        $current_role_name=  Role::findOrFail($role_id);
 
         $variables=[
             'menu'=>'role',
