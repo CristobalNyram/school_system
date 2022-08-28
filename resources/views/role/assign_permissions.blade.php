@@ -32,7 +32,7 @@
                                                                     <ul class="list-group">
                                                                         <li class="list-group-item">
                                                                             <div class="custom-control custom-checkbox mb-3">
-                                                                                        <input class="custom-control-input " @if ($menu->status ==2) checked @endif
+                                                                                        <input class="custom-control-input  @if ($menu->status ==2) parent_check @endif " @if ($menu->status ==2) checked @endif
                                                                                         id="{{ $menu->id }}" type="checkbox">
                                                                                         <label class="custom-control-label " for="{{ $menu->id }}"> {{ $menu->menus->title }}</label>
                                                                                 </div>
@@ -80,10 +80,14 @@
 
 
         @include('layouts.footers.auth')
+
     </div>
 @endsection
 
 @push('js')
+
+    <script  src='/assets/libraries/Jquery/jquery-3.6.0.min.js'></script>
+    <script  src='/assets/js/menu/menu_assign.js'></script>
     <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.min.js"></script>
     <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.extension.js"></script>
 @endpush
