@@ -23,7 +23,12 @@
                             @csrf
 
                             @foreach ($menus as  $menu)
-                            {{ $menu->menus->title }}
+                                <div class="custom-control custom-checkbox mb-3">
+                                <input class="custom-control-input" @if ($menu->status ==2) checked @endif
+                                 id="{{ $menu->id }}" type="checkbox">
+                                <label class="custom-control-label" for="{{ $menu->id }}"> {{ $menu->menus->title }}</label>
+                              </div>
+
 
                             @endforeach
 
