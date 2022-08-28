@@ -66,6 +66,18 @@
 
 
 
+
+
+                            </div>
+                            <div class="row  d-flex justify-content-end">
+                                <div class="col-lg-4 col-12">
+                                    <a href="{{  url()->previous()  }}" type="button" class="btn btn-danger">Cancelar</a>
+
+                                </div>
+                                <div class="col-lg-4 col-12">
+                                    <button type="button" class="btn btn-primary">Actualizar</button>
+
+                                </div>
                             </div>
 
 
