@@ -137,4 +137,10 @@ class RoleController extends Controller
 
         return view('role.assign_permissions')->with($variables);
     }
+
+    public function assign_permission(Request $request)
+    {
+        var_dump($request);
+
+    }
 }

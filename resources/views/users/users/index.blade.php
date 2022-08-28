@@ -6,7 +6,7 @@
     <div class="container-fluid mt--6">
         <div class="row d-flex mb-3 mr-5 justify-content-end">
 
-            <a href="{{ route('menu_create') }}" type="button" class="btn btn-info">Agregar</a>
+            <a href="{{ route('user_create') }}" type="button" class="btn btn-info">Agregar</a>
 
 
       </div>

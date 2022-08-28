@@ -75,7 +75,7 @@
 
                                 </div>
                                 <div class="col-lg-4 col-12">
-                                    <button type="button" class="btn btn-primary">Actualizar</button>
+                                    <button type="submit" class="btn btn-primary">Actualizar</button>
 
                                 </div>
                             </div>
@@ -98,7 +98,6 @@
 
 @push('js')
 
-    <script  src='/assets/libraries/Jquery/jquery-3.6.0.min.js'></script>
     <script  src='/assets/js/menu/menu_assign.js'></script>
     <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.min.js"></script>
     <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.extension.js"></script>

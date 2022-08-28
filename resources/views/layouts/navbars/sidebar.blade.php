@@ -1,3 +1,20 @@
+{{--  scripts start --}}
+<script  src='/assets/libraries/Jquery/jquery-3.6.0.min.js'></script>
+<script  src='/assets/js/generalfunctions.js'></script>
+
+<script  src='/assets/libraries/Select2/select2.min.js'></script>
+<link rel="stylesheet" href="/assets/libraries/Select2/select2.min.css">
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js" defer></script>
+
+
+<script  src='/assets/libraries/Sweetalert/sweetalert2@11.js'></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+{{--  scripts end  --}}
+
+
 <nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light bg-white" id="sidenav-main">
     <div class="container-fluid">
         <!-- Toggler -->

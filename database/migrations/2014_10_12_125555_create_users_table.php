@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('second_surname');
             $table->string('curp',20)->unique()->nullable();
             $table->string('date_birth')->nullable();
-            $table->string('gender',1)->nullable();
+            $table->string('gender',3,['H','M','N/A'])->default('H');
             $table->string('phone_number',15)->nullable();
             $table->string('address',15)->nullable();
             $table->string('blood_type',2)->nullable();;
@@ -28,7 +28,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->unsignedBigInteger('role_id')->nullable();
+            $table->unsignedBigInteger('role_id')->default(2);
             $table->string('status',2)->default(2);
             $table->foreign('role_id')->references('id')->on('roles');
             $table->rememberToken();

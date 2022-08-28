@@ -40,6 +40,8 @@ Route::group(['middleware' => 'auth'], function () {
 
         // users start-------------------------------------------
         Route::get('/users',[UserController::class,"index_all"])->name('users_all_index');
+        Route::get('/users/create',[UserController::class,"create"])->name('user_create');
+        Route::get('/users/store',[UserController::class,"store"])->name('user_store');
 
         // users end--------------------------------------------
 
@@ -56,7 +58,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/role/create',[RoleController::class,"create"])->name('role_create');
         Route::post('/role/store',[RoleController::class,"store"])->name('role_store');
         Route::get('/role/assign/{role_id}',[RoleController::class,"assign"])->name('role_assign');
-        Route::get('/role/assign_permission/',[RoleController::class,"assign_permission"])->name('role_assign_permission');
+        Route::post('/role/assign_permission/',[RoleController::class,"assign_permission"])->name('role_assign_permission');
 
         // role end---------------------------------------------
 

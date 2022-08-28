@@ -18,6 +18,7 @@ class UsersTableSeeder extends Seeder
             'name' => 'Cristobal',
             'first_surname' => 'Marín',
             'second_surname' => 'De los Santos',
+            'role_id' => 1,
             'email' => 'admin@argon.com',
             'email_verified_at' => now(),
             'password' => Hash::make('secret'),
