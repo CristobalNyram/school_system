@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Role;
 use Illuminate\Http\Request;
+use SebastianBergmann\Environment\Runtime;
 
 class RoleController extends Controller
 {
@@ -108,8 +109,29 @@ class RoleController extends Controller
      * @param  \App\Models\Logbook  $logbook
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Logbook $logbook)
+    public function destroy(Request $logbook)
     {
         //
+    }
+
+
+
+    public function assign(Request $role_id)
+    {
+        $current_role_name=  Role::where('id', 1)
+        ->select('name')
+        ->first()
+        ->get();
+
+        $variables=[
+            'menu'=>'role',
+            'title_page'=>'Roles',
+            'current_role_name'=>$current_role_name,
+
+
+        ];
+
+
+        return view('role.assign_permissions')->with($variables);
     }
 }

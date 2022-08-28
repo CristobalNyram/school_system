@@ -90,7 +90,7 @@ $(document).ready( function () {
                               <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                 <a class="dropdown-item" href="#">Editar</a>
                                 <a class="dropdown-item text-danger"  data-toggle="modal" data-target="#modal-notification" href="#" >Borrar</a>
-                                <a class="dropdown-item " href="#">Asignar permisos</a>
+                                <a class="dropdown-item " href="{{ route('role_assign',$rol->id)}}">Asignar permisos</a>
                               </div>
                             </div>
                         </td>
