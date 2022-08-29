@@ -36,5 +36,9 @@ class ActionsTableSeeder extends Seeder
             'name' => 'Desactivar',
             'created_at' => now(),
         ]);
+        DB::table('actions')->insert([
+            'name' => 'Crear',
+            'created_at' => now(),
+        ]);
     }
 }

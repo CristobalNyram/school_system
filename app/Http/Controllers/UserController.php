@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Http\Requests\UserRequest;
 use App\Models\Role;
+
+use App\Models\Logbook;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -37,6 +39,7 @@ class UserController extends Controller
             return view('errors.notaccess')->with($variables);
 
         }
+        Logbook::activity_done($description='Accedió al módulo de Usuarios.',$table_id=0,$menu_id=4,$user_id=Auth::id(),$kind_acction=1);
 
         $users_active=User::all()->where('status','=','2');
         $users_active_number=User::all()->where('status','=','2')->count();

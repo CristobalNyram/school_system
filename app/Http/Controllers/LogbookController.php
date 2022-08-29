@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Logbook;
+use App\Models\Role;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -15,6 +17,18 @@ class LogbookController extends Controller
      */
     public function index()
     {
+        if(Role::checkAccesToThisFunctionality(Auth::user()->role_id,6)==null)
+        {
+            $variables=[
+                'menu'=>'',
+                'title_page'=>'Acceso denegado',
+
+
+            ];
+            return view('errors.notaccess')->with($variables);
+
+        }
+        Logbook::activity_done($description='Accedió al módulo de bitácora.',$table_id=0,$menu_id=6,$user_id=Auth::id(),$kind_acction=6);
 
         $logbook = Logbook::all();
         $variables=[
@@ -24,14 +38,6 @@ class LogbookController extends Controller
 
         ];
 
-        Logbook::activity_done(
-           'Accedió al módulo de bitácora.',
-            0,
-            5,
-            Auth::id(),
-            1
-           )
-            ;
 
 
          return view('logbook.index')->with($variables);

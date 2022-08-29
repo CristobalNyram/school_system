@@ -7,6 +7,7 @@ namespace App\Http\Controllers;
 use App\Models\Relrolmenu;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Role;
+use App\Models\Logbook;
 use Illuminate\Http\Request;
 use SebastianBergmann\Environment\Runtime;
 
@@ -30,6 +31,8 @@ class RoleController extends Controller
             return view('errors.notaccess')->with($variables);
 
         }
+        Logbook::activity_done($description='Accedió al módulo de Rol.',$table_id=0,$menu_id=2,$user_id=Auth::id(),$kind_acction=1);
+
 
         $roles=Role::all();
         $roles_numbers=Role::all()->count();

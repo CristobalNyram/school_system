@@ -57,7 +57,7 @@
                             <div class="media align-items-center">
 
                               <div class="media-body">
-                                <span class="name mb-0 text-sm">  {{ $log->module_id }}</span>
+                                <span class="name mb-0 text-sm">  {{ $log->menus->title }}</span>
                               </div>
                             </div>
                         </th>
