@@ -21,9 +21,7 @@
               </div>
               <!-- Light table -->
               <script>
-      $(document).ready( function () {
-    $('#myTable').DataTable();
-} );
+
               </script>
               <div class="table-responsive">
                 <table class="table align-items-center table-flush" id="myTable">
@@ -106,6 +104,34 @@
 
         @include('layouts.footers.auth')
     </div>
+
+
+
+
+<script>
+
+$(document).ready(function() {
+    $('#myTable').DataTable( {
+        "language": {
+            "lengthMenu": "Mostrar _MENU_ registros por página",
+            "zeroRecords": "No encontramos nada.",
+            "info": "Mostrando página _PAGE_ de _PAGES_",
+            "infoEmpty": "No hay registros existentes.",
+            "infoFiltered": "(Fitrado de _MAX_  registros existentes)",
+            "loadingRecords": "Cargando...",
+            "search":         "Buscar:",
+            "emptyTable":     "No hay información disponible en la tabla.",
+            "paginate": {
+                "first":      "First",
+                "last":       "Last",
+                "next":       "Next",
+                "previous":   "Previous"
+             },
+        }
+    } );
+} );
+</script>
+
 @endsection
 
 @push('js')

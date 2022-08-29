@@ -15,6 +15,25 @@
 <link rel="stylesheet" href="/assets/vendor/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
 <script src="/assets/vendor/datatables.net-bs4/js/dataTables.bootstrap4.min.js" defer></script>
 
+<script src="/assets/vendor/datatables.net-buttons/js/dataTables.buttons.min.js" defer></script>
+
+<link rel="stylesheet" href="/assets/vendor/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css">
+<script src="/assets/vendor/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js" defer></script>
+
+
+<link rel="stylesheet" href="/assets/vendor/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css">
+{{-- <script src="/assets/vendor/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js" defer></script> --}}
+
+
+<script src="/assets/vendor/datatables.net-select/js/dataTables.select.min.js" defer></script>
+
+
+<link rel="stylesheet" href="/assets/vendor/datatables.net-select-bs4/css/select.bootstrap4.min.css">
+
+<script src="/assets/vendor/datatables.net-select-bs4/js/select.bootstrap4.min.js" defer></script>
+
+
+
 
 {{--  scripts end  --}}
 
