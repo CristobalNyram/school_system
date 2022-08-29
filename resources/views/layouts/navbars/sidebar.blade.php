@@ -197,42 +197,58 @@
             </ul>
             <!-- Navigation -->
             <!-- Divider -->
-            <hr class="my-3">
-            <!-- Heading -->
-            <h6 class="navbar-heading text-muted">Complementos</h6>
-            <!-- Navigation -->
-            <ul class="navbar-nav">
+            @if ( check_acces_to_this_permission(Auth::user()->role_id,1))
+                    <hr class="my-3">
+                    <!-- Heading -->
+
+                    <h6 class="navbar-heading text-muted">Complementos</h6>
+                    <!-- Navigation -->
+                    <ul class="navbar-nav">
 
 
-                <li class="nav-item">
-                    <a class="nav-link @if($menu === 'logbook') active @endif " href="{{ route('logbook_index') }}">
-                        <i class="ni ni-books text-primary"></i>Bitácora
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link  @if($menu === 'role') active @endif " href="{{ route('role_index') }}">
-                        <i class="ni ni-single-02 text-primary"></i>Roles
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link @if($menu === 'users_all') active @endif"  href="{{ route('users_all_index') }}">
-                        <i class="fa fa-users text-primary" aria-hidden="true"></i>
-                        Usuarios
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link @if($menu === 'menus') active @endif"  href="{{ route('menu_index') }}">
-                        <i class="fa fa-bars text-primary" aria-hidden="true"></i>
+                        @if ( check_acces_to_this_permission(Auth::user()->role_id,6))
+                        <li class="nav-item">
+                            <a class="nav-link @if($menu === 'logbook') active @endif " href="{{ route('logbook_index') }}">
+                                <i class="ni ni-books text-primary"></i>Bitácora
+                            </a>
+                        </li>
+                        @endif
+                        @if ( check_acces_to_this_permission(Auth::user()->role_id,2))
 
-                        Menus
-                    </a>
-                </li>
+                        <li class="nav-item">
+                            <a class="nav-link  @if($menu === 'role') active @endif " href="{{ route('role_index') }}">
+                                <i class="ni ni-single-02 text-primary"></i>Roles
+                            </a>
+                        </li>
+                        @endif
+                        @if ( check_acces_to_this_permission(Auth::user()->role_id,4))
+                        <li class="nav-item">
+                            <a class="nav-link @if($menu === 'users_all') active @endif"  href="{{ route('users_all_index') }}">
+                                <i class="fa fa-users text-primary" aria-hidden="true"></i>
+                                Usuarios
+                            </a>
+                        </li>
+                        @endif
+
+                        @if ( check_acces_to_this_permission(Auth::user()->role_id,3))
+                        <li class="nav-item">
+                            <a class="nav-link @if($menu === 'menus') active @endif"  href="{{ route('menu_index') }}">
+                                <i class="fa fa-bars text-primary" aria-hidden="true"></i>
+
+                                Menus
+                                {{-- null not acces to the system --}}
+                            </a>
+                        </li>
+                        @endif
 
 
 
-                </li>
 
-            </ul>
+                        </li>
+
+                    </ul>
+            @endif
+
 
 
 
