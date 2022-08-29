@@ -26,7 +26,7 @@
 
               <!-- Light table -->
               <div class="table-responsive">
-                <table class="table align-items-center table-flush" id="table_menu_all">
+                <table class="table align-items-center table-striped table-flush table-bordered dt-responsive" id="table_menu_all">
                   <thead class="thead-light">
                     <tr>
                       <th scope="col" class="sort" data-sort="name">ID</th>
@@ -109,13 +109,26 @@
                     "loadingRecords": "Cargando...",
                     "search":         "Buscar:",
                     "emptyTable":     "No hay información disponible en la tabla.",
-                    "paginate": {
-                        "first":      "First",
-                        "last":       "Last",
-                        "next":       "Next",
-                        "previous":   "Previous"
-                     },
-                }
+                    "oPaginate": {
+                                "sFirst":    "Primero",
+                                "sLast":     "Último",
+                                "sNext":     "Siguiente",
+                                "sPrevious": "Anterior"
+                            },
+                            "oAria": {
+                                "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
+                                "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                            },
+                            "buttons": {
+                                "copy": "Copiar",
+                                "colvis": "Personalizar",
+                                "excel":"Excel",
+                                "pdf":"PDF",
+                                "print":"PDF"
+
+                            }
+                            },
+
             } );
         } );
         </script>

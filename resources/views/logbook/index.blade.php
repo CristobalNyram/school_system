@@ -13,7 +13,7 @@
               </div>
               <!-- Light table -->
               <div class="table-responsive">
-                <table class="table align-items-center table-flush" id="table_logbook_all">
+                <table class="table align-items-center table-striped table-flush table-bordered dt-responsive"  id="table_logbook_all">
                   <thead class="thead-light">
                     <tr>
                      <th scope="col" class="sort" data-sort="name">Folio</th>

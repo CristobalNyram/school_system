@@ -24,7 +24,7 @@
 
               </script>
               <div class="table-responsive">
-                <table class="table align-items-center table-flush" id="table_users_all">
+                <table class="table align-items-center table-striped table-flush table-bordered dt-responsive"  id="table_users_all">
                   <thead class="thead-light">
                     <tr>
                       <th scope="col" class="sort" data-sort="name">ID</th>
