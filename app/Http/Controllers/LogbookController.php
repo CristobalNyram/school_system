@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Logbook;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 class LogbookController extends Controller
 {
@@ -19,6 +20,10 @@ class LogbookController extends Controller
             'title_page'=>'Bitácora'
 
         ];
+
+        Logbook::activity_done(Auth::id(),'Se accedió al módulo de bitácora.','Consulta','0','Bitácora');
+
+
          return view('logbook.index')->with($variables);
     }
 
