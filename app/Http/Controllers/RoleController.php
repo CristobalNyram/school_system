@@ -168,6 +168,7 @@ class RoleController extends Controller
             'menus'=>$menus_and_roles,
 
 
+
         ];
 
 
@@ -176,7 +177,41 @@ class RoleController extends Controller
 
     public function assign_permission(Request $request)
     {
-        var_dump($request);
+
+         Relrolmenu::where('role_id',$request->role_id)->update(['status'=>-2]);
+
+        $requestData =$request->all();
+
+        foreach ($requestData as $key => $value) {
+            if($key=='_token' || $key=='role_id')
+            {
+
+            }
+            else
+            {
+                $relrolmenu=Relrolmenu::find($key);
+                $relrolmenu->status=2;
+
+                if(!$relrolmenu->save())
+                {
+                    return  back()->withErrors('No se ha actualizado correctamente los permisos...');
+                }
+
+            }
+
+        }
+
+        return back()->with('success','Se ha actualizado los permisos exitosamente...');
+
+
+
+
+
+
+
+
+
+
 
     }
 }

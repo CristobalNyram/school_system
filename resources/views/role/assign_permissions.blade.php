@@ -22,6 +22,22 @@
                         <form class="m-5"  action="{{route('role_assign_permission')}}"  method="POST">
                             @csrf
 
+                            @if(session('success'))
+                            <div class="alert alert-success" role="alert">
+                                <strong>{{ session('success') }}</strong>
+                            </div>
+                            @endif
+                            @if ($errors->any())
+
+                                        @foreach ($errors->all() as $error)
+                                        <div class="alert alert-danger" role="alert">
+                                            <strong> {{ $error }}</strong>
+                                        </div>
+
+                                        @endforeach
+                            @endif
+                            <input type="hidden" value="{{ $current_role_name->id }}" name="role_id" id="role_id">
+
                             <div class="row">
                                 @foreach ($menus as  $menu)
 
@@ -32,8 +48,8 @@
                                                                     <ul class="list-group">
                                                                         <li class="list-group-item">
                                                                             <div class="custom-control custom-checkbox mb-3">
-                                                                                        <input class="custom-control-input  @if ($menu->status ==2) parent_check @endif " @if ($menu->status ==2) checked @endif
-                                                                                        id="{{ $menu->id }}" type="checkbox">
+                                                                                        <input class="custom-control-input  @if ($menu->status ==2) parent_check @endif " name="{{ $menu->id }}" @if ($menu->status ==2) checked @endif
+                                                                                        id="{{ $menu->id }}"  type="checkbox">
                                                                                         <label class="custom-control-label " for="{{ $menu->id }}"> {{ $menu->menus->title }}</label>
                                                                                 </div>
 
@@ -42,12 +58,13 @@
                                                                                                 <li class="list-group-item ml-5">
                                                                                                     <div class="custom-control custom-checkbox mb-3">
                                                                                                                 <input class="custom-control-input " @if ($menus_child->status ==2) checked @endif
-                                                                                                                id="{{ $menus_child->id }}" type="checkbox">
+                                                                                                                id="{{ $menus_child->id }}" type="checkbox" name="{{ $menus_child->id }}">
                                                                                                                 <label class="custom-control-label " for="{{ $menus_child->id }}"> {{ $menus_child->menus->title }}</label>
                                                                                                     </div>
                                                                                                 </li>
                                                                                         @endif
                                                                                     @endforeach
+
 
                                                                         </li>
 
