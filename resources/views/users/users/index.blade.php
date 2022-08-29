@@ -24,7 +24,7 @@
 
               </script>
               <div class="table-responsive">
-                <table class="table align-items-center table-flush" id="myTable">
+                <table class="table align-items-center table-flush" id="table_users_all">
                   <thead class="thead-light">
                     <tr>
                       <th scope="col" class="sort" data-sort="name">ID</th>
@@ -111,7 +111,7 @@
 <script>
 
 $(document).ready(function() {
-    $('#myTable').DataTable( {
+    $('#table_users_all').DataTable( {
         "language": {
             "lengthMenu": "Mostrar _MENU_ registros por página",
             "zeroRecords": "No encontramos nada.",
