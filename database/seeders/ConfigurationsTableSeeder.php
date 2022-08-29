@@ -29,9 +29,9 @@ class ConfigurationsTableSeeder extends Seeder
             'created_at' => now(),
         ]);
         DB::table('configurations')->insert([
-            'title' => 'Nombre de la escuela',
+            'title' => 'Nombre de la intitución',
             'type' => 'Info',
-            'description' => 'Nombre de la escuela',
+            'description' => 'Nombre de la intitición',
             'content' => 'Juan De Dios',
             'created_at' => now(),
         ]);
