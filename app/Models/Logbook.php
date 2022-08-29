@@ -9,6 +9,16 @@ class Logbook extends Model
 {
     use HasFactory;
 
+
+    public function users()
+    {
+        return $this->belongsTo(User::class,'user_id');
+    }
+    public function menus()
+    {
+        return $this->belongsTo(Menu::class,'menu_id');
+    }
+
     public function activity_done($user_id,$description,$kind_acction,$table_id,$table_name)
     {
 
@@ -17,7 +27,7 @@ class Logbook extends Model
         $log->table_id=$table_id;
         $log->table_name=$table_name;
         $log->user_id=$user_id;
-        // $log->kind_acction=$kind_acction;
+        // $log->kind_action_id=$kind_acction;
         $log->save();
 
 

@@ -13,7 +13,7 @@ class CreateKindActionTable extends Migration
      */
     public function up()
     {
-        Schema::create('kind_action', function (Blueprint $table) {
+        Schema::create('kind_actions', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->timestamps();

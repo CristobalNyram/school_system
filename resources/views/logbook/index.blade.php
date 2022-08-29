@@ -16,15 +16,65 @@
                 <table class="table align-items-center table-flush">
                   <thead class="thead-light">
                     <tr>
+                     <th scope="col" class="sort" data-sort="name">Folio</th>
                       <th scope="col" class="sort" data-sort="name">Usuario</th>
                       <th scope="col" class="sort" data-sort="budget">Descripción</th>
                       <th scope="col" class="sort" data-sort="status">Módulo</th>
-
                       <th scope="col" class="sort" data-sort="status">Fecha</th>
                     </tr>
                   </thead>
                   <tbody class="list">
+                    @foreach ($logs as $log )
+                    <tr>
+                        <th scope="row">
+                          <div class="media align-items-center">
 
+                            <div class="media-body">
+                              <span class="name mb-0 text-sm">  {{ $log->id }}</span>
+                            </div>
+                          </div>
+                        </th>
+
+
+                        <th scope="row">
+                            <div class="media align-items-center">
+
+                              <div class="media-body">
+                                <span class="name mb-0 text-sm">  {{ $log->users->name }}  {{ $log->users->frist_surname }} {{ $log->users->second_surname }}</span>
+                              </div>
+                            </div>
+                        </th>
+                        <th scope="row">
+                            <div class="media align-items-center">
+
+                              <div class="media-body">
+                                <span class="name mb-0 text-sm">  {{ $log->description }}</span>
+                              </div>
+                            </div>
+                        </th>
+
+                        <th scope="row">
+                            <div class="media align-items-center">
+
+                              <div class="media-body">
+                                <span class="name mb-0 text-sm">  {{ $log->module_id }}</span>
+                              </div>
+                            </div>
+                        </th>
+                        <th scope="row">
+                            <div class="media align-items-center">
+
+                              <div class="media-body">
+                                <span class="name mb-0 text-sm">  {{ $log->created_at }}</span>
+                              </div>
+                            </div>
+                        </th>
+
+
+
+
+                    </tr>
+                    @endforeach
                   </tbody>
                 </table>
               </div>

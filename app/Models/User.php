@@ -42,4 +42,9 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Role::class,'id');
     }
+    public function rellogbook()
+    {
+        return $this->hasMany(Logbook::class,'user_id');
+    }
+
 }

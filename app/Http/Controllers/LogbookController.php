@@ -15,13 +15,16 @@ class LogbookController extends Controller
      */
     public function index()
     {
+
+        $logbook = Logbook::all();
         $variables=[
             'menu'=>'logbook',
-            'title_page'=>'Bitácora'
+            'title_page'=>'Bitácora',
+            'logs'=>$logbook,
 
         ];
 
-        Logbook::activity_done(Auth::id(),'Se accedió al módulo de bitácora.','Consulta','0','Bitácora');
+        Logbook::activity_done(Auth::id(),'Accedió al módulo de bitácora.','Consulta','0','Bitácora');
 
 
          return view('logbook.index')->with($variables);
