@@ -3,6 +3,7 @@
 @section('content')
     @include('users.users.headers_cards')
 
+
     <div class="container-fluid mt--6">
         <div class="row d-flex mb-3 mr-5 justify-content-end">
 
@@ -127,6 +128,6 @@
 @endsection
 
 @push('js')
-    <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.min.js"></script>
-    <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.extension.js"></script>
+    {{-- <script src="{{ asset() }}/vendor/datatables.net/js/jquery.dataTables.min.js"></script> --}}
+
 @endpush

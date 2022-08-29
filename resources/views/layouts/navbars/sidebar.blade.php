@@ -1,15 +1,18 @@
-{{--  scripts start --}}
-<script  src='/assets/libraries/Jquery/jquery-3.6.0.min.js'></script>
-<script  src='/assets/js/generalfunctions.js'></script>
+<script src="/assets/vendor/jquery/dist/jquery.min.js"></script>
+<script src="/assets/vendor/jquery/dist/jquery.slim.min.js"></script>
 
-<script  src='/assets/libraries/Select2/select2.min.js'></script>
-<link rel="stylesheet" href="/assets/libraries/Select2/select2.min.css">
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js" defer></script>
+<script src="/assets/vendor/select2/dist/js/select2.min.js"></script>
+<link rel="stylesheet" href="/assets/vendor/select2/dist/css/select2.min.css">
 
 
-<script  src='/assets/libraries/Sweetalert/sweetalert2@11.js'></script>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/assets/vendor/sweetalert2/dist/sweetalert2.all.min.js"></script>
+<link rel="stylesheet" href="/assets/vendor/sweetalert2/dist/sweetalert2.min.css">
+
+
+<script src="/assets/vendor/datatables.net/js/jquery.dataTables.min.js"></script>
+
+<link rel="stylesheet" href="/assets/vendor/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
+<script src="/assets/vendor/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
 
 
 {{--  scripts end  --}}
