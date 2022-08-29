@@ -21,4 +21,5 @@ class DatabaseSeeder extends Seeder
         $this->call([RelrolmenuTableSeeder::class]);
         $this->call([UsersTableSeeder::class]);
     }
+
 }
