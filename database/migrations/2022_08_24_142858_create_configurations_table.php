@@ -15,6 +15,7 @@ class CreateConfigurationsTable extends Migration
     {
         Schema::create('configurations', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
             $table->string('type');
             $table->string('description')->nullable();
             $table->string('content')->nullable();

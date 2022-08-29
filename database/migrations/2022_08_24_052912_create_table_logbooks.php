@@ -19,11 +19,11 @@ class CreateTableLogbooks extends Migration
             $table->bigInteger('table_id');
             $table->unsignedBigInteger('menu_id');//referens in what mnodule is
             $table->string('status',3)->default();
-            $table->unsignedBigInteger('kind_action_id');
+            $table->unsignedBigInteger('actions_id');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('menu_id')->references('id')->on('menus');
-
+            $table->foreign('actions_id')->references('id')->on('actions');
             $table->timestamps();
         });
     }

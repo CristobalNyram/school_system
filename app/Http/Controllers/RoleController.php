@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+// use App\Helpers\InfoSystem;
+
 
 use App\Models\Relrolmenu;
 use Illuminate\Support\Facades\Auth;
@@ -12,6 +14,11 @@ class RoleController extends Controller
 {
     public function index()
     {
+        // return InfoSystem::nameSystem();
+
+        // die();
+
+
         if(Role::checkAccesToThisFunctionality(Auth::user()->role_id,2)==null)
         {
             $variables=[

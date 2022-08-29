@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateKindActionTable extends Migration
+class CreateActionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateKindActionTable extends Migration
      */
     public function up()
     {
-        Schema::create('kind_actions', function (Blueprint $table) {
+        Schema::create('actions', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name',100);
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class CreateKindActionTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kind_action');
+        Schema::dropIfExists('actions');
     }
 }

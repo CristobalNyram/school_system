@@ -21,7 +21,7 @@
             <div class="card">
               <!-- Card header -->
               <div class="card-header border-0">
-                <h3 class="mb-0">Roles</h3>
+                <h3 class="mb-0">Roles </h3>
               </div>
               <!-- Light table -->
               <div class="table-responsive">

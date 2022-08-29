@@ -1,9 +1,10 @@
 
 <?php
 
-namespace App\Helpers;
+if (! function_exists('get_name_system')) {
 
-
-class InfoSystem {
-
+    function get_name_system()
+    {
+        return auth()->user();
+    }
 }
