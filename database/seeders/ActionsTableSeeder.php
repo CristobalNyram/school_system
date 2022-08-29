@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
-class Kind_actionsTableSeeder extends Seeder
+class ActionsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.

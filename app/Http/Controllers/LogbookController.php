@@ -24,7 +24,14 @@ class LogbookController extends Controller
 
         ];
 
-        Logbook::activity_done(Auth::id(),'Accedió al módulo de bitácora.','Consulta','0','Bitácora');
+        Logbook::activity_done(
+           'Accedió al módulo de bitácora.',
+            0,
+            5,
+            Auth::id(),
+            1
+           )
+            ;
 
 
          return view('logbook.index')->with($variables);

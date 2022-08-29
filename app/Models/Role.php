@@ -65,6 +65,10 @@ class Role extends Model
     {
         return $this->hasMany(Relrolmenu::class,'id');
     }
+    public function relroleuser()
+    {
+        return $this->hasMany(User::class,'role_id');
+    }
 
 
 

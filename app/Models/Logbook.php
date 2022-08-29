@@ -19,15 +19,19 @@ class Logbook extends Model
         return $this->belongsTo(Menu::class,'menu_id');
     }
 
-    public function activity_done($user_id,$description,$kind_acction,$table_id,$table_name)
+    public function activity_done($description,
+    $table_id,
+    $menu_id,
+    $user_id,
+    $kind_acction)
     {
 
         $log=new Logbook();
         $log->description=$description;
         $log->table_id=$table_id;
-        $log->table_name=$table_name;
+        $log->menu_id=$menu_id;
         $log->user_id=$user_id;
-        // $log->kind_action_id=$kind_acction;
+        $log->actions_id=$kind_acction;
         $log->save();
 
 
