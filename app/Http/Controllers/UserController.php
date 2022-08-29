@@ -104,6 +104,37 @@ class UserController extends Controller
 
 
     }
+
+    public function update($user_id)
+    {
+        if(Role::checkAccesToThisFunctionality(Auth::user()->role_id,4)==null)
+        {
+            $variables=[
+                'menu'=>'',
+                'title_page'=>'Acceso denegado',
+
+
+            ];
+            return view('errors.notaccess')->with($variables);
+
+        }
+        $current_user=User::findOrFail($user_id);
+        $rol_available=Role::all()->where('status','=','2');
+
+        $variables=[
+            'menu'=>'users_all',
+            'title_page'=>'Usuarios',
+            'rol_available'=>$rol_available,
+            'current_user'=>$current_user,
+
+
+
+        ];
+
+
+        return view('users.users.update')->with($variables);
+
+    }
 }
 
 
