@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Course;
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class CourseController extends Controller
 {
@@ -13,8 +14,22 @@ class CourseController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('course.index');
+    {    
+         $courses_active=Course::all()->where('status','=','2');
+        $courses_active_number=Course::all()->where('status','=','2')->count();
+
+
+
+        $variables=[
+            'menu'=>'users_all',
+            'title_page'=>'Cursos',
+            'courses_actives'=>$courses_active,
+            'courses_active_number'=> $courses_active_number,
+
+
+
+        ];
+        return view('course.index')->with($variables);
     }
 
     /**
