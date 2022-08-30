@@ -52,6 +52,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/menu',[MenuController::class,"index"])->name('menu_index');
         Route::get('/menu/create',[MenuController::class,"create"])->name('menu_create');
         Route::post('/menu/store',[MenuController::class,"store"])->name('menu_store');
+        
 
         // menu end----------------------------------------
 
@@ -66,6 +67,9 @@ Route::group(['middleware' => 'auth'], function () {
 
         // courses start-----------------------------------
         Route::get('/course',[CourseController::class,"index"])->name('course_index');
+        Route::get('/course/create',[CourseController::class,"create"])->name('course_create');
+        Route::post('/course/store',[CourseController::class,"store"])->name('course_store');
+        Route::get('/course/update/{course_id}',[CourseController::class,"update"])->name('course_update');
 
         //courses end-----------------------
 
