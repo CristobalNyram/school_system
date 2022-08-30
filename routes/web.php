@@ -5,7 +5,7 @@ use App\Http\Controllers\LogbookController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
-
+use App\Http\Controllers\CourseController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -63,6 +63,11 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/role/assign_permission/',[RoleController::class,"assign_permission"])->name('role_assign_permission');
 
         // role end---------------------------------------------
+
+        // courses start-----------------------------------
+        Route::get('/course',[CourseController::class,"index"])->name('course_index');
+
+        //courses end-----------------------
 
 
 
