@@ -18,7 +18,7 @@
               </div>
 
 
-                        <form class="m-5"  action="{{route('user_store')}}"  method="POST">
+                        <form class="m-5"  action="{{route('course_edit')}}"  method="POST">
                             @csrf
                             @if(session('success'))
                             <div class="alert alert-success" role="alert">
@@ -35,18 +35,38 @@
                                         @endforeach
                            @endif
                             <div class="form-group">
-                            <label for="name">Nombre</label>
-                            <input type="text" class="form-control form-control-lg" id="name" name="name" value="{{    $current_course->title  }}" placeholder="Nombre de usuario"  max="50" required oninput="uppercaseLetters(event);">
+                            <input type="hidden" name="id" id="id" value="{{$current_course->id}}">
+                            <label for="title">Título</label>
+                            <input type="text" class="form-control form-control-lg" id="title" name="title" value="{{    $current_course->title  }}" placeholder="Título del curso"  max="50" required oninput="uppercaseLetters(event);">
                             </div>
 
                             <div class="form-group">
-                                <label for="first_surname">Descripción</label>
-                                <input type="text" class="form-control form-control-lg" id="first_surname" name="first_surname" value="{{ $current_course->description }}" placeholder="Apellido paterno de usuario"  max="50" required  oninput="uppercaseLetters(event);">
+                                <label for="description">Descripción</label>
+                                <input type="text" class="form-control form-control-lg" id="description" name="description" value="{{ $current_course->description }}" placeholder="Apellido paterno de usuario"  max="50" required  oninput="uppercaseLetters(event);">
                             </div>
                             <div class="form-group">
-                                <label for="second_surname">fecha del curso</label>
-                                <input type="text" class="form-control form-control-lg" id="second_surname" name="second_surname" value="{{ $current_course->date }}" placeholder="Apellido materno de usuario"  max="50"  required oninput="uppercaseLetters(event);">
+                                <label for="date">fecha del curso</label>
+                                <input type="text" class="form-control form-control-lg" id="date" name="date" value="{{ $current_course->date }}" placeholder="Fecha del curso"  max="50"  required oninput="uppercaseLetters(event);">
                             </div>
+
+                            <div class="form-group">
+                                <label for="photo">Foto del curso</label>
+                                <input type="text" class="form-control form-control-lg" id="url_img" name="url_img" value="{{ $current_course->url_img }}" placeholder="Foto del curso"  max="50"  required oninput="uppercaseLetters(event);">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="speaker_id">ID del Ponente</label>
+
+                                <select class="form-control form-control-lg  " data-toggle="select2"  name="speaker_id" id="speaker_id" >
+                                    <option value="-2" selected>Seleccionar</option>
+                                    @foreach ($users_speakers as $user_speaker )
+                                    <option value="{{ $user_speaker->id }}" >{{ $user_speaker->name }}</option>
+
+                                    @endforeach
+                                  </select>
+                            </div>
+
+
 
 
 
@@ -66,7 +86,7 @@
 
                                 </div>
                                 <div class="form-group row d-flex justify-content-center">
-                                    <button type="submit" class="btn btn-default">Agregar</button>
+                                    <button type="submit" class="btn btn-default">Actualizar</button>
 
                                 </div>
                             </div>

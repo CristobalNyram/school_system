@@ -110,9 +110,24 @@ class CourseController extends Controller
      * @param  \App\Models\Course  $course
      * @return \Illuminate\Http\Response
      */
-    public function edit(Course $course)
+    public function edit(Request $request)
     {
-        //
+          $course = Course::findOrFail($request->id);
+         $course->title=$request->title;
+         $course->description = $request->description;
+         $course->date = $request->date;
+         $course->url_img = $request->url_img;
+         $course->speaker_id = $request->speaker_id;
+
+         if ($course->save()) {
+            return back()->with('success','Se ha actualizado el curso exitosamente...');
+
+        }
+        else
+        {
+            return  back()->withErrors('No se ha actualizado el curso...');
+
+        }
     }
 
     /**
@@ -139,12 +154,14 @@ class CourseController extends Controller
 
         $current_course=Course::findOrFail($course_id);
         $rol_available=Role::all()->where('status','=','2');
+        $users_speakers=User::all()->where('status', '=', '2');
 
         $variables=[
             'menu'=>'users_all',
             'title_page'=>'Cursos',
             'rol_available'=>$rol_available,
             'current_course'=>$current_course,
+            'users_speakers'=>$users_speakers,
 
 
 
