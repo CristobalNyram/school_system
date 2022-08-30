@@ -6,6 +6,8 @@ use App\Http\Controllers\MenuController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\SouvenirController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -68,6 +70,12 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/course',[CourseController::class,"index"])->name('course_index');
 
         //courses end-----------------------
+
+        // souvenirs start---------------------
+        Route::get('/souvenir',[SouvenirController::class,"index"])->name('souvenir_index');
+
+
+        // souvenirs end-----------------------
 
 
 
