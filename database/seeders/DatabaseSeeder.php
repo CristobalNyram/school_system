@@ -20,6 +20,8 @@ class DatabaseSeeder extends Seeder
         $this->call([RolesTableSeeder::class]);
         $this->call([RelrolmenuTableSeeder::class]);
         $this->call([UsersTableSeeder::class]);
+        $this->call([CoursesTableSeeder::class]);
+        
     }
 
 }

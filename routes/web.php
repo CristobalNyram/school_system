@@ -5,7 +5,7 @@ use App\Http\Controllers\LogbookController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
-
+use App\Http\Controllers\CourseController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -52,6 +52,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/menu',[MenuController::class,"index"])->name('menu_index');
         Route::get('/menu/create',[MenuController::class,"create"])->name('menu_create');
         Route::post('/menu/store',[MenuController::class,"store"])->name('menu_store');
+        
 
         // menu end----------------------------------------
 
@@ -63,6 +64,14 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/role/assign_permission/',[RoleController::class,"assign_permission"])->name('role_assign_permission');
 
         // role end---------------------------------------------
+
+        // courses start-----------------------------------
+        Route::get('/course',[CourseController::class,"index"])->name('course_index');
+        Route::get('/course/create',[CourseController::class,"create"])->name('course_create');
+        Route::post('/course/store',[CourseController::class,"store"])->name('course_store');
+        Route::get('/course/update/{course_id}',[CourseController::class,"update"])->name('course_update');
+
+        //courses end-----------------------
 
 
 
