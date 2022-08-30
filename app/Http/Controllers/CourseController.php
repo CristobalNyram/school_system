@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Course;
 use Illuminate\Http\Request;
+use App\Models\Role;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 
 class CourseController extends Controller
@@ -39,7 +42,27 @@ class CourseController extends Controller
      */
     public function create()
     {
-        //
+        if(Role::checkAccesToThisFunctionality(Auth::user()->role_id,4)==null)
+        {
+            $variables=[
+                'menu'=>'',
+                'title_page'=>'Acceso denegado',
+
+
+            ];
+            return view('errors.notaccess')->with($variables);
+
+        }
+        $rol_available=Role::all()->where('status','=','2');
+        $variables=[
+            'menu'=>'users_all',
+            'title_page'=>'Cursos',
+            'rol_available'=>$rol_available,
+
+
+        ];
+
+        return view('course.create')->with($variables);
     }
 
     /**
@@ -50,7 +73,24 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $course =new Course();
+       $course->title = $request->title;
+       $course->description = $request->description;
+       $course->date = $request->date;
+       $course->url_img = $request->url_img;
+       $course->speaker_id = $request->speaker_id;
+       
+
+        if ($course->save()) {
+            return back()->with('success','Se ha registrado el curso exitosamente...');
+
+        }
+        else
+        {
+            return  back()->withErrors('No se ha registrado el usuario...');
+
+        }
+
     }
 
     /**
@@ -82,9 +122,34 @@ class CourseController extends Controller
      * @param  \App\Models\Course  $course
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Course $course)
+    public function update($course_id)
     {
-        //
+
+        if(Role::checkAccesToThisFunctionality(Auth::user()->role_id,4)==null)
+        {
+            $variables=[
+                'menu'=>'',
+                'title_page'=>'Acceso denegado',
+
+
+            ];
+            return view('errors.notaccess')->with($variables);
+
+        }
+
+        $current_user=User::findOrFail($course_id);
+        $rol_available=Role::all()->where('status','=','2');
+
+        $variables=[
+            'menu'=>'users_all',
+            'title_page'=>'Usuarios',
+            'rol_available'=>$rol_available,
+            'current_user'=>$current_user,
+
+
+
+        ];
+        return view('course.update')->with($variables);
     }
 
     /**

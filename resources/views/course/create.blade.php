@@ -41,26 +41,32 @@
 
                             <div class="form-group">
                                 <label for="description">Descripción</label>
-                                <input type="text" class="form-control form-control-lg" id="description" name="description" value="{{ old('description') }}" placeholder="Descripción del  curso"  max="100" required  oninput="uppercaseLetters(event);">
+                                <input type="description" class="form-control form-control-lg" id="description" name="description" value="{{ old('description') }}" placeholder="Descripción"  max="50" required  oninput="uppercaseLetters(event);">
                             </div>
                             <div class="form-group">
-                                <label for="date">Fecha</label>
+                                <label for="date">date</label>
                                 <input type="text" class="form-control form-control-lg" id="date" name="date" value="{{ old('date') }}" placeholder="Fecha del curso"  max="50"  required oninput="uppercaseLetters(event);">
                             </div>
 
-
-
-
-
                             <div class="form-group">
-                                <label for="photo">Foto del curso</label>
-                                <input  type="text" class="form-control form-control-lg" id="url_img" name="url_img" value=" {{ old('url_img') }}" placeholder="imágen del curso." required maxlength="50">
+                                <label for="photo">Foto</label>
+                                <input type="text" class="form-control form-control-lg" id="url_img" name="url_img" value="{{ old('url_img') }}" placeholder="Foto del curso"  max="50"  required oninput="uppercaseLetters(event);">
                             </div>
-                          
+
                             <div class="form-group">
                                 <label for="speaker_id">ID del ponente</label>
-                                <input  type="text" class="form-control form-control-lg" id="speaker_id" name="speaker_id" value=" {{ old('url_img') }}" placeholder="imágen del curso." required maxlength="50">
+                                <input type="text" class="form-control form-control-lg" id="speaker_id" name="speaker_id" value="{{ old('speaker_id') }}" placeholder="id del ponente"  max="50"  required oninput="uppercaseLetters(event);">
                             </div>
+
+
+
+
+                            
+                     
+
+
+                        
+                        
 
 
 
