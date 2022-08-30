@@ -1,15 +1,38 @@
-{{--  scripts start --}}
-<script  src='/assets/libraries/Jquery/jquery-3.6.0.min.js'></script>
-<script  src='/assets/js/generalfunctions.js'></script>
+<script src="/assets/vendor/jquery/dist/jquery.min.js"></script>
+<script src="/assets/vendor/jquery/dist/jquery.slim.min.js"></script>
 
-<script  src='/assets/libraries/Select2/select2.min.js'></script>
-<link rel="stylesheet" href="/assets/libraries/Select2/select2.min.css">
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js" defer></script>
+<script src="/assets/vendor/select2/dist/js/select2.min.js"></script>
+<link rel="stylesheet" href="/assets/vendor/select2/dist/css/select2.min.css">
 
 
-<script  src='/assets/libraries/Sweetalert/sweetalert2@11.js'></script>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/assets/vendor/sweetalert2/dist/sweetalert2.all.min.js"></script>
+<link rel="stylesheet" href="/assets/vendor/sweetalert2/dist/sweetalert2.min.css">
+
+
+
+<script src="/assets/vendor/datatables.net/js/jquery.dataTables.min.js" defer></script>
+
+<link rel="stylesheet" href="/assets/vendor/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
+<script src="/assets/vendor/datatables.net-bs4/js/dataTables.bootstrap4.min.js" defer></script>
+
+<script src="/assets/vendor/datatables.net-buttons/js/dataTables.buttons.min.js" defer></script>
+
+<link rel="stylesheet" href="/assets/vendor/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css">
+<script src="/assets/vendor/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js" defer></script>
+
+
+<link rel="stylesheet" href="/assets/vendor/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css">
+{{-- <script src="/assets/vendor/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js" defer></script> --}}
+
+
+<script src="/assets/vendor/datatables.net-select/js/dataTables.select.min.js" defer></script>
+
+
+<link rel="stylesheet" href="/assets/vendor/datatables.net-select-bs4/css/select.bootstrap4.min.css">
+
+<script src="/assets/vendor/datatables.net-select-bs4/js/select.bootstrap4.min.js" defer></script>
+
+
 
 
 {{--  scripts end  --}}
@@ -174,42 +197,58 @@
             </ul>
             <!-- Navigation -->
             <!-- Divider -->
-            <hr class="my-3">
-            <!-- Heading -->
-            <h6 class="navbar-heading text-muted">Complementos</h6>
-            <!-- Navigation -->
-            <ul class="navbar-nav">
+            @if ( check_acces_to_this_permission(Auth::user()->role_id,1))
+                    <hr class="my-3">
+                    <!-- Heading -->
+
+                    <h6 class="navbar-heading text-muted">Complementos</h6>
+                    <!-- Navigation -->
+                    <ul class="navbar-nav">
 
 
-                <li class="nav-item">
-                    <a class="nav-link @if($menu === 'logbook') active @endif " href="{{ route('logbook_index') }}">
-                        <i class="ni ni-books text-primary"></i>Bitácora
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link  @if($menu === 'role') active @endif " href="{{ route('role_index') }}">
-                        <i class="ni ni-single-02 text-primary"></i>Roles
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link @if($menu === 'users_all') active @endif"  href="{{ route('users_all_index') }}">
-                        <i class="fa fa-users text-primary" aria-hidden="true"></i>
-                        Usuarios
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link @if($menu === 'menus') active @endif"  href="{{ route('menu_index') }}">
-                        <i class="fa fa-bars text-primary" aria-hidden="true"></i>
+                        @if ( check_acces_to_this_permission(Auth::user()->role_id,6))
+                        <li class="nav-item">
+                            <a class="nav-link @if($menu === 'logbook') active @endif " href="{{ route('logbook_index') }}">
+                                <i class="ni ni-books text-primary"></i>Bitácora
+                            </a>
+                        </li>
+                        @endif
+                        @if ( check_acces_to_this_permission(Auth::user()->role_id,2))
 
-                        Menus
-                    </a>
-                </li>
+                        <li class="nav-item">
+                            <a class="nav-link  @if($menu === 'role') active @endif " href="{{ route('role_index') }}">
+                                <i class="ni ni-single-02 text-primary"></i>Roles
+                            </a>
+                        </li>
+                        @endif
+                        @if ( check_acces_to_this_permission(Auth::user()->role_id,4))
+                        <li class="nav-item">
+                            <a class="nav-link @if($menu === 'users_all') active @endif"  href="{{ route('users_all_index') }}">
+                                <i class="fa fa-users text-primary" aria-hidden="true"></i>
+                                Usuarios
+                            </a>
+                        </li>
+                        @endif
+
+                        @if ( check_acces_to_this_permission(Auth::user()->role_id,3))
+                        <li class="nav-item">
+                            <a class="nav-link @if($menu === 'menus') active @endif"  href="{{ route('menu_index') }}">
+                                <i class="fa fa-bars text-primary" aria-hidden="true"></i>
+
+                                Menus
+                                {{-- null not acces to the system --}}
+                            </a>
+                        </li>
+                        @endif
 
 
 
-                </li>
 
-            </ul>
+                        </li>
+
+                    </ul>
+            @endif
+
 
 
 
