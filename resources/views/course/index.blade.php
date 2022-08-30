@@ -7,7 +7,7 @@
     <div class="container-fluid mt--6">
         <div class="row d-flex mb-3 mr-5 justify-content-end">
 
-            <a href="{{ route('user_create') }}" type="button" class="btn btn-info">Agregar</a>
+            <a href="{{ route('course_create') }}" type="button" class="btn btn-info">Agregar</a>
 
 
       </div>
@@ -81,8 +81,7 @@
                                 <i class="fas fa-ellipsis-v"></i>
                               </a>
                               <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                
-                                <a class="dropdown-item" href="#">Actualizar contraseña</a>
+                              <a class="dropdown-item"  href="{{ route('course_update',$course->id)}}" >Actualizar información</a>
                                 <a class="dropdown-item text-danger"  data-toggle="modal" data-target="#modal-notification" href="#" >Borrar</a>
                               </div>
                             </div>
