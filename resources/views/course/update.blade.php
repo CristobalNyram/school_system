@@ -18,7 +18,7 @@
               </div>
 
 
-                        <form class="m-5"  action="{{route('user_store')}}"  method="POST">
+                        <form class="m-5"  action="{{route('course_store')}}"  method="POST">
                             @csrf
                             @if(session('success'))
                             <div class="alert alert-success" role="alert">
