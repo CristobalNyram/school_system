@@ -6,6 +6,8 @@ use App\Http\Controllers\MenuController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\SouvenirController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -66,8 +68,18 @@ Route::group(['middleware' => 'auth'], function () {
 
         // courses start-----------------------------------
         Route::get('/course',[CourseController::class,"index"])->name('course_index');
+        Route::get('/course/create',[CourseController::class,"create"])->name('course_create');
+        Route::post('/course/store',[CourseController::class,"store"])->name('course_store');
+        Route::get('/course/update/{course_id}',[CourseController::class,"update"])->name('course_update');
+        Route::post('/course/edit',[CourseController::class,"edit"])->name('course_edit');
 
         //courses end-----------------------
+
+        // souvenirs start---------------------
+        Route::get('/souvenir',[SouvenirController::class,"index"])->name('souvenir_index');
+
+
+        // souvenirs end-----------------------
 
 
 
