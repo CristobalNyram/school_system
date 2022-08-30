@@ -168,6 +168,18 @@
                         <i class="ni ni-books text-primary"></i>Anuncios
                     </a>
                 </li>
+                @if ( check_acces_to_this_permission(Auth::user()->role_id,3))
+                        <li class="nav-item">
+                            <a class="nav-link @if($menu === 'menus') active @endif"  href="{{ route('course_index') }}">
+                                <i class="fa fa-bars text-primary" aria-hidden="true"></i>
+
+                                Cursos
+                                {{-- null not acces to the system --}}
+                            </a>
+                        </li>
+                        @endif
+
+
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('home') }}">
                         <i class="ni ni-single-02 text-primary"></i>Talleres
