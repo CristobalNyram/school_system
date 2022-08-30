@@ -137,14 +137,14 @@ class CourseController extends Controller
 
         }
 
-        $current_user=User::findOrFail($course_id);
+        $current_course=Course::findOrFail($course_id);
         $rol_available=Role::all()->where('status','=','2');
 
         $variables=[
             'menu'=>'users_all',
-            'title_page'=>'Usuarios',
+            'title_page'=>'Cursos',
             'rol_available'=>$rol_available,
-            'current_user'=>$current_user,
+            'current_course'=>$current_course,
 
 
 
