@@ -142,7 +142,7 @@
 
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('logbook_index') }}">
-                        <i class="fas fa-dollar-signy text-primar"></i>Pagos
+                        <i class="ni ni-cart text-primary"></i>Pagos
                     </a>
                 </li>
                 <li class="nav-item">
@@ -185,7 +185,7 @@
                                 {{-- null not acces to the system --}}
                             </a>
                         </li>
-                        @endif
+                @endif
 
 
                 <li class="nav-item">
