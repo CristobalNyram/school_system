@@ -201,8 +201,15 @@ class CourseController extends Controller
      * @param  \App\Models\Course  $course
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Course $course)
+    public function delete($course_id)
     {
-        //
+        $course = Course::findOrFail($course_id);
+        $course->status=-2;
+
+        if($course->save()){
+            return back()->with('success','Se ha eliminado el curso exitosamente...');
+        } else {
+            return back()->with('success','No se ha eliminado el curso exitosamente...');
+        }
     }
 }
