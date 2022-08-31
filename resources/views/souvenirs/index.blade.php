@@ -7,7 +7,7 @@
 <div class="container-fluid mt--6">
   <div class="row d-flex mb-3 mr-5 justify-content-end">
 
-            <a href="{{ route('souvenir_create') }}" type="button" class="btn btn-info">Agregar</a>
+    <a href="{{ route('souvenir_create') }}" type="button" class="btn btn-info">Agregar</a>
 
 
   </div>
@@ -83,7 +83,10 @@
                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
 
                       <a class="dropdown-item" href="{{route('souvenir_update',$souvenir->id)}}">Actualizar información</a>
-                      <a class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-notification" href="#">Borrar</a>
+                      <form action="{{route('souvenir_delete',$souvenir->id)}}" method="POST">
+                        @csrf
+                      <input type="submit" class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-notification" value="Eliminar" onclick="return confirm('¿Desea eliminar el souvenir?')"></input>
+                      </form>
                     </div>
                   </div>
                 </td>
@@ -96,42 +99,42 @@
           </table>
         </div>
         <!-- Card footer -->
+      </div>
     </div>
+
+
+    @include('layouts.footers.auth')
   </div>
 
 
-  @include('layouts.footers.auth')
-</div>
 
 
-
-
-<script>
-  $(document).ready(function() {
-    $('#table_users_all').DataTable({
-      "language": {
-        "lengthMenu": "Mostrar _MENU_ registros por página",
-        "zeroRecords": "No encontramos nada.",
-        "info": "Mostrando página _PAGE_ de _PAGES_",
-        "infoEmpty": "No hay registros existentes.",
-        "infoFiltered": "(Fitrado de _MAX_  registros existentes)",
-        "loadingRecords": "Cargando...",
-        "search": "Buscar:",
-        "emptyTable": "No hay información disponible en la tabla.",
-        "paginate": {
-          "first": "First",
-          "last": "Last",
-          "next": "Next",
-          "previous": "Previous"
-        },
-      }
+  <script>
+    $(document).ready(function() {
+      $('#table_users_all').DataTable({
+        "language": {
+          "lengthMenu": "Mostrar _MENU_ registros por página",
+          "zeroRecords": "No encontramos nada.",
+          "info": "Mostrando página _PAGE_ de _PAGES_",
+          "infoEmpty": "No hay registros existentes.",
+          "infoFiltered": "(Fitrado de _MAX_  registros existentes)",
+          "loadingRecords": "Cargando...",
+          "search": "Buscar:",
+          "emptyTable": "No hay información disponible en la tabla.",
+          "paginate": {
+            "first": "First",
+            "last": "Last",
+            "next": "Next",
+            "previous": "Previous"
+          },
+        }
+      });
     });
-  });
-</script>
+  </script>
 
-@endsection
+  @endsection
 
-@push('js')
-{{-- <script src="{{ asset() }}/vendor/datatables.net/js/jquery.dataTables.min.js"></script> --}}
+  @push('js')
+  {{-- <script src="{{ asset() }}/vendor/datatables.net/js/jquery.dataTables.min.js"></script> --}}
 
-@endpush
+  @endpush

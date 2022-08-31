@@ -16,7 +16,9 @@ class SouvenirController extends Controller
   public function index()
   {
     if (Role::checkAccesToThisFunctionality(Auth::user()->role_id, 19) == null) {
-      $variables = [
+      $variables = [ 
+
+        
         'menu' => '',
         'title_page' => 'Acceso denegado',
 
@@ -140,4 +142,14 @@ class SouvenirController extends Controller
    * @param  \App\Models\Souvenir  $souvenir
    * @return \Illuminate\Http\Response
    */
+  public function delete($souvenir_id)
+  {
+    $souvenir = Souvenir::findOrFail($souvenir_id);
+    $souvenir->status=-2;
+    if($souvenir->save()){
+      return back()->with('success', 'Se ha borrado el souvenir exitosamente...');
+    }else{
+      return back()->with('success', 'No se ha borrado el souvenir exitosamente...');
+    }
+  }
 }
