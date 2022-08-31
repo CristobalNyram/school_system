@@ -83,6 +83,18 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/souvenir/edit', [SouvenirController::class, "edit"])->name('souvenir_edit');
         // souvenirs end-----------------------
 
+        // sponsor start ----------------------------------------------
+        //sponsor end---------------------------------------------------
+
+        ///speaker start-----------------------------------------------
+
+        //speaker end----------------------------------------------------
+
+
+        ///talk start------------------------------------------------------
+
+        //talk end--------------------------------------------------------
+
 
 
         Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
