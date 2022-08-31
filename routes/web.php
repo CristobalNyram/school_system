@@ -95,7 +95,10 @@ Route::group(['middleware' => 'auth'], function () {
 
         //talk end--------------------------------------------------------
 
+       //studen start-------------------------------------------------
 
+
+       //studen end---------------------------------------------------
 
         Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
         Route::get('profile', ['as' => 'profile.edit', 'uses' => 'App\Http\Controllers\ProfileController@edit']);
