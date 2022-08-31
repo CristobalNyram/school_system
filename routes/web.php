@@ -7,7 +7,12 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\SouvenirController;
+<<<<<<< HEAD
 use App\Http\Controllers\TalkController;
+=======
+use App\Http\Controllers\SponsorController;
+
+>>>>>>> c0eef02c17614ba430a06dbb59868a2a6fd748d0
 
 /*
 |--------------------------------------------------------------------------
@@ -83,9 +88,13 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/souvenir/store',[SouvenirController::class,"store"])->name('souvenir_store');
         Route::get('/souvenir/update/{souvenir_id}',[SouvenirController::class,"update"])->name('souvenir_update');
         Route::post('/souvenir/edit', [SouvenirController::class, "edit"])->name('souvenir_edit');
+        Route::post('/souvenir/delete/{souvenir_id}', [SouvenirController::class, "delete"])->name('souvenir_delete');
         // souvenirs end-----------------------
 
         // sponsor start ----------------------------------------------
+        Route::get('/sponsor',[SponsorController::class,"index"])->name('sponsor_index');
+        Route::get('/sponsor/create',[SponsorController::class,"create"])->name('sponsor_create');
+        Route::post('/sponsor/store',[SponsorController::class,"store"])->name('sponsor_store');
         //sponsor end---------------------------------------------------
 
         ///speaker start-----------------------------------------------
