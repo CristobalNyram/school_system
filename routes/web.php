@@ -74,6 +74,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/course/store',[CourseController::class,"store"])->name('course_store');
         Route::get('/course/update/{course_id}',[CourseController::class,"update"])->name('course_update');
         Route::post('/course/edit',[CourseController::class,"edit"])->name('course_edit');
+        Route::post('/course/delete/{course_id}',[CourseController::class,"delete"])->name('course_delete');
 
         //courses end-----------------------
 
@@ -83,6 +84,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/souvenir/store',[SouvenirController::class,"store"])->name('souvenir_store');
         Route::get('/souvenir/update/{souvenir_id}',[SouvenirController::class,"update"])->name('souvenir_update');
         Route::post('/souvenir/edit', [SouvenirController::class, "edit"])->name('souvenir_edit');
+        Route::post('/souvenir/delete/{souvenir_id}', [SouvenirController::class, "delete"])->name('souvenir_delete');
         // souvenirs end-----------------------
 
         // sponsor start ----------------------------------------------
