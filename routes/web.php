@@ -7,6 +7,8 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\SouvenirController;
+use App\Http\Controllers\SponsorController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -84,6 +86,9 @@ Route::group(['middleware' => 'auth'], function () {
         // souvenirs end-----------------------
 
         // sponsor start ----------------------------------------------
+        Route::get('/sponsor',[SponsorController::class,"index"])->name('sponsor_index');
+        Route::get('/sponsor/create',[SponsorController::class,"create"])->name('sponsor_create');
+        Route::post('/sponsor/store',[SponsorController::class,"store"])->name('sponsor_store');
         //sponsor end---------------------------------------------------
 
         ///speaker start-----------------------------------------------
