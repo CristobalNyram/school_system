@@ -20,7 +20,7 @@ class Role extends Model
 
         if( $role->save()===true)
         {
-          $list_of_menu = Menu::all();
+            $list_of_menu = Menu::all();
                 for ($i=0; $i < count($list_of_menu) ; $i++) {
 
                     $relrolmenu=new Relrolmenu();
@@ -31,7 +31,7 @@ class Role extends Model
 
                     if(!$relrolmenu->save())
                     {
-                         return false;
+                        return false;
 
 
                     }

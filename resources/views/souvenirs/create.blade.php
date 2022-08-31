@@ -8,17 +8,17 @@
 
 
         <div class="row">
-            <div class="col">
+          <div class="col">
             <div class="card">
-                <!-- Card header -->
+              <!-- Card header -->
 
-                <div class="card-header border-0">
-                <h2 class="mb-0">Agregar Curso</h2>
+              <div class="card-header border-0">
+                <h2 class="mb-0">Agregar Souvenir</h2>
 
-            </div>
+              </div>
 
 
-                        <form class="m-5"  action="{{route('course_store')}}"  method="POST">
+                        <form class="m-5"  action="{{route('souvenir_store')}}"  method="POST">
                             @csrf
                             @if(session('success'))
                             <div class="alert alert-success" role="alert">
@@ -33,42 +33,29 @@
                                         </div>
 
                                         @endforeach
-                            @endif
+                           @endif
                             <div class="form-group">
-                            <label for="title">Título</label>
-                            <input type="text" class="form-control form-control-lg" id="title" name="title" value="{{   old('title') }}" placeholder="Título del curso"  max="50" required oninput="uppercaseLetters(event);">
+                            <label for="name">Nombre</label>
+                            <input type="text" class="form-control form-control-lg" id="name" name="name" value="{{   old('title') }}" placeholder="Nombre del souvenir"  max="50" required oninput="uppercaseLetters(event);">
                             </div>
+                       
 
                             <div class="form-group">
                                 <label for="description">Descripción</label>
                                 <input type="description" class="form-control form-control-lg" id="description" name="description" value="{{ old('description') }}" placeholder="Descripción"  max="50" required  oninput="uppercaseLetters(event);">
                             </div>
-                            <div class="form-group">
-                                <label for="date">date</label>
-                                <input type="text" class="form-control form-control-lg" id="date" name="date" value="{{ old('date') }}" placeholder="Fecha del curso"  max="50"  required oninput="uppercaseLetters(event);">
-                            </div>
+
 
                             <div class="form-group">
-                                <label for="photo">Foto</label>
-                                <input type="text" class="form-control form-control-lg" id="url_img" name="url_img" value="{{ old('url_img') }}" placeholder="Foto del curso"  max="50"  required oninput="uppercaseLetters(event);">
+                                <label for="price">Precio</label>
+                                <input type="text" class="form-control form-control-lg" id="price" name="price" value="{{ old('price') }}" placeholder="Precio del souvenir"  max="50"  required oninput="uppercaseLetters(event);">
                             </div>
-
-                            <div class="form-group">
-                                <label for="speaker_id">ID del ponente</label>
-                                <input type="text" class="form-control form-control-lg" id="speaker_id" name="speaker_id" value="{{ old('speaker_id') }}" placeholder="id del ponente"  max="50"  required oninput="uppercaseLetters(event);">
-                            </div>
-
-
-
-
                             
-                    
 
-
-                        
-                        
-
-
+                            <div class="form-group">
+                                <label for="url_img">Imagen</label>
+                                <input type="text" class="form-control form-control-lg" id="url_img" name="url_img" value="{{ old('url_img') }}" placeholder="Foto del souvenir"  max="50"  required oninput="uppercaseLetters(event);">
+                            </div>
 
 
                             <div class="row  mt-5 d-flex justify-content-center">
@@ -87,10 +74,8 @@
                         </form>
 
 
-
-
             </div>
-        </div>
+          </div>
         </div>
 
 
