@@ -38,7 +38,7 @@
                             <label for="name">Nombre</label>
                             <input type="text" class="form-control form-control-lg" id="name" name="name" value="{{   old('title') }}" placeholder="Nombre del souvenir"  max="50" required oninput="uppercaseLetters(event);">
                             </div>
-
+                       
 
                             <div class="form-group">
                                 <label for="description">Descripción</label>

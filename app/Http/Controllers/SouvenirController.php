@@ -6,11 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\Souvenir;
 use App\Models\Role;
 use Illuminate\Support\Facades\Auth;
-<<<<<<< HEAD
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
-=======
->>>>>>> 3e16755884b3c0a4cdd36948429add698dffd5c5
+
 
 class SouvenirController extends Controller
 {
@@ -64,15 +62,12 @@ class SouvenirController extends Controller
       return view('errors.notaccess')->with($variables);
     }
 
-<<<<<<< HEAD
         $variables=[
             'menu'=>'souvenirs_all',
             'title_page'=>'Souvenirs',
             'souvenirs_actives'=>$souvenirs_active,
             'souvenirs_active_number'=> $souvenirs_active_number,
-=======
     $current_souvenir = Souvenir::findOrFail($souvenir_id);
->>>>>>> 3e16755884b3c0a4cdd36948429add698dffd5c5
 
     $variables = [
       'menu' => 'users_all',
@@ -82,12 +77,6 @@ class SouvenirController extends Controller
     ];
     return view('souvenirs.update')->with($variables);
   }
-
-<<<<<<< HEAD
-        ];
-        return view('souvenirs.index')->with($variables);
-
-      }
 
       // Show the form for creating a new resource.
 
@@ -142,12 +131,10 @@ class SouvenirController extends Controller
 
     }
 
-=======
   /**
    * Remove the specified resource from storage.
    *
    * @param  \App\Models\Souvenir  $souvenir
    * @return \Illuminate\Http\Response
    */
->>>>>>> 3e16755884b3c0a4cdd36948429add698dffd5c5
 }
