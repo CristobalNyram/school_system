@@ -26,7 +26,7 @@ class SouvenirsTableSeeder extends Seeder
         DB::table('souvenirs')->insert([
             'name' => 'Playera',
             'price' => '500',
-            'description' => 'Playera mango corta con diseño de FreedomDay',
+            'description' => 'Playera manga corta con diseño de FreedomDay',
             'url_img' => 'url_img',
         ]);
     }
