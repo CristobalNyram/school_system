@@ -7,6 +7,7 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\SouvenirController;
+use App\Http\Controllers\TalkController;
 
 /*
 |--------------------------------------------------------------------------
@@ -93,6 +94,12 @@ Route::group(['middleware' => 'auth'], function () {
 
 
         ///talk start------------------------------------------------------
+        Route::get('/talk',[TalkController::class,"index"])->name('talk_index');
+        Route::get('/talk/create',[TalkController::class,"create"])->name('talk_create');
+        Route::post('/talk/store',[TalkController::class,"store"])->name('talk_store');
+        Route::get('/talk/update/{talk_id}',[TalkController::class,"update"])->name('talk_update');
+        Route::post('/talk/edit', [TalkController::class, "edit"])->name('talk_edit');
+        Route::post('/talk/delete/{course_id}',[TalkController::class,"delete"])->name('talk_delete');
 
         //talk end--------------------------------------------------------
 
