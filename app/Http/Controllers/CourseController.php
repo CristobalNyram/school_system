@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Course;
 use Illuminate\Http\Request;
 use App\Models\Role;
+use App\Models\Logbook;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
@@ -18,6 +19,21 @@ class CourseController extends Controller
      */
     public function index()
     {    
+        if(Role::checkAccesToThisFunctionality(Auth::user()->role_id,10)==null)
+        {
+            $variables=[
+                'menu'=>'',
+                'title_page'=>'Acceso denegado',
+
+
+            ];
+            return view('errors.notaccess')->with($variables);
+
+        }
+
+        Logbook::activity_done($description='Accedió al módulo de consulta de Curso.',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=1);
+
+
          $courses_active=Course::all()->where('status','=','2');
         $courses_active_number=Course::all()->where('status','=','2')->count();
 
@@ -42,7 +58,7 @@ class CourseController extends Controller
      */
     public function create()
     {
-        if(Role::checkAccesToThisFunctionality(Auth::user()->role_id,4)==null)
+        if(Role::checkAccesToThisFunctionality(Auth::user()->role_id,12)==null)
         {
             $variables=[
                 'menu'=>'',
@@ -53,6 +69,9 @@ class CourseController extends Controller
             return view('errors.notaccess')->with($variables);
 
         }
+
+        Logbook::activity_done($description='Accedió al módulo de Crear Curso.',$table_id=0,$menu_id=12,$user_id=Auth::id(),$kind_acction=1);
+
         $rol_available=Role::all()->where('status','=','2');
         $variables=[
             'menu'=>'users_all',
@@ -65,6 +84,7 @@ class CourseController extends Controller
         return view('course.create')->with($variables);
     }
 
+
     /**
      * Store a newly created resource in storage.
      *
@@ -73,7 +93,7 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        $course =new Course();
+       $course =new Course();
        $course->title = $request->title;
        $course->description = $request->description;
        $course->date = $request->date;
@@ -82,6 +102,9 @@ class CourseController extends Controller
        
 
         if ($course->save()) {
+
+            Logbook::activity_done($description='Creo el curso '. $course->title. '.' ,$table_id=0,$menu_id=12,$user_id=Auth::id(),$kind_acction=6);
+
             return back()->with('success','Se ha registrado el curso exitosamente...');
 
         }
@@ -120,6 +143,7 @@ class CourseController extends Controller
          $course->speaker_id = $request->speaker_id;
 
          if ($course->save()) {
+            Logbook::activity_done($description='Actualizo el curso correctamente' . $course->title . '',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=3);
             return back()->with('success','Se ha actualizado el curso exitosamente...');
 
         }
@@ -140,7 +164,7 @@ class CourseController extends Controller
     public function update($course_id)
     {
 
-        if(Role::checkAccesToThisFunctionality(Auth::user()->role_id,4)==null)
+        if(Role::checkAccesToThisFunctionality(Auth::user()->role_id,10)==null)
         {
             $variables=[
                 'menu'=>'',
@@ -151,6 +175,8 @@ class CourseController extends Controller
             return view('errors.notaccess')->with($variables);
 
         }
+
+        Logbook::activity_done($description='Accedió al módulo de Actualizar Curso.',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=1);
 
         $current_course=Course::findOrFail($course_id);
         $rol_available=Role::all()->where('status','=','2');
