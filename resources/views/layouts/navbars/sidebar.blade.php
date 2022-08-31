@@ -195,7 +195,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('home') }}">
+                    <a class="nav-link" href="{{ route('talk_index') }}">
                         <i class="ni ni-chat-round text-primary" aria-hidden="true"></i>
                         Conferencias
                     </a>
@@ -209,7 +209,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('home') }}">
+                    <a class="nav-link" href="{{ route('souvenir_index') }}">
                         <i class="ni ni-shop text-primary" aria-hidden="true"></i>
                         Souvenirs
                     </a>

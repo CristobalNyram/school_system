@@ -7,7 +7,7 @@
     <div class="container-fluid mt--6">
         <div class="row d-flex mb-3 mr-5 justify-content-end">
 
-            <a href="{{ route('course_create') }}" type="button" class="btn btn-info">Agregar</a>
+            <a href="{{ route('sponsor_create') }}" type="button" class="btn btn-info">Agregar</a>
 
 
       </div>
@@ -28,22 +28,23 @@
                   <thead class="thead-light">
                     <tr>
                       <th scope="col" class="sort" data-sort="name">ID</th>
-                      <th scope="col" class="sort" data-sort="budget">Título</th>
-                      <th scope="col" class="sort" data-sort="status">Descripción</th>
-                      <th scope="col" class="sort" data-sort="status">Fecha de registro</th>
+                      <th scope="col" class="sort" data-sort="budget">Nombre</th>
+                      <th scope="col" class="sort" data-sort="status">Eslogan</th>
+                      <th scope="col" class="sort" data-sort="status">Foto</th>
                       <th scope="col" class="sort" data-sort="status">Acciones</th>
+                     
 
                     </tr>
                   </thead>
                   <tbody class="list">
 
-                    @foreach ($courses_actives as $course )
+                    @foreach ($sponsors_actives as $sponsor )
                     <tr>
                         <th scope="row">
                           <div class="media align-items-center">
 
                             <div class="media-body">
-                              <span class="name mb-0 text-sm">  {{ $course->id }}</span>
+                              <span class="name mb-0 text-sm">  {{ $sponsor->id }}</span>
                             </div>
                           </div>
                         </th>
@@ -53,7 +54,7 @@
                             <div class="media align-items-center">
 
                               <div class="media-body">
-                                <span class="name mb-0 text-sm">{{ $course->title }}  </span>
+                                <span class="name mb-0 text-sm">{{ $sponsor->name }}  </span>
                               </div>
                             </div>
                         </th>
@@ -61,7 +62,7 @@
                             <div class="media align-items-center">
 
                               <div class="media-body">
-                                <span class="name mb-0 text-sm">{{ $course->description}} </span>
+                                <span class="name mb-0 text-sm">{{ $sponsor->slogan}} </span>
                               </div>
                             </div>
                         </th>
@@ -70,7 +71,7 @@
                             <div class="media align-items-center">
 
                               <div class="media-body">
-                                <span class="name mb-0 text-sm"> {{ $course->created_at }}</span>
+                                <span class="name mb-0 text-sm"> {{ $sponsor->created_at }}</span>
                               </div>
                             </div>
                         </th>
@@ -81,12 +82,8 @@
                                 <i class="fas fa-ellipsis-v"></i>
                               </a>
                               <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                              <a class="dropd own-item"  href="{{ route('course_update',$course->id)}}" >Actualizar información</a>
-                                <form action="{{ route('course_delete',$course->id)}}" method="post">
-                                  @csrf
-                                  
-                                <input class="dropdown-item text-danger" type="submit" data-toggle="modal" data-target="#modal-notification" onclick="return confirm('Eliminar')" ></input>
-                                </form>
+                              <a class="dropd own-item"  href="" >Actualizar información</a>
+                                <a class="dropdown-item text-danger"  data-toggle="modal" data-target="#modal-notification" href="#" >Borrar</a>
                               </div>
                             </div>
                         </td>

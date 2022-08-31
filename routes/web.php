@@ -7,6 +7,9 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\SouvenirController;
+use App\Http\Controllers\TalkController;
+use App\Http\Controllers\SponsorController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -72,6 +75,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/course/store',[CourseController::class,"store"])->name('course_store');
         Route::get('/course/update/{course_id}',[CourseController::class,"update"])->name('course_update');
         Route::post('/course/edit',[CourseController::class,"edit"])->name('course_edit');
+        Route::post('/course/delete/{course_id}',[CourseController::class,"delete"])->name('course_delete');
 
         //courses end-----------------------
 
@@ -81,9 +85,13 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/souvenir/store',[SouvenirController::class,"store"])->name('souvenir_store');
         Route::get('/souvenir/update/{souvenir_id}',[SouvenirController::class,"update"])->name('souvenir_update');
         Route::post('/souvenir/edit', [SouvenirController::class, "edit"])->name('souvenir_edit');
+        Route::post('/souvenir/delete/{souvenir_id}', [SouvenirController::class, "delete"])->name('souvenir_delete');
         // souvenirs end-----------------------
 
         // sponsor start ----------------------------------------------
+        Route::get('/sponsor',[SponsorController::class,"index"])->name('sponsor_index');
+        Route::get('/sponsor/create',[SponsorController::class,"create"])->name('sponsor_create');
+        Route::post('/sponsor/store',[SponsorController::class,"store"])->name('sponsor_store');
         //sponsor end---------------------------------------------------
 
         ///speaker start-----------------------------------------------
@@ -92,6 +100,12 @@ Route::group(['middleware' => 'auth'], function () {
 
 
         ///talk start------------------------------------------------------
+        Route::get('/talk',[TalkController::class,"index"])->name('talk_index');
+        Route::get('/talk/create',[TalkController::class,"create"])->name('talk_create');
+        Route::post('/talk/store',[TalkController::class,"store"])->name('talk_store');
+        Route::get('/talk/update/{talk_id}',[TalkController::class,"update"])->name('talk_update');
+        Route::post('/talk/edit', [TalkController::class, "edit"])->name('talk_edit');
+        Route::post('/talk/delete/{course_id}',[TalkController::class,"delete"])->name('talk_delete');
 
         //talk end--------------------------------------------------------
 
