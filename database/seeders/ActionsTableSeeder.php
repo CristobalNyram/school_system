@@ -52,5 +52,6 @@ class ActionsTableSeeder extends Seeder
             'name' => 'No autorizar',
             'created_at' => now(),
         ]);
+
     }
 }
