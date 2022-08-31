@@ -7,12 +7,9 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\SouvenirController;
-<<<<<<< HEAD
 use App\Http\Controllers\TalkController;
-=======
 use App\Http\Controllers\SponsorController;
 
->>>>>>> c0eef02c17614ba430a06dbb59868a2a6fd748d0
 
 /*
 |--------------------------------------------------------------------------
