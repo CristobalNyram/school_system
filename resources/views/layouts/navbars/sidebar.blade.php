@@ -84,6 +84,8 @@
                 </div>
             </li>
         </ul>
+
+
         <!-- Collapse -->
         <div class="collapse navbar-collapse" id="sidenav-collapse-main">
             <!-- Collapse header -->
@@ -128,6 +130,10 @@
 
             </ul>
 
+            </ul>
+            <hr class="my-3">
+            <h6 class="navbar-heading text-muted">Reportes</h6>
+
 
             <hr class="my-3">
             <h6 class="navbar-heading text-muted">Admnistración</h6>
@@ -136,12 +142,19 @@
 
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('logbook_index') }}">
-                        <i class="ni ni-books text-primary"></i>Pagos
+                        <i class="ni ni-cart text-primary"></i>Pagos
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('home') }}">
-                        <i class="ni ni-single-02 text-primary"></i>Citas
+                        <i class="fas fa-object-group text-primary"></i>Alumnos
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('home') }}">
+                        <i class="fa fa-city text-primary"></i>
+                        Extranjeros
                     </a>
                 </li>
 
@@ -163,38 +176,42 @@
             <ul class="navbar-nav">
 
 
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('logbook_index') }}">
-                        <i class="ni ni-books text-primary"></i>Anuncios
-                    </a>
-                </li>
                 @if ( check_acces_to_this_permission(Auth::user()->role_id,3))
                         <li class="nav-item">
                             <a class="nav-link @if($menu === 'menus') active @endif"  href="{{ route('course_index') }}">
-                                <i class="fa fa-bars text-primary" aria-hidden="true"></i>
+                                <i class="ni ni-paper-diploma text-primary" aria-hidden="true"></i>
 
                                 Cursos
                                 {{-- null not acces to the system --}}
                             </a>
                         </li>
-                        @endif
+                @endif
 
 
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('home') }}">
-                        <i class="ni ni-single-02 text-primary"></i>Talleres
+                        <i class="ni ni-spaceship text-primary"></i>
+                        Patrocinadores
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('home') }}">
-                        <i class="fa fa-users text-primary" aria-hidden="true"></i>
-                        Oferta educativa
+                        <i class="ni ni-chat-round text-primary" aria-hidden="true"></i>
+                        Conferencias
+                    </a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('home') }}">
+                        <i class="ni ni-tie-bow text-primary" aria-hidden="true"></i>
+                        Conferencistas
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('home') }}">
-                        <i class="fa fa-users text-primary" aria-hidden="true"></i>
-                        Configuración general
+                        <i class="ni ni-shop text-primary" aria-hidden="true"></i>
+                        Souvenirs
                     </a>
                 </li>
 
@@ -264,9 +281,6 @@
 
 
 
-            </ul>
-            <hr class="my-3">
-            <h6 class="navbar-heading text-muted">Reportes</h6>
 
         </div>
     </div>

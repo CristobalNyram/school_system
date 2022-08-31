@@ -20,6 +20,8 @@ class RoleController extends Controller
         // die();
 
 
+
+        ////id del rol y el id del menu
         if(Role::checkAccesToThisFunctionality(Auth::user()->role_id,2)==null)
         {
             $variables=[

@@ -40,5 +40,18 @@ class ActionsTableSeeder extends Seeder
             'name' => 'Crear',
             'created_at' => now(),
         ]);
+        DB::table('actions')->insert([
+            'name' => 'Autorizar',
+            'created_at' => now(),
+        ]);
+        DB::table('actions')->insert([
+            'name' => 'Cancelar',
+            'created_at' => now(),
+        ]);
+        DB::table('actions')->insert([
+            'name' => 'No autorizar',
+            'created_at' => now(),
+        ]);
+
     }
 }

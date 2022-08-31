@@ -53,7 +53,7 @@ class RolesTableSeeder extends Seeder
             'updated_at' => now()
         ]);
         DB::table('roles')->insert([
-            'name' => 'Collector',
+            'name' => 'Charger',
             'description' => 'This person is reponsible for charging money ',
             'level' => '6',
             'created_at' => now(),
