@@ -7,11 +7,7 @@
 <div class="container-fluid mt--6">
   <div class="row d-flex mb-3 mr-5 justify-content-end">
 
-<<<<<<< HEAD
             <a href="{{ route('souvenir_create') }}" type="button" class="btn btn-info">Agregar</a>
-=======
-    <a href="{{ route('user_create') }}" type="button" class="btn btn-info">Agregar</a>
->>>>>>> 3e16755884b3c0a4cdd36948429add698dffd5c5
 
 
   </div>
@@ -100,103 +96,6 @@
           </table>
         </div>
         <!-- Card footer -->
-
-      </div>
-<<<<<<< HEAD
-
-        <div class="row">
-          <div class="col">
-            <div class="card">
-              <!-- Card header -->
-              <div class="card-header border-0">
-                <h3 class="mb-0">Souvenirs</h3>
-              </div>
-              <!-- Light table -->
-              <script>
-
-              </script>
-              <div class="table-responsive">
-                <table class="table align-items-center table-striped table-flush table-bordered dt-responsive"  id="table_users_all">
-                  <thead class="thead-light">
-                    <tr>
-                      <th scope="col" class="sort" data-sort="name">ID</th>
-                      <th scope="col" class="sort" data-sort="budget">Nombre</th>
-                      <th scope="col" class="sort" data-sort="status">Descripción</th>
-                      <th scope="col" class="sort" data-sort="status">Precio</th>
-                      <th scope="col" class="sort" data-sort="status">Acciones</th>
-
-                    </tr>
-                  </thead>
-                  <tbody class="list">
-
-                    @foreach ($souvenirs_actives as $souvenir )
-                    <tr>
-                        <th scope="row">
-                          <div class="media align-items-center">
-
-                            <div class="media-body">
-                              <span class="name mb-0 text-sm">  {{ $souvenir->id }}</span>
-                            </div>
-                          </div>
-                        </th>
-
-
-                        <th scope="row">
-                            <div class="media align-items-center">
-
-                              <div class="media-body">
-                                <span class="name mb-0 text-sm">{{ $souvenir->name }}  </span>
-                              </div>
-                            </div>
-                        </th>
-                        <th scope="row">
-                            <div class="media align-items-center">
-
-                              <div class="media-body">
-                                <span class="name mb-0 text-sm">{{ $souvenir->description}} </span>
-                              </div>
-                            </div>
-                        </th>
-
-                        <th scope="row">
-                            <div class="media align-items-center">
-
-                              <div class="media-body">
-                                <span class="name mb-0 text-sm"> {{ $souvenir->price }}</span>
-                              </div>
-                            </div>
-                        </th>
-
-                        <td class="text-cener">
-                            <div class="dropdown">
-                              <a class="btn btn-sm btn-icon-only text-danger" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-ellipsis-v"></i>
-                              </a>
-                              <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                
-                                <a class="dropdown-item" href="">Actualizar contraseña</a>
-                                <a class="dropdown-item text-danger"  data-toggle="modal" data-target="#modal-notification" href="#" >Borrar</a>
-                              </div>
-                            </div>
-                        </td>
-
-
-                    </tr>
-                    @endforeach
-
-                  </tbody>
-                </table>
-              </div>
-              <!-- Card footer -->
-
-            </div>
-          </div>
-        </div>
-
-
-        @include('layouts.footers.auth')
-=======
->>>>>>> 3e16755884b3c0a4cdd36948429add698dffd5c5
     </div>
   </div>
 

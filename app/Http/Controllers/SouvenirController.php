@@ -51,30 +51,23 @@ class SouvenirController extends Controller
    */
 
   public function update($souvenir_id)
-  {
+  {  
     if (Role::checkAccesToThisFunctionality(Auth::user()->role_id, 4) == null) {
       $variables = [
         'menu' => '',
         'title_page' => 'Acceso denegado',
-
-
+        
+        
       ];
       return view('errors.notaccess')->with($variables);
     }
+    $current_souvenir = Souvenir::findOrFail($souvenir_id);
 
         $variables=[
             'menu'=>'souvenirs_all',
             'title_page'=>'Souvenirs',
-            'souvenirs_actives'=>$souvenirs_active,
-            'souvenirs_active_number'=> $souvenirs_active_number,
-    $current_souvenir = Souvenir::findOrFail($souvenir_id);
-
-    $variables = [
-      'menu' => 'users_all',
-      'title_page' => 'Souvenirs',
-      'current_souvenir' => $current_souvenir,
-
-    ];
+            'current_souvenir' => $current_souvenir,
+        ];    
     return view('souvenirs.update')->with($variables);
   }
 
@@ -82,7 +75,7 @@ class SouvenirController extends Controller
 
       public function create()
     {
-        /*if(Role::checkAccesToThisFunctionality(Auth::user()->role_id,4)==null)
+        if(Role::checkAccesToThisFunctionality(Auth::user()->role_id,4)==null)
         {
             $variables=[
                 'menu'=>'',
@@ -92,7 +85,7 @@ class SouvenirController extends Controller
             ];
             return view('errors.notaccess')->with($variables);
 
-        } */
+        }
 
         $souvenir_available=Souvenir::all()->where('status','=','2');
         $variables=[
