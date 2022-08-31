@@ -82,7 +82,11 @@
                               </a>
                               <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                               <a class="dropd own-item"  href="{{ route('course_update',$course->id)}}" >Actualizar información</a>
-                                <a class="dropdown-item text-danger"  data-toggle="modal" data-target="#modal-notification" href="#" >Borrar</a>
+                                <form action="{{ route('course_delete',$course->id)}}" method="post">
+                                  @csrf
+                                  
+                                <input class="dropdown-item text-danger" type="submit" data-toggle="modal" data-target="#modal-notification" onclick="return confirm('Eliminar')" ></input>
+                                </form>
                               </div>
                             </div>
                         </td>

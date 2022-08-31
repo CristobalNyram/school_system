@@ -209,7 +209,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('home') }}">
+                    <a class="nav-link" href="{{ route('souvenir_index') }}">
                         <i class="ni ni-shop text-primary" aria-hidden="true"></i>
                         Souvenirs
                     </a>
