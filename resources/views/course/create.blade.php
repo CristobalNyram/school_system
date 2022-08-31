@@ -8,14 +8,14 @@
 
 
         <div class="row">
-          <div class="col">
+            <div class="col">
             <div class="card">
-              <!-- Card header -->
+                <!-- Card header -->
 
-              <div class="card-header border-0">
+                <div class="card-header border-0">
                 <h2 class="mb-0">Agregar Curso</h2>
 
-              </div>
+            </div>
 
 
                         <form class="m-5"  action="{{route('course_store')}}"  method="POST">
@@ -33,7 +33,7 @@
                                         </div>
 
                                         @endforeach
-                           @endif
+                            @endif
                             <div class="form-group">
                             <label for="title">Título</label>
                             <input type="text" class="form-control form-control-lg" id="title" name="title" value="{{   old('title') }}" placeholder="Título del curso"  max="50" required oninput="uppercaseLetters(event);">
@@ -62,7 +62,7 @@
 
 
                             
-                     
+                    
 
 
                         
@@ -90,7 +90,7 @@
 
 
             </div>
-          </div>
+        </div>
         </div>
 
 

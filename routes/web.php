@@ -77,8 +77,8 @@ Route::group(['middleware' => 'auth'], function () {
 
         // souvenirs start---------------------
         Route::get('/souvenir',[SouvenirController::class,"index"])->name('souvenir_index');
-
-
+        Route::get('/souvenir/update/{souvenir_id}',[SouvenirController::class,"update"])->name('souvenir_update');
+        Route::post('/souvenir/edit', [SouvenirController::class, "edit"])->name('souvenir_edit');
         // souvenirs end-----------------------
 
 
