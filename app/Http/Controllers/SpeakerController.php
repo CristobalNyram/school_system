@@ -2,45 +2,31 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Student;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Role;
 use Illuminate\Support\Facades\Hash;
 
-class StudentController extends Controller
+class SpeakerController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        $users_active=User::all()->where('status','=','2')->where('role_id','=','4');
-        $users_active_number=User::all()->where('status','=','2')->where('role_id','=','4')->count();
+        $users_active=User::all()->where('status','=','2')->where('role_id','=','6');
+        $users_active_number=User::all()->where('status','=','2')->where('role_id','=','6')->count();
       
 
        
        
         $variables=[
             'menu'=>'users_all',
-            'title_page'=>'Estudiantes',
+            'title_page'=>'Conferencistas',
             'users_actives'=>$users_active,
             'users_active_number'=> $users_active_number,
-         
-
-
 
         ];
-        return view('student.index')->with($variables);
+        return view('speaker.index')->with($variables);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         $rol_available=Role::all()->where('status','=','2');
@@ -55,12 +41,6 @@ class StudentController extends Controller
         return view('speaker.create')->with($variables);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $user =new User();
@@ -83,23 +63,6 @@ class StudentController extends Controller
          }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Student  $student
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Student $student)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Student  $student
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Request $request)
     {
         $user = User::findOrFail($request->id);
@@ -122,13 +85,6 @@ class StudentController extends Controller
         }
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Student  $student
-     * @return \Illuminate\Http\Response
-     */
     public function update($user_id)
     {
         $current_user=User::findOrFail($user_id);
@@ -147,12 +103,6 @@ class StudentController extends Controller
         return view('student.update')->with($variables);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Student  $student
-     * @return \Illuminate\Http\Response
-     */
     public function delete($user_id)
     {
         $user = User::findOrFail($user_id);

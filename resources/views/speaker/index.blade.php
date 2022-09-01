@@ -7,7 +7,7 @@
     <div class="container-fluid mt--6">
         <div class="row d-flex mb-3 mr-5 justify-content-end">
 
-            <a href="{{ route('student_create') }}" type="button" class="btn btn-info">Agregar</a>
+            <a href="{{ route('speaker_create') }}" type="button" class="btn btn-info">Agregar</a>
 
 
       </div>
@@ -17,7 +17,7 @@
             <div class="card">
               <!-- Card header -->
               <div class="card-header border-0">
-                <h3 class="mb-0">Estudiantes registrados</h3>
+                <h3 class="mb-0">Conferencistas registrados</h3>
               </div>
               <!-- Light table -->
               <script>

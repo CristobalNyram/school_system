@@ -13,7 +13,7 @@
               <!-- Card header -->
 
               <div class="card-header border-0">
-                <h2 class="mb-0">Nuevo Estudiante</h2>
+                <h2 class="mb-0">Nuevo Conferencista</h2>
 
               </div>
 
@@ -50,7 +50,7 @@
 
                             <div class="form-group">
                                 <label for="role_id"></label>
-                                <input type="hidden" class="form-control form-control-lg" id="role_id" name="role_id" value="4" placeholder="Rol del estudiante"  max="50"  required oninput="uppercaseLetters(event);">
+                                <input type="hidden" class="form-control form-control-lg" id="role_id" name="role_id" value="6" placeholder="Rol del estudiante"  max="50"  required oninput="uppercaseLetters(event);">
                             </div>
 
 

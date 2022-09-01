@@ -9,11 +9,10 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\SouvenirController;
 use App\Http\Controllers\TalkController;
 use App\Http\Controllers\SponsorController;
-<<<<<<< HEAD
 use App\Http\Controllers\PackageController;
-=======
 use App\Http\Controllers\StudentController;
->>>>>>> 5b722d3dc46df0ca7ca924dbda53dd20bd6679b7
+use App\Http\Controllers\PasswordController;
+use App\Http\Controllers\SpeakerController;
 
 
 /*
@@ -67,6 +66,21 @@ Route::group(['middleware' => 'auth'], function () {
 
 
          // student end--------------------------------------------
+
+         // password start-------------------------------------------
+         Route::get('/password/update/{user_id}',[PasswordController::class,"update"])->name('password_update');
+         Route::post('/password/edit',[PasswordController::class,"edit"])->name('password_edit');
+
+         // password end--------------------------------------------
+
+           // speaker start-------------------------------------------
+           Route::get('/speaker',[SpeakerController::class,"index"])->name('speaker_index');
+           Route::get('/speaker/create',[StudentController::class,"create"])->name('speaker_create');
+           Route::post('/student/store',[UserController::class,"store"])->name('student_store');
+           Route::get('/speaker/update/{user_id}',[SpeakerController::class,"update"])->name('student_update');
+           Route::post('/speaker/edit',[SpeakerController::class,"edit"])->name('speaker_edit');
+
+           // speaker end--------------------------------------------
 
 
 

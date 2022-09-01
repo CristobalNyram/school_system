@@ -13,12 +13,12 @@
               <!-- Card header -->
 
               <div class="card-header border-0">
-                <h2 class="mb-0">Nuevo Estudiante</h2>
+                <h2 class="mb-0">Actualizar información del conferencista: {{ $current_user->name }}</h2>
 
               </div>
 
 
-                        <form class="m-5"  action="{{route('student_store')}}"  method="POST">
+                        <form class="m-5"  action="{{route('speaker_edit')}}"  method="POST">
                             @csrf
                             @if(session('success'))
                             <div class="alert alert-success" role="alert">
@@ -35,27 +35,25 @@
                                         @endforeach
                            @endif
                             <div class="form-group">
-                            <label for="name">Nombre</label>
-                            <input type="text" class="form-control form-control-lg" id="name" name="name" value="{{   old('name') }}" placeholder="Nombre de estudiante"  max="50" required oninput="uppercaseLetters(event);">
+                            <input type="hidden" name="id" id="id" value="{{$current_user->id}}">
+                            <label for="name">Nombre del conferencista</label>
+                            <input type="text" class="form-control form-control-lg" id="name" name="name" value="{{    $current_user->name  }}" placeholder="Título del curso"  max="50" required oninput="uppercaseLetters(event);">
                             </div>
 
                             <div class="form-group">
-                                <label for="first_surname">Apellido de parterno</label>
-                                <input type="text" class="form-control form-control-lg" id="first_surname" name="first_surname" value="{{ old('first_surname') }}" placeholder="Apellido paterno de estudiante"  max="50" required  oninput="uppercaseLetters(event);">
+                                <label for="first_surname">Apellido Paterno</label>
+                                <input type="text" class="form-control form-control-lg" id="first_surname" name="first_surname" value="{{ $current_user->first_surname }}" placeholder="Apellido paterno del estudiante"  max="50" required  oninput="uppercaseLetters(event);">
                             </div>
                             <div class="form-group">
-                                <label for="second_surname">Apellido de materno</label>
-                                <input type="text" class="form-control form-control-lg" id="second_surname" name="second_surname" value="{{ old('second_surname') }}" placeholder="Apellido materno de estudiante"  max="50"  required oninput="uppercaseLetters(event);">
+                                <label for="second_surname">Apellido Materno</label>
+                                <input type="text" class="form-control form-control-lg" id="second_surname" name="second_surname" value="{{ $current_user->second_surname }}" placeholder="Fecha del curso"  max="50"  required oninput="uppercaseLetters(event);">
                             </div>
 
                             <div class="form-group">
                                 <label for="role_id"></label>
-                                <input type="hidden" class="form-control form-control-lg" id="role_id" name="role_id" value="4" placeholder="Rol del estudiante"  max="50"  required oninput="uppercaseLetters(event);">
+                                <input type="hidden" class="form-control form-control-lg" id="role_id" name="role_id" value="6" placeholder="Rol del estudiante"  max="50"  required oninput="uppercaseLetters(event);">
                             </div>
 
-
-
-                            
                             <div class="form-group">
                                 <label for="gender">Genero</label>
 
@@ -69,19 +67,21 @@
                                   </select>
                             </div>
 
+                            <div class="form-group">
+                                <label for="email">Correo Electronico</label>
+                                <input type="emil" class="form-control form-control-lg" id="email" name="email" value="{{ $current_user->email }}" placeholder="correo electronico del estudiante"  max="50"  required oninput="uppercaseLetters(event);">
+                            </div>
 
-                            <div class="form-group">
-                                <label for="email">Correo electronico</label>
-                                <input  type="email" class="form-control form-control-lg" id="email" name="email" value=" {{ old('email') }}" placeholder="Correo electronico del usuario." required maxlength="50">
-                            </div>
-                            <div class="form-group">
-                                <label for="password">Password</label>
-                                <input  type="password" class="form-control form-control-lg" id="password" value="{{ old('password') }}" name="password" placeholder="Contraseña para este usuario." required maxlength="50">
-                            </div>
-                            <div class="form-group">
-                                <label for="password_confirmation">Confirmar contraseña</label>
-                                <input  type="password" class="form-control form-control-lg" id=" password_confirmation" name="password_confirmation" placeholder="Confirmar la contraseña para este usuario." required maxlength="50">
-                            </div>
+                            
+
+
+
+
+
+
+
+
+
 
 
 
@@ -93,7 +93,7 @@
 
                                 </div>
                                 <div class="form-group row d-flex justify-content-center">
-                                    <button type="submit" class="btn btn-default">Agregar</button>
+                                    <button type="submit" class="btn btn-default">Actualizar</button>
 
                                 </div>
                             </div>

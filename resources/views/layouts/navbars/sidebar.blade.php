@@ -203,7 +203,7 @@
 
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('home') }}">
+                    <a class="nav-link" href="{{ route('speaker_index') }}">
                         <i class="ni ni-tie-bow text-primary" aria-hidden="true"></i>
                         Conferencistas
                     </a>
