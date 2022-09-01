@@ -13,7 +13,7 @@
               <!-- Card header -->
 
               <div class="card-header border-0">
-                <h2 class="mb-0">Actualizar información del curso: {{ $current_user->name }}</h2>
+                <h2 class="mb-0">Actualizar información del estudiante: {{ $current_user->name }}</h2>
 
               </div>
 
@@ -79,16 +79,7 @@
                                 <input type="emil" class="form-control form-control-lg" id="email" name="email" value="{{ $current_user->email }}" placeholder="correo electronico del estudiante"  max="50"  required oninput="uppercaseLetters(event);">
                             </div>
 
-                            <div class="form-group">
-                                <label for="password">Contraseña del Estudiante</label>
-                                <input type="password" class="form-control form-control-lg" id="password" name="password" value="{{ $current_user->password }}" placeholder="contraseña del estudiante"  max="50"  required oninput="uppercaseLetters(event);">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="password">Confirmar Contraseña</label>
-                                <input type="password" class="form-control form-control-lg" id="password" name="password" value="{{ $current_user->password }}" placeholder="Confirmar Contraseña"  max="50"  required oninput="uppercaseLetters(event);">
-                            </div>
-
+                            
 
 
 
