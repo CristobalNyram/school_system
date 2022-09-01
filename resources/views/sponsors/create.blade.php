@@ -13,7 +13,7 @@
               <!-- Card header -->
 
               <div class="card-header border-0">
-                <h2 class="mb-0">Agregar Souvenir</h2>
+                <h2 class="mb-0">Agregar Sponsor</h2>
 
               </div>
 

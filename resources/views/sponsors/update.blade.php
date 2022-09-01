@@ -13,7 +13,7 @@
                 <!-- Card header -->
 
                 <div class="card-header border-0">
-                    <h2 class="mb-0">Actualizar información del souvenir: {{ $current_sponsor->name }}</h2>
+                    <h2 class="mb-0">Actualizar información del sponsor: {{ $current_sponsor->name }}</h2>
                 </div>
 
 
@@ -36,18 +36,18 @@
                     <div class="form-group">
                         <input type="hidden" name="id" id="id" value="{{$current_sponsor->id}}">
                         <label for="name">Nombre</label>
-                        <input type="text" class="form-control form-control-lg" id="name" name="name" value="{{$current_sponsor->name  }}" placeholder="Título del souvenir" max="50" required oninput="uppercaseLetters(event);">
+                        <input type="text" class="form-control form-control-lg" id="name" name="name" value="{{$current_sponsor->name  }}" placeholder="Título del sponsor" max="50" required oninput="uppercaseLetters(event);">
                     </div>
 
                     <div class="form-group">
                         <label for="slogan">Descripción</label>
-                        <input type="text" class="form-control form-control-lg" id="slogan" name="slogan" value="{{ $current_sponsor->slogan }}" placeholder="Descripción" max="50" required oninput="uppercaseLetters(event);">
+                        <input type="text" class="form-control form-control-lg" id="slogan" name="slogan" value="{{ $current_sponsor->slogan }}" placeholder="Slogann" max="50" required oninput="uppercaseLetters(event);">
                     </div>
                     
 
                     <div class="form-group">
                         <label for="url_img">Foto del Patrocinador</label>
-                        <input type="text" class="form-control form-control-lg" id="url_img" name="url_img" value="{{ $current_sponsor->url_img }}" placeholder="Foto del souvenir" max="50" required oninput="uppercaseLetters(event);">
+                        <input type="text" class="form-control form-control-lg" id="url_img" name="url_img" value="{{ $current_sponsor->url_img }}" placeholder="Foto del sponsor" max="50" required oninput="uppercaseLetters(event);">
                     </div>
 
                     <div class="row  mt-5 d-flex justify-content-center">
