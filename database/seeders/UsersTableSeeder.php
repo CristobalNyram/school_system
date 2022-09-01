@@ -30,7 +30,7 @@ class UsersTableSeeder extends Seeder
             'name' => 'Ari',
             'first_surname' => 'Mendes',
             'second_surname' => 'Mendes',
-            'role_id' => 1,
+            'role_id' => 2,
             'email' => 'ari@mendes.com',
             'email_verified_at' => now(),
             'password' => Hash::make('123456'),

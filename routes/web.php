@@ -9,6 +9,7 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\SouvenirController;
 use App\Http\Controllers\TalkController;
 use App\Http\Controllers\SponsorController;
+use App\Http\Controllers\StudentController;
 
 
 /*
@@ -53,7 +54,12 @@ Route::group(['middleware' => 'auth'], function () {
         // users end--------------------------------------------
 
          // student start-------------------------------------------
-         Route::get('/student',[UserController::class,"index"])->name('student_index');
+         Route::get('/student',[StudentController::class,"index"])->name('student_index');
+         Route::get('/student/create',[StudentController::class,"create"])->name('student_create');
+         Route::post('/student/store',[UserController::class,"store"])->name('student_store');
+         Route::get('/student/update/{user_id}',[StudentController::class,"update"])->name('student_update');
+         Route::post('/student/edit',[StudentController::class,"edit"])->name('student_edit');
+         Route::post('/student/delete/{user_id}',[StudentController::class,"delete"])->name('student_delete');
 
 
          // student end--------------------------------------------
