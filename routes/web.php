@@ -53,6 +53,15 @@ Route::group(['middleware' => 'auth'], function () {
 
         // users end--------------------------------------------
 
+         // student start-------------------------------------------
+         Route::get('/student',[UserController::class,"index"])->name('student_index');
+
+
+         // student end--------------------------------------------
+
+
+
+
 
         // menu start---------------------------------------
         Route::get('/menu',[MenuController::class,"index"])->name('menu_index');
