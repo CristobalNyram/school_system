@@ -17,7 +17,7 @@
             <div class="card">
               <!-- Card header -->
               <div class="card-header border-0">
-                <h3 class="mb-0">Cursos registrados</h3>
+                <h3 class="mb-0">Patrocinadores registrados</h3>
               </div>
               <!-- Light table -->
               <script>
@@ -71,22 +71,26 @@
                             <div class="media align-items-center">
 
                               <div class="media-body">
-                                <span class="name mb-0 text-sm"> {{ $sponsor->created_at }}</span>
+                                <span class="name mb-0 text-sm"> {{ $sponsor->url_img }}</span>
                               </div>
                             </div>
                         </th>
 
                         <td class="text-cener">
                             <div class="dropdown">
-                              <a class="btn btn-sm btn-icon-only text-danger" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-ellipsis-v"></i>
-                              </a>
-                              <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                              <a class="dropd own-item"  href="" >Actualizar información</a>
-                                <a class="dropdown-item text-danger"  data-toggle="modal" data-target="#modal-notification" href="#" >Borrar</a>
-                              </div>
+                            <a class="btn btn-sm btn-icon-only text-danger" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                           <i class="fas fa-ellipsis-v"></i>
+                            </a>
+                           <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+
+                            <a class="dropdown-item" href="{{route('sponsor_update',$sponsor->id)}}">Actualizar información</a>
+                           <form action="{{route('sponsor_delete',$sponsor->id)}}" method="POST">
+                           @csrf
+                             <input type="submit" class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-notification" value="Eliminar" onclick="return confirm('¿Desea eliminar el souvenir?')"></input>
+                           </form>
                             </div>
-                        </td>
+                            </div>
+                         </td>
 
 
                     </tr>

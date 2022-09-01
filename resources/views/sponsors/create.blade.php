@@ -45,8 +45,6 @@
                                 <input type="description" class="form-control form-control-lg" id="slogan" name="slogan" value="{{ old('description') }}" placeholder="Eslogan"  max="50" required  oninput="uppercaseLetters(event);">
                             </div>
 
-
-                            
                             
 
                             <div class="form-group">

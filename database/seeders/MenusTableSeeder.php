@@ -289,7 +289,7 @@ class MenusTableSeeder extends Seeder
         DB::table('menus')->insert([
             'title' => 'Patrocinadores',
             'description' => 'Menu padre .',
-            'menu_parent' => 1,
+            'menu_parent' => 0,
             'order' => 5,
             'status' =>2,
 

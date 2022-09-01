@@ -81,12 +81,16 @@
                                 <i class="fas fa-ellipsis-v"></i>
                               </a>
                               <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                              <a class="dropd own-item"  href="{{ route('talk_update',$talk->id)}}" >Actualizar información</a>
                                 <form action="{{ route('talk_delete',$talk->id)}}" method="post">
                                   @csrf
-                                  
-                                <input class="dropdown-item text-danger" type="submit" data-toggle="modal" data-target="#modal-notification" onclick="return confirm('Eliminar')" ></input>
+
+                                <input class="dropdown-item text-danger" type="submit" value="Eliminar" data-toggle="modal" data-target="#modal-notification" onclick="return confirm('Eliminar')" ></input>
                                 </form>
+                                 <form action="{{ route('talk_update',$talk->id)}}" method="get">
+
+
+                                  <input class="dropdown-item text-primary" type="submit" value="Actualizar información" data-toggle="modal" data-target="#modal-notification" ></input>
+                                  </form>
                               </div>
                             </div>
                         </td>
