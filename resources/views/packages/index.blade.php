@@ -1,4 +1,4 @@
-tems-center table-striped table-flush table-bordered dt-responsive" id="table_users_all">
+ems-center table-striped table-flush table-bordered dt-responsive" id="table_users_all">
             <thead class="thead-light">
               <tr>@extends('layouts.app')
 
@@ -9,7 +9,7 @@ tems-center table-striped table-flush table-bordered dt-responsive" id="table_us
 <div class="container-fluid mt--6">
   <div class="row d-flex mb-3 mr-5 justify-content-end">
 
-    <a href="{{ route('souvenir_create') }}" type="button" class="btn btn-info">Agregar</a>
+    <a href="{{ route('package_create') }}" type="button" class="btn btn-info">Agregar</a>
 
 
   </div>
@@ -19,7 +19,7 @@ tems-center table-striped table-flush table-bordered dt-responsive" id="table_us
       <div class="card">
         <!-- Card header -->
         <div class="card-header border-0">
-          <h3 class="mb-0">Souvenirs</h3>
+          <h3 class="mb-0">Packages</h3>
         </div>
         <!-- Light table -->
         <script>
@@ -37,13 +37,13 @@ tems-center table-striped table-flush table-bordered dt-responsive" id="table_us
             </thead>
             <tbody class="list">
 
-              @foreach ($souvenirs_actives as $souvenir )
+              @foreach ($package_actives as $package )
               <tr>
                 <th scope="row">
                   <div class="media align-items-center">
 
                     <div class="media-body">
-                      <span class="name mb-0 text-sm"> {{ $souvenir->id }}</span>
+                      <span class="name mb-0 text-sm"> {{ $package->id }}</span>
                     </div>
                   </div>
                 </th>
@@ -53,7 +53,7 @@ tems-center table-striped table-flush table-bordered dt-responsive" id="table_us
                   <div class="media align-items-center">
 
                     <div class="media-body">
-                      <span class="name mb-0 text-sm">{{ $souvenir->name }} </span>
+                      <span class="name mb-0 text-sm">{{ $package->name }} </span>
                     </div>
                   </div>
                 </th>
@@ -61,7 +61,7 @@ tems-center table-striped table-flush table-bordered dt-responsive" id="table_us
                   <div class="media align-items-center">
 
                     <div class="media-body">
-                      <span class="name mb-0 text-sm">{{ $souvenir->description}} </span>
+                      <span class="name mb-0 text-sm">{{ $package->description}} </span>
                     </div>
                   </div>
                 </th>
@@ -70,7 +70,7 @@ tems-center table-striped table-flush table-bordered dt-responsive" id="table_us
                   <div class="media align-items-center">
 
                     <div class="media-body">
-                      <span class="name mb-0 text-sm"> {{ $souvenir->price }}</span>
+                      <span class="name mb-0 text-sm"> {{ $package->price }}</span>
                     </div>
                   </div>
                 </th>
@@ -82,8 +82,8 @@ tems-center table-striped table-flush table-bordered dt-responsive" id="table_us
                     </a>
                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
 
-                      <a class="dropdown-item" href="{{route('souvenir_update',$souvenir->id)}}">Actualizar información</a>
-                      <form action="{{route('souvenir_delete',$souvenir->id)}}" method="POST">
+                      <a class="dropdown-item" href="{{route('package_update',$package->id)}}">Actualizar información</a>
+                      <form action="{{route('package_delete',$package->id)}}" method="POST">
                         @csrf
                       <input type="submit" class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-notification" value="Eliminar" onclick="return confirm('¿Desea eliminar el souvenir?')"></input>
                       </form>

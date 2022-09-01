@@ -9,6 +9,7 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\SouvenirController;
 use App\Http\Controllers\TalkController;
 use App\Http\Controllers\SponsorController;
+use App\Http\Controllers\PackageController;
 
 
 /*
@@ -93,6 +94,15 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/sponsor/create',[SponsorController::class,"create"])->name('sponsor_create');
         Route::post('/sponsor/store',[SponsorController::class,"store"])->name('sponsor_store');
         //sponsor end---------------------------------------------------
+
+        //package start------------------------------------------------
+        Route::get('/package',[PackageController::class,"index"])->name('package_index');
+        Route::get('/package/create',[PackageController::class,"create"])->name('package_create');
+        Route::post('/package/store',[PackageController::class,"store"])->name('package_store');
+        Route::get('/package/update/{package_id}',[PackageController::class,"update"])->name('package_update');
+        Route::post('/package/edit', [PackageController::class, "edit"])->name('package_edit');
+        Route::post('/package/delete/{package_id}', [PackageController::class, "delete"])->name('package_delete');
+        //package end---------------------------------------------------
 
         ///speaker start-----------------------------------------------
 
