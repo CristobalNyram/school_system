@@ -31,25 +31,26 @@ class CreateUsersTable extends Migration
 
 
 
-            //data of the students
-            $table->string('license_plate')->nullable()->unique();//matricula
-            $table->unsignedBigInteger('career',2)->nullable();
-            $table->string('quarter',2)->nullable();
-            $table->string('group')->nullable();
-            //data of the students
+      //data of the students
+      $table->string('user_image_updated')->nullable();//matricula
+    $table->string('license_plate')->nullable()->unique();//matricula
+     $table->unsignedBigInteger('career')->nullable();
+      $table->string('quarter',2)->nullable();
+      $table->string('group')->nullable();
+      //data of the students
 
-            //data of the speacker
-            $table->string('academic_level')->nullable();
-            $table->string('description')->nullable();
-            $table->string('specialty')->nullable();
-            $table->string('pdf_cv')->nullable();
-            //data of the speacker
+      //data of the speacker
+      $table->string('academic_level')->nullable();
+      $table->string('description')->nullable();
+      $table->string('specialty')->nullable();
+      $table->string('pdf_cv')->nullable();
+      //data of the speacker
 
 
-            $table->string('user_image');
+            $table->string('user_image')->nullable();;
+
             $table->unsignedBigInteger('role_id')->default(2);
             $table->string('status',2)->default(2);
-            $table->foreign('role_id')->references('id')->on('roles');
             $table->foreign('role_id')->references('id')->on('roles');
 
             $table->rememberToken();
