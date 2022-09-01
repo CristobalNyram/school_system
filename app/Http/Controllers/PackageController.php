@@ -3,22 +3,29 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Package;
+use App\Models\Role;
+use App\Models\Logbook;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use App\Models\User;
+
 
 class PackageController extends Controller
 {
     public function index()
     {
-      if (Role::checkAccesToThisFunctionality(Auth::user()->role_id, 19) == null) {
-        $variables = [ 
-  
-          
-          'menu' => '',
-          'title_page' => 'Acceso denegado',
-  
-  
-        ];
-        return view('errors.notaccess')->with($variables);
-      }
+    if (Role::checkAccesToThisFunctionality(Auth::user()->role_id, 32) == null) {
+      $variables = [
+        'menu' => '',
+        'title_page' => 'Acceso denegado',
+
+      ];
+      return view('errors.notaccess')->with($variables);
+    }
+
+    Logbook::activity_done($description = 'Accedió al módulo de consulta de Paquetes.', $table_id = 0, $menu_id = 32, $user_id = Auth::id(), $kind_acction = 1);
+
       
   
       $packages_active = Package::all()->where('status', '=', '2');
@@ -35,14 +42,14 @@ class PackageController extends Controller
   
     public function edit(Request $request)
     {
-      $packages = Packages::findOrFail($request->id);
+      $packages = Package::findOrFail($request->id);
       $packages->name = $request->name;
       $packages->description = $request->description;
       $packages->price = $request->price;
       $packages->souvenir_id = $request->souvenir_id;
   
-      if ($souvenir->save()) {
-       
+      if ($packages->save()) {
+      Logbook::activity_done($description = 'Actualizo el paquete correctamente' . $packages->title . '', $table_id = 0, $menu_id = 32, $user_id = Auth::id(), $kind_acction = 3);
         return back()->with('success', 'Se ha actualizado el paquete exitosamente...');
       } else {
         return  back()->withErrors('No se ha actualizado el paquete...');
@@ -59,15 +66,14 @@ class PackageController extends Controller
   
     public function update($package_id)
     {
-      if (Role::checkAccesToThisFunctionality(Auth::user()->role_id, 19) == null) {
+      if (Role::checkAccesToThisFunctionality(Auth::user()->role_id, 32) == null) {
         $variables = [
           'menu' => '',
           'title_page' => 'Acceso denegado',
         ];
         return view('errors.notaccess')->with($variables);
       }
-  
-      
+    Logbook::activity_done($description = 'Accedió al módulo de Actualizar Paquete.', $table_id = 0, $menu_id = 32, $user_id = Auth::id(), $kind_acction = 1);      
   
       $current_package = Package::findOrFail($package_id);
   
@@ -83,7 +89,7 @@ class PackageController extends Controller
   
     public function create()
     {
-      if (Role::checkAccesToThisFunctionality(Auth::user()->role_id, 22) == null) {
+      if (Role::checkAccesToThisFunctionality(Auth::user()->role_id, 33) == null) {
         $variables = [
           'menu' => '',
           'title_page' => 'Acceso denegado',
@@ -92,8 +98,7 @@ class PackageController extends Controller
         ];
         return view('errors.notaccess')->with($variables);
       }
-  
-      
+    Logbook::activity_done($description = 'Accedió al módulo de Crear Paquete.', $table_id = 0, $menu_id = 33, $user_id = Auth::id(), $kind_acction = 1);      
   
   
       $package_available = Package::all()->where('status', '=', '2');
@@ -122,7 +127,7 @@ class PackageController extends Controller
   
   
       if ($package->save()) {
-       
+      Logbook::activity_done($description = 'Creó el paquete ' . $package->name . '.', $table_id = 0, $menu_id = 33, $user_id = Auth::id(), $kind_acction = 6);
         return back()->with('success', 'Se ha registrado el paquete exitosamente...');
       } else {
         return  back()->withErrors('No se ha registrado el paquete...');
@@ -137,9 +142,10 @@ class PackageController extends Controller
      */
     public function delete($package_id)
     {
-        $package = Souvenir::findOrFail($package_id);
+        $package = Package::findOrFail($package_id);
         $package->status=-2;
       if($package->save()){
+      Logbook::activity_done($description = 'Eliminó el paquete ' . $package->name . '.', $table_id = 0, $menu_id = 33, $user_id = Auth::id(), $kind_acction = 4);
         return back()->with('success', 'Se ha borrado el paquete exitosamente...');
       }else{
         return back()->with('success', 'No se ha borrado el paquete exitosamente...');
