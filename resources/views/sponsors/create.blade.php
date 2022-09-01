@@ -19,7 +19,7 @@
               </div>
 
 
-                        <form class="m-5"  action="{{route('sponsor_store')}}"  method="POST">
+                        <form class="m-5"  action="{{route('sponsor_store')}}"  method="POST" enctype ="multipart/form-data">
                             @csrf
                             @if(session('success'))
                             <div class="alert alert-success" role="alert">
@@ -50,7 +50,7 @@
 
                             <div class="form-group">
                                 <label for="url_img">Imagen</label>
-                                <input type="text" class="form-control form-control-lg" id="url_img" name="url_img" value="{{ old('url_img') }}" placeholder="Foto del sponsor"  max="50"  required oninput="uppercaseLetters(event);">
+                                <input type="file" class="form-control form-control-lg" id="url_img" name="url_img" value="{{ old('url_img') }}" placeholder="Foto del sponsor"  max="50"  required oninput="uppercaseLetters(event);" >
                             </div>
 
 
