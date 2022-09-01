@@ -15,11 +15,11 @@ class CreateRelcoursestudentsTable extends Migration
     {
         Schema::create('relcoursestudents', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('course_id');
-            $table->unsignedBigInteger('user_student_id');
-            $table->unsignedBigInteger('user_approved_id');
-            $table->unsignedBigInteger('user_canceled_id');
-            $table->string('status')->default(2);
+            // $table->unsignedBigInteger('course_id');
+            // $table->unsignedBigInteger('user_student_id');
+            // $table->unsignedBigInteger('user_approved_id');
+            // $table->unsignedBigInteger('user_canceled_id');
+            // $table->string('status')->default(2);
             $table->timestamps();
         });
     }
