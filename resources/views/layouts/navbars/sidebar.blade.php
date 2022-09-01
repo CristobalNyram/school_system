@@ -146,7 +146,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('home') }}">
+                    <a class="nav-link" href="{{ route('student_index') }}">
                         <i class="fas fa-object-group text-primary"></i>Alumnos
                     </a>
                 </li>

@@ -9,6 +9,11 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\SouvenirController;
 use App\Http\Controllers\TalkController;
 use App\Http\Controllers\SponsorController;
+<<<<<<< HEAD
+use App\Http\Controllers\PackageController;
+=======
+use App\Http\Controllers\StudentController;
+>>>>>>> 5b722d3dc46df0ca7ca924dbda53dd20bd6679b7
 
 
 /*
@@ -51,6 +56,20 @@ Route::group(['middleware' => 'auth'], function () {
 
 
         // users end--------------------------------------------
+
+         // student start-------------------------------------------
+         Route::get('/student',[StudentController::class,"index"])->name('student_index');
+         Route::get('/student/create',[StudentController::class,"create"])->name('student_create');
+         Route::post('/student/store',[UserController::class,"store"])->name('student_store');
+         Route::get('/student/update/{user_id}',[StudentController::class,"update"])->name('student_update');
+         Route::post('/student/edit',[StudentController::class,"edit"])->name('student_edit');
+         Route::post('/student/delete/{user_id}',[StudentController::class,"delete"])->name('student_delete');
+
+
+         // student end--------------------------------------------
+
+
+
 
 
         // menu start---------------------------------------
@@ -97,6 +116,15 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/sponsor/delete/{sponsor_id}', [SponsorController::class, "delete"])->name('sponsor_delete');
         //sponsor end---------------------------------------------------
 
+        //package start------------------------------------------------
+        Route::get('/package',[PackageController::class,"index"])->name('package_index');
+        Route::get('/package/create',[PackageController::class,"create"])->name('package_create');
+        Route::post('/package/store',[PackageController::class,"store"])->name('package_store');
+        Route::get('/package/update/{package_id}',[PackageController::class,"update"])->name('package_update');
+        Route::post('/package/edit', [PackageController::class, "edit"])->name('package_edit');
+        Route::post('/package/delete/{package_id}', [PackageController::class, "delete"])->name('package_delete');
+        //package end---------------------------------------------------
+
         ///speaker start-----------------------------------------------
 
         //speaker end----------------------------------------------------
@@ -112,7 +140,10 @@ Route::group(['middleware' => 'auth'], function () {
 
         //talk end--------------------------------------------------------
 
+       //studen start-------------------------------------------------
 
+
+       //studen end---------------------------------------------------
 
         Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
         Route::get('profile', ['as' => 'profile.edit', 'uses' => 'App\Http\Controllers\ProfileController@edit']);
