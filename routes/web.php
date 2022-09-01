@@ -92,6 +92,9 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/sponsor',[SponsorController::class,"index"])->name('sponsor_index');
         Route::get('/sponsor/create',[SponsorController::class,"create"])->name('sponsor_create');
         Route::post('/sponsor/store',[SponsorController::class,"store"])->name('sponsor_store');
+        Route::get('/sponsor/update/{sponsor_id}',[SponsorController::class,"update"])->name('sponsor_update');
+        Route::post('/sponsor/edit', [SponsorController::class, "edit"])->name('sponsor_edit');
+        Route::post('/sponsor/delete/{sponsor_id}', [SponsorController::class, "delete"])->name('sponsor_delete');
         //sponsor end---------------------------------------------------
 
         ///speaker start-----------------------------------------------
