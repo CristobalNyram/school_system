@@ -9,11 +9,8 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\SouvenirController;
 use App\Http\Controllers\TalkController;
 use App\Http\Controllers\SponsorController;
-<<<<<<< HEAD
 use App\Http\Controllers\PackageController;
-=======
 use App\Http\Controllers\StudentController;
->>>>>>> 5b722d3dc46df0ca7ca924dbda53dd20bd6679b7
 
 
 /*

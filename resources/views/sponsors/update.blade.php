@@ -11,6 +11,11 @@
         <div class="col">
             <div class="card">
                 <!-- Card header -->
+                <div class="card-header border-0">
+                <h3 class="mb-0">Sponsors</h3>
+                </div>
+
+                <!-- Light table -->
 
                 <div class="card-header border-0">
                     <h2 class="mb-0">Actualizar información del sponsor: {{ $current_sponsor->name }}</h2>

@@ -12,6 +12,7 @@
             <div class="card">
               <!-- Card header -->
 
+
               <div class="card-header border-0">
                 <h2 class="mb-0">Agregar Sponsor</h2>
 
@@ -42,14 +43,14 @@
 
                             <div class="form-group">
                                 <label for="slogan">Eslogon</label>
-                                <input type="description" class="form-control form-control-lg" id="slogan" name="slogan" value="{{ old('description') }}" placeholder="Eslogan"  max="50" required  oninput="uppercaseLetters(event);">
+                                <input type="description" class="form-control form-control-lg" id="slogan" name="slogan" value="{{ old('slogan') }}" placeholder="Eslogan"  max="50" required  oninput="uppercaseLetters(event);">
                             </div>
 
                             
 
                             <div class="form-group">
                                 <label for="url_img">Imagen</label>
-                                <input type="text" class="form-control form-control-lg" id="url_img" name="url_img" value="{{ old('url_img') }}" placeholder="Foto del souvenir"  max="50"  required oninput="uppercaseLetters(event);">
+                                <input type="text" class="form-control form-control-lg" id="url_img" name="url_img" value="{{ old('url_img') }}" placeholder="Foto del sponsor"  max="50"  required oninput="uppercaseLetters(event);">
                             </div>
 
 
