@@ -22,15 +22,36 @@ class CreateUsersTable extends Migration
             $table->string('date_birth')->nullable();
             $table->string('gender',3,['H','M','N/A'])->default('H');
             $table->string('phone_number',15)->nullable();
-            $table->string('address',15)->nullable();
+            $table->string('address',35)->nullable();
             $table->string('blood_type',2)->nullable();;
-            $table->string('professional_license')->nullable();
+            // $table->string('professional_license')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+
+
+
+            //data of the students
+            $table->string('license_plate')->nullable()->unique();//matricula
+            $table->unsignedBigInteger('career',2)->nullable();
+            $table->string('quarter',2)->nullable();
+            $table->string('group')->nullable();
+            //data of the students
+
+            //data of the speacker
+            $table->string('academic_level')->nullable();
+            $table->string('description')->nullable();
+            $table->string('specialty')->nullable();
+            $table->string('pdf_cv')->nullable();
+            //data of the speacker
+
+
+            $table->string('user_image');
             $table->unsignedBigInteger('role_id')->default(2);
             $table->string('status',2)->default(2);
             $table->foreign('role_id')->references('id')->on('roles');
+            $table->foreign('role_id')->references('id')->on('roles');
+
             $table->rememberToken();
             $table->timestamps();
         });
