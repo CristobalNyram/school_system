@@ -71,11 +71,20 @@ class SponsorController extends Controller
      */
     public function store(Request $request)
     {
-        $sponsor =new Sponsor();
+      $sponsor =new Sponsor();
        $sponsor->name = $request->name;
        $sponsor->slogan = $request->slogan;
        $sponsor->url_img = $request->url_img;
-      
+
+      if($request -> hasFile ('url_img')){
+        $file = $request ->file('url_img');
+        $destiantionPath = 'argon/img/sponsor/';
+        $filename = time() .'-'. $file->getClientOriginalName();
+        $uploadSuccess = $request->file('url_img')->move($destiantionPath, $filename);
+        $sponsor->url_img = $destiantionPath . $filename;
+
+
+       }
        
 
         if ($sponsor->save()) {
@@ -113,7 +122,20 @@ class SponsorController extends Controller
         $sponsor = Sponsor::findOrFail($request->id);
         $sponsor->name = $request->name;
         $sponsor->slogan = $request->slogan;
-        $sponsor->url_img = $request->url_img;
+         $sponsor->url_img = $request->url_img;
+
+        
+        
+        if($request -> hasFile('url_img')){
+          $file = $request ->file('url_img');
+          $destiantionPath = 'argon/img/sponsor/';
+          $filename = time() .'-'. $file->getClientOriginalName();
+          $uploadSuccess = $request->file('url_img')->move($destiantionPath, $filename);
+          $sponsor->url_img = $destiantionPath . $filename;
+         }
+
+         
+
     
         if ($sponsor->save()) {
           Logbook::activity_done($description = 'Actualizo el slogan ' . $sponsor->name . '', $table_id = 0, $menu_id = 22, $user_id = Auth::id(), $kind_acction = 3);
@@ -139,6 +161,7 @@ class SponsorController extends Controller
             ];
             return view('errors.notaccess')->with($variables);
           }
+
       
           Logbook::activity_done($description = 'Accedió al módulo de Actualizar Sponsor.', $table_id = 0, $menu_id = 19, $user_id = Auth::id(), $kind_acction = 1);
       

@@ -71,7 +71,7 @@
                             <div class="media align-items-center">
 
                               <div class="media-body">
-                                <span class="name mb-0 text-sm"> {{ $sponsor->url_img }}</span>
+                                <span class="name mb-0 text-sm"><img src="{{asset($sponsor->url_img )}}" alt="{{$sponsor->name}}" class="img-fluid img-thumbnail" width ="80px" > </span>
                               </div>
                             </div>
                         </th>
