@@ -13,7 +13,7 @@
               <!-- Card header -->
 
               <div class="card-header border-0">
-                <h2 class="mb-0">Actualizar contraseña del estudiante: {{ $current_user->name }}</h2>
+                <h2 class="mb-0">Actualizar contraseña del usuario: {{ $current_user->name }}</h2>
 
               </div>
 

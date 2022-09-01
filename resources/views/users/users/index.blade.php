@@ -82,7 +82,7 @@
                               </a>
                               <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                 <a class="dropdown-item"  href="{{ route('user_update',$user->id)}}" >Actualizar información</a>
-                                <a class="dropdown-item" href="#">Actualizar contraseña</a>
+                                <a class="dropdown-item" href="{{ route('password_update',$user->id)}}">Actualizar contraseña</a>
                                 <a class="dropdown-item text-danger"  data-toggle="modal" data-target="#modal-notification" href="#" >Borrar</a>
                               </div>
                             </div>
