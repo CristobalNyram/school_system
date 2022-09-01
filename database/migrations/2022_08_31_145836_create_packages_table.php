@@ -18,7 +18,7 @@ class CreatePackagesTable extends Migration
             $table->string('name');
             $table->string('description');
             $table->string('price');
-            $table->status('status',2)->default(2);
+            $table->string('status',2)->default(2);
             $table->unsignedBigInteger('souvenir_id');
             $table->timestamps();
         });
