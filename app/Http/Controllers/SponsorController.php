@@ -18,6 +18,19 @@ class SponsorController extends Controller
      */
     public function index()
     {
+    if (Role::checkAccesToThisFunctionality(Auth::user()->role_id, 29) == null) {
+      $variables = [
+        'menu' => '',
+        'title_page' => 'Acceso denegado',
+
+      ];
+      return view('errors.notaccess')->with($variables);
+    }
+
+    Logbook::activity_done($description = 'Accedió al módulo de consulta de Patrocinadores.', $table_id = 0, $menu_id = 29, $user_id = Auth::id(), $kind_acction = 1);
+
+
+
         $sponsors_active = Sponsor::all()->where('status', '=', '2');
     $sponsors_active_number = Sponsor::all()->where('status', '=', '2')->count();
 
@@ -38,17 +51,17 @@ class SponsorController extends Controller
     
     public function create()
     {
-        if(Role::checkAccesToThisFunctionality(Auth::user()->role_id,12)==null)
-        {
-            $variables=[
-                'menu'=>'',
-                'title_page'=>'Acceso denegado',
+    if (Role::checkAccesToThisFunctionality(Auth::user()->role_id, 30) == null) {
+      $variables = [
+        'menu' => '',
+        'title_page' => 'Acceso denegado',
 
 
-            ];
-            return view('errors.notaccess')->with($variables);
-
-        }
+      ];
+      return view('errors.notaccess')->with($variables);
+    }
+    Logbook::activity_done($description = 'Accedió al módulo de Crear Patrocinador.', $table_id = 0, $menu_id = 30, $user_id = Auth::id(), $kind_acction = 1);      
+  
 
 
         $rol_available=Role::all()->where('status','=','2');
@@ -72,9 +85,9 @@ class SponsorController extends Controller
     public function store(Request $request)
     {
       $sponsor =new Sponsor();
-       $sponsor->name = $request->name;
-       $sponsor->slogan = $request->slogan;
-       $sponsor->url_img = $request->url_img;
+      $sponsor->name = $request->name;
+      $sponsor->slogan = $request->slogan;
+      $sponsor->url_img = $request->url_img;
 
       if($request -> hasFile ('url_img')){
         $file = $request ->file('url_img');
@@ -88,8 +101,7 @@ class SponsorController extends Controller
        
 
         if ($sponsor->save()) {
-
-           
+            Logbook::activity_done($description = 'Creó el patrocinador ' . $sponsor->name . '.', $table_id = 0, $menu_id = 30, $user_id = Auth::id(), $kind_acction = 6);
             return back()->with('success','Se ha registrado el patrocinador exitosamente...');
 
         }
@@ -122,7 +134,7 @@ class SponsorController extends Controller
         $sponsor = Sponsor::findOrFail($request->id);
         $sponsor->name = $request->name;
         $sponsor->slogan = $request->slogan;
-         $sponsor->url_img = $request->url_img;
+        $sponsor->url_img = $request->url_img;
 
         
         
@@ -132,13 +144,11 @@ class SponsorController extends Controller
           $filename = time() .'-'. $file->getClientOriginalName();
           $uploadSuccess = $request->file('url_img')->move($destiantionPath, $filename);
           $sponsor->url_img = $destiantionPath . $filename;
-         }
-
-         
+        }
 
     
         if ($sponsor->save()) {
-          Logbook::activity_done($description = 'Actualizo el slogan ' . $sponsor->name . '', $table_id = 0, $menu_id = 22, $user_id = Auth::id(), $kind_acction = 3);
+        Logbook::activity_done($description = 'Actualizo el patrocinador ' . $sponsor->name . ' correctamente', $table_id = 0, $menu_id = 29, $user_id = Auth::id(), $kind_acction = 3);
           return back()->with('success', 'Se ha actualizado el Patrocinador exitosamente...');
         } else {
           return  back()->withErrors('No se ha actualizado el Patrocinador...');
@@ -154,17 +164,15 @@ class SponsorController extends Controller
      */
     public function update($sponsor_id)
     {
-        if (Role::checkAccesToThisFunctionality(Auth::user()->role_id, 19) == null) {
-            $variables = [
-              'menu' => '',
-              'title_page' => 'Acceso denegado',
-            ];
-            return view('errors.notaccess')->with($variables);
-          }
-
-      
-          Logbook::activity_done($description = 'Accedió al módulo de Actualizar Sponsor.', $table_id = 0, $menu_id = 19, $user_id = Auth::id(), $kind_acction = 1);
-      
+        if (Role::checkAccesToThisFunctionality(Auth::user()->role_id, 29) == null) {
+        $variables = [
+          'menu' => '',
+          'title_page' => 'Acceso denegado',
+        ];
+        return view('errors.notaccess')->with($variables);
+      }
+    Logbook::activity_done($description = 'Accedió al módulo de Actualizar Patrocinador.', $table_id = 0, $menu_id = 29, $user_id = Auth::id(), $kind_acction = 1);      
+  
           $current_sponsor = Sponsor::findOrFail($sponsor_id);
       
           $variables = [
@@ -182,12 +190,13 @@ class SponsorController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-     
+    
     public function delete($sponsor_id)
   {
     $sponsor = Sponsor::findOrFail($sponsor_id);
     $sponsor->status=-2;
     if($sponsor->save()){
+      Logbook::activity_done($description = 'Eliminó el paquete ' . $sponsor->name . '.', $table_id = 0, $menu_id = 30, $user_id = Auth::id(), $kind_acction = 4);
       return back()->with('success', 'Se ha borrado el sponsor exitosamente...');
     }else{
       return back()->with('success', 'No se ha borrado el sponsor exitosamente...');
