@@ -41,7 +41,7 @@ class UserController extends Controller
         }
         Logbook::activity_done($description='Accedió al módulo de Usuarios.',$table_id=0,$menu_id=4,$user_id=Auth::id(),$kind_acction=1);
 
-        $users_active=User::all()->where('status','=','2');
+        $users_active=User::all()->sortByDesc('id')->where('status','=','2');
         $users_active_number=User::all()->where('status','=','2')->count();
 
 

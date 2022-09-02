@@ -13,7 +13,7 @@
               </div>
               <!-- Light table -->
               <div class="table-responsive">
-                <table class="table align-items-center table-striped table-flush table-bordered dt-responsive"  id="table_logbook_all">
+                <table data-order='[[ 1, "asc" ]]' class="table align-items-center table-striped table-flush table-bordered dt-responsive"  id="table_logbook_all">
                   <thead class="thead-light">
                     <tr>
                      <th scope="col" class="sort" data-sort="name">Folio</th>
@@ -109,6 +109,7 @@
                         "next":       "Next",
                         "previous":   "Previous"
                      },
+
                 }
             } );
         } );

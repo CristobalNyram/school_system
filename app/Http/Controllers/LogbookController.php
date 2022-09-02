@@ -30,7 +30,7 @@ class LogbookController extends Controller
         }
         Logbook::activity_done($description='Accedió al módulo de bitácora.',$table_id=0,$menu_id=6,$user_id=Auth::id(),$kind_acction=6);
 
-        $logbook = Logbook::all();
+        $logbook = Logbook::all()->sortByDesc('id');
         $variables=[
             'menu'=>'logbook',
             'title_page'=>'Bitácora',
