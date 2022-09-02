@@ -17,7 +17,7 @@
             <div class="card">
               <!-- Card header -->
               <div class="card-header border-0">
-                <h3 class="mb-0">Cursos registrados</h3>
+                <h3 class="mb-0">Souvenirs registrados</h3>
               </div>
               <!-- Light table -->
               <script>

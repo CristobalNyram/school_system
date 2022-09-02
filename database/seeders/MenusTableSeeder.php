@@ -290,7 +290,7 @@ class MenusTableSeeder extends Seeder
             'title' => 'Patrocinadores',
             'description' => 'Menu padre .',
             'menu_parent' => 0,
-            'order' => 5,
+            'order' => 29,
             'status' =>2,
 
         ]);
@@ -299,26 +299,58 @@ class MenusTableSeeder extends Seeder
             'title' => 'Modificar patrocinadores',
             'description' => 'Agregar,editar o borrar patrocinador.',
             'menu_parent' => 29,
-            'order' => 5,
+            'order' => 30,
             'status' =>2,
 
         ]);
 
         DB::table('menus')->insert([
             'title' => 'Ver todos los patrocinadores',
-            'description' => 'Agregar,editar o borrar suvenir.',
+            'description' => 'Ver todos los patrocinadores.',
             'menu_parent' => 29,
-            'order' => 5,
+            'order' => 31,
             'status' =>2,
 
         ]);
 
         //menu fin
 
+        //menu padre
+        DB::table('menus')->insert([
+            'title' => 'Paquetes',
+            'description' => 'Menu padre .',
+            'menu_parent' => 0,
+            'order' => 32,
+            'status' =>2,
+
+        ]);
+
+        DB::table('menus')->insert([
+            'title' => 'Modificar paquetes',
+            'description' => 'Agregar,editar o borrar paquetes.',
+            'menu_parent' => 32,
+            'order' => 33,
+            'status' => 2,
+
+        ]);
+
+        DB::table('menus')->insert([
+            'title' => 'Ver todos los paquetes',
+            'description' => 'Ver todos los paquetes.',
+            'menu_parent' => 32,
+            'order' => 34,
+            'status' => 2,
+
+        ]);
+
+        //menu fin
+
+
+
         //menu fin
         /*
          //menu padre
-         DB::table('menus')->insert([
+        DB::table('menus')->insert([
             'title' => 'Extranjeros',
             'description' => 'Agregar,editar o borrar suvenir.',
             'menu_parent' => 1,
