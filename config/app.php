@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'SISTEMA ESCOLAR'),
+    'name' => env('APP_NAME', 'fallback_app_name'),
 
     /*
     |--------------------------------------------------------------------------
