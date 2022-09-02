@@ -77,7 +77,7 @@ class TalkController extends Controller
        
        
         $rol_available=Role::all()->where('status','=','2');
-        $users_speakers=User::all()->where('status', '=', '2');
+        $users_speakers=User::all()->where('status', '=', '2')->where('role_id','=','6');
         $variables=[
             'menu'=>'users_all',
             'title_page'=>'Conferencias',

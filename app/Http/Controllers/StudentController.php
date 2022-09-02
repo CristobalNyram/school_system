@@ -9,6 +9,7 @@ use App\Models\Role;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Logbook;
+use App\Models\Carrer;
 
 class StudentController extends Controller
 {
@@ -34,8 +35,8 @@ class StudentController extends Controller
         Logbook::activity_done($description='Accedió a la vista de estudiante.',$table_id=0,$menu_id=4,$user_id=Auth::id(),$kind_acction=1);
         
         
-        $users_active=User::all()->where('status','=','2')->where('role_id','=','4');
-        $users_active_number=User::all()->where('status','=','2')->where('role_id','=','4')->count();
+        $users_active=User::all()->where('status','=','2')->where('role_id','=','3');
+        $users_active_number=User::all()->where('status','=','2')->where('role_id','=','3')->count();
       
 
        
@@ -76,15 +77,17 @@ class StudentController extends Controller
         
         
         $rol_available=Role::all()->where('status','=','2');
+        $carrers_available=Carrer::all()->where('status','=','2');
         $variables=[
             'menu'=>'users_all',
             'title_page'=>'Usuarios',
             'rol_available'=>$rol_available,
+            'carrers_available'=>$carrers_available,
 
 
         ];
 
-        return view('speaker.create')->with($variables);
+        return view('student.create')->with($variables);
     }
 
     /**

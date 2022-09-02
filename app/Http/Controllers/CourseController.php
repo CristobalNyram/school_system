@@ -73,7 +73,7 @@ class CourseController extends Controller
         Logbook::activity_done($description='Accedió al módulo de Crear Curso.',$table_id=0,$menu_id=12,$user_id=Auth::id(),$kind_acction=1);
 
         $rol_available=Role::all()->where('status','=','2');
-        $users_speakers=User::all()->where('status', '=', '2');
+        $users_speakers=User::all()->where('status', '=', '2')->where('role_id','=','6');
 
         $variables=[
             'menu'=>'users_all',
