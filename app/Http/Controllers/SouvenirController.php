@@ -48,6 +48,15 @@ class SouvenirController extends Controller
     $souvenir->price = $request->price;
     $souvenir->url_img = $request->url_img;
 
+    if($request -> hasFile ('url_img')){
+      $file = $request ->file('url_img');
+      $destiantionPath = 'argon/img/souvenir/';
+      $filename = time() .'-'. $file->getClientOriginalName();
+      $uploadSuccess = $request->file('url_img')->move($destiantionPath, $filename);
+      $souvenir->url_img = $destiantionPath . $filename;
+
+     }
+
     if ($souvenir->save()) {
       Logbook::activity_done($description = 'Actualizo el souvenir ' . $souvenir->name . '', $table_id = 0, $menu_id = 22, $user_id = Auth::id(), $kind_acction = 3);
       return back()->with('success', 'Se ha actualizado el souvenir exitosamente...');
@@ -127,8 +136,18 @@ class SouvenirController extends Controller
     $souvenir->description = $request->description;
     $souvenir->url_img = $request->url_img;
 
+    if($request -> hasFile ('url_img')){
+      $file = $request ->file('url_img');
+      $destiantionPath = 'argon/img/souvenir/';
+      $filename = time() .'-'. $file->getClientOriginalName();
+      $uploadSuccess = $request->file('url_img')->move($destiantionPath, $filename);
+      $souvenir->url_img = $destiantionPath . $filename;
+
+     }
+
 
     if ($souvenir->save()) {
+      
       Logbook::activity_done($description = 'Creo el souvenir ' . $souvenir->name . '.', $table_id = 0, $menu_id = 22, $user_id = Auth::id(), $kind_acction = 6);
       return back()->with('success', 'Se ha registrado el souvenir exitosamente...');
     } else {

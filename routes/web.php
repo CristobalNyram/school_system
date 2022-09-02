@@ -11,11 +11,8 @@ use App\Http\Controllers\TalkController;
 use App\Http\Controllers\SponsorController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\StudentController;
-<<<<<<< HEAD
 use App\Http\Controllers\PasswordController;
 use App\Http\Controllers\SpeakerController;
-=======
->>>>>>> 07d70bcde7d0069f85bf8839085b3270468f6ae3
 
 
 /*
