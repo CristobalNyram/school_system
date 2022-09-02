@@ -15,7 +15,6 @@ use App\Http\Controllers\PasswordController;
 use App\Http\Controllers\SpeakerController;
 
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes

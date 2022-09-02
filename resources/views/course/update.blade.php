@@ -18,7 +18,7 @@
               </div>
 
 
-                        <form class="m-5"  action="{{route('course_edit')}}"  method="POST">
+                        <form class="m-5"  action="{{route('course_edit')}}"  method="POST" enctype ="multipart/form-data">
                             @csrf
                             @if(session('success'))
                             <div class="alert alert-success" role="alert">
@@ -50,8 +50,8 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="photo">Foto del curso</label>
-                                <input type="text" class="form-control form-control-lg" id="url_img" name="url_img" value="{{ $current_course->url_img }}" placeholder="Foto del curso"  max="50"  required oninput="uppercaseLetters(event);">
+                                <label for="url_img">Foto del Curso</label>
+                                <input type="file" class="form-control form-control-lg" id="url_img" name="url_img"  value="{{ $current_course->url_img }}" placeholder="Foto del curso" max="50" required oninput="uppercaseLetters(event);">
                             </div>
 
                             <div class="form-group">
