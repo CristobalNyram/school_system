@@ -54,10 +54,16 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="speaker_id">ID del ponente</label>
-                                <input type="text" class="form-control form-control-lg" id="speaker_id" name="speaker_id" value="{{ old('speaker_id') }}" placeholder="id del ponente"  max="50"  required oninput="uppercaseLetters(event);">
-                            </div>
+                                <label for="speaker_id">ID del Ponente</label>
 
+                                <select class="form-control form-control-lg  " data-toggle="select2"  name="speaker_id" id="speaker_id" >
+                                    <option value="-2" selected>Seleccionar</option>
+                                    @foreach ($users_speakers as $user_speaker )
+                                    <option value="{{ $users_speakers }}" >{{ $user_speaker->name }}</option>
+
+                                    @endforeach
+                                  </select>
+                            </div>
 
 
 

@@ -7,6 +7,8 @@ use App\Models\User;
 use App\Models\Role;
 use App\Models\Student;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Logbook;
 
 class PasswordController extends Controller
 {
@@ -35,6 +37,8 @@ class PasswordController extends Controller
         $user->password = Hash::make($request->password) ;
 
         if ($user->save()) {
+
+            Logbook::activity_done($description='Actualizo la contraseña correctamente' . $user->title . '',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=3);
             
             return back()->with('success','Se ha actualizado el curso exitosamente...');
 

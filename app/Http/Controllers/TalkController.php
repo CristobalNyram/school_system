@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Role;
 use App\Models\User;
+use App\Models\Logbook;
 
 class TalkController extends Controller
 {
@@ -28,6 +29,8 @@ class TalkController extends Controller
             return view('errors.notaccess')->with($variables);
 
         }
+
+        Logbook::activity_done($description='Accedió a la vista de conferencias.',$table_id=0,$menu_id=4,$user_id=Auth::id(),$kind_acction=1);
        
        
         $talks_active=Talk::all()->where('status','=','2');
@@ -55,6 +58,24 @@ class TalkController extends Controller
      */
     public function create()
     {
+       
+        if(Role::checkAccesToThisFunctionality(Auth::user()->role_id,12)==null)
+        {
+            $variables=[
+                'menu'=>'',
+                'title_page'=>'Acceso denegado',
+
+
+            ];
+            return view('errors.notaccess')->with($variables);
+
+        }
+
+        Logbook::activity_done($description='Accedió a la vista de Crear conferencia.',$table_id=0,$menu_id=12,$user_id=Auth::id(),$kind_acction=1);
+       
+       
+       
+       
         $rol_available=Role::all()->where('status','=','2');
         $users_speakers=User::all()->where('status', '=', '2');
         $variables=[
@@ -86,6 +107,8 @@ class TalkController extends Controller
        $talk->speaker_id = $request->speaker_id;
 
        if ($talk->save()) {
+
+        Logbook::activity_done($description='Creo la conferencia exitosamente '. $talk->title. '.' ,$table_id=0,$menu_id=12,$user_id=Auth::id(),$kind_acction=6);
 
         return back()->with('success','Se ha registrado el curso exitosamente...');
 
@@ -125,6 +148,8 @@ class TalkController extends Controller
          $talk->speaker_id = $request->speaker_id;
 
          if ($talk->save()) {
+
+            Logbook::activity_done($description='Actualizo la conferencia correctamente' . $talk->title . '',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=3);
             
             return back()->with('success','Se ha actualizado el curso exitosamente...');
 
@@ -157,6 +182,8 @@ class TalkController extends Controller
 
         }
 
+        Logbook::activity_done($description='Accedió a la vista  de Actualizar conferencia.',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=1);
+
      
 
         $current_talk=Talk::findOrFail($talk_id);
@@ -188,6 +215,7 @@ class TalkController extends Controller
         $course->status=-2;
 
         if($course->save()){
+            Logbook::activity_done($description='Borro la conferencia exitosamente.',$table_id=0,$menu_id=4,$user_id=Auth::id(),$kind_acction=1);
             return back()->with('success','Se ha eliminado el curso exitosamente...');
         } else {
             return back()->with('success','No se ha eliminado el curso exitosamente...');
