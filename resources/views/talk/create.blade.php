@@ -18,7 +18,7 @@
               </div>
 
 
-                        <form class="m-5"  action="{{route('talk_store')}}"  method="POST">
+                        <form class="m-5"  action="{{route('talk_store')}}"  method="POST" enctype ="multipart/form-data">
                             @csrf
                             @if(session('success'))
                             <div class="alert alert-success" role="alert">
@@ -41,7 +41,7 @@
 
                             <div class="form-group">
                                 <label for="description">Descripción</label>
-                                <input type="text" class="form-control form-control-lg" id="description" name="description" value="{{ old('description') }}" placeholder="Apellido paterno de usuario"  max="50" required  oninput="uppercaseLetters(event);">
+                                <input type="text" class="form-control form-control-lg" id="description" name="description" value="{{ old('description') }}" placeholder="Descripcion"  max="50" required  oninput="uppercaseLetters(event);">
                             </div>
                             <div class="form-group">
                                 <label for="date">Fecha de la conferencia</label>
@@ -55,12 +55,19 @@
 
                             <div class="form-group">
                                 <label for="url_img">Foto de la conferencia</label>
-                                <input type="text" class="form-control form-control-lg" id="url_img" name="url_img" value="{{ old('url_img') }}" placeholder="Foto de la conferencia"  max="50"  required oninput="uppercaseLetters(event);">
+                                <input type="file" class="form-control form-control-lg" id="url_img" name="url_img" value="{{ old('url_img') }}" placeholder="Foto de la conferencia"  max="50"  required oninput="uppercaseLetters(event);" >
                             </div>
 
                             <div class="form-group">
-                                <label for="speaker_id">ID del ponente</label>
-                                <input type="text" class="form-control form-control-lg" id="speaker_id" name="speaker_id" value="{{ old('speaker_id') }}" placeholder="id del ponente"  max="50"  required oninput="uppercaseLetters(event);">
+                                <label for="speaker_id">ID del Ponente</label>
+
+                                <select class="form-control form-control-lg  " data-toggle="select2"  name="speaker_id" id="speaker_id" >
+                                    <option value="-2" selected>Seleccionar</option>
+                                    @foreach ($users_speakers as $user_speaker )
+                                    <option value="{{ $users_speakers }}" >{{ $user_speaker->name }}</option>
+
+                                    @endforeach
+                                  </select>
                             </div>
 
 

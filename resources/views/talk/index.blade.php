@@ -2,6 +2,7 @@
 
 @section('content')
 @include('layouts.navbars.navs.header')
+@include('talk.headers_cards')
 
 
     <div class="container-fluid mt--6">
@@ -31,6 +32,7 @@
                       <th scope="col" class="sort" data-sort="budget">Nombre</th>
                       <th scope="col" class="sort" data-sort="status">Descripción</th>
                       <th scope="col" class="sort" data-sort="status">Fecha de registro</th>
+                      <th scope="col" class="sort" data-sort="status">Foto de la conferecnia</th>
                       <th scope="col" class="sort" data-sort="status">Acciones</th>
 
                     </tr>
@@ -75,6 +77,15 @@
                             </div>
                         </th>
 
+                        <th scope="row">
+                            <div class="media align-items-center">
+
+                              <div class="media-body">
+                                <span class="name mb-0 text-sm"><img src="{{asset($talk->url_img )}}" alt="{{$talk->name}}" class="img-fluid img-thumbnail" width ="80px" > </span>
+                              </div>
+                            </div>
+                        </th>
+
                         <td class="text-cener">
                             <div class="dropdown">
                               <a class="btn btn-sm btn-icon-only text-danger" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -83,9 +94,11 @@
                               <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                 <form action="{{ route('talk_delete',$talk->id)}}" method="post">
                                   @csrf
+                            
 
                                 <input class="dropdown-item text-danger" type="submit" value="Eliminar" data-toggle="modal" data-target="#modal-notification" onclick="return confirm('Eliminar')" ></input>
                                 </form>
+
                                  <form action="{{ route('talk_update',$talk->id)}}" method="get">
 
 

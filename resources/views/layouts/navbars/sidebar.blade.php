@@ -189,7 +189,7 @@
 
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('home') }}">
+                    <a class="nav-link" href="{{ route('sponsor_index') }}">
                         <i class="ni ni-spaceship text-primary"></i>
                         Patrocinadores
                     </a>
@@ -214,8 +214,12 @@
                         Souvenirs
                     </a>
                 </li>
-
-
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('package_index') }}">
+                        <i class="ni ni-ruler-pencil text-primary" aria-hidden="true"></i>
+                        Paquetes
+                    </a>
+                </li>
 
                 </li>
 

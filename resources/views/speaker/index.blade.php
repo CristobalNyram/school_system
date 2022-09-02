@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    @include('student.headers_cards')
+    @include('speaker.headers_cards')
 
 
     <div class="container-fluid mt--6">

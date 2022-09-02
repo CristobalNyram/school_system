@@ -18,7 +18,7 @@
               </div>
 
 
-                        <form class="m-5"  action="{{route('talk_edit')}}"  method="POST">
+                        <form class="m-5"  action="{{route('talk_edit')}}"  method="POST" enctype ="multipart/form-data">
                             @csrf
                             @if(session('success'))
                             <div class="alert alert-success" role="alert">
@@ -55,9 +55,9 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="url_img">Foto de la conferencia</label>
-                                <input type="text" class="form-control form-control-lg" id="url_img" name="url_img" value="{{ $current_talk->url_img }}" placeholder="Foto de la conferencia"  max="50"  required oninput="uppercaseLetters(event);">
-                            </div>
+                                <label for="url_img">Foto de la Conferecnia</label>
+                                <input type="file" class="form-control form-control-lg" id="url_img" name="url_img"  value="{{ $current_talk->url_img }}" placeholder="Foto de la conferecia" max="50" required oninput="uppercaseLetters(event);">
+                             </div>
 
                             <div class="form-group">
                                 <label for="speaker_id">ID del Ponente</label>

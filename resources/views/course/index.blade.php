@@ -2,6 +2,7 @@
 
 @section('content')
 @include('layouts.navbars.navs.header')
+ @include('course.headers_cards')
 
 
     <div class="container-fluid mt--6">
@@ -31,6 +32,7 @@
                       <th scope="col" class="sort" data-sort="budget">Título</th>
                       <th scope="col" class="sort" data-sort="status">Descripción</th>
                       <th scope="col" class="sort" data-sort="status">Fecha de registro</th>
+                      <th scope="col" class="sort" data-sort="status">Foto</th>
                       <th scope="col" class="sort" data-sort="status">Acciones</th>
 
                     </tr>
@@ -75,21 +77,30 @@
                             </div>
                         </th>
 
-                        <td class="text-cener">
-                            <div class="dropdown">
-                              <a class="btn btn-sm btn-icon-only text-danger" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-ellipsis-v"></i>
-                              </a>
-                              <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                              <a class="dropd own-item"  href="{{ route('course_update',$course->id)}}" >Actualizar información</a>
-                                <form action="{{ route('course_delete',$course->id)}}" method="post">
-                                  @csrf
-                                  
-                                <input class="dropdown-item text-danger" type="submit" data-toggle="modal" data-target="#modal-notification" onclick="return confirm('Eliminar')" ></input>
-                                </form>
+                        <th scope="row">
+                            <div class="media align-items-center">
+
+                              <div class="media-body">
+                                <span class="name mb-0 text-sm"><img src="{{asset($course->url_img )}}" alt="{{$course->name}}" class="img-fluid img-thumbnail" width ="80px" > </span>
                               </div>
                             </div>
-                        </td>
+                        </th>
+
+                        <td class="text-cener">
+                            <div class="dropdown">
+                            <a class="btn btn-sm btn-icon-only text-danger" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                           <i class="fas fa-ellipsis-v"></i>
+                            </a>
+                           <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+
+                            <a class="dropdown-item" href="{{route('course_update',$course->id)}}">Actualizar información</a>
+                           <form action="{{route('course_delete',$course->id)}}" method="POST">
+                           @csrf
+                             <input type="submit" class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-notification" value="Eliminar" onclick="return confirm('¿Desea eliminar el curso?')"></input>
+                           </form>
+                            </div>
+                            </div>
+                         </td>
 
 
                     </tr>

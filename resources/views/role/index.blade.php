@@ -133,7 +133,7 @@
                         "last":       "Last",
                         "next":       "Next",
                         "previous":   "Previous"
-                     },
+                    },
                 }
             } );
         } );

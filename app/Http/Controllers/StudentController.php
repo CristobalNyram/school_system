@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Role;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Logbook;
+use App\Models\Carrer;
 
 class StudentController extends Controller
 {
@@ -17,8 +20,23 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $users_active=User::all()->where('status','=','2')->where('role_id','=','4');
-        $users_active_number=User::all()->where('status','=','2')->where('role_id','=','4')->count();
+        if(Role::checkAccesToThisFunctionality(Auth::user()->role_id,10)==null)
+        {
+            $variables=[
+                'menu'=>'',
+                'title_page'=>'Acceso denegado',
+
+
+            ];
+            return view('errors.notaccess')->with($variables);
+
+        }
+
+        Logbook::activity_done($description='Accedió a la vista de estudiante.',$table_id=0,$menu_id=4,$user_id=Auth::id(),$kind_acction=1);
+        
+        
+        $users_active=User::all()->where('status','=','2')->where('role_id','=','3');
+        $users_active_number=User::all()->where('status','=','2')->where('role_id','=','3')->count();
       
 
        
@@ -43,16 +61,33 @@ class StudentController extends Controller
      */
     public function create()
     {
+        if(Role::checkAccesToThisFunctionality(Auth::user()->role_id,12)==null)
+        {
+            $variables=[
+                'menu'=>'',
+                'title_page'=>'Acceso denegado',
+
+
+            ];
+            return view('errors.notaccess')->with($variables);
+
+        }
+
+        Logbook::activity_done($description='Accedió a la vista de Crear estudiante.',$table_id=0,$menu_id=12,$user_id=Auth::id(),$kind_acction=1);
+        
+        
         $rol_available=Role::all()->where('status','=','2');
+        $carrers_available=Carrer::all()->where('status','=','2');
         $variables=[
             'menu'=>'users_all',
             'title_page'=>'Usuarios',
             'rol_available'=>$rol_available,
+            'carrers_available'=>$carrers_available,
 
 
         ];
 
-        return view('speaker.create')->with($variables);
+        return view('student.create')->with($variables);
     }
 
     /**
@@ -73,6 +108,9 @@ class StudentController extends Controller
         $user->password = Hash::make($request->password) ;
  
          if ($user->save()) {
+
+            Logbook::activity_done($description='Creo un nuevo estudiante exitosamente '. $user->title. '.' ,$table_id=0,$menu_id=12,$user_id=Auth::id(),$kind_acction=6);
+
              return back()->with('success','Se ha registrado el usuario exitosamente...');
  
          }
@@ -111,6 +149,8 @@ class StudentController extends Controller
         $user->email = $request->email;
 
         if ($user->save()) {
+
+            Logbook::activity_done($description='Actualizo la informacion del estudiante correctamente' . $user->title . '',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=3);
             
             return back()->with('success','Se ha actualizado el curso exitosamente...');
 
@@ -131,6 +171,22 @@ class StudentController extends Controller
      */
     public function update($user_id)
     {
+        if(Role::checkAccesToThisFunctionality(Auth::user()->role_id,10)==null)
+        {
+            $variables=[
+                'menu'=>'',
+                'title_page'=>'Acceso denegado',
+
+
+            ];
+            return view('errors.notaccess')->with($variables);
+
+        }
+
+        Logbook::activity_done($description='Accedió a la vista  de Actualizar estudiante.',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=1);
+       
+       
+       
         $current_user=User::findOrFail($user_id);
         $rol_available=Role::all()->where('status','=','2');
 
@@ -159,6 +215,9 @@ class StudentController extends Controller
         $user->status=-2;
 
         if($user->save()){
+
+            Logbook::activity_done($description='Borro a un estudiante exitosamente.',$table_id=0,$menu_id=4,$user_id=Auth::id(),$kind_acction=1);
+
             return back()->with('success','Se ha eliminado el curso exitosamente...');
         } else {
             return back()->with('success','No se ha eliminado el curso exitosamente...');

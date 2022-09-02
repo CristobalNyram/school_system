@@ -73,10 +73,14 @@ class CourseController extends Controller
         Logbook::activity_done($description='Accedió al módulo de Crear Curso.',$table_id=0,$menu_id=12,$user_id=Auth::id(),$kind_acction=1);
 
         $rol_available=Role::all()->where('status','=','2');
+        $users_speakers=User::all()->where('status', '=', '2')->where('role_id','=','6');
+
         $variables=[
             'menu'=>'users_all',
             'title_page'=>'Cursos',
             'rol_available'=>$rol_available,
+            'users_speakers'=>$users_speakers,
+
 
 
         ];
@@ -100,6 +104,15 @@ class CourseController extends Controller
        $course->url_img = $request->url_img;
        $course->speaker_id = $request->speaker_id;
 
+       if($request -> hasFile ('url_img')){
+        $file = $request ->file('url_img');
+        $destiantionPath = 'argon/img/course/';
+        $filename = time() .'-'. $file->getClientOriginalName();
+        $uploadSuccess = $request->file('url_img')->move($destiantionPath, $filename);
+        $course->url_img = $destiantionPath . $filename;
+
+       }
+       
 
         if ($course->save()) {
 
@@ -141,6 +154,15 @@ class CourseController extends Controller
          $course->date = $request->date;
          $course->url_img = $request->url_img;
          $course->speaker_id = $request->speaker_id;
+
+         if($request -> hasFile ('url_img')){
+            $file = $request ->file('url_img');
+            $destiantionPath = 'argon/img/course/';
+            $filename = time() .'-'. $file->getClientOriginalName();
+            $uploadSuccess = $request->file('url_img')->move($destiantionPath, $filename);
+            $course->url_img = $destiantionPath . $filename;
+    
+           }
 
          if ($course->save()) {
             Logbook::activity_done($description='Actualizo el curso correctamente' . $course->title . '',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=3);
