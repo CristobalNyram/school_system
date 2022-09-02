@@ -49,7 +49,7 @@ class PackageController extends Controller
       $packages->souvenir_id = $request->souvenir_id;
   
       if ($packages->save()) {
-      Logbook::activity_done($description = 'Actualizo el paquete correctamente' . $packages->title . '', $table_id = 0, $menu_id = 32, $user_id = Auth::id(), $kind_acction = 3);
+      Logbook::activity_done($description = 'Actualizo el paquete ' . $packages->name . ' correctamente', $table_id = 0, $menu_id = 32, $user_id = Auth::id(), $kind_acction = 3);
         return back()->with('success', 'Se ha actualizado el paquete exitosamente...');
       } else {
         return  back()->withErrors('No se ha actualizado el paquete...');

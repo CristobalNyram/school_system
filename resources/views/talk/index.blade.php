@@ -94,9 +94,11 @@
                               <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                 <form action="{{ route('talk_delete',$talk->id)}}" method="post">
                                   @csrf
+                            
 
                                 <input class="dropdown-item text-danger" type="submit" value="Eliminar" data-toggle="modal" data-target="#modal-notification" onclick="return confirm('Eliminar')" ></input>
                                 </form>
+
                                  <form action="{{ route('talk_update',$talk->id)}}" method="get">
 
 

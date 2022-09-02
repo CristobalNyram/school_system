@@ -50,7 +50,7 @@
 
                             <div class="form-group">
                                 <label for="role_id"></label>
-                                <input type="hidden" class="form-control form-control-lg" id="role_id" name="role_id" value="4" placeholder="Rol del estudiante"  max="50"  required oninput="uppercaseLetters(event);">
+                                <input type="hidden" class="form-control form-control-lg" id="role_id" name="role_id" value="3" placeholder="Rol del estudiante"  max="50"  required oninput="uppercaseLetters(event);">
                             </div>
 
 
@@ -66,6 +66,18 @@
                                     <option value="N/A" >No binario</option>
 
 
+                                  </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="speaker_id">Carrera</label>
+
+                                <select class="form-control form-control-lg  " data-toggle="select2"  name="speaker_id" id="speaker_id" >
+                                    <option value="-2" selected>Seleccionar</option>
+                                    @foreach ($carrers_available as $carrer_available )
+                                    <option value="{{ $carrers_available }}" >{{ $carrer_available->name }}</option>
+
+                                    @endforeach
                                   </select>
                             </div>
 
