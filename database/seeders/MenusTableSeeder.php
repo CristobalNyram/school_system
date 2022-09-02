@@ -315,33 +315,33 @@ class MenusTableSeeder extends Seeder
 
         //menu fin
 
-        //menu padre
-        DB::table('menus')->insert([
-            'title' => 'Paquetes',
-            'description' => 'Menu padre .',
-            'menu_parent' => 0,
-            'order' => 32,
-            'status' =>2,
+        // //menu padre
+        // DB::table('menus')->insert([
+        //     'title' => 'Paquetes',
+        //     'description' => 'Menu padre .',
+        //     'menu_parent' => 0,
+        //     'order' => 32,
+        //     'status' =>2,
 
-        ]);
+        // ]);
 
-        DB::table('menus')->insert([
-            'title' => 'Modificar paquetes',
-            'description' => 'Agregar,editar o borrar paquetes.',
-            'menu_parent' => 32,
-            'order' => 33,
-            'status' => 2,
+        // DB::table('menus')->insert([
+        //     'title' => 'Modificar paquetes',
+        //     'description' => 'Agregar,editar o borrar paquetes.',
+        //     'menu_parent' => 32,
+        //     'order' => 33,
+        //     'status' => 2,
 
-        ]);
+        // ]);
 
-        DB::table('menus')->insert([
-            'title' => 'Ver todos los paquetes',
-            'description' => 'Ver todos los paquetes.',
-            'menu_parent' => 32,
-            'order' => 34,
-            'status' => 2,
+        // DB::table('menus')->insert([
+        //     'title' => 'Ver todos los paquetes',
+        //     'description' => 'Ver todos los paquetes.',
+        //     'menu_parent' => 32,
+        //     'order' => 34,
+        //     'status' => 2,
 
-        ]);
+        // ]);
 
         //menu fin
 

@@ -190,7 +190,7 @@ class RoleController extends Controller
     public function assign_permission(Request $request)
     {
 
-         Relrolmenu::where('role_id',$request->role_id)->update(['status'=>-2]);
+        Relrolmenu::where('role_id',$request->role_id)->update(['status'=>-2]);
 
         $requestData =$request->all();
 
