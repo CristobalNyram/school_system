@@ -32,6 +32,7 @@
                       <th scope="col" class="sort" data-sort="budget">Nombre</th>
                       <th scope="col" class="sort" data-sort="status">Descripción</th>
                       <th scope="col" class="sort" data-sort="status">Fecha de registro</th>
+                      <th scope="col" class="sort" data-sort="status">Foto de la conferecnia</th>
                       <th scope="col" class="sort" data-sort="status">Acciones</th>
 
                     </tr>
@@ -72,6 +73,15 @@
 
                               <div class="media-body">
                                 <span class="name mb-0 text-sm"> {{ $talk->created_at }}</span>
+                              </div>
+                            </div>
+                        </th>
+
+                        <th scope="row">
+                            <div class="media align-items-center">
+
+                              <div class="media-body">
+                                <span class="name mb-0 text-sm"><img src="{{asset($talk->url_img )}}" alt="{{$talk->name}}" class="img-fluid img-thumbnail" width ="80px" > </span>
                               </div>
                             </div>
                         </th>

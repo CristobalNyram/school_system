@@ -85,6 +85,14 @@ class TalkController extends Controller
        $talk->url_img = $request->url_img;
        $talk->speaker_id = $request->speaker_id;
 
+       if($request -> hasFile('url_img')){
+        $file = $request ->file('url_img');
+        $destiantionPath = 'argon/img/talk/';
+        $filename = time() .'-'. $file->getClientOriginalName();
+        $uploadSuccess = $request->file('url_img')->move($destiantionPath, $filename);
+        $talk->url_img = $destiantionPath . $filename;
+       }
+
        if ($talk->save()) {
 
         return back()->with('success','Se ha registrado el curso exitosamente...');
@@ -123,6 +131,14 @@ class TalkController extends Controller
          $talk->time = $request->time;
          $talk->url_img = $request->url_img;
          $talk->speaker_id = $request->speaker_id;
+
+         if($request -> hasFile('url_img')){
+            $file = $request ->file('url_img');
+            $destiantionPath = 'argon/img/talk/';
+            $filename = time() .'-'. $file->getClientOriginalName();
+            $uploadSuccess = $request->file('url_img')->move($destiantionPath, $filename);
+            $talk->url_img = $destiantionPath . $filename;
+           }
 
          if ($talk->save()) {
             
