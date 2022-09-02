@@ -18,7 +18,7 @@ class CourseController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {    
+    {
         if(Role::checkAccesToThisFunctionality(Auth::user()->role_id,10)==null)
         {
             $variables=[

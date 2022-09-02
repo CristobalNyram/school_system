@@ -1,6 +1,4 @@
-ems-center table-striped table-flush table-bordered dt-responsive" id="table_users_all">
-            <thead class="thead-light">
-              <tr>@extends('layouts.app')
+@extends('layouts.app')
 
 @section('content')
 @include('layouts.navbars.navs.header')
@@ -19,25 +17,28 @@ ems-center table-striped table-flush table-bordered dt-responsive" id="table_use
       <div class="card">
         <!-- Card header -->
         <div class="card-header border-0">
-          <h3 class="mb-0">Packages</h3>
+          <h3 class="mb-0">Paquetes registrados</h3>
         </div>
         <!-- Light table -->
         <script>
 
         </script>
         <div class="table-responsive">
-          <table class="table align-i
+          <table class="table align-items-center table-striped table-flush table-bordered dt-responsive" id="table_users_all">
+            <thead class="thead-light">
+              <tr>
                 <th scope="col" class="sort" data-sort="name">ID</th>
                 <th scope="col" class="sort" data-sort="budget">Nombre</th>
                 <th scope="col" class="sort" data-sort="status">Descripción</th>
                 <th scope="col" class="sort" data-sort="status">Precio</th>
+                <th scope="col" class="sort" data-sort="status">ID Souvenir</th>
                 <th scope="col" class="sort" data-sort="status">Acciones</th>
 
               </tr>
             </thead>
             <tbody class="list">
 
-              @foreach ($package_actives as $package )
+              @foreach ($packages_actives as $package )
               <tr>
                 <th scope="row">
                   <div class="media align-items-center">
@@ -70,7 +71,16 @@ ems-center table-striped table-flush table-bordered dt-responsive" id="table_use
                   <div class="media align-items-center">
 
                     <div class="media-body">
-                      <span class="name mb-0 text-sm"> {{ $package->price }}</span>
+                      <span class="name mb-0 text-sm"> {{ $package->price}}</span>
+                    </div>
+                  </div>
+                </th>
+
+                <th scope="row">
+                  <div class="media align-items-center">
+
+                    <div class="media-body">
+                      <span class="name mb-0 text-sm"> {{ $package->souvenir_id}}</span>
                     </div>
                   </div>
                 </th>
@@ -81,11 +91,11 @@ ems-center table-striped table-flush table-bordered dt-responsive" id="table_use
                       <i class="fas fa-ellipsis-v"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-
-                      <a class="dropdown-item" href="{{route('package_update',$package->id)}}">Actualizar información</a>
-                      <form action="{{route('package_delete',$package->id)}}" method="POST">
+                      <a class="dropdown-item" href="{{ route('package_update',$package->id)}}">Actualizar información</a>
+                      <form action="{{ route('package_delete',$package->id)}}" method="post">
                         @csrf
-                      <input type="submit" class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-notification" value="Eliminar" onclick="return confirm('¿Desea eliminar el souvenir?')"></input>
+
+                        <input class="dropdown-item text-danger" type="submit" data-toggle="modal" data-target="#modal-notification" value="Eliminar" onclick="return confirm('¿Desea eliminar este paquete?')"></input>
                       </form>
                     </div>
                   </div>
@@ -99,42 +109,44 @@ ems-center table-striped table-flush table-bordered dt-responsive" id="table_use
           </table>
         </div>
         <!-- Card footer -->
+
       </div>
     </div>
-
-
-    @include('layouts.footers.auth')
   </div>
 
 
+  @include('layouts.footers.auth')
+</div>
 
 
-  <script>
-    $(document).ready(function() {
-      $('#table_users_all').DataTable({
-        "language": {
-          "lengthMenu": "Mostrar _MENU_ registros por página",
-          "zeroRecords": "No encontramos nada.",
-          "info": "Mostrando página _PAGE_ de _PAGES_",
-          "infoEmpty": "No hay registros existentes.",
-          "infoFiltered": "(Fitrado de _MAX_  registros existentes)",
-          "loadingRecords": "Cargando...",
-          "search": "Buscar:",
-          "emptyTable": "No hay información disponible en la tabla.",
-          "paginate": {
-            "first": "First",
-            "last": "Last",
-            "next": "Next",
-            "previous": "Previous"
-          },
-        }
-      });
+
+
+<script>
+  $(document).ready(function() {
+    $('#table_users_all').DataTable({
+      "language": {
+        "lengthMenu": "Mostrar _MENU_ registros por página",
+        "zeroRecords": "No encontramos nada.",
+        "info": "Mostrando página _PAGE_ de _PAGES_",
+        "infoEmpty": "No hay registros existentes.",
+        "infoFiltered": "(Fitrado de _MAX_  registros existentes)",
+        "loadingRecords": "Cargando...",
+        "search": "Buscar:",
+        "emptyTable": "No hay información disponible en la tabla.",
+        "paginate": {
+          "first": "First",
+          "last": "Last",
+          "next": "Next",
+          "previous": "Previous"
+        },
+      }
     });
-  </script>
+  });
+</script>
 
-  @endsection
+@endsection
 
-  @push('js')
-  {{-- <script src="{{ asset() }}/vendor/datatables.net/js/jquery.dataTables.min.js"></script> --}}
+@push('js')
+{{-- <script src="{{ asset() }}/vendor/datatables.net/js/jquery.dataTables.min.js"></script> --}}
 
-  @endpush
+@endpush

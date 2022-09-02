@@ -20,6 +20,7 @@ class CreateCoursesTable extends Migration
             $table->string('date');
             $table->string('url_img');
             $table->string('status',2)->default(2);
+            $table->string('status_course',2)->default(2);//2 lleno //1 disponible
             $table->unsignedBigInteger('speaker_id');
             $table->foreign('speaker_id')->references('id')->on('users');
             $table->timestamps();

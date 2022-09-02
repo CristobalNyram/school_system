@@ -33,8 +33,8 @@ class CreateUsersTable extends Migration
 
       //data of the students
       $table->string('user_image_updated')->nullable();//matricula
-    $table->string('license_plate')->nullable()->unique();//matricula
-     $table->unsignedBigInteger('career')->nullable();
+      $table->string('license_plate')->nullable()->unique();//matricula
+      $table->unsignedBigInteger('career')->nullable();
       $table->string('quarter',2)->nullable();
       $table->string('group')->nullable();
       //data of the students

@@ -298,7 +298,7 @@ class MenusTableSeeder extends Seeder
         DB::table('menus')->insert([
             'title' => 'Modificar patrocinadores',
             'description' => 'Agregar,editar o borrar patrocinador.',
-            'menu_parent' => 1,
+            'menu_parent' => 29,
             'order' => 5,
             'status' =>2,
 
@@ -307,7 +307,7 @@ class MenusTableSeeder extends Seeder
         DB::table('menus')->insert([
             'title' => 'Ver todos los patrocinadores',
             'description' => 'Agregar,editar o borrar suvenir.',
-            'menu_parent' => 1,
+            'menu_parent' => 29,
             'order' => 5,
             'status' =>2,
 

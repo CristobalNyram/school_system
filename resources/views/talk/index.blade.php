@@ -2,6 +2,7 @@
 
 @section('content')
 @include('layouts.navbars.navs.header')
+@include('talk.headers_cards')
 
 
     <div class="container-fluid mt--6">
