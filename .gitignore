@@ -1,10 +1,10 @@
 /node_modules
 /public/hot
 /public/hot
-/public/argon/image/sponsor
-/public/argon/image/souvenir
-/public/argon/image/talk
-/public/argon/image/course
+/public/argon/img/sponsor
+/public/argon/img/souvenir
+/public/argon/img/talk
+/public/argon/img/course
 /storage/*.key
 /vendor
 .env
