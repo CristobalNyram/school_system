@@ -15,7 +15,13 @@ class ProfileController extends Controller
      */
     public function edit()
     {
-        return view('profile.edit');
+        $variables=[
+            'menu'=>'',
+            'title_page'=>'Perfil',
+
+
+        ];
+        return view('profile.edit')->with($variables);
     }
 
     /**
