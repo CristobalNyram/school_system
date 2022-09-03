@@ -36,7 +36,7 @@ class SponsorController extends Controller
 
     $variables = [
       'menu' => 'users_all',
-      'title_page' => 'Sponsors',
+      'title_page' => 'Patrocinadores',
       'sponsors_actives' => $sponsors_active,
       'sponsors_active_number' => $sponsors_active_number,
     ];
@@ -67,7 +67,7 @@ class SponsorController extends Controller
         $rol_available=Role::all()->where('status','=','2');
         $variables=[
             'menu'=>'users_all',
-            'title_page'=>'Cursos',
+            'title_page'=>'Patrocinadores',
             'rol_available'=>$rol_available,
 
 
@@ -177,7 +177,7 @@ class SponsorController extends Controller
       
           $variables = [
             'menu' => 'sponsors_all',
-            'title_page' => 'Sponsors',
+            'title_page' => 'Patrocinadores',
             'current_sponsor' => $current_sponsor,
           ];
           return view('sponsors.update')->with($variables);
