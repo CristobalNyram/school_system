@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
-@section('content')
-@include('layouts.navbars.navs.header')
+@section('content')  
  @include('course.headers_cards')
 
 
@@ -77,28 +76,59 @@
                             </div>
                         </th>
 
+                        
+
                         <th scope="row">
+                          <button onclick="set_image_modal('{{asset($course->url_img )}}' , '{{ $course->title }}')" class="btn" data-toggle="modal" data-target="#ventanaModal">
                             <div class="media align-items-center">
 
                               <div class="media-body">
                                 <span class="name mb-0 text-sm"><img src="{{asset($course->url_img )}}" alt="{{$course->name}}" class="img-fluid img-thumbnail" width ="80px" > </span>
                               </div>
                             </div>
+                          </button>
                         </th>
+
+
+                        <!--Modal -->
+                        <div class="modal" id="ventanaModal" tableindex="-1" role="dialog" aria-labellebdy="titulo" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 id="titulo"></h5>
+                                <button class="close" data-dismiss="modal" aria-label="Cerrar">
+                                  <span aria-hidden="true">&times</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                
+                                <div class="media align-items-center">
+                                  <div class="media-body">
+                                    <span class="name mb-0 text-sm"><img id="modal_watch_image_course" alt="{{$course->name}}" class="img-fluid img-thumbnail" width ="100%" > </span>
+                                  </div>
+                                </div>
+
+                              </div>
+                            </div>
+                          </div>
+                        </div>
 
                         <td class="text-cener">
                             <div class="dropdown">
-                            <a class="btn btn-sm btn-icon-only text-danger" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                           <i class="fas fa-ellipsis-v"></i>
-                            </a>
-                           <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                              <a class="btn btn-sm btn-icon-only text-danger" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-ellipsis-v"></i>
+                              </a>
+                              <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                              <a class="dropdown-item" href="{{route('course_update',$course->id)}}"> 
+                                <i class="fas fa-edit"></i> Actualizar información
+                              </a>
 
-                            <a class="dropdown-item" href="{{route('course_update',$course->id)}}">Actualizar información</a>
-                           <form action="{{route('course_delete',$course->id)}}" method="POST">
-                           @csrf
-                             <input type="submit" class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-notification" value="Eliminar" onclick="return confirm('¿Desea eliminar el curso?')"></input>
-                           </form>
-                            </div>
+                                <form class="input-group" action="{{route('course_delete',$course->id)}}" method="POST">
+                                  @csrf
+                                
+                                <input type="submit" class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-notification" value="Eliminar" onclick="return confirm('¿Desea eliminar el curso?')"></input>
+                                
+                              </div>
                             </div>
                          </td>
 
@@ -150,5 +180,21 @@ $(document).ready(function() {
 
 @push('js')
     {{-- <script src="{{ asset() }}/vendor/datatables.net/js/jquery.dataTables.min.js"></script> --}}
+
+      <script>
+
+        function set_image_modal(url_img, title){
+
+          let imagemodal= document.getElementById('modal_watch_image_course');
+          imagemodal.src='';
+          imagemodal.src=url_img;
+
+          let titlemodal= document.getElementById('titulo');
+          titlemodal.innerText='';
+          titlemodal.innerText=title;
+
+          }
+
+      </script>
 
 @endpush

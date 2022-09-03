@@ -106,6 +106,14 @@ class TalkController extends Controller
        $talk->url_img = $request->url_img;
        $talk->speaker_id = $request->speaker_id;
 
+       if($request -> hasFile('url_img')){
+        $file = $request ->file('url_img');
+        $destiantionPath = 'argon/img/talk/';
+        $filename = time() .'-'. $file->getClientOriginalName();
+        $uploadSuccess = $request->file('url_img')->move($destiantionPath, $filename);
+        $talk->url_img = $destiantionPath . $filename;
+       }
+
        if ($talk->save()) {
 
         Logbook::activity_done($description='Creo la conferencia exitosamente '. $talk->title. '.' ,$table_id=0,$menu_id=12,$user_id=Auth::id(),$kind_acction=6);
@@ -146,6 +154,14 @@ class TalkController extends Controller
          $talk->time = $request->time;
          $talk->url_img = $request->url_img;
          $talk->speaker_id = $request->speaker_id;
+
+         if($request -> hasFile('url_img')){
+            $file = $request ->file('url_img');
+            $destiantionPath = 'argon/img/talk/';
+            $filename = time() .'-'. $file->getClientOriginalName();
+            $uploadSuccess = $request->file('url_img')->move($destiantionPath, $filename);
+            $talk->url_img = $destiantionPath . $filename;
+           }
 
          if ($talk->save()) {
 

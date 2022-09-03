@@ -58,17 +58,15 @@ class SpeakerController extends Controller
 
         }
 
-        Logbook::activity_done($description='Accedió a la vista de Crear estudiante.',$table_id=0,$menu_id=12,$user_id=Auth::id(),$kind_acction=1);
+        Logbook::activity_done($description='Accedió a la vista de Crear conferencista.',$table_id=0,$menu_id=12,$user_id=Auth::id(),$kind_acction=1);
         
         
         
         $rol_available=Role::all()->where('status','=','2');
         $variables=[
             'menu'=>'users_all',
-            'title_page'=>'Conferencistas',
+            'title_page'=>'Conferencista',
             'rol_available'=>$rol_available,
-
-
         ];
 
         return view('speaker.create')->with($variables);
