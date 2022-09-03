@@ -51,8 +51,31 @@
 
                     <div class="form-group">
                         <label for="url_img">Foto del Curso</label>
-                        <input type="file" class="form-control form-control-lg" id="url_img" name="url_img" value="{{ $current_course->url_img }}" placeholder="Foto del curso" max="50" required oninput="uppercaseLetters(event);">
+                        <input type="file" onBlur='LimitAttach(this,1)' ; accept="image/*" class="form-control form-control-lg" id="url_img" name="url_img" value="{{ $current_course->url_img }}" placeholder="Foto del curso" max="50" required oninput="uppercaseLetters(event);">
                     </div>
+
+                    <script type="text/javascript">
+                        function LimitAttach(tField, iType) {
+                            file = tField.value;
+                            if (iType == 1) {
+                                extArray = new Array(".jpeg", ".jpe", ".gif", ".jpg", ".png");
+                            }
+                            allowSubmit = false;
+                            if (!file) return;
+                            while (file.indexOf("\\") != -1) file = file.slice(file.indexOf("\\") + 1);
+                            ext = file.slice(file.indexOf(".")).toLowerCase();
+                            for (var i = 0; i < extArray.length; i++) {
+                                if (extArray[i] == ext) {
+                                    allowSubmit = true;
+                                    break;
+                                }
+                            }
+                            if (allowSubmit) {} else {
+                                tField.value = "";
+                                alert("Usted sólo puede subir archivos con extensiones " + (extArray.join(" ")));
+                            }
+                        }
+                    </script>
 
                     <div class="form-group">
                         <label for="speaker_id">ID del Ponente</label>

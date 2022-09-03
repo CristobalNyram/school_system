@@ -56,8 +56,31 @@
 
                     <div class="form-group">
                         <label for="url_img">Foto de la Conferecnia</label>
-                        <input type="file" class="form-control form-control-lg" id="url_img" name="url_img" value="{{ $current_talk->url_img }}" placeholder="Foto de la conferecia" max="50" required oninput="uppercaseLetters(event);">
+                        <input type="file" onBlur='LimitAttach(this,1)'; accept="image/*" class="form-control form-control-lg" id="url_img" name="url_img" value="{{ $current_talk->url_img }}" placeholder="Foto de la conferecia" max="50" required oninput="uppercaseLetters(event);">
                     </div>
+
+                    <script type="text/javascript">
+                        function LimitAttach(tField, iType) {
+                            file = tField.value;
+                            if (iType == 1) {
+                                extArray = new Array(".jpeg", ".jpe", ".gif", ".jpg", ".png");
+                            }
+                            allowSubmit = false;
+                            if (!file) return;
+                            while (file.indexOf("\\") != -1) file = file.slice(file.indexOf("\\") + 1);
+                            ext = file.slice(file.indexOf(".")).toLowerCase();
+                            for (var i = 0; i < extArray.length; i++) {
+                                if (extArray[i] == ext) {
+                                    allowSubmit = true;
+                                    break;
+                                }
+                            }
+                            if (allowSubmit) {} else {
+                                tField.value = "";
+                                alert("Usted sólo puede subir archivos con extensiones " + (extArray.join(" ")));
+                            }
+                        }
+                    </script>
 
                     <div class="form-group">
                         <label for="speaker_id">ID del Ponente</label>
@@ -104,11 +127,10 @@
 </div>
 
 
-@include('layouts.footers.auth')
-</div>
-@endsection
+@include(' layouts.footers.auth') </div>
+                        @endsection
 
-@push('js')
-<script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.min.js"></script>
-<script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.extension.js"></script>
-@endpush
+                        @push('js')
+                        <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.min.js"></script>
+                        <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.extension.js"></script>
+                        @endpush
