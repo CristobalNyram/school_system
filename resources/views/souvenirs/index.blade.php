@@ -25,7 +25,7 @@
 
               </script>
               <div class="table-responsive">
-                <table class="table align-items-center table-striped table-flush table-bordered dt-responsive"  id="table_users_all">
+                <table class="table align-items-center table-striped table-flush table-bordered dt-responsive"   data-order='[[ 1, "asc" ]]'  id="table_users_all">
                   <thead class="thead-light">
                     <tr>
                       <th scope="col" class="sort" data-sort="name">ID</th>
@@ -156,6 +156,13 @@
 
 $(document).ready(function() {
     $('#table_users_all').DataTable( {
+        "pageLength": 100,
+                scrollY:        "300px",
+                // scrollX:        true,
+                scrollCollapse: true,
+                columnDefs: [
+                  { "visible": true, "targets": 0 }
+                ],
         "language": {
             "lengthMenu": "Mostrar _MENU_ registros por página",
             "zeroRecords": "No encontramos nada.",
@@ -166,12 +173,14 @@ $(document).ready(function() {
             "search":         "Buscar:",
             "emptyTable":     "No hay información disponible en la tabla.",
             "paginate": {
-                "first":      "First",
-                "last":       "Last",
-                "next":       "Next",
-                "previous":   "Previous"
+                "first":      "Primero",
+                "last":       "Ultimo",
+                "next":       ">",
+                "previous":   "<"
              },
+
         }
+
     } );
 } );
 </script>

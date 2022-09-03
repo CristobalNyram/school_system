@@ -15,7 +15,13 @@ class ProfileController extends Controller
      */
     public function edit()
     {
-        return view('profile.edit');
+        $variables=[
+            'menu'=>'',
+            'title_page'=>'Perfil',
+
+
+        ];
+        return view('profile.edit')->with($variables);
     }
 
     /**
@@ -27,12 +33,12 @@ class ProfileController extends Controller
     public function update(ProfileRequest $request)
     {
         if (auth()->user()->id == 1) {
-            return back()->withErrors(['not_allow_profile' => __('You are not allowed to change data for a default user.')]);
+            return back()->withErrors(['not_allow_profile' => __('Acceso denegado.')]);
         }
 
         auth()->user()->update($request->all());
 
-        return back()->withStatus(__('Profile successfully updated.'));
+        return back()->withStatus(__('Perfil actualizadó correctamente.'));
     }
 
     /**
@@ -49,6 +55,6 @@ class ProfileController extends Controller
 
         auth()->user()->update(['password' => Hash::make($request->get('password'))]);
 
-        return back()->withPasswordStatus(__('Password successfully updated.'));
+        return back()->withPasswordStatus(__('Contraseña actualizadá correctamente.'));
     }
 }
