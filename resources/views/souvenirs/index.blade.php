@@ -123,7 +123,7 @@
                               <form action="{{route('souvenir_delete',$souvenir->id)}}" method="POST">
                                @csrf
 
-                               <a type="submit" class="dropdown-item" data-toggle="modal" data-target="#modal-notification" value="Eliminar"  href="{{route('souvenir_delete',$souvenir->id)}}"> <i class="fas fa-trash" ></i>Eliminar</a>
+                               <!-- <a type="submit" class="dropdown-item" data-toggle="modal" data-target="#modal-notification" value="Eliminar"  href="{{route('souvenir_delete',$souvenir->id)}}"> <i class="fas fa-trash" ></i>Eliminar</a> -->
                               
                                 <input type="submit" class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-notification" value="Eliminar" onclick="return confirm('¿Desea eliminar el souvenir?')"></input>
                                 

@@ -1,85 +1,108 @@
 @extends('layouts.app')
 
 @section('content')
-    @include('layouts.navbars.navs.header')
+@include('layouts.navbars.navs.header')
 
-    <div class="container-fluid mt--6">
+<div class="container-fluid mt--6">
 
 
 
-        <div class="row">
-          <div class="col">
+    <div class="row">
+        <div class="col">
             <div class="card">
-              <!-- Card header -->
+                <!-- Card header -->
 
 
-              <div class="card-header border-0">
-                <h2 class="mb-0">Agregar Sponsor</h2>
+                <div class="card-header border-0">
+                    <h2 class="mb-0">Agregar Sponsor</h2>
 
-              </div>
-
-
-                        <form class="m-5"  action="{{route('sponsor_store')}}"  method="POST" enctype ="multipart/form-data">
-                            @csrf
-                            @if(session('success'))
-                            <div class="alert alert-success" role="alert">
-                                <strong>{{ session('success') }}</strong>
-                            </div>
-                            @endif
-                            @if ($errors->any())
-
-                                        @foreach ($errors->all() as $error)
-                                        <div class="alert alert-danger" role="alert">
-                                            <strong> {{ $error }}</strong>
-                                        </div>
-
-                                        @endforeach
-                           @endif
-                            <div class="form-group">
-                            <label for="name">Nombre</label>
-                            <input type="text" class="form-control form-control-lg" id="name" name="name" value="{{   old('title') }}" placeholder="Nombre del patrocinador"  max="50" required oninput="uppercaseLetters(event);">
-                            </div>
-                       
-
-                            <div class="form-group">
-                                <label for="slogan">Eslogon</label>
-                                <input type="description" class="form-control form-control-lg" id="slogan" name="slogan" value="{{ old('slogan') }}" placeholder="Eslogan"  max="50" required  oninput="uppercaseLetters(event);">
-                            </div>
-
-                            
-
-                            <div class="form-group">
-                                <label for="url_img">Imagen</label>
-                                <input type="file" class="form-control form-control-lg" id="url_img" name="url_img" value="{{ old('url_img') }}" placeholder="Foto del sponsor"  max="50"  required oninput="uppercaseLetters(event);" >
-                            </div>
+                </div>
 
 
-                            <div class="row  mt-5 d-flex justify-content-center">
-                                <div class="col-lg-4 col-12">
-                                    <a href="{{  url()->previous()  }}" type="button" class="btn btn-danger">Cancelar</a>
+                <form class="m-5" action="{{route('sponsor_store')}}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    @if(session('success'))
+                    <div class="alert alert-success" role="alert">
+                        <strong>{{ session('success') }}</strong>
+                    </div>
+                    @endif
+                    @if ($errors->any())
 
-                                </div>
-                                <div class="form-group row d-flex justify-content-center">
-                                    <button type="submit" class="btn btn-default">Agregar</button>
+                    @foreach ($errors->all() as $error)
+                    <div class="alert alert-danger" role="alert">
+                        <strong> {{ $error }}</strong>
+                    </div>
 
-                                </div>
-                            </div>
+                    @endforeach
+                    @endif
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" class="form-control form-control-lg" id="name" name="name" value="{{   old('title') }}" placeholder="Nombre del patrocinador" max="50" required oninput="uppercaseLetters(event);">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="slogan">Eslogon</label>
+                        <input type="description" class="form-control form-control-lg" id="slogan" name="slogan" value="{{ old('slogan') }}" placeholder="Eslogan" max="50" required oninput="uppercaseLetters(event);">
+                    </div>
 
 
 
-                        </form>
+                    <div class="form-group">
+                        <label for="url_img">Imagen</label>
+                        <input type="file" onBlur='LimitAttach(this,1)' ; accept="image/*" class="form-control form-control-lg" id="url_img" name="url_img" value="{{ old('url_img') }}" placeholder="Foto del sponsor" max="50" required oninput="uppercaseLetters(event);">
+                    </div>
+
+                    <script type="text/javascript">
+                        function LimitAttach(tField, iType) {
+                            file = tField.value;
+                            if (iType == 1) {
+                                extArray = new Array(".jpeg", ".jpe", ".gif", ".jpg", ".png");
+                            }
+                            allowSubmit = false;
+                            if (!file) return;
+                            while (file.indexOf("\\") != -1) file = file.slice(file.indexOf("\\") + 1);
+                            ext = file.slice(file.indexOf(".")).toLowerCase();
+                            for (var i = 0; i < extArray.length; i++) {
+                                if (extArray[i] == ext) {
+                                    allowSubmit = true;
+                                    break;
+                                }
+                            }
+                            if (allowSubmit) {} else {
+                                tField.value = "";
+                                alert("Usted sólo puede subir archivos con extensiones " + (extArray.join(" ")));
+                            }
+                        }
+                    </script>
+
+
+                    <div class="row  mt-5 d-flex justify-content-center">
+                        <div class="col-lg-4 col-12">
+                            <a href="{{  url()->previous()  }}" type="button" class="btn btn-danger">Cancelar</a>
+
+                        </div>
+                        <div class="form-group row d-flex justify-content-center">
+                            <button type="submit" class="btn btn-default">Agregar</button>
+
+                        </div>
+                    </div>
+
+
+
+                </form>
 
 
             </div>
-          </div>
         </div>
-
-
-        @include('layouts.footers.auth')
     </div>
+
+
+    @include('layouts.footers.auth')
+</div>
 @endsection
 
 @push('js')
-    <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.min.js"></script>
-    <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.extension.js"></script>
+<script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.min.js"></script>
+<script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.extension.js"></script>
 @endpush
