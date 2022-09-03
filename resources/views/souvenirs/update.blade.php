@@ -17,7 +17,7 @@
                 </div>
 
 
-                <form class="m-5" action="{{route('souvenir_edit')}}" method="POST" enctype ="multipart/form-data">
+                <form class="m-5" action="{{route('souvenir_edit')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @if(session('success'))
                     <div class="alert alert-success" role="alert">
@@ -49,8 +49,15 @@
                     </div>
 
                     <div class="form-group">
-                                <label for="url_img">Foto del Souvenir</label>
-                                <input type="file" class="form-control form-control-lg" id="url_img" name="url_img"  value="{{ $current_souvenir->url_img }}" placeholder="Foto del souvenir" max="50" required oninput="uppercaseLetters(event);">
+                        <label for="url_img">Foto del Souvenir</label>
+                        <input type="file" class="form-control form-control-lg" id="url_img" name="url_img" value="{{ $current_souvenir->url_img }}" placeholder="Foto del souvenir" max="50" required oninput="uppercaseLetters(event);">
+                    </div>
+
+                    <div class="form-group justify-content-center align-items-center">
+                        <label>Foto Actual</label>
+                        <div class="form-group">
+                            <img src="{{asset($current_souvenir->url_img )}}" alt="{{$current_souvenir->name}}" class="img-fluid img-thumbnail" width="600px">
+                        </div>
                     </div>
 
                     <div class="row  mt-5 d-flex justify-content-center">
