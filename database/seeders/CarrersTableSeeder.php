@@ -15,33 +15,28 @@ class CarrersTableSeeder extends Seeder
     public function run()
     {
         DB::table('carrers')->insert([
-            'name' => 'TSU Tecnologías de la información',
+            'name' => 'TSU Tecnologías de la información Desarrollo de Software Multiplataforma',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         DB::table('carrers')->insert([
-            'name' => 'Procesos Bioalimentarios',
+            'name' => 'TSU Tecnologías de la información Redes y Ciberseguridad',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         DB::table('carrers')->insert([
-            'name' => 'Mecatrónica',
+            'name' => 'ING: Desarrollo y Gestión de Software Multiplataforma',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         DB::table('carrers')->insert([
-            'name' => 'Contaduría',
+            'name' => 'ING: Redes y Ciberseguridad',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
-        DB::table('carrers')->insert([
-            'name' => 'Procesos Industriales',
-            'created_at' => now(),
-            'updated_at' => now(),
-        ]);
     }
 }

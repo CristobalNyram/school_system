@@ -40,17 +40,22 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="first_surname">Apellido de parterno</label>
+                                <label for="first_surname">Apellido  parterno</label>
                                 <input type="text" class="form-control form-control-lg" id="first_surname" name="first_surname" value="{{ old('first_surname') }}" placeholder="Apellido paterno de estudiante"  max="50" required  oninput="uppercaseLetters(event);">
                             </div>
                             <div class="form-group">
-                                <label for="second_surname">Apellido de materno</label>
+                                <label for="second_surname">Apellido materno</label>
                                 <input type="text" class="form-control form-control-lg" id="second_surname" name="second_surname" value="{{ old('second_surname') }}" placeholder="Apellido materno de estudiante"  max="50"  required oninput="uppercaseLetters(event);">
                             </div>
 
                             <div class="form-group">
+                                <label for="pdf_cv">CV</label>
+                                <input type="file" class="form-control form-control-lg" id="pdf_cv" name="pdf_cv" value="{{ old('pdf_cv') }}" placeholder="CV del conferencista"  max="50"  required oninput="uppercaseLetters(event);">
+                            </div>
+
+                            <div class="form-group">
                                 <label for="role_id"></label>
-                                <input type="hidden" class="form-control form-control-lg" id="role_id" name="role_id" value="6" placeholder="Rol del estudiante"  max="50"  required oninput="uppercaseLetters(event);">
+                                <input type="hidden" class="form-control form-control-lg" id="role_id" name="role_id" value="6" placeholder="Rol del conferencista"  max="50"  required oninput="uppercaseLetters(event);">
                             </div>
 
 

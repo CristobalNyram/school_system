@@ -75,7 +75,7 @@ Route::group(['middleware' => 'auth'], function () {
 
            // speaker start-------------------------------------------
            Route::get('/speaker',[SpeakerController::class,"index"])->name('speaker_index');
-           Route::get('/speaker/create',[StudentController::class,"create"])->name('speaker_create');
+           Route::get('/speaker/create',[SpeakerController::class,"create"])->name('speaker_create');
            Route::post('/student/store',[UserController::class,"store"])->name('student_store');
            Route::get('/speaker/update/{user_id}',[SpeakerController::class,"update"])->name('student_update');
            Route::post('/speaker/edit',[SpeakerController::class,"edit"])->name('speaker_edit');

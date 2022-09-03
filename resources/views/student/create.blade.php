@@ -81,6 +81,28 @@
                                   </select>
                             </div>
 
+                            <div class="form-group">
+                                <label for="gender">Grupo</label>
+
+                                <select class="form-control form-control-lg  " data-toggle="select2" id="gender" name="gender" >
+                                    <option value="-1" selected>Seleccionar</option>
+                                    <option value="1" >1º cuatrimestre</option>
+                                    <option value="2" >2º cuatrimestre</option>
+                                    <option value="3" >3º cuatrimestre</option>
+                                    <option value="3" >4º cuatrimestre</option>
+                                    <option value="3" >5º cuatrimestre</option>
+                                    <option value="3" >6º cuatrimestre</option>
+                                    <option value="3" >7º cuatrimestre</option>
+                                    <option value="3" >8º cuatrimestre</option>
+                                    <option value="3" >9º cuatrimestre</option>
+                                    <option value="3" >10º cuatrimestre</option>
+                                    <option value="3" >11º cuatrimestre</option>
+                                    <option value="3" >12º cuatrimestre</option>
+
+
+                                  </select>
+                            </div>
+
 
                             <div class="form-group">
                                 <label for="email">Correo electronico</label>

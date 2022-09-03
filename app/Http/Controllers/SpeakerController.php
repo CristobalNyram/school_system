@@ -65,7 +65,7 @@ class SpeakerController extends Controller
         $rol_available=Role::all()->where('status','=','2');
         $variables=[
             'menu'=>'users_all',
-            'title_page'=>'Usuarios',
+            'title_page'=>'Conferencistas',
             'rol_available'=>$rol_available,
 
 
@@ -104,10 +104,12 @@ class SpeakerController extends Controller
         $user->name = $request->name;
         $user->first_surname = $request->first_surname;
         $user->second_surname = $request->second_surname;
+        $user->pdf_cv = $request->pdf_cv;
         $user->gender = $request->gender;
         $user->role_id = $request->role_id;
         $user->email = $request->email;
 
+    
         if ($user->save()) {
 
             Logbook::activity_done($description='Actualizo la informacion del conferencista correctamente' . $user->title . '',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=3);

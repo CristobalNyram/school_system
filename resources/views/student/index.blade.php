@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    @include('student.headers_cards')
+@include('student.headers_cards')
 
 
     <div class="container-fluid mt--6">
@@ -83,7 +83,7 @@
                               <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                 <a class="dropdown-item"  href="{{ route('student_update',$user->id)}}" >Actualizar información</a>
                                 <a class="dropdown-item" href="{{ route('password_update',$user->id)}}">Actualizar contraseña</a>
-                                <form action="{{ route('student_delete',$user->id)}}" method="post">
+                                <form action="{{ route('student_delete',$user->id)}}" method="post" id="form-eliminar">
                                   @csrf
 
                                 <input class="dropdown-item text-danger" type="submit" data-toggle="modal" data-target="#modal-notification" onclick="return confirm('Eliminar')" ></input>
@@ -140,5 +140,4 @@ $(document).ready(function() {
 
 @push('js')
     {{-- <script src="{{ asset() }}/vendor/datatables.net/js/jquery.dataTables.min.js"></script> --}}
-
 @endpush
