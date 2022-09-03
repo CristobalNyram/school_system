@@ -8,7 +8,7 @@
 <script src="/assets/vendor/sweetalert2/dist/sweetalert2.all.min.js"></script>
 <link rel="stylesheet" href="/assets/vendor/sweetalert2/dist/sweetalert2.min.css">
 
-
+ 
 
 <script src="/assets/vendor/datatables.net/js/jquery.dataTables.min.js" defer></script>
 

@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-@include('layouts.navbars.navs.header')
 @include('talk.headers_cards')
 
 
@@ -78,13 +77,37 @@
                         </th>
 
                         <th scope="row">
+                          <button onclick="set_image_modal('{{asset($talk->url_img )}}' , '{{ $talk->name }}')"  class="btn" data-toggle="modal" data-target="#ventanaModal">
                             <div class="media align-items-center">
-
                               <div class="media-body">
                                 <span class="name mb-0 text-sm"><img src="{{asset($talk->url_img )}}" alt="{{$talk->name}}" class="img-fluid img-thumbnail" width ="80px" > </span>
                               </div>
                             </div>
+                          </button>
                         </th>
+
+                        <!--Modal -->
+                        <div class="modal" id="ventanaModal" tableindex="-1" role="dialog" aria-labellebdy="titulo" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 id="titulo"></h5>
+                                <button class="close" data-dismiss="modal" aria-label="Cerrar">
+                                  <span aria-hidden="true">&times</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                
+                                <div class="media align-items-center">
+                                  <div class="media-body">
+                                    <span class="name mb-0 text-sm"><img id="modal_watch_image_course" alt="{{$talk->name}}" class="img-fluid img-thumbnail" width ="100%" > </span>
+                                  </div>
+                                </div>
+
+                              </div>
+                            </div>
+                          </div>
+                        </div>
 
                         <td class="text-cener">
                             <div class="dropdown">
@@ -92,6 +115,7 @@
                                 <i class="fas fa-ellipsis-v"></i>
                               </a>
                               <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                              <a class="dropdown-item" href="{{route('talk_update',$talk->id)}}"> <i class="fas fa-edit"></i> Actualizar información </a>
                                 <form action="{{ route('talk_delete',$talk->id)}}" method="post">
                                   @csrf
                             
@@ -99,11 +123,6 @@
                                 <input class="dropdown-item text-danger" type="submit" value="Eliminar" data-toggle="modal" data-target="#modal-notification" onclick="return confirm('Eliminar')" ></input>
                                 </form>
 
-                                 <form action="{{ route('talk_update',$talk->id)}}" method="get">
-
-
-                                  <input class="dropdown-item text-primary" type="submit" value="Actualizar información" data-toggle="modal" data-target="#modal-notification" ></input>
-                                  </form>
                               </div>
                             </div>
                         </td>
@@ -156,5 +175,21 @@ $(document).ready(function() {
 
 @push('js')
     {{-- <script src="{{ asset() }}/vendor/datatables.net/js/jquery.dataTables.min.js"></script> --}}
+
+    <script>
+
+      function set_image_modal(url_img, name){
+
+        let imagemodal= document.getElementById('modal_watch_image_course');
+        imagemodal.src='';
+        imagemodal.src=url_img;
+
+        let titlemodal= document.getElementById('titulo');
+        titlemodal.innerText='';
+        titlemodal.innerText=name;
+
+        }
+
+      </script>
 
 @endpush

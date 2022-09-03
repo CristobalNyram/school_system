@@ -2,6 +2,7 @@
 
 @section('content')
 @include('layouts.navbars.navs.header')
+<script scr="js/modal.js"></script>
 
 
     <div class="container-fluid mt--6">
@@ -79,27 +80,55 @@
 
 
                         <th scope="row">
+                          <button onclick="set_image_modal('{{asset($souvenir->url_img )}}' , '{{ $souvenir->name }}')" class="btn" data-toggle="modal" data-target="#ventanaModal">
                             <div class="media align-items-center">
-
                               <div class="media-body">
-                                <span class="name mb-0 text-sm"><img src="{{asset($souvenir->url_img )}}" alt="{{$souvenir->name}}" class="img-fluid img-thumbnail" width ="80px" > </span>
+                                <span class="name mb-0 text-sm"><a src="{{asset($souvenir->url_img )}}"><img src="{{asset($souvenir->url_img )}}" alt="{{$souvenir->name}}" class="img-fluid img-thumbnail" width ="80px"  > </a> </span>
                               </div>
                             </div>
+                          </button>
                         </th>
+
+                        <!--Modal -->
+                        <div class="modal" id="ventanaModal" tableindex="-1" role="dialog" aria-labellebdy="titulo" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 id="titulo"></h5>
+                                <button class="close" data-dismiss="modal" aria-label="Cerrar">
+                                  <span aria-hidden="true">&times</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                
+                                <div class="media align-items-center">
+                                  <div class="media-body">
+                                  <span class="name mb-0 text-sm"><img id="modal_watch_image_course" alt="{{$souvenir->name}}" class="img-fluid img-thumbnail" width ="100%" > </span>
+                                  </div>
+                                </div>
+
+                              </div>
+                            </div>
+                          </div>
+                        </div>
 
                         <td class="text-cener">
                             <div class="dropdown">
-                            <a class="btn btn-sm btn-icon-only text-danger" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                           <i class="fas fa-ellipsis-v"></i>
-                            </a>
-                           <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                              <a class="btn btn-sm btn-icon-only text-danger" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-ellipsis-v"></i>
+                              </a>
+                              <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
 
-                            <a class="dropdown-item" href="{{route('souvenir_update',$souvenir->id)}}">Actualizar información</a>
-                           <form action="{{route('souvenir_delete',$souvenir->id)}}" method="POST">
-                           @csrf
-                             <input type="submit" class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-notification" value="Eliminar" onclick="return confirm('¿Desea eliminar el souvenir?')"></input>
-                           </form>
-                            </div>
+                              <a class="dropdown-item" href="{{route('souvenir_update',$souvenir->id)}}"> <i class="fas fa-edit"></i>Actualizar información</a>
+                              <form action="{{route('souvenir_delete',$souvenir->id)}}" method="POST">
+                               @csrf
+
+                               <a type="submit" class="dropdown-item" data-toggle="modal" data-target="#modal-notification" value="Eliminar"  href="{{route('souvenir_delete',$souvenir->id)}}"> <i class="fas fa-trash" ></i>Eliminar</a>
+                              
+                                <input type="submit" class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-notification" value="Eliminar" onclick="return confirm('¿Desea eliminar el souvenir?')"></input>
+                                
+                              </form>
+                              </div>
                             </div>
                          </td>
 
@@ -120,10 +149,10 @@
         @include('layouts.footers.auth')
     </div>
 
+    <script>
 
 
 
-<script>
 
 $(document).ready(function() {
     $('#table_users_all').DataTable( {
@@ -151,5 +180,21 @@ $(document).ready(function() {
 
 @push('js')
     {{-- <script src="{{ asset() }}/vendor/datatables.net/js/jquery.dataTables.min.js"></script> --}}
+
+    <script>
+
+      function set_image_modal(url_img, name){
+
+        let imagemodal= document.getElementById('modal_watch_image_course');
+        imagemodal.src='';
+        imagemodal.src=url_img;
+
+        let titlemodal= document.getElementById('titulo');
+        titlemodal.innerText='';
+        titlemodal.innerText=name;
+
+        }
+
+      </script>
 
 @endpush

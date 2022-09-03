@@ -81,8 +81,8 @@
                                 <i class="fas fa-ellipsis-v"></i>
                               </a>
                               <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                <a class="dropdown-item"  href="{{ route('student_update',$user->id)}}" >Actualizar información</a>
-                                <a class="dropdown-item" href="{{ route('password_update',$user->id)}}">Actualizar contraseña</a>
+                                <a class="dropdown-item"  href="{{ route('student_update',$user->id)}}" > <i class="fas fa-edit"></i>Actualizar información</a>
+                                <a class="dropdown-item" href="{{ route('password_update',$user->id)}}"> <i class="fas fa-edit"></i> Actualizar contraseña</a>
                                 <form action="{{ route('student_delete',$user->id)}}" method="post">
                                   @csrf
 
