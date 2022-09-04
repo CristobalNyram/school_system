@@ -52,12 +52,12 @@
                     </div>
                     <div class="form-group">
                         <label for="date">Fecha de la conferencia</label>
-                        <input type="text" class="form-control form-control-lg" id="date" name="date" value="{{ old('date') }}" placeholder="Fecha de la conferencia" max="50" required oninput="uppercaseLetters(event);">
+                        <input type="text" class="form-control form-control-lg" id="date" name="date" value="{{ old('date') }}" placeholder="Fecha de la conferencia" max="50" required>
                     </div>
 
                     <div class="form-group">
                         <label for="time">Hora de la conferencia</label>
-                        <input type="text" class="form-control form-control-lg" id="time" name="time" value="{{ old('time') }}" placeholder="Hora de la conferencia" max="50" required oninput="uppercaseLetters(event);">
+                        <input type="text" class="form-control form-control-lg" id="time" name="time" value="{{ old('time') }}" placeholder="Hora de la conferencia" max="50" required >
                     </div>
 
                     <div class="form-group">
@@ -98,7 +98,7 @@
 
 
                     <div class="form-group">
-                        <label for="speaker_id">ID del Ponente</label>
+                        <label for="speaker_id">Ponente/Conferencista</label>
 
                         <select class="form-control form-control-lg  " data-toggle="select2" name="speaker_id" id="speaker_id">
                             <option value="-2" selected>Seleccionar</option>
@@ -149,6 +149,8 @@
 @endsection
 
 @push('js')
+<script src="/assets/js/validations/generalFunctions.js"></script>
+
 <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.min.js"></script>
 <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.extension.js"></script>
 @endpush

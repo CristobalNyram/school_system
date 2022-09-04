@@ -52,12 +52,12 @@
                     </div>
                     <div class="form-group">
                         <label for="price">Precio</label>
-                        <input type="text" class="form-control form-control-lg" id="price" name="price" value="{{ $current_package->price}}" placeholder="Precio" max="50" required oninput="uppercaseLetters(event);">
+                        <input type="number" class="form-control form-control-lg" id="price" name="price" value="{{ $current_package->price}}" placeholder="Precio" max="50000" required >
                     </div>
 
                     <div class="form-group">
-                        <label for="souvenir_id">ID Souvenir</label>
-                        <input type="text" class="form-control form-control-lg" id="souvenir_id" name="souvenir_id" value="{{ $current_package->souvenir_id}}" placeholder="ID Souvenir" max="50" required oninput="uppercaseLetters(event);">
+                        <label for="souvenir_id">Souvenir</label>
+                        <input type="text" class="form-control form-control-lg" id="souvenir_id" name="souvenir_id" value="{{ $current_package->souvenir_id}}" placeholder="ID Souvenir" max="50" required >
                     </div>
 
 
@@ -89,6 +89,8 @@
 @endsection
 
 @push('js')
+<script src="/assets/js/validations/generalFunctions.js"></script>
+
 <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.min.js"></script>
 <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.extension.js"></script>
 @endpush

@@ -55,13 +55,13 @@
 
                     <div class="form-group">
                         <label for="price">Precio</label>
-                        <input type="text" class="form-control form-control-lg" id="price" name="price" value="{{ old('price') }}" placeholder="Precio del souvenir" max="50" required oninput="uppercaseLetters(event);">
+                        <input type="number" class="form-control form-control-lg" id="price" name="price" value="{{ old('price') }}" placeholder="Precio del souvenir" max="600" required oninput="">
                     </div>
 
 
                     <div class="form-group">
                         <label for="url_img">Imagen</label>
-                        <input type="file" onBlur='LimitAttach(this,1)' ; accept="image/*" class="form-control form-control-lg" id="url_img" name="url_img" value="{{ old('url_img') }}" placeholder="Foto del souvenir" max="50" required oninput="uppercaseLetters(event);">
+                        <input type="file" onBlur='LimitAttach(this,1)' ; accept="image/png, image/jpg, image/jpeg" class="form-control form-control-lg" id="url_img" name="url_img" value="{{ old('url_img') }}" placeholder="Foto del souvenir" max="50" required >
                     </div>
 
                     <div class="alert alert-warning alert-dismissible fade show" id="alerta" role="alert" style="display: none"  role="alert">
@@ -122,6 +122,8 @@
 @endsection
 
 @push('js')
+<script src="/assets/js/validations/generalFunctions.js"></script>
+
 <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.min.js"></script>
 <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.extension.js"></script>
 @endpush

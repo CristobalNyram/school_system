@@ -57,7 +57,7 @@
 
                          <div class="form-group">
                             <label for="speaker_cv">Curriculum Vitae</label>
-                            <input type="file" onBlur='LimitAttach(this,1)' ; accept="pdf/" class="form-control form-control-lg" id="speaker_cv" name="speaker_cv" value="{{ old('speaker_cv') }}" placeholder="Curriculum Vitae" max="50" required oninput="uppercaseLetters(event);">
+                            <input type="file" onBlur='LimitAttach(this,1)' ;   accept="application/pdf" class="form-control form-control-lg" id="speaker_cv" name="speaker_cv" value="{{ old('speaker_cv') }}" placeholder="Curriculum Vitae" max="50" required >
                     </div>
 
                             <script type="text/javascript">
@@ -84,10 +84,9 @@
                     </script>
 
 
-                            <div class="form-group">
-                                <label for="role_id"></label>
+
                                 <input type="hidden" class="form-control form-control-lg" id="role_id" name="role_id" value="6" placeholder="Rol del conferencista"  max="50"  required oninput="uppercaseLetters(event);">
-                            </div>
+
 
 
 
@@ -151,6 +150,8 @@
 @endsection
 
 @push('js')
+<script src="/assets/js/validations/generalFunctions.js"></script>
+
     <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.min.js"></script>
     <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.extension.js"></script>
 @endpush
