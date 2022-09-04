@@ -30,7 +30,7 @@ class TalkController extends Controller
 
         }
 
-        Logbook::activity_done($description='Accedió a la vista de conferencias.',$table_id=0,$menu_id=4,$user_id=Auth::id(),$kind_acction=1);
+        Logbook::activity_done($description='Accedió a la vista de conferencias.',$table_id=0,$menu_id=15,$user_id=Auth::id(),$kind_acction=1);
        
        
         $talks_active=Talk::all()->where('status','=','2');
@@ -71,7 +71,7 @@ class TalkController extends Controller
 
         }
 
-        Logbook::activity_done($description='Accedió a la vista de Crear conferencia.',$table_id=0,$menu_id=12,$user_id=Auth::id(),$kind_acction=1);
+        Logbook::activity_done($description='Accedió a la vista de Crear conferencia.',$table_id=0,$menu_id=16,$user_id=Auth::id(),$kind_acction=1);
        
        
        
@@ -99,26 +99,26 @@ class TalkController extends Controller
     public function store(Request $request)
     {
         $talk =new Talk();
-       $talk->name = $request->name;
-       $talk->description = $request->description;
-       $talk->date = $request->date;
-       $talk->time = $request->time;
-       $talk->url_img = $request->url_img;
-       $talk->speaker_id = $request->speaker_id;
+        $talk->name = $request->name;
+        $talk->description = $request->description;
+        $talk->date = $request->date;
+        $talk->time = $request->time;
+        $talk->url_img = $request->url_img;
+        $talk->speaker_id = $request->speaker_id;
 
-       if($request -> hasFile('url_img')){
+    if($request -> hasFile('url_img')){
         $file = $request ->file('url_img');
         $destiantionPath = 'argon/img/talk/';
         $filename = time() .'-'. $file->getClientOriginalName();
         $uploadSuccess = $request->file('url_img')->move($destiantionPath, $filename);
         $talk->url_img = $destiantionPath . $filename;
-       }
+    }
 
-       if ($talk->save()) {
+    if ($talk->save()) {
 
-        Logbook::activity_done($description='Creo la conferencia exitosamente '. $talk->title. '.' ,$table_id=0,$menu_id=12,$user_id=Auth::id(),$kind_acction=6);
+        Logbook::activity_done($description='Creo la conferencia '. $talk->title. ' exitosamente.' ,$table_id=0,$menu_id=16,$user_id=Auth::id(),$kind_acction=6);
 
-        return back()->with('success','Se ha registrado el curso exitosamente...');
+        return back()->with('success','Se ha registrado la conferencia exitosamente...');
 
     }
     else
@@ -148,31 +148,31 @@ class TalkController extends Controller
     public function edit(Request $request)
     {
         $talk = Talk::findOrFail($request->id);
-         $talk->name=$request->name;
-         $talk->description = $request->description;
-         $talk->date = $request->date;
-         $talk->time = $request->time;
-         $talk->url_img = $request->url_img;
-         $talk->speaker_id = $request->speaker_id;
+        $talk->name=$request->name;
+        $talk->description = $request->description;
+        $talk->date = $request->date;
+        $talk->time = $request->time;
+        $talk->url_img = $request->url_img;
+        $talk->speaker_id = $request->speaker_id;
 
-         if($request -> hasFile('url_img')){
+        if($request -> hasFile('url_img')){
             $file = $request ->file('url_img');
             $destiantionPath = 'argon/img/talk/';
             $filename = time() .'-'. $file->getClientOriginalName();
             $uploadSuccess = $request->file('url_img')->move($destiantionPath, $filename);
             $talk->url_img = $destiantionPath . $filename;
-           }
+        }
 
-         if ($talk->save()) {
+        if ($talk->save()) {
 
-            Logbook::activity_done($description='Actualizo la conferencia correctamente' . $talk->title . '',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=3);
+            Logbook::activity_done($description='Actualizo la conferencia ' . $talk->name . ' correctamente',$table_id=0,$menu_id=16,$user_id=Auth::id(),$kind_acction=3);
             
-            return back()->with('success','Se ha actualizado el curso exitosamente...');
+            return back()->with('success','Se ha actualizado la conferencia exitosamente...');
 
         }
         else
         {
-            return  back()->withErrors('No se ha actualizado el curso...');
+            return  back()->withErrors('No se ha actualizado la conferencia...');
 
         }
     }
@@ -198,9 +198,9 @@ class TalkController extends Controller
 
         }
 
-        Logbook::activity_done($description='Accedió a la vista  de Actualizar conferencia.',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=1);
+        Logbook::activity_done($description='Accedió a la vista de Actualizar conferencia.',$table_id=0,$menu_id=16,$user_id=Auth::id(),$kind_acction=1);
 
-     
+    
 
         $current_talk=Talk::findOrFail($talk_id);
         $rol_available=Role::all()->where('status','=','2');
@@ -227,14 +227,14 @@ class TalkController extends Controller
      */
     public function delete($talk_id)
     {
-        $course = Talk::findOrFail($talk_id);
-        $course->status=-2;
+        $talk = Talk::findOrFail($talk_id);
+        $talk->status=-2;
 
-        if($course->save()){
-            Logbook::activity_done($description='Borro la conferencia exitosamente.',$table_id=0,$menu_id=4,$user_id=Auth::id(),$kind_acction=1);
-            return back()->with('success','Se ha eliminado el curso exitosamente...');
+        if($talk->save()){
+            Logbook::activity_done($description= 'Eliminó la conferencia ' . $talk->name . '.',$table_id=0,$menu_id=16,$user_id=Auth::id(),$kind_acction=4);
+            return back()->with('success','Se ha eliminado la conferencia exitosamente...');
         } else {
-            return back()->with('success','No se ha eliminado el curso exitosamente...');
+            return back()->with('success','No se ha eliminado la conferencia exitosamente...');
         }
     }
 }

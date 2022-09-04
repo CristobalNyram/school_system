@@ -12,13 +12,13 @@
             <div class="card">
                 <!-- Card header -->
                 <div class="card-header border-0">
-                    <h3 class="mb-0">Sponsors</h3>
+                    <h3 class="mb-0">Patrocinador</h3>
                 </div>
 
                 <!-- Light table -->
 
                 <div class="card-header border-0">
-                    <h2 class="mb-0">Actualizar información del sponsor: {{ $current_sponsor->name }}</h2>
+                    <h2 class="mb-0">Actualizar información del patrocinador: {{ $current_sponsor->name }}</h2>
                 </div>
 
 
@@ -55,11 +55,15 @@
                         <input type="file" onBlur='LimitAttach(this,1)' ; accept="image/*" class="form-control form-control-lg" id="url_img" name="url_img" value="{{ $current_sponsor->url_img }}" placeholder="Foto del sponsor" max="50" required oninput="uppercaseLetters(event);">
                     </div>
 
+                    <div class="alert alert-warning" id="alerta" role="alert" style="display: none">
+                        <span class="alert-inner--text"><strong>Advertencia: </strong> Sólo se aceptan archivos con extensiones .jpeg, .jpe, .jpg, .png</span>
+                    </div>
+
                     <script type="text/javascript">
                         function LimitAttach(tField, iType) {
                             file = tField.value;
                             if (iType == 1) {
-                                extArray = new Array(".jpeg", ".jpe", ".gif", ".jpg", ".png");
+                                extArray = new Array(".jpeg", ".jpe", ".jpg", ".png");
                             }
                             allowSubmit = false;
                             if (!file) return;
@@ -68,12 +72,13 @@
                             for (var i = 0; i < extArray.length; i++) {
                                 if (extArray[i] == ext) {
                                     allowSubmit = true;
+                                    document.getElementById('alerta').style.display = "none";
                                     break;
                                 }
                             }
                             if (allowSubmit) {} else {
                                 tField.value = "";
-                                alert("Usted sólo puede subir archivos con extensiones " + (extArray.join(" ")));
+                                document.getElementById('alerta').style.display = "block";
                             }
                         }
                     </script>

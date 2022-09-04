@@ -31,7 +31,7 @@ class CourseController extends Controller
 
         }
 
-        Logbook::activity_done($description='Accedió al módulo de consulta de Curso.',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=1);
+        Logbook::activity_done($description='Accedió al módulo de Curso.',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=1);
 
 
          $courses_active=Course::all()->where('status','=','2');
@@ -148,24 +148,24 @@ class CourseController extends Controller
      */
     public function edit(Request $request)
     {
-          $course = Course::findOrFail($request->id);
-         $course->title=$request->title;
-         $course->description = $request->description;
-         $course->date = $request->date;
-         $course->url_img = $request->url_img;
-         $course->speaker_id = $request->speaker_id;
+        $course = Course::findOrFail($request->id);
+        $course->title=$request->title;
+        $course->description = $request->description;
+        $course->date = $request->date;
+        $course->url_img = $request->url_img;
+        $course->speaker_id = $request->speaker_id;
 
-         if($request -> hasFile ('url_img')){
+        if($request -> hasFile ('url_img')){
             $file = $request ->file('url_img');
             $destiantionPath = 'argon/img/course/';
             $filename = time() .'-'. $file->getClientOriginalName();
             $uploadSuccess = $request->file('url_img')->move($destiantionPath, $filename);
             $course->url_img = $destiantionPath . $filename;
     
-           }
+        }
 
-         if ($course->save()) {
-            Logbook::activity_done($description='Actualizo el curso correctamente' . $course->title . '',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=3);
+        if ($course->save()) {
+            Logbook::activity_done($description='Actualizo el curso ' . $course->title . ' correctamente',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=3);
             return back()->with('success','Se ha actualizado el curso exitosamente...');
 
         }
@@ -229,6 +229,7 @@ class CourseController extends Controller
         $course->status=-2;
 
         if($course->save()){
+            Logbook::activity_done($description = 'Eliminó el curso ' . $course->title . ' correctamente', $table_id = 0, $menu_id = 10, $user_id = Auth::id(), $kind_acction = 3);
             return back()->with('success','Se ha eliminado el curso exitosamente...');
         } else {
             return back()->with('success','No se ha eliminado el curso exitosamente...');

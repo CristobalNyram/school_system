@@ -27,7 +27,7 @@ class SponsorController extends Controller
       return view('errors.notaccess')->with($variables);
     }
 
-    Logbook::activity_done($description = 'Accedió al módulo de consulta de Patrocinadores.', $table_id = 0, $menu_id = 29, $user_id = Auth::id(), $kind_acction = 1);
+    Logbook::activity_done($description = 'Accedió al módulo de Patrocinadores.', $table_id = 0, $menu_id = 29, $user_id = Auth::id(), $kind_acction = 1);
 
 
 
@@ -148,7 +148,7 @@ class SponsorController extends Controller
 
     
         if ($sponsor->save()) {
-        Logbook::activity_done($description = 'Actualizo el patrocinador ' . $sponsor->name . ' correctamente', $table_id = 0, $menu_id = 29, $user_id = Auth::id(), $kind_acction = 3);
+        Logbook::activity_done($description = 'Actualizó el patrocinador ' . $sponsor->name . ' correctamente', $table_id = 0, $menu_id = 30, $user_id = Auth::id(), $kind_acction = 3);
           return back()->with('success', 'Se ha actualizado el Patrocinador exitosamente...');
         } else {
           return  back()->withErrors('No se ha actualizado el Patrocinador...');
@@ -171,7 +171,7 @@ class SponsorController extends Controller
         ];
         return view('errors.notaccess')->with($variables);
       }
-    Logbook::activity_done($description = 'Accedió al módulo de Actualizar Patrocinador.', $table_id = 0, $menu_id = 29, $user_id = Auth::id(), $kind_acction = 1);      
+    Logbook::activity_done($description = 'Accedió al módulo de Actualizar Patrocinador.', $table_id = 0, $menu_id = 30, $user_id = Auth::id(), $kind_acction = 1);      
   
           $current_sponsor = Sponsor::findOrFail($sponsor_id);
       
@@ -196,7 +196,7 @@ class SponsorController extends Controller
     $sponsor = Sponsor::findOrFail($sponsor_id);
     $sponsor->status=-2;
     if($sponsor->save()){
-      Logbook::activity_done($description = 'Eliminó el paquete ' . $sponsor->name . '.', $table_id = 0, $menu_id = 30, $user_id = Auth::id(), $kind_acction = 4);
+      Logbook::activity_done($description = 'Eliminó el patrocinador ' . $sponsor->name . '.', $table_id = 0, $menu_id = 30, $user_id = Auth::id(), $kind_acction = 4);
       return back()->with('success', 'Se ha borrado el sponsor exitosamente...');
     }else{
       return back()->with('success', 'No se ha borrado el sponsor exitosamente...');

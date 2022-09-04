@@ -83,7 +83,7 @@ class SouvenirController extends Controller
       return view('errors.notaccess')->with($variables);
     }
 
-    Logbook::activity_done($description = 'Accedió al módulo de Actualizar Souvenir.', $table_id = 0, $menu_id = 19, $user_id = Auth::id(), $kind_acction = 1);
+    Logbook::activity_done($description = 'Accedió al módulo de Actualizar Souvenir.', $table_id = 0, $menu_id = 22, $user_id = Auth::id(), $kind_acction = 1);
 
     $current_souvenir = Souvenir::findOrFail($souvenir_id);
 
@@ -166,7 +166,7 @@ class SouvenirController extends Controller
     $souvenir = Souvenir::findOrFail($souvenir_id);
     $souvenir->status=-2;
     if($souvenir->save()){
-      Logbook::activity_done($description = 'Elimino el paquete ' . $souvenir->name . '.', $table_id = 0, $menu_id = 22, $user_id = Auth::id(), $kind_acction = 4);
+      Logbook::activity_done($description = 'Eliminó el souvenir ' . $souvenir->name . '.', $table_id = 0, $menu_id = 22, $user_id = Auth::id(), $kind_acction = 4);
       return back()->with('success', 'Se ha borrado el souvenir exitosamente...');
     }else{
       return back()->with('success', 'No se ha borrado el souvenir exitosamente...');

@@ -25,7 +25,7 @@ class SpeakerController extends Controller
 
         }
 
-        Logbook::activity_done($description='Accedió a la vista de conferencista.',$table_id=0,$menu_id=4,$user_id=Auth::id(),$kind_acction=1);
+        Logbook::activity_done($description='Accedió a la vista de Conferencista.',$table_id=0,$menu_id=15,$user_id=Auth::id(),$kind_acction=1);
       
       
         $users_active=User::all()->where('status','=','2')->where('role_id','=','6');
@@ -58,7 +58,7 @@ class SpeakerController extends Controller
 
         }
 
-        Logbook::activity_done($description='Accedió a la vista de Crear conferencista.',$table_id=0,$menu_id=12,$user_id=Auth::id(),$kind_acction=1);
+        Logbook::activity_done($description='Accedió a la vista de Crear conferencista.',$table_id=0,$menu_id=16,$user_id=Auth::id(),$kind_acction=1);
         
         
         
@@ -93,17 +93,17 @@ class SpeakerController extends Controller
            }
 
  
-         if ($user->save()) {
-            Logbook::activity_done($description='Creo un nuevo conferencista exitosamente '. $user->title. '.' ,$table_id=0,$menu_id=12,$user_id=Auth::id(),$kind_acction=6);
+        if ($user->save()) {
+            Logbook::activity_done($description='Creo el conferencista  '. $user->name. ' exitosamente.' ,$table_id=0,$menu_id=16,$user_id=Auth::id(),$kind_acction=6);
 
-             return back()->with('success','Se ha registrado el usuario exitosamente...');
+            return back()->with('success','Se ha registrado el usuario exitosamente...');
  
-         }
-         else
-         {
-             return  back()->withErrors('No se ha registrado el usuario...');
+        }
+        else
+        {
+            return  back()->withErrors('No se ha registrado el usuario...');
  
-         }
+        }
     }
 
     public function edit(Request $request)
@@ -122,7 +122,7 @@ class SpeakerController extends Controller
 
             Logbook::activity_done($description='Actualizo la informacion del conferencista correctamente' . $user->title . '',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=3);
             
-            return back()->with('success','Se ha actualizado el curso exitosamente...');
+            return back()->with('success','Se ha actualizado el conferencista exitosamente...');
 
         }
         else

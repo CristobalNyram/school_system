@@ -4,192 +4,189 @@
 @include('talk.headers_cards')
 
 
-    <div class="container-fluid mt--6">
-        <div class="row d-flex mb-3 mr-5 justify-content-end">
+<div class="container-fluid mt--6">
+  <div class="row d-flex mb-3 mr-5 justify-content-end">
 
-            <a href="{{ route('talk_create') }}" type="button" class="btn btn-info">Agregar</a>
-
-
-      </div>
-
-        <div class="row">
-          <div class="col">
-            <div class="card">
-              <!-- Card header -->
-              <div class="card-header border-0">
-                <h3 class="mb-0">Conferencias registrados</h3>
-              </div>
-              <!-- Light table -->
-              <script>
-
-              </script>
-              <div class="table-responsive">
-                <table class="table align-items-center table-striped table-flush table-bordered dt-responsive"  id="table_users_all">
-                  <thead class="thead-light">
-                    <tr>
-                      <th scope="col" class="sort" data-sort="name">ID</th>
-                      <th scope="col" class="sort" data-sort="budget">Nombre</th>
-                      <th scope="col" class="sort" data-sort="status">Descripción</th>
-                      <th scope="col" class="sort" data-sort="status">Fecha de registro</th>
-                      <th scope="col" class="sort" data-sort="status">Foto de la conferecnia</th>
-                      <th scope="col" class="sort" data-sort="status">Acciones</th>
-
-                    </tr>
-                  </thead>
-                  <tbody class="list">
-
-                    @foreach ($talks_actives as $talk )
-                    <tr>
-                        <th scope="row">
-                          <div class="media align-items-center">
-
-                            <div class="media-body">
-                              <span class="name mb-0 text-sm">  {{ $talk->id }}</span>
-                            </div>
-                          </div>
-                        </th>
+    <a href="{{ route('talk_create') }}" type="button" class="btn btn-info">Agregar</a>
 
 
-                        <th scope="row">
-                            <div class="media align-items-center">
+  </div>
 
-                              <div class="media-body">
-                                <span class="name mb-0 text-sm">{{ $talk->name }}  </span>
-                              </div>
-                            </div>
-                        </th>
-                        <th scope="row">
-                            <div class="media align-items-center">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <!-- Card header -->
+        <div class="card-header border-0">
+          <h3 class="mb-0">Conferencias registrados</h3>
+        </div>
+        <!-- Light table -->
+        <script>
 
-                              <div class="media-body">
-                                <span class="name mb-0 text-sm">{{ $talk->description}} </span>
-                              </div>
-                            </div>
-                        </th>
+        </script>
+        <div class="table-responsive">
+          <table class="table align-items-center table-striped table-flush table-bordered dt-responsive" id="table_users_all">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col" class="sort" data-sort="name">ID</th>
+                <th scope="col" class="sort" data-sort="budget">Nombre</th>
+                <th scope="col" class="sort" data-sort="status">Descripción</th>
+                <th scope="col" class="sort" data-sort="status">Fecha de registro</th>
+                <th scope="col" class="sort" data-sort="status">Foto de la conferecnia</th>
+                <th scope="col" class="sort" data-sort="status">Acciones</th>
 
-                        <th scope="row">
-                            <div class="media align-items-center">
+              </tr>
+            </thead>
+            <tbody class="list">
 
-                              <div class="media-body">
-                                <span class="name mb-0 text-sm"> {{ $talk->created_at }}</span>
-                              </div>
-                            </div>
-                        </th>
+              @foreach ($talks_actives as $talk )
+              <tr>
+                <th scope="row">
+                  <div class="media align-items-center">
 
-                        <th scope="row">
-                          <button onclick="set_image_modal('{{asset($talk->url_img )}}' , '{{ $talk->name }}')"  class="btn" data-toggle="modal" data-target="#ventanaModal">
-                            <div class="media align-items-center">
-                              <div class="media-body">
-                                <span class="name mb-0 text-sm"><img src="{{asset($talk->url_img )}}" alt="{{$talk->name}}" class="img-fluid img-thumbnail" width ="80px" > </span>
-                              </div>
-                            </div>
-                          </button>
-                        </th>
+                    <div class="media-body">
+                      <span class="name mb-0 text-sm"> {{ $talk->id }}</span>
+                    </div>
+                  </div>
+                </th>
 
-                        <!--Modal -->
-                        <div class="modal" id="ventanaModal" tableindex="-1" role="dialog" aria-labellebdy="titulo" aria-hidden="true">
-                          <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                              <div class="modal-header">
-                                <h5 id="titulo"></h5>
-                                <button class="close" data-dismiss="modal" aria-label="Cerrar">
-                                  <span aria-hidden="true">&times</span>
-                                </button>
-                              </div>
-                              <div class="modal-body">
-                                
-                                <div class="media align-items-center">
-                                  <div class="media-body">
-                                    <span class="name mb-0 text-sm"><img id="modal_watch_image_course" alt="{{$talk->name}}" class="img-fluid img-thumbnail" width ="100%" > </span>
-                                  </div>
-                                </div>
 
-                              </div>
-                            </div>
+                <th scope="row">
+                  <div class="media align-items-center">
+
+                    <div class="media-body">
+                      <span class="name mb-0 text-sm">{{ $talk->name }} </span>
+                    </div>
+                  </div>
+                </th>
+                <th scope="row">
+                  <div class="media align-items-center">
+
+                    <div class="media-body">
+                      <span class="name mb-0 text-sm">{{ $talk->description}} </span>
+                    </div>
+                  </div>
+                </th>
+
+                <th scope="row">
+                  <div class="media align-items-center">
+
+                    <div class="media-body">
+                      <span class="name mb-0 text-sm"> {{ $talk->created_at }}</span>
+                    </div>
+                  </div>
+                </th>
+
+                <th scope="row">
+                  <button onclick="set_image_modal('{{asset($talk->url_img )}}' , '{{ $talk->name }}')" class="btn" data-toggle="modal" data-target="#ventanaModal">
+                    <div class="media align-items-center">
+                      <div class="media-body">
+                        <span class="name mb-0 text-sm"><img src="{{asset($talk->url_img )}}" alt="{{$talk->name}}" class="img-fluid img-thumbnail" width="80px"> </span>
+                      </div>
+                    </div>
+                  </button>
+                </th>
+
+                <!--Modal -->
+                <div class="modal" id="ventanaModal" tableindex="-1" role="dialog" aria-labellebdy="titulo" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 id="titulo"></h5>
+                        <button class="close" data-dismiss="modal" aria-label="Cerrar">
+                          <span aria-hidden="true">&times</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+
+                        <div class="media align-items-center">
+                          <div class="media-body">
+                            <span class="name mb-0 text-sm"><img id="modal_watch_image_course" alt="{{$talk->name}}" class="img-fluid img-thumbnail" width="100%"> </span>
                           </div>
                         </div>
 
-                        <td class="text-cener">
-                            <div class="dropdown">
-                              <a class="btn btn-sm btn-icon-only text-danger" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-ellipsis-v"></i>
-                              </a>
-                              <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                              <a class="dropdown-item" href="{{route('talk_update',$talk->id)}}"> <i class="fas fa-edit"></i> Actualizar información </a>
-                                <form action="{{ route('talk_delete',$talk->id)}}" method="post">
-                                  @csrf
-                            
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
-                                <input class="dropdown-item text-danger" type="submit" value="Eliminar" data-toggle="modal" data-target="#modal-notification" onclick="return confirm('Eliminar')" ></input>
-                                </form>
-
-                              </div>
-                            </div>
-                        </td>
+                <td class="text-cener">
+                  <div class="dropdown">
+                    <a class="btn btn-sm btn-icon-only text-danger" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="fas fa-ellipsis-v"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                      <a class="dropdown-item" href="{{route('talk_update',$talk->id)}}"> <i class="fas fa-edit"></i> Actualizar información </a>
+                      <form action="{{ route('talk_delete',$talk->id)}}" method="post">
+                        @csrf
 
 
-                    </tr>
-                    @endforeach
+                        <input class="dropdown-item text-danger" type="submit" value="Eliminar" data-toggle="modal" data-target="#modal-notification" onclick="return confirm('¿Desea eliminar la conferencia?')"></input>
+                      </form>
 
-                  </tbody>
-                </table>
-              </div>
-              <!-- Card footer -->
+                    </div>
+                  </div>
+                </td>
 
-            </div>
-          </div>
+
+              </tr>
+              @endforeach
+
+            </tbody>
+          </table>
         </div>
+        <!-- Card footer -->
 
-
-        @include('layouts.footers.auth')
+      </div>
     </div>
+  </div>
+
+
+  @include('layouts.footers.auth')
+</div>
 
 
 
 
 <script>
-
-$(document).ready(function() {
-    $('#table_users_all').DataTable( {
-        "language": {
-            "lengthMenu": "Mostrar _MENU_ registros por página",
-            "zeroRecords": "No encontramos nada.",
-            "info": "Mostrando página _PAGE_ de _PAGES_",
-            "infoEmpty": "No hay registros existentes.",
-            "infoFiltered": "(Fitrado de _MAX_  registros existentes)",
-            "loadingRecords": "Cargando...",
-            "search":         "Buscar:",
-            "emptyTable":     "No hay información disponible en la tabla.",
-            "paginate": {
-                "first":      "First",
-                "last":       "Last",
-                "next":       "Next",
-                "previous":   "Previous"
-             },
-        }
-    } );
-} );
+  $(document).ready(function() {
+    $('#table_users_all').DataTable({
+      "language": {
+        "lengthMenu": "Mostrar _MENU_ registros por página",
+        "zeroRecords": "No encontramos nada.",
+        "info": "Mostrando página _PAGE_ de _PAGES_",
+        "infoEmpty": "No hay registros existentes.",
+        "infoFiltered": "(Fitrado de _MAX_  registros existentes)",
+        "loadingRecords": "Cargando...",
+        "search": "Buscar:",
+        "emptyTable": "No hay información disponible en la tabla.",
+        "paginate": {
+          "first": "First",
+          "last": "Last",
+          "next": "Next",
+          "previous": "Previous"
+        },
+      }
+    });
+  });
 </script>
 
 @endsection
 
 @push('js')
-    {{-- <script src="{{ asset() }}/vendor/datatables.net/js/jquery.dataTables.min.js"></script> --}}
+{{-- <script src="{{ asset() }}/vendor/datatables.net/js/jquery.dataTables.min.js"></script> --}}
 
-    <script>
+<script>
+  function set_image_modal(url_img, name) {
 
-      function set_image_modal(url_img, name){
+    let imagemodal = document.getElementById('modal_watch_image_course');
+    imagemodal.src = '';
+    imagemodal.src = url_img;
 
-        let imagemodal= document.getElementById('modal_watch_image_course');
-        imagemodal.src='';
-        imagemodal.src=url_img;
+    let titlemodal = document.getElementById('titulo');
+    titlemodal.innerText = '';
+    titlemodal.innerText = name;
 
-        let titlemodal= document.getElementById('titulo');
-        titlemodal.innerText='';
-        titlemodal.innerText=name;
-
-        }
-
-      </script>
+  }
+</script>
 
 @endpush
