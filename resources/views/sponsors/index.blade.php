@@ -110,7 +110,7 @@
                             <a class="dropdown-item" href="{{route('sponsor_update',$sponsor->id)}}"> <i class="fas fa-edit"></i> Actualizar información </a>
                            <form action="{{route('sponsor_delete',$sponsor->id)}}" method="POST">
                            @csrf
-                             <input type="submit" class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-notification" value="Eliminar" onclick="return confirm('¿Desea eliminar el souvenir?')"></input>
+                             <input type="submit" class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-notification" value="Eliminar" onclick="return confirm('¿Desea eliminar el patrocinador?')"></input>
                            </form>
                             </div>
                             </div>
