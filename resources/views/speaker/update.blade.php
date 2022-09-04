@@ -37,16 +37,16 @@
                             <div class="form-group">
                             <input type="hidden" name="id" id="id" value="{{$current_user->id}}">
                             <label for="name">Nombre del conferencista</label>
-                            <input type="text" class="form-control form-control-lg" id="name" name="name" value="{{    $current_user->name  }}" placeholder="Título del curso"  max="50" required oninput="uppercaseLetters(event);">
+                            <input type="text" class="form-control form-control-lg" id="name" name="name" value="{{    $current_user->name  }}" placeholder="Nombre"  max="50" required oninput="uppercaseLetters(event);">
                             </div>
 
                             <div class="form-group">
                                 <label for="first_surname">Apellido Paterno</label>
-                                <input type="text" class="form-control form-control-lg" id="first_surname" name="first_surname" value="{{ $current_user->first_surname }}" placeholder="Apellido paterno del estudiante"  max="50" required  oninput="uppercaseLetters(event);">
+                                <input type="text" class="form-control form-control-lg" id="first_surname" name="first_surname" value="{{ $current_user->first_surname }}" placeholder="Apellido paterno "  max="50" required  oninput="uppercaseLetters(event);">
                             </div>
                             <div class="form-group">
                                 <label for="second_surname">Apellido Materno</label>
-                                <input type="text" class="form-control form-control-lg" id="second_surname" name="second_surname" value="{{ $current_user->second_surname }}" placeholder="Fecha del curso"  max="50"  required oninput="uppercaseLetters(event);">
+                                <input type="text" class="form-control form-control-lg" id="second_surname" name="second_surname" value="{{ $current_user->second_surname }}" placeholder="Apellido Materno"  max="50"  required oninput="uppercaseLetters(event);">
                             </div>
 
                             <div class="form-group">
@@ -70,6 +70,11 @@
                             <div class="form-group">
                                 <label for="email">Correo Electronico</label>
                                 <input type="emil" class="form-control form-control-lg" id="email" name="email" value="{{ $current_user->email }}" placeholder="correo electronico del estudiante"  max="50"  required oninput="uppercaseLetters(event);">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="speaker_cv">Curriculum Vitae</label>
+                                <input type="file" class="form-control form-control-lg" id="speaker_cv" name="speaker_cv" value="{{ $current_user->speaker_cv }}" placeholder="Curriculum Vitae"  max="50"  required oninput="uppercaseLetters(event);">
                             </div>
 
                             

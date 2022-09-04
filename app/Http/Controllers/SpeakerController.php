@@ -81,7 +81,17 @@ class SpeakerController extends Controller
         $user->gender = $request->gender;
         $user->role_id =$request->role_id;
         $user->email = $request->email;
-        $user->password = Hash::make($request->password) ;
+        $user->password = Hash::make($request->password);
+        $user->speaker_cv= $request->speaker_cv;
+
+        if($request -> hasFile ('speaker_cv')){
+            $file = $request ->file('speaker_cv');
+            $destiantionPath = 'argon/speaker/';
+            $filename = time() .'-'. $file->getClientOriginalName();
+            $uploadSuccess = $request->file('speaker_cv')->move($destiantionPath, $filename);
+            $user->speaker_cv = $destiantionPath . $filename;
+           }
+
  
          if ($user->save()) {
             Logbook::activity_done($description='Creo un nuevo conferencista exitosamente '. $user->title. '.' ,$table_id=0,$menu_id=12,$user_id=Auth::id(),$kind_acction=6);
@@ -102,7 +112,7 @@ class SpeakerController extends Controller
         $user->name = $request->name;
         $user->first_surname = $request->first_surname;
         $user->second_surname = $request->second_surname;
-        $user->pdf_cv = $request->pdf_cv;
+        $user->speaker_cv = $request->speaker_cv;
         $user->gender = $request->gender;
         $user->role_id = $request->role_id;
         $user->email = $request->email;
@@ -146,7 +156,7 @@ class SpeakerController extends Controller
 
         $variables=[
             'menu'=>'users_all',
-            'title_page'=>'Usuarios',
+            'title_page'=>'Conferencista',
             'rol_available'=>$rol_available,
             'current_user'=>$current_user,
 
@@ -154,7 +164,7 @@ class SpeakerController extends Controller
 
         ];
 
-        return view('student.update')->with($variables);
+        return view('speaker.update')->with($variables);
     }
 
     public function delete($user_id)

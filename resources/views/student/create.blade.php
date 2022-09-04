@@ -36,16 +36,16 @@
                            @endif
                             <div class="form-group">
                             <label for="name">Nombre</label>
-                            <input type="text" class="form-control form-control-lg" id="name" name="name" value="{{   old('name') }}" placeholder="Nombre de estudiante"  max="50" required oninput="uppercaseLetters(event);">
+                            <input type="text" class="form-control form-control-lg" id="name" name="name" value="{{   old('name') }}" placeholder="Nombre "  max="50" required oninput="uppercaseLetters(event);">
                             </div>
 
                             <div class="form-group">
                                 <label for="first_surname">Apellido de parterno</label>
-                                <input type="text" class="form-control form-control-lg" id="first_surname" name="first_surname" value="{{ old('first_surname') }}" placeholder="Apellido paterno de estudiante"  max="50" required  oninput="uppercaseLetters(event);">
+                                <input type="text" class="form-control form-control-lg" id="first_surname" name="first_surname" value="{{ old('first_surname') }}" placeholder="Apellido paterno"  max="50" required  oninput="uppercaseLetters(event);">
                             </div>
                             <div class="form-group">
                                 <label for="second_surname">Apellido de materno</label>
-                                <input type="text" class="form-control form-control-lg" id="second_surname" name="second_surname" value="{{ old('second_surname') }}" placeholder="Apellido materno de estudiante"  max="50"  required oninput="uppercaseLetters(event);">
+                                <input type="text" class="form-control form-control-lg" id="second_surname" name="second_surname" value="{{ old('second_surname') }}" placeholder="Apellido materno "  max="50"  required oninput="uppercaseLetters(event);">
                             </div>
 
                             <div class="form-group">
@@ -70,51 +70,66 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="speaker_id">Carrera</label>
+                                <label for="career">Carrera</label>
 
-                                <select class="form-control form-control-lg  " data-toggle="select2"  name="speaker_id" id="speaker_id" >
+                                <select class="form-control form-control-lg  " data-toggle="select2"  name="career" id="career" >
                                     <option value="-2" selected>Seleccionar</option>
-                                    @foreach ($carrers_available as $carrer_available )
-                                    <option value="{{ $carrers_available }}" >{{ $carrer_available->name }}</option>
+                                    @foreach ($carrers_available as $carrer )
+                                    <option value="{{ $carrer->id }}" >{{ $carrer->name }}</option>
 
                                     @endforeach
                                   </select>
                             </div>
 
                             <div class="form-group">
-                                <label for="gender">Grupo</label>
+                                <label for="quarter">Cuatrimestre</label>
 
-                                <select class="form-control form-control-lg  " data-toggle="select2" id="gender" name="gender" >
-                                    <option value="-1" selected>Seleccionar</option>
-                                    <option value="1" >1º cuatrimestre</option>
-                                    <option value="2" >2º cuatrimestre</option>
-                                    <option value="3" >3º cuatrimestre</option>
-                                    <option value="3" >4º cuatrimestre</option>
-                                    <option value="3" >5º cuatrimestre</option>
-                                    <option value="3" >6º cuatrimestre</option>
-                                    <option value="3" >7º cuatrimestre</option>
-                                    <option value="3" >8º cuatrimestre</option>
-                                    <option value="3" >9º cuatrimestre</option>
-                                    <option value="3" >10º cuatrimestre</option>
-                                    <option value="3" >11º cuatrimestre</option>
-                                    <option value="3" >12º cuatrimestre</option>
+                                <select class="form-control form-control-lg  " data-toggle="select2" id="quarter" name="quarter" >
+                                    <option value="-3" selected>Seleccionar</option>
+                                    <option value="first" >1° Primero</option>
+                                    <option value="second" >2° Segundo</option>
+                                    <option value="third" >3° Tercero</option>
+                                    <option value="fourth" >4° Cuarto</option>
+                                    <option value="fifth" >5° Quinto</option>
+                                    <option value="sixth" >6° Sexto</option>
+                                    <option value="seventh" >7° Séptimo</option>
+                                    <option value="eighth" >8° Octavo</option>
+                                    <option value="nineth" >9° Noveno</option>
+                                    <option value="tenth" >10° Décimo</option>
+                                  
+
+
+                                  </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="group">Grupo</label>
+
+                                <select class="form-control form-control-lg  " data-toggle="select2" id="group" name="group" >
+                                    <option value="-4" selected>Seleccionar</option>
+                                    <option value="A" >A</option>
+                                    <option value="B" >B</option>
+                                    <option value="C" >C</option>
+                                    <option value="D" >D</option>
+                                  
+                                  
 
 
                                   </select>
                             </div>
 
 
+
                             <div class="form-group">
                                 <label for="email">Correo electronico</label>
-                                <input  type="email" class="form-control form-control-lg" id="email" name="email" value=" {{ old('email') }}" placeholder="Correo electronico del usuario." required maxlength="50">
+                                <input  type="email" class="form-control form-control-lg" id="email" name="email" value=" {{ old('email') }}" placeholder="Correo electronico ." required maxlength="50">
                             </div>
                             <div class="form-group">
                                 <label for="password">Password</label>
-                                <input  type="password" class="form-control form-control-lg" id="password" value="{{ old('password') }}" name="password" placeholder="Contraseña para este usuario." required maxlength="50">
+                                <input  type="password" class="form-control form-control-lg" id="password" value="{{ old('password') }}" name="password" placeholder="Crear Contraseña." required maxlength="50">
                             </div>
                             <div class="form-group">
                                 <label for="password_confirmation">Confirmar contraseña</label>
-                                <input  type="password" class="form-control form-control-lg" id=" password_confirmation" name="password_confirmation" placeholder="Confirmar la contraseña para este usuario." required maxlength="50">
+                                <input  type="password" class="form-control form-control-lg" id=" password_confirmation" name="password_confirmation" placeholder="Confirmar contraseña." required maxlength="50">
                             </div>
 
 

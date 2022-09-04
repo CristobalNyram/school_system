@@ -15,13 +15,13 @@ class CarrersTableSeeder extends Seeder
     public function run()
     {
         DB::table('carrers')->insert([
-            'name' => 'TSU Tecnologías de la información Desarrollo de Software Multiplataforma',
+            'name' => 'TIC: Desarrollo de Software Multiplataforma',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         DB::table('carrers')->insert([
-            'name' => 'TSU Tecnologías de la información Redes y Ciberseguridad',
+            'name' => 'TIC: Redes Inteligentes y Ciberseguridad',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -33,7 +33,7 @@ class CarrersTableSeeder extends Seeder
         ]);
 
         DB::table('carrers')->insert([
-            'name' => 'ING: Redes y Ciberseguridad',
+            'name' => 'ING: Redes Inteligentes y Ciberseguridad',
             'created_at' => now(),
             'updated_at' => now(),
         ]);

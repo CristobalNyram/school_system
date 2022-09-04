@@ -91,6 +91,7 @@ class UserController extends Controller
        $user->first_surname = $request->first_surname;
        $user->second_surname = $request->second_surname;
        $user->gender = $request->gender;
+       $user->quarter = $request->quarter;
        $user->role_id = $request->role_id;
        $user->email = $request->email;
        $user->password = Hash::make($request->password) ;

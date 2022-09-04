@@ -80,7 +80,7 @@ class StudentController extends Controller
         $carrers_available=Carrer::all()->where('status','=','2');
         $variables=[
             'menu'=>'users_all',
-            'title_page'=>'Usuarios',
+            'title_page'=>'Estudiantes',
             'rol_available'=>$rol_available,
             'carrers_available'=>$carrers_available,
 
@@ -104,6 +104,9 @@ class StudentController extends Controller
         $user->second_surname = $request->second_surname;
         $user->gender = $request->gender;
         $user->role_id =$request->role_id;
+        $user->career = $request->career;
+        $user->quarter = $request->quarter;
+        $user->group = $request->group;
         $user->email = $request->email;
         $user->password = Hash::make($request->password) ;
  
@@ -127,7 +130,7 @@ class StudentController extends Controller
      * @param  \App\Models\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function show(Student $student)
+    public function show($student)
     {
         //
     }
@@ -145,6 +148,9 @@ class StudentController extends Controller
         $user->first_surname = $request->first_surname;
         $user->second_surname = $request->second_surname;
         $user->gender = $request->gender;
+        $user->career = $request->career;
+        $user->quarter = $request->quarter;
+        $user->group = $request->group;
         $user->role_id = $request->role_id;
         $user->email = $request->email;
 
@@ -189,12 +195,14 @@ class StudentController extends Controller
        
         $current_user=User::findOrFail($user_id);
         $rol_available=Role::all()->where('status','=','2');
+        $carrers_available=Carrer::all()->where('status','=','2');
 
         $variables=[
             'menu'=>'users_all',
             'title_page'=>'Usuarios',
             'rol_available'=>$rol_available,
             'current_user'=>$current_user,
+            'carrers_available'=>$carrers_available,
 
 
 

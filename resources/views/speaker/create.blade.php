@@ -18,7 +18,7 @@
               </div>
 
 
-                        <form class="m-5"  action="{{route('student_store')}}"  method="POST">
+                        <form class="m-5"  action="{{route('speaker_store')}}"  method="POST" enctype="multipart/form-data">
                             @csrf
                             @if(session('success'))
                             <div class="alert alert-success" role="alert">
@@ -36,22 +36,46 @@
                            @endif
                             <div class="form-group">
                             <label for="name">Nombre</label>
-                            <input type="text" class="form-control form-control-lg" id="name" name="name" value="{{   old('name') }}" placeholder="Nombre de estudiante"  max="50" required oninput="uppercaseLetters(event);">
+                            <input type="text" class="form-control form-control-lg" id="name" name="name" value="{{   old('name') }}" placeholder="Nombre"  max="50" required oninput="uppercaseLetters(event);">
                             </div>
 
                             <div class="form-group">
                                 <label for="first_surname">Apellido  parterno</label>
-                                <input type="text" class="form-control form-control-lg" id="first_surname" name="first_surname" value="{{ old('first_surname') }}" placeholder="Apellido paterno de estudiante"  max="50" required  oninput="uppercaseLetters(event);">
+                                <input type="text" class="form-control form-control-lg" id="first_surname" name="first_surname" value="{{ old('first_surname') }}" placeholder="Apellido paterno"  max="50" required  oninput="uppercaseLetters(event);">
                             </div>
                             <div class="form-group">
                                 <label for="second_surname">Apellido materno</label>
-                                <input type="text" class="form-control form-control-lg" id="second_surname" name="second_surname" value="{{ old('second_surname') }}" placeholder="Apellido materno de estudiante"  max="50"  required oninput="uppercaseLetters(event);">
+                                <input type="text" class="form-control form-control-lg" id="second_surname" name="second_surname" value="{{ old('second_surname') }}" placeholder="Apellido materno"  max="50"  required oninput="uppercaseLetters(event);">
                             </div>
 
-                            <div class="form-group">
-                                <label for="pdf_cv">CV</label>
-                                <input type="file" class="form-control form-control-lg" id="pdf_cv" name="pdf_cv" value="{{ old('pdf_cv') }}" placeholder="CV del conferencista"  max="50"  required oninput="uppercaseLetters(event);">
-                            </div>
+                         <div class="form-group">
+                            <label for="speaker_cv">Curriculum Vitae</label>
+                            <input type="file" onBlur='LimitAttach(this,1)' ; accept="pdf/" class="form-control form-control-lg" id="speaker_cv" name="speaker_cv" value="{{ old('speaker_cv') }}" placeholder="Curriculum Vitae" max="50" required oninput="uppercaseLetters(event);">
+                    </div>
+
+                            <script type="text/javascript">
+                        function LimitAttach(tField, iType) {
+                            file = tField.value;
+                            if (iType == 1) {
+                                extArray = new Array(".pdf");
+                            }
+                            allowSubmit = false;
+                            if (!file) return;
+                            while (file.indexOf("\\") != -1) file = file.slice(file.indexOf("\\") + 1);
+                            ext = file.slice(file.indexOf(".")).toLowerCase();
+                            for (var i = 0; i < extArray.length; i++) {
+                                if (extArray[i] == ext) {
+                                    allowSubmit = true;
+                                    break;
+                                }
+                            }
+                            if (allowSubmit) {} else {
+                                tField.value = "";
+                                alert("Usted sólo puede subir archivos con extensiones " + (extArray.join(" ")));
+                            }
+                        }
+                    </script>
+
 
                             <div class="form-group">
                                 <label for="role_id"></label>
@@ -77,15 +101,15 @@
 
                             <div class="form-group">
                                 <label for="email">Correo electronico</label>
-                                <input  type="email" class="form-control form-control-lg" id="email" name="email" value=" {{ old('email') }}" placeholder="Correo electronico del usuario." required maxlength="50">
+                                <input  type="email" class="form-control form-control-lg" id="email" name="email" value=" {{ old('email') }}" placeholder="Correo electronico." required maxlength="50">
                             </div>
                             <div class="form-group">
                                 <label for="password">Password</label>
-                                <input  type="password" class="form-control form-control-lg" id="password" value="{{ old('password') }}" name="password" placeholder="Contraseña para este usuario." required maxlength="50">
+                                <input  type="password" class="form-control form-control-lg" id="password" value="{{ old('password') }}" name="password" placeholder="Crear Contraseña." required maxlength="50">
                             </div>
                             <div class="form-group">
                                 <label for="password_confirmation">Confirmar contraseña</label>
-                                <input  type="password" class="form-control form-control-lg" id=" password_confirmation" name="password_confirmation" placeholder="Confirmar la contraseña para este usuario." required maxlength="50">
+                                <input  type="password" class="form-control form-control-lg" id=" password_confirmation" name="password_confirmation" placeholder="Confirmar contraseña ." required maxlength="50">
                             </div>
 
 

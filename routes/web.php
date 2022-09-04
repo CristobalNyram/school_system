@@ -59,7 +59,7 @@ Route::group(['middleware' => 'auth'], function () {
          // student start-------------------------------------------
          Route::get('/student',[StudentController::class,"index"])->name('student_index');
          Route::get('/student/create',[StudentController::class,"create"])->name('student_create');
-         Route::post('/student/store',[UserController::class,"store"])->name('student_store');
+         Route::post('/student/store',[StudentController::class,"store"])->name('student_store');
          Route::get('/student/update/{user_id}',[StudentController::class,"update"])->name('student_update');
          Route::post('/student/edit',[StudentController::class,"edit"])->name('student_edit');
          Route::post('/student/delete/{user_id}',[StudentController::class,"delete"])->name('student_delete');
@@ -76,8 +76,8 @@ Route::group(['middleware' => 'auth'], function () {
            // speaker start-------------------------------------------
            Route::get('/speaker',[SpeakerController::class,"index"])->name('speaker_index');
            Route::get('/speaker/create',[SpeakerController::class,"create"])->name('speaker_create');
-           Route::post('/student/store',[UserController::class,"store"])->name('student_store');
-           Route::get('/speaker/update/{user_id}',[SpeakerController::class,"update"])->name('student_update');
+           Route::post('/speaker/store',[SpeakerController::class,"store"])->name('speaker_store');
+           Route::get('/speaker/update/{user_id}',[SpeakerController::class,"update"])->name('speaker_update');
            Route::post('/speaker/edit',[SpeakerController::class,"edit"])->name('speaker_edit');
 
            // speaker end--------------------------------------------
