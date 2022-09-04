@@ -19,6 +19,7 @@ class CoursesTableSeeder extends Seeder
             'description' => 'Introducción a HTML desde 0',
             'date' => '25 de Noviembre del 2022',
             'url_img' => 'ruta',
+            'maximum_person' => '20 personas',
             'speaker_id' => 1,
             'created_at' => now(),
         ]);

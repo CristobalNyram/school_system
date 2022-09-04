@@ -30,6 +30,7 @@
                       <th scope="col" class="sort" data-sort="name">ID</th>
                       <th scope="col" class="sort" data-sort="budget">Título</th>
                       <th scope="col" class="sort" data-sort="status">Descripción</th>
+                      <th scope="col" class="sort" data-sort="status">Límite</th>
                       <th scope="col" class="sort" data-sort="status">Fecha de registro</th>
                       <th scope="col" class="sort" data-sort="status">Foto</th>
                       <th scope="col" class="sort" data-sort="status">Acciones</th>
@@ -63,6 +64,15 @@
 
                               <div class="media-body">
                                 <span class="name mb-0 text-sm">{{ $course->description}} </span>
+                              </div>
+                            </div>
+                        </th>
+
+                        <th scope="row">
+                            <div class="media align-items-center">
+
+                              <div class="media-body">
+                                <span class="name mb-0 text-sm">{{ $course->maximum_person}} </span>
                               </div>
                             </div>
                         </th>
@@ -123,11 +133,11 @@
                                 <i class="fas fa-edit"></i> Actualizar información
                               </a>
 
-                                <form class="input-group" action="{{route('course_delete',$course->id)}}" method="POST">
+                                <form class="input-group form-eliminar"  action="{{route('course_delete',$course->id)}}" method="POST">
                                   @csrf
                                 
-                                <input type="submit" class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-notification" value="Eliminar" onclick="return confirm('¿Desea eliminar el curso?')"></input>
-                                
+                                <input type="submit" class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-notification" value="Eliminar" ></input>
+                                </form> 
                               </div>
                             </div>
                          </td>
@@ -195,6 +205,42 @@ $(document).ready(function() {
 
           }
 
+      </script>
+      
+      <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+      @if (session('eliminar') == 'ok')
+         <script type="text/javascript">
+
+              Swal.fire(
+              '¡Eliminado!',
+              'Tu archivo se ha borrado completamente.',
+              'success'
+           )
+
+         </script>
+
+      @endif
+
+      <script type="text/javascript">
+        $('.form-eliminar').submit(function(e){
+          e.preventDefault();
+
+          Swal.fire({
+          title: '¿Está seguro de que desea eliminarlo....?',
+          text: "¡Después de completar la acción no se podrá revertir los cambios!",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Sí. ¡Deseo eliminarlo!'
+       }).then((result) => {
+         if (result.isConfirmed) {
+              
+          this.submit();
+        }
+      })
+        });
       </script>
 
 @endpush

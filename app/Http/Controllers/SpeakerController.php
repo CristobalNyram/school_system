@@ -58,7 +58,7 @@ class SpeakerController extends Controller
 
         }
 
-        Logbook::activity_done($description='Accedió a la vista de Crear conferencista.',$table_id=0,$menu_id=16,$user_id=Auth::id(),$kind_acction=1);
+        Logbook::activity_done($description='Accedió a la vista para Crear un conferencista.',$table_id=0,$menu_id=16,$user_id=Auth::id(),$kind_acction=1);
         
         
         
@@ -94,7 +94,7 @@ class SpeakerController extends Controller
 
  
         if ($user->save()) {
-            Logbook::activity_done($description='Creo el conferencista  '. $user->name. ' exitosamente.' ,$table_id=0,$menu_id=16,$user_id=Auth::id(),$kind_acction=6);
+            Logbook::activity_done($description='Creo un conferencista exitosamente '. $user->name. ' exitosamente.' ,$table_id=0,$menu_id=16,$user_id=Auth::id(),$kind_acction=6);
 
             return back()->with('success','Se ha registrado el usuario exitosamente...');
  
@@ -146,7 +146,7 @@ class SpeakerController extends Controller
 
         }
 
-        Logbook::activity_done($description='Accedió a la vista  de Actualizar conferencista.',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=1);
+        Logbook::activity_done($description='Accedió a la vista  de para actualizar la información del conferencista.',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=1);
        
        
        
@@ -175,7 +175,7 @@ class SpeakerController extends Controller
         if($user->save()){
             Logbook::activity_done($description='Borro a un conferencista exitosamente.',$table_id=0,$menu_id=4,$user_id=Auth::id(),$kind_acction=1);
 
-            return back()->with('success','Se ha eliminado el curso exitosamente...');
+            return back()->with('success','Se ha eliminado el curso exitosamente...')->with('eliminar', 'ok');
         } else {
             return back()->with('success','No se ha eliminado el curso exitosamente...');
         }

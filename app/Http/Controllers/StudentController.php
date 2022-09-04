@@ -32,7 +32,7 @@ class StudentController extends Controller
 
         }
 
-        Logbook::activity_done($description='Accedió a la vista de estudiante.',$table_id=0,$menu_id=4,$user_id=Auth::id(),$kind_acction=1);
+        Logbook::activity_done($description='Accedió a la vista de estudiantes.',$table_id=0,$menu_id=4,$user_id=Auth::id(),$kind_acction=1);
         
         
         $users_active=User::all()->where('status','=','2')->where('role_id','=','3');
@@ -73,7 +73,7 @@ class StudentController extends Controller
 
         }
 
-        Logbook::activity_done($description='Accedió a la vista de Crear estudiante.',$table_id=0,$menu_id=12,$user_id=Auth::id(),$kind_acction=1);
+        Logbook::activity_done($description='Accedió a la vista para crear un estudiante.',$table_id=0,$menu_id=12,$user_id=Auth::id(),$kind_acction=1);
         
         
         $rol_available=Role::all()->where('status','=','2');
@@ -112,7 +112,7 @@ class StudentController extends Controller
  
          if ($user->save()) {
 
-            Logbook::activity_done($description='Creo un nuevo estudiante exitosamente '. $user->title. '.' ,$table_id=0,$menu_id=12,$user_id=Auth::id(),$kind_acction=6);
+            Logbook::activity_done($description='Registro un nuevo estudiante exitosamente '. $user->title. '.' ,$table_id=0,$menu_id=12,$user_id=Auth::id(),$kind_acction=6);
 
              return back()->with('success','Se ha registrado el usuario exitosamente...');
  
@@ -156,7 +156,7 @@ class StudentController extends Controller
 
         if ($user->save()) {
 
-            Logbook::activity_done($description='Actualizo la informacion del estudiante correctamente' . $user->title . '',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=3);
+            Logbook::activity_done($description='Actualizó la información del estudiante correctamente' . $user->title . '',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=3);
             
             return back()->with('success','Se ha actualizado el curso exitosamente...');
 
@@ -189,7 +189,7 @@ class StudentController extends Controller
 
         }
 
-        Logbook::activity_done($description='Accedió a la vista  de Actualizar estudiante.',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=1);
+        Logbook::activity_done($description='Accedió a la vista  para Actualizar la información del estudiante.',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=1);
        
        
        
@@ -226,7 +226,7 @@ class StudentController extends Controller
 
             Logbook::activity_done($description='Borro a un estudiante exitosamente.',$table_id=0,$menu_id=4,$user_id=Auth::id(),$kind_acction=1);
 
-            return back()->with('success','Se ha eliminado el curso exitosamente...');
+            return back()->with('success','Se ha eliminado el curso exitosamente...')->with('eliminar', 'ok');
         } else {
             return back()->with('success','No se ha eliminado el curso exitosamente...');
         }

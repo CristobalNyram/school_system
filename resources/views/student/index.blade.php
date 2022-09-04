@@ -113,10 +113,10 @@
                               <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                 <a class="dropdown-item"  href="{{ route('student_update',$user->id)}}" >Actualizar información</a>
                                 <a class="dropdown-item" href="{{ route('password_update',$user->id)}}">Actualizar contraseña</a>
-                                <form action="{{ route('student_delete',$user->id)}}" method="post" id="form-eliminar">
+                                <form action="{{ route('student_delete',$user->id)}}" class="input-group form-eliminar" method="post" >
                                   @csrf
 
-                                <input class="dropdown-item text-danger" type="submit" data-toggle="modal" data-target="#modal-notification" onclick="return confirm('Eliminar')" ></input>
+                                <input class="dropdown-item text-danger" type="submit" data-toggle="modal" data-target="#modal-notification" value="Eliminar" ></input>
                                 </form>
                               </div>
                             </div>
@@ -170,4 +170,40 @@ $(document).ready(function() {
 
 @push('js')
     {{-- <script src="{{ asset() }}/vendor/datatables.net/js/jquery.dataTables.min.js"></script> --}}
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+@if (session('eliminar') == 'ok')
+   <script type="text/javascript">
+
+        Swal.fire(
+        '¡Eliminado!',
+        'Tu archivo se ha borrado completamente.',
+        'success'
+     )
+
+   </script>
+
+@endif
+
+<script type="text/javascript">
+  $('.form-eliminar').submit(function(e){
+    e.preventDefault();
+
+    Swal.fire({
+    title: '¿Está seguro de que desea eliminarlo....?',
+    text: "¡Después de completar la acción no se podrá revertir los cambios!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Sí. ¡Deseo eliminarlo!'
+ }).then((result) => {
+   if (result.isConfirmed) {
+        
+    this.submit();
+  }
+})
+  });
+</script>
 @endpush

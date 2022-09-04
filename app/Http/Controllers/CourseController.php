@@ -31,7 +31,7 @@ class CourseController extends Controller
 
         }
 
-        Logbook::activity_done($description='Accedió al módulo de Curso.',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=1);
+        Logbook::activity_done($description='Consultó el módulo de Curso.',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=1);
 
 
          $courses_active=Course::all()->where('status','=','2');
@@ -70,7 +70,7 @@ class CourseController extends Controller
 
         }
 
-        Logbook::activity_done($description='Accedió al módulo de Crear Curso.',$table_id=0,$menu_id=12,$user_id=Auth::id(),$kind_acction=1);
+        Logbook::activity_done($description='Consulto el módulo para Crear un Curso.',$table_id=0,$menu_id=12,$user_id=Auth::id(),$kind_acction=1);
 
         $rol_available=Role::all()->where('status','=','2');
         $users_speakers=User::all()->where('status', '=', '2')->where('role_id','=','6');
@@ -100,6 +100,7 @@ class CourseController extends Controller
        $course =new Course();
        $course->title = $request->title;
        $course->description = $request->description;
+       $course->maximum_person = $request->maximum_person;
        $course->date = $request->date;
        $course->url_img = $request->url_img;
        $course->speaker_id = $request->speaker_id;
@@ -116,7 +117,7 @@ class CourseController extends Controller
 
         if ($course->save()) {
 
-            Logbook::activity_done($description='Creo el curso '. $course->title. '.' ,$table_id=0,$menu_id=12,$user_id=Auth::id(),$kind_acction=6);
+            Logbook::activity_done($description='Agregó un  curso nuevo exitosaamente '. $course->title. '.' ,$table_id=0,$menu_id=12,$user_id=Auth::id(),$kind_acction=6);
 
             return back()->with('success','Se ha registrado el curso exitosamente...');
 
@@ -165,7 +166,7 @@ class CourseController extends Controller
         }
 
         if ($course->save()) {
-            Logbook::activity_done($description='Actualizo el curso ' . $course->title . ' correctamente',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=3);
+            Logbook::activity_done($description='Actualizo un curso exitosamente' . $course->title . ' correctamente',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=3);
             return back()->with('success','Se ha actualizado el curso exitosamente...');
 
         }
@@ -198,7 +199,7 @@ class CourseController extends Controller
 
         }
 
-        Logbook::activity_done($description='Accedió al módulo de Actualizar Curso.',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=1);
+        Logbook::activity_done($description='Accedió al módulo para actualizar un curso.',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=1);
 
         $current_course=Course::findOrFail($course_id);
         $rol_available=Role::all()->where('status','=','2');
@@ -229,8 +230,8 @@ class CourseController extends Controller
         $course->status=-2;
 
         if($course->save()){
-            Logbook::activity_done($description = 'Eliminó el curso ' . $course->title . ' correctamente', $table_id = 0, $menu_id = 10, $user_id = Auth::id(), $kind_acction = 3);
-            return back()->with('success','Se ha eliminado el curso exitosamente...');
+            Logbook::activity_done($description = 'Eliminó el curso exitosamente' . $course->title . ' correctamente', $table_id = 0, $menu_id = 10, $user_id = Auth::id(), $kind_acction = 3);
+            return back()->with('success','Se ha eliminado el curso exitosamente...')->with('eliminar', 'ok');
         } else {
             return back()->with('success','No se ha eliminado el curso exitosamente...');
         }

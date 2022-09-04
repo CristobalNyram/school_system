@@ -71,7 +71,7 @@ class TalkController extends Controller
 
         }
 
-        Logbook::activity_done($description='Accedió a la vista de Crear conferencia.',$table_id=0,$menu_id=16,$user_id=Auth::id(),$kind_acction=1);
+        Logbook::activity_done($description='Accedió a la vista para Crear una conferencia.',$table_id=0,$menu_id=16,$user_id=Auth::id(),$kind_acction=1);
        
        
        
@@ -116,7 +116,7 @@ class TalkController extends Controller
 
     if ($talk->save()) {
 
-        Logbook::activity_done($description='Creo la conferencia '. $talk->title. ' exitosamente.' ,$table_id=0,$menu_id=16,$user_id=Auth::id(),$kind_acction=6);
+        Logbook::activity_done($description='Registró una conferencia exitosamente'. $talk->title. ' exitosamente.' ,$table_id=0,$menu_id=16,$user_id=Auth::id(),$kind_acction=6);
 
         return back()->with('success','Se ha registrado la conferencia exitosamente...');
 
@@ -165,7 +165,7 @@ class TalkController extends Controller
 
         if ($talk->save()) {
 
-            Logbook::activity_done($description='Actualizo la conferencia ' . $talk->name . ' correctamente',$table_id=0,$menu_id=16,$user_id=Auth::id(),$kind_acction=3);
+            Logbook::activity_done($description='Actualizó la información de una conferencia ' . $talk->name . ' correctamente',$table_id=0,$menu_id=16,$user_id=Auth::id(),$kind_acction=3);
             
             return back()->with('success','Se ha actualizado la conferencia exitosamente...');
 
@@ -231,8 +231,8 @@ class TalkController extends Controller
         $talk->status=-2;
 
         if($talk->save()){
-            Logbook::activity_done($description= 'Eliminó la conferencia ' . $talk->name . '.',$table_id=0,$menu_id=16,$user_id=Auth::id(),$kind_acction=4);
-            return back()->with('success','Se ha eliminado la conferencia exitosamente...');
+            Logbook::activity_done($description= 'Eliminó una conferencia exitosamente' . $talk->name . '.',$table_id=0,$menu_id=16,$user_id=Auth::id(),$kind_acction=4);
+            return back()->with('success','Se ha eliminado la conferencia exitosamente...')->with('eliminar', 'ok');
         } else {
             return back()->with('success','No se ha eliminado la conferencia exitosamente...');
         }

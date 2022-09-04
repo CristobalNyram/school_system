@@ -79,6 +79,7 @@ Route::group(['middleware' => 'auth'], function () {
            Route::post('/speaker/store',[SpeakerController::class,"store"])->name('speaker_store');
            Route::get('/speaker/update/{user_id}',[SpeakerController::class,"update"])->name('speaker_update');
            Route::post('/speaker/edit',[SpeakerController::class,"edit"])->name('speaker_edit');
+           Route::post('/speaker/delete/{user_id}',[SpeakerController::class,"delete"])->name('speaker_delete');
 
            // speaker end--------------------------------------------
 

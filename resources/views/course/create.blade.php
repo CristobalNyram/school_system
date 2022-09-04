@@ -41,7 +41,11 @@
 
                     <div class="form-group">
                         <label for="description">Descripción</label>
-                        <input type="description" class="form-control form-control-lg" id="description" name="description" value="{{ old('description') }}" placeholder="Descripción" max="50" required oninput="uppercaseLetters(event);">
+                        <input type="text" class="form-control form-control-lg" id="description" name="description" value="{{ old('description') }}" placeholder="Descripción" max="50" required oninput="uppercaseLetters(event);">
+                    </div>
+                    <div class="form-group">
+                        <label for="maximum_person">Límite de personas</label>
+                        <input type="text" class="form-control form-control-lg" id="maximum_person" name="maximum_person" value="{{ old('maximum_person') }}" placeholder="Límite de personas" max="50" required oninput="uppercaseLetters(event);">
                     </div>
                     <div class="form-group">
                         <label for="date">date</label>
@@ -86,8 +90,8 @@
 
                         <select class="form-control form-control-lg  " data-toggle="select2" name="speaker_id" id="speaker_id">
                             <option value="-2" selected>Seleccionar</option>
-                            @foreach ($users_speakers as $user_speaker )
-                            <option value="{{ $users_speakers }}">{{ $user_speaker->name }}</option>
+                            @foreach ($users_speakers as $user )
+                            <option value="{{ $user->id }}">{{ $user->name }}</option>
 
                             @endforeach
                         </select>
