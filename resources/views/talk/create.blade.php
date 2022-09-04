@@ -21,19 +21,26 @@
                 <form class="m-5" action="{{route('talk_store')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @if(session('success'))
-                    <div class="alert alert-success" role="alert">
-                        <strong>{{ session('success') }}</strong>
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ session('success') }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
                     @endif
                     @if ($errors->any())
 
-                    @foreach ($errors->all() as $error)
-                    <div class="alert alert-danger" role="alert">
-                        <strong> {{ $error }}</strong>
-                    </div>
+                                @foreach ($errors->all() as $error)
 
-                    @endforeach
-                    @endif
+
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    {{ $error }}                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+
+                                @endforeach
+                   @endif
                     <div class="form-group">
                         <label for="name">Nombre</label>
                         <input type="text" class="form-control form-control-lg" id="name" name="name" value="{{   old('name') }}" placeholder="Nombre de la conferencia" max="50" required oninput="uppercaseLetters(event);">
@@ -57,7 +64,7 @@
                         <label for="url_img">Foto de la conferencia</label>
                         <input type="file" onBlur='LimitAttach(this,1)' ; accept="image/*" class="form-control form-control-lg" id="url_img" name="url_img" value="{{ old('url_img') }}" placeholder="Foto de la conferencia" max="50" required oninput="uppercaseLetters(event);">
                     </div>
-                    
+
                     <div class="alert alert-warning" id="alerta" role="alert" style="display: none">
                         <span class="alert-inner--text"><strong>Advertencia: </strong> Sólo se aceptan archivos con extensiones .jpeg, .jpe, .jpg, .png</span>
                     </div>
