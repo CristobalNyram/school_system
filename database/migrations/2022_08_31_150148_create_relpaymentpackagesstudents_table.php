@@ -17,11 +17,17 @@ class CreateRelpaymentpackagesstudentsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_student_id');
             $table->unsignedBigInteger('package_id');
-            $table->unsignedBigInteger('user_approved_id');
-            $table->unsignedBigInteger('user_canceled_id');
+            $table->unsignedBigInteger('user_approved_id')->nullable();
+            $table->timestamp('approved_date')->nullable();
+            $table->unsignedBigInteger('user_canceled_id')->nullable();
+            $table->timestamp('canceled_date')->nullable();
             $table->string('comment')->nullable();
             $table->string('status',2);
             $table->timestamps();
+            $table->foreign('package_id')->references('id')->on('packages');
+            $table->foreign('user_student_id')->references('id')->on('users');
+            $table->foreign('user_approved_id')->references('id')->on('users');
+            $table->foreign('user_canceled_id')->references('id')->on('users');
         });
     }
 
