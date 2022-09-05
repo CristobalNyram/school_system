@@ -21,16 +21,16 @@ class PaymentController extends Controller
             return view('errors.notaccess')->with($variables);
           }
 
-          Logbook::activity_done($description = 'Accedió al módulo de Pagos.', $table_id = 0, $menu_id = 30, $user_id = Auth::id(), $kind_acction = 1);      
-        
-        
+          Logbook::activity_done($description = 'Accedió al módulo de Pagos.', $table_id = 0, $menu_id = 30, $user_id = Auth::id(), $kind_acction = 1);
+
+
         $users_active=User::all()->where('status','=','2');
         $users_active_number=User::all()->where('status','=','2')->count();
         $packages_active=Package::all()->where('status','=','2');
-        
-        
+
+
         $variables=[
-            'menu'=>'courses_all',
+            'menu' => 'payments',
             'title_page'=>'Pagos',
             'users_actives'=>$users_active,
             'users_active_number'=> $users_active_number,
