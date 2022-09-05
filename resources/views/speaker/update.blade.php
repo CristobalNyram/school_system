@@ -69,15 +69,15 @@
 
                             <div class="form-group">
                                 <label for="email">Correo Electronico</label>
-                                <input type="emil" class="form-control form-control-lg" id="email" name="email" value="{{ $current_user->email }}" placeholder="correo electronico del estudiante"  max="50"  required oninput="uppercaseLetters(event);">
+                                <input type="emil" class="form-control form-control-lg" id="email" name="email" value="{{ $current_user->email }}" placeholder="correo electronico del estudiante"  max="50"  required >
                             </div>
 
                             <div class="form-group">
                                 <label for="speaker_cv">Curriculum Vitae</label>
-                                <input type="file" class="form-control form-control-lg" id="speaker_cv" name="speaker_cv" value="{{ $current_user->speaker_cv }}" placeholder="Curriculum Vitae"  max="50"  required oninput="uppercaseLetters(event);">
+                                <input type="file" class="form-control form-control-lg" id="speaker_cv" name="speaker_cv"  accept="application/pdf" value="{{ $current_user->speaker_cv }}" placeholder="Curriculum Vitae"  max="50"  required >
                             </div>
 
-                            
+
 
 
 
@@ -120,6 +120,8 @@
 @endsection
 
 @push('js')
+<script src="/assets/js/validations/generalFunctions.js"></script>
+
     <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.min.js"></script>
     <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.extension.js"></script>
 @endpush

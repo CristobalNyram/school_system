@@ -21,15 +21,22 @@
                         <form class="m-5"  action="{{route('student_store')}}"  method="POST">
                             @csrf
                             @if(session('success'))
-                            <div class="alert alert-success" role="alert">
-                                <strong>{{ session('success') }}</strong>
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                {{ session('success') }}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
                             </div>
                             @endif
                             @if ($errors->any())
 
                                         @foreach ($errors->all() as $error)
-                                        <div class="alert alert-danger" role="alert">
-                                            <strong> {{ $error }}</strong>
+
+
+                                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                            {{ $error }}                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
                                         </div>
 
                                         @endforeach
@@ -55,7 +62,7 @@
 
 
 
-                            
+
                             <div class="form-group">
                                 <label for="gender">Genero</label>
 
@@ -96,7 +103,7 @@
                                     <option value="eighth" >8° Octavo</option>
                                     <option value="nineth" >9° Noveno</option>
                                     <option value="tenth" >10° Décimo</option>
-                                  
+
 
 
                                   </select>
@@ -110,8 +117,8 @@
                                     <option value="B" >B</option>
                                     <option value="C" >C</option>
                                     <option value="D" >D</option>
-                                  
-                                  
+
+
 
 
                                   </select>
@@ -164,6 +171,8 @@
 @endsection
 
 @push('js')
+<script src="/assets/js/validations/generalFunctions.js"></script>
+
     <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.min.js"></script>
     <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.extension.js"></script>
 @endpush

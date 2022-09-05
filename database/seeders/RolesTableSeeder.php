@@ -29,7 +29,8 @@ class RolesTableSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now()
         ]);
-    
+
+        /*
         DB::table('roles')->insert([
             'name' => 'Student',
             'description' => 'This user has acces only for student ',
@@ -67,7 +68,8 @@ class RolesTableSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now()
         ]);
-        
+        */
+
 
 
     }

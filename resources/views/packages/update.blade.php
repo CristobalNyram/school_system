@@ -20,19 +20,26 @@
                 <form class="m-5" action="{{route('package_edit')}}" method="POST">
                     @csrf
                     @if(session('success'))
-                    <div class="alert alert-success" role="alert">
-                        <strong>{{ session('success') }}</strong>
-                    </div>
-                    @endif
-                    @if ($errors->any())
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                {{ session('success') }}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            @endif
+                            @if ($errors->any())
 
-                    @foreach ($errors->all() as $error)
-                    <div class="alert alert-danger" role="alert">
-                        <strong> {{ $error }}</strong>
-                    </div>
+                                        @foreach ($errors->all() as $error)
 
-                    @endforeach
-                    @endif
+
+                                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                            {{ $error }}                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+
+                                        @endforeach
+                           @endif
                     <div class="form-group">
                         <input type="hidden" name="id" id="id" value="{{$current_package->id}}">
                         <label for="name">Nombre</label>
@@ -45,12 +52,12 @@
                     </div>
                     <div class="form-group">
                         <label for="price">Precio</label>
-                        <input type="text" class="form-control form-control-lg" id="price" name="price" value="{{ $current_package->price}}" placeholder="Precio" max="50" required oninput="uppercaseLetters(event);">
+                        <input type="number" class="form-control form-control-lg" id="price" name="price" value="{{ $current_package->price}}" placeholder="Precio" max="50000" required >
                     </div>
 
                     <div class="form-group">
-                        <label for="souvenir_id">ID Souvenir</label>
-                        <input type="text" class="form-control form-control-lg" id="souvenir_id" name="souvenir_id" value="{{ $current_package->souvenir_id}}" placeholder="ID Souvenir" max="50" required oninput="uppercaseLetters(event);">
+                        <label for="souvenir_id">Souvenir</label>
+                        <input type="text" class="form-control form-control-lg" id="souvenir_id" name="souvenir_id" value="{{ $current_package->souvenir_id}}" placeholder="ID Souvenir" max="50" required >
                     </div>
 
 
@@ -82,6 +89,8 @@
 @endsection
 
 @push('js')
+<script src="/assets/js/validations/generalFunctions.js"></script>
+
 <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.min.js"></script>
 <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.extension.js"></script>
 @endpush

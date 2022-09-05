@@ -21,15 +21,22 @@
                         <form class="m-5"  action="{{route('speaker_store')}}"  method="POST" enctype="multipart/form-data">
                             @csrf
                             @if(session('success'))
-                            <div class="alert alert-success" role="alert">
-                                <strong>{{ session('success') }}</strong>
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                {{ session('success') }}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
                             </div>
                             @endif
                             @if ($errors->any())
 
                                         @foreach ($errors->all() as $error)
-                                        <div class="alert alert-danger" role="alert">
-                                            <strong> {{ $error }}</strong>
+
+
+                                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                            {{ $error }}                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
                                         </div>
 
                                         @endforeach
@@ -50,7 +57,7 @@
 
                          <div class="form-group">
                             <label for="speaker_cv">Curriculum Vitae</label>
-                            <input type="file" onBlur='LimitAttach(this,1)' ; accept="pdf/" class="form-control form-control-lg" id="speaker_cv" name="speaker_cv" value="{{ old('speaker_cv') }}" placeholder="Curriculum Vitae" max="50" required oninput="uppercaseLetters(event);">
+                            <input type="file" onBlur='LimitAttach(this,1)' ;   accept="application/pdf" class="form-control form-control-lg" id="speaker_cv" name="speaker_cv" value="{{ old('speaker_cv') }}" placeholder="Curriculum Vitae" max="50" required >
                     </div>
 
                             <script type="text/javascript">
@@ -77,14 +84,13 @@
                     </script>
 
 
-                            <div class="form-group">
-                                <label for="role_id"></label>
+
                                 <input type="hidden" class="form-control form-control-lg" id="role_id" name="role_id" value="6" placeholder="Rol del conferencista"  max="50"  required oninput="uppercaseLetters(event);">
-                            </div>
 
 
 
-                            
+
+
                             <div class="form-group">
                                 <label for="gender">Genero</label>
 
@@ -144,6 +150,8 @@
 @endsection
 
 @push('js')
+<script src="/assets/js/validations/generalFunctions.js"></script>
+
     <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.min.js"></script>
     <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.extension.js"></script>
 @endpush

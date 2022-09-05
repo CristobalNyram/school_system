@@ -79,7 +79,7 @@
                             @csrf
                             @method('put')
 
-                            <h6 class="heading-small text-muted mb-4">{{ __('User information') }}</h6>
+                            <h6 class="heading-small text-muted mb-4">{{ __('Información personal') }}</h6>
 
                             @if (session('status'))
                                 <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -94,7 +94,7 @@
                             <div class="pl-lg-4">
                                 <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-name">{{ __('Nombre') }}</label>
-                                    <input type="text" name="name" id="input-name" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Name') }}" value="{{ old('name', auth()->user()->name) }}" required autofocus>
+                                    <input type="text" name="name" id="input-name" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Nombre') }}" value="{{ old('name', auth()->user()->name) }}" required autofocus>
 
                                     @if ($errors->has('name'))
                                         <span class="invalid-feedback" role="alert">
@@ -102,6 +102,38 @@
                                         </span>
                                     @endif
                                 </div>
+                                <div class="form-group{{ $errors->has('first_surname') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="input-name">{{ __('Apellido paterno') }}</label>
+                                    <input type="text" name="first_surname" id="input-name" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Apellido paterno') }}" value="{{ old('first_surname', auth()->user()->first_surname) }}" required autofocus>
+
+                                    @if ($errors->has('first_surname'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('first_surname') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+
+                                <div class="form-group{{ $errors->has('second_surname') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="input-name">{{ __('Apellido materno') }}</label>
+                                    <input type="text" name="second_surname" id="input-name" class="form-control form-control-alternative{{ $errors->has('second_surname') ? ' is-invalid' : '' }}" placeholder="{{ __('Apellido materno') }}" value="{{ old('second_surname', auth()->user()->second_surname) }}" required autofocus>
+
+                                    @if ($errors->has('second_surname'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('second_surname') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                                <div class="form-group{{ $errors->has('address') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="input-name">{{ __('Dirección') }}</label>
+                                    <input type="text" name="address" id="input-name" class="form-control form-control-alternative{{ $errors->has('address') ? ' is-invalid' : '' }}" placeholder="{{ __('Dirección') }}" value="{{ old('address', auth()->user()->address) }}" required autofocus>
+
+                                    @if ($errors->has('address'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('address') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+
                                 <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-email">{{ __('Correo electronico') }}</label>
                                     <input type="email" name="email" id="input-email" class="form-control form-control-alternative{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('Email') }}" value="{{ old('email', auth()->user()->email) }}" required>

@@ -21,19 +21,26 @@
                 <form class="m-5" action="{{route('course_edit')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @if(session('success'))
-                    <div class="alert alert-success" role="alert">
-                        <strong>{{ session('success') }}</strong>
-                    </div>
-                    @endif
-                    @if ($errors->any())
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                {{ session('success') }}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            @endif
+                            @if ($errors->any())
 
-                    @foreach ($errors->all() as $error)
-                    <div class="alert alert-danger" role="alert">
-                        <strong> {{ $error }}</strong>
-                    </div>
+                                        @foreach ($errors->all() as $error)
 
-                    @endforeach
-                    @endif
+
+                                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                            {{ $error }}                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+
+                                        @endforeach
+                           @endif
                     <div class="form-group">
                         <input type="hidden" name="id" id="id" value="{{$current_course->id}}">
                         <label for="title">Título</label>
@@ -46,18 +53,20 @@
                     </div>
                     <div class="form-group">
                         <label for="date">fecha del curso</label>
-                        <input type="text" class="form-control form-control-lg" id="date" name="date" value="{{ $current_course->date }}" placeholder="Fecha del curso" max="50" required oninput="uppercaseLetters(event);">
+                        <input type="date" class="form-control form-control-lg" id="date" name="date" value="{{ $current_course->date }}" placeholder="Fecha del curso" max="50" required >
                     </div>
 
                     <div class="form-group">
                         <label for="url_img">Foto del Curso</label>
-                        <input type="file" onBlur='LimitAttach(this,1)' ; accept="image/*" class="form-control form-control-lg" id="url_img" name="url_img" value="{{ $current_course->url_img }}" placeholder="Foto del curso" max="50" required oninput="uppercaseLetters(event);">
+                        <input type="file" onBlur='LimitAttach(this,1)' ;  accept="image/png, image/jpg, image/jpeg" class="form-control form-control-lg" id="url_img" name="url_img" value="{{ $current_course->url_img }}" placeholder="Foto del curso" max="50" required>
                     </div>
 
-                    <div class="alert alert-warning" id="alerta" role="alert" style="display: none">
+                    <div class="alert alert-warning alert-dismissible fade show" id="alerta" role="alert" style="display: none"  role="alert">
                         <span class="alert-inner--text"><strong>Advertencia: </strong> Sólo se aceptan archivos con extensiones .jpeg, .jpe, .jpg, .png</span>
+                                   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
-
                     <script type="text/javascript">
                         function LimitAttach(tField, iType) {
                             file = tField.value;
@@ -130,6 +139,8 @@
 @endsection
 
 @push('js')
+<script src="/assets/js/validations/generalFunctions.js"></script>
+
 <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.min.js"></script>
 <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.extension.js"></script>
 @endpush

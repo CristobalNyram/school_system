@@ -25,19 +25,26 @@
                 <form class="m-5" action="{{route('sponsor_edit')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @if(session('success'))
-                    <div class="alert alert-success" role="alert">
-                        <strong>{{ session('success') }}</strong>
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ session('success') }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
                     @endif
                     @if ($errors->any())
 
-                    @foreach ($errors->all() as $error)
-                    <div class="alert alert-danger" role="alert">
-                        <strong> {{ $error }}</strong>
-                    </div>
+                                @foreach ($errors->all() as $error)
 
-                    @endforeach
-                    @endif
+
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    {{ $error }}                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+
+                                @endforeach
+                   @endif
                     <div class="form-group">
                         <input type="hidden" name="id" id="id" value="{{$current_sponsor->id}}">
                         <label for="name">Nombre</label>
@@ -55,8 +62,11 @@
                         <input type="file" onBlur='LimitAttach(this,1)' ; accept="image/*" class="form-control form-control-lg" id="url_img" name="url_img" value="{{ $current_sponsor->url_img }}" placeholder="Foto del sponsor" max="50" required oninput="uppercaseLetters(event);">
                     </div>
 
-                    <div class="alert alert-warning" id="alerta" role="alert" style="display: none">
+                    <div class="alert alert-warning alert-dismissible fade show" id="alerta" role="alert" style="display: none"  role="alert">
                         <span class="alert-inner--text"><strong>Advertencia: </strong> Sólo se aceptan archivos con extensiones .jpeg, .jpe, .jpg, .png</span>
+                                   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
 
                     <script type="text/javascript">
