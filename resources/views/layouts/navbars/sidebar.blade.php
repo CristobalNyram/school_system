@@ -254,7 +254,7 @@
                 @endif
                 @if ( check_acces_to_this_permission(Auth::user()->role_id,2))
                 <li class="nav-item">
-                    <a class="nav-link  @if($menu === 'role') active @endif " href="{{ route('role_index') }}">
+                    <a class="nav-link  @if($menu === 'role') custom-active text-white @endif " href="{{ route('role_index') }}">
                         <i class="ni ni-single-02 text-primary"></i>Roles
                     </a>
                 </li>
@@ -262,7 +262,7 @@
                 @if ( check_acces_to_this_permission(Auth::user()->role_id,4))
                 <li class="nav-item">
                     <a class="nav-link @if($menu === 'users_all')  custom-active text-white @endif" href="{{ route('users_all_index') }}">
-                        <i class="fa fa-users text-white" aria-hidden="true"></i>
+                        <i class="fa fa-users text-primary" aria-hidden="true"></i>
                         Usuarios
                     </a>
                 </li>
@@ -289,15 +289,7 @@
 
 
 {{-- styles in navbar --}}
-<style>
-    .custom-active
-    {
-        background: #1f1f1f;
-        color:#f8fff2 ;
-        border-left: 5px outset #3aaa35;
 
-    }
-</style>
 
         </div>
     </div>
