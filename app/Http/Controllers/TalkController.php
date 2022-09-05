@@ -39,7 +39,7 @@ class TalkController extends Controller
        
        
         $variables=[
-            'menu'=>'users_all',
+            'menu'=>'talks_all',
             'title_page'=>'Conferencias',
             'talks_actives'=>$talks_active,
             'talks_active_number'=> $talks_active_number,
@@ -79,7 +79,7 @@ class TalkController extends Controller
         $rol_available=Role::all()->where('status','=','2');
         $users_speakers=User::all()->where('status', '=', '2')->where('role_id','=','6');
         $variables=[
-            'menu'=>'users_all',
+            'menu'=>'talks_all',
             'title_page'=>'Conferencias',
             'rol_available'=>$rol_available,
             'users_speakers'=>$users_speakers,
@@ -116,7 +116,7 @@ class TalkController extends Controller
 
     if ($talk->save()) {
 
-        Logbook::activity_done($description='Registró una conferencia exitosamente'. $talk->title. ' exitosamente.' ,$table_id=0,$menu_id=16,$user_id=Auth::id(),$kind_acction=6);
+        Logbook::activity_done($description='Registró la conferencia'. $talk->title. ' exitosamente.' ,$table_id=0,$menu_id=16,$user_id=Auth::id(),$kind_acction=6);
 
         return back()->with('success','Se ha registrado la conferencia exitosamente...');
 
@@ -198,7 +198,7 @@ class TalkController extends Controller
 
         }
 
-        Logbook::activity_done($description='Accedió a la vista de Actualizar conferencia.',$table_id=0,$menu_id=16,$user_id=Auth::id(),$kind_acction=1);
+        Logbook::activity_done($description='Accedió a la vista para Actualizar la información de una conferencia.',$table_id=0,$menu_id=16,$user_id=Auth::id(),$kind_acction=1);
 
     
 
@@ -207,7 +207,7 @@ class TalkController extends Controller
         $users_speakers=User::all()->where('status', '=', '2');
 
         $variables=[
-            'menu'=>'users_all',
+            'menu'=>'talks_all',
             'title_page'=>'Conferencias',
             'rol_available'=>$rol_available,
             'current_talk'=>$current_talk,
@@ -231,7 +231,7 @@ class TalkController extends Controller
         $talk->status=-2;
 
         if($talk->save()){
-            Logbook::activity_done($description= 'Eliminó una conferencia exitosamente' . $talk->name . '.',$table_id=0,$menu_id=16,$user_id=Auth::id(),$kind_acction=4);
+            Logbook::activity_done($description= 'Eliminó el registro de la conferenicia' . $talk->name . 'correctamente',$table_id=0,$menu_id=16,$user_id=Auth::id(),$kind_acction=4);
             return back()->with('success','Se ha eliminado la conferencia exitosamente...')->with('eliminar', 'ok');
         } else {
             return back()->with('success','No se ha eliminado la conferencia exitosamente...');

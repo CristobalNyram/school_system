@@ -42,7 +42,7 @@ class StudentController extends Controller
        
        
         $variables=[
-            'menu'=>'users_all',
+            'menu'=>'alumnos_all',
             'title_page'=>'Estudiantes',
             'users_actives'=>$users_active,
             'users_active_number'=> $users_active_number,
@@ -79,7 +79,7 @@ class StudentController extends Controller
         $rol_available=Role::all()->where('status','=','2');
         $carrers_available=Carrer::all()->where('status','=','2');
         $variables=[
-            'menu'=>'users_all',
+            'menu'=>'alumnos_all',
             'title_page'=>'Estudiantes',
             'rol_available'=>$rol_available,
             'carrers_available'=>$carrers_available,
@@ -112,7 +112,7 @@ class StudentController extends Controller
  
          if ($user->save()) {
 
-            Logbook::activity_done($description='Registro un nuevo estudiante exitosamente '. $user->title. '.' ,$table_id=0,$menu_id=12,$user_id=Auth::id(),$kind_acction=6);
+            Logbook::activity_done($description='Se registro al estudiante'. $user->name. 'correctamente' ,$table_id=0,$menu_id=12,$user_id=Auth::id(),$kind_acction=6);
 
              return back()->with('success','Se ha registrado el usuario exitosamente...');
  
@@ -156,7 +156,7 @@ class StudentController extends Controller
 
         if ($user->save()) {
 
-            Logbook::activity_done($description='Actualizó la información del estudiante correctamente' . $user->title . '',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=3);
+            Logbook::activity_done($description='Actualizó la información del estudiante ' . $user->name . 'correctamente',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=3);
             
             return back()->with('success','Se ha actualizado el curso exitosamente...');
 
@@ -198,7 +198,7 @@ class StudentController extends Controller
         $carrers_available=Carrer::all()->where('status','=','2');
 
         $variables=[
-            'menu'=>'users_all',
+            'menu'=>'alumnos_all',
             'title_page'=>'Usuarios',
             'rol_available'=>$rol_available,
             'current_user'=>$current_user,
@@ -224,7 +224,7 @@ class StudentController extends Controller
 
         if($user->save()){
 
-            Logbook::activity_done($description='Borro a un estudiante exitosamente.',$table_id=0,$menu_id=4,$user_id=Auth::id(),$kind_acction=1);
+            Logbook::activity_done($description='Borro el registro del estidiante' . $user->name . 'correctamente',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=3);
 
             return back()->with('success','Se ha eliminado el curso exitosamente...')->with('eliminar', 'ok');
         } else {

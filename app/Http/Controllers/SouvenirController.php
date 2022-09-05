@@ -32,7 +32,7 @@ class SouvenirController extends Controller
     $souvenirs_active_number = Souvenir::all()->where('status', '=', '2')->count();
 
     $variables = [
-      'menu' => 'users_all',
+      'menu' => 'souvenirs_all',
       'title_page' => 'Souvenirs',
       'souvenirs_actives' => $souvenirs_active,
       'souvenirs_active_number' => $souvenirs_active_number,
@@ -58,7 +58,7 @@ class SouvenirController extends Controller
      }
 
     if ($souvenir->save()) {
-      Logbook::activity_done($description = 'Actualizo el souvenir ' . $souvenir->name . '', $table_id = 0, $menu_id = 22, $user_id = Auth::id(), $kind_acction = 3);
+      Logbook::activity_done($description = 'Actualizo el souvenir ' . $souvenir->name . 'correctamente', $table_id = 0, $menu_id = 22, $user_id = Auth::id(), $kind_acction = 3);
       return back()->with('success', 'Se ha actualizado el souvenir exitosamente...');
     } else {
       return  back()->withErrors('No se ha actualizado el curso...');
@@ -114,7 +114,7 @@ class SouvenirController extends Controller
 
     $souvenir_available = Souvenir::all()->where('status', '=', '2');
     $variables = [
-      'menu' => 'users_all',
+      'menu' => 'souvenirs_all',
       'title_page' => 'Souvenirs',
       'souvenir_available' => $souvenir_available,
 
@@ -148,7 +148,7 @@ class SouvenirController extends Controller
 
     if ($souvenir->save()) {
       
-      Logbook::activity_done($description = 'Creo el souvenir ' . $souvenir->name . '.', $table_id = 0, $menu_id = 22, $user_id = Auth::id(), $kind_acction = 6);
+      Logbook::activity_done($description = 'Creo el souvenir ' . $souvenir->name . 'correctamente', $table_id = 0, $menu_id = 22, $user_id = Auth::id(), $kind_acction = 6);
       return back()->with('success', 'Se ha registrado el souvenir exitosamente...');
     } else {
       return  back()->withErrors('No se ha registrado el souvenir...');
@@ -166,8 +166,8 @@ class SouvenirController extends Controller
     $souvenir = Souvenir::findOrFail($souvenir_id);
     $souvenir->status=-2;
     if($souvenir->save()){
-      Logbook::activity_done($description = 'Eliminó el souvenir ' . $souvenir->name . '.', $table_id = 0, $menu_id = 22, $user_id = Auth::id(), $kind_acction = 4);
-      return back()->with('success', 'Se ha borrado el souvenir exitosamente...');
+      Logbook::activity_done($description = 'Eliminó el souvenir ' . $souvenir->name . 'correctamente', $table_id = 0, $menu_id = 22, $user_id = Auth::id(), $kind_acction = 4);
+      return back()->with('success', 'Se ha borrado el souvenir exitosamente...')->with('eliminar', 'ok');
     }else{
       return back()->with('success', 'No se ha borrado el souvenir exitosamente...');
     }

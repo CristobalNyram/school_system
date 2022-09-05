@@ -13,6 +13,7 @@ use App\Http\Controllers\PackageController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\PasswordController;
 use App\Http\Controllers\SpeakerController;
+use App\Http\Controllers\PaymentController;
 
 
 /*
@@ -82,6 +83,13 @@ Route::group(['middleware' => 'auth'], function () {
            Route::post('/speaker/delete/{user_id}',[SpeakerController::class,"delete"])->name('speaker_delete');
 
            // speaker end--------------------------------------------
+
+           // payment start--------------------------------------------
+
+           Route::get('/payments',[PaymentController::class,"index"])->name('payment_index');
+
+
+           // payment end--------------------------------------------
 
 
 

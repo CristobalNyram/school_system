@@ -27,7 +27,7 @@ class SponsorController extends Controller
       return view('errors.notaccess')->with($variables);
     }
 
-    Logbook::activity_done($description = 'Accedió al módulo de Patrocinadores.', $table_id = 0, $menu_id = 29, $user_id = Auth::id(), $kind_acction = 1);
+    Logbook::activity_done($description = 'Accedió a la vista de Patrocinadores.', $table_id = 0, $menu_id = 29, $user_id = Auth::id(), $kind_acction = 1);
 
 
 
@@ -35,7 +35,7 @@ class SponsorController extends Controller
     $sponsors_active_number = Sponsor::all()->where('status', '=', '2')->count();
 
     $variables = [
-      'menu' => 'users_all',
+      'menu' => 'sponsors_all',
       'title_page' => 'Patrocinadores',
       'sponsors_actives' => $sponsors_active,
       'sponsors_active_number' => $sponsors_active_number,
@@ -60,13 +60,13 @@ class SponsorController extends Controller
       ];
       return view('errors.notaccess')->with($variables);
     }
-    Logbook::activity_done($description = 'Accedió al módulo de Crear Patrocinador.', $table_id = 0, $menu_id = 30, $user_id = Auth::id(), $kind_acction = 1);      
+    Logbook::activity_done($description = 'Accedió al módulo para  Crear un Patrocinador.', $table_id = 0, $menu_id = 30, $user_id = Auth::id(), $kind_acction = 1);      
   
 
 
         $rol_available=Role::all()->where('status','=','2');
         $variables=[
-            'menu'=>'users_all',
+            'menu'=>'sponsors_all',
             'title_page'=>'Patrocinadores',
             'rol_available'=>$rol_available,
 
@@ -101,7 +101,7 @@ class SponsorController extends Controller
        
 
         if ($sponsor->save()) {
-            Logbook::activity_done($description = 'Creó el patrocinador ' . $sponsor->name . '.', $table_id = 0, $menu_id = 30, $user_id = Auth::id(), $kind_acction = 6);
+            Logbook::activity_done($description = 'Creó el patrocinador ' . $sponsor->name . 'correctamente', $table_id = 0, $menu_id = 30, $user_id = Auth::id(), $kind_acction = 6);
             return back()->with('success','Se ha registrado el patrocinador exitosamente...');
 
         }
@@ -196,8 +196,8 @@ class SponsorController extends Controller
     $sponsor = Sponsor::findOrFail($sponsor_id);
     $sponsor->status=-2;
     if($sponsor->save()){
-      Logbook::activity_done($description = 'Eliminó el patrocinador ' . $sponsor->name . '.', $table_id = 0, $menu_id = 30, $user_id = Auth::id(), $kind_acction = 4);
-      return back()->with('success', 'Se ha borrado el sponsor exitosamente...');
+      Logbook::activity_done($description = 'Eliminó el patrocinador ' . $sponsor->name . 'correctamente', $table_id = 0, $menu_id = 30, $user_id = Auth::id(), $kind_acction = 4);
+      return back()->with('success', 'Se ha borrado el sponsor exitosamente...')->with('eliminar', 'ok');
     }else{
       return back()->with('success', 'No se ha borrado el sponsor exitosamente...');
     }

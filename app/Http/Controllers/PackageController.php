@@ -32,7 +32,7 @@ class PackageController extends Controller
       $packages_active_number = Package::all()->where('status', '=', '2')->count();
   
       $variables = [
-        'menu' => 'users_all',
+        'menu' => 'packages_all',
         'title_page' => 'Paquetes',
         'packages_actives' => $packages_active,
         'packages_active_number' => $packages_active_number,
@@ -103,7 +103,7 @@ class PackageController extends Controller
   
       $package_available = Package::all()->where('status', '=', '2');
       $variables = [
-        'menu' => 'users_all',
+        'menu' => 'packages_all',
         'title_page' => 'Packages',
         'package_available' => $package_available,
   
@@ -146,7 +146,7 @@ class PackageController extends Controller
         $package->status=-2;
       if($package->save()){
       Logbook::activity_done($description = 'Eliminó el paquete ' . $package->name . '.', $table_id = 0, $menu_id = 22, $user_id = Auth::id(), $kind_acction = 4);
-        return back()->with('success', 'Se ha borrado el paquete exitosamente...');
+        return back()->with('success', 'Se ha borrado el paquete exitosamente...')->with('eliminar', 'ok');
       }else{
         return back()->with('success', 'No se ha borrado el paquete exitosamente...');
       }

@@ -14,6 +14,17 @@ class PasswordController extends Controller
 {
     public function update($user_id)
     {
+        if (Role::checkAccesToThisFunctionality(Auth::user()->role_id, 29) == null) {
+            $variables = [
+              'menu' => '',
+              'title_page' => 'Acceso denegado',
+            ];
+            return view('errors.notaccess')->with($variables);
+          }
+
+          Logbook::activity_done($description = 'Accedió al módulo de Actualizar Contraseña.', $table_id = 0, $menu_id = 30, $user_id = Auth::id(), $kind_acction = 1);  
+        
+        
         $current_user=User::findOrFail($user_id);
         $rol_available=Role::all()->where('status','=','2');
 
@@ -38,7 +49,7 @@ class PasswordController extends Controller
 
         if ($user->save()) {
 
-            Logbook::activity_done($description='Actualizo la contraseña correctamente' . $user->title . '',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=3);
+            Logbook::activity_done($description='Actualizo la contraseña correctamente del usuario' . $user->name . '',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=3);
             
             return back()->with('success','Se ha actualizado el curso exitosamente...');
 

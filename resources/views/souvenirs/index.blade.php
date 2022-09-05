@@ -120,12 +120,12 @@
                               <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
 
                               <a class="dropdown-item" href="{{route('souvenir_update',$souvenir->id)}}"> <i class="fas fa-edit"></i>Actualizar información</a>
-                              <form action="{{route('souvenir_delete',$souvenir->id)}}" method="POST">
+                              <form action="{{route('souvenir_delete',$souvenir->id)}}" class="input-group form-eliminar" method="POST">
                                @csrf
 
                                <!-- <a type="submit" class="dropdown-item" data-toggle="modal" data-target="#modal-notification" value="Eliminar"  href="{{route('souvenir_delete',$souvenir->id)}}"> <i class="fas fa-trash" ></i>Eliminar</a> -->
                               
-                                <input type="submit" class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-notification" value="Eliminar" onclick="return confirm('¿Desea eliminar el souvenir?')"></input>
+                                <input type="submit" class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-notification" value="Eliminar" ></input>
                                 
                               </form>
                               </div>
@@ -205,5 +205,41 @@ $(document).ready(function() {
         }
 
       </script>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+@if (session('eliminar') == 'ok')
+   <script type="text/javascript">
+
+        Swal.fire(
+        '¡Eliminado!',
+        'Tu archivo se ha borrado completamente.',
+        'success'
+     )
+
+   </script>
+
+@endif
+
+<script type="text/javascript">
+  $('.form-eliminar').submit(function(e){
+    e.preventDefault();
+
+    Swal.fire({
+    title: '¿Está seguro de que desea eliminarlo....?',
+    text: "¡Después de completar la acción no se podrá revertir los cambios!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Sí. ¡Deseo eliminarlo!'
+ }).then((result) => {
+   if (result.isConfirmed) {
+        
+    this.submit();
+  }
+})
+  });
+</script>
 
 @endpush

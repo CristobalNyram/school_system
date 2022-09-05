@@ -92,10 +92,10 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                       <a class="dropdown-item" href="{{ route('package_update',$package->id)}}">Actualizar información</a>
-                      <form action="{{ route('package_delete',$package->id)}}" method="post">
+                      <form action="{{ route('package_delete',$package->id)}}" class="input-group form-eliminar" method="post">
                         @csrf
 
-                        <input class="dropdown-item text-danger" type="submit" data-toggle="modal" data-target="#modal-notification" value="Eliminar" onclick="return confirm('¿Desea eliminar este paquete?')"></input>
+                        <input class="dropdown-item text-danger" type="submit" data-toggle="modal" data-target="#modal-notification" value="Eliminar" ></input>
                       </form>
                     </div>
                   </div>
@@ -148,5 +148,41 @@
 
 @push('js')
 {{-- <script src="{{ asset() }}/vendor/datatables.net/js/jquery.dataTables.min.js"></script> --}}
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+@if (session('eliminar') == 'ok')
+   <script type="text/javascript">
+
+        Swal.fire(
+        '¡Eliminado!',
+        'Tu archivo se ha borrado completamente.',
+        'success'
+     )
+
+   </script>
+
+@endif
+
+<script type="text/javascript">
+  $('.form-eliminar').submit(function(e){
+    e.preventDefault();
+
+    Swal.fire({
+    title: '¿Está seguro de que desea eliminarlo....?',
+    text: "¡Después de completar la acción no se podrá revertir los cambios!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Sí. ¡Deseo eliminarlo!'
+ }).then((result) => {
+   if (result.isConfirmed) {
+        
+    this.submit();
+  }
+})
+  });
+</script>
 
 @endpush

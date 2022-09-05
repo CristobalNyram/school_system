@@ -141,12 +141,12 @@
 
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('logbook_index') }}">
+                    <a class="nav-link" href="{{ route('payment_index') }}">
                         <i class="ni ni-cart text-primary"></i>Pagos
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('student_index') }}">
+                    <a class="nav-link @if($menu === 'alumnos_all') active @endif" href="{{ route('student_index') }}">
                         <i class="fas fa-object-group text-primary"></i>Alumnos
                     </a>
                 </li>
@@ -178,7 +178,7 @@
 
                 @if ( check_acces_to_this_permission(Auth::user()->role_id,10))
                 <li class="nav-item">
-                    <a class="nav-link @if($menu === 'menus') active @endif" href="{{ route('course_index') }}">
+                    <a class="nav-link @if($menu === 'courses_all') active @endif" href="{{ route('course_index') }}">
                         <i class="ni ni-paper-diploma text-primary" aria-hidden="true"></i>
                         Cursos
                     </a>
@@ -186,7 +186,7 @@
                 @endif
                 @if ( check_acces_to_this_permission(Auth::user()->role_id,29))
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('sponsor_index') }}">
+                    <a class="nav-link @if($menu === 'sponsors_all') active @endif" href="{{ route('sponsor_index') }}">
                         <i class="ni ni-spaceship text-primary"></i>
                         Patrocinadores
                     </a>
@@ -194,7 +194,7 @@
                 @endif
                 @if ( check_acces_to_this_permission(Auth::user()->role_id,15))
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('talk_index') }}">
+                    <a class="nav-link @if($menu === 'talks_all') active @endif" href="{{ route('talk_index') }}">
                         <i class="ni ni-chat-round text-primary" aria-hidden="true"></i>
                         Conferencias
                     </a>
@@ -202,7 +202,7 @@
                 @endif
                 @if ( check_acces_to_this_permission(Auth::user()->role_id,15))
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('speaker_index') }}">
+                    <a class="nav-link @if($menu === 'speakers_all') active @endif" href="{{ route('speaker_index') }}">
                         <i class="ni ni-tie-bow text-primary" aria-hidden="true"></i>
                         Conferencistas
                     </a>
@@ -210,7 +210,7 @@
                 @endif
                 @if ( check_acces_to_this_permission(Auth::user()->role_id,19))
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('souvenir_index') }}">
+                    <a class="nav-link @if($menu === 'souvenirs_all') active @endif" href="{{ route('souvenir_index') }}">
                         <i class="ni ni-shop text-primary" aria-hidden="true"></i>
                         Souvenirs
                     </a>
@@ -220,7 +220,7 @@
                 <!-- El rol id pertenece al 32 no al 19, se cambiara una vez se agrege el menu para asignar roles -->
                 <!-- Tambien cambiar en el controlador de paquetes -->
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('package_index') }}">
+                    <a class="nav-link @if($menu === 'packages_all') active @endif" href="{{ route('package_index') }}">
                         <i class="ni ni-ruler-pencil text-primary" aria-hidden="true"></i>
                         Paquetes
                     </a>

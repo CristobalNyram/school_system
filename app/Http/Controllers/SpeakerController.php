@@ -25,7 +25,7 @@ class SpeakerController extends Controller
 
         }
 
-        Logbook::activity_done($description='Accedió a la vista de Conferencista.',$table_id=0,$menu_id=15,$user_id=Auth::id(),$kind_acction=1);
+        Logbook::activity_done($description='Accedió a la vista de Conferencistas.',$table_id=0,$menu_id=15,$user_id=Auth::id(),$kind_acction=1);
       
       
         $users_active=User::all()->where('status','=','2')->where('role_id','=','6');
@@ -35,7 +35,7 @@ class SpeakerController extends Controller
        
        
         $variables=[
-            'menu'=>'users_all',
+            'menu'=>'speakers_all',
             'title_page'=>'Conferencistas',
             'users_actives'=>$users_active,
             'users_active_number'=> $users_active_number,
@@ -64,7 +64,7 @@ class SpeakerController extends Controller
         
         $rol_available=Role::all()->where('status','=','2');
         $variables=[
-            'menu'=>'users_all',
+            'menu'=>'speakers_all',
             'title_page'=>'Conferencista',
             'rol_available'=>$rol_available,
         ];
@@ -94,7 +94,7 @@ class SpeakerController extends Controller
 
  
         if ($user->save()) {
-            Logbook::activity_done($description='Creo un conferencista exitosamente '. $user->name. ' exitosamente.' ,$table_id=0,$menu_id=16,$user_id=Auth::id(),$kind_acction=6);
+            Logbook::activity_done($description='Agregó el conferencista'. $user->name. ' exitosamente.' ,$table_id=0,$menu_id=16,$user_id=Auth::id(),$kind_acction=6);
 
             return back()->with('success','Se ha registrado el usuario exitosamente...');
  
@@ -120,7 +120,7 @@ class SpeakerController extends Controller
     
         if ($user->save()) {
 
-            Logbook::activity_done($description='Actualizo la informacion del conferencista correctamente' . $user->title . '',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=3);
+            Logbook::activity_done($description='Actualizo la informacion del conferencista ' . $user->title . 'correctamente',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=3);
             
             return back()->with('success','Se ha actualizado el conferencista exitosamente...');
 
@@ -146,7 +146,7 @@ class SpeakerController extends Controller
 
         }
 
-        Logbook::activity_done($description='Accedió a la vista  de para actualizar la información del conferencista.',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=1);
+        Logbook::activity_done($description='Accedió a la vista   para actualizar la información de un conferencista.',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=1);
        
        
        
@@ -155,7 +155,7 @@ class SpeakerController extends Controller
         $rol_available=Role::all()->where('status','=','2');
 
         $variables=[
-            'menu'=>'users_all',
+            'menu'=>'speakers_all',
             'title_page'=>'Conferencista',
             'rol_available'=>$rol_available,
             'current_user'=>$current_user,
@@ -173,7 +173,7 @@ class SpeakerController extends Controller
         $user->status=-2;
 
         if($user->save()){
-            Logbook::activity_done($description='Borro a un conferencista exitosamente.',$table_id=0,$menu_id=4,$user_id=Auth::id(),$kind_acction=1);
+            Logbook::activity_done($description='Borro al  conferencista ' . $user->title . 'correctamente',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=3);
 
             return back()->with('success','Se ha eliminado el curso exitosamente...')->with('eliminar', 'ok');
         } else {
