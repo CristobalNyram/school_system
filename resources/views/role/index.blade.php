@@ -129,10 +129,10 @@
                     "search":         "Buscar:",
                     "emptyTable":     "No hay información disponible en la tabla.",
                     "paginate": {
-                        "first":      "First",
-                        "last":       "Last",
-                        "next":       "Next",
-                        "previous":   "Previous"
+                        "first":      "Primero",
+                      "last":       "ultimo",
+                      "next":       ">",
+                      "previous":   "<"
                     },
                 }
             } );
