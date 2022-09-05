@@ -150,7 +150,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link @if($menu === 'alumnos_all')  custom-active text-white  @endif" href="{{ route('student_index') }}">
-                        <i class="fas fa-object-group text-primary"></i>Alumnos
+                        <i class="fas fa-school text-primary"></i>Alumnos
                     </a>
                 </li>
 
