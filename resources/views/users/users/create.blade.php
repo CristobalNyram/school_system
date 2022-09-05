@@ -81,6 +81,7 @@
                                     @endforeach
                                 </div>
                             </div>
+                            <input type="hidden" name="pais" id="inputSelect" value="">
 
 
                             <div class="form-group">
