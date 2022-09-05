@@ -60,7 +60,7 @@
                             <div class="form-group">
                                 <label for="role_id">Rol</label>
 
-                                <select class="form-control form-control-lg  " data-toggle="select2"  name="role_id" id="role_id" >
+                                <select class="single-select-2 " data-toggle="select2"  name="role_id" id="role_id" style="width: 100%;  margin:20px;" >
                                     <option value="-2" selected>Seleccionar</option>
                                     @foreach ($rol_available as $rol )
                                     <option value="{{ $rol->id }}" >{{ $rol->name }}</option>
@@ -71,7 +71,7 @@
                             <div class="form-group">
                                 <label for="gender">Genero</label>
 
-                                <select class="form-control form-control-lg  " data-toggle="select2" id="gender" name="gender" >
+                                <select class="form-control form-control-lg  single-select-2  " data-toggle="select2" id="gender" name="gender" >
                                     <option value="-1" selected>Seleccionar</option>
                                     <option value="H" >Masculino</option>
                                     <option value="M" >Feminino</option>
@@ -127,6 +127,9 @@
 @endsection
 
 @push('js')
+
+    <script src="/assets/js/select2.js"></script>
+
     <script src="/assets/js/validations/generalFunctions.js"></script>
 
 @endpush

@@ -98,7 +98,7 @@
                     <div class="form-group">
                         <label for="speaker_id">Ponente / Profesor</label>
 
-                        <select class="form-control form-control-lg  " data-toggle="select2" name="speaker_id" id="speaker_id">
+                        <select class="form-control form-control-lg  single-select-2 " data-toggle="select2" name="speaker_id" id="speaker_id">
                             <option value="-2" selected>Seleccionar</option>
                             @foreach ($users_speakers as $user )
                             <option value="{{ $user->id }}">{{ $user->name }}</option>
@@ -149,6 +149,7 @@
 @push('js')
 
 <script src="/assets/js/validations/generalFunctions.js"></script>
+<script src="/assets/js/select2.js"></script>
 
 <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.min.js"></script>
 <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.extension.js"></script>
