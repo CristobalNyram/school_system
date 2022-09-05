@@ -6,6 +6,14 @@
 
 }
 
+/* secction of select  start */
+.contenedor {
+	width: 90%;
+	max-width: 100%;
+	margin: auto;
+	/* padding: 40px 0; */
+}
+
 .select {
 	background: #fff;
 
@@ -125,3 +133,5 @@
 		width: 100%;
 	}
 }
+
+/* secction of select  end */

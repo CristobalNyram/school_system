@@ -141,22 +141,12 @@
         @include('layouts.footers.auth')
     </div>
 
-    <style>
-        .contenedor {
-	width: 90%;
-	max-width: 100%;
-	margin: auto;
-	/* padding: 40px 0; */
-}
 
-
-
-    </style>
     @endsection
 
 @push('js')
 
-        <script src="/assets/js/ourownselect.js"></script>
+    <script src="/assets/js/ourownselect.js"></script>
 
     <script src="/assets/js/select2.js"></script>
 
