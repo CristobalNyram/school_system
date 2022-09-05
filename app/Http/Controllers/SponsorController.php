@@ -95,10 +95,7 @@ class SponsorController extends Controller
         $filename = time() .'-'. $file->getClientOriginalName();
         $uploadSuccess = $request->file('url_img')->move($destiantionPath, $filename);
         $sponsor->url_img = $destiantionPath . $filename;
-
-
-       }
-       
+      }
 
         if ($sponsor->save()) {
             Logbook::activity_done($description = 'Creó el patrocinador ' . $sponsor->name . 'correctamente', $table_id = 0, $menu_id = 30, $user_id = Auth::id(), $kind_acction = 6);

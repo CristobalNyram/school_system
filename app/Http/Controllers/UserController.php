@@ -26,8 +26,6 @@ class UserController extends Controller
     {
 
 
-
-
         if(Role::checkAccesToThisFunctionality(Auth::user()->role_id,4)==null)
         {
             $variables=[

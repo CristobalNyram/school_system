@@ -8,6 +8,7 @@ use App\Models\Role;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Logbook;
+use Illuminate\Support\Carbon;
 
 class SpeakerController extends Controller
 {
@@ -26,14 +27,10 @@ class SpeakerController extends Controller
         }
 
         Logbook::activity_done($description='Accedió a la vista de Conferencistas.',$table_id=0,$menu_id=15,$user_id=Auth::id(),$kind_acction=1);
-      
-      
+
         $users_active=User::all()->where('status','=','2')->where('role_id','=','6');
         $users_active_number=User::all()->where('status','=','2')->where('role_id','=','6')->count();
-      
 
-       
-       
         $variables=[
             'menu'=>'speakers_all',
             'title_page'=>'Conferencistas',
@@ -83,6 +80,15 @@ class SpeakerController extends Controller
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
         $user->speaker_cv= $request->speaker_cv;
+        $user->user_image = $request->user_image;
+
+        if ($request->hasFile('user_image')) {
+            $file = $request->file('user_image');
+            $destiantionPath = 'argon/img/user/';
+            $filename = time() . '-' . $file->getClientOriginalName();
+            $uploadSuccess = $request->file('user_image')->move($destiantionPath, $filename);
+            $user->user_image = $destiantionPath . $filename;
+        }
 
         if($request -> hasFile ('speaker_cv')){
             $file = $request ->file('speaker_cv');
@@ -90,19 +96,15 @@ class SpeakerController extends Controller
             $filename = time() .'-'. $file->getClientOriginalName();
             $uploadSuccess = $request->file('speaker_cv')->move($destiantionPath, $filename);
             $user->speaker_cv = $destiantionPath . $filename;
-           }
-
- 
+            }
         if ($user->save()) {
             Logbook::activity_done($description='Agregó el conferencista'. $user->name. ' exitosamente.' ,$table_id=0,$menu_id=16,$user_id=Auth::id(),$kind_acction=6);
 
             return back()->with('success','Se ha registrado el usuario exitosamente...');
- 
         }
         else
         {
             return  back()->withErrors('No se ha registrado el usuario...');
- 
         }
     }
 
@@ -116,8 +118,17 @@ class SpeakerController extends Controller
         $user->gender = $request->gender;
         $user->role_id = $request->role_id;
         $user->email = $request->email;
+        $user->user_image = $request->user_image;
+        $user->user_image_updated = Carbon::now()->format('Y-m-d');
 
-    
+        if ($request->hasFile('user_image')) {
+            $file = $request->file('user_image');
+            $destiantionPath = 'argon/img/user/';
+            $filename = time() . '-' . $file->getClientOriginalName();
+            $uploadSuccess = $request->file('user_image')->move($destiantionPath, $filename);
+            $user->user_image = $destiantionPath . $filename;
+        }
+
         if ($user->save()) {
 
             Logbook::activity_done($description='Actualizo la informacion del conferencista ' . $user->title . 'correctamente',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=3);
@@ -147,10 +158,7 @@ class SpeakerController extends Controller
         }
 
         Logbook::activity_done($description='Accedió a la vista   para actualizar la información de un conferencista.',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=1);
-       
-       
-       
-       
+
         $current_user=User::findOrFail($user_id);
         $rol_available=Role::all()->where('status','=','2');
 
