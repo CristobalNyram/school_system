@@ -66,7 +66,7 @@
                             <div class="form-group">
                                 <label for="gender">Genero</label>
 
-                                <select class="form-control form-control-lg  " data-toggle="select2" id="gender" name="gender" >
+                                <select class="form-control form-control-lg single-select-2 " data-toggle="select2" id="gender" name="gender" >
                                     <option value="-1" selected>Seleccionar</option>
                                     <option value="H" >Masculino</option>
                                     <option value="M" >Feminino</option>
@@ -79,7 +79,7 @@
                             <div class="form-group">
                                 <label for="career">Carrera</label>
 
-                                <select class="form-control form-control-lg  " data-toggle="select2"  name="career" id="career" >
+                                <select class="form-control form-control-lg  single-select-2" data-toggle="select2"  name="career" id="career" >
                                     <option value="-2" selected>Seleccionar</option>
                                     @foreach ($carrers_available as $carrer )
                                     <option value="{{ $carrer->id }}" >{{ $carrer->name }}</option>
@@ -91,7 +91,7 @@
                             <div class="form-group">
                                 <label for="quarter">Cuatrimestre</label>
 
-                                <select class="form-control form-control-lg  " data-toggle="select2" id="quarter" name="quarter" >
+                                <select class="form-control form-control-lg  single-select-2" data-toggle="select2" id="quarter" name="quarter" >
                                     <option value="-3" selected>Seleccionar</option>
                                     <option value="first" >1° Primero</option>
                                     <option value="second" >2° Segundo</option>
@@ -111,7 +111,7 @@
                             <div class="form-group">
                                 <label for="group">Grupo</label>
 
-                                <select class="form-control form-control-lg  " data-toggle="select2" id="group" name="group" >
+                                <select class="form-control form-control-lg  single-select-2" data-toggle="select2" id="group" name="group" >
                                     <option value="-4" selected>Seleccionar</option>
                                     <option value="A" >A</option>
                                     <option value="B" >B</option>
@@ -172,6 +172,7 @@
 
 @push('js')
 <script src="/assets/js/validations/generalFunctions.js"></script>
+<script src="/assets/js/select2.js"></script>
 
     <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.min.js"></script>
     <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.extension.js"></script>

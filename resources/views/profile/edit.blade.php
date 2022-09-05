@@ -1,12 +1,14 @@
 @extends('layouts.app', ['title' => __('User Profile')])
 
 @section('content')
+
     @include('users.partials.header', [
         'title' => __('¡Hola') . ' '.auth()->user()->name.' '.auth()->user()->first_surname.' !',
         'class' => 'col-lg-12'
     ])
 
-    <div class="container-fluid mt--7">
+
+  <div class="container-fluid mt--7">
         <div class="row">
             <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
                 <div class="card card-profile shadow">
@@ -94,7 +96,7 @@
                             <div class="pl-lg-4">
                                 <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-name">{{ __('Nombre') }}</label>
-                                    <input type="text" name="name" id="input-name" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Nombre') }}" value="{{ old('name', auth()->user()->name) }}" required autofocus>
+                                    <input type="text" name="name" oninput="uppercaseLetters(event);" id="input-name" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Nombre') }}" value="{{ old('name', auth()->user()->name) }}" required autofocus oninput="uppercaseLetters(event);">
 
                                     @if ($errors->has('name'))
                                         <span class="invalid-feedback" role="alert">
@@ -104,7 +106,7 @@
                                 </div>
                                 <div class="form-group{{ $errors->has('first_surname') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-name">{{ __('Apellido paterno') }}</label>
-                                    <input type="text" name="first_surname" id="input-name" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Apellido paterno') }}" value="{{ old('first_surname', auth()->user()->first_surname) }}" required autofocus>
+                                    <input type="text" name="first_surname" id="input-first_surname" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Apellido paterno') }}" value="{{ old('first_surname', auth()->user()->first_surname) }}" required autofocus oninput="uppercaseLetters(event);">
 
                                     @if ($errors->has('first_surname'))
                                         <span class="invalid-feedback" role="alert">
@@ -115,7 +117,7 @@
 
                                 <div class="form-group{{ $errors->has('second_surname') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-name">{{ __('Apellido materno') }}</label>
-                                    <input type="text" name="second_surname" id="input-name" class="form-control form-control-alternative{{ $errors->has('second_surname') ? ' is-invalid' : '' }}" placeholder="{{ __('Apellido materno') }}" value="{{ old('second_surname', auth()->user()->second_surname) }}" required autofocus>
+                                    <input type="text" name="second_surname" id="input-second_surname" class="form-control form-control-alternative{{ $errors->has('second_surname') ? ' is-invalid' : '' }}" placeholder="{{ __('Apellido materno') }}" value="{{ old('second_surname', auth()->user()->second_surname) }}" required autofocus oninput="uppercaseLetters(event);">
 
                                     @if ($errors->has('second_surname'))
                                         <span class="invalid-feedback" role="alert">
@@ -125,7 +127,7 @@
                                 </div>
                                 <div class="form-group{{ $errors->has('address') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-name">{{ __('Dirección') }}</label>
-                                    <input type="text" name="address" id="input-name" class="form-control form-control-alternative{{ $errors->has('address') ? ' is-invalid' : '' }}" placeholder="{{ __('Dirección') }}" value="{{ old('address', auth()->user()->address) }}" required autofocus>
+                                    <input type="text" name="address" id="input-address" class="form-control form-control-alternative{{ $errors->has('address') ? ' is-invalid' : '' }}" placeholder="{{ __('Dirección') }}" value="{{ old('address', auth()->user()->address) }}" required autofocus>
 
                                     @if ($errors->has('address'))
                                         <span class="invalid-feedback" role="alert">
@@ -133,6 +135,40 @@
                                         </span>
                                     @endif
                                 </div>
+                                <div class="form-group{{ $errors->has('curp') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="input-email">{{ __('CURP') }}</label>
+                                    <input type="text" maxlength="20" name="curp" id="input-curp" class="form-control form-control-alternative{{ $errors->has('curp') ? ' is-invalid' : '' }}" placeholder="{{ __('CURP') }}" value="{{ old('curp', auth()->user()->curp) }}" required>
+
+                                    @if ($errors->has('curp'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('curp') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+
+                                <div class="form-group{{ $errors->has('phone_number') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="input-email">{{ __('Número de télefono') }}</label>
+                                    <input type="number" name="phone_number" id="input-phone_number" oninput="" class="form-control form-control-alternative{{ $errors->has('phone_number') ? ' is-invalid' : '' }}" placeholder="{{ __('Número de télefono') }}" value="{{ old('phone_number', auth()->user()->phone_number) }}" required>
+
+                                    @if ($errors->has('phone_number'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('phone_number') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+
+
+                                <div class="form-group{{ $errors->has('blood_type') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="input-email">{{ __('Tipo de sangre') }}</label>
+                                    <input type="text" name="blood_type" id="input-blood_type" class="form-control form-control-alternative{{ $errors->has('blood_type') ? ' is-invalid' : '' }}" placeholder="{{ __('Tipo de sangre') }}" value="{{ old('blood_type', auth()->user()->blood_type) }}" required>
+
+                                    @if ($errors->has('blood_type'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('blood_type') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+
 
                                 <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-email">{{ __('Correo electronico') }}</label>
@@ -144,6 +180,10 @@
                                         </span>
                                     @endif
                                 </div>
+
+
+
+
 
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-success mt-4">{{ __('Actualizar información') }}</button>
@@ -202,6 +242,18 @@
             </div>
         </div>
 
+
+
         @include('layouts.footers.auth')
+
+
+
     </div>
 @endsection
+
+@push('js')
+    <script src="/assets/js/validations/generalFunctions.js"></script>
+    <link rel="stylesheet" href="/assets/vendor/select2/dist/css/select2.min.css">
+    <script src="/assets/vendor/select2/dist/js/select2.min.js" defer></script>
+
+@endpush

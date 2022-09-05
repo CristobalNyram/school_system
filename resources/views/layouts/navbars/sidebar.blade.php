@@ -1,14 +1,17 @@
 <script src="/assets/vendor/jquery/dist/jquery.min.js"></script>
 <script src="/assets/vendor/jquery/dist/jquery.slim.min.js"></script>
 
-<script src="/assets/vendor/select2/dist/js/select2.min.js"></script>
-<link rel="stylesheet" href="/assets/vendor/select2/dist/css/select2.min.css">
+{{-- <link rel="stylesheet" href="/assets/vendor/select2/dist/css/select2.min.css">
+<script src="/assets/vendor/select2/dist/js/select2.min.js" defer></script> --}}
 
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js" defer></script>
 
-<script src="/assets/vendor/sweetalert2/dist/sweetalert2.all.min.js"></script>
+{{-- <script src="/assets/vendor/sweetalert2/dist/sweetalert2.all.min.js"></script>
 <link rel="stylesheet" href="/assets/vendor/sweetalert2/dist/sweetalert2.min.css">
+ --}}
+ <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"  defer></script>
 
- 
 
 <script src="/assets/vendor/datatables.net/js/jquery.dataTables.min.js" defer></script>
 

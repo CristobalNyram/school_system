@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('date_birth')->nullable();
             $table->string('gender',3,['H','M','N/A'])->default('H');
             $table->string('phone_number',15)->nullable();
-            $table->string('address',35)->nullable();
+            $table->string('address',255)->nullable();
             $table->string('blood_type',2)->nullable();;
             // $table->string('professional_license')->nullable();
             $table->string('email')->unique();

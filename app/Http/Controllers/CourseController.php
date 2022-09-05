@@ -113,7 +113,7 @@ class CourseController extends Controller
         $course->url_img = $destiantionPath . $filename;
 
        }
-       
+
 
         if ($course->save()) {
 
@@ -162,7 +162,7 @@ class CourseController extends Controller
             $filename = time() .'-'. $file->getClientOriginalName();
             $uploadSuccess = $request->file('url_img')->move($destiantionPath, $filename);
             $course->url_img = $destiantionPath . $filename;
-    
+
         }
 
         if ($course->save()) {

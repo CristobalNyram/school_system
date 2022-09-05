@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\ProfileRequest;
 use App\Http\Requests\PasswordRequest;
 use Illuminate\Support\Facades\Hash;
@@ -32,13 +33,18 @@ class ProfileController extends Controller
      */
     public function update(ProfileRequest $request)
     {
-        if (auth()->user()->id == 1) {
-            return back()->withErrors(['not_allow_profile' => __('Acceso denegado.')]);
+        $current_user=User::findOrFail(Auth::id());
+        $current_user->name=$request->name;
+        $current_user->first_surname=$request->name;
+        $current_user->second_surname=$request->second_surname;
+        $current_user->address=$request->address;
+        $current_user->updated_at=now();
+        if($current_user->save())
+        {
+            return back()->withStatus(__('Perfil actualizadó correctamente.'));
+
         }
 
-        auth()->user()->update($request->all());
-
-        return back()->withStatus(__('Perfil actualizadó correctamente.'));
     }
 
     /**
