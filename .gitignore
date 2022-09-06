@@ -7,6 +7,7 @@
 /public/argon/img/course
 /storage/*.key
 /vendor
+*.pdf
 .env
 .env.backup
 .phpunit.result.cache
