@@ -13,7 +13,10 @@ class PaymentController extends Controller
 {
     public function index()
     {
-        if (Role::checkAccesToThisFunctionality(Auth::user()->role_id, 29) == null) {
+        $role = New Role();
+        $log=new Logbook();
+
+        if ($role->checkAccesToThisFunctionality(Auth::user()->role_id, 29) == null) {
             $variables = [
               'menu' => '',
               'title_page' => 'Acceso denegado',
@@ -21,7 +24,7 @@ class PaymentController extends Controller
             return view('errors.notaccess')->with($variables);
           }
 
-          Logbook::activity_done($description = 'Accedió al módulo de Pagos.', $table_id = 0, $menu_id = 30, $user_id = Auth::id(), $kind_acction = 1);
+          $log->activity_done($description = 'Accedió al módulo de Pagos.', $table_id = 0, $menu_id = 30, $user_id = Auth::id(), $kind_acction = 1);
 
 
         $users_active=User::all()->where('status','=','2');
