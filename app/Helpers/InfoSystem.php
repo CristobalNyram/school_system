@@ -10,7 +10,9 @@ if (! function_exists('check_acces_to_this_permission')) {
 
     function check_acces_to_this_permission($role_id,$menu_id)
     {
-      if(Role::checkAccesToThisFunctionality($role_id,$menu_id)==null)
+        $role = New Role();
+
+      if($role->checkAccesToThisFunctionality($role_id,$menu_id)==null)
       {
         return false;
       }

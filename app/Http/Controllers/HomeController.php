@@ -22,7 +22,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        Logbook::activity_done($description = 'Accedió a la página principal', $table_id = 0, $menu_id = 5, $user_id = Auth::id(), $kind_acction = 1);
+        $log=new Logbook();
+        $log->activity_done($description = 'Accedió a la página principal', $table_id = 0, $menu_id = 5, $user_id = Auth::id(), $kind_acction = 1);
+        //Logbook::activity_done($description = 'Accedió a la página principal', $table_id = 0, $menu_id = 5, $user_id = Auth::id(), $kind_acction = 1);
         $variables=[
             'menu'=>'dashboard',
             'title_page'=>'dashboard',

@@ -25,8 +25,10 @@ class UserController extends Controller
     public function index_all()
     {
 
+        $role=new Role();
+        $log=new Logbook();
 
-        if(Role::checkAccesToThisFunctionality(Auth::user()->role_id,4)==null)
+        if($role->checkAccesToThisFunctionality(Auth::user()->role_id,4)==null)
         {
             $variables=[
                 'menu'=>'',
@@ -37,7 +39,7 @@ class UserController extends Controller
             return view('errors.notaccess')->with($variables);
 
         }
-        Logbook::activity_done($description='Accedió al módulo de Usuarios.',$table_id=0,$menu_id=4,$user_id=Auth::id(),$kind_acction=1);
+        $log->activity_done($description='Accedió al módulo de Usuarios.',$table_id=0,$menu_id=4,$user_id=Auth::id(),$kind_acction=1);
 
         $users_active=User::all()->sortByDesc('id')->where('status','=','2');
         $users_active_number=User::all()->where('status','=','2')->count();
