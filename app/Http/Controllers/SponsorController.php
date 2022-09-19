@@ -18,29 +18,30 @@ class SponsorController extends Controller
      */
     public function index()
     {
-    if (Role::checkAccesToThisFunctionality(Auth::user()->role_id, 29) == null) {
-      $variables = [
-        'menu' => '',
-        'title_page' => 'Acceso denegado',
+        $role = New Role();
+        $log = new Logbook();
 
-      ];
-      return view('errors.notaccess')->with($variables);
-    }
+        if ($role->checkAccesToThisFunctionality(Auth::user()->role_id, 29) == null) {
+            $variables = [
+                'menu' => '',
+                'title_page' => 'Acceso denegado',
+            ];
+            return view('errors.notaccess')->with($variables);
+        }
 
-    Logbook::activity_done($description = 'Accedió a la vista de Patrocinadores.', $table_id = 0, $menu_id = 29, $user_id = Auth::id(), $kind_acction = 1);
+        $log->activity_done($description = 'Accedió al módulo de Patrocinadores.', $table_id = 0, $menu_id = 29, $user_id = Auth::id(), $kind_acction = 1);
 
+        $sponsors_active=Sponsor::all()->where('status','=','2');
+        $sponsors_active_number=Sponsor::all()->where('status','=','2')->count();
 
+        $variables=[
+            'menu'=>'sponsors_all',
+            'title_page'=>'Patrocinadores',
+            'sponsors_actives'=>$sponsors_active,
+            'sponsors_active_number'=> $sponsors_active_number,
 
-        $sponsors_active = Sponsor::all()->where('status', '=', '2');
-    $sponsors_active_number = Sponsor::all()->where('status', '=', '2')->count();
-
-    $variables = [
-      'menu' => 'sponsors_all',
-      'title_page' => 'Patrocinadores',
-      'sponsors_actives' => $sponsors_active,
-      'sponsors_active_number' => $sponsors_active_number,
-    ];
-    return view('sponsors.index')->with($variables);
+        ];
+        return view('sponsors.index')->with($variables);
     }
 
     /**
@@ -48,31 +49,23 @@ class SponsorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    
+
     public function create()
     {
-    if (Role::checkAccesToThisFunctionality(Auth::user()->role_id, 30) == null) {
-      $variables = [
-        'menu' => '',
-        'title_page' => 'Acceso denegado',
+        $role = New Role();
 
+        if ($role->checkAccesToThisFunctionality(Auth::user()->role_id, 29) == null) {
+            $variables = [
+                'menu' => '',
+                'title_page' => 'Acceso denegado',
+            ];
+            return view('errors.notaccess')->with($variables);
+        }
 
-      ];
-      return view('errors.notaccess')->with($variables);
-    }
-    Logbook::activity_done($description = 'Accedió al módulo para  Crear un Patrocinador.', $table_id = 0, $menu_id = 30, $user_id = Auth::id(), $kind_acction = 1);      
-  
-
-
-        $rol_available=Role::all()->where('status','=','2');
         $variables=[
             'menu'=>'sponsors_all',
-            'title_page'=>'Patrocinadores',
-            'rol_available'=>$rol_available,
-
-
+            'title_page'=>'Crear Patrocinador',
         ];
-
         return view('sponsors.create')->with($variables);
     }
 
@@ -133,8 +126,8 @@ class SponsorController extends Controller
         $sponsor->slogan = $request->slogan;
         $sponsor->url_img = $request->url_img;
 
-        
-        
+
+
         if($request -> hasFile('url_img')){
           $file = $request ->file('url_img');
           $destiantionPath = 'argon/img/sponsor/';
@@ -143,7 +136,7 @@ class SponsorController extends Controller
           $sponsor->url_img = $destiantionPath . $filename;
         }
 
-    
+
         if ($sponsor->save()) {
         Logbook::activity_done($description = 'Actualizó el patrocinador ' . $sponsor->name . ' correctamente', $table_id = 0, $menu_id = 30, $user_id = Auth::id(), $kind_acction = 3);
           return back()->with('success', 'Se ha actualizado el Patrocinador exitosamente...');
@@ -168,10 +161,10 @@ class SponsorController extends Controller
         ];
         return view('errors.notaccess')->with($variables);
       }
-    Logbook::activity_done($description = 'Accedió al módulo de Actualizar Patrocinador.', $table_id = 0, $menu_id = 30, $user_id = Auth::id(), $kind_acction = 1);      
-  
+    Logbook::activity_done($description = 'Accedió al módulo de Actualizar Patrocinador.', $table_id = 0, $menu_id = 30, $user_id = Auth::id(), $kind_acction = 1);
+
           $current_sponsor = Sponsor::findOrFail($sponsor_id);
-      
+
           $variables = [
             'menu' => 'sponsors_all',
             'title_page' => 'Patrocinadores',
@@ -187,7 +180,7 @@ class SponsorController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    
+
     public function delete($sponsor_id)
   {
     $sponsor = Sponsor::findOrFail($sponsor_id);
