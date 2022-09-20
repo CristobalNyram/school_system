@@ -14,19 +14,18 @@ class SpeakerController extends Controller
 {
     public function index()
     {
-        if(Role::checkAccesToThisFunctionality(Auth::user()->role_id,10)==null)
-        {
-            $variables=[
-                'menu'=>'',
-                'title_page'=>'Acceso denegado',
+        $role = New Role();
+        $log = new Logbook();
 
-
+        if ($role->checkAccesToThisFunctionality(Auth::user()->role_id, 30) == null) {
+            $variables = [
+                'menu' => '',
+                'title_page' => 'Acceso denegado',
             ];
             return view('errors.notaccess')->with($variables);
-
         }
 
-        Logbook::activity_done($description='Accedió a la vista de Conferencistas.',$table_id=0,$menu_id=15,$user_id=Auth::id(),$kind_acction=1);
+        $log->activity_done($description = 'Accedió al módulo de Charlas.', $table_id = 0, $menu_id = 30, $user_id = Auth::id(), $kind_acction = 1);
 
         $users_active=User::all()->where('status','=','2')->where('role_id','=','6');
         $users_active_number=User::all()->where('status','=','2')->where('role_id','=','6')->count();
@@ -43,22 +42,20 @@ class SpeakerController extends Controller
 
     public function create()
     {
-        if(Role::checkAccesToThisFunctionality(Auth::user()->role_id,12)==null)
-        {
-            $variables=[
-                'menu'=>'',
-                'title_page'=>'Acceso denegado',
+        $role = New Role();
+        $log = new Logbook();
 
-
+        if ($role->checkAccesToThisFunctionality(Auth::user()->role_id, 30) == null) {
+            $variables = [
+                'menu' => '',
+                'title_page' => 'Acceso denegado',
             ];
             return view('errors.notaccess')->with($variables);
-
         }
 
-        Logbook::activity_done($description='Accedió a la vista para Crear un conferencista.',$table_id=0,$menu_id=16,$user_id=Auth::id(),$kind_acction=1);
-        
-        
-        
+        $log->activity_done($description = 'Accedió al módulo de Charlas.', $table_id = 0, $menu_id = 16, $user_id = Auth::id(), $kind_acction = 1);
+
+
         $rol_available=Role::all()->where('status','=','2');
         $variables=[
             'menu'=>'speakers_all',
@@ -132,7 +129,7 @@ class SpeakerController extends Controller
         if ($user->save()) {
 
             Logbook::activity_done($description='Actualizo la informacion del conferencista ' . $user->title . 'correctamente',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=3);
-            
+
             return back()->with('success','Se ha actualizado el conferencista exitosamente...');
 
         }
