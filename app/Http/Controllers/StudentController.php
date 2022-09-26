@@ -64,18 +64,23 @@ class StudentController extends Controller
         $role = New Role();
         $log = new Logbook();
 
-        if ($role->checkAccesToThisFunctionality(Auth::user()->role_id, 12) == null) {
+        if ($role->checkAccesToThisFunctionality(Auth::user()->role_id,12) == null) {
+
             $variables = [
                 'menu' => '',
                 'title_page' => 'Acceso denegado',
+
             ];
+
             return view('errors.notaccess')->with($variables);
         }
 
-        $log->activity_done($description = 'Accedió al módulo de Estudiantes.', $table_id = 0, $menu_id = 12, $user_id = Auth::id(), $kind_acction = 1);
+        $log->activity_done($description = 'Accedió al módulo de Estudiantes.',$table_id = 0, $menu_id = 12, $user_id = Auth::id(), $kind_acction = 1);
 
         $rol_available=Role::all()->where('status','=','2');
+
         $carrers_available=Carrer::all()->where('status','=','2');
+        
         $variables=[
             'menu'=>'alumnos_all',
             'title_page'=>'Estudiantes',
