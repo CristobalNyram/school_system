@@ -49,7 +49,7 @@
         </button>
         <!-- Brand -->
         <a class="navbar-brand pt-0" href="{{ route('home') }}">
-            <img src="{{ asset('argon') }}/img/brand/blue.png" class="navbar-brand-img" alt="...">
+            <img src="{{ asset('argon') }}/brand/favicon.png" class="navbar-brand-img" alt="...">
         </a>
         <!-- User -->
         <ul class="nav align-items-center d-md-none">
@@ -248,6 +248,13 @@
                 <li class="nav-item">
                     <a class="nav-link @if($menu === 'logbook') active @endif " href="{{ route('logbook_index') }}">
                         <i class="ni ni-books text-primary"></i>Bitácora
+                    </a>
+                </li>
+                @endif
+                @if ( check_acces_to_this_permission(Auth::user()->role_id,6))
+                <li class="nav-item">
+                    <a class="nav-link @if($menu === 'setting_all') active @endif " href="{{ route('setting_index') }}">
+                        <i class="ni ni-books text-primary"></i>Configuración
                     </a>
                 </li>
                 @endif

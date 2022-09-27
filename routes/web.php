@@ -14,6 +14,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\PasswordController;
 use App\Http\Controllers\SpeakerController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\SettingController;
 
 
 /*
@@ -86,9 +87,17 @@ Route::group(['middleware' => 'auth'], function () {
            // payment start--------------------------------------------
 
            Route::get('/payments',[PaymentController::class,"index"])->name('payment_index');
-
-
            // payment end--------------------------------------------
+
+            // setting start--------------------------------------------
+
+            Route::get('/Setting',[SettingController::class,"index"])->name('setting_index');
+            Route::get('/Setting/update/{setting_id}',[SettingController::class,"update"])->name('setting_update');
+            Route::post('/Setting/edit',[SettingController::class,"edit"])->name('setting_edit');
+            
+
+
+             // setting end--------------------------------------------
 
 
 
