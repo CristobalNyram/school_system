@@ -34,17 +34,17 @@
                     @endif
                     @if ($errors->any())
 
-                                @foreach ($errors->all() as $error)
+                    @foreach ($errors->all() as $error)
 
 
-                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                    {{ $error }}                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        {{ $error }} <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
 
-                                @endforeach
-                   @endif
+                    @endforeach
+                    @endif
                     <div class="form-group">
                         <input type="hidden" name="id" id="id" value="{{$current_sponsor->id}}">
                         <label for="name">Nombre</label>
@@ -62,36 +62,13 @@
                         <input type="file" onBlur='LimitAttach(this,1)' ; accept="image/*" class="form-control form-control-lg" id="url_img" name="url_img" value="{{ $current_sponsor->url_img }}" placeholder="Foto del sponsor" max="50" required oninput="uppercaseLetters(event);">
                     </div>
 
-                    <div class="alert alert-warning alert-dismissible fade show" id="alerta" role="alert" style="display: none"  role="alert">
+                    <div class="alert alert-warning alert-dismissible fade show" id="alerta" role="alert" style="display: none" role="alert">
                         <span class="alert-inner--text"><strong>Advertencia: </strong> Sólo se aceptan archivos con extensiones .jpeg, .jpe, .jpg, .png</span>
-                                   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
 
-                    <script type="text/javascript">
-                        function LimitAttach(tField, iType) {
-                            file = tField.value;
-                            if (iType == 1) {
-                                extArray = new Array(".jpeg", ".jpe", ".jpg", ".png");
-                            }
-                            allowSubmit = false;
-                            if (!file) return;
-                            while (file.indexOf("\\") != -1) file = file.slice(file.indexOf("\\") + 1);
-                            ext = file.slice(file.indexOf(".")).toLowerCase();
-                            for (var i = 0; i < extArray.length; i++) {
-                                if (extArray[i] == ext) {
-                                    allowSubmit = true;
-                                    document.getElementById('alerta').style.display = "none";
-                                    break;
-                                }
-                            }
-                            if (allowSubmit) {} else {
-                                tField.value = "";
-                                document.getElementById('alerta').style.display = "block";
-                            }
-                        }
-                    </script>
 
 
                     <div class="form-group justify-content-center align-items-center">
@@ -127,8 +104,8 @@
     @include('layouts.footers.auth')
 </div>
 @endsection
-
 @push('js')
+<script src="/assets/js/validations/generalFunctions.js"></script>
 <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.min.js"></script>
 <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.extension.js"></script>
 @endpush

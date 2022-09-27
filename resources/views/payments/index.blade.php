@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('content')  
+@section('content')
  @include('payments.headers_cards')
 
 
@@ -75,11 +75,11 @@
                             </div>
                         </th>
 
-                        
 
 
 
-                  
+
+
 
                         <td class="text-cener">
                             <div class="dropdown">
@@ -87,18 +87,18 @@
                                 <i class="fas fa-ellipsis-v"></i>
                               </a>
                               <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                              <a class="dropdown-item" href="{{route('user_update',$users->id)}}"> 
+                              <a class="dropdown-item" href="{{route('user_update',$users->id)}}">
                                 <i class="fas fa-edit"></i> Aprobar pago
                               </a>
-                              <a class="dropdown-item" href="{{route('user_update',$users->id)}}"> 
+                              <a class="dropdown-item" href="{{route('user_update',$users->id)}}">
                                 <i class="fas fa-edit"></i> Cancelar pago
                               </a>
 
                                 <form class="input-group form-eliminar"  action="{{route('course_delete',$users->id)}}" method="POST">
                                   @csrf
-                                
+
                                 <input type="submit" class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-notification" value="Eliminar" ></input>
-                                </form> 
+                                </form>
                               </div>
                             </div>
                          </td>
@@ -137,10 +137,10 @@ $(document).ready(function() {
             "search":         "Buscar:",
             "emptyTable":     "No hay información disponible en la tabla.",
             "paginate": {
-                "first":      "First",
-                "last":       "Last",
-                "next":       "Next",
-                "previous":   "Previous"
+                "first":      "Primero",
+                "last":       "Ultimo",
+                "next":       ">",
+                "previous":   "<"
              },
         }
     } );
@@ -167,7 +167,7 @@ $(document).ready(function() {
           }
 
       </script>
-      
+
       <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
       @if (session('eliminar') == 'ok')
@@ -197,7 +197,7 @@ $(document).ready(function() {
           confirmButtonText: 'Sí. ¡Deseo eliminarlo!'
        }).then((result) => {
          if (result.isConfirmed) {
-              
+
           this.submit();
         }
       })

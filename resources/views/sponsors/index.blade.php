@@ -32,7 +32,7 @@
                       <th scope="col" class="sort" data-sort="status">Eslogan</th>
                       <th scope="col" class="sort" data-sort="status">Foto</th>
                       <th scope="col" class="sort" data-sort="status">Acciones</th>
-                     
+
 
                     </tr>
                   </thead>
@@ -88,7 +88,7 @@
                                 </button>
                               </div>
                               <div class="modal-body">
-                                
+
                                 <div class="media align-items-center">
                                   <div class="media-body">
                                     <span class="name mb-0 text-sm"><img id="modal_watch_image_course" alt="{{$sponsor->name}}" class="img-fluid img-thumbnail" width ="100%" > </span>
@@ -150,10 +150,10 @@ $(document).ready(function() {
             "search":         "Buscar:",
             "emptyTable":     "No hay información disponible en la tabla.",
             "paginate": {
-                "first":      "First",
-                "last":       "Last",
-                "next":       "Next",
-                "previous":   "Previous"
+                "first":      "Primero",
+                "last":       "ultimo",
+                "next":       ">",
+                "previous":   "<"
              },
         }
     } );
@@ -210,7 +210,7 @@ $(document).ready(function() {
     confirmButtonText: 'Sí. ¡Deseo eliminarlo!'
  }).then((result) => {
    if (result.isConfirmed) {
-        
+
     this.submit();
   }
 })

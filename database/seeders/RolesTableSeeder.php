@@ -30,6 +30,7 @@ class RolesTableSeeder extends Seeder
             'updated_at' => now()
         ]);
 
+<<<<<<< HEAD
         
         // DB::table('roles')->insert([
         //     'name' => 'Student',
@@ -72,5 +73,7 @@ class RolesTableSeeder extends Seeder
 
 
 
+=======
+>>>>>>> d8e1dd0a8dab16c10a90d5dae0b4802205265fcb
     }
 }

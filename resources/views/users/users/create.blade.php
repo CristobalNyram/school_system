@@ -57,17 +57,33 @@
 
 
 
+                            <label for="name">Rol</label>
                             <div class="form-group">
-                                <label for="role_id">Rol</label>
+                                <div class="select" id="select">
+                                    <div class="contenido-select">
 
-                                <select class="single-select-2 " data-toggle="select2"  name="role_id" id="role_id" style="width: 100%;  margin:20px;" >
-                                    <option value="-2" selected>Seleccionar</option>
+                                        <label class="titulo">Seleccione un rol</label>
+                                    </div>
+                                    <i class="fas fa-angle-down"></i>
+                                </div>
+
+                                <div class="opciones" id="opciones">
                                     @foreach ($rol_available as $rol )
-                                    <option value="{{ $rol->id }}" >{{ $rol->name }}</option>
-
+                                    <a href="#" class="opcion">
+                                        <div class="contenido-opcion">
+                                            {{-- <img src="" alt="image_rol"> --}}
+                                            <div class="textos">
+                                                <h1 class="titulo">{{ $rol->name }}</h1>
+                                                <p class="descripcion">{{ $rol->name }}</p>
+                                            </div>
+                                        </div>
+                                    </a>
                                     @endforeach
-                                  </select>
+                                </div>
                             </div>
+                            <input type="hidden" name="pais" id="inputSelect" value="">
+
+
                             <div class="form-group">
                                 <label for="gender">Genero</label>
 
@@ -124,9 +140,13 @@
 
         @include('layouts.footers.auth')
     </div>
-@endsection
+
+
+    @endsection
 
 @push('js')
+
+    <script src="/assets/js/ourownselect.js"></script>
 
     <script src="/assets/js/select2.js"></script>
 

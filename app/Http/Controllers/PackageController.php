@@ -9,7 +9,8 @@ use App\Models\Logbook;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
-
+use Carbon\Carbon as CarbonCarbon;
+use Illuminate\Support\Carbon;
 
 class PackageController extends Controller
 {
@@ -122,6 +123,7 @@ class PackageController extends Controller
       $package = new Package();
       $package->name = $request->name;
       $package->description = $request->description;
+      // $package->price = Carbon::now()->format('Y-m-d');
       $package->price = $request->price;
       $package->souvenir_id = $request->souvenir_id;
   

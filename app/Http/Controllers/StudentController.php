@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Logbook;
 use App\Models\Carrer;
+use Illuminate\Support\Carbon;
 
 class StudentController extends Controller
 {
@@ -109,19 +110,25 @@ class StudentController extends Controller
         $user->group = $request->group;
         $user->email = $request->email;
         $user->password = Hash::make($request->password) ;
- 
-         if ($user->save()) {
+        $user->user_image = $request->user_image;
 
+        if ($request->hasFile('user_image')) {
+            $file = $request->file('user_image');
+            $destiantionPath = 'argon/img/user/';
+            $filename = time() . '-' . $file->getClientOriginalName();
+            $uploadSuccess = $request->file('user_image')->move($destiantionPath, $filename);
+            $user->user_image = $destiantionPath . $filename;
+        }
+
+        if ($user->save()) {
             Logbook::activity_done($description='Se registro al estudiante'. $user->name. 'correctamente' ,$table_id=0,$menu_id=12,$user_id=Auth::id(),$kind_acction=6);
-
-             return back()->with('success','Se ha registrado el usuario exitosamente...');
+            return back()->with('success','Se ha registrado el usuario exitosamente...');
+        }
+        else
+        {
+            return  back()->withErrors('No se ha registrado el usuario...');
  
-         }
-         else
-         {
-             return  back()->withErrors('No se ha registrado el usuario...');
- 
-         }
+        }
     }
 
     /**
@@ -153,6 +160,17 @@ class StudentController extends Controller
         $user->group = $request->group;
         $user->role_id = $request->role_id;
         $user->email = $request->email;
+        $user->user_image = $request->user_image;
+        $user->user_image_updated = Carbon::now()->format('Y-m-d');
+
+
+        if ($request->hasFile('user_image')) {
+            $file = $request->file('user_image');
+            $destiantionPath = 'argon/img/user/';
+            $filename = time() . '-' . $file->getClientOriginalName();
+            $uploadSuccess = $request->file('user_image')->move($destiantionPath, $filename);
+            $user->user_image = $destiantionPath . $filename;
+        }
 
         if ($user->save()) {
 

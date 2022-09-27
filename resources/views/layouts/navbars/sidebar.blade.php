@@ -122,7 +122,7 @@
             <!-- Navigation -->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link @if($menu === 'dashboard') active @endif" href="{{ route('home') }}">
+                    <a class="nav-link @if($menu === 'dashboard')  custom-active text-white @endif" href="{{ route('home') }}">
                         <i class="ni ni-tv-2 text-primary"></i> {{ __('Dashboard') }}
                     </a>
                 </li>
@@ -144,13 +144,13 @@
 
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('payment_index') }}">
+                    <a class="nav-link  @if($menu === 'payments')  custom-active text-white  @endif" href="{{ route('payment_index') }}">
                         <i class="ni ni-cart text-primary"></i>Pagos
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link @if($menu === 'alumnos_all') active @endif" href="{{ route('student_index') }}">
-                        <i class="fas fa-object-group text-primary"></i>Alumnos
+                    <a class="nav-link @if($menu === 'alumnos_all')  custom-active text-white  @endif" href="{{ route('student_index') }}">
+                        <i class="fas fa-school text-primary"></i>Alumnos
                     </a>
                 </li>
 
@@ -181,7 +181,7 @@
 
                 @if ( check_acces_to_this_permission(Auth::user()->role_id,10))
                 <li class="nav-item">
-                    <a class="nav-link @if($menu === 'courses_all') active @endif" href="{{ route('course_index') }}">
+                    <a class="nav-link @if($menu === 'courses_all')  custom-active text-white @endif" href="{{ route('course_index') }}">
                         <i class="ni ni-paper-diploma text-primary" aria-hidden="true"></i>
                         Cursos
                     </a>
@@ -189,7 +189,7 @@
                 @endif
                 @if ( check_acces_to_this_permission(Auth::user()->role_id,29))
                 <li class="nav-item">
-                    <a class="nav-link @if($menu === 'sponsors_all') active @endif" href="{{ route('sponsor_index') }}">
+                    <a class="nav-link @if($menu === 'sponsors_all')  custom-active text-white @endif" href="{{ route('sponsor_index') }}">
                         <i class="ni ni-spaceship text-primary"></i>
                         Patrocinadores
                     </a>
@@ -197,7 +197,7 @@
                 @endif
                 @if ( check_acces_to_this_permission(Auth::user()->role_id,15))
                 <li class="nav-item">
-                    <a class="nav-link @if($menu === 'talks_all') active @endif" href="{{ route('talk_index') }}">
+                    <a class="nav-link @if($menu === 'talks_all')  custom-active text-white @endif" href="{{ route('talk_index') }}">
                         <i class="ni ni-chat-round text-primary" aria-hidden="true"></i>
                         Conferencias
                     </a>
@@ -205,7 +205,7 @@
                 @endif
                 @if ( check_acces_to_this_permission(Auth::user()->role_id,15))
                 <li class="nav-item">
-                    <a class="nav-link @if($menu === 'speakers_all') active @endif" href="{{ route('speaker_index') }}">
+                    <a class="nav-link @if($menu === 'speakers_all')  custom-active text-white @endif" href="{{ route('speaker_index') }}">
                         <i class="ni ni-tie-bow text-primary" aria-hidden="true"></i>
                         Conferencistas
                     </a>
@@ -213,7 +213,7 @@
                 @endif
                 @if ( check_acces_to_this_permission(Auth::user()->role_id,19))
                 <li class="nav-item">
-                    <a class="nav-link @if($menu === 'souvenirs_all') active @endif" href="{{ route('souvenir_index') }}">
+                    <a class="nav-link @if($menu === 'souvenirs_all')  custom-active text-white @endif" href="{{ route('souvenir_index') }}">
                         <i class="ni ni-shop text-primary" aria-hidden="true"></i>
                         Souvenirs
                     </a>
@@ -223,7 +223,7 @@
                 <!-- El rol id pertenece al 32 no al 19, se cambiara una vez se agrege el menu para asignar roles -->
                 <!-- Tambien cambiar en el controlador de paquetes -->
                 <li class="nav-item">
-                    <a class="nav-link @if($menu === 'packages_all') active @endif" href="{{ route('package_index') }}">
+                    <a class="nav-link @if($menu === 'packages_all')  custom-active text-white @endif" href="{{ route('package_index') }}">
                         <i class="ni ni-ruler-pencil text-primary" aria-hidden="true"></i>
                         Paquetes
                     </a>
@@ -246,9 +246,10 @@
 
                 @if ( check_acces_to_this_permission(Auth::user()->role_id,6))
                 <li class="nav-item">
-                    <a class="nav-link @if($menu === 'logbook') active @endif " href="{{ route('logbook_index') }}">
+                    <a class="nav-link @if($menu === 'logbook') custom-active text-white @endif "  href="{{ route('logbook_index') }}">
                         <i class="ni ni-books text-primary"></i>Bitácora
                     </a>
+
                 </li>
                 @endif
                 @if ( check_acces_to_this_permission(Auth::user()->role_id,6))
@@ -260,14 +261,14 @@
                 @endif
                 @if ( check_acces_to_this_permission(Auth::user()->role_id,2))
                 <li class="nav-item">
-                    <a class="nav-link  @if($menu === 'role') active @endif " href="{{ route('role_index') }}">
+                    <a class="nav-link  @if($menu === 'role') custom-active text-white @endif " href="{{ route('role_index') }}">
                         <i class="ni ni-single-02 text-primary"></i>Roles
                     </a>
                 </li>
                 @endif
                 @if ( check_acces_to_this_permission(Auth::user()->role_id,4))
                 <li class="nav-item">
-                    <a class="nav-link @if($menu === 'users_all') active @endif" href="{{ route('users_all_index') }}">
+                    <a class="nav-link @if($menu === 'users_all')  custom-active text-white @endif" href="{{ route('users_all_index') }}">
                         <i class="fa fa-users text-primary" aria-hidden="true"></i>
                         Usuarios
                     </a>
@@ -276,7 +277,7 @@
 
                 @if ( check_acces_to_this_permission(Auth::user()->role_id,3))
                 <li class="nav-item">
-                    <a class="nav-link @if($menu === 'menus') active @endif" href="{{ route('menu_index') }}">
+                    <a class="nav-link @if($menu === 'menus')  custom-active text-white @endif" href="{{ route('menu_index') }}">
                         <i class="fa fa-bars text-primary" aria-hidden="true"></i>
 
                         Menus
@@ -294,9 +295,10 @@
             @endif
 
 
-
+{{-- styles in navbar --}}
 
 
         </div>
     </div>
 </nav>
+

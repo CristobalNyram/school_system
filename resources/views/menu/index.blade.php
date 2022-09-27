@@ -109,11 +109,11 @@
                     "loadingRecords": "Cargando...",
                     "search":         "Buscar:",
                     "emptyTable":     "No hay información disponible en la tabla.",
-                    "oPaginate": {
-                                "sFirst":    "Primero",
-                                "sLast":     "Último",
-                                "sNext":     "Siguiente",
-                                "sPrevious": "Anterior"
+                    "Paginate": {
+                                "first":      "Primero",
+                                "last":       "Ultimo",
+                                "next":       ">",
+                                "previous":   "<"
                             },
                             "oAria": {
                                 "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
