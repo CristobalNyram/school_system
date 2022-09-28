@@ -12,7 +12,11 @@ class SettingController extends Controller
 {
   public function index()
   {
-    if (Role::checkAccesToThisFunctionality(Auth::user()->role_id, 19) == null) {
+
+    $rol = new Role();
+
+
+    if ($rol->checkAccesToThisFunctionality(Auth::user()->role_id, 19) == null) {
       $variables = [ 
 
         
@@ -23,7 +27,11 @@ class SettingController extends Controller
       ];
       return view('errors.notaccess')->with($variables);
     }
-    Logbook::activity_done($description = 'Accedió al módulo de consulta de Souvenirs.', $table_id = 0, $menu_id = 19, $user_id = Auth::id(), $kind_acction = 1);
+
+    $log = new Logbook();
+
+
+    $log->activity_done($description = 'Accedió al módulo de consulta de Configuración', $table_id = 0, $menu_id = 19, $user_id = Auth::id(), $kind_acction = 1);
 
     $configuration_active = Configuration::all();
     $configuration_active_number = Configuration::all()->count();
@@ -39,7 +47,11 @@ class SettingController extends Controller
 
   public function update($setting_id)
   {
-    if (Role::checkAccesToThisFunctionality(Auth::user()->role_id, 19) == null) {
+
+    $rol = new Role();
+
+
+    if ($rol->checkAccesToThisFunctionality(Auth::user()->role_id, 19) == null) {
       $variables = [
         'menu' => '',
         'title_page' => 'Acceso denegado',
@@ -47,13 +59,15 @@ class SettingController extends Controller
       return view('errors.notaccess')->with($variables);
     }
 
-    Logbook::activity_done($description = 'Accedió al módulo de Actualizar Souvenir.', $table_id = 0, $menu_id = 22, $user_id = Auth::id(), $kind_acction = 1);
+    $log = new Logbook();
+
+    $log->activity_done($description = 'Accedió al modelo actualizar configuración del sistema', $table_id = 0, $menu_id = 22, $user_id = Auth::id(), $kind_acction = 1);
 
     $current_setting = Configuration::findOrFail($setting_id);
 
     $variables = [
       'menu' => 'souvenirs_all',
-      'title_page' => 'Souvenirs',
+      'title_page' => 'Configuración',
       'current_setting' => $current_setting,
     ];
     return view('Setting.update')->with($variables);
@@ -81,10 +95,10 @@ class SettingController extends Controller
 
       $log = new Logbook();
 
-      $log->activity_done($description = 'Actualizo el souvenir ' . $setting->name . 'correctamente', $table_id = 0, $menu_id = 22, $user_id = Auth::id(), $kind_acction = 3);
-      return back()->with('success', 'Se ha actualizado el souvenir exitosamente...');
+      $log->activity_done($description = 'Actualizo la configuración del sistema' . $setting->name . 'correctamente', $table_id = 0, $menu_id = 22, $user_id = Auth::id(), $kind_acction = 3);
+      return back()->with('success', 'Se ha actualizado el sistema exitosamente...');
     } else {
-      return  back()->withErrors('No se ha actualizado el curso...');
+      return  back()->withErrors('No se ha actualizado el sistema...');
     }
   }
 }

@@ -315,166 +315,346 @@ class MenusTableSeeder extends Seeder
 
         //menu fin
 
-        // //menu padre
+         //menu padre
+         DB::table('menus')->insert([
+             'title' => 'Paquetes',
+             'description' => 'Menu padre .',
+             'menu_parent' => 0,
+             'order' => 32,
+             'status' =>2,
+
+         ]);
+
+         DB::table('menus')->insert([
+             'title' => 'Modificar paquetes',
+             'description' => 'Agregar,editar o borrar paquetes.',
+             'menu_parent' => 32,
+             'order' => 33,
+             'status' => 2,
+
+         ]);
+
+         DB::table('menus')->insert([
+             'title' => 'Ver todos los paquetes',
+             'description' => 'Ver todos los paquetes.',
+             'menu_parent' => 32,
+             'order' => 34,
+             'status' => 2,
+
+         ]);
+
+        //menu fin
+
+        //menu padre
+         DB::table('menus')->insert([
+            'title' => 'Actualizar contraseña',
+            'description' => 'Ver todos los paquetes.',
+            'menu_parent' => 1,
+            'order' => 35,
+            'status' => 2,
+
+         ]);
+
+         //menu fin
+
+         //menu padre
+         DB::table('menus')->insert([
+            'title' => 'Perfil',
+            'description' => 'Menu Padre',
+            'menu_parent' => 36,
+            'order' => 36,
+            'status' => 2,
+
+        ]);
+
+        DB::table('menus')->insert([
+            'title' => 'Información de Perfil',
+            'description' => 'Ver toda la información del perfil',
+            'menu_parent' => 36,
+            'order' => 37,
+            'status' => 2,
+
+        ]);
+
+        DB::table('menus')->insert([
+            'title' => 'Actualizar información',
+            'description' => 'Actualizar toda la información del perfil',
+            'menu_parent' => 36,
+            'order' => 38,
+            'status' => 2,
+
+        ]);
+
+        DB::table('menus')->insert([
+            'title' => 'Actualizar contraseña',
+            'description' => 'Actualizar la contraseña del perfil',
+            'menu_parent' => 36,
+            'order' => 39,
+            'status' => 2,
+
+        ]);
+
+        DB::table('menus')->insert([
+            'title' => 'Actualizar foto ',
+            'description' => 'Actualizar la foto de perfil',
+            'menu_parent' => 36,
+            'order' => 40,
+            'status' => 2,
+
+        ]);
+
+        //menu fin
+
+        //menu padre
+
+        DB::table('menus')->insert([
+            'title' => 'Estudiante',
+            'description' => 'Menu padre',
+            'menu_parent' => 41,
+            'order' => 41,
+            'status' => 2,
+
+        ]);
+
+        DB::table('menus')->insert([
+            'title' => 'Elegir paquete',
+            'description' => 'Poder adquirir un paquete',
+            'menu_parent' => 41,
+            'order' => 42,
+            'status' => 2,
+
+        ]);
+
+        DB::table('menus')->insert([
+            'title' => 'Elegir curso',
+            'description' => 'Poder registrarse en un curso',
+            'menu_parent' => 41,
+            'order' => 43,
+            'status' => 2,
+
+        ]);
+         
+        DB::table('menus')->insert([
+            'title' => 'Obtener gafet',
+            'description' => 'Poder adquirir un gafet del evento',
+            'menu_parent' => 41,
+            'order' => 44,
+            'status' => 2,
+
+        ]);
+
+        DB::table('menus')->insert([
+            'title' => 'Vista de conferencias',
+            'description' => 'Visualizar las conferencias como  usuario',
+            'menu_parent' => 41,
+            'order' => 45,
+            'status' => 2,
+
+        ]);
+
+        DB::table('menus')->insert([
+            'title' => 'Vista de cursos',
+            'description' => 'Visualizar los cursos como  usuario',
+            'menu_parent' => 41,
+            'order' => 46,
+            'status' => 2,
+
+        ]);
+
+        //menu fin
+
+        //menu padre
+
+        DB::table('menus')->insert([
+            'title' => 'Pagos',
+            'description' => 'Menu Padre',
+            'menu_parent' => 47,
+            'order' => 47,
+            'status' => 2,
+
+        ]);
+
+        DB::table('menus')->insert([
+            'title' => 'modificar pago',
+            'description' => 'Aprobar, cancelar, borrar, pagos de los paquetes',
+            'menu_parent' => 47,
+            'order' => 48,
+            'status' => 2,
+
+        ]);
+
+        DB::table('menus')->insert([
+            'title' => 'Confirmar Pago',
+            'description' => 'Confirma que el usuario tenga un pago aprobado en la entrada',
+            'menu_parent' => 47,
+            'order' => 49,
+            'status' => 2,
+
+        ]);
+
+        //menu fin
+
+        //menu padre
+
+        DB::table('menus')->insert([
+            'title' => 'Dashboard',
+            'description' => 'Menu Padre',
+            'menu_parent' => 50,
+            'order' => 50,
+            'status' => 2,
+
+        ]);
+
+        DB::table('menus')->insert([
+            'title' => 'Dashboard alumno',
+            'description' => 'Visualizar todas las vistas del alumno',
+            'menu_parent' => 50,
+            'order' => 51,
+            'status' => 2,
+
+        ]);
+
+        DB::table('menus')->insert([
+            'title' => 'Dashboard admin',
+            'description' => 'Visualizar todas las vistas del administrador',
+            'menu_parent' => 50,
+            'order' => 52,
+            'status' => 2,
+
+        ]);
+
+        DB::table('menus')->insert([
+            'title' => 'Dashboard conferencista o tallerista',
+            'description' => 'Visualizar todas las vistas del conferencista o tallerista',
+            'menu_parent' => 50,
+            'order' => 53,
+            'status' => 2,
+
+        ]);
+
+        //menu fin
+
+
+        
+
+
+
+
+
+
+
+        //menu fin
+        
+        //  //menu padre
         // DB::table('menus')->insert([
-        //     'title' => 'Paquetes',
-        //     'description' => 'Menu padre .',
-        //     'menu_parent' => 0,
-        //     'order' => 32,
+        //     'title' => 'Extranjeros',
+        //     'description' => 'Agregar,editar o borrar suvenir.',
+        //     'menu_parent' => 1,
+        //     'order' => 5,
+        //     'status' =>2,
+
+        // ]);
+        // DB::table('menus')->insert([
+        //     'title' => 'Modificar extranjero',
+        //     'description' => 'Agregar,editar o borrar suvenir.',
+        //     'menu_parent' => 1,
+        //     'order' => 5,
         //     'status' =>2,
 
         // ]);
 
         // DB::table('menus')->insert([
-        //     'title' => 'Modificar paquetes',
-        //     'description' => 'Agregar,editar o borrar paquetes.',
-        //     'menu_parent' => 32,
-        //     'order' => 33,
-        //     'status' => 2,
+        //     'title' => 'Ver todos los extranjeros',
+        //     'description' => 'Agregar,editar o borrar suvenir.',
+        //     'menu_parent' => 1,
+        //     'order' => 5,
+        //     'status' =>2,
 
         // ]);
 
         // DB::table('menus')->insert([
-        //     'title' => 'Ver todos los paquetes',
-        //     'description' => 'Ver todos los paquetes.',
-        //     'menu_parent' => 32,
-        //     'order' => 34,
-        //     'status' => 2,
+        //     'title' => 'Estadisticas extranjeros',
+        //     'description' => 'Agregar,editar o borrar suvenir.',
+        //     'menu_parent' => 1,
+        //     'order' => 5,
+        //     'status' =>2,
 
         // ]);
 
-        //menu fin
+        
+        // //menu fin
+
+        
+
+        // //menu padre
+        // DB::table('menus')->insert([
+        //     'title' => 'Pagos',
+        //     'description' => 'Agregar,editar o borrar suvenir.',
+        //     'menu_parent' => 1,
+        //     'order' => 5,
+        //     'status' =>2,
+
+        // ]);
+
+        // DB::table('menus')->insert([
+        //     'title' => 'Ver todos los pagos',
+        //     'description' => 'Agregar,editar o borrar suvenir.',
+        //     'menu_parent' => 1,
+        //     'order' => 5,
+        //     'status' =>2,
+
+        // ]);
+
+        // DB::table('menus')->insert([
+        //     'title' => 'Moficar pago',
+        //     'description' => 'Agregar,editar o borrar suvenir.',
+        //     'menu_parent' => 1,
+        //     'order' => 5,
+        //     'status' =>2,
+
+        // ]);
+
+        // DB::table('menus')->insert([
+        //     'title' => 'Estadisticas pagos',
+        //     'description' => 'Agregar,editar o borrar suvenir.',
+        //     'menu_parent' => 1,
+        //     'order' => 5,
+        //     'status' =>2,
+
+        // ]);
+        // //menu fin
 
 
+        // //menu padre incio
+        // DB::table('menus')->insert([
+        //     'title' => 'Ticket o Gafete',
+        //     'description' => '',
+        //     'menu_parent' => 1,
+        //     'order' => 5,
+        //     'status' =>2,
 
-        //menu fin
-        /*
-         //menu padre
-        DB::table('menus')->insert([
-            'title' => 'Extranjeros',
-            'description' => 'Agregar,editar o borrar suvenir.',
-            'menu_parent' => 1,
-            'order' => 5,
-            'status' =>2,
+        // ]);
 
-        ]);
-        DB::table('menus')->insert([
-            'title' => 'Modificar extranjero',
-            'description' => 'Agregar,editar o borrar suvenir.',
-            'menu_parent' => 1,
-            'order' => 5,
-            'status' =>2,
+        // DB::table('menus')->insert([
+        //     'title' => 'Verificar gafete',
+        //     'description' => 'Escaneara el código QR del gafete',
+        //     'menu_parent' => 1,
+        //     'order' => 5,
+        //     'status' =>2,
 
-        ]);
+        // ]);
 
-        DB::table('menus')->insert([
-            'title' => 'Ver todos los extranjeros',
-            'description' => 'Agregar,editar o borrar suvenir.',
-            'menu_parent' => 1,
-            'order' => 5,
-            'status' =>2,
+        // DB::table('menus')->insert([
+        //     'title' => 'Generar mi  gafete',
+        //     'description' => 'Escaneara el código QR del gafete',
+        //     'menu_parent' => 1,
+        //     'order' => 5,
+        //     'status' =>2,
 
-        ]);
+        // ]);
 
-        DB::table('menus')->insert([
-            'title' => 'Estadisticas extranjeros',
-            'description' => 'Agregar,editar o borrar suvenir.',
-            'menu_parent' => 1,
-            'order' => 5,
-            'status' =>2,
+      
 
-        ]);
-
-        */
-        //menu fin
-
-
-
-
-
-
-
-
-
-        /*
-
-        //menu padre
-        DB::table('menus')->insert([
-            'title' => 'Pagos',
-            'description' => 'Agregar,editar o borrar suvenir.',
-            'menu_parent' => 1,
-            'order' => 5,
-            'status' =>2,
-
-        ]);
-
-        DB::table('menus')->insert([
-            'title' => 'Ver todos los pagos',
-            'description' => 'Agregar,editar o borrar suvenir.',
-            'menu_parent' => 1,
-            'order' => 5,
-            'status' =>2,
-
-        ]);
-
-        DB::table('menus')->insert([
-            'title' => 'Moficar pago',
-            'description' => 'Agregar,editar o borrar suvenir.',
-            'menu_parent' => 1,
-            'order' => 5,
-            'status' =>2,
-
-        ]);
-
-        DB::table('menus')->insert([
-            'title' => 'Estadisticas pagos',
-            'description' => 'Agregar,editar o borrar suvenir.',
-            'menu_parent' => 1,
-            'order' => 5,
-            'status' =>2,
-
-        ]);
-        //menu fin
-
-
-        //menu padre incio
-        DB::table('menus')->insert([
-            'title' => 'Ticket o Gafete',
-            'description' => '',
-            'menu_parent' => 1,
-            'order' => 5,
-            'status' =>2,
-
-        ]);
-
-        DB::table('menus')->insert([
-            'title' => 'Verificar gafete',
-            'description' => 'Escaneara el código QR del gafete',
-            'menu_parent' => 1,
-            'order' => 5,
-            'status' =>2,
-
-        ]);
-
-        DB::table('menus')->insert([
-            'title' => 'Generar mi  gafete',
-            'description' => 'Escaneara el código QR del gafete',
-            'menu_parent' => 1,
-            'order' => 5,
-            'status' =>2,
-
-        ]);
-
-        DB::table('menus')->insert([
-            'title' => 'Generar uno o más gafetes',
-            'description' => 'Escaneara el código QR del gafete',
-            'menu_parent' => 1,
-            'order' => 5,
-            'status' =>2,
-
-        ]);
-
-        */
 
         //menu padre fin
 

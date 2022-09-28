@@ -15,6 +15,7 @@ use App\Http\Controllers\PasswordController;
 use App\Http\Controllers\SpeakerController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\SettingController;
+use App\Http\Controllers\HomeWebController;
 
 
 /*
@@ -28,11 +29,18 @@ use App\Http\Controllers\SettingController;
 |
 */
 Route::get('/', function () {
-    return view('welcome');
-
-    Route::get('/sponsor',[HomeController::class, 'Sponsor'])->name('sponsor');
+    return view('home_page.index');
 });
 
+Route::prefix('web')->group(function () {
+    Route::get('/',[HomeWebController::class, 'index'])->name('home_page_index');
+    Route::get('/home_page/sponsor',[HomeWebController::class, 'sponsor'])->name('home_page_sponsor');
+    Route::get('/home_page/course',[HomeWebController::class, 'course'])->name('home_page_course');
+    Route::get('/home_page/conference',[HomeWebController::class, 'conference'])->name('home_page_conference');
+    Route::get('/home_page/souvenir',[HomeWebController::class, 'souvenir'])->name('home_page_souvenir');
+    Route::get('/home_page/login',[HomeWebController::class, 'login'])->name('home_page_login');
+
+});
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

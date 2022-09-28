@@ -8,41 +8,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FreedoomDay</title>
     <link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilo_index.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/home') }}/barra.css">
     <link rel="icon" href="{{ asset('assets/img/home/img') }}/logo.png">
 </head>
 <header>
     <nav class="menu">
             <section class="menu__container">
-                <a href="/index.html" class="logo" id="tope"><img src="{{ asset('assets/img/home/img') }}/logo.png"></a>
+                <a href="{{ route('home_page_index') }}" class="logo" id="tope"><img src="{{ asset('assets/img/home/img') }}/logo.png"></a>
     
                 <ul class="menu__links">
                     <li class="menu__item">
-                        <a href="/index.html" class="menu__link">Inicio</a>
+                        <a href="{{ route('home_page_index') }}" class="menu__link">Inicio</a>
                     </li>
         
                     <li class="menu__item">
                         <div class="tex1">
     
-                            <a href="/HTML/Patrocinadores.html" class="menu__link">Nuestros Patrocinadores</a>
+                            <a href="{{ route('home_page_sponsor') }}" class="menu__link">Nuestros Patrocinadores</a>
                         </div>
                     </li>
     
                     <li class="menu__item">
-                        <a href="/HTML/Talleres.html" class="menu__link">Talleres</a>
+                        <a href="{{ route('home_page_course') }}" class="menu__link">Talleres</a>
                     </li>
         
                     <li class="menu__item">
-                        <a href="/HTML/Conferencia.html" class="menu__link">Conferencias</a>
+                        <a href="{{ route('home_page_conference') }}" class="menu__link">Conferencias</a>
                     </li>
     
                     <li class="menu__item">
-                        <a href="/HTML/Souvenir.html" class="menu__link">Souvenirs</a>
+                        <a href="{{ route('home_page_souvenir') }}" class="menu__link">Souvenirs</a>
                     </li>
         
                     <li class="menu__item">
                         <div class="tex">
     
-                            <a href="/HTML/Inicio_Sesion.html" class="menu__link">Inicio de Sesión</a>
+                            <a href="{{ route('home_page_login') }}" class="menu__link">Inicio de Sesión</a>
                         </div>
                     </li>
                     
