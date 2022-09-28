@@ -101,9 +101,9 @@ Route::group(['middleware' => 'auth'], function () {
 
             // setting start--------------------------------------------
 
-            Route::get('/Setting',[SettingController::class,"index"])->name('setting_index');
-            Route::get('/Setting/update/{setting_id}',[SettingController::class,"update"])->name('setting_update');
-            Route::post('/Setting/edit',[SettingController::class,"edit"])->name('setting_edit');
+            Route::get('/setting',[SettingController::class,"index"])->name('setting_index');
+            Route::get('/setting/update/{setting_id}',[SettingController::class,"update"])->name('setting_update');
+            Route::post('/setting/edit',[SettingController::class,"edit"])->name('setting_edit');
             
 
 
