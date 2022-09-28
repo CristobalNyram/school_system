@@ -29,6 +29,8 @@ use App\Http\Controllers\SettingController;
 */
 Route::get('/', function () {
     return view('welcome');
+
+    Route::get('/sponsor',[HomeController::class, 'Sponsor'])->name('sponsor');
 });
 
 Auth::routes();

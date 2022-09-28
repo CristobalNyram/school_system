@@ -78,7 +78,10 @@ class SettingController extends Controller
   
 
     if ($setting->save()) {
-      Logbook::activity_done($description = 'Actualizo el souvenir ' . $setting->name . 'correctamente', $table_id = 0, $menu_id = 22, $user_id = Auth::id(), $kind_acction = 3);
+
+      $log = new Logbook();
+
+      $log->activity_done($description = 'Actualizo el souvenir ' . $setting->name . 'correctamente', $table_id = 0, $menu_id = 22, $user_id = Auth::id(), $kind_acction = 3);
       return back()->with('success', 'Se ha actualizado el souvenir exitosamente...');
     } else {
       return  back()->withErrors('No se ha actualizado el curso...');

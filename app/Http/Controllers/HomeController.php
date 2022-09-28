@@ -43,7 +43,7 @@ class HomeController extends Controller
         ];
         return view('home_page.index')->with($variables);
     }
-    public function school_secretary()
+    public function Sponsor()
     {
         $variables=[
             'menu'=>'dashboard',
