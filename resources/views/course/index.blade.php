@@ -1,15 +1,16 @@
 @extends('layouts.app')
 
-@section('content')  
+@section('content')
  @include('course.headers_cards')
 
 
     <div class="container-fluid mt--6">
         <div class="row d-flex mb-3 mr-5 justify-content-end">
+            @if ( check_acces_to_this_permission(Auth::user()->role_id,12))
 
             <a href="{{ route('course_create') }}" type="button" class="btn btn-info">Agregar</a>
 
-
+            @endif
       </div>
 
         <div class="row">
@@ -86,7 +87,7 @@
                             </div>
                         </th>
 
-                        
+
 
                         <th scope="row">
                           <button onclick="set_image_modal('{{asset($course->url_img )}}' , '{{ $course->title }}')" class="btn" data-toggle="modal" data-target="#ventanaModal">
@@ -111,7 +112,7 @@
                                 </button>
                               </div>
                               <div class="modal-body">
-                                
+
                                 <div class="media align-items-center">
                                   <div class="media-body">
                                     <span class="name mb-0 text-sm"><img id="modal_watch_image_course" alt="{{$course->name}}" class="img-fluid img-thumbnail" width ="100%" > </span>
@@ -129,15 +130,18 @@
                                 <i class="fas fa-ellipsis-v"></i>
                               </a>
                               <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                              <a class="dropdown-item" href="{{route('course_update',$course->id)}}"> 
-                                <i class="fas fa-edit"></i> Actualizar información
-                              </a>
+                                @if ( check_acces_to_this_permission(Auth::user()->role_id,12))
 
-                                <form class="input-group form-eliminar"  action="{{route('course_delete',$course->id)}}" method="POST">
-                                  @csrf
-                                
-                                <input type="submit" class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-notification" value="Eliminar" ></input>
-                                </form> 
+                                    <a class="dropdown-item" href="{{route('course_update',$course->id)}}">
+                                        <i class="fas fa-edit"></i> Actualizar información
+                                    </a>
+
+                                        <form class="input-group form-eliminar"  action="{{route('course_delete',$course->id)}}" method="POST">
+                                        @csrf
+
+                                        <input type="submit" class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-notification" value="Eliminar" ></input>
+                                        </form>
+                                @endif
                               </div>
                             </div>
                          </td>
@@ -206,7 +210,7 @@ $(document).ready(function() {
           }
 
       </script>
-      
+
       <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
       @if (session('eliminar') == 'ok')
@@ -236,7 +240,7 @@ $(document).ready(function() {
           confirmButtonText: 'Sí. ¡Deseo eliminarlo!'
        }).then((result) => {
          if (result.isConfirmed) {
-              
+
           this.submit();
         }
       })
