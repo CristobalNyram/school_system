@@ -65,10 +65,13 @@
                     <div class=" dropdown-header noti-title">
                         <h6 class="text-overflow m-0">¡Bienvenid@ {{   auth()->user()->name }} !</h6>
                     </div>
+                    @if ( check_acces_to_this_permission(Auth::user()->role_id,2))
+
                     <a href="{{ route('profile.edit') }}" class="dropdown-item">
                         <i class="ni ni-single-02 text-primary"></i>
                         <span>{{ __('Mi perfil') }}</span>
                     </a>
+                    @endif
                     {{-- <a href="#" class="dropdown-item">
                         <i class="ni ni-settings-gear-65"></i>
                         <span>{{ __('Configuración') }}</span>
