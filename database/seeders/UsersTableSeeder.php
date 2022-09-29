@@ -27,6 +27,18 @@ class UsersTableSeeder extends Seeder
         ]);
 
         DB::table('users')->insert([
+            'name' => 'Alberto',
+            'first_surname' => 'Gomez',
+            'second_surname' => 'Olivares',
+            'role_id' => 1,
+            'email' => 'GomezAlbertOlivares@gmail.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make('S1S73MK1R435859UM4'),
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('users')->insert([
             'name' => 'Ari',
             'first_surname' => 'Mendes',
             'second_surname' => 'Mendes',

@@ -1,7 +1,9 @@
 <?php
+
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\Auth;
+
 use App\Models\Logbook;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -22,7 +24,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $log=new Logbook();
+
+        //$role = New Role();
+
+        $log = new Logbook();
         $log->activity_done($description = 'Accedió a la página principal', $table_id = 0, $menu_id = 5, $user_id = Auth::id(), $kind_acction = 1);
         //Logbook::activity_done($description = 'Accedió a la página principal', $table_id = 0, $menu_id = 5, $user_id = Auth::id(), $kind_acction = 1);
         $variables=[

@@ -21,33 +21,32 @@ class StudentController extends Controller
      */
     public function index()
     {
-        if(Role::checkAccesToThisFunctionality(Auth::user()->role_id,10)==null)
-        {
-            $variables=[
-                'menu'=>'',
-                'title_page'=>'Acceso denegado',
+        $role = New Role();
+        $log = new Logbook();
 
-
+        if ($role->checkAccesToThisFunctionality(Auth::user()->role_id, 28) == null) {
+            $variables = [
+                'menu' => '',
+                'title_page' => 'Acceso denegado',
             ];
             return view('errors.notaccess')->with($variables);
-
         }
 
-        Logbook::activity_done($description='Accedió a la vista de estudiantes.',$table_id=0,$menu_id=4,$user_id=Auth::id(),$kind_acction=1);
-        
-        
+        $log->activity_done($description = 'Accedió al módulo de Estudiantes.', $table_id = 0, $menu_id = 28, $user_id = Auth::id(), $kind_acction = 1);
+
+
         $users_active=User::all()->where('status','=','2')->where('role_id','=','3');
         $users_active_number=User::all()->where('status','=','2')->where('role_id','=','3')->count();
-      
 
-       
-       
+
+
+
         $variables=[
             'menu'=>'alumnos_all',
             'title_page'=>'Estudiantes',
             'users_actives'=>$users_active,
             'users_active_number'=> $users_active_number,
-         
+
 
 
 
@@ -62,23 +61,26 @@ class StudentController extends Controller
      */
     public function create()
     {
-        if(Role::checkAccesToThisFunctionality(Auth::user()->role_id,12)==null)
-        {
-            $variables=[
-                'menu'=>'',
-                'title_page'=>'Acceso denegado',
+        $role = New Role();
+        $log = new Logbook();
 
+        if ($role->checkAccesToThisFunctionality(Auth::user()->role_id,12) == null) {
+
+            $variables = [
+                'menu' => '',
+                'title_page' => 'Acceso denegado',
 
             ];
-            return view('errors.notaccess')->with($variables);
 
+            return view('errors.notaccess')->with($variables);
         }
 
-        Logbook::activity_done($description='Accedió a la vista para crear un estudiante.',$table_id=0,$menu_id=12,$user_id=Auth::id(),$kind_acction=1);
-        
-        
+        $log->activity_done($description = 'Accedió al módulo de Estudiantes.',$table_id = 0, $menu_id = 12, $user_id = Auth::id(), $kind_acction = 1);
+
         $rol_available=Role::all()->where('status','=','2');
+
         $carrers_available=Carrer::all()->where('status','=','2');
+        
         $variables=[
             'menu'=>'alumnos_all',
             'title_page'=>'Estudiantes',
@@ -127,7 +129,7 @@ class StudentController extends Controller
         else
         {
             return  back()->withErrors('No se ha registrado el usuario...');
- 
+
         }
     }
 
@@ -175,7 +177,7 @@ class StudentController extends Controller
         if ($user->save()) {
 
             Logbook::activity_done($description='Actualizó la información del estudiante ' . $user->name . 'correctamente',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=3);
-            
+
             return back()->with('success','Se ha actualizado el curso exitosamente...');
 
         }
@@ -208,9 +210,9 @@ class StudentController extends Controller
         }
 
         Logbook::activity_done($description='Accedió a la vista  para Actualizar la información del estudiante.',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=1);
-       
-       
-       
+
+
+
         $current_user=User::findOrFail($user_id);
         $rol_available=Role::all()->where('status','=','2');
         $carrers_available=Carrer::all()->where('status','=','2');

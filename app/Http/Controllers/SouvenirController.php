@@ -15,19 +15,18 @@ class SouvenirController extends Controller
 {
   public function index()
   {
-    if (Role::checkAccesToThisFunctionality(Auth::user()->role_id, 19) == null) {
-      $variables = [ 
+    $role = New Role();
+    $log = new Logbook();
 
-        
+    if ($role->checkAccesToThisFunctionality(Auth::user()->role_id, 31) == null) {
+      $variables = [
         'menu' => '',
         'title_page' => 'Acceso denegado',
-
-
       ];
       return view('errors.notaccess')->with($variables);
     }
-    Logbook::activity_done($description = 'Accedió al módulo de consulta de Souvenirs.', $table_id = 0, $menu_id = 19, $user_id = Auth::id(), $kind_acction = 1);
 
+    $log->activity_done($description = 'Accedió al módulo de Souvenirs.', $table_id = 0, $menu_id = 19, $user_id = Auth::id(), $kind_acction = 1);
     $souvenirs_active = Souvenir::all()->where('status', '=', '2');
     $souvenirs_active_number = Souvenir::all()->where('status', '=', '2')->count();
 
@@ -99,7 +98,20 @@ class SouvenirController extends Controller
 
   public function create()
   {
-    if (Role::checkAccesToThisFunctionality(Auth::user()->role_id, 22) == null) {
+
+    $role = New Role();
+    $log = new Logbook();
+
+    if ($role->checkAccesToThisFunctionality(Auth::user()->role_id, 31) == null) {
+      $variables = [
+        'menu' => '',
+        'title_page' => 'Acceso denegado',
+      ];
+      return view('errors.notaccess')->with($variables);
+    }
+
+
+    if ($role->checkAccesToThisFunctionality(Auth::user()->role_id, 22) == null) {
       $variables = [
         'menu' => '',
         'title_page' => 'Acceso denegado',
@@ -109,8 +121,7 @@ class SouvenirController extends Controller
       return view('errors.notaccess')->with($variables);
     }
 
-    Logbook::activity_done($description = 'Accedió al módulo de Crear Curso.', $table_id = 0, $menu_id = 22, $user_id = Auth::id(), $kind_acction = 1);
-
+    $log->activity_done($description = 'Accedió al módulo de Crear Souvenir.', $table_id = 0, $menu_id = 22, $user_id = Auth::id(), $kind_acction = 1);
 
     $souvenir_available = Souvenir::all()->where('status', '=', '2');
     $variables = [
@@ -147,7 +158,7 @@ class SouvenirController extends Controller
 
 
     if ($souvenir->save()) {
-      
+
       Logbook::activity_done($description = 'Creo el souvenir ' . $souvenir->name . 'correctamente', $table_id = 0, $menu_id = 22, $user_id = Auth::id(), $kind_acction = 6);
       return back()->with('success', 'Se ha registrado el souvenir exitosamente...');
     } else {
