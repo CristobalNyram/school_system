@@ -60,7 +60,7 @@
             
     </header>
 
-    <div class="jk"></div>
+    <div class="jk" style="background-image: url(https://www.40defiebre.com/wp-content/uploads/2015/10/imagenes.png);" ></div>
     
     <form  method="post">
 
