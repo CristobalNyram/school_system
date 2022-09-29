@@ -42,7 +42,7 @@ class HomeController extends Controller
     {
         $variables=[
             'menu'=>'dashboard',
-            'title_page'=>'dashboard',
+            'title_page'=>'dashsboard',
 
 
         ];

@@ -65,7 +65,7 @@
                     <div class=" dropdown-header noti-title">
                         <h6 class="text-overflow m-0">¡Bienvenid@ {{   auth()->user()->name }} !</h6>
                     </div>
-                    @if ( check_acces_to_this_permission(Auth::user()->role_id,2))
+                    @if ( check_acces_to_this_permission(Auth::user()->role_id,36))
 
                     <a href="{{ route('profile.edit') }}" class="dropdown-item">
                         <i class="ni ni-single-02 text-primary"></i>
