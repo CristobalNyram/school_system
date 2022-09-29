@@ -6,9 +6,10 @@
 
     <div class="container-fluid mt--6">
         <div class="row d-flex mb-3 mr-5 justify-content-end">
+            @if ( check_acces_to_this_permission(Auth::user()->role_id,26))
 
             <a href="{{ route('student_create') }}" type="button" class="btn btn-info">Agregar</a>
-
+            @endif
 
       </div>
 
@@ -106,20 +107,23 @@
                         </th>
 
                         <td class="text-cener">
-                            <div class="dropdown">
-                              <a class="btn btn-sm btn-icon-only text-danger" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-ellipsis-v"></i>
-                              </a>
-                              <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                <a class="dropdown-item"  href="{{ route('student_update',$user->id)}}" >Actualizar información</a>
-                                <a class="dropdown-item" href="{{ route('password_update',$user->id)}}">Actualizar contraseña</a>
-                                <form action="{{ route('student_delete',$user->id)}}" class="input-group form-eliminar" method="post" >
-                                  @csrf
+                            @if ( check_acces_to_this_permission(Auth::user()->role_id,26))
 
-                                <input class="dropdown-item text-danger" type="submit" data-toggle="modal" data-target="#modal-notification" value="Eliminar" ></input>
-                                </form>
-                              </div>
-                            </div>
+                                    <div class="dropdown">
+                                    <a class="btn btn-sm btn-icon-only text-danger" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                        <a class="dropdown-item"  href="{{ route('student_update',$user->id)}}" >Actualizar información</a>
+                                        <a class="dropdown-item" href="{{ route('password_update',$user->id)}}">Actualizar contraseña</a>
+                                        <form action="{{ route('student_delete',$user->id)}}" class="input-group form-eliminar" method="post" >
+                                        @csrf
+
+                                        <input class="dropdown-item text-danger" type="submit" data-toggle="modal" data-target="#modal-notification" value="Eliminar" ></input>
+                                        </form>
+                                    </div>
+                                    </div>
+                            @endif
                         </td>
 
 

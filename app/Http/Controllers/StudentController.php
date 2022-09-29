@@ -249,7 +249,7 @@ class StudentController extends Controller
 
         if($user->save()){
 
-            Logbook::activity_done($description='Borro el registro del estidiante' . $user->name . 'correctamente',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=3);
+            $log->activity_done($description='Borro el registro del estidiante' . $user->name . 'correctamente',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=3);
 
             return back()->with('success','Se ha eliminado el curso exitosamente...')->with('eliminar', 'ok');
         } else {

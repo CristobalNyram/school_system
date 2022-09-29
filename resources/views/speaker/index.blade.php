@@ -6,9 +6,10 @@
 
     <div class="container-fluid mt--6">
         <div class="row d-flex mb-3 mr-5 justify-content-end">
+            @if ( check_acces_to_this_permission(Auth::user()->role_id,18))
 
             <a href="{{ route('speaker_create') }}" type="button" class="btn btn-info">Agregar</a>
-
+            @endif
 
       </div>
 
@@ -81,14 +82,18 @@
                                 <i class="fas fa-ellipsis-v"></i>
                               </a>
                               <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                <a class="dropdown-item"  href="{{ route('speaker_update',$user->id)}}" > <i class="fas fa-edit"></i>Actualizar información</a>
-                                <a class="dropdown-item" href="{{ route('password_update',$user->id)}}"> <i class="fas fa-edit"></i> Actualizar contraseña</a>
+                                @if ( check_acces_to_this_permission(Auth::user()->role_id,16))
 
-                                <form action="{{ route('speaker_delete',$user->id)}}" class="input-group form-eliminar" method="post">
-                                  @csrf
+                                        <a class="dropdown-item"  href="{{ route('speaker_update',$user->id)}}" > <i class="fas fa-edit"></i>Actualizar información</a>
+                                        <a class="dropdown-item" href="{{ route('password_update',$user->id)}}"> <i class="fas fa-edit"></i> Actualizar contraseña</a>
 
-                                <input class="dropdown-item text-danger" type="submit" data-toggle="modal" data-target="#modal-notification" value="Eliminar"></input>
-                                </form>
+                                        <form action="{{ route('speaker_delete',$user->id)}}" class="input-group form-eliminar" method="post">
+                                        @csrf
+
+                                        <input class="dropdown-item text-danger" type="submit" data-toggle="modal" data-target="#modal-notification" value="Eliminar"></input>
+                                        </form>
+                                @endif
+
                               </div>
                             </div>
                         </td>

@@ -6,9 +6,10 @@
 
 <div class="container-fluid mt--6">
   <div class="row d-flex mb-3 mr-5 justify-content-end">
+    @if ( check_acces_to_this_permission(Auth::user()->role_id,33))
 
     <a href="{{ route('package_create') }}" type="button" class="btn btn-info">Agregar</a>
-
+    @endif
 
   </div>
 
@@ -86,6 +87,8 @@
                 </th>
 
                 <td class="text-cener">
+                    @if ( check_acces_to_this_permission(Auth::user()->role_id,33))
+
                   <div class="dropdown">
                     <a class="btn btn-sm btn-icon-only text-danger" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <i class="fas fa-ellipsis-v"></i>
@@ -99,6 +102,7 @@
                       </form>
                     </div>
                   </div>
+                  @endif
                 </td>
 
 
@@ -178,7 +182,7 @@
     confirmButtonText: 'Sí. ¡Deseo eliminarlo!'
  }).then((result) => {
    if (result.isConfirmed) {
-        
+
     this.submit();
   }
 })

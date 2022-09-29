@@ -254,7 +254,7 @@
                 @endif
                 @if ( check_acces_to_this_permission(Auth::user()->role_id,6))
                 <li class="nav-item">
-                    <a class="nav-link @if($menu === 'setting_all') active @endif " href="{{ route('setting_index') }}">
+                    <a class="nav-link @if($menu === 'setting_all') custom-active text-white @endif " href="{{ route('setting_index') }}">
                         <i class="ni ni-books text-primary"></i>Configuración
                     </a>
                 </li>
