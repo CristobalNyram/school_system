@@ -80,7 +80,7 @@ class StudentController extends Controller
         $rol_available=Role::all()->where('status','=','2');
 
         $carrers_available=Carrer::all()->where('status','=','2');
-        
+
         $variables=[
             'menu'=>'alumnos_all',
             'title_page'=>'Estudiantes',
@@ -123,7 +123,8 @@ class StudentController extends Controller
         }
 
         if ($user->save()) {
-            Logbook::activity_done($description='Se registro al estudiante'. $user->name. 'correctamente' ,$table_id=0,$menu_id=12,$user_id=Auth::id(),$kind_acction=6);
+            $log=new Logbook();
+            $log->activity_done($description='Se registro al estudiante'. $user->name. 'correctamente' ,$table_id=0,$menu_id=12,$user_id=Auth::id(),$kind_acction=6);
             return back()->with('success','Se ha registrado el usuario exitosamente...');
         }
         else
@@ -175,8 +176,8 @@ class StudentController extends Controller
         }
 
         if ($user->save()) {
-
-            Logbook::activity_done($description='Actualizó la información del estudiante ' . $user->name . 'correctamente',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=3);
+            $log=new Logbook();
+            $log->activity_done($description='Actualizó la información del estudiante ' . $user->name . 'correctamente',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=3);
 
             return back()->with('success','Se ha actualizado el curso exitosamente...');
 
@@ -197,7 +198,9 @@ class StudentController extends Controller
      */
     public function update($user_id)
     {
-        if(Role::checkAccesToThisFunctionality(Auth::user()->role_id,10)==null)
+        $role = New Role();
+        $log=new Logbook();
+        if($role->checkAccesToThisFunctionality(Auth::user()->role_id,10)==null)
         {
             $variables=[
                 'menu'=>'',
@@ -209,7 +212,7 @@ class StudentController extends Controller
 
         }
 
-        Logbook::activity_done($description='Accedió a la vista  para Actualizar la información del estudiante.',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=1);
+        $log->activity_done($description='Accedió a la vista  para Actualizar la información del estudiante.',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=1);
 
 
 
@@ -239,6 +242,8 @@ class StudentController extends Controller
      */
     public function delete($user_id)
     {
+        $role = New Role();
+        $log=new Logbook();
         $user = User::findOrFail($user_id);
         $user->status=-2;
 

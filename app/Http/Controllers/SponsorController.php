@@ -91,7 +91,8 @@ class SponsorController extends Controller
       }
 
         if ($sponsor->save()) {
-            Logbook::activity_done($description = 'Creó el patrocinador ' . $sponsor->name . 'correctamente', $table_id = 0, $menu_id = 30, $user_id = Auth::id(), $kind_acction = 6);
+            $log=new Logbook();
+            $log->activity_done($description = 'Creó el patrocinador ' . $sponsor->name . 'correctamente', $table_id = 0, $menu_id = 30, $user_id = Auth::id(), $kind_acction = 6);
             return back()->with('success','Se ha registrado el patrocinador exitosamente...');
 
         }

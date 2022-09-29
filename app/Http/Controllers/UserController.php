@@ -112,7 +112,9 @@ class UserController extends Controller
 
     public function update($user_id)
     {
-        if(Role::checkAccesToThisFunctionality(Auth::user()->role_id,4)==null)
+        $role = New Role();
+        $log=new Logbook();
+        if($role->checkAccesToThisFunctionality(Auth::user()->role_id,4)==null)
         {
             $variables=[
                 'menu'=>'',

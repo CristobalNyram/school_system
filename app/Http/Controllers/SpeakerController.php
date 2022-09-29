@@ -95,7 +95,8 @@ class SpeakerController extends Controller
             $user->speaker_cv = $destiantionPath . $filename;
             }
         if ($user->save()) {
-            Logbook::activity_done($description='Agregó el conferencista'. $user->name. ' exitosamente.' ,$table_id=0,$menu_id=16,$user_id=Auth::id(),$kind_acction=6);
+            $log=new Logbook();
+            $log->activity_done($description='Agregó el conferencista'. $user->name. ' exitosamente.' ,$table_id=0,$menu_id=16,$user_id=Auth::id(),$kind_acction=6);
 
             return back()->with('success','Se ha registrado el usuario exitosamente...');
         }
@@ -127,8 +128,8 @@ class SpeakerController extends Controller
         }
 
         if ($user->save()) {
-
-            Logbook::activity_done($description='Actualizo la informacion del conferencista ' . $user->title . 'correctamente',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=3);
+            $log=new Logbook();
+            $log->activity_done($description='Actualizo la informacion del conferencista ' . $user->title . 'correctamente',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=3);
 
             return back()->with('success','Se ha actualizado el conferencista exitosamente...');
 
@@ -142,7 +143,9 @@ class SpeakerController extends Controller
 
     public function update($user_id)
     {
-        if(Role::checkAccesToThisFunctionality(Auth::user()->role_id,10)==null)
+        $role = New Role();
+        $log=new Logbook();
+        if($role->checkAccesToThisFunctionality(Auth::user()->role_id,10)==null)
         {
             $variables=[
                 'menu'=>'',
@@ -154,7 +157,7 @@ class SpeakerController extends Controller
 
         }
 
-        Logbook::activity_done($description='Accedió a la vista   para actualizar la información de un conferencista.',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=1);
+        $log->activity_done($description='Accedió a la vista   para actualizar la información de un conferencista.',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=1);
 
         $current_user=User::findOrFail($user_id);
         $rol_available=Role::all()->where('status','=','2');
@@ -178,7 +181,8 @@ class SpeakerController extends Controller
         $user->status=-2;
 
         if($user->save()){
-            Logbook::activity_done($description='Borro al  conferencista ' . $user->title . 'correctamente',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=3);
+            $log=new Logbook();
+            $log->activity_done($description='Borro al  conferencista ' . $user->title . 'correctamente',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=3);
 
             return back()->with('success','Se ha eliminado el curso exitosamente...')->with('eliminar', 'ok');
         } else {

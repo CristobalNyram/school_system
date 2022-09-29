@@ -204,7 +204,8 @@ class RoleController extends Controller
             }
             else
             {
-                $relrolmenu=Relrolmenu::find($key);
+                $relrolmenuObj=new Relrolmenu();
+                $relrolmenu=$relrolmenuObj->find($key);
                 $relrolmenu->status=2;
 
                 if(!$relrolmenu->save())
