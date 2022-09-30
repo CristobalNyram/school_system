@@ -36,7 +36,7 @@ class StudentController extends Controller
 
 
         $users_active=User::all()->where('status','=','2')->where('role_id','=','3');
-        $users_active_number=User::all()->where('status','=','2')->where('role_id','=','3')->count();
+        $users_active_number=User::all()->where('status','=','2')->where('role_id','=','4')->count();
 
 
 
