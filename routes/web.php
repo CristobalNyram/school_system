@@ -16,6 +16,7 @@ use App\Http\Controllers\SpeakerController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\HomeWebController;
+use App\Http\Controllers\ExampleController;
 
 
 /*
@@ -39,6 +40,7 @@ Route::prefix('web')->group(function () {
     Route::get('/home_page/conference',[HomeWebController::class, 'conference'])->name('home_page_conference');
     Route::get('/home_page/souvenir',[HomeWebController::class, 'souvenir'])->name('home_page_souvenir');
     Route::get('/home_page/login',[HomeWebController::class, 'login'])->name('home_page_login');
+
 
 });
 Auth::routes();
@@ -77,6 +79,11 @@ Route::group(['middleware' => 'auth'], function () {
 
 
          // student end--------------------------------------------
+
+         // Example start------------------------------------------
+         Route::get('/example',[ExampleController::class,"index"])->name('example_index');
+
+         //Example end---------------------------------------------
 
          // password start-------------------------------------------
          Route::get('/password/update/{user_id}',[PasswordController::class,"update"])->name('password_update');
