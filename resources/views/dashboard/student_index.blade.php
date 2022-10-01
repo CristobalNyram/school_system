@@ -1,56 +1,55 @@
-<div class="container-fluid mt--7">
-    <div class="row">
-        <div class="col-xl-8 mb-5 mb-xl-0">
-            <div class="card bg-gradient-default shadow">
-                <div class="card-header bg-transparent">
-                    <div class="row align-items-center">
-                        <div class="col">
-                            <h6 class="text-uppercase text-light ls-1 mb-1">Overview</h6>
-                            <h2 class="text-white mb-0">Sales value</h2>
-                        </div>
-                        <div class="col">
-                            <ul class="nav nav-pills justify-content-end">
-                                <li class="nav-item mr-2 mr-md-0" data-toggle="chart" data-target="#chart-sales" data-update='{"data":{"datasets":[{"data":[0, 20, 10, 30, 15, 40, 20, 60, 60]}]}}' data-prefix="$" data-suffix="k">
-                                    <a href="#" class="nav-link py-2 px-3 active" data-toggle="tab">
-                                        <span class="d-none d-md-block">Month</span>
-                                        <span class="d-md-none">M</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item" data-toggle="chart" data-target="#chart-sales" data-update='{"data":{"datasets":[{"data":[0, 20, 5, 25, 10, 30, 15, 40, 40]}]}}' data-prefix="$" data-suffix="k">
-                                    <a href="#" class="nav-link py-2 px-3" data-toggle="tab">
-                                        <span class="d-none d-md-block">Week</span>
-                                        <span class="d-md-none">W</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <!-- Chart -->
-                    <div class="chart">
-                        <!-- Chart wrapper -->
-                        <canvas id="chart-sales" class="chart-canvas"></canvas>
+<div class="row mt-5 ml-2 mr-2">
+    <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0  mb-5">
+        <div class="card card-profile shadow mb-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-3 order-lg-2">
+                    <div class="card-profile-image">
+                        <a href="#">
+                            <img src="{{ asset('argon') }}/img/theme/team-4-800x800.jpg" class="rounded-circle">
+                        </a>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-xl-4">
-            <div class="card shadow">
-                <div class="card-header bg-transparent">
-                    <div class="row align-items-center">
-                        <div class="col">
-                            <h6 class="text-uppercase text-muted ls-1 mb-1">Performance</h6>
-                            <h2 class="mb-0">Total orders</h2>
+            <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
+                <div class="d-flex justify-content-between">
+                    {{-- <a href="#" class="btn btn-sm btn-info mr-4">{{ __('Connect') }}</a>
+                    <a href="#" class="btn btn-sm btn-default float-right">{{ __('Message') }}</a> --}}
+                </div>
+            </div>
+            <div class="card-body pt-0 pt-md-4">
+                <div class="row">
+                    <div class="col">
+                        <div class="card-profile-stats d-flex justify-content-center mt-md-5">
+
+
+                            <div>
+                                <span class="heading">Nombre de curso</span>
+                                <span class="description">{{ __('') }}</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="card-body">
-                    <!-- Chart -->
-                    <div class="chart">
-                        <canvas id="chart-orders" class="chart-canvas"></canvas>
+                <div class="text-center">
+                    <h3>
+                        {{ auth()->user()->name }}  {{ auth()->user()->first_surname }}
+                    </h3>
+
+                    <div class="h5 mt-4">
+                        <i class="ni business_briefcase-24 mr-2"></i>{{ __('ESTADO') }}
                     </div>
+                    <div>
+                        <i class="ni education_hat mr-2"></i>{{ __('Capacidad de 10 personas') }}
+                    </div>
+                    <hr class="my-4" />
+                    <p>{{ __('Descripción.') }}</p>
+                    <a href="#">{{ __('Inscribirme') }}</a>
                 </div>
             </div>
         </div>
     </div>
+
+
+
+
+
+</div>
