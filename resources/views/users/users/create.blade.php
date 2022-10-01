@@ -57,8 +57,21 @@
 
 
 
-                            <label for="name">Rol</label>
                             <div class="form-group">
+                                <label for="name">Rol</label>
+
+                                <select class="form-control form-control-lg  single-select-2  " data-toggle="select2" id="rol_id" name="rol_id" >
+                                    <option value="-1" selected>Seleccionar</option>
+                                    @foreach ($rol_available as $rol )
+                                    <option value="{{ $rol->id }}" selected>{{ $rol->name }}</option>
+
+                                    @endforeach
+
+
+
+                                  </select>
+                            </div>
+                            {{-- <div class="form-group">
                                 <div class="select" id="select">
                                     <div class="contenido-select">
 
@@ -71,7 +84,7 @@
                                     @foreach ($rol_available as $rol )
                                     <a href="#" class="opcion">
                                         <div class="contenido-opcion">
-                                            {{-- <img src="" alt="image_rol"> --}}
+                                            <img src="" alt="image_rol">
                                             <div class="textos">
                                                 <h1 class="titulo">{{ $rol->name }}</h1>
                                                 <p class="descripcion">{{ $rol->name }}</p>
@@ -80,7 +93,9 @@
                                     </a>
                                     @endforeach
                                 </div>
-                            </div>
+
+
+                            </div> --}}
                             <input type="hidden" name="pais" id="inputSelect" value="">
 
 

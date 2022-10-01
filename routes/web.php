@@ -35,11 +35,11 @@ Route::get('/', function () {
 
 Route::prefix('web')->group(function () {
     Route::get('/',[HomeWebController::class, 'index'])->name('home_page_index');
-    Route::get('/home_page/sponsor',[HomeWebController::class, 'sponsor'])->name('home_page_sponsor');
-    Route::get('/home_page/course',[HomeWebController::class, 'course'])->name('home_page_course');
-    Route::get('/home_page/conference',[HomeWebController::class, 'conference'])->name('home_page_conference');
-    Route::get('/home_page/souvenir',[HomeWebController::class, 'souvenir'])->name('home_page_souvenir');
-    Route::get('/home_page/login',[HomeWebController::class, 'login'])->name('home_page_login');
+    Route::get('/sponsor',[HomeWebController::class, 'sponsor'])->name('home_page_sponsor');
+    Route::get('/course',[HomeWebController::class, 'course'])->name('home_page_course');
+    Route::get('/conference',[HomeWebController::class, 'conference'])->name('home_page_conference');
+    Route::get('/souvenir',[HomeWebController::class, 'souvenir'])->name('home_page_souvenir');
+    Route::get('/login',[HomeWebController::class, 'login'])->name('home_page_login');
 
 
 });

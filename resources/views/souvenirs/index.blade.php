@@ -7,10 +7,11 @@
 
     <div class="container-fluid mt--6">
         <div class="row d-flex mb-3 mr-5 justify-content-end">
+            @if ( check_acces_to_this_permission(Auth::user()->role_id,22))
 
             <a href="{{ route('souvenir_create') }}" type="button" class="btn btn-info">Agregar</a>
 
-
+            @endif
       </div>
 
         <div class="row">
@@ -100,7 +101,7 @@
                                 </button>
                               </div>
                               <div class="modal-body">
-                                
+
                                 <div class="media align-items-center">
                                   <div class="media-body">
                                   <span class="name mb-0 text-sm"><img id="modal_watch_image_course" alt="{{$souvenir->name}}" class="img-fluid img-thumbnail" width ="100%" > </span>
@@ -113,23 +114,27 @@
                         </div>
 
                         <td class="text-cener">
-                            <div class="dropdown">
-                              <a class="btn btn-sm btn-icon-only text-danger" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-ellipsis-v"></i>
-                              </a>
-                              <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                            @if ( check_acces_to_this_permission(Auth::user()->role_id,22))
 
-                              <a class="dropdown-item" href="{{route('souvenir_update',$souvenir->id)}}"> <i class="fas fa-edit"></i>Actualizar información</a>
-                              <form action="{{route('souvenir_delete',$souvenir->id)}}" class="input-group form-eliminar" method="POST">
-                               @csrf
+                                    <div class="dropdown">
+                                    <a class="btn btn-sm btn-icon-only text-danger" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
 
-                               <!-- <a type="submit" class="dropdown-item" data-toggle="modal" data-target="#modal-notification" value="Eliminar"  href="{{route('souvenir_delete',$souvenir->id)}}"> <i class="fas fa-trash" ></i>Eliminar</a> -->
-                              
-                                <input type="submit" class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-notification" value="Eliminar" ></input>
-                                
-                              </form>
-                              </div>
-                            </div>
+                                    <a class="dropdown-item" href="{{route('souvenir_update',$souvenir->id)}}"> <i class="fas fa-edit"></i>Actualizar información</a>
+                                    <form action="{{route('souvenir_delete',$souvenir->id)}}" class="input-group form-eliminar" method="POST">
+                                    @csrf
+
+                                    <!-- <a type="submit" class="dropdown-item" data-toggle="modal" data-target="#modal-notification" value="Eliminar"  href="{{route('souvenir_delete',$souvenir->id)}}"> <i class="fas fa-trash" ></i>Eliminar</a> -->
+
+                                        <input type="submit" class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-notification" value="Eliminar" ></input>
+
+                                    </form>
+                                    </div>
+                                    </div>
+
+                                    @endif
                          </td>
 
 
@@ -235,7 +240,7 @@ $(document).ready(function() {
     confirmButtonText: 'Sí. ¡Deseo eliminarlo!'
  }).then((result) => {
    if (result.isConfirmed) {
-        
+
     this.submit();
   }
 })

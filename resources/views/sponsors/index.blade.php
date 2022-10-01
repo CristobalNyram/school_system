@@ -6,9 +6,10 @@
 
     <div class="container-fluid mt--6">
         <div class="row d-flex mb-3 mr-5 justify-content-end">
+            @if ( check_acces_to_this_permission(Auth::user()->role_id,30))
 
             <a href="{{ route('sponsor_create') }}" type="button" class="btn btn-info">Agregar</a>
-
+            @endif
 
       </div>
 
@@ -101,19 +102,22 @@
                         </div>
 
                         <td class="text-cener">
-                            <div class="dropdown">
-                            <a class="btn btn-sm btn-icon-only text-danger" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                           <i class="fas fa-ellipsis-v"></i>
-                            </a>
-                           <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                            @if ( check_acces_to_this_permission(Auth::user()->role_id,30))
 
-                            <a class="dropdown-item" href="{{route('sponsor_update',$sponsor->id)}}"> <i class="fas fa-edit"></i> Actualizar información </a>
-                           <form action="{{route('sponsor_delete',$sponsor->id)}}" class="input-group form-eliminar" method="POST">
-                           @csrf
-                             <input type="submit" class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-notification" value="Eliminar" ></input>
-                           </form>
-                            </div>
-                            </div>
+                                    <div class="dropdown">
+                                    <a class="btn btn-sm btn-icon-only text-danger" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-ellipsis-v"></i>
+                                    </a>
+                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+
+                                    <a class="dropdown-item" href="{{route('sponsor_update',$sponsor->id)}}"> <i class="fas fa-edit"></i> Actualizar información </a>
+                                <form action="{{route('sponsor_delete',$sponsor->id)}}" class="input-group form-eliminar" method="POST">
+                                @csrf
+                                    <input type="submit" class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-notification" value="Eliminar" ></input>
+                                </form>
+                                    </div>
+                                    </div>
+                            @endif
                          </td>
 
 

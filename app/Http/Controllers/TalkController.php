@@ -18,26 +18,25 @@ class TalkController extends Controller
      */
     public function index()
     {
-        if(Role::checkAccesToThisFunctionality(Auth::user()->role_id,10)==null)
-        {
-            $variables=[
-                'menu'=>'',
-                'title_page'=>'Acceso denegado',
+        $role = New Role();
+        $log = new Logbook();
 
-
+        if ($role->checkAccesToThisFunctionality(Auth::user()->role_id, 30) == null) {
+            $variables = [
+                'menu' => '',
+                'title_page' => 'Acceso denegado',
             ];
             return view('errors.notaccess')->with($variables);
-
         }
 
-        Logbook::activity_done($description='Accedió a la vista de conferencias.',$table_id=0,$menu_id=15,$user_id=Auth::id(),$kind_acction=1);
-       
-       
+        $log->activity_done($description = 'Accedió al módulo de Charlas.', $table_id = 0, $menu_id = 30, $user_id = Auth::id(), $kind_acction = 1);
+
+
         $talks_active=Talk::all()->where('status','=','2');
         $talks_active_number=Talk::all()->where('status','=','2')->count();
-        
-       
-       
+
+
+
         $variables=[
             'menu'=>'talks_all',
             'title_page'=>'Conferencias',
@@ -47,7 +46,7 @@ class TalkController extends Controller
 
 
         ];
-       
+
         return view('talk.index')->with($variables);
     }
 
@@ -58,24 +57,21 @@ class TalkController extends Controller
      */
     public function create()
     {
-       
-        if(Role::checkAccesToThisFunctionality(Auth::user()->role_id,12)==null)
-        {
-            $variables=[
-                'menu'=>'',
-                'title_page'=>'Acceso denegado',
+        $role = New Role();
+        $log = new Logbook();
 
-
+        if ($role->checkAccesToThisFunctionality(Auth::user()->role_id, 30) == null) {
+            $variables = [
+                'menu' => '',
+                'title_page' => 'Acceso denegado',
             ];
             return view('errors.notaccess')->with($variables);
-
         }
 
-        Logbook::activity_done($description='Accedió a la vista para Crear una conferencia.',$table_id=0,$menu_id=16,$user_id=Auth::id(),$kind_acction=1);
-       
-       
-       
-       
+        $log->activity_done($description = 'Accedió al módulo de Charlas.', $table_id = 0, $menu_id = 30, $user_id = Auth::id(), $kind_acction = 1);
+
+
+
         $rol_available=Role::all()->where('status','=','2');
         $users_speakers=User::all()->where('status', '=', '2')->where('role_id','=','6');
         $variables=[
@@ -86,7 +82,7 @@ class TalkController extends Controller
 
 
         ];
-      
+
         return view('talk.create')->with($variables);
     }
 
@@ -115,8 +111,8 @@ class TalkController extends Controller
     }
 
     if ($talk->save()) {
-
-        Logbook::activity_done($description='Registró la conferencia'. $talk->title. ' exitosamente.' ,$table_id=0,$menu_id=16,$user_id=Auth::id(),$kind_acction=6);
+        $log=new Logbook();
+        $log->activity_done($description='Registró la conferencia'. $talk->title. ' exitosamente.' ,$table_id=0,$menu_id=16,$user_id=Auth::id(),$kind_acction=6);
 
         return back()->with('success','Se ha registrado la conferencia exitosamente...');
 
@@ -164,9 +160,9 @@ class TalkController extends Controller
         }
 
         if ($talk->save()) {
+            $log=new Logbook();
+            $log->activity_done($description='Actualizó la información de una conferencia ' . $talk->name . ' correctamente',$table_id=0,$menu_id=16,$user_id=Auth::id(),$kind_acction=3);
 
-            Logbook::activity_done($description='Actualizó la información de una conferencia ' . $talk->name . ' correctamente',$table_id=0,$menu_id=16,$user_id=Auth::id(),$kind_acction=3);
-            
             return back()->with('success','Se ha actualizado la conferencia exitosamente...');
 
         }
@@ -186,7 +182,9 @@ class TalkController extends Controller
      */
     public function update($talk_id)
     {
-        if(Role::checkAccesToThisFunctionality(Auth::user()->role_id,10)==null)
+        $role = New Role();
+        $log=new Logbook();
+        if($role->checkAccesToThisFunctionality(Auth::user()->role_id,10)==null)
         {
             $variables=[
                 'menu'=>'',
@@ -198,9 +196,9 @@ class TalkController extends Controller
 
         }
 
-        Logbook::activity_done($description='Accedió a la vista para Actualizar la información de una conferencia.',$table_id=0,$menu_id=16,$user_id=Auth::id(),$kind_acction=1);
+        $log->activity_done($description='Accedió a la vista para Actualizar la información de una conferencia.',$table_id=0,$menu_id=16,$user_id=Auth::id(),$kind_acction=1);
 
-    
+
 
         $current_talk=Talk::findOrFail($talk_id);
         $rol_available=Role::all()->where('status','=','2');
@@ -231,7 +229,8 @@ class TalkController extends Controller
         $talk->status=-2;
 
         if($talk->save()){
-            Logbook::activity_done($description= 'Eliminó el registro de la conferenicia' . $talk->name . 'correctamente',$table_id=0,$menu_id=16,$user_id=Auth::id(),$kind_acction=4);
+            $log=new Logbook();
+            $log->activity_done($description= 'Eliminó el registro de la conferenicia' . $talk->name . 'correctamente',$table_id=0,$menu_id=16,$user_id=Auth::id(),$kind_acction=4);
             return back()->with('success','Se ha eliminado la conferencia exitosamente...')->with('eliminar', 'ok');
         } else {
             return back()->with('success','No se ha eliminado la conferencia exitosamente...');
