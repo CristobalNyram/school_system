@@ -14,9 +14,20 @@ class RallyController extends Controller
     //
     public function index()
     {
-        $rally = new Rally();
-        $rallys_active =  $rally->all()->where('status', '=', '2');
-        $rallys_active_number = $rally->all()->where('status', '=', '2')->count();
+
+        $role = new Role();
+        $log = new Logbook();
+
+        if ($role->checkAccesToThisFunctionality(Auth::user()->role_id, 31) == null) {
+            $variables = [
+                'menu' => '',
+                'title_page' => 'Acceso denegado',
+            ];
+            return view('errors.notaccess')->with($variables);
+        }
+        $log->activity_done($description = 'Accedió al módulo de Rallys', $table_id = 0, $menu_id = 19, $user_id = Auth::id(), $kind_acction = 1);
+        $rallys_active =  Rally::all()->where('status', '=', '2');
+        $rallys_active_number = Rally::all()->where('status', '=', '2')->count();
 
         $variables = [
             'menu' => 'rallys_all',
@@ -39,7 +50,7 @@ class RallyController extends Controller
 
         if ($request->hasFile('img')) {
             $file = $request->file('img');
-            $destiantionPath = 'argon/img/rally/';
+            $destiantionPath = 'public/argon/img/rally/';
             $filename = time() . '-' . $file->getClientOriginalName();
             $uploadSuccess = $request->file('img')->move($destiantionPath, $filename);
             $rallys->img = $destiantionPath . $filename;
@@ -47,11 +58,10 @@ class RallyController extends Controller
 
         if ($rallys->save()) {
             $log = new Logbook();
-
-            $log->activity_done($description = 'Actualizo el paquete ' . $rallys->name . ' correctamente', $table_id = 0, $menu_id = 33, $user_id = Auth::id(), $kind_acction = 3);
-            return back()->with('success', 'Se ha actualizado el paquete exitosamente...');
+            $log->activity_done($description = 'Actualizo el rally ' . $rallys->name . ' correctamente', $table_id = 0, $menu_id = 33, $user_id = Auth::id(), $kind_acction = 3);
+            return back()->with('success', 'Se ha actualizado el rally exitosamente...');
         } else {
-            return  back()->withErrors('No se ha actualizado el paquete...');
+            return  back()->withErrors('No se ha actualizado el rally...');
         }
     }
 
@@ -65,21 +75,15 @@ class RallyController extends Controller
 
     public function update($rally_id)
     {
-        $rol = new Role();
-
-        // if ($rol->checkAccesToThisFunctionality(Auth::user()->role_id, 33) == null) {
-        // $variables = [
-        // 'menu' => '',
-        // 'title_page' => 'Acceso denegado',
-        // ];
-        // return view('errors.notaccess')->with($variables);
-        // }
-        $log = new Logbook();
-
-        $log->activity_done($description = 'Accedió al módulo de Actualizar Rally.', $table_id = 0, $menu_id = 33, $user_id = Auth::id(), $kind_acction = 1);
-
+        if (Role::checkAccesToThisFunctionality(Auth::user()->role_id, 19) == null) {
+            $variables = [
+                'menu' => '',
+                'title_page' => 'Acceso denegado',
+            ];
+            return view('errors.notaccess')->with($variables);
+        }
+        Logbook::activity_done($description = 'Accedió al módulo de Actualizar Rally.', $table_id = 0, $menu_id = 22, $user_id = Auth::id(), $kind_acction = 1);
         $current_rally = Rally::findOrFail($rally_id);
-
         $variables = [
             'menu' => 'rally_all',
             'title_page' => 'Rallys',
@@ -92,17 +96,16 @@ class RallyController extends Controller
 
     public function create()
     {
-        // $rol = new Role();
-        // if ($rol->checkAccesToThisFunctionality(Auth::user()->role_id, 33) == null) {
-        // $variables = [
-        // 'menu' => '',
-        // 'title_page' => 'Acceso denegado',
-        // ];
-        // return view('errors.notaccess')->with($variables);
-        // }
+        $role = new Role();
         $log = new Logbook();
-        $log->activity_done($description = 'Accedió al módulo de Crear Rally', $table_id = 0, $menu_id = 33, $user_id = Auth::id(), $kind_acction = 1);
-
+        if ($role->checkAccesToThisFunctionality(Auth::user()->role_id, 31) == null) {
+            $variables = [
+                'menu' => '',
+                'title_page' => 'Acceso denegado',
+            ];
+            return view('errors.notaccess')->with($variables);
+        }
+        $log->activity_done($description = 'Accedió al módulo de Crear Rally.', $table_id = 0, $menu_id = 22, $user_id = Auth::id(), $kind_acction = 1);
 
         $rally_available = Rally::all()->where('status', '=', '2');
         $variables = [
@@ -117,28 +120,27 @@ class RallyController extends Controller
 
     public function store(Request $request)
     {
-        $rallys = new Rally();
-        $rallys->name = $request->name;
-        $rallys->description = $request->description;
-        $rallys->requirements = $request->requirements;
-        $rallys->price = $request->price;
-        $rallys->location = $request->location;
-        $rallys->img = $request->img;
+        $rally = new Rally();
+        $rally->name = $request->name;
+        $rally->description = $request->description;
+        $rally->requirements = $request->requirements;
+        $rally->price = $request->price;
+        $rally->location = $request->location;
+        $rally->img = $request->img;
 
         if ($request->hasFile('img')) {
             $file = $request->file('img');
-            $destiantionPath = 'public/argon/img/rally/';
+            $destiantionPath = 'argon/img/rally/';
             $filename = time() . '-' . $file->getClientOriginalName();
             $uploadSuccess = $request->file('img')->move($destiantionPath, $filename);
-            $rallys->img = $destiantionPath . $filename;
+            $rally->img = $destiantionPath . $filename;
         }
 
-        if ($rallys->save()) {
-            $log = new Logbook();
-            $log->activity_done($description = 'Creó el rally ' . $rallys->name . '.', $table_id = 0, $menu_id = 33, $user_id = Auth::id(), $kind_acction = 6);
-            return back()->with('success', 'Se ha registrado el rally exitosamente...');
+        if ($rally->save()) {
+            Logbook::activity_done($description = 'Creo el Rally ' . $rally->name . ' correctamente', $table_id = 0, $menu_id = 22, $user_id = Auth::id(), $kind_acction = 6);
+            return back()->with('success', 'Se ha registrado el Rally exitosamente...');
         } else {
-            return  back()->withErrors('No se ha registrado el paquete...');
+            return  back()->withErrors('No se ha registrado el Rally...');
         }
     }
 
@@ -153,12 +155,10 @@ class RallyController extends Controller
         $rally = Rally::findOrFail($rally_id);
         $rally->status = -2;
         if ($rally->save()) {
-
-            $log = new Logbook();
-            $log->activity_done($description = 'Eliminó el paquete ' . $rally->name . '.', $table_id = 0, $menu_id = 22, $user_id = Auth::id(), $kind_acction = 4);
-            return back()->with('success', 'Se ha borrado el paquete exitosamente...')->with('eliminar', 'ok');
+            Logbook::activity_done($description = 'Eliminó el Rally ' . $rally->name . ' correctamente', $table_id = 0, $menu_id = 22, $user_id = Auth::id(), $kind_acction = 4);
+            return back()->with('success', 'Se ha borrado el Rally exitosamente...')->with('eliminar', 'ok');
         } else {
-            return back()->with('success', 'No se ha borrado el paquete exitosamente...');
+            return back()->with('success', 'No se ha borrado el Rally exitosamente...');
         }
     }
 }

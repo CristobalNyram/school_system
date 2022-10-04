@@ -62,14 +62,12 @@
                                 </th>
 
                                 <th scope="row">
-                                    <button
-                                        onclick="set_image_modal('{{asset($rally->img_rally)}}' , '{{ $rally->name }}')"
+                                    <button onclick="set_image_modal('{{asset($rally->img)}}' , '{{ $rally->name}}')"
                                         class="btn" data-toggle="modal" data-target="#ventanaModal">
                                         <div class="media align-items-center">
                                             <div class="media-body">
-                                                <span class="name mb-0 text-sm"><a
-                                                        src="{{asset($rally->img_rally)}}"><img
-                                                            src="{{asset($rally->img_rally)}}" alt="{{$rally->name}}"
+                                                <span class="name mb-0 text-sm"><a src="{{asset($rally->img)}}"><img
+                                                            src="{{asset($rally->img)}}" alt="{{$rally->name}}"
                                                             class="img-fluid img-thumbnail" width="80px"> </a> </span>
                                             </div>
                                         </div>
@@ -211,11 +209,11 @@ $(document).ready(function() {
 
 <!-- Mostar modal de imagen -->
 <script>
-function set_image_modal(img_rally, name) {
+function set_image_modal(img, name) {
 
     let imagemodal = document.getElementById('modal_watch_image_rally');
     imagemodal.src = '';
-    imagemodal.src = img_rally;
+    imagemodal.src = img;
 
     let titlemodal = document.getElementById('titulo');
     titlemodal.innerText = '';
