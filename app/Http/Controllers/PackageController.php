@@ -16,7 +16,7 @@ class PackageController extends Controller
 {
     public function index()
     {
-        $rol =new Rol();
+        $rol =new Role();
     if ($rol->checkAccesToThisFunctionality(Auth::user()->role_id, 32) == null) {
       $variables = [
         'menu' => '',

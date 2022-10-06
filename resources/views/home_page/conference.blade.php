@@ -59,63 +59,21 @@
             
             
         </header>
-        
+@foreach($conference_active as $conference)      
 <section class="gal">
+    
     <a href="/HTML/Conferencias/Conferencias_1.html">
         <figure id="cur">
-            <img src="https://neetwork.com/wp-content/uploads/2018/07/como-dar-una-conferencia1.jpg">
+            <img src="{{asset($conference->url_img )}}">
             <div class="con">
-                <h3>Conferencia 1</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio expedita ex nobis numquam quis?
-                    Accusamus, facere id itaque nam inventore repellat a non ad provident, saepe omnis quod
-                    doloremque iure.</p>
-            </div>
-
-        </figure>
-    </a>
-
-    <a href="/HTML/Conferencias/Conferencias_2.html">
-
-        <figure>
-            <img src="https://news.sap.com/latinamerica/files/2022/07/18/DSC03775-1.jpg">
-        <div class="con">
-            <h3>Conferencia 2</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio expedita ex nobis numquam quis?
-                Accusamus, facere id itaque nam inventore repellat a non ad provident, saepe omnis quod doloremque
-                iure.</p>
-            </div>
-        </figure>
-    </a>
-
-
-    <a href="/HTML/Conferencias/Conferencias_3.html">
-
-        <figure>
-            <img src="https://projetosespeciais.com/wp-content/uploads/2018/11/conferencia.jpg">
-            <div class="con">
-                <h3>Conferencia 3</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio expedita ex nobis numquam quis?
-                    Accusamus, facere id itaque nam inventore repellat a non ad provident, saepe omnis quod doloremque
-                    iure.</p>
-                </div>
-            </figure>
-        </a>
-
-
-        <a href="/HTML/Conferencias/Conferencias_4.html">
-
-            <figure>
-                <img src="https://usercontent.one/wp/www.entornoestudiantil.com/wp-content/uploads/2020/12/roastbrief-oratoria-7-consejos-para-dar-conferencias-inolvidables.jpg">
-            <div class="con">
-            <h3>Conferencia 4</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio expedita ex nobis numquam quis?
-                Accusamus, facere id itaque nam inventore repellat a non ad provident, saepe omnis quod doloremque
-                iure.</p>
+                <h3>{{$conference->name}}</h3>
+                <p>{{$conference->description}}</p>
             </div>
         </figure>
     </a>
 
 </section>
+@endforeach
 <footer>
     <div class="container">
     <p>&copy; Copyright Software-Freedom Day 2022<br><br>Todos los derechos reservados. <br>Deasarrollado por REEB

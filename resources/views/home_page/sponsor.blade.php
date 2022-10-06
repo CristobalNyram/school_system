@@ -75,61 +75,14 @@
         <section class="patro">
             <h2>PATROCINADORES</h2>
         </section>
-    
+
     <section class="todo">
+    @foreach($sponsors1 as $sponsor)
         <div class="mar">
             <div>
-                <img class="roj" src="{{ asset('assets/img/home/img/patrocinadores') }}/carn.png">
-                <h4>Carniceria Tellez</h4>
-                <p>
-                    "Las mejores carnes"
-                </p>
-                <a class="icon" href="https://www.facebook.com/Freedom-Day-TI-Uttecam-477721659417275">
-                    <span class="icono"></span>
-                    <ion-icon class="tam" name="logo-facebook"></ion-icon>
-                    <span class="texto"> </span>
-                </a>
-                <a class="icon" href="https://goo.gl/maps/BWKybpucUgH8QXzf6">
-                    <span class="icono"></span>
-                    <ion-icon name="location-outline"></ion-icon>
-                    <span class="texto"> </span>
-                </a>
-                <a class="icon" href="https://goo.gl/maps/BWKybpucUgH8QXzf6">
-                    <span class="icono"></span>
-                    <ion-icon name="logo-instagram"></ion-icon>
-                    <span class="texto"> </span>
-                </a>
-            </div>
-    
-            <div>
-                <img class="roj" src="{{ asset('assets/img/home/img/patrocinadores') }}/coco.png">
-                <h4>Crocodilos Pub Snacks</h4>
-                <p>
-                    "Restaurante de Comida Rápida"
-                </p>
-                <a class="icon" href="https://www.facebook.com/Freedom-Day-TI-Uttecam-477721659417275">
-                    <span class="icono"></span>
-                    <ion-icon class="tam" name="logo-facebook"></ion-icon>
-                    <span class="texto"> </span>
-                </a>
-                <a class="icon" href="https://goo.gl/maps/BWKybpucUgH8QXzf6">
-                    <span class="icono"></span>
-                    <ion-icon name="location-outline"></ion-icon>
-                    <span class="texto"> </span>
-                </a>
-                <a class="icon" href="https://goo.gl/maps/BWKybpucUgH8QXzf6">
-                    <span class="icono"></span>
-                    <ion-icon name="logo-instagram"></ion-icon>
-                    <span class="texto"> </span>
-                </a>
-            </div>
-    
-            <div>
-                <img class="roj" src="{{ asset('assets/img/home/img/patrocinadores') }}/jjugo.png">
-                <h4>Jugueria los Alcanfores</h4>
-                <p>
-                    "Jugueria los Alcanfores"
-                </p>
+                <img class="roj" src="{{asset($sponsor->url_img )}}">
+                <h4>{{$sponsor->name}}</h4>
+                <p> {{$sponsor->slogan}}</p>
                 <a class="icon" href="https://www.facebook.com/Freedom-Day-TI-Uttecam-477721659417275">
                     <span class="icono"></span>
                     <ion-icon class="tam" name="logo-facebook"></ion-icon>
@@ -147,60 +100,13 @@
                 </a>
             </div>
         </div>
-    
+        @endforeach
+        @foreach($sponsors2 as $sponsor)
         <div class="mar">
             <div>
-                <img class="rojj" src="{{ asset('assets/img/home/img/patrocinadores') }}/tv.png">
-                <h4>Espina TV</h4>
-                <p>
-                    "Canal de difusión de medios y entretenimiento, <br>que aporta a la ciudadanía información variada"
-                </p>
-                <a class="icon" href="https://www.facebook.com/Freedom-Day-TI-Uttecam-477721659417275">
-                    <span class="icono"></span>
-                    <ion-icon class="tam" name="logo-facebook"></ion-icon>
-                    <span class="texto"> </span>
-                </a>
-                <a class="icon" href="https://goo.gl/maps/BWKybpucUgH8QXzf6">
-                    <span class="icono"></span>
-                    <ion-icon name="location-outline"></ion-icon>
-                    <span class="texto"> </span>
-                </a>
-                <a class="icon" href="https://goo.gl/maps/BWKybpucUgH8QXzf6">
-                    <span class="icono"></span>
-                    <ion-icon name="logo-instagram"></ion-icon>
-                    <span class="texto"> </span>
-                </a>
-            </div>
-    
-            <div>
-                <img class="rojj" src="{{ asset('assets/img/home/img/patrocinadores') }}/h28.png">
-                <h4>H28</h4>
-                <p>
-                    "Internacionalización de la PyME <br>a través de comercio electrónico".
-                </p>
-                <a class="icon" href="https://www.facebook.com/Freedom-Day-TI-Uttecam-477721659417275">
-                    <span class="icono"></span>
-                    <ion-icon class="tam" name="logo-facebook"></ion-icon>
-                    <span class="texto"> </span>
-                </a>
-                <a class="icon" href="https://goo.gl/maps/BWKybpucUgH8QXzf6">
-                    <span class="icono"></span>
-                    <ion-icon name="location-outline"></ion-icon>
-                    <span class="texto"> </span>
-                </a>
-                <a class="icon" href="https://goo.gl/maps/BWKybpucUgH8QXzf6">
-                    <span class="icono"></span>
-                    <ion-icon name="logo-instagram"></ion-icon>
-                    <span class="texto"> </span>
-                </a>
-            </div>
-    
-            <div>
-                <img class="rojj" src="{{ asset('assets/img/home/img/patrocinadores') }}/marisco.jpg.png">
-                <h4>Mariscos San Rafael</h4>
-                <p>
-                    "Los mejores mariscos de la región"
-                </p>
+                <img class="roj" src="{{asset($sponsor->url_img )}}">
+                <h4>{{$sponsor->name}}</h4>
+                <p> {{$sponsor->slogan}}</p>
                 <a class="icon" href="https://www.facebook.com/Freedom-Day-TI-Uttecam-477721659417275">
                     <span class="icono"></span>
                     <ion-icon class="tam" name="logo-facebook"></ion-icon>
@@ -218,8 +124,81 @@
                 </a>
             </div>
         </div>
+        @endforeach
+        @foreach($sponsors3 as $sponsor)
+        <div class="mar">
+            <div>
+                <img class="roj" src="{{asset($sponsor->url_img )}}">
+                <h4>{{$sponsor->name}}</h4>
+                <p> {{$sponsor->slogan}}</p>
+                <a class="icon" href="https://www.facebook.com/Freedom-Day-TI-Uttecam-477721659417275">
+                    <span class="icono"></span>
+                    <ion-icon class="tam" name="logo-facebook"></ion-icon>
+                    <span class="texto"> </span>
+                </a>
+                <a class="icon" href="https://goo.gl/maps/BWKybpucUgH8QXzf6">
+                    <span class="icono"></span>
+                    <ion-icon name="location-outline"></ion-icon>
+                    <span class="texto"> </span>
+                </a>
+                <a class="icon" href="https://goo.gl/maps/BWKybpucUgH8QXzf6">
+                    <span class="icono"></span>
+                    <ion-icon name="logo-instagram"></ion-icon>
+                    <span class="texto"> </span>
+                </a>
+            </div>
+        </div>
+        @endforeach
+        @foreach($sponsors4 as $sponsor)
+        <div class="mar">
+            <div>
+                <img class="roj" src="{{asset($sponsor->url_img )}}">
+                <h4>{{$sponsor->name}}</h4>
+                <p> {{$sponsor->slogan}}</p>
+                <a class="icon" href="https://www.facebook.com/Freedom-Day-TI-Uttecam-477721659417275">
+                    <span class="icono"></span>
+                    <ion-icon class="tam" name="logo-facebook"></ion-icon>
+                    <span class="texto"> </span>
+                </a>
+                <a class="icon" href="https://goo.gl/maps/BWKybpucUgH8QXzf6">
+                    <span class="icono"></span>
+                    <ion-icon name="location-outline"></ion-icon>
+                    <span class="texto"> </span>
+                </a>
+                <a class="icon" href="https://goo.gl/maps/BWKybpucUgH8QXzf6">
+                    <span class="icono"></span>
+                    <ion-icon name="logo-instagram"></ion-icon>
+                    <span class="texto"> </span>
+                </a>
+            </div>
+        </div>
+        @endforeach
+        @foreach($sponsors5 as $sponsor)
+        <div class="mar">
+            <div>
+                <img class="roj" src="{{asset($sponsor->url_img )}}">
+                <h4>{{$sponsor->name}}</h4>
+                <p> {{$sponsor->slogan}}</p>
+                <a class="icon" href="https://www.facebook.com/Freedom-Day-TI-Uttecam-477721659417275">
+                    <span class="icono"></span>
+                    <ion-icon class="tam" name="logo-facebook"></ion-icon>
+                    <span class="texto"> </span>
+                </a>
+                <a class="icon" href="https://goo.gl/maps/BWKybpucUgH8QXzf6">
+                    <span class="icono"></span>
+                    <ion-icon name="location-outline"></ion-icon>
+                    <span class="texto"> </span>
+                </a>
+                <a class="icon" href="https://goo.gl/maps/BWKybpucUgH8QXzf6">
+                    <span class="icono"></span>
+                    <ion-icon name="logo-instagram"></ion-icon>
+                    <span class="texto"> </span>
+                </a>
+            </div>
+        </div>
+        @endforeach
     </section>
-    
+   
     <footer>
         <div class="container">
         <p>&copy; Copyright Software-Freedom Day 2022<br><br>Todos los derechos reservados. <br>Deasarrollado por REEB

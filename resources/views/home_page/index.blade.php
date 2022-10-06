@@ -172,42 +172,42 @@
 
         
     <h2>Patrocinios</h2>
-
+@foreach($sponsors2 as $sponsor)
     <ul>
         <li>
-            <img src="https://nuboxmkt.mx/wp-content/uploads/2020/04/Amefibra.png" width="100">
+            <img src="{{asset($sponsor->url_img )}}" width="100">
+        </li>
+        <li>
+            <img src="{{asset($sponsor->url_img )}}" width="100">
 
         </li>
         <li>
-            <img src="https://nuboxmkt.mx/wp-content/uploads/2020/04/Holanda.png" width="100">
-
+            <img src="{{asset($sponsor->url_img )}}" width="100">
         </li>
         <li>
-            <img src="https://nuboxmkt.mx/wp-content/uploads/2020/04/Banco-Azteca.png" width="100">
+            <img src="{{asset($sponsor->url_img )}}" width="100">
         </li>
         <li>
-            <img src="https://nuboxmkt.mx/wp-content/uploads/2020/04/ATT.png" width="100">
+            <img src="{{asset($sponsor->url_img )}}" width="100">
         </li>
         <li>
-            <img src="https://nuboxmkt.mx/wp-content/uploads/2020/04/Pemex_exploracion_produccion.png" width="100">
+            <img src="{{asset($sponsor->url_img )}}" width="100">
         </li>
         <li>
-            <img src="https://nuboxmkt.mx/wp-content/uploads/2020/04/General-Mills.png" width="100">
+            <img src="{{asset($sponsor->url_img )}}" width="100">
         </li>
         <li>
-            <img src="https://nuboxmkt.mx/wp-content/uploads/2020/04/Qualitas.png" width="100">
+            <img src="{{asset($sponsor->url_img )}}" width="100">
         </li>
         <li>
-            <img src="https://nuboxmkt.mx/wp-content/uploads/2020/04/Walmart.png" width="100">
+            <img src="{{asset($sponsor->url_img )}}" width="100">
         </li>
         <li>
-            <img src="https://nuboxmkt.mx/wp-content/uploads/2020/04/Dinero-express.png" width="100">
-        </li>
-        <li>
-            <img src="https://nuboxmkt.mx/wp-content/uploads/2020/04/Banco-Azteca.png" width="100">
+            <img src="{{asset($sponsor->url_img )}}" width="100">
         </li>
 
     </ul>
+    @endforeach
 </section>
 
 <footer>

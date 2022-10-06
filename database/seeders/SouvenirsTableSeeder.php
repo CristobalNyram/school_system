@@ -16,18 +16,33 @@ class SouvenirsTableSeeder extends Seeder
     public function run()
     {
         DB::table('souvenirs')->insert([
-            'name' => 'Termo',
-            'price' => '300',
-            'description' => 'Termo de capacidad de 2L',
-            'url_img' => 'url_img',
+            'name' => 'Paquete Junior',
+            'price' => '150.00',
+            'description' => '
+            *Entrada
+            *Libreta
+            *Stickers',
+            'url_img' => 'argon/img/souvenir/1665088211-bottel.png',
             
         ]);
 
         DB::table('souvenirs')->insert([
-            'name' => 'Playera',
-            'price' => '500',
-            'description' => 'Playera manga corta con diseño de FreedomDay',
-            'url_img' => 'url_img',
+            'name' => 'Paquete Senior',
+            'price' => '250.00',
+            'description' => '
+            *Entrada
+            *Libreta
+            *Taza personalizada',
+            'url_img' => 'argon/img/souvenir/1665092042-cup.png',
+        ]);
+        DB::table('souvenirs')->insert([
+            'name' => 'Paquete Master',
+            'price' => '350.00',
+            'description' => '
+            *Entrada
+            *Libreta
+            *Playera personalizada del Frreedomday',
+            'url_img' => 'argon/img/souvenir/1665088826-playera.png',
         ]);
     }
 }

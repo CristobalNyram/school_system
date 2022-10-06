@@ -61,73 +61,61 @@
         </header>
         
 <div class="pos1">
-
+    @foreach($souvenir1 as $souvenir)
     <div class="card">
         <div class="circle" style="--clr:#bdc3c7">
-            <img id="img" src="{{ asset('assets/img/home/img') }}/bottel.png" class="logo">
+            <img id="img" src="{{asset($souvenir->url_img )}}" class="logo">
         </div>
         <div class="content">
-            <p><b>Paquete Junior</b><br>Incluye:</p>
+            <p><b>{{$souvenir->name}}</b><br>Incluye:</p>
+                <li class="li">Entrada</li>
                 <li class="li">Libreta</li>
-                <li class="li">Stikers</li>
-                <br>
-            <p><b>Precio: $150.00</b></p>
+                <li class="li">Sticker</li>
+            <br>
+            <p><b>Precio: ${{$souvenir->price}}</b></p>
             <a href="/HTML/Inicio_Sesion.html">Comprar</a>
         </div>
-        <img id="bs" src="{{ asset('assets/img/home/img') }}/bottel.png" class="product_img">
+        <img id="bs" src="{{asset($souvenir->url_img )}}" class="product_img">
  </div>
+ @endforeach
 
+ 
+    @foreach($souvenir2 as $souvenir)
     <div class="card">
         <div class="circle" style="--clr:#bdc3c7">
-            <img id="libr" src="{{ asset('assets/img/home/img') }}/libret.png" class="logo">
+            <img id="taza" src="{{asset($souvenir->url_img )}}" class="logo">
         </div>
         <div class="content">
-            <p><b>Paquete Semi Senior</b><br>Incluye:</p>
-                <li class="li">Termo</li>
-                <li class="li">Taza</li>
-                <li class="li">Stikers</li>
-                <br>
-            <p><b>Precio: $250.00</b></p>
-            <a href="/HTML/Inicio_Sesion.html">Comprar</a>
-        </div>
-        <img id="libreta" src="{{ asset('assets/img/home/img') }}/libret.png" class="product_img">
-    </div>
-
-    <div class="card">
-        <div class="circle" style="--clr:#bdc3c7">
-            <img id="taza" src="{{ asset('assets/img/home/img') }}/cup.png" class="logo">
-        </div>
-        <div class="content">
-            <p><b>Paquete Senior</b><br>Incluye:</p>
+            <p><b>{{$souvenir->name}}</b><br></p>
+                <li class="li">Entrada</li>
                 <li class="li">Libreta</li>
-                <li class="li">Termo</li>
-                <li class="li">Taza</li>
-                <li class="li">Stikers</li>
+                <li class="li">Taza personalizada</li>
                 <br>
-            <p><b>Precio: $350.00</b></p>
+            <p><b>Precio: ${{$souvenir->price}}</b></p>
             <a href="/HTML/Inicio_Sesion.html">Comprar</a>
         </div>
-        <img id="xa" src="{{ asset('assets/img/home/img') }}/cup.png" class="product_img">
+        <img id="xa" src="{{asset($souvenir->url_img )}}" class="product_img">
     </div>
-
+    @endforeach
+   
+    @foreach($souvenir3 as $souvenir)
     <div class="card">
         <div class="circle" style="--clr:#bdc3c7">
-            <img id="pl" src="{{ asset('assets/img/home/img') }}/playera.png" class="logo">
+            <img id="pl" src="{{asset($souvenir->url_img )}}" class="logo">
         </div>
         <div class="content">
-            <p><b>Paquete Master</b><br>Incluye:</p>
+            <p><b>{{$souvenir->name}}</b><br>Incluye:</p>
+                <li class="li">Entrada</li>
+                <li class="li">Libreta</li>
                 <li class="li">Playera</li>
-                <li class="li">Libreta</li>
-                <li class="li">Termo</li>
-                <li class="li">Taza</li>
                 <li class="li">Stikers</li>
                 <br>
-            <p><b>Precio: $450.00</b></p>
+            <p><b>Precio: ${{$souvenir->price}}</b></p>
             <a href="/HTML/Inicio_Sesion.html">Comprar</a>
         </div>
-        <img id="pla" src="{{ asset('assets/img/home/img') }}/playera.png" class="product_img">
+        <img id="pla" src="{{asset($souvenir->url_img )}}" class="product_img">
     </div>
-
+@endforeach
     
  
   
