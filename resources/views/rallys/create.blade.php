@@ -11,13 +11,13 @@
         <div class="col">
             <div class="card">
                 <!-- Card header -->
-
                 <div class="card-header border-0">
-                    <h2 class="mb-0">Actualizar información del souvenir: {{ $current_souvenir->name }}</h2>
+                    <h2 class="mb-0">Agregar Rally</h2>
+
                 </div>
 
 
-                <form class="m-5" action="{{route('souvenir_edit')}}" method="POST" enctype="multipart/form-data">
+                <form class="m-5" action="{{route('rally_store')}}" method="POST">
                     @csrf
                     @if(session('success'))
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -41,36 +41,56 @@
                     @endforeach
                     @endif
                     <div class="form-group">
-                        <input type="hidden" name="id" id="id" value="{{$current_souvenir->id}}">
                         <label for="name">Nombre</label>
-                        <input type="text" class="form-control form-control-lg" id="name" name="name" value="{{$current_souvenir->name  }}" placeholder="Título del souvenir" max="50" required oninput="uppercaseLetters(event);">
+                        <input type="text" class="form-control form-control-lg" id="name" name="name"
+                            value="{{old('name') }}" placeholder="Nombre del Rally" max="50" required
+                            oninput="uppercaseLetters(event);">
                     </div>
+
 
                     <div class="form-group">
                         <label for="description">Descripción</label>
-                        <input type="text" class="form-control form-control-lg" id="description" name="description" value="{{ $current_souvenir->description }}" placeholder="Descripción" max="50" required oninput="uppercaseLetters(event);">
+                        <input type="description" class="form-control form-control-lg" id="description"
+                            name="description" value="{{ old('description') }}" placeholder="Descripción" max="50"
+                            required oninput="uppercaseLetters(event);">
                     </div>
+
+
+                    <div class="form-group">
+                        <label for="requirements">Requisitos</label>
+                        <input type="text" class="form-control form-control-lg" id="price" name="requirements"
+                            value="{{ old('requirements') }}" placeholder="Requisitos" max="11000" required>
+                    </div>
+
+
                     <div class="form-group">
                         <label for="price">Precio</label>
-                        <input type="number" class="form-control form-control-lg" id="price" name="price" value="{{ $current_souvenir->price}}" placeholder="Precio" max="600" required>
+                        <input type="text" class="form-control form-control-lg" id="price" name="price"
+                            value="{{ old('price') }}" placeholder="Precio" max="50" required
+                            oninput="uppercaseLetters(event);">
                     </div>
 
                     <div class="form-group">
-                        <label for="url_img">Foto del Souvenir</label>
-                        <input type="file" onBlur='LimitAttach(this,1)' ; accept="image/png, image/jpg, image/jpeg" class="form-control form-control-lg" id="url_img" name="url_img" value="{{ $current_souvenir->url_img }}" placeholder="Foto del souvenir" max="50" required>
+                        <label for="location">Ubicación</label>
+                        <input type="text" class="form-control form-control-lg" id="location" name="location"
+                            value="{{ old('location') }}" placeholder="Ubicación" max="50" required
+                            oninput="uppercaseLetters(event);">
                     </div>
-                    <div class="alert alert-warning alert-dismissible fade show" id="alerta" role="alert" style="display: none" role="alert">
-                        <span class="alert-inner--text"><strong>Advertencia: </strong> Sólo se aceptan archivos con extensiones .jpeg, .jpe, .jpg, .png</span>
+
+                    <div class="form-group">
+                        <label for="img">Imagen</label>
+                        <input type="file" onBlur='LimitAttach(this,1)' ; accept="image/png, image/jpg, image/jpeg"
+                            class="form-control form-control-lg" id="img" name="img" value="{{ old('img') }}"
+                            placeholder="Foto del Rally" max="50" required>
+                    </div>
+
+                    <div class="alert alert-warning alert-dismissible fade show" id="alerta" role="alert"
+                        style="display: none" role="alert">
+                        <span class="alert-inner--text"><strong>Advertencia: </strong> Sólo se aceptan archivos con
+                            extensiones .jpeg, .jpe, .jpg, .png</span>
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                    </div>
-
-                    <div class="form-group justify-content-center align-items-center">
-                        <label>Foto Actual</label>
-                        <div class="form-group">
-                            <img src="{{asset($current_souvenir->url_img )}}" alt="{{$current_souvenir->name}}" class="img-fluid img-thumbnail" width="600px">
-                        </div>
                     </div>
 
                     <div class="row  mt-5 d-flex justify-content-center">
@@ -79,7 +99,7 @@
 
                         </div>
                         <div class="form-group row d-flex justify-content-center">
-                            <button type="submit" class="btn btn-default">Actualizar</button>
+                            <button type="submit" class="btn btn-default">Agregar</button>
 
                         </div>
                     </div>
@@ -87,8 +107,6 @@
 
 
                 </form>
-
-
 
 
             </div>

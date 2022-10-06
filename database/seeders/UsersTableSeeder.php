@@ -69,6 +69,7 @@ class UsersTableSeeder extends Seeder
             'role_id' => 4,
             'email' => 'franciscohuerta@gmail.com',
             'email_verified_at' => now(),
+            'career'=>1,
             'password' => Hash::make('root12p'),
             'created_at' => now(),
             'updated_at' => now()

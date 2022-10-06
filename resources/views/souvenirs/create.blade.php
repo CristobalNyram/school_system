@@ -30,17 +30,17 @@
                     @endif
                     @if ($errors->any())
 
-                                @foreach ($errors->all() as $error)
+                    @foreach ($errors->all() as $error)
 
 
-                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                    {{ $error }}                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        {{ $error }} <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
 
-                                @endforeach
-                   @endif
+                    @endforeach
+                    @endif
                     <div class="form-group">
                         <label for="name">Nombre</label>
                         <input type="text" class="form-control form-control-lg" id="name" name="name" value="{{   old('title') }}" placeholder="Nombre del souvenir" max="50" required oninput="uppercaseLetters(event);">
@@ -61,17 +61,15 @@
 
                     <div class="form-group">
                         <label for="url_img">Imagen</label>
-                        <input type="file" onBlur='LimitAttach(this,1)' ; accept="image/png, image/jpg, image/jpeg" class="form-control form-control-lg" id="url_img" name="url_img" value="{{ old('url_img') }}" placeholder="Foto del souvenir" max="50" required >
+                        <input type="file" onBlur='LimitAttach(this,1)' ; accept="image/png, image/jpg, image/jpeg" class="form-control form-control-lg" id="url_img" name="url_img" value="{{ old('url_img') }}" placeholder="Foto del souvenir" max="50" required>
                     </div>
 
-                    <div class="alert alert-warning alert-dismissible fade show" id="alerta" role="alert" style="display: none"  role="alert">
+                    <div class="alert alert-warning alert-dismissible fade show" id="alerta" role="alert" style="display: none" role="alert">
                         <span class="alert-inner--text"><strong>Advertencia: </strong> Sólo se aceptan archivos con extensiones .jpeg, .jpe, .jpg, .png</span>
-                                   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-
-                   
 
 
                     <div class="row  mt-5 d-flex justify-content-center">
