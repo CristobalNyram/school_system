@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Course;
+use App\Models\Carrer;
 use App\Models\Talk;
 use App\Models\Sponsor;
 use App\Models\Souvenir;
@@ -13,12 +14,12 @@ class HomeWebController extends Controller
 {
     public function index()
     {
-        $sponsors2=Sponsor::all()->where('status','=','2')->where('id', '=', '1');
+        $sponsors2=Sponsor::all()->where('status','=','2');
 
         $variables=[
             'sponsors2'=>$sponsors2,
         ];
-        return view('home_page.index')->with($variables);
+         return view('home_page.index')->with($variables);
     }
 
 
@@ -52,8 +53,7 @@ class HomeWebController extends Controller
         $courses8=Course::all()->where('status','=','2')->where('id', '=', '8');
         $courses9=Course::all()->where('status','=','2')->where('id', '=', '9');
         $courses10=Course::all()->where('status','=','2')->where('id', '=', '10');
-        $courses_active_number=Course::all()->where('status','=','2')->count();
-       
+
 
         $variables=[
             'courses1'=>$courses1,
@@ -66,10 +66,28 @@ class HomeWebController extends Controller
             'courses8'=>$courses8,
             'courses9'=>$courses9,
             'courses10'=>$courses10,
-            'courses_active_number'=> $courses_active_number,
 
         ];
         return view('home_page.course')->with($variables);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Course  $course
+     * @return \Illuminate\Http\Response
+     */
+
+    public function CourseInterface($course_id){
+
+        $current_course=Course::findOrFail($course_id);
+
+        $variables=[
+            'current_course'=>$current_course,
+        ];
+
+        return view('home_page.course_interface')->with($variables);
     }
 
     public function conference()
@@ -80,6 +98,16 @@ class HomeWebController extends Controller
             'conference_active'=>$conference_active,
         ];
         return view('home_page.conference')->with($variables);
+    }
+
+    public function ConferenceInterface($talk_id)
+    {
+        $current_conference=Talk::findOrFail($talk_id);
+
+        $variables=[
+            'current_conference'=>$current_conference,
+        ];
+        return view('home_page.conference_interface')->with($variables);
     }
 
     public function souvenir()
@@ -97,7 +125,19 @@ class HomeWebController extends Controller
 
     public function login()
     {
-       
+
         return view('home_page.login');
+    }
+
+    public function create()
+    {
+        $carrers_available=Carrer::all()->where('status','=','2');
+
+        $variables=[
+           
+            'carrers_available'=>$carrers_available,
+        ];
+
+        return view('home_page.formulario_registro')->with($variables);
     }
 }

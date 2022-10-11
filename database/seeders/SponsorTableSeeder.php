@@ -13,7 +13,31 @@ class SponsorTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('souvenirs')->insert([
+        DB::table('sponsors')->insert([
+            'name' => 'COOMING SOON',
+            'slogan' => 'HAZLODIFERENTE',
+            'url_img' => 'argon/img/sponsor/1665094651-Patrocinadores2.jpg',
+            
+        ]);
+        DB::table('sponsors')->insert([
+            'name' => 'COOMING SOON',
+            'slogan' => 'HAZLODIFERENTE',
+            'url_img' => 'argon/img/sponsor/1665094651-Patrocinadores2.jpg',
+            
+        ]);
+        DB::table('sponsors')->insert([
+            'name' => 'COOMING SOON',
+            'slogan' => 'HAZLODIFERENTE',
+            'url_img' => 'argon/img/sponsor/1665094651-Patrocinadores2.jpg',
+            
+        ]);
+        DB::table('sponsors')->insert([
+            'name' => 'COOMING SOON',
+            'slogan' => 'HAZLODIFERENTE',
+            'url_img' => 'argon/img/sponsor/1665094651-Patrocinadores2.jpg',
+            
+        ]);
+        DB::table('sponsors')->insert([
             'name' => 'COOMING SOON',
             'slogan' => 'HAZLODIFERENTE',
             'url_img' => 'argon/img/sponsor/1665094651-Patrocinadores2.jpg',

@@ -7,12 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FreedoomDay</title>
-    <link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilo_Souvenir.css">
-    <link rel="stylesheet" href="{{ asset('assets/css/home') }}/barra.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilo_Conferencia_Interfaz.css">
     <link rel="icon" href="{{ asset('assets/img/home/img') }}/logo.png">
 </head>
 <header>
-    <nav class="menu">
+<nav class="menu">
             <section class="menu__container">
                 <a href="{{ route('home_page_index') }}" class="logo" id="tope"><img src="{{ asset('assets/img/home/img') }}/logo.png"></a>
     
@@ -59,68 +58,18 @@
             
             
         </header>
-        
-<div class="pos1">
-    @foreach($souvenir1 as $souvenir)
-    <div class="card">
-        <div class="circle" style="--clr:#bdc3c7">
-            <img id="img" src="{{asset($souvenir->url_img )}}" class="logo">
+        <body>
+            <div>
+            <img src="{{asset($current_conference->url_img )}}">
+            <h3>{{asset($current_conference->name )}}</h3>
+            <p>{{asset($current_conference->description )}}</p>
+            <a href="/HTML/Inicio_Sesion.html">
+                   <button>+Inscribirse</button>
+                </a>
         </div>
-        <div class="content">
-            <p><b>{{$souvenir->name}}</b><br>Incluye:</p>
-                <li class="li">Entrada</li>
-                <li class="li">Libreta</li>
-                <li class="li">Sticker</li>
-            <br>
-            <p><b>Precio: ${{$souvenir->price}}</b></p>
-            <a href="/HTML/Inicio_Sesion.html">Comprar</a>
-        </div>
-        <img id="bs" src="{{asset($souvenir->url_img )}}" class="product_img">
- </div>
- @endforeach
 
- 
-    @foreach($souvenir2 as $souvenir)
-    <div class="card">
-        <div class="circle" style="--clr:#bdc3c7">
-            <img id="taza" src="{{asset($souvenir->url_img )}}" class="logo">
-        </div>
-        <div class="content">
-            <p><b>{{$souvenir->name}}</b><br></p>
-                <li class="li">Entrada</li>
-                <li class="li">Libreta</li>
-                <li class="li">Taza personalizada</li>
-                <br>
-            <p><b>Precio: ${{$souvenir->price}}</b></p>
-            <a href="/HTML/Inicio_Sesion.html">Comprar</a>
-        </div>
-        <img id="xa" src="{{asset($souvenir->url_img )}}" class="product_img">
-    </div>
-    @endforeach
-   
-    @foreach($souvenir3 as $souvenir)
-    <div class="card">
-        <div class="circle" style="--clr:#bdc3c7">
-            <img id="pl" src="{{asset($souvenir->url_img )}}" class="logo">
-        </div>
-        <div class="content">
-            <p><b>{{$souvenir->name}}</b><br>Incluye:</p>
-                <li class="li">Entrada</li>
-                <li class="li">Libreta</li>
-                <li class="li">Playera</li>
-                <li class="li">Stikers</li>
-                <br>
-            <p><b>Precio: ${{$souvenir->price}}</b></p>
-            <a href="/HTML/Inicio_Sesion.html">Comprar</a>
-        </div>
-        <img id="pla" src="{{asset($souvenir->url_img )}}" class="product_img">
-    </div>
-@endforeach
-    
- 
-  
-
-</div>
+        </body>
+       
 
 <footer>
     <div class="container">
@@ -147,5 +96,3 @@
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <script src="https://unpkg.com/scrollreveal"></script>
 <script src="{{ asset('assets/js/home') }}/menu.js"></script>
-    
- 

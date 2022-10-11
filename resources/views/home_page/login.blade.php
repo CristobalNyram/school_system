@@ -50,36 +50,54 @@
                 </ul>
     
                 <div class="menu__hamburguer">
-                    <img src="assets/menu.svg" class="menu__img">
+                    <img src="{{ asset('assets/img/home/img') }}/menu.svg" class="menu__img">
                 </div>
             </section> 
         </nav>
     
-        <script src="{{ asset('assets/img/home/img') }}/app.js"></script>
+        <script src="{{ asset('assets/js/home') }}/app.js"></script>
             
             
     </header>
 
-    <div class="jk" style="background-image: url(https://www.40defiebre.com/wp-content/uploads/2015/10/imagenes.png);" ></div>
+    <div class="jk" style="background-image: url('../assets/img/home/img/ins.png')"></div>
     
-    <form  method="post">
+    <form role="form"  method="POST" action="{{ route('login') }}">
+        @csrf
+
+    
 
     <div id="posi">
+
+
     
         <section class="forma">
             <h1>Inicio de Sesión</h1>
             <div class="tokyus">
-                <input type="email" id="usna" class="un" autocomplete="off" name="ingresoEmail" placeholder="Ingrese su Correo Electrónico" required/>
+
+                <input type="email" id="usna" class="un" autocomplete="off" name="email" placeholder="{{ __('Email') }}" value="{{ old('email') }}" value="admin@argon.com" required autofocus/>
             <label class="oki" for="username">Correo Electrónico</label>
+
             </div>
+            @if ($errors->has('email'))
+                <span class="invalid-feedback" style="display: block;" role="alert">
+                    <strong>{{ $errors->first('email') }}</strong>
+                </span>
+             @endif
 
             <div id="pass" class="tokyus">
-                <input type="password" id="usna" class="un" autocomplete="off" name="ingresoPassword" placeholder="Contraseña" required/>
+                <input type="password" id="usna" class="un" autocomplete="off" name="password" placeholder="{{ __('Password') }}" value="secret" required/>
             <label class="oki" for="password">Contraseña</label>
             </div>
 
+            @if ($errors->has('password'))
+                    <span class="invalid-feedback" style="display: block;" role="alert">
+                            <strong>{{ $errors->first('password') }}</strong>
+                     </span>
+             @endif
+
             <div class="regresar">
-                <a href="/HTML/Formulario_Registro.html">Crear una cuenta</a>
+                <a href="{{ route('home_page_create') }}">Crear una cuenta</a>
             </div>
 
 

@@ -35,7 +35,7 @@ class StudentController extends Controller
         $log->activity_done($description = 'Accedió al módulo de Estudiantes.', $table_id = 0, $menu_id = 28, $user_id = Auth::id(), $kind_acction = 1);
 
 
-        $users_active=User::all()->where('status','=','2')->where('role_id','=','3');
+        $users_active=User::all()->where('status','=','2')->where('role_id','=','4');
         $users_active_number=User::all()->where('status','=','2')->where('role_id','=','4')->count();
 
 
@@ -78,14 +78,15 @@ class StudentController extends Controller
         $log->activity_done($description = 'Accedió al módulo de Estudiantes.',$table_id = 0, $menu_id = 12, $user_id = Auth::id(), $kind_acction = 1);
 
         $rol_available=Role::all()->where('status','=','2');
-
         $carrers_available=Carrer::all()->where('status','=','2');
+        $current_user=User::all()->where('status','=','2')->where('role_id','=','4');
 
         $variables=[
             'menu'=>'alumnos_all',
             'title_page'=>'Estudiantes',
             'rol_available'=>$rol_available,
             'carrers_available'=>$carrers_available,
+            'current_user'=>$current_user
 
 
         ];

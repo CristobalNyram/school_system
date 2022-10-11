@@ -141,7 +141,7 @@
 
                     <div class="form-group">
                         <label for="user_image">Foto del Estudiante</label>
-                        <input type="file" onBlur='LimitAttach(this,1)' ; accept="image/*" class="form-control form-control-lg" id="user_image" name="user_image" value="{{ $current_user->user_image}}" placeholder="Foto del Conferencista" max="50" required oninput="uppercaseLetters(event);">
+                        <input type="file" onBlur='LimitAttach(this,1)' ; accept="image/*" class="form-control form-control-lg" id="user_image" name="user_image" placeholder="Foto del Conferencista" max="50" required oninput="uppercaseLetters(event);">
                     </div>
 
                     <div class="alert alert-warning alert-dismissible fade show" id="alerta" role="alert" style="display: none" role="alert">

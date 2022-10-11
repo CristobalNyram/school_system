@@ -49,7 +49,7 @@
             </ul>
 
             <div class="menu__hamburguer">
-                <img src="assets/menu.svg" class="menu__img">
+                <img src="{{ asset('assets/img/home/img') }}/menu.svg" class="menu__img">
             </div>
         </section>
     </nav>
@@ -70,7 +70,7 @@
                 <div class="capa">
                     <h3>{{$course1->title}}</h3>
                     <p>{{$course1->description}}</p>
-                    <a href="/HTML/Cursos/Curso1.html">
+                    <a href="{{ route('course_interface,$courses1[0]->id') }}">
                         <button>+INFO</button>
                     </a>
 
@@ -222,7 +222,7 @@
                 <div class="capa">
                     <h3>{{$course9->title}}</h3>
                     <p>{{$course9->description}}</p>
-                    <a href="/HTML/Cursos/Curso1.html">
+                    <a href="">
                         <button>+INFO</button>
                     </a>
 
@@ -273,8 +273,8 @@
     </div>
 </footer>
 
-<script src="/js/galeria.js"></script>
+<script src="{{ asset('assets/js/home') }}/galeria.js"></script>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <script src="https://unpkg.com/scrollreveal"></script>
-<script src="/js/menu.js"></script>
+<script src="{{ asset('assets/js/home') }}/menu.js"></script>

@@ -14,15 +14,11 @@ use Illuminate\Support\Carbon;
 
 class PackageController extends Controller
 {
-<<<<<<< HEAD
-    public function index()
-    {
-        $rol =new Role();
-=======
+
   public function index()
   {
     $rol = new Role();
->>>>>>> 7f45afb957b5d95f63355c47a0afc5a24b619d97
+
     if ($rol->checkAccesToThisFunctionality(Auth::user()->role_id, 32) == null) {
       $variables = [
         'menu' => '',

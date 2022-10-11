@@ -50,12 +50,12 @@
                 </ul>
     
                 <div class="menu__hamburguer">
-                    <img src="assets/menu.svg" class="menu__img">
+                    <img src="{{ asset('assets/img/home/img') }}/menu.svg" class="menu__img">
                 </div>
             </section> 
         </nav>
     
-        <script src="js/app.js"></script>
+        <script src="{{ asset('assets/js/home') }}/app.js"></script>
             
             
         </header>
@@ -79,7 +79,7 @@
                 </ul>
             </div>
         </div>
-        <script src="js/menu.js"></script>
+        <script src="{{ asset('assets/js/home') }}/menu.js"></script>
         <div id="q" class="que">
             <h1>¿QUÉ ES SOFTWARE-</span><span class="freed">FREEDOM <span class="day">DAY</span></span>?</h1><br>
             <p>Es un evento organizado por alumnos y docentes de la carrera de Tecnologías de la Información en la
@@ -173,7 +173,7 @@
         
     <h2>Patrocinios</h2>
 @foreach($sponsors2 as $sponsor)
-    <ul>
+<ul>
         <li>
             <img src="{{asset($sponsor->url_img )}}" width="100">
         </li>
@@ -234,4 +234,4 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="/js/menu.js"></script>
+    <script src="{{ asset('assets/js/home') }}/menu.js"></script>

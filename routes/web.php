@@ -32,17 +32,20 @@ use App\Http\Controllers\RallyController;
 |
 */
 
-Route::get('/', function () {
+ Route::get('/', function () {
     return view('home_page.index');
-});
+ });
 
 Route::prefix('web')->group(function () {
-    Route::get('/',[HomeWebController::class, 'index'])->name('home_page_index');
+    Route::get('/index',[HomeWebController::class, 'index'])->name('home_page_index');
     Route::get('/sponsor',[HomeWebController::class, 'sponsor'])->name('home_page_sponsor');
-    Route::get('/course/',[HomeWebController::class, 'course'])->name('home_page_course');
+    Route::get('/courses/index',[HomeWebController::class, 'course'])->name('home_page_course');
+    Route::get('/course/interface/{course_id}', [HomeWebController::class, "CourseInterface"])->name('course_interface');
     Route::get('/conference',[HomeWebController::class, 'conference'])->name('home_page_conference');
+    Route::get('/conference/interface/{talk_id}',[HomeWebController::class, 'ConferenceInterface'])->name('conference_interface');
     Route::get('/souvenir',[HomeWebController::class, 'souvenir'])->name('home_page_souvenir');
     Route::get('/login',[HomeWebController::class, 'login'])->name('home_page_login');
+    Route::get('/create',[HomeWebController::class, 'create'])->name('home_page_create');
 });
 Auth::routes();
 
