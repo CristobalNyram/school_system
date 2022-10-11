@@ -61,9 +61,9 @@
         <body>
             <div>
             <img src="{{asset($current_conference->url_img )}}">
-            <h3>{{asset($current_conference->name )}}</h3>
-            <p>{{asset($current_conference->description )}}</p>
-            <a href="/HTML/Inicio_Sesion.html">
+            <h3>{{$current_conference->name}}</h3>
+            <p>{{$current_conference->description}}</p>
+            <a href="{{ route('home_page_create') }}">
                    <button>+Inscribirse</button>
                 </a>
         </div>

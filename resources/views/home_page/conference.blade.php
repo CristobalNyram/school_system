@@ -62,7 +62,7 @@
 @foreach($conference_active as $conference)      
 <section class="gal">
     
-    <a href="#">
+    <a href="{{ route('conference_interface', $conference) }}">
         <figure id="cur">
             <img src="{{asset($conference->url_img )}}">
             <div class="con">
