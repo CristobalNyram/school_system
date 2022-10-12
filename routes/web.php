@@ -18,6 +18,7 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\HomeWebController;
 use App\Http\Controllers\RallyController;
+use App\Models\Sponsor;
 
 
 
@@ -33,7 +34,12 @@ use App\Http\Controllers\RallyController;
 */
 
  Route::get('/', function () {
-    return view('home_page.index');
+    $sponsors2=Sponsor::all()->where('status','=','2');
+
+        $variables=[
+            'sponsors2'=>$sponsors2,
+        ];
+    return view('home_page.index')->with($variables);
  });
 
 Route::prefix('web')->group(function () {
