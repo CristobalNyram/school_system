@@ -70,7 +70,7 @@
                 <div class="capa">
                     <h3>{{$course1->title}}</h3>
                     <p>{{$course1->description}}</p>
-                    <a href="{{ route('course_interface,$courses1[0]->id') }}">
+                    <a href="{{ route('course_interface', $courses1[0]) }}">
                         <button>+INFO</button>
                     </a>
 
@@ -89,7 +89,7 @@
                 <div class="capa">
                     <h3>{{$course2->title}}</h3>
                     <p>{{$course2->description}}</p>
-                    <a href="/HTML/Cursos/Curso1.html">
+                    <a href="{{ route('course_interface', $courses2[1]) }}">
                         <button>+INFO</button>
                     </a>
 
@@ -108,7 +108,7 @@
                 <div class="capa">
                     <h3>{{$course3->title}}</h3>
                     <p>{{$course3->description}}</p>
-                    <a href="/HTML/Cursos/Curso1.html">
+                    <a href="{{ route('course_interface', $courses3[2]) }}">
                         <button>+INFO</button>
                     </a>
 
@@ -127,7 +127,7 @@
                 <div class="capa">
                     <h3>{{$course4->title}}</h3>
                     <p>{{$course4->description}}</p>
-                    <a href="/HTML/Cursos/Curso1.html">
+                    <a href="{{ route('course_interface', $courses4[3]) }}">
                         <button>+INFO</button>
                     </a>
 
@@ -146,7 +146,7 @@
                 <div class="capa">
                     <h3>{{$course5->title}}</h3>
                     <p>{{$course5->description}}</p>
-                    <a href="/HTML/Cursos/Curso1.html">
+                    <a href="{{ route('course_interface', $courses5[4]) }}">
                         <button>+INFO</button>
                     </a>
 
@@ -165,7 +165,7 @@
                 <div class="capa">
                     <h3>{{$course6->title}}</h3>
                     <p>{{$course6->description}}</p>
-                    <a href="/HTML/Cursos/Curso1.html">
+                    <a href="{{ route('course_interface', $courses6[5]) }}">
                         <button>+INFO</button>
                     </a>
 
@@ -184,7 +184,7 @@
                 <div class="capa">
                     <h3>{{$course7->title}}</h3>
                     <p>{{$course7->description}}</p>
-                    <a href="/HTML/Cursos/Curso1.html">
+                    <a href="{{ route('course_interface', $courses7[6]) }}">
                         <button>+INFO</button>
                     </a>
 
@@ -203,7 +203,7 @@
                 <div class="capa">
                     <h3>{{$course8->title}}</h3>
                     <p>{{$course8->description}}</p>
-                    <a href="/HTML/Cursos/Curso1.html">
+                    <a href="{{ route('course_interface', $courses8[7]) }}">
                         <button>+INFO</button>
                     </a>
 
@@ -222,7 +222,7 @@
                 <div class="capa">
                     <h3>{{$course9->title}}</h3>
                     <p>{{$course9->description}}</p>
-                    <a href="">
+                    <a href="{{ route('course_interface', $courses9[8]) }}">
                         <button>+INFO</button>
                     </a>
 
@@ -241,7 +241,7 @@
                 <div class="capa">
                     <h3>{{$course10->title}}</h3>
                     <p>{{$course10->description}}</p>
-                    <a href="/HTML/Cursos/Curso1.html">
+                    <a href="{{ route('course_interface', $courses10[9]) }}">
                         <button>+INFO</button>
                     </a>
 
