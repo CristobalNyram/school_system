@@ -66,7 +66,7 @@
             <h4>Curso impartido por: <span id="hj">Enrique Vazarez</span></h4>
             <H4>Horario: <span id="hj">14:00 A.M. - 18:00 A.M.</span></H4>
             <a href="#">
-               <button>+Inscribirse</button>
+                <button>+Inscribirse</button>
             </a>
         </div>
         <footer>

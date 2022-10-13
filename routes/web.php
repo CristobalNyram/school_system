@@ -47,6 +47,7 @@ Route::prefix('web')->group(function () {
     Route::get('/sponsor',[HomeWebController::class, 'sponsor'])->name('home_page_sponsor');
     Route::get('/courses/index',[HomeWebController::class, 'course'])->name('home_page_course');
     Route::get('/course/interface/{course_id}', [HomeWebController::class, "CourseInterface"])->name('course_interface');
+    Route::get('/speaker/interface/{user_id}', [HomeWebController::class, "SpeakerInterface"])->name('speaker_interface');
     Route::get('/conference',[HomeWebController::class, 'conference'])->name('home_page_conference');
     Route::get('/conference/interface/{talk_id}',[HomeWebController::class, 'ConferenceInterface'])->name('conference_interface');
     Route::get('/souvenir',[HomeWebController::class, 'souvenir'])->name('home_page_souvenir');
