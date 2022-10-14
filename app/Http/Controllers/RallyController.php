@@ -75,14 +75,16 @@ class RallyController extends Controller
 
     public function update($rally_id)
     {
-        if (Role::checkAccesToThisFunctionality(Auth::user()->role_id, 19) == null) {
+        $role = new Role();
+        $log = new Logbook();
+        if ($log->checkAccesToThisFunctionality(Auth::user()->role_id, 19) == null) {
             $variables = [
                 'menu' => '',
                 'title_page' => 'Acceso denegado',
             ];
             return view('errors.notaccess')->with($variables);
         }
-        Logbook::activity_done($description = 'Accedió al módulo de Actualizar Rally.', $table_id = 0, $menu_id = 22, $user_id = Auth::id(), $kind_acction = 1);
+        $log->activity_done($description = 'Accedió al módulo de Actualizar Rally.', $table_id = 0, $menu_id = 22, $user_id = Auth::id(), $kind_acction = 1);
         $current_rally = Rally::findOrFail($rally_id);
         $variables = [
             'menu' => 'rally_all',
@@ -120,6 +122,10 @@ class RallyController extends Controller
 
     public function store(Request $request)
     {
+        $role = new Role();
+        $log = new Logbook();
+
+
         $rally = new Rally();
         $rally->name = $request->name;
         $rally->description = $request->description;
@@ -137,7 +143,7 @@ class RallyController extends Controller
         }
 
         if ($rally->save()) {
-            Logbook::activity_done($description = 'Creo el Rally ' . $rally->name . ' correctamente', $table_id = 0, $menu_id = 22, $user_id = Auth::id(), $kind_acction = 6);
+            $log->activity_done($description = 'Creo el Rally ' . $rally->name . ' correctamente', $table_id = 0, $menu_id = 22, $user_id = Auth::id(), $kind_acction = 6);
             return back()->with('success', 'Se ha registrado el Rally exitosamente...');
         } else {
             return  back()->withErrors('No se ha registrado el Rally...');
@@ -155,7 +161,7 @@ class RallyController extends Controller
         $rally = Rally::findOrFail($rally_id);
         $rally->status = -2;
         if ($rally->save()) {
-            Logbook::activity_done($description = 'Eliminó el Rally ' . $rally->name . ' correctamente', $table_id = 0, $menu_id = 22, $user_id = Auth::id(), $kind_acction = 4);
+            $log->activity_done($description = 'Eliminó el Rally ' . $rally->name . ' correctamente', $table_id = 0, $menu_id = 22, $user_id = Auth::id(), $kind_acction = 4);
             return back()->with('success', 'Se ha borrado el Rally exitosamente...')->with('eliminar', 'ok');
         } else {
             return back()->with('success', 'No se ha borrado el Rally exitosamente...');
