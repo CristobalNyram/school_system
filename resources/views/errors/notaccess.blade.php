@@ -8,7 +8,7 @@
         <div class="alert alert-danger alert-dismissible fade show pt-5 pb-5" role="alert">
 
 
-            <h2 class="alert-inner--text text-white">  <i class="fas fa-exclamation-triangle"></i>  <strong>¡Acceso denegado!</strong> No tienes acceso a esta funcionalidad</h2>
+            <h2 class="alert-inner--text text-white">  <i class="fas fa-exclamation-triangle"></i>  <strong>¡No puedes pasar!</strong> No tienes acceso a esta funcionalidad</h2>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>

@@ -22,7 +22,7 @@ class ExampleController extends Controller
         {
             $variables=[
                 'menu'=>'',
-                'title_page'=>'Acceso denegado',
+                'title_page'=>'No puedes pasar',
 
 
             ];

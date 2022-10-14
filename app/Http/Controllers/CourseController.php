@@ -25,7 +25,7 @@ class CourseController extends Controller
         if ($role->checkAccesToThisFunctionality(Auth::user()->role_id, 10) == null) {
             $variables = [
                 'menu' => '',
-                'title_page' => 'Acceso denegado',
+                'title_page' => 'No puedes pasar',
             ];
             return view('errors.notaccess')->with($variables);
         }
