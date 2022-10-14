@@ -14,7 +14,7 @@
     @endif
 
     @if (Auth::user()->role_id==6)
-    @include('dashboard.teacher_index')
+    @include('dashboard.teacher_info')
 
     @endif
 
