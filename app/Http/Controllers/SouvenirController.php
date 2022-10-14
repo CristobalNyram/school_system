@@ -15,7 +15,7 @@ class SouvenirController extends Controller
 {
   public function index()
   {
-    $role = New Role();
+    $role = new Role();
     $log = new Logbook();
 
     if ($role->checkAccesToThisFunctionality(Auth::user()->role_id, 31) == null) {
@@ -47,18 +47,17 @@ class SouvenirController extends Controller
     $souvenir->price = $request->price;
     $souvenir->url_img = $request->url_img;
 
-    if($request -> hasFile ('url_img')){
-      $file = $request ->file('url_img');
+    if ($request->hasFile('url_img')) {
+      $file = $request->file('url_img');
       $destiantionPath = 'argon/img/souvenir/';
-      $filename = time() .'-'. $file->getClientOriginalName();
+      $filename = time() . '-' . $file->getClientOriginalName();
       $uploadSuccess = $request->file('url_img')->move($destiantionPath, $filename);
       $souvenir->url_img = $destiantionPath . $filename;
-
-     }
+    }
 
     if ($souvenir->save()) {
-        $log= new Logbook();
-        $log->activity_done($description = 'Actualizo el souvenir ' . $souvenir->name . 'correctamente', $table_id = 0, $menu_id = 22, $user_id = Auth::id(), $kind_acction = 3);
+      $log = new Logbook();
+      $log->activity_done($description = 'Actualizo el souvenir ' . $souvenir->name . 'correctamente', $table_id = 0, $menu_id = 22, $user_id = Auth::id(), $kind_acction = 3);
       return back()->with('success', 'Se ha actualizado el souvenir exitosamente...');
     } else {
       return  back()->withErrors('No se ha actualizado el curso...');
@@ -100,7 +99,7 @@ class SouvenirController extends Controller
   public function create()
   {
 
-    $role = New Role();
+    $role = new Role();
     $log = new Logbook();
 
     if ($role->checkAccesToThisFunctionality(Auth::user()->role_id, 31) == null) {
@@ -148,14 +147,13 @@ class SouvenirController extends Controller
     $souvenir->description = $request->description;
     $souvenir->url_img = $request->url_img;
 
-    if($request -> hasFile ('url_img')){
-      $file = $request ->file('url_img');
+    if ($request->hasFile('url_img')) {
+      $file = $request->file('url_img');
       $destiantionPath = 'argon/img/souvenir/';
-      $filename = time() .'-'. $file->getClientOriginalName();
+      $filename = time() . '-' . $file->getClientOriginalName();
       $uploadSuccess = $request->file('url_img')->move($destiantionPath, $filename);
       $souvenir->url_img = $destiantionPath . $filename;
-
-     }
+    }
 
 
     if ($souvenir->save()) {
@@ -176,11 +174,11 @@ class SouvenirController extends Controller
   public function delete($souvenir_id)
   {
     $souvenir = Souvenir::findOrFail($souvenir_id);
-    $souvenir->status=-2;
-    if($souvenir->save()){
+    $souvenir->status = -2;
+    if ($souvenir->save()) {
       Logbook::activity_done($description = 'Eliminó el souvenir ' . $souvenir->name . 'correctamente', $table_id = 0, $menu_id = 22, $user_id = Auth::id(), $kind_acction = 4);
       return back()->with('success', 'Se ha borrado el souvenir exitosamente...')->with('eliminar', 'ok');
-    }else{
+    } else {
       return back()->with('success', 'No se ha borrado el souvenir exitosamente...');
     }
   }

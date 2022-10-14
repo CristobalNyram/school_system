@@ -15,11 +15,29 @@ class TalksTableSeeder extends Seeder
     public function run()
     {
         DB::table('talks')->insert([
-            'name' => '¿Porque estudiar Programación?',
-            'description' => 'Introducción a HTML desde 0',
+            'name' => 'CONFERENCIA1',
+            'description' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever noun',
             'date' => '25 de Noviembre del 2022',
             'time' => '25 de Noviembre del 2022',
-            'url_img' => 'ruta',
+            'url_img' => 'argon/img/talk/1665067883-Conferencia1.jpg',
+            'speaker_id' => 1,
+            'created_at' => now(),
+        ]);
+        DB::table('talks')->insert([
+            'name' => 'CONFERENCIA2',
+            'description' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever noun',
+            'date' => '25 de Noviembre del 2022',
+            'time' => '25 de Noviembre del 2022',
+            'url_img' => 'argon/img/talk/1665068201-Conferencia2.jpg',
+            'speaker_id' => 1,
+            'created_at' => now(),
+        ]);
+        DB::table('talks')->insert([
+            'name' => 'CONFERENCIA3',
+            'description' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever noun',
+            'date' => '25 de Noviembre del 2022',
+            'time' => '25 de Noviembre del 2022',
+            'url_img' => 'argon/img/talk/1665068253-Conferencia3.jpg',
             'speaker_id' => 1,
             'created_at' => now(),
         ]);

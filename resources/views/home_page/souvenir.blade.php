@@ -14,17 +14,64 @@
 <header>
     <nav class="menu">
             <section class="menu__container">
-                <a href="{{ route('home_page_index') }}" class="logo" id="tope"><img src="{{ asset('assets/img/home/img') }}/logo.png"></a>
+                
     
                 <ul class="menu__links">
+                    
+                        
+                    <li class="menu_item">
+                        <section class="container">
+                            
+                            <div class="charts">
+                             <a href="{{ route('home_page_index') }}" class="logo" id="tope"><img src="{{ asset('assets/img/home/img') }}/logo.png"></a>
+                    
+                                <div class="chart">
+                                    <!-- un circulo inicial de fondo -->
+                                    <div class="circle center-abs"></div>
+                                    <!-- area para SVG -->
+                                    <svg class="center-abs" width="150" height="150">
+                                        <!-- un segundo circulo en SVG con su ubicacion en coordenadas x,y y el radio de expansion -->
+                                        <circle class="outer" id="circulo1" cx="75" cy="75" r="30" />
+                                    </svg>
+                                    <!-- etiqueta para el contador, en este caso el dia -->
+                                    <span class="text center-abs" id="days"></span>
+                                    <h3 id="textcolor1">Dias</h3>
+                                </div>
+                                <div class="chart">
+                                    <div class="circle center-abs"></div>
+                                    <svg class="center-abs" width="150" height="150">
+                                        <circle class="outer" id="circulo2" cx="75" cy="75" r="30" />
+                                    </svg>
+                                    <span class="text center-abs" id="hours"></span>
+                                    <h3 id="textcolor2">Horas</h3>
+                                </div>
+                                <div class="chart">
+                                    <div class="circle center-abs"></div>
+                                    <svg class="center-abs" width="150" height="150">
+                                        <circle class="outer"  id="circulo3" cx="75" cy="75" r="30" />
+                                    </svg>
+                                    <span class="text center-abs" id="minutes"></span>
+                                    <h3 id="textcolor3">Minutos</h3>
+                                </div>
+                                <div class="chart">
+                                    <div class="circle center-abs"></div>
+                                    <svg class="center-abs" width="150" height="150">
+                                        <circle class="outer" id="circulo4"cx="75" cy="75" r="30" />
+                                    </svg>
+                                    <span class="text center-abs" id="seconds"></span>
+                                    <h3 id="textcolor4">Segundos</h3>
+                                </div>
+                            </div>
+                        </section>
+                    </li>
                     <li class="menu__item">
                         <a href="{{ route('home_page_index') }}" class="menu__link">Inicio</a>
                     </li>
+                    
         
                     <li class="menu__item">
                         <div class="tex1">
-    
-                            <a href="{{ route('home_page_sponsor') }}" class="menu__link">Nuestros Patrocinadores</a>
+                             <a href="{{ route('home_page_sponsor') }}" class="menu__link">Nuestros<span style="color:black">_</span>Patrocinadores</a>
                         </div>
                     </li>
     
@@ -50,84 +97,75 @@
                 </ul>
     
                 <div class="menu__hamburguer">
-                    <img src="assets/menu.svg" class="menu__img">
+                    <img src="{{ asset('assets/img/home/img') }}/menu.svg" class="menu__img">
                 </div>
             </section> 
         </nav>
-    
+
+        <script src="{{ asset('assets/js/home') }}/reloj.js"></script>
+
+
         <script src="{{ asset('assets/js/home') }}/app.js"></script>
             
             
         </header>
         
 <div class="pos1">
-
+    @foreach($souvenir1 as $souvenir)
     <div class="card">
         <div class="circle" style="--clr:#bdc3c7">
-            <img id="img" src="{{ asset('assets/img/home/img') }}/bottel.png" class="logo">
+            <img id="img" src="{{asset($souvenir->url_img )}}" class="logo">
         </div>
         <div class="content">
-            <p><b>Paquete Junior</b><br>Incluye:</p>
+            <p><b>{{$souvenir->name}}</b><br>Incluye:</p>
+                <li class="li">Entrada</li>
                 <li class="li">Libreta</li>
-                <li class="li">Stikers</li>
-                <br>
-            <p><b>Precio: $150.00</b></p>
-            <a href="/HTML/Inicio_Sesion.html">Comprar</a>
+                <li class="li">Sticker</li>
+            <br>
+            <p><b>Precio: ${{$souvenir->price}}</b></p>
+            <a href="{{ route('home_page_create') }}">Comprar</a>
         </div>
-        <img id="bs" src="{{ asset('assets/img/home/img') }}/bottel.png" class="product_img">
+        <img id="bs" src="{{asset($souvenir->url_img )}}" class="product_img">
  </div>
+ @endforeach
 
+ 
+    @foreach($souvenir2 as $souvenir)
     <div class="card">
         <div class="circle" style="--clr:#bdc3c7">
-            <img id="libr" src="{{ asset('assets/img/home/img') }}/libret.png" class="logo">
+            <img id="taza" src="{{asset($souvenir->url_img )}}" class="logo">
         </div>
         <div class="content">
-            <p><b>Paquete Semi Senior</b><br>Incluye:</p>
-                <li class="li">Termo</li>
-                <li class="li">Taza</li>
-                <li class="li">Stikers</li>
-                <br>
-            <p><b>Precio: $250.00</b></p>
-            <a href="/HTML/Inicio_Sesion.html">Comprar</a>
-        </div>
-        <img id="libreta" src="{{ asset('assets/img/home/img') }}/libret.png" class="product_img">
-    </div>
-
-    <div class="card">
-        <div class="circle" style="--clr:#bdc3c7">
-            <img id="taza" src="{{ asset('assets/img/home/img') }}/cup.png" class="logo">
-        </div>
-        <div class="content">
-            <p><b>Paquete Senior</b><br>Incluye:</p>
+            <p><b>{{$souvenir->name}}</b><br></p>
+                <li class="li">Entrada</li>
                 <li class="li">Libreta</li>
-                <li class="li">Termo</li>
-                <li class="li">Taza</li>
-                <li class="li">Stikers</li>
+                <li class="li">Taza personalizada</li>
                 <br>
-            <p><b>Precio: $350.00</b></p>
-            <a href="/HTML/Inicio_Sesion.html">Comprar</a>
+            <p><b>Precio: ${{$souvenir->price}}</b></p>
+            <a href="{{ route('home_page_create') }}">Comprar</a>
         </div>
-        <img id="xa" src="{{ asset('assets/img/home/img') }}/cup.png" class="product_img">
+        <img id="xa" src="{{asset($souvenir->url_img )}}" class="product_img">
     </div>
-
+    @endforeach
+   
+    @foreach($souvenir3 as $souvenir)
     <div class="card">
         <div class="circle" style="--clr:#bdc3c7">
-            <img id="pl" src="{{ asset('assets/img/home/img') }}/playera.png" class="logo">
+            <img id="pl" src="{{asset($souvenir->url_img )}}" class="logo">
         </div>
         <div class="content">
-            <p><b>Paquete Master</b><br>Incluye:</p>
+            <p><b>{{$souvenir->name}}</b><br>Incluye:</p>
+                <li class="li">Entrada</li>
+                <li class="li">Libreta</li>
                 <li class="li">Playera</li>
-                <li class="li">Libreta</li>
-                <li class="li">Termo</li>
-                <li class="li">Taza</li>
                 <li class="li">Stikers</li>
                 <br>
-            <p><b>Precio: $450.00</b></p>
-            <a href="/HTML/Inicio_Sesion.html">Comprar</a>
+            <p><b>Precio: ${{$souvenir->price}}</b></p>
+            <a href="{{ route('home_page_create') }}">Comprar</a>
         </div>
-        <img id="pla" src="{{ asset('assets/img/home/img') }}/playera.png" class="product_img">
+        <img id="pla" src="{{asset($souvenir->url_img )}}" class="product_img">
     </div>
-
+@endforeach
     
  
   

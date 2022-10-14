@@ -42,7 +42,7 @@ class SettingController extends Controller
       'configuration_active' => $configuration_active,
       'configuration_active_number' => $configuration_active_number,
     ];
-    return view('Setting.index')->with($variables);
+    return view('setting.index')->with($variables);
   }
 
   public function update($setting_id)
@@ -70,7 +70,7 @@ class SettingController extends Controller
       'title_page' => 'Configuración',
       'current_setting' => $current_setting,
     ];
-    return view('Setting.update')->with($variables);
+    return view('setting.update')->with($variables);
   }
 
   public function edit(Request $request)

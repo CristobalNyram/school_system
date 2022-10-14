@@ -98,11 +98,14 @@
                 </ul>
     
                 <div class="menu__hamburguer">
-                    <img src="assets/menu.svg" class="menu__img">
+                    <img src="{{ asset('assets/img/home/img') }}/menu.svg" class="menu__img">
                 </div>
             </section> 
         </nav>
+
         <script src="{{ asset('assets/js/home') }}/reloj.js"></script>
+
+
         <script src="{{ asset('assets/js/home') }}/app.js"></script>
             
             
@@ -127,7 +130,7 @@
                 </ul>
             </div>
         </div>
-        <script src="js/menu.js"></script>
+        <script src="{{ asset('assets/js/home') }}/menu.js"></script>
         <div id="q" class="que">
             <h1>¿QUÉ ES SOFTWARE-</span><span class="freed">FREEDOM <span class="day">DAY</span></span>?</h1><br>
             <p>Es un evento organizado por alumnos y docentes de la carrera de Tecnologías de la Información en la
@@ -220,42 +223,42 @@
 
         
     <h2>Patrocinios</h2>
+@foreach($sponsors2 as $sponsor)
+<ul>
+        <li>
+            <img src="{{asset($sponsor->url_img )}}" width="100">
+        </li>
+        <li>
+            <img src="{{asset($sponsor->url_img )}}" width="100">
 
-    <ul>
-        <li>
-            <img src="https://nuboxmkt.mx/wp-content/uploads/2020/04/Amefibra.png" width="100">
-
         </li>
         <li>
-            <img src="https://nuboxmkt.mx/wp-content/uploads/2020/04/Holanda.png" width="100">
-
+            <img src="{{asset($sponsor->url_img )}}" width="100">
         </li>
         <li>
-            <img src="https://nuboxmkt.mx/wp-content/uploads/2020/04/Banco-Azteca.png" width="100">
+            <img src="{{asset($sponsor->url_img )}}" width="100">
         </li>
         <li>
-            <img src="https://nuboxmkt.mx/wp-content/uploads/2020/04/ATT.png" width="100">
+            <img src="{{asset($sponsor->url_img )}}" width="100">
         </li>
         <li>
-            <img src="https://nuboxmkt.mx/wp-content/uploads/2020/04/Pemex_exploracion_produccion.png" width="100">
+            <img src="{{asset($sponsor->url_img )}}" width="100">
         </li>
         <li>
-            <img src="https://nuboxmkt.mx/wp-content/uploads/2020/04/General-Mills.png" width="100">
+            <img src="{{asset($sponsor->url_img )}}" width="100">
         </li>
         <li>
-            <img src="https://nuboxmkt.mx/wp-content/uploads/2020/04/Qualitas.png" width="100">
+            <img src="{{asset($sponsor->url_img )}}" width="100">
         </li>
         <li>
-            <img src="https://nuboxmkt.mx/wp-content/uploads/2020/04/Walmart.png" width="100">
+            <img src="{{asset($sponsor->url_img )}}" width="100">
         </li>
         <li>
-            <img src="https://nuboxmkt.mx/wp-content/uploads/2020/04/Dinero-express.png" width="100">
-        </li>
-        <li>
-            <img src="https://nuboxmkt.mx/wp-content/uploads/2020/04/Banco-Azteca.png" width="100">
+            <img src="{{asset($sponsor->url_img )}}" width="100">
         </li>
 
     </ul>
+    @endforeach
 </section>
 
 <footer>
@@ -282,4 +285,4 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="/js/menu.js"></script>
+    <script src="{{ asset('assets/js/home') }}/menu.js"></script>

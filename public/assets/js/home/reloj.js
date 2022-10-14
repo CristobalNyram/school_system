@@ -1,6 +1,6 @@
 // Establecer la fecha en la que estamos contando hacia atrás
 // Establecer la fecha aqui, en formato ingles
-var countDownDate = new Date("Nov 15, 2022 14:00:00").getTime();
+var countDownDate = new Date("Nov 31, 2022 8:00:00").getTime();
 // Actualizar la cuenta regresiva cada 1 segundo
 var x = setInterval(function() {
   // Obtener la fecha y la hora de hoy

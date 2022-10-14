@@ -79,8 +79,8 @@
 
                         <select class="form-control form-control-lg single-select-2 " data-toggle="select2" name="speaker_id" id="speaker_id">
                             <option value="-2" selected>Seleccionar</option>
-                            @foreach ($users_speakers as $user_speaker )
-                            <option value="{{ $users_speakers }}">{{ $user_speaker->name }}</option>
+                            @foreach ($users_speakers as $user )
+                            <option value="{{ $user->id }}">{{ $user->name }}</option>
 
                             @endforeach
                         </select>

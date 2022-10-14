@@ -29,17 +29,17 @@
                     @endif
                     @if ($errors->any())
 
-                                @foreach ($errors->all() as $error)
+                    @foreach ($errors->all() as $error)
 
 
-                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                    {{ $error }}                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        {{ $error }} <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
 
-                                @endforeach
-                   @endif
+                    @endforeach
+                    @endif
                     <div class="form-group">
                         <input type="hidden" name="id" id="id" value="{{$current_souvenir->id}}">
                         <label for="name">Nombre</label>
@@ -52,21 +52,19 @@
                     </div>
                     <div class="form-group">
                         <label for="price">Precio</label>
-                        <input type="number" class="form-control form-control-lg" id="price" name="price" value="{{ $current_souvenir->price}}" placeholder="Precio" max="600" required >
+                        <input type="number" class="form-control form-control-lg" id="price" name="price" value="{{ $current_souvenir->price}}" placeholder="Precio" max="600" required>
                     </div>
 
                     <div class="form-group">
                         <label for="url_img">Foto del Souvenir</label>
-                        <input type="file" onBlur='LimitAttach(this,1)' ; accept="image/png, image/jpg, image/jpeg" class="form-control form-control-lg" id="url_img" name="url_img" value="{{ $current_souvenir->url_img }}" placeholder="Foto del souvenir" max="50" required >
+                        <input type="file" onBlur='LimitAttach(this,1)' ; accept="image/png, image/jpg, image/jpeg" class="form-control form-control-lg" id="url_img" name="url_img" value="{{ $current_souvenir->url_img }}" placeholder="Foto del souvenir" max="50" required>
                     </div>
-                    <div class="alert alert-warning alert-dismissible fade show" id="alerta" role="alert" style="display: none"  role="alert">
+                    <div class="alert alert-warning alert-dismissible fade show" id="alerta" role="alert" style="display: none" role="alert">
                         <span class="alert-inner--text"><strong>Advertencia: </strong> Sólo se aceptan archivos con extensiones .jpeg, .jpe, .jpg, .png</span>
-                                   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                   
-
 
                     <div class="form-group justify-content-center align-items-center">
                         <label>Foto Actual</label>

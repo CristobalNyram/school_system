@@ -14,17 +14,64 @@
 <header>
     <nav class="menu">
             <section class="menu__container">
-                <a href="{{ route('home_page_index') }}" class="logo" id="tope"><img src="{{ asset('assets/img/home/img') }}/logo.png"></a>
+                
     
                 <ul class="menu__links">
+                    
+                        
+                    <li class="menu_item">
+                        <section class="container">
+                            
+                            <div class="charts">
+                             <a href="{{ route('home_page_index') }}" class="logo" id="tope"><img src="{{ asset('assets/img/home/img') }}/logo.png"></a>
+                    
+                                <div class="chart">
+                                    <!-- un circulo inicial de fondo -->
+                                    <div class="circle center-abs"></div>
+                                    <!-- area para SVG -->
+                                    <svg class="center-abs" width="150" height="150">
+                                        <!-- un segundo circulo en SVG con su ubicacion en coordenadas x,y y el radio de expansion -->
+                                        <circle class="outer" id="circulo1" cx="75" cy="75" r="30" />
+                                    </svg>
+                                    <!-- etiqueta para el contador, en este caso el dia -->
+                                    <span class="text center-abs" id="days"></span>
+                                    <h3 id="textcolor1">Dias</h3>
+                                </div>
+                                <div class="chart">
+                                    <div class="circle center-abs"></div>
+                                    <svg class="center-abs" width="150" height="150">
+                                        <circle class="outer" id="circulo2" cx="75" cy="75" r="30" />
+                                    </svg>
+                                    <span class="text center-abs" id="hours"></span>
+                                    <h3 id="textcolor2">Horas</h3>
+                                </div>
+                                <div class="chart">
+                                    <div class="circle center-abs"></div>
+                                    <svg class="center-abs" width="150" height="150">
+                                        <circle class="outer"  id="circulo3" cx="75" cy="75" r="30" />
+                                    </svg>
+                                    <span class="text center-abs" id="minutes"></span>
+                                    <h3 id="textcolor3">Minutos</h3>
+                                </div>
+                                <div class="chart">
+                                    <div class="circle center-abs"></div>
+                                    <svg class="center-abs" width="150" height="150">
+                                        <circle class="outer" id="circulo4"cx="75" cy="75" r="30" />
+                                    </svg>
+                                    <span class="text center-abs" id="seconds"></span>
+                                    <h3 id="textcolor4">Segundos</h3>
+                                </div>
+                            </div>
+                        </section>
+                    </li>
                     <li class="menu__item">
                         <a href="{{ route('home_page_index') }}" class="menu__link">Inicio</a>
                     </li>
+                    
         
                     <li class="menu__item">
                         <div class="tex1">
-    
-                            <a href="{{ route('home_page_sponsor') }}" class="menu__link">Nuestros Patrocinadores</a>
+                             <a href="{{ route('home_page_sponsor') }}" class="menu__link">Nuestros<span style="color:black">_</span>Patrocinadores</a>
                         </div>
                     </li>
     
@@ -50,36 +97,57 @@
                 </ul>
     
                 <div class="menu__hamburguer">
-                    <img src="assets/menu.svg" class="menu__img">
+                    <img src="{{ asset('assets/img/home/img') }}/menu.svg" class="menu__img">
                 </div>
             </section> 
         </nav>
-    
-        <script src="{{ asset('assets/img/home/img') }}/app.js"></script>
-            
-            
-    </header>
 
-    <div class="jk" style="background-image: url(https://www.40defiebre.com/wp-content/uploads/2015/10/imagenes.png);" ></div>
+        <script src="{{ asset('assets/js/home') }}/reloj.js"></script>
+
+
+        <script src="{{ asset('assets/js/home') }}/app.js"></script>
+            
+            
+        </header>
+
+    <div class="jk" style="background-image: url('../assets/img/home/img/ins.png')"></div>
     
-    <form  method="post">
+    <form role="form"  method="POST" action="{{ route('login') }}">
+        @csrf
+
+    
 
     <div id="posi">
+
+
     
         <section class="forma">
             <h1>Inicio de Sesión</h1>
             <div class="tokyus">
-                <input type="email" id="usna" class="un" autocomplete="off" name="ingresoEmail" placeholder="Ingrese su Correo Electrónico" required/>
+
+                <input type="email" id="usna" class="un" autocomplete="off" name="email" placeholder="{{ __('Email') }}" value="{{ old('email') }}" value="admin@argon.com" required autofocus/>
             <label class="oki" for="username">Correo Electrónico</label>
+
             </div>
+            @if ($errors->has('email'))
+                <span class="invalid-feedback" style="display: block;" role="alert">
+                    <strong>{{ $errors->first('email') }}</strong>
+                </span>
+             @endif
 
             <div id="pass" class="tokyus">
-                <input type="password" id="usna" class="un" autocomplete="off" name="ingresoPassword" placeholder="Contraseña" required/>
+                <input type="password" id="usna" class="un" autocomplete="off" name="password" placeholder="{{ __('Password') }}" value="secret" required/>
             <label class="oki" for="password">Contraseña</label>
             </div>
 
+            @if ($errors->has('password'))
+                    <span class="invalid-feedback" style="display: block;" role="alert">
+                            <strong>{{ $errors->first('password') }}</strong>
+                     </span>
+             @endif
+
             <div class="regresar">
-                <a href="/HTML/Formulario_Registro.html">Crear una cuenta</a>
+                <a href="{{ route('home_page_create') }}">Crear una cuenta</a>
             </div>
 
 

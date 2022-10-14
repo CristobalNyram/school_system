@@ -8,22 +8,69 @@
     <title>FreedoomDay</title>
     <link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilo_Talleres.css">
     <link rel="stylesheet" href="{{ asset('assets/css/home') }}/barra.css">
-    <link rel="icon" href="{{ asset('assets/img/home/img') }}/logo.png">
+    <link rel="icon" href="{{ asset('assets/img/home/img')}}/logo.png">
 </head>
 <header>
     <nav class="menu">
             <section class="menu__container">
-                <a href="{{ route('home_page_index') }}" class="logo" id="tope"><img src="{{ asset('assets/img/home/img') }}/logo.png"></a>
+                
     
                 <ul class="menu__links">
+                    
+                        
+                    <li class="menu_item">
+                        <section class="container">
+                            
+                            <div class="charts">
+                             <a href="{{ route('home_page_index') }}" class="logo" id="tope"><img src="{{ asset('assets/img/home/img') }}/logo.png"></a>
+                    
+                                <div class="chart">
+                                    <!-- un circulo inicial de fondo -->
+                                    <div class="circle center-abs"></div>
+                                    <!-- area para SVG -->
+                                    <svg class="center-abs" width="150" height="150">
+                                        <!-- un segundo circulo en SVG con su ubicacion en coordenadas x,y y el radio de expansion -->
+                                        <circle class="outer" id="circulo1" cx="75" cy="75" r="30" />
+                                    </svg>
+                                    <!-- etiqueta para el contador, en este caso el dia -->
+                                    <span class="text center-abs" id="days"></span>
+                                    <h3 id="textcolor1">Dias</h3>
+                                </div>
+                                <div class="chart">
+                                    <div class="circle center-abs"></div>
+                                    <svg class="center-abs" width="150" height="150">
+                                        <circle class="outer" id="circulo2" cx="75" cy="75" r="30" />
+                                    </svg>
+                                    <span class="text center-abs" id="hours"></span>
+                                    <h3 id="textcolor2">Horas</h3>
+                                </div>
+                                <div class="chart">
+                                    <div class="circle center-abs"></div>
+                                    <svg class="center-abs" width="150" height="150">
+                                        <circle class="outer"  id="circulo3" cx="75" cy="75" r="30" />
+                                    </svg>
+                                    <span class="text center-abs" id="minutes"></span>
+                                    <h3 id="textcolor3">Minutos</h3>
+                                </div>
+                                <div class="chart">
+                                    <div class="circle center-abs"></div>
+                                    <svg class="center-abs" width="150" height="150">
+                                        <circle class="outer" id="circulo4"cx="75" cy="75" r="30" />
+                                    </svg>
+                                    <span class="text center-abs" id="seconds"></span>
+                                    <h3 id="textcolor4">Segundos</h3>
+                                </div>
+                            </div>
+                        </section>
+                    </li>
                     <li class="menu__item">
                         <a href="{{ route('home_page_index') }}" class="menu__link">Inicio</a>
                     </li>
+                    
         
                     <li class="menu__item">
                         <div class="tex1">
-    
-                            <a href="{{ route('home_page_sponsor') }}" class="menu__link">Nuestros Patrocinadores</a>
+                             <a href="{{ route('home_page_sponsor') }}" class="menu__link">Nuestros<span style="color:black">_</span>Patrocinadores</a>
                         </div>
                     </li>
     
@@ -49,138 +96,235 @@
                 </ul>
     
                 <div class="menu__hamburguer">
-                    <img src="assets/menu.svg" class="menu__img">
+                    <img src="{{ asset('assets/img/home/img') }}/menu.svg" class="menu__img">
                 </div>
             </section> 
         </nav>
-    
-        <script src="{{ asset('assets/js/home') }}app.js"></script>
+
+        <script src="{{ asset('assets/js/home') }}/reloj.js"></script>
+
+
+        <script src="{{ asset('assets/js/home') }}/app.js"></script>
             
             
         </header>
-        <div class="carta">
 
-            <div class="separador">
+<div class="carta">
+@foreach($courses1 as $course1)
+    <div class="separador">
+        
+        <div class="spx">
             
-                <div class="spx">
-                    <figure>
-                        <img src="{{ asset('assets/img/home/img/cursos') }}/video.png">
-                        <div class="capa">
-                            <h3>Sistema de Videovigilancia</h3>
-                            <p>
-                                En este curso aprenderás las bases de instalación y uso de los sistem...
-                            </p>
-                            <a href="/HTML/Cursos/Curso1.html">
-                                    <button>+INFO</button>
-                                    </a>
-            
-                        </div>
-                    </figure>
-                </div>
-            
-            
-                <div class="spx">
-                    <figure>
-                        <img src="{{ asset('assets/img/home/img/cursos') }}/base.png">
-                        <div class="capa">
-                            <h3>Base de Datos</h3>
-                            <p>Una base de datos es una recopilación organizada de informaci...</p>
-                            <a href="/HTML/Cursos/Curso2.html">
-                                    <button>+INFO</button>
-                                    </a>
-                        </div>
-                    </figure>
-                </div>
-            </div>
-            
-            
-            <div class="separador">
-            
-                <div class="spx">
-                    <figure>
-                        <img src="{{ asset('assets/img/home/img/cursos') }}/node.png">
-                        <div class="capa">
-                            <h3>Bot WhatsApp con NODE JS</h3>
-                            <p>Node.js es un entorno en tiempo de ejecución multiplataforma, de código abier...</p>
-                            <a href="/HTML/Cursos/Curso3.html">
-                                    <button>+INFO</button>
-                                    </a>
-                        </div>
-                    </figure>
-                </div>
-            
-            
-            
-                <div class="spx">
-                    <figure>
-                        <img src="{{ asset('assets/img/home/img/cursos') }}/debian.png">
-                        <div class="capa">
-                            <h3>Servidor Web con Debian</h3>
-                            <p>Debian es un sistema operativo adecuado para un amplio rango de dispositivos incluyendo
-                          </p>
-                          <a href="/HTML/Cursos/Curso4.html">
-                                    <button>+INFO</button>
-                                    </a>
-                        </div>
-                    </figure>
-                </div>
-            </div>
-            
-            
-            
-            <div class="separador">
-                <div class="spx">
-                    <figure>
-                        <img src="{{ asset('assets/img/home/img/cursos') }}/mikro.png">
-                        <div class="capa">
-                            <h3>MICROTIK y HOSTPOST</h3>
-                            <p>MikroTik es un fabricante letón de equipos de red. La compañía desarrolla y vende enrutado...
-                            </p>
-                            <a href="/HTML/Cursos/Curso5.html">
-                                    <button>+INFO</button>
-                                    </a>
-                        </div>
-                    </figure>
-                </div>
-            
-            
-                <div class="spx">
-                    <figure>
-                        <img src="{{ asset('assets/img/home/img/cursos') }}/api.png">
-                        <div class="capa">
-                            <h3>Desarrollo de APIS desde 0</h3>
-                            <p>Una API es un conjunto de definiciones y protocolos que se utiliza para desarro...</p>
-                            <a href="/HTML/Cursos/Curso6.html">
-                                    <button>+INFO</button>
-                                    </a>
-                        </div>
-                    </figure>
-                </div>
-            </div>
-            </div>
+            <figure>
+                <img src="{{asset($course1->url_img )}}">
+                <div class="capa">
+                    <h3>{{$course1->title}}</h3>
+                    <p>{{$course1->description}}</p>
+                    <a href="{{ route('course_interface', $courses1[0]) }}">
+                        <button>+INFO</button>
+                    </a>
 
-        <footer>
-            <div class="container">
-            <p>&copy; Copyright Software-Freedom Day 2022<br><br>Todos los derechos reservados. <br>Deasarrollado por REEB
-            </p>
-            <center>
-                <a href="https://www.facebook.com/Freedom-Day-TI-Uttecam-477721659417275">
-                    <span class="icono"></span>
-                    <ion-icon class="tam" name="logo-facebook"></ion-icon>
-                    <span class="texto"> </span>
-                </a>
-    
-                <a class="icon" href="https://goo.gl/maps/BWKybpucUgH8QXzf6">
-                    <span class="icono"></span>
-                    <ion-icon name="location-outline"></ion-icon>
-                    <span class="texto"> </span>
-                </a>
-            </center>
-            </div>
-        </footer>
-    
-        <script src="{{ asset('assets/js/home') }}/galeria.js"></script>
-        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-        <script src="https://unpkg.com/scrollreveal"></script>
-        <script src="{{ asset('assets/js/home') }}/menu.js"></script>
+                </div>
+            </figure>
+        </div> 
+    </div> 
+    @endforeach  
+    @foreach($courses2 as $course2)
+    <div class="separador">
+        
+        <div class="spx">
+            
+            <figure>
+                <img src="{{asset($course2->url_img )}}">
+                <div class="capa">
+                    <h3>{{$course2->title}}</h3>
+                    <p>{{$course2->description}}</p>
+                    <a href="{{ route('course_interface', $courses2[1]) }}">
+                        <button>+INFO</button>
+                    </a>
+
+                </div>
+            </figure>
+        </div> 
+    </div> 
+    @endforeach  
+    @foreach($courses3 as $course3)
+    <div class="separador">
+        
+        <div class="spx">
+            
+            <figure>
+                <img src="{{asset($course3->url_img )}}">
+                <div class="capa">
+                    <h3>{{$course3->title}}</h3>
+                    <p>{{$course3->description}}</p>
+                    <a href="{{ route('course_interface', $courses3[2]) }}">
+                        <button>+INFO</button>
+                    </a>
+
+                </div>
+            </figure>
+        </div> 
+    </div> 
+    @endforeach  
+    @foreach($courses4 as $course4)
+    <div class="separador">
+        
+        <div class="spx">
+            
+            <figure>
+                <img src="{{asset($course4->url_img )}}">
+                <div class="capa">
+                    <h3>{{$course4->title}}</h3>
+                    <p>{{$course4->description}}</p>
+                    <a href="{{ route('course_interface', $courses4[3]) }}">
+                        <button>+INFO</button>
+                    </a>
+
+                </div>
+            </figure>
+        </div> 
+    </div> 
+    @endforeach  
+    @foreach($courses5 as $course5)
+    <div class="separador">
+        
+        <div class="spx">
+            
+            <figure>
+                <img src="{{asset($course5->url_img )}}">
+                <div class="capa">
+                    <h3>{{$course5->title}}</h3>
+                    <p>{{$course5->description}}</p>
+                    <a href="{{ route('course_interface', $courses5[4]) }}">
+                        <button>+INFO</button>
+                    </a>
+
+                </div>
+            </figure>
+        </div> 
+    </div> 
+    @endforeach  
+    @foreach($courses6 as $course6)
+    <div class="separador">
+        
+        <div class="spx">
+            
+            <figure>
+                <img src="{{asset($course6->url_img )}}">
+                <div class="capa">
+                    <h3>{{$course6->title}}</h3>
+                    <p>{{$course6->description}}</p>
+                    <a href="{{ route('course_interface', $courses6[5]) }}">
+                        <button>+INFO</button>
+                    </a>
+
+                </div>
+            </figure>
+        </div> 
+    </div> 
+    @endforeach  
+    @foreach($courses7 as $course7)
+    <div class="separador">
+        
+        <div class="spx">
+            
+            <figure>
+                <img src="{{asset($course7->url_img )}}">
+                <div class="capa">
+                    <h3>{{$course7->title}}</h3>
+                    <p>{{$course7->description}}</p>
+                    <a href="{{ route('course_interface', $courses7[6]) }}">
+                        <button>+INFO</button>
+                    </a>
+
+                </div>
+            </figure>
+        </div> 
+    </div> 
+    @endforeach  
+    @foreach($courses8 as $course8)
+    <div class="separador">
+        
+        <div class="spx">
+            
+            <figure>
+                <img src="{{asset($course8->url_img )}}">
+                <div class="capa">
+                    <h3>{{$course8->title}}</h3>
+                    <p>{{$course8->description}}</p>
+                    <a href="{{ route('course_interface', $courses8[7]) }}">
+                        <button>+INFO</button>
+                    </a>
+
+                </div>
+            </figure>
+        </div> 
+    </div> 
+    @endforeach  
+    @foreach($courses9 as $course9)
+    <div class="separador">
+        
+        <div class="spx">
+            
+            <figure>
+                <img src="{{asset($course9->url_img )}}">
+                <div class="capa">
+                    <h3>{{$course9->title}}</h3>
+                    <p>{{$course9->description}}</p>
+                    <a href="{{ route('course_interface', $courses9[8]) }}">
+                        <button>+INFO</button>
+                    </a>
+
+                </div>
+            </figure>
+        </div> 
+    </div> 
+    @endforeach  
+    @foreach($courses10 as $course10)
+    <div class="separador">
+        
+        <div class="spx">
+            
+            <figure>
+                <img src="{{asset($course10->url_img )}}">
+                <div class="capa">
+                    <h3>{{$course10->title}}</h3>
+                    <p>{{$course10->description}}</p>
+                    <a href="{{ route('course_interface', $courses10[9]) }}">
+                        <button>+INFO</button>
+                    </a>
+
+                </div>
+            </figure>
+        </div> 
+    </div> 
+    @endforeach  
+</div>
+
+
+<footer>
+    <div class="container">
+        <p>&copy; Copyright Software-Freedom Day 2022<br><br>Todos los derechos reservados. <br>Deasarrollado por REEB
+        </p>
+        <center>
+            <a href="https://www.facebook.com/Freedom-Day-TI-Uttecam-477721659417275">
+                <span class="icono"></span>
+                <ion-icon class="tam" name="logo-facebook"></ion-icon>
+                <span class="texto"> </span>
+            </a>
+
+            <a class="icon" href="https://goo.gl/maps/BWKybpucUgH8QXzf6">
+                <span class="icono"></span>
+                <ion-icon name="location-outline"></ion-icon>
+                <span class="texto"> </span>
+            </a>
+        </center>
+    </div>
+</footer>
+
+<script src="{{ asset('assets/js/home') }}/galeria.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="https://unpkg.com/scrollreveal"></script>
+<script src="{{ asset('assets/js/home') }}/menu.js"></script>

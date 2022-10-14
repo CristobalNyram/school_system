@@ -86,13 +86,57 @@ class UsersTableSeeder extends Seeder
             'updated_at' => now()
         ]);
         DB::table('users')->insert([
-            'name' => 'Marco',
-            'first_surname' => 'Flores',
-            'second_surname' => 'Hernandez',
+            'name' => 'Conferencista1',
+            'first_surname' => 'Conferencista1',
+            'second_surname' => 'Conferencista1',
             'role_id' => 6,
-            'email' => 'marcohuerta12@gmail.com',
+            'email' => 'conferencista1@gmail.com',
             'email_verified_at' => now(),
-            'password' => Hash::make('root12p'),
+            'password' => Hash::make('conferencista1'),
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+        DB::table('users')->insert([
+            'name' => 'Conferencista2',
+            'first_surname' => 'Conferencista2',
+            'second_surname' => 'Conferencista2',
+            'role_id' => 6,
+            'email' => 'conferencista2@gmail.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make('conferencista2'),
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+        DB::table('users')->insert([
+            'name' => 'Conferencista3',
+            'first_surname' => 'Conferencista3',
+            'second_surname' => 'Conferencista3',
+            'role_id' => 6,
+            'email' => 'conferencista3@gmail.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make('conferencista3'),
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+        DB::table('users')->insert([
+            'name' => 'Conferencista4',
+            'first_surname' => 'Conferencista4',
+            'second_surname' => 'Conferencista4',
+            'role_id' => 6,
+            'email' => 'conferencista4@gmail.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make('conferencista4'),
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+        DB::table('users')->insert([
+            'name' => 'Conferencista5',
+            'first_surname' => 'Conferencista5',
+            'second_surname' => 'Conferencista5',
+            'role_id' => 6,
+            'email' => 'Conferencistya5@gmail.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make('conferencista5'),
             'created_at' => now(),
             'updated_at' => now()
         ]);
