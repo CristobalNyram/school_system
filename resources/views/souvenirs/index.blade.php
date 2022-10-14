@@ -31,8 +31,8 @@
                     <tr>
                       <th scope="col" class="sort" data-sort="name">ID</th>
                       <th scope="col" class="sort" data-sort="budget">Nombre</th>
-                      <th scope="col" class="sort" data-sort="status">Descripción</th>
                       <th scope="col" class="sort" data-sort="status">Precio</th>
+                      <th scope="col" class="sort" data-sort="status"> Descripción</th>
                       <th scope="col" class="sort" data-sort="status">Foto</th>
                       <th scope="col" class="sort" data-sort="status">Acciones</th>
 

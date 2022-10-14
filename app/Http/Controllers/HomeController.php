@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
 use App\Models\Logbook;
 use Illuminate\Support\Facades\Auth;
 
@@ -30,12 +31,16 @@ class HomeController extends Controller
         $log = new Logbook();
         $log->activity_done($description = 'Accedió a la página principal', $table_id = 0, $menu_id = 5, $user_id = Auth::id(), $kind_acction = 1);
         //Logbook::activity_done($description = 'Accedió a la página principal', $table_id = 0, $menu_id = 5, $user_id = Auth::id(), $kind_acction = 1);
+        $courses_available= Course::all()->where('status','=','2');
         $variables=[
             'menu'=>'dashboard',
             'title_page'=>'dashboard',
+            'course_available'=>$courses_available,
 
 
         ];
+
+
         return view('dashboard')->with($variables);
     }
     public function home()
