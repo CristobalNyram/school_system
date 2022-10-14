@@ -158,6 +158,8 @@ class RallyController extends Controller
      */
     public function delete($rally_id)
     {
+        $role = new Role();
+        $log = new Logbook();
         $rally = Rally::findOrFail($rally_id);
         $rally->status = -2;
         if ($rally->save()) {

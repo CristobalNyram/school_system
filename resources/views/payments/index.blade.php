@@ -28,22 +28,23 @@
                   <thead class="thead-light">
                     <tr>
                       <th scope="col" class="sort" data-sort="name">ID</th>
-                      <th scope="col" class="sort" data-sort="budget">Nombre Alumno</th>
+                      <th scope="col" class="sort" data-sort="budget">Estudiante</th>
                       <th scope="col" class="sort" data-sort="status">Paquete</th>
-                      <th scope="col" class="sort" data-sort="status">Fecha que realizo el pedido</th>
+                      <th scope="col" class="sort" data-sort="status">Precio</th>
+                      <th scope="col" class="sort" data-sort="status">Estatus</th>
                       <th scope="col" class="sort" data-sort="status">Acciones</th>
 
                     </tr>
                   </thead>
                   <tbody class="list">
 
-                    @foreach ($users_actives as $users )
+                    @foreach ($payments_student as $payment )
                     <tr>
                         <th scope="row">
                           <div class="media align-items-center">
 
                             <div class="media-body">
-                              <span class="name mb-0 text-sm">  {{ $users->id }}</span>
+                              <span class="name mb-0 text-sm">  {{ $payment->id }}</span>
                             </div>
                           </div>
                         </th>
@@ -53,7 +54,7 @@
                             <div class="media align-items-center">
 
                               <div class="media-body">
-                                <span class="name mb-0 text-sm">{{ $users->name }} {{ $users->first_surname }} {{ $users->second_surname }}   </span>
+                                <span class="name mb-0 text-sm">{{ $payment->student->name }} </span>
                               </div>
                             </div>
                         </th>
@@ -61,16 +62,25 @@
                             <div class="media align-items-center">
 
                               <div class="media-body">
-                                <span class="name mb-0 text-sm">{{ $users->gender}} </span>
+                                <span class="name mb-0 text-sm">{{ $payment->package->name }} </span>
                               </div>
                             </div>
                         </th>
+                        <th scope="row">
+                            <div class="media align-items-center">
+
+                              <div class="media-body">
+                                <span class="name mb-0 text-sm">{{ $payment->package->price }} </span>
+                              </div>
+                            </div>
+                        </th>
+
 
                         <th scope="row">
                             <div class="media align-items-center">
 
                               <div class="media-body">
-                                <span class="name mb-0 text-sm"> {{ $users->created_at }}</span>
+                                <span class="name mb-0 text-sm"> {{ $payment->status }}</span>
                               </div>
                             </div>
                         </th>
@@ -87,14 +97,14 @@
                                 <i class="fas fa-ellipsis-v"></i>
                               </a>
                               <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                              <a class="dropdown-item" href="{{route('user_update',$users->id)}}">
+                              <a class="dropdown-item" href="{{route('user_update', $payment->id )}}">
                                 <i class="fas fa-edit"></i> Aprobar pago
                               </a>
-                              <a class="dropdown-item" href="{{route('user_update',$users->id)}}">
+                              <a class="dropdown-item" href="{{route('user_update',$payment->id)}}">
                                 <i class="fas fa-edit"></i> Cancelar pago
                               </a>
 
-                                <form class="input-group form-eliminar"  action="{{route('course_delete',$users->id)}}" method="POST">
+                                <form class="input-group form-eliminar"  action="{{route('course_delete',$payment->id)}}" method="POST">
                                   @csrf
 
                                 <input type="submit" class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-notification" value="Eliminar" ></input>
