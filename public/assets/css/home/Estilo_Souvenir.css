@@ -4,6 +4,8 @@
 *{
     
     box-sizing: border-box;
+    margin: 0;
+    padding:0;
 }
 
 body{
@@ -164,7 +166,7 @@ center{
  transition-delay: 0s;   
 }
 
-.card .circle{
+.card .circleS{
     position: absolute;
     top: 0;
     left: 0;
@@ -177,7 +179,7 @@ center{
     align-items: center;
 }
 
-.card .circle::before{
+.card .circleS::before{
     content: '';
     position: absolute;
     top: 0;
@@ -191,17 +193,17 @@ center{
     transition: 0.5s;
 }
 
-.card:hover .circle::before{
+.card:hover .circleS::before{
     clip-path: circle(400px at center);
 }
-.card .circle .logo{
+.card .circleS .logo{
     position: relative;
     width: 200px;
     transition: 0.5s;
     transition-delay: 0.5s;
 
 }
-.card:hover .circle .logo{
+.card:hover .circleS .logo{
     transform: scale(0);
     transition-delay: 0s;
 }

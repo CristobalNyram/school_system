@@ -15,13 +15,9 @@
 <header>
     <nav class="menu">
             <section class="menu__container">
-                
-    
                 <ul class="menu__links">
-                    
-                        
                     <li class="menu_item">
-                        <section class="container">
+                        <section class="containerR">
                             
                             <div class="charts">
                              <a href="{{ route('home_page_index') }}" class="logo" id="tope"><img src="{{ asset('assets/img/home/img') }}/logo.png"></a>

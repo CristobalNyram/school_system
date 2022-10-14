@@ -17,13 +17,11 @@ use App\Http\Controllers\SpeakerController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\HomeWebController;
-<<<<<<< HEAD
 use App\Http\Controllers\ExampleController;
-=======
 use App\Http\Controllers\RallyController;
 use App\Models\Sponsor;
 
->>>>>>> c5d7170098f416dce507d40b3cb4721fb5ef904e
+
 
 
 /*
@@ -56,12 +54,8 @@ Route::prefix('web')->group(function () {
     Route::get('/conference/interface/{talk_id}',[HomeWebController::class, 'ConferenceInterface'])->name('conference_interface');
     Route::get('/souvenir',[HomeWebController::class, 'souvenir'])->name('home_page_souvenir');
     Route::get('/login',[HomeWebController::class, 'login'])->name('home_page_login');
-<<<<<<< HEAD
-
-
-=======
     Route::get('/create',[HomeWebController::class, 'create'])->name('home_page_create');
->>>>>>> c5d7170098f416dce507d40b3cb4721fb5ef904e
+
 });
 Auth::routes();
 
@@ -100,7 +94,7 @@ Route::group(['middleware' => 'auth'], function () {
 
         // student end--------------------------------------------
 
-<<<<<<< HEAD
+
          // Example start------------------------------------------
          Route::get('/example',[ExampleController::class,"index"])->name('example_index');
 
@@ -109,11 +103,10 @@ Route::group(['middleware' => 'auth'], function () {
          // password start-------------------------------------------
          Route::get('/password/update/{user_id}',[PasswordController::class,"update"])->name('password_update');
          Route::post('/password/edit',[PasswordController::class,"edit"])->name('password_edit');
-=======
+
         // password start-------------------------------------------
         Route::get('/password/update/{user_id}', [PasswordController::class, "update"])->name('password_update');
         Route::post('/password/edit', [PasswordController::class, "edit"])->name('password_edit');
->>>>>>> c5d7170098f416dce507d40b3cb4721fb5ef904e
 
         // password end--------------------------------------------
 

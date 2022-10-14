@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilo_Souvenir.css">
     <link rel="stylesheet" href="{{ asset('assets/css/home') }}/barra.css">
     <link rel="icon" href="{{ asset('assets/img/home/img') }}/logo.png">
+    <link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilo_index_R.css">
 </head>
 <header>
     <nav class="menu">
@@ -20,7 +21,7 @@
                     
                         
                     <li class="menu_item">
-                        <section class="container">
+                        <section class="containerR">
                             
                             <div class="charts">
                              <a href="{{ route('home_page_index') }}" class="logo" id="tope"><img src="{{ asset('assets/img/home/img') }}/logo.png"></a>
@@ -113,7 +114,7 @@
 <div class="pos1">
     @foreach($souvenir1 as $souvenir)
     <div class="card">
-        <div class="circle" style="--clr:#bdc3c7">
+        <div class="circleS" style="--clr:#bdc3c7">
             <img id="img" src="{{asset($souvenir->url_img )}}" class="logo">
         </div>
         <div class="content">
@@ -132,7 +133,7 @@
  
     @foreach($souvenir2 as $souvenir)
     <div class="card">
-        <div class="circle" style="--clr:#bdc3c7">
+        <div class="circleS" style="--clr:#bdc3c7">
             <img id="taza" src="{{asset($souvenir->url_img )}}" class="logo">
         </div>
         <div class="content">
@@ -150,7 +151,7 @@
    
     @foreach($souvenir3 as $souvenir)
     <div class="card">
-        <div class="circle" style="--clr:#bdc3c7">
+        <div class="circleS" style="--clr:#bdc3c7">
             <img id="pl" src="{{asset($souvenir->url_img )}}" class="logo">
         </div>
         <div class="content">

@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FreedoomDay</title>
     <link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilo_Formulario_R.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilo_index_R.css">
     
     <script src="{{ asset('argon') }}/vendor/jquery/dist/jquery.min.js"></script>
         <script src="{{ asset('argon') }}/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -33,7 +34,7 @@
                     
                         
                     <li class="menu_item">
-                        <section class="container">
+                        <section class="containerR">
                             
                             <div class="charts">
                              <a href="{{ route('home_page_index') }}" class="logo" id="tope"><img src="{{ asset('assets/img/home/img') }}/logo.png"></a>

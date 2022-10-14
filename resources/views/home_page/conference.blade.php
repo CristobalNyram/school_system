@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilo_Conferencias.css">
     <link rel="stylesheet" href="{{ asset('assets/css/home') }}/barra.css">
     <link rel="icon" href="{{ asset('assets/img/home/img') }}/logo.png">
+    <link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilo_index_R.css">
 </head>
 <header>
     <nav class="menu">
@@ -20,7 +21,7 @@
                     
                         
                     <li class="menu_item">
-                        <section class="container">
+                        <section class="containerR">
                             
                             <div class="charts">
                              <a href="{{ route('home_page_index') }}" class="logo" id="tope"><img src="{{ asset('assets/img/home/img') }}/logo.png"></a>

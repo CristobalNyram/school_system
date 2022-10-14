@@ -8,7 +8,7 @@
 
 body{
     font-family: 'biko', sans-serif;
-    background-color: #000;
+    
     
 }
 
@@ -32,7 +32,7 @@ width: 200px;
 .menu{
     background: #000;
     color: #f8f8f8;
-    height: 10vh;
+    height: 17vh;
     display: block;
    
     
@@ -146,21 +146,21 @@ width: 200px;
 Rejol
 */
 
-.container{
+.containerR{
     max-width: 900px;
     margin:50px auto;
     margin-left: 100px;
 }
-.container h1,
-.container p{
+.containerR h1,
+.containerR p{
     color:#fff;
     text-align: center;
     padding: 20px 0;
 }
-.container h1{
+.containerR h1{
     font-size: 4em;
 }
-.container p{
+.containerR p{
     font-size: 2em;
 }
 .center-abs{

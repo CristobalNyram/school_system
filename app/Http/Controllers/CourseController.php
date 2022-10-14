@@ -102,6 +102,7 @@ class CourseController extends Controller
        $course->date = $request->date;
        $course->url_img = $request->url_img;
        $course->speaker_id = $request->speaker_id;
+       $log = new Logbook();
 
        if($request -> hasFile ('url_img')){
         $file = $request ->file('url_img');
@@ -115,7 +116,7 @@ class CourseController extends Controller
 
         if ($course->save()) {
 
-            Logbook::activity_done($description='Agregó el curso '. $course->title. 'exitosamente' ,$table_id=0,$menu_id=12,$user_id=Auth::id(),$kind_acction=6);
+            $log->activity_done($description='Agregó el curso '. $course->title. 'exitosamente' ,$table_id=0,$menu_id=12,$user_id=Auth::id(),$kind_acction=6);
 
             return back()->with('success','Se ha registrado el curso exitosamente...');
 
@@ -153,6 +154,7 @@ class CourseController extends Controller
         $course->date = $request->date;
         $course->url_img = $request->url_img;
         $course->speaker_id = $request->speaker_id;
+        $log = new Logbook();
 
         if($request -> hasFile ('url_img')){
             $file = $request ->file('url_img');
@@ -164,7 +166,7 @@ class CourseController extends Controller
         }
 
         if ($course->save()) {
-            Logbook::activity_done($description='Actualizo el curso de' . $course->title . ' correctamente',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=3);
+            $log->activity_done($description='Actualizo el curso de' . $course->title . ' correctamente',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=3);
             return back()->with('success','Se ha actualizado el curso exitosamente...');
 
         }
@@ -184,8 +186,10 @@ class CourseController extends Controller
      */
     public function update($course_id)
     {
+        $role = New Role();
+        $log = new Logbook();
 
-        if(Role::checkAccesToThisFunctionality(Auth::user()->role_id,10)==null)
+        if($role->checkAccesToThisFunctionality(Auth::user()->role_id,10)==null)
         {
             $variables=[
                 'menu'=>'',
@@ -197,7 +201,7 @@ class CourseController extends Controller
 
         }
 
-        Logbook::activity_done($description='Accedió al módulo para actualizar un curso.',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=1);
+        $log->activity_done($description='Accedió al módulo para actualizar un curso.',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=1);
 
         $current_course=Course::findOrFail($course_id);
         $rol_available=Role::all()->where('status','=','2');
@@ -226,9 +230,10 @@ class CourseController extends Controller
     {
         $course = Course::findOrFail($course_id);
         $course->status=-2;
+        $log = new Logbook();
 
         if($course->save()){
-            Logbook::activity_done($description = 'Eliminó el curso ' . $course->title . ' correctamente', $table_id = 0, $menu_id = 10, $user_id = Auth::id(), $kind_acction = 3);
+            $log->activity_done($description = 'Eliminó el curso ' . $course->title . ' correctamente', $table_id = 0, $menu_id = 10, $user_id = Auth::id(), $kind_acction = 3);
             return back()->with('success','Se ha eliminado el curso exitosamente...')->with('eliminar', 'ok');
         } else {
             return back()->with('success','No se ha eliminado el curso exitosamente...');
