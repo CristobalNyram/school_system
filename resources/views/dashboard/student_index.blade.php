@@ -1,4 +1,6 @@
-<div class="row mt-5 ml-2 mr-2">
+
+<div class="row mt-5 ml-4 mr-3">
+    @foreach ($course_available as $course)
     <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0  mb-5">
         <div class="card card-profile shadow mb-5">
             <div class="row justify-content-center">
@@ -23,22 +25,20 @@
 
 
                             <div>
-                                <span class="heading">Nombre de curso</span>
-                                <span class="description">{{ __('') }}</span>
+                                <span class="heading">{{ $course->title }}</span>
+                                <span class="description">  {{ __('') }}</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="text-center">
                     <h3>
-                        {{ auth()->user()->name }}  {{ auth()->user()->first_surname }}
+                        Ponente: {{ $course->teacher->name }}  {{ $course->teacher->second_surname }}
                     </h3>
 
-                    <div class="h5 mt-4">
-                        <i class="ni business_briefcase-24 mr-2"></i>{{ __('ESTADO') }}
-                    </div>
+
                     <div>
-                        <i class="ni education_hat mr-2"></i>{{ __('Capacidad de 10 personas') }}
+                        <i class="ni education_hat mr-2"></i>Capacidad de {{ $course->maximum_person }} personas
                     </div>
                     <hr class="my-4" />
                     <p>{{ __('Descripción.') }}</p>
@@ -49,7 +49,9 @@
     </div>
 
 
+    @endforeach
 
 
 
 </div>
+
