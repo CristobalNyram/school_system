@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FreedoomDay</title>
-    <link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilo_Cursos_Interfaz.css">
     <link rel="stylesheet" href="{{ asset('assets/css/home') }}/barra.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilo_Ponente.css">
     <link rel="icon" href="{{ asset('assets/img/home/img') }}/logo.png">
 </head>
 <header>
@@ -58,13 +58,240 @@
 
 
 </header>
-<div class="inf">
-    <img class="img" src="{{asset($current_user->user_image )}}">
-    <h2>{{$current_user->name}}</h2>
-    <h3>{{$current_user->first_surname}}</h3>
-    <h3>{{$current_user->second_surname}}</h3>
-    <p>{{$current_user->email}}</p>
-</div>
+
+<body>
+    <div class="Container_T">
+        <div class="container">
+            <div class="top">
+                <div class="imgBx">
+                    <div class="box">
+                        <img src="{{asset($current_user->user_image )}}">
+                    </div>
+                </div>
+                <div class="profileText">
+                    <h3>{{$current_user->name}}<br>{{$current_user->first_surname}}<br>{{$current_user->second_surname}}<br> <span>Ponenete</span></h3>
+                </div>
+            </div>
+            <div class="contentBox">
+                <div class="leftSide">
+                    <h3>Contactos</h3>
+                    <ul>
+                        <li>
+                            <span class="icon">
+                                <ion-icon name="call-outline"></ion-icon>
+                            </span>
+                            <span class="text">+1 222 147 51 60</span>
+                        </li>
+                        <li>
+                            <span class="icon">
+                                <ion-icon name="mail-outline"></ion-icon>
+                            </span>
+                            <span class="text">{{$current_user->email}}</span>
+                        </li>
+                        <li>
+                            <span class="icon">
+                                <ion-icon name="earth-outline"></ion-icon>
+                            </span>
+                            <span class="text">www.apple.com</span>
+                        </li>
+
+                        <li>
+                            <span class="icon">
+                                <ion-icon name="location-outline"></ion-icon>
+                            </span>
+                            <span class="text"> San Francisco, California, Estados Unidos</span>
+                        </li>
+                    </ul>
+                    <h3>Educación</h3>
+                    <ul class="education">
+                        <li>
+                            <h5>1975-1974</h5>
+                            <h4>Reed College</h4>
+                            <h6>Digital arts</h6>
+                        </li>
+                        <li>
+                            <h5>1975-1978</h5>
+                            <h4>Reed College</h4>
+                            <h6>Digital arts</h6>
+                        </li>
+                        <li>
+                            <h5>1980-1994</h5>
+                            <h4>Reed College</h4>
+                            <h6>Digital arts</h6>
+                        </li>
+
+                    </ul>
+                    <h3>Language</h3>
+                    <ul class="Language">
+                        <li>
+                            <span class="text">English</span>
+                            <span class="percent">
+                                <div style="width: 90%"></div>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="text">Spanish</span>
+                            <span class="percent">
+                                <div style="width: 48%"></div>
+                            </span>
+                        </li>
+                    </ul>
+                    <h3>Interest</h3>
+                    <ul class="interest">
+                        <li><span class="icon">
+                                <ion-icon name="reader-outline"></ion-icon>
+                            </span>Reading</li>
+                        <li><span class="icon">
+                                <ion-icon name="brush-outline"></ion-icon>
+                            </span>Drawing</li>
+                        <li><span class="icon">
+                                <ion-icon name="bicycle-outline"></ion-icon>
+                            </span>Walking</li>
+
+                    </ul>
+                </div>
+                <div class="rightSide">
+                    <div class="about">
+                        <h3>Profile</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur
+                            adipisicing elit. Facilis, reiciendis amet
+                            beatae quod praesentium minus delectus facere
+                            voluptatibus animi libero distinctio molestias
+                            ratione tempore maxime accusantium rerum iusto
+                            iure atque?. <br><br>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing
+                            elit. Itaque voluptatum ratione provident similique
+                            deserunt, voluptates facere ab doloribus cumque
+                            laudantium, porro quibusdam cum eum perferendis
+                            veritatis obcaecati voluptatem illo quam.</p>
+                    </div>
+                    <div class="about">
+                        <h3>Experiance</h3>
+                        <div class="box">
+                            <div class="year_company">
+                                <h5>2014-2016</h5>
+                                <h5>Company Name</h5>
+                            </div>
+                            <div class="text">
+                                <h4>Senior UX</h4>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing
+                                    elit. Minima nulla quas cupiditate illo modi,
+                                    totam perspiciatis dicta excepturi similique
+                                    dolorum iusto vero exercitationem, placeat ad
+                                    qui itaque, quaerat temporibus voluptatibus!</p>
+
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="year_company">
+                                <h5>2016-2019</h5>
+                                <h5>Company Name</h5>
+                            </div>
+                            <div class="text">
+                                <h4>Senior UX</h4>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing
+                                    elit. Minima nulla quas cupiditate illo modi,
+                                    totam perspiciatis dicta excepturi similique
+                                    dolorum iusto vero exercitationem, placeat ad
+                                    qui itaque, quaerat temporibus voluptatibus!</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about skills">
+                        <h3>Professional Skill</h3>
+                        <div class="box">
+                            <h4>HTMl</h4>
+                            <span class="percent">
+                                <div style="width:90%;"></div>
+                            </span>
+                        </div>
+                        <div class="box">
+                            <h4>Css</h4>
+                            <span class="percent">
+                                <div style="width:90%;"></div>
+                            </span>
+                        </div>
+                        <div class="box">
+                            <h4>JavaScript</h4>
+                            <span class="percent">
+                                <div style="width:70%;"></div>
+                            </span>
+                        </div>
+                        <div class="box">
+                            <h4>PhP</h4>
+                            <span class="percent">
+                                <div style="width:40%;"></div>
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="container__cards">
+
+            <div class="card">
+                <div class="cover">
+                    <img src="images/p1.png" alt="">
+                    <div class="img__back"></div>
+                </div>
+                <div class="description">
+                    <h2>{{$current_user1->name}} {{$current_user1->first_surname}}</h2>
+                    <p><span class="icon">
+                            <ion-icon name="mail-outline"></ion-icon>
+                        </span>
+                        <span class="text">{{$current_user1->email}}</span>
+                    </p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, laboriosam.</p>
+                    <input type="button" value="Leer Más">
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="cover">
+                    <img src="images/p2.png" alt="">
+                    <div class="img__back"></div>
+                </div>
+                <div class="description">
+                    <h2>{{$current_user2->name}} {{$current_user2->first_surname}}</h2>
+                    <p><span class="icon">
+                            <ion-icon name="mail-outline"></ion-icon>
+                        </span>
+                        <span class="text">{{$current_user2->email}}</span>
+                    </p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, laboriosam.</p>
+                    <input type="button" value="Leer Más">
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="cover">
+                    <img src="images/p3.png" alt="">
+                    <div class="img__back"></div>
+                </div>
+                <div class="description">
+                    <h2>{{$current_user3->name}} {{$current_user3->first_surname}}</h2>
+                    <p><span class="icon">
+                            <ion-icon name="mail-outline"></ion-icon>
+                        </span>
+                        <span class="text">{{$current_user3->email}}</span>
+                    </p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, laboriosam.</p>
+                    <input type="button" value="Leer Más">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
 <footer>
     <div class="container">
         <p>&copy; Copyright Software-Freedom Day 2022<br><br>Todos los derechos reservados. <br>Deasarrollado por REEB
