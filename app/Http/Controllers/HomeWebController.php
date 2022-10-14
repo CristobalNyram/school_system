@@ -142,9 +142,15 @@ class HomeWebController extends Controller
     {
 
         $current_user = User::findOrFail($user_id);
+        $current_user1 = User::findOrFail($user_id+1);
+        $current_user2 = User::findOrFail($user_id+2);
+        $current_user3 = User::findOrFail($user_id+3);
 
         $variables = [
             'current_user' => $current_user,
+            'current_user1' => $current_user1,
+            'current_user2' => $current_user2,
+            'current_user3' => $current_user3,
         ];
 
         return view('home_page.speaker')->with($variables);

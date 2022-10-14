@@ -33,7 +33,7 @@ class CourseController extends Controller
         $log->activity_done($description = 'Accedió al módulo de Cursos.', $table_id = 0, $menu_id = 10, $user_id = Auth::id(), $kind_acction = 1);
 
 
-         $courses_active=Course::all()->where('status','=','2');
+        $courses_active=Course::all()->where('status','=','2');
         $courses_active_number=Course::all()->where('status','=','2')->count();
 
 
