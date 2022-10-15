@@ -35,7 +35,6 @@ class CreateUsersTable extends Migration
       $table->string('user_image_updated')->nullable();//matricula
       $table->string('license_plate')->nullable()->unique();//matricula
       $table->unsignedBigInteger('career')->nullable();
-      $table->foreign('career')->references('id')->on('carrers');
       $table->string('quarter',10,['first','second','third','fourth','fifth','sixth','seventh','eighth','nineth','tenth'])->nullable();
       $table->string('group',1,['A','B','C','D'])->nullable();
       //data of the students
@@ -52,6 +51,7 @@ class CreateUsersTable extends Migration
             $table->unsignedBigInteger('role_id')->default(2);
             $table->string('status',2)->default(2);
             $table->foreign('role_id')->references('id')->on('roles');
+            $table->foreign('career')->references('id')->on('carrers');
 
             $table->rememberToken();
             $table->timestamps();

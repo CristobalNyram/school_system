@@ -6,8 +6,11 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\ProfileRequest;
 use App\Http\Requests\PasswordRequest;
 use App\Models\Logbook;
+use App\Models\Carrer;
+use Illuminate\Support\Carbon;
 use App\Models\Role;
 use Illuminate\Support\Facades\Hash;
+use League\CommonMark\Extension\Attributes\Node\Attributes;
 
 class ProfileController extends Controller
 {
@@ -25,6 +28,8 @@ class ProfileController extends Controller
             $variables=[
                 'menu'=>'',
                 'title_page'=>'Acceso denegado',
+             
+
 
 
             ];
@@ -33,10 +38,13 @@ class ProfileController extends Controller
         }
         $log->activity_done($description='Accedió al módulo editar perfil.',$table_id=0,$menu_id=36,$user_id=Auth::id(),$kind_acction=1);
 
+        $carrers_available=Carrer::all()->where('status','=','2');
+
 
         $variables=[
             'menu'=>'',
             'title_page'=>'Perfil',
+            'carrers_available' => $carrers_available,
 
 
         ];
@@ -58,20 +66,53 @@ class ProfileController extends Controller
             $variables=[
                 'menu'=>'',
                 'title_page'=>'Acceso denegado',
-
-
             ];
             return view('errors.notaccess')->with($variables);
-
         }
 
+
         $current_user=User::findOrFail(Auth::id());
+        // global variables
         $current_user->name=$request->name;
-        $current_user->first_surname=$request->name;
+        $current_user->first_surname=$request->first_surname;
         $current_user->second_surname=$request->second_surname;
-        $current_user->address=$request->address;
-        $current_user->curp=$request->curp;
-        $current_user->blood_type=$request->blood_type;
+        $current_user->email=$request->email;
+        $current_user->gender=$request->gender;
+        $current_user->user_image = $request->user_image;
+        $current_user->user_image_updated = Carbon::now()->format('Y-m-d');
+
+        //Speaker
+        $current_user->academic_level=$request->academic_level;
+        $current_user->description=$request->description;
+        $current_user->specialty=$request->specialty;
+        $current_user->speaker_cv=$request->speaker_cv;
+        $current_user->speaker_cv=$request->speaker_cv;
+
+        //student
+        $current_user->career=$request->career;
+        $current_user->quarter=$request->quarter;
+        $current_user->group=$request->group;
+
+
+        if ($request->hasFile('user_image')) {
+            $file = $request->file('user_image');
+            $destiantionPath = 'argon/img/user/speaker/';
+            $filename = time() . '-' . $file->getClientOriginalName();
+            $uploadSuccess = $request->file('user_image')->move($destiantionPath, $filename);
+            $current_user->user_image = $destiantionPath . $filename;
+          }
+
+    
+        if($request -> hasFile ('speaker_cv')){
+            $file = $request ->file('speaker_cv');
+            $destiantionPath = 'argon/speaker_cv/';
+            $filename = time() .'-'. $file->getClientOriginalName();
+            $uploadSuccess = $request->file('speaker_cv')->move($destiantionPath, $filename);
+            $current_user->speaker_cv = $destiantionPath . $filename;
+         }
+
+
+
 
 
         $current_user->address=$request->address;

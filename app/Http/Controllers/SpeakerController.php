@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Role;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use App\Models\Logbook;
 use Illuminate\Support\Carbon;
 
@@ -76,16 +78,16 @@ class SpeakerController extends Controller
         $user->role_id =$request->role_id;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
-        $user->speaker_cv= $request->speaker_cv;
         $user->user_image = $request->user_image;
+        $user->speaker_cv= $request->speaker_cv;
 
         if ($request->hasFile('user_image')) {
             $file = $request->file('user_image');
-            $destiantionPath = 'argon/img/user/';
+            $destiantionPath = 'argon/brand';
             $filename = time() . '-' . $file->getClientOriginalName();
             $uploadSuccess = $request->file('user_image')->move($destiantionPath, $filename);
             $user->user_image = $destiantionPath . $filename;
-        }
+          }
 
         if($request -> hasFile ('speaker_cv')){
             $file = $request ->file('speaker_cv');
@@ -119,13 +121,18 @@ class SpeakerController extends Controller
         $user->user_image = $request->user_image;
         $user->user_image_updated = Carbon::now()->format('Y-m-d');
 
-        if ($request->hasFile('user_image')) {
+        if ($request->hasFile('user_image') && request('user_image') != ' ') {
             $file = $request->file('user_image');
-            $destiantionPath = 'argon/img/user/';
+            $destiantionPath = 'argon/brand';
             $filename = time() . '-' . $file->getClientOriginalName();
             $uploadSuccess = $request->file('user_image')->move($destiantionPath, $filename);
             $user->user_image = $destiantionPath . $filename;
-        }
+
+            if(File::exists($destiantionPath)){
+                unlink($destiantionPath);
+            }
+          }
+
 
         if ($user->save()) {
             $log=new Logbook();
@@ -141,7 +148,7 @@ class SpeakerController extends Controller
         }
     }
 
-    public function update($user_id)
+    public function update($speaker_id)
     {
         $role = New Role();
         $log=new Logbook();
@@ -159,14 +166,14 @@ class SpeakerController extends Controller
 
         $log->activity_done($description='Accedió a la vista   para actualizar la información de un conferencista.',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=1);
 
-        $current_user=User::findOrFail($user_id);
+        $current_speaker=User::findOrFail($speaker_id);
         $rol_available=Role::all()->where('status','=','2');
 
         $variables=[
             'menu'=>'speakers_all',
             'title_page'=>'Conferencista',
             'rol_available'=>$rol_available,
-            'current_user'=>$current_user,
+            'current_speaker'=>$current_speaker,
 
 
 
