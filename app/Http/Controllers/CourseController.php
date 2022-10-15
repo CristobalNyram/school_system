@@ -28,7 +28,7 @@ class CourseController extends Controller
         if ($role->checkAccesToThisFunctionality(Auth::user()->role_id, 10) == null) {
             $variables = [
                 'menu' => '',
-                'title_page' => 'Acceso denegado',
+                'title_page' => 'No puedes pasar',
             ];
             return view('errors.notaccess')->with($variables);
         }
@@ -36,7 +36,7 @@ class CourseController extends Controller
         $log->activity_done($description = 'Accedió al módulo de Cursos.', $table_id = 0, $menu_id = 10, $user_id = Auth::id(), $kind_acction = 1);
 
 
-         $courses_active=Course::all()->where('status','=','2');
+        $courses_active=Course::all()->where('status','=','2');
         $courses_active_number=Course::all()->where('status','=','2')->count();
 
 
@@ -105,6 +105,7 @@ class CourseController extends Controller
        $course->date = $request->date;
        $course->url_img = $request->url_img;
        $course->speaker_id = $request->speaker_id;
+       $log = new Logbook();
 
        if($request -> hasFile ('url_img')){
         $file = $request ->file('url_img');
@@ -160,6 +161,7 @@ class CourseController extends Controller
         $course->date = $request->date;
         $course->url_img = $request->url_img;
         $course->speaker_id = $request->speaker_id;
+        $log = new Logbook();
 
         if($request -> hasFile ('url_img')){
             $file = $request ->file('url_img');
@@ -240,6 +242,7 @@ class CourseController extends Controller
     {
         $course = Course::findOrFail($course_id);
         $course->status=-2;
+        $log = new Logbook();
 
         $log = new Logbook();
 

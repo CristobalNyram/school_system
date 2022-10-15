@@ -248,7 +248,7 @@
                 @endif
                 @if ( check_acces_to_this_permission(Auth::user()->role_id,32))
                 <li class="nav-item">
-                    <a class="nav-link @if($menu === 'souvenirs_all')  custom-active text-white @endif"
+                    <a class="nav-link @if($menu === 'rallys_all')  custom-active text-white @endif"
                         href="{{ route('rally_index') }}">
                         <i class="ni ni-controller text-primary" aria-hidden="true"></i>
                         Rallys

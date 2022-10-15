@@ -8,7 +8,9 @@ use App\Models\Role;
 use App\Models\Logbook;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Relpaymentpackagesstudent;
 use App\Models\Payment;
+
 class PaymentController extends Controller
 {
     public function index()
@@ -30,6 +32,11 @@ class PaymentController extends Controller
         $users_active=User::all()->where('status','=','2');
         $users_active_number=User::all()->where('status','=','2')->count();
         $packages_active=Package::all()->where('status','=','2');
+        $users_active_number=User::all()->where('status','=','2')->count();
+        $packages_active=Package::all()->where('status','=','2');
+
+        $payments_student=Relpaymentpackagesstudent::all()->where('status','>=','1');
+
 
 
         $variables=[
@@ -38,6 +45,7 @@ class PaymentController extends Controller
             'users_actives'=>$users_active,
             'users_active_number'=> $users_active_number,
             'packages_active'=> $packages_active,
+            'payments_student'=>$payments_student
 
 
 

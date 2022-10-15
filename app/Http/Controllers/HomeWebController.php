@@ -19,7 +19,7 @@ class HomeWebController extends Controller
         $variables=[
             'sponsors2'=>$sponsors2,
         ];
-         return view('home_page.index')->with($variables);
+        return view('home_page.index')->with($variables);
     }
 
 
@@ -54,7 +54,6 @@ class HomeWebController extends Controller
         $courses9=Course::all()->where('status','=','2')->where('id', '=', '9');
         $courses10=Course::all()->where('status','=','2')->where('id', '=', '10');
 
-
         $variables=[
             'courses1'=>$courses1,
             'courses2'=>$courses2,
@@ -66,11 +65,9 @@ class HomeWebController extends Controller
             'courses8'=>$courses8,
             'courses9'=>$courses9,
             'courses10'=>$courses10,
-
         ];
         return view('home_page.course')->with($variables);
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -134,10 +131,28 @@ class HomeWebController extends Controller
         $carrers_available=Carrer::all()->where('status','=','2');
 
         $variables=[
-           
+        
             'carrers_available'=>$carrers_available,
         ];
 
         return view('home_page.formulario_registro')->with($variables);
+    }
+
+    public function SpeakerInterface($user_id)
+    {
+
+        $current_user = User::findOrFail($user_id);
+        $current_user1 = User::findOrFail($user_id+1);
+        $current_user2 = User::findOrFail($user_id+2);
+        $current_user3 = User::findOrFail($user_id+3);
+
+        $variables = [
+            'current_user' => $current_user,
+            'current_user1' => $current_user1,
+            'current_user2' => $current_user2,
+            'current_user3' => $current_user3,
+        ];
+
+        return view('home_page.speaker')->with($variables);
     }
 }

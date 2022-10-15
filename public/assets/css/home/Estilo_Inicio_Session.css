@@ -4,10 +4,13 @@
 *{
     
     box-sizing: border-box;
+    margin: 0;
+    padding:0;
 }
 
 body{
     font-family: 'biko', sans-serif;
+    background-image: url('ins.png');
     
 }
 
@@ -26,10 +29,12 @@ width: 200px;
 }
 
 .menu{
+  
     background: #000;
     color: #f8f8f8;
-    height: 10vh;
+    height: 15vh;
     display: block;
+    
    
     
 }

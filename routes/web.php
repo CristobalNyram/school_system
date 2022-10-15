@@ -17,8 +17,10 @@ use App\Http\Controllers\SpeakerController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\HomeWebController;
+use App\Http\Controllers\ExampleController;
 use App\Http\Controllers\RallyController;
 use App\Models\Sponsor;
+
 
 
 
@@ -47,11 +49,13 @@ Route::prefix('web')->group(function () {
     Route::get('/sponsor',[HomeWebController::class, 'sponsor'])->name('home_page_sponsor');
     Route::get('/courses/index',[HomeWebController::class, 'course'])->name('home_page_course');
     Route::get('/course/interface/{course_id}', [HomeWebController::class, "CourseInterface"])->name('course_interface');
+    Route::get('/speaker/interface/{user_id}', [HomeWebController::class, "SpeakerInterface"])->name('speaker_interface');
     Route::get('/conference',[HomeWebController::class, 'conference'])->name('home_page_conference');
     Route::get('/conference/interface/{talk_id}',[HomeWebController::class, 'ConferenceInterface'])->name('conference_interface');
     Route::get('/souvenir',[HomeWebController::class, 'souvenir'])->name('home_page_souvenir');
     Route::get('/login',[HomeWebController::class, 'login'])->name('home_page_login');
     Route::get('/create',[HomeWebController::class, 'create'])->name('home_page_create');
+
 });
 Auth::routes();
 
@@ -89,6 +93,16 @@ Route::group(['middleware' => 'auth'], function () {
 
 
         // student end--------------------------------------------
+
+
+         // Example start------------------------------------------
+         Route::get('/example',[ExampleController::class,"index"])->name('example_index');
+
+         //Example end---------------------------------------------
+
+         // password start-------------------------------------------
+         Route::get('/password/update/{user_id}',[PasswordController::class,"update"])->name('password_update');
+         Route::post('/password/edit',[PasswordController::class,"edit"])->name('password_edit');
 
         // password start-------------------------------------------
         Route::get('/password/update/{user_id}', [PasswordController::class, "update"])->name('password_update');
