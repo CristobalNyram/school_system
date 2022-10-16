@@ -137,9 +137,12 @@ class SponsorController extends Controller
           $sponsor->url_img = $destiantionPath . $filename;
         }
 
+        $role = new Role();
+        $log = new Logbook();
+
 
         if ($sponsor->save()) {
-        Logbook::activity_done($description = 'Actualizó el patrocinador ' . $sponsor->name . ' correctamente', $table_id = 0, $menu_id = 30, $user_id = Auth::id(), $kind_acction = 3);
+        $role->activity_done($description = 'Actualizó el patrocinador ' . $sponsor->name . ' correctamente', $table_id = 0, $menu_id = 30, $user_id = Auth::id(), $kind_acction = 3);
           return back()->with('success', 'Se ha actualizado el Patrocinador exitosamente...');
         } else {
           return  back()->withErrors('No se ha actualizado el Patrocinador...');
@@ -155,14 +158,16 @@ class SponsorController extends Controller
      */
     public function update($sponsor_id)
     {
-        if (Role::checkAccesToThisFunctionality(Auth::user()->role_id, 29) == null) {
+      $role = new Role();
+        $log = new Logbook();
+        if ($role->checkAccesToThisFunctionality(Auth::user()->role_id, 29) == null) {
         $variables = [
           'menu' => '',
           'title_page' => 'Acceso denegado',
         ];
         return view('errors.notaccess')->with($variables);
       }
-    Logbook::activity_done($description = 'Accedió al módulo de Actualizar Patrocinador.', $table_id = 0, $menu_id = 30, $user_id = Auth::id(), $kind_acction = 1);
+    $log->activity_done($description = 'Accedió al módulo de Actualizar Patrocinador.', $table_id = 0, $menu_id = 30, $user_id = Auth::id(), $kind_acction = 1);
 
           $current_sponsor = Sponsor::findOrFail($sponsor_id);
 
@@ -184,10 +189,12 @@ class SponsorController extends Controller
 
     public function delete($sponsor_id)
   {
+    $role = new Role();
+    $log = new Logbook();
     $sponsor = Sponsor::findOrFail($sponsor_id);
     $sponsor->status=-2;
     if($sponsor->save()){
-      Logbook::activity_done($description = 'Eliminó el patrocinador ' . $sponsor->name . 'correctamente', $table_id = 0, $menu_id = 30, $user_id = Auth::id(), $kind_acction = 4);
+      $log->activity_done($description = 'Eliminó el patrocinador ' . $sponsor->name . 'correctamente', $table_id = 0, $menu_id = 30, $user_id = Auth::id(), $kind_acction = 4);
       return back()->with('success', 'Se ha borrado el sponsor exitosamente...')->with('eliminar', 'ok');
     }else{
       return back()->with('success', 'No se ha borrado el sponsor exitosamente...');

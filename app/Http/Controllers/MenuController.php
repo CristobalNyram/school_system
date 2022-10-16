@@ -110,7 +110,11 @@ class MenuController extends Controller
 
         if ($menu->new_registration($request) === true) {
 
-            Logbook::activity_done($description='Creo un menu.',$table_id=0,$menu_id=3,$user_id=Auth::id(),$kind_acction=6);
+          
+        $log = new Logbook();
+
+
+            $log->activity_done($description='Creo un menu.',$table_id=0,$menu_id=3,$user_id=Auth::id(),$kind_acction=6);
 
             return back()->with('success','Se ha registrado el menú exitosamente...');
 

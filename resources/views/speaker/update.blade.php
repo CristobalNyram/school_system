@@ -13,7 +13,7 @@
                 <!-- Card header -->
 
                 <div class="card-header border-0">
-                    <h2 class="mb-0">Actualizar información del conferencista: {{ $current_user->name }}</h2>
+                    <h2 class="mb-0">Actualizar información del conferencista: {{ $current_speaker->name }} {{ $current_speaker->first_surname }}</h2>
                 </div>
 
                 <form class="m-5" action="{{route('speaker_edit')}}" method="POST">
@@ -33,18 +33,18 @@
                     @endforeach
                     @endif
                     <div class="form-group">
-                        <input type="hidden" name="id" id="id" value="{{$current_user->id}}">
+                        <input type="hidden" name="id" id="id" value="{{$current_speaker->id}}">
                         <label for="name">Nombre del conferencista</label>
-                        <input type="text" class="form-control form-control-lg" id="name" name="name" value="{{    $current_user->name  }}" placeholder="Nombre" max="50" required oninput="uppercaseLetters(event);">
+                        <input type="text" class="form-control form-control-lg" id="name" name="name" value="{{    $current_speaker->name  }}" placeholder="Nombre" max="50" required oninput="uppercaseLetters(event);">
                     </div>
 
                     <div class="form-group">
                         <label for="first_surname">Apellido Paterno</label>
-                        <input type="text" class="form-control form-control-lg" id="first_surname" name="first_surname" value="{{ $current_user->first_surname }}" placeholder="Apellido paterno " max="50" required oninput="uppercaseLetters(event);">
+                        <input type="text" class="form-control form-control-lg" id="first_surname" name="first_surname" value="{{ $current_speaker->first_surname }}" placeholder="Apellido paterno " max="50" required oninput="uppercaseLetters(event);">
                     </div>
                     <div class="form-group">
                         <label for="second_surname">Apellido Materno</label>
-                        <input type="text" class="form-control form-control-lg" id="second_surname" name="second_surname" value="{{ $current_user->second_surname }}" placeholder="Apellido Materno" max="50" required oninput="uppercaseLetters(event);">
+                        <input type="text" class="form-control form-control-lg" id="second_surname" name="second_surname" value="{{ $current_speaker->second_surname }}" placeholder="Apellido Materno" max="50" required oninput="uppercaseLetters(event);">
                     </div>
 
                     <div class="form-group">
@@ -67,17 +67,17 @@
 
                     <div class="form-group">
                         <label for="email">Correo Electronico</label>
-                        <input type="emil" class="form-control form-control-lg" id="email" name="email" value="{{ $current_user->email }}" placeholder="correo electronico del estudiante" max="50" required>
+                        <input type="emil" class="form-control form-control-lg" id="email" name="email" value="{{ $current_speaker->email }}" placeholder="correo electronico del estudiante" max="50" required>
                     </div>
 
                     <div class="form-group">
                         <label for="speaker_cv">Curriculum Vitae</label>
-                        <input type="file" class="form-control form-control-lg" id="speaker_cv" name="speaker_cv" accept="application/pdf" value="{{ $current_user->speaker_cv }}" placeholder="Curriculum Vitae" max="50" required>
+                        <input type="file" class="form-control form-control-lg" id="speaker_cv" name="speaker_cv" accept="application/pdf" value="{{ $current_speaker->speaker_cv }}" placeholder="Curriculum Vitae" max="50" required>
                     </div>
 
                     <div class="form-group">
                         <label for="user_image">Foto del Conferencista</label>
-                        <input type="file" onBlur='LimitAttach(this,1)' ; accept="image/*" class="form-control form-control-lg" id="user_image" name="user_image" value="{{ $current_user->user_image}}" placeholder="Foto del Conferencista" max="50" required oninput="uppercaseLetters(event);">
+                        <input type="file" onBlur='LimitAttach(this,1)' ; accept="image/*" class="form-control form-control-lg" id="user_image" name="user_image" value="{{ $current_speaker->user_image}}" placeholder="Foto del Conferencista" max="50" required oninput="uppercaseLetters(event);">
                     </div>
 
                     <div class="alert alert-warning alert-dismissible fade show" id="alerta" role="alert" style="display: none" role="alert">
@@ -92,7 +92,7 @@
                     <div class="form-group justify-content-center align-items-center">
                         <label>Foto Actual</label>
                         <div class="form-group">
-                            <img src="{{asset($current_user->user_image)}}" alt="{{$current_user->name}}" class="img-fluid img-thumbnail" width="600px">
+                            <img src="{{asset($current_speaker->user_image)}}" alt="{{$current_speaker->name}}" class="img-fluid img-thumbnail" width="600px">
                         </div>
                     </div>
 

@@ -9,53 +9,114 @@
     <link rel="stylesheet" href="{{ asset('assets/css/home') }}/barra.css">
     <link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilo_Ponente.css">
     <link rel="icon" href="{{ asset('assets/img/home/img') }}/logo.png">
+    <link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilo_index_R.css">
 </head>
 <header>
     <nav class="menu">
-        <section class="menu__container">
-            <a href="{{ route('home_page_index') }}" class="logo" id="tope"><img src="{{ asset('assets/img/home/img') }}/logo.png"></a>
+            <section class="menu__container">
+                
+    
+                <ul class="menu__links">
+                    
+                        
+                    <li class="menu_item">
+                        <section class="containerR">
+                            
+                            <div class="charts">
+                             <a href="{{ route('home_page_index') }}" class="logo" id="tope"><img src="{{ asset('assets/img/home/img') }}/logo.png"></a>
+                    
+                                <div class="chart">
+                                    <!-- un circulo inicial de fondo -->
+                                    <div class="circle center-abs"></div>
+                                    <!-- area para SVG -->
+                                    <svg class="center-abs" width="150" height="150">
+                                        <!-- un segundo circulo en SVG con su ubicacion en coordenadas x,y y el radio de expansion -->
+                                        <circle class="outer" id="circulo1" cx="75" cy="75" r="30" />
+                                    </svg>
+                                    <!-- etiqueta para el contador, en este caso el dia -->
+                                    <span class="text center-abs" id="days"></span>
+                                    <h3 id="textcolor1">Dias</h3>
+                                </div>
+                                <div class="chart">
+                                    <div class="circle center-abs"></div>
+                                    <svg class="center-abs" width="150" height="150">
+                                        <circle class="outer" id="circulo2" cx="75" cy="75" r="30" />
+                                    </svg>
+                                    <span class="text center-abs" id="hours"></span>
+                                    <h3 id="textcolor2">Horas</h3>
+                                </div>
+                                <div class="chart">
+                                    <div class="circle center-abs"></div>
+                                    <svg class="center-abs" width="150" height="150">
+                                        <circle class="outer"  id="circulo3" cx="75" cy="75" r="30" />
+                                    </svg>
+                                    <span class="text center-abs" id="minutes"></span>
+                                    <h3 id="textcolor3">Minutos</h3>
+                                </div>
+                                <div class="chart">
+                                    <div class="circle center-abs"></div>
+                                    <svg class="center-abs" width="150" height="150">
+                                        <circle class="outer" id="circulo4"cx="75" cy="75" r="30" />
+                                    </svg>
+                                    <span class="text center-abs" id="seconds"></span>
+                                    <h3 id="textcolor4">Segundos</h3>
+                                </div>
+                            </div>
+                        </section>
+                    </li>
+                    <li class="menu__item">
+                        <a href="{{ route('home_page_index') }}" class="menu__link">Inicio</a>
+                    </li>
+                    
+        
+                    <li class="menu__item">
+                        <div class="tex1">
+                             <a href="{{ route('home_page_sponsor') }}" class="menu__link">Nuestros<span style="color:black">_</span>Patrocinadores</a>
+                        </div>
+                    </li>
+    
+                    <li class="menu__item">
+                        <a href="{{ route('home_page_course') }}" class="menu__link">Talleres</a>
+                    </li>
+        
+                    <li class="menu__item">
+                        <a href="{{ route('home_page_conference') }}" class="menu__link">Conferencias</a>
+                    </li>
+    
+                    <li class="menu__item">
+                        <a href="{{ route('home_page_souvenir') }}" class="menu__link">Souvenirs</a>
+                    </li>
+        
+                    <li class="menu__item">
+                        <div class="tex">
+    
+                            <a href="{{ route('home_page_login') }}" class="menu__link">Inicio de Sesión</a>
+                        </div>
+                    </li>
+                    
+                </ul>
+    
+                <div class="menu__hamburguer">
+                    <img src="{{ asset('assets/img/home/img') }}/menu.svg" class="menu__img">
+                </div>
+            </section> 
+        </nav>
 
-            <ul class="menu__links">
-                <li class="menu__item">
-                    <a href="{{ route('home_page_index') }}" class="menu__link">Inicio</a>
-                </li>
+        <script src="{{ asset('assets/js/home') }}/reloj.js"></script>
 
-                <li class="menu__item">
-                    <div class="tex1">
 
-                        <a href="{{ route('home_page_sponsor') }}" class="menu__link">Nuestros Patrocinadores</a>
-                    </div>
-                </li>
 
-                <li class="menu__item">
-                    <a href="{{ route('home_page_course') }}" class="menu__link">Talleres</a>
-                </li>
-
-                <li class="menu__item">
-                    <a href="{{ route('home_page_conference') }}" class="menu__link">Conferencias</a>
-                </li>
-
-                <li class="menu__item">
-                    <a href="{{ route('home_page_souvenir') }}" class="menu__link">Souvenirs</a>
-                </li>
-
-                <li class="menu__item">
-                    <div class="tex">
-
-                        <a href="{{ route('home_page_login') }}" class="menu__link">Inicio de Sesión</a>
-                    </div>
-                </li>
-
-            </ul>
-
-            <div class="menu__hamburguer">
-                <img src="{{ asset('assets/img/home/img') }}/menu.svg" class="menu__img">
-            </div>
-        </section>
-    </nav>
-
-    <script src="{{ asset('assets/js/home') }}/app.js"></script>
-
+        <script src="{{ asset('assets/js/home') }}/app.js"></script>
+            
+            
+        </header>
+<div class="inf">
+    <img class="img" src="{{asset($current_user->user_image )}}">
+    <h2>{{$current_user->name}}</h2>
+    <h3>{{$current_user->first_surname}}</h3>
+    <h3>{{$current_user->second_surname}}</h3>
+    <p>{{$current_user->email}}</p>
+</div>
 
 </header>
 
@@ -291,6 +352,7 @@
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 </body>
+
 
 <footer>
     <div class="container">

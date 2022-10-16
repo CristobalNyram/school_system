@@ -10,21 +10,69 @@
     <link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilo_Cursos_Interfaz.css">
     <link rel="stylesheet" href="{{ asset('assets/css/home') }}/barra.css">
     <link rel="icon" href="{{ asset('assets/img/home/img') }}/logo.png">
+    <link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilo_index_R.css">
 </head>
 <header>
-<nav class="menu">
+    <nav class="menu">
             <section class="menu__container">
-                <a href="{{ route('home_page_index') }}" class="logo" id="tope"><img src="{{ asset('assets/img/home/img') }}/logo.png"></a>
+                
     
                 <ul class="menu__links">
+                    
+                        
+                    <li class="menu_item">
+                        <section class="containerR">
+                            
+                            <div class="charts">
+                             <a href="{{ route('home_page_index') }}" class="logo" id="tope"><img src="{{ asset('assets/img/home/img') }}/logo.png"></a>
+                    
+                                <div class="chart">
+                                    <!-- un circulo inicial de fondo -->
+                                    <div class="circle center-abs"></div>
+                                    <!-- area para SVG -->
+                                    <svg class="center-abs" width="150" height="150">
+                                        <!-- un segundo circulo en SVG con su ubicacion en coordenadas x,y y el radio de expansion -->
+                                        <circle class="outer" id="circulo1" cx="75" cy="75" r="30" />
+                                    </svg>
+                                    <!-- etiqueta para el contador, en este caso el dia -->
+                                    <span class="text center-abs" id="days"></span>
+                                    <h3 id="textcolor1">Dias</h3>
+                                </div>
+                                <div class="chart">
+                                    <div class="circle center-abs"></div>
+                                    <svg class="center-abs" width="150" height="150">
+                                        <circle class="outer" id="circulo2" cx="75" cy="75" r="30" />
+                                    </svg>
+                                    <span class="text center-abs" id="hours"></span>
+                                    <h3 id="textcolor2">Horas</h3>
+                                </div>
+                                <div class="chart">
+                                    <div class="circle center-abs"></div>
+                                    <svg class="center-abs" width="150" height="150">
+                                        <circle class="outer"  id="circulo3" cx="75" cy="75" r="30" />
+                                    </svg>
+                                    <span class="text center-abs" id="minutes"></span>
+                                    <h3 id="textcolor3">Minutos</h3>
+                                </div>
+                                <div class="chart">
+                                    <div class="circle center-abs"></div>
+                                    <svg class="center-abs" width="150" height="150">
+                                        <circle class="outer" id="circulo4"cx="75" cy="75" r="30" />
+                                    </svg>
+                                    <span class="text center-abs" id="seconds"></span>
+                                    <h3 id="textcolor4">Segundos</h3>
+                                </div>
+                            </div>
+                        </section>
+                    </li>
                     <li class="menu__item">
                         <a href="{{ route('home_page_index') }}" class="menu__link">Inicio</a>
                     </li>
+                    
         
                     <li class="menu__item">
                         <div class="tex1">
-    
-                            <a href="{{ route('home_page_sponsor') }}" class="menu__link">Nuestros Patrocinadores</a>
+                             <a href="{{ route('home_page_sponsor') }}" class="menu__link">Nuestros<span style="color:black">_</span>Patrocinadores</a>
                         </div>
                     </li>
     
@@ -54,7 +102,10 @@
                 </div>
             </section> 
         </nav>
-    
+
+        <script src="{{ asset('assets/js/home') }}/reloj.js"></script>
+
+
         <script src="{{ asset('assets/js/home') }}/app.js"></script>
             
             
@@ -65,8 +116,13 @@
             <p>{{$current_course->description}}</p>
             <h4>Curso impartido por: <span id="hj">Enrique Vazarez</span></h4>
             <H4>Horario: <span id="hj">14:00 A.M. - 18:00 A.M.</span></H4>
+<<<<<<< HEAD
+            <a href="{{ route('home_page_create') }}">
+               <button>+Inscribirse</button>
+=======
             <a href="#">
                 <button>+Inscribirse</button>
+>>>>>>> d3c36046fb685f9d34a01d40de8d58dc39ced9b2
             </a>
         </div>
         <footer>

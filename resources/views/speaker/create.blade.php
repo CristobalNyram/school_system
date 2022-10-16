@@ -55,9 +55,11 @@
                         <input type="text" class="form-control form-control-lg" id="second_surname" name="second_surname" value="{{ old('second_surname') }}" placeholder="Apellido materno" max="50" required oninput="uppercaseLetters(event);">
                     </div>
 
+                    
+
                     <div class="form-group">
                         <label for="speaker_cv">Curriculum Vitae</label>
-                        <input type="file" onBlur='LimitAttach1(this,1)' ; accept="application/pdf" class="form-control form-control-lg" id="speaker_cv" name="speaker_cv" value="{{ old('speaker_cv') }}" placeholder="Curriculum Vitae" max="50" required>
+                        <input type="file" onBlur="LimitAttach1(this,1)" accept="application/pdf" class="form-control form-control-lg" id="speaker_cv" name="speaker_cv" value="{{ old('speaker_cv') }}" placeholder="Curriculum Vitae" max="50" required>
                     </div>
 
                     <script type="text/javascript">
@@ -82,6 +84,8 @@
                             }
                         }
                     </script>
+
+                   
 
 
 
