@@ -1,6 +1,42 @@
 
 
 <div class="d-flex">
+    <script>
+            function fnSolicitarPaquete(package_id)
+            {
+                alert();
+
+            let url_enviar='';
+            /*
+                    $.ajax({
+                        type: "POST",
+                        url:url_enviar ,
+                        success: function(res)
+                            {
+                                if(res[0]==2)
+                                {
+                                alertify.alert(res['titular'],res['mensaje'], function(){
+                                    location.reload();
+                                });
+                                }
+                                else
+                                {
+                                alertify.alert(res['Error'],res['mensaje'], function(){
+                                    location.reload();
+                                });
+                                }
+                            },
+                        error: function(res)
+                        {
+
+                        }
+                    });
+                    */
+
+            }
+
+
+    </script>
 
     @foreach ($packages_available as $package)
     <div class="col-md-4 mt-3">
@@ -32,7 +68,7 @@
         <button type="button" class="btn btn-link text-white mb-3">Ver detalles</button>
         </div>
         <div class="card-footer bg-transparent">
-        <a href="#!" class=" text-white">Solicitar paquete</a>
+        <a  onclick="fnSolicitarPaquete('{{$package->id }}');" class=" text-white">Solicitar paquete</a>
         </div>
     </div>
 
@@ -46,3 +82,4 @@
 
 
 </div>
+
