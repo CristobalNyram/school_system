@@ -123,6 +123,10 @@ Route::group(['middleware' => 'auth'], function () {
         // payment start--------------------------------------------
 
         Route::get('/payments', [PaymentController::class, "index"])->name('payment_index');
+        // Route::get('/payments/required/{id}', [PaymentController::class, "index"])->name('payment_index');
+        // Route::get('/payments/aprove/{id}', [PaymentController::class, "index"])->name('payment_index');
+        // Route::get('/payments/cancel/{id}', [PaymentController::class, "index"])->name('payment_index');
+
         // payment end--------------------------------------------
 
         // setting start--------------------------------------------
@@ -160,6 +164,9 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/course/update/{course_id}', [CourseController::class, "update"])->name('course_update');
         Route::post('/course/edit', [CourseController::class, "edit"])->name('course_edit');
         Route::post('/course/delete/{course_id}', [CourseController::class, "delete"])->name('course_delete');
+        // Route::post('/course/enrol/{course_id}', [CourseController::class, "delete"])->name('course_delete');
+        // Route::post('/course/enrol/{course_id}', [CourseController::class, "delete"])->name('course_delete');
+
 
         //courses end-----------------------
 

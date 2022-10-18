@@ -2,11 +2,25 @@
 
 <div class="d-flex">
     <script>
-            function fnSolicitarPaquete(package_id)
+            function fnSolicitarPaquete(package_id,package_name)
             {
-                alert();
+                // alert();
 
             let url_enviar='';
+            Swal.fire({
+                    title: '¿Estás seguro de que quieres solicitar el paquete '+package_name+' ?',
+                     showDenyButton: true,
+                    // showCancelButton: true,
+                    confirmButtonText: 'Si, si quiero solicitarlo',
+                    denyButtonText: `Cancelar solicitud`,
+                    }).then((result) => {
+                    /* Read more about isConfirmed, isDenied below */
+                    if (result.isConfirmed) {
+                        Swal.fire('Saved!', '', 'success')
+                    } else if (result.isDenied) {
+                        Swal.fire('Cancelado', '', 'error')
+                    }
+            })
             /*
                     $.ajax({
                         type: "POST",
@@ -68,7 +82,7 @@
         <button type="button" class="btn btn-link text-white mb-3">Ver detalles</button>
         </div>
         <div class="card-footer bg-transparent">
-        <a  onclick="fnSolicitarPaquete('{{$package->id }}');" class=" text-white">Solicitar paquete</a>
+        <a  onclick="fnSolicitarPaquete('{{$package->id }}','{{$package->name }}');" class=" text-white">Solicitar paquete</a>
         </div>
     </div>
 
