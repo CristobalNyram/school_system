@@ -65,13 +65,13 @@
         <span class=" text-white">Por persona</span>
         <ul class="list-unstyled my-4">
             <li>
-            <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center justify-content-center">
                 <div>
                 <div class="icon icon-xs icon-shape bg-white shadow rounded-circle text-success">
                     <i class="ni ni-book-bookmark"></i>
                 </div>
                 </div>
-                <div>
+                <div class=' '>
                 <span class="pl-2  pb-4 text-sm text-white">{{ $package->description }}</span>
                 </div>
             </div>
@@ -79,10 +79,10 @@
             <br>
 
         </ul>
-        <button type="button" class="btn btn-link text-white mb-3">Ver detalles</button>
+        <button type="button" class="btn btn-link text-white mb-3" >Ver detalles</button>
         </div>
         <div class="card-footer bg-transparent">
-        <a  onclick="fnSolicitarPaquete('{{$package->id }}','{{$package->name }}');" class=" text-white">Solicitar paquete</a>
+        <a  onclick="fnSolicitarPaquete('{{$package->id }}','{{$package->name }}');" class=" text-white" style="cursor: -webkit-grab; cursor: grab;">Solicitar paquete</a>
         </div>
     </div>
 
