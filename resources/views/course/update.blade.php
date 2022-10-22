@@ -49,7 +49,19 @@
 
                     <div class="form-group">
                         <label for="description">Descripción</label>
-                        <input type="text" class="form-control form-control-lg" id="description" name="description" value="{{ $current_course->description }}" placeholder="Apellido paterno de usuario" max="50" required oninput="uppercaseLetters(event);">
+                        <input type="text" class="form-control form-control-lg" id="description" name="description" value="{{ $current_course->description }}" placeholder="Descripción del curso" max="50" required oninput="uppercaseLetters(event);">
+                    </div>
+                    <div class="form-group">
+                        <label for="requeriments">Requerimientos del curso</label>
+                        <input type="file" class="form-control form-control-lg" id="requeriments" name="requeriments" value="{{ $current_course->requeriments }}" placeholder=" " max="50" required >
+                    </div>
+                    <div class="form-group">
+                        <label for="hour">Hora del curso</label>
+                        <input type="date" class="form-control form-control-lg" id="hour" name="hour" value="{{ $current_course->hour }}" placeholder="Hora del curso" max="50" required >
+                    </div>
+                    <div class="form-group">
+                        <label for="duration">Duración del curso</label>
+                        <input type="text" class="form-control form-control-lg" id="duration" name="duration" value="{{ $current_course->duration }}" placeholder="Duración del curso" max="50" required oninput="uppercaseLetters(event);">
                     </div>
                     <div class="form-group">
                         <label for="date">fecha del curso</label>

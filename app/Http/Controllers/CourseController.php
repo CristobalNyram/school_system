@@ -103,6 +103,9 @@ class CourseController extends Controller
        $course->description = $request->description;
        $course->maximum_person = $request->maximum_person;
        $course->date = $request->date;
+       $course->requeriments = $request->requeriments;
+       $course->hour = $request->hour;
+       $course->duration = $request->duration;
        $course->url_img = $request->url_img;
        $course->speaker_id = $request->speaker_id;
        $log = new Logbook();
@@ -115,6 +118,14 @@ class CourseController extends Controller
         $course->url_img = $destiantionPath . $filename;
 
        }
+
+       if($request -> hasFile ('requeriments')){
+        $file = $request ->file('requeriments');
+        $destiantionPath = 'argon/course/';
+        $filename = time() .'-'. $file->getClientOriginalName();
+        $uploadSuccess = $request->file('requeriments')->move($destiantionPath, $filename);
+        $course->requeriments = $destiantionPath . $filename;
+     }
 
 
         $log = new Logbook();
@@ -159,6 +170,9 @@ class CourseController extends Controller
         $course->title=$request->title;
         $course->description = $request->description;
         $course->date = $request->date;
+        $course->requeriments = $request->requeriments;
+        $course->hour = $request->hour;
+        $course->duration = $request->duration;
         $course->url_img = $request->url_img;
         $course->speaker_id = $request->speaker_id;
         $log = new Logbook();
@@ -171,6 +185,14 @@ class CourseController extends Controller
             $course->url_img = $destiantionPath . $filename;
 
         }
+
+        if($request -> hasFile ('requeriments')){
+            $file = $request ->file('requeriments');
+            $destiantionPath = 'argon/course/';
+            $filename = time() .'-'. $file->getClientOriginalName();
+            $uploadSuccess = $request->file('requeriments')->move($destiantionPath, $filename);
+            $course->requeriments = $destiantionPath . $filename;
+         }
 
 
         $log = new Logbook();
