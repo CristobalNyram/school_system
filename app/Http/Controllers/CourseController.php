@@ -16,7 +16,10 @@ class CourseController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     * 
      */
+
+     
     public function index()
     {
         $role = New Role();
@@ -114,6 +117,10 @@ class CourseController extends Controller
        }
 
 
+        $log = new Logbook();
+
+
+
         if ($course->save()) {
 
             $log->activity_done($description='Agregó el curso '. $course->title. 'exitosamente' ,$table_id=0,$menu_id=12,$user_id=Auth::id(),$kind_acction=6);
@@ -165,6 +172,10 @@ class CourseController extends Controller
 
         }
 
+
+        $log = new Logbook();
+
+
         if ($course->save()) {
             $log->activity_done($description='Actualizo el curso de' . $course->title . ' correctamente',$table_id=0,$menu_id=10,$user_id=Auth::id(),$kind_acction=3);
             return back()->with('success','Se ha actualizado el curso exitosamente...');
@@ -188,6 +199,7 @@ class CourseController extends Controller
     {
         $role = New Role();
         $log = new Logbook();
+
 
         if($role->checkAccesToThisFunctionality(Auth::user()->role_id,10)==null)
         {
@@ -231,6 +243,9 @@ class CourseController extends Controller
         $course = Course::findOrFail($course_id);
         $course->status=-2;
         $log = new Logbook();
+
+        $log = new Logbook();
+
 
         if($course->save()){
             $log->activity_done($description = 'Eliminó el curso ' . $course->title . ' correctamente', $table_id = 0, $menu_id = 10, $user_id = Auth::id(), $kind_acction = 3);

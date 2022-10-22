@@ -74,7 +74,10 @@ class SouvenirController extends Controller
 
   public function update($souvenir_id)
   {
-    if (Role::checkAccesToThisFunctionality(Auth::user()->role_id, 19) == null) {
+    $role = new Role();
+    $log = new Logbook();
+
+    if ($role->checkAccesToThisFunctionality(Auth::user()->role_id, 19) == null) {
       $variables = [
         'menu' => '',
         'title_page' => 'Acceso denegado',
@@ -82,7 +85,7 @@ class SouvenirController extends Controller
       return view('errors.notaccess')->with($variables);
     }
 
-    Logbook::activity_done($description = 'Accedió al módulo de Actualizar Souvenir.', $table_id = 0, $menu_id = 22, $user_id = Auth::id(), $kind_acction = 1);
+        $log->activity_done($description = 'Accedió al módulo de Actualizar Souvenir.', $table_id = 0, $menu_id = 22, $user_id = Auth::id(), $kind_acction = 1);
 
     $current_souvenir = Souvenir::findOrFail($souvenir_id);
 
@@ -158,7 +161,9 @@ class SouvenirController extends Controller
 
     if ($souvenir->save()) {
 
-      Logbook::activity_done($description = 'Creo el souvenir ' . $souvenir->name . 'correctamente', $table_id = 0, $menu_id = 22, $user_id = Auth::id(), $kind_acction = 6);
+        $role = new Role();
+        $log = new Logbook();
+        $log->activity_done($description = 'Creo el souvenir ' . $souvenir->name . 'correctamente', $table_id = 0, $menu_id = 22, $user_id = Auth::id(), $kind_acction = 6);
       return back()->with('success', 'Se ha registrado el souvenir exitosamente...');
     } else {
       return  back()->withErrors('No se ha registrado el souvenir...');
@@ -176,7 +181,10 @@ class SouvenirController extends Controller
     $souvenir = Souvenir::findOrFail($souvenir_id);
     $souvenir->status = -2;
     if ($souvenir->save()) {
-      Logbook::activity_done($description = 'Eliminó el souvenir ' . $souvenir->name . 'correctamente', $table_id = 0, $menu_id = 22, $user_id = Auth::id(), $kind_acction = 4);
+        $role = new Role();
+        $log = new Logbook();
+
+      $log->activity_done($description = 'Eliminó el souvenir ' . $souvenir->name . 'correctamente', $table_id = 0, $menu_id = 22, $user_id = Auth::id(), $kind_acction = 4);
       return back()->with('success', 'Se ha borrado el souvenir exitosamente...')->with('eliminar', 'ok');
     } else {
       return back()->with('success', 'No se ha borrado el souvenir exitosamente...');

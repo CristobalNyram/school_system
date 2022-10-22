@@ -50,7 +50,7 @@ class RallyController extends Controller
 
         if ($request->hasFile('img')) {
             $file = $request->file('img');
-            $destiantionPath = 'public/argon/img/rally/';
+            $destiantionPath = 'argon/img/rally/';
             $filename = time() . '-' . $file->getClientOriginalName();
             $uploadSuccess = $request->file('img')->move($destiantionPath, $filename);
             $rallys->img = $destiantionPath . $filename;
@@ -75,6 +75,9 @@ class RallyController extends Controller
 
     public function update($rally_id)
     {
+    $role = new Role();
+    $log = new Logbook();
+    if ($role->checkAccesToThisFunctionality(Auth::user()->role_id, 19) == null) {
         $role = new Role();
         $log = new Logbook();
         if ($log->checkAccesToThisFunctionality(Auth::user()->role_id, 19) == null) {
@@ -93,6 +96,7 @@ class RallyController extends Controller
         ];
         return view('rallys.update')->with($variables);
     }
+}
 
     // Show the form for creating a new resource.
 
@@ -142,8 +146,15 @@ class RallyController extends Controller
             $rally->img = $destiantionPath . $filename;
         }
 
+        $role = new Role();
+        $log = new Logbook();
+
         if ($rally->save()) {
+
+            $role->activity_done($description = 'Creo el Rally ' . $rally->name . ' correctamente', $table_id = 0, $menu_id = 22, $user_id = Auth::id(), $kind_acction = 6);
+
             $log->activity_done($description = 'Creo el Rally ' . $rally->name . ' correctamente', $table_id = 0, $menu_id = 22, $user_id = Auth::id(), $kind_acction = 6);
+
             return back()->with('success', 'Se ha registrado el Rally exitosamente...');
         } else {
             return  back()->withErrors('No se ha registrado el Rally...');
@@ -163,7 +174,10 @@ class RallyController extends Controller
         $rally = Rally::findOrFail($rally_id);
         $rally->status = -2;
         if ($rally->save()) {
-            $log->activity_done($description = 'Eliminó el Rally ' . $rally->name . ' correctamente', $table_id = 0, $menu_id = 22, $user_id = Auth::id(), $kind_acction = 4);
+
+            $role->activity_done($description = 'Eliminó el Rally ' . $rally->name . ' correctamente', $table_id = 0, $menu_id = 22, $user_id = Auth::id(), $kind_acction = 4);
+    $log->activity_done($description = 'Eliminó el Rally ' . $rally->name . ' correctamente', $table_id = 0, $menu_id = 22, $user_id = Auth::id(), $kind_acction = 4);
+
             return back()->with('success', 'Se ha borrado el Rally exitosamente...')->with('eliminar', 'ok');
         } else {
             return back()->with('success', 'No se ha borrado el Rally exitosamente...');

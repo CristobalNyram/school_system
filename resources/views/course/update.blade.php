@@ -13,7 +13,7 @@
                 <!-- Card header -->
 
                 <div class="card-header border-0">
-                    <h2 class="mb-0">Actualizar información del curso: {{ $current_course->name }}</h2>
+                    <h2 class="mb-0">Actualizar información del curso: {{ $current_course->title }}</h2>
 
                 </div>
 

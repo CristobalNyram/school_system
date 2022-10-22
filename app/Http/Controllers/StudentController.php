@@ -197,7 +197,7 @@ class StudentController extends Controller
      * @param  \App\Models\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function update($user_id)
+    public function update($student_id)
     {
         $role = New Role();
         $log=new Logbook();
@@ -217,7 +217,7 @@ class StudentController extends Controller
 
 
 
-        $current_user=User::findOrFail($user_id);
+        $current_student=User::findOrFail($student_id);
         $rol_available=Role::all()->where('status','=','2');
         $carrers_available=Carrer::all()->where('status','=','2');
 
@@ -225,7 +225,7 @@ class StudentController extends Controller
             'menu'=>'alumnos_all',
             'title_page'=>'Usuarios',
             'rol_available'=>$rol_available,
-            'current_user'=>$current_user,
+            'current_student'=>$current_student,
             'carrers_available'=>$carrers_available,
 
 

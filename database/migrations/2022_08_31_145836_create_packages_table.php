@@ -20,6 +20,10 @@ class CreatePackagesTable extends Migration
             $table->string('price');
             $table->string('status',2)->default(2);
             $table->unsignedBigInteger('souvenir_id');
+            $table->unsignedBigInteger('souvenir2_id')->nullable();
+            $table->foreign('souvenir_id')->references('id')->on('souvenirs');
+            $table->foreign('souvenir2_id')->references('id')->on('souvenirs');
+
             $table->timestamps();
         });
     }

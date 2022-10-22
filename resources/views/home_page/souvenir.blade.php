@@ -124,7 +124,7 @@
                 <li class="li">Sticker</li>
             <br>
             <p><b>Precio: ${{$souvenir->price}}</b></p>
-            <a href="{{ route('home_page_create') }}">Comprar</a>
+            <!-- <a href="{{ route('home_page_create') }}">Comprar</a> -->
         </div>
         <img id="bs" src="{{asset($souvenir->url_img )}}" class="product_img">
  </div>
@@ -143,7 +143,7 @@
                 <li class="li">Taza personalizada</li>
                 <br>
             <p><b>Precio: ${{$souvenir->price}}</b></p>
-            <a href="{{ route('home_page_create') }}">Comprar</a>
+            <!-- <a href="{{ route('home_page_create') }}">Comprar</a> -->
         </div>
         <img id="xa" src="{{asset($souvenir->url_img )}}" class="product_img">
     </div>
@@ -162,7 +162,7 @@
                 <li class="li">Stikers</li>
                 <br>
             <p><b>Precio: ${{$souvenir->price}}</b></p>
-            <a href="{{ route('home_page_create') }}">Comprar</a>
+            <!-- <a href="{{ route('home_page_create') }}">Comprar</a> -->
         </div>
         <img id="pla" src="{{asset($souvenir->url_img )}}" class="product_img">
     </div>

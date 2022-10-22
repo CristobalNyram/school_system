@@ -69,7 +69,7 @@
                     </div>
                     @if ( check_acces_to_this_permission(Auth::user()->role_id,36))
 
-                    <a href="{{ route('profile.edit') }}" class="dropdown-item">
+                    <a id="edit_profile_link" href="{{ route('profile.edit') }}" class="dropdown-item">
                         <i class="ni ni-single-02 text-primary"></i>
                         <span>{{ __('Mi perfil') }}</span>
                     </a>

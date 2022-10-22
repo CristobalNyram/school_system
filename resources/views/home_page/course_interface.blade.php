@@ -116,8 +116,13 @@
             <p>{{$current_course->description}}</p>
             <h4>Curso impartido por: <span id="hj">Enrique Vazarez</span></h4>
             <H4>Horario: <span id="hj">14:00 A.M. - 18:00 A.M.</span></H4>
+<<<<<<< HEAD
+            <a href="{{ route('home_page_create') }}">
+               <button>+Inscribirse</button>
+=======
             <a href="#">
                 <button>+Inscribirse</button>
+>>>>>>> d3c36046fb685f9d34a01d40de8d58dc39ced9b2
             </a>
         </div>
         <footer>
