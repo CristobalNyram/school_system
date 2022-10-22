@@ -55,6 +55,18 @@
                         <input type="number" class="form-control form-control-lg" id="maximum_person" name="maximum_person" value="{{ old('maximum_person') }}" placeholder="Límite de personas" max="50" required>
                     </div>
                     <div class="form-group">
+                        <label for="requeriments">Requerimientos para impartir curso</label>
+                        <input type="file" class="form-control form-control-lg" id="requeriments" name="requeriments" value="{{ old('requeriments') }}" placeholder="Límite de personas" max="50" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="hour">Hora que sera el curso</label>
+                        <input type="date" class="form-control form-control-lg" id="hour" name="hour" value="{{ old('hour') }}" placeholder="Hora que sera el curso" max="50" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="duration">Duración del curso</label>
+                        <input type="text" class="form-control form-control-lg" id="duration" name="duration" value="{{ old('duration') }}" placeholder="Duración del curso" max="50" required>
+                    </div>
+                    <div class="form-group">
                         <label for="date">date</label>
                         <input type="text" class="form-control form-control-lg" id="date" name="date" value="{{ old('date') }}" placeholder="Fecha del curso" max="50" required >
                     </div>

@@ -32,6 +32,9 @@
                       <th scope="col" class="sort" data-sort="budget">Título</th>
                       <th scope="col" class="sort" data-sort="status">Descripción</th>
                       <th scope="col" class="sort" data-sort="status">Límite</th>
+                      <th scope="col" class="sort" data-sort="status">Requerimientos</th>
+                      <th scope="col" class="sort" data-sort="status">Hora</th>
+                      <th scope="col" class="sort" data-sort="status">Duración</th>
                       <th scope="col" class="sort" data-sort="status">Fecha de registro</th>
                       <th scope="col" class="sort" data-sort="status">Foto</th>
                       <th scope="col" class="sort" data-sort="status">Acciones</th>
@@ -74,6 +77,33 @@
 
                               <div class="media-body">
                                 <span class="name mb-0 text-sm">{{ $course->maximum_person}} </span>
+                              </div>
+                            </div>
+                        </th>
+
+                        <th scope="row">
+                            <div class="media align-items-center">
+
+                              <div class="media-body">
+                                <span class="name mb-0 text-sm">{{ $course->requeriments}} </span>
+                              </div>
+                            </div>
+                        </th>
+
+                        <th scope="row">
+                            <div class="media align-items-center">
+
+                              <div class="media-body">
+                                <span class="name mb-0 text-sm">{{ $course->hour}} </span>
+                              </div>
+                            </div>
+                        </th>
+
+                        <th scope="row">
+                            <div class="media align-items-center">
+
+                              <div class="media-body">
+                                <span class="name mb-0 text-sm">{{ $course->duration}} </span>
                               </div>
                             </div>
                         </th>
