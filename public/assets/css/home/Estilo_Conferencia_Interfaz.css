@@ -5,178 +5,129 @@
     
     box-sizing: border-box;
 }
-
-body{
-    font-family: 'biko', sans-serif;
-    
+.division {
+    display: grid;
+    grid-auto-rows: 25rem;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    box-shadow:  0 0px 50px 0 rgba(0, 0, 0, 1);
 }
 
-#tope img{
-    width: 27%;
-    top: 0;
-    left: 0;
-} 
-
-.tex{
-width: 200px;
+.division img {
+    width: 95%;
+    height: 95%;
+    margin: 10px 10px;
+    box-shadow:  0px 0 50px 10px rgba(0, 0, 0, .4);
 }
 
-.tex1{
-    width: 250px;
+.titulo img {
+    width: 55%;
+    margin: 10px auto;
 }
 
-.menu{
-    background: #000;
-    color: #f8f8f8;
-    height: 10vh;
-    display: block;
-   
-    
-}
-
-.menu__container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    height: 100%;
-    margin: 0 auto;
-    
-}
-
-.menu__links{
-    height: 100%;
-    transition: transform .5s;
-    display: flex;
-}
-
-.menu__item{
-    list-style: none;
-    position: relative;
-    height: 20%;
-    --clip: polygon(0 0, 100% 0, 100% 0, 0 0);
-    --transform: rotate(-90deg);
-    top: 5vh;
-}
-
-.menu__item:hover{
-    --clip: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-    --transform: rotate(0);
-}
-
-.menu__link{
+.titulo  h1 {
+    margin: auto;
     color: #fff;
+    text-shadow: red -2px 0,
+    cyan 2px 0;
+    box-shadow: yellow -2px 0,
+    green 2px 0;
+    padding: 0 70px;
+    height: 70px;
+    padding-top: 15px;
+}
+
+.pri-informacion {
+    width: 90%;
+    margin: auto;
+}
+
+.pri-informacion p {
+    padding: 10px 0;
+}
+
+.informacion {
+    width: 90%;
+    margin: auto;
+}
+
+.info {
+    margin-top: 50px;
+}
+
+.informacion h3 {
+    text-align: center;
+    font-size: 4em;
+    margin: 50px auto;
+    text-shadow: red -2px 0,
+    cyan 2px 0;  
+}
+
+.informacion p {
+    padding: 10px 0;
+}
+
+.letras {
+    font-weight: bold;
+}
+.iconos{
+    margin-top: 50px;
+}
+.iconos a{
     text-decoration: none;
-    padding: 0 30px;
-    display: flex;
-    height: 100%;
-    align-items: center;
-    margin: 0;
+    
+}
+ion-icon {
+    width: 25px;
+    height: 25px;
+    animation: all 2000s;
+    color: #000;
+    padding: 0 5px;
+    
+}
+ion-icon:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 4px rgba(0, 0, 0, 0.2);
 }
 
-.menu__link:hover{
-    color: #34b015;
-    transition: 0.1s;
-    transform: all 0.3s ease-in-out;
-}
 
-.menu__link::before {
-    content: "";
-    position: absolute;
-    background-color: #34b015;
-    height: 1px;
-    width: 0;
-    left: 0;
-    bottom: -10px;
-    transition: 0.5s;
-}
-
-.menu__link::after {
-    content: "";
-    position: absolute;
-    background-color: #ff6200;
-    height: 1px;
-    width: 0;
-    right: 0;
-    bottom: -10px;
-    transition: 0.5s;
-}
-
-.menu__item:hover .menu__link::before{
-    width: 50%;
-    transform: translate(100%);
-}
-
-.menu__item:hover .menu__link::after{
-    width: 50%;
-    transform: translate(-100%);
-}
-
-.menu__link--inside{
-    padding: 30px 100px 30px 20px;
-}
-
-.menu__link--inside:hover{
-    background-color: #f0f8ff20;
-}
-
-.menu__hamburguer{
-    height: 100%;
-    display: flex;
-    align-items: center;
-    padding: 0 15px;
-    cursor: pointer;
-    display: none;
-}
-
-.menu__img{
-    display: block;
-    width: 36px;
-}
-
-center{
-    height: 40px;
+footer {
+    margin-top: 100px;
+    width: 100%;
+    height: 200px;
     background-color: #000;
 }
-
-
-div img{
-    width: 90%;
-    height: 350px;
-    margin-top: 100px;
-    margin-left: 70px;
+@media (max-width:1000px){
+    .division{
+        grid-auto-rows: 20rem;
+    }
+    .division img {
+        height: 290px;
+    }
+    .pri-informacion{
+        margin-top: 40px;
+    }
 }
 
-div h3{
-    text-align: center;
-    font-size: 30px;
+@media (max-width:600px){
+    .division {
+        display: block;
+
+    }
+    .division img {
+        width: 100%;
+        margin: 0;
+    }
+}
+@media (max-width:450px) {
+    .division {
+        grid-auto-rows: 20rem;
+    }
+    .division img {
+        height: 250px;
+    }
+    
 }
 
-div p{
-    text-align: justify;
-    font-size: 20px;
-    margin: 30px;
-}
-button {
-    font-size: 1em;
-    font-weight: bold;
-    padding: 10px 40px;
-    border-radius: 5px;
-    border: 1px solid rgb(0, 0, 0.3);
-    box-shadow: 7px 7px rgb(20, 20, 20);
-    color: black;
-    background-color: #f0f8ff;
-    transition: transform 1s;
-    margin-left: 46%;
-    margin-block: 3%;
-    z-index: 5;
-}
-
-button:hover {
-    background-color: #c4fa31;
-    transform: scale(1.1);
-}
 
 
 ion-icon{
