@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/home') }}/barra.css">
     <link rel="icon" href="{{ asset('assets/img/home/img') }}/logo.png">
     <link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilo_index_R.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <header>
     <nav class="menu">
@@ -20,7 +21,7 @@
                         <section class="containerR">
                             
                             <div class="charts">
-                             <a href="{{ route('home_page_index') }}" class="logo" id="tope"><img src="{{ asset('assets/img/home/img') }}/logo.png"></a>
+                             <a href="{{ route('home_page_index') }}" class="logo" id="tope"><img src="{{ asset('assets/img/home/img') }}/logo.png" width="100px"></a>
                     
                                 <div class="chart">
                                     <!-- un circulo inicial de fondo -->
@@ -109,7 +110,7 @@
         <div class="fondo">
             <div class="textos">
     
-            <img class="ha" src="{{ asset('assets/img/home/img') }}/logo.png">
+            <img class=" ha animate__animated animate__pulse animate__delay-2s animate__infinite"  src="{{ asset('assets/img/home/img') }}/logo.png">
             </div>
     
            
@@ -162,6 +163,7 @@
         <h3></h3>
 
     </div>
+    
 
     <div class="reze" style="background-image: url(assets/img/home/img/galeria/02.png);">
         <h3></h3>

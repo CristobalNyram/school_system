@@ -88,6 +88,13 @@
                              <a href="{{ route('home_page_sponsor') }}" class="menu__link">Nuestros<span style="color:black">_</span>Patrocinadores</a>
                         </div>
                     </li>
+                    <li class="text1">
+                        <div class="text1">
+                            <a href="{{ route('home_page_sponsor')}}" class="menu_link">Really de torneo <span style="color:#000"></span></a>
+
+                        </div>
+
+                    </li>
     
                     <li class="menu__item">
                         <a href="{{ route('home_page_course') }}" class="menu__link">Talleres</a>

@@ -32,7 +32,7 @@
             let timerInterval
             Swal.fire({
             title: 'Seras redireccionado!',
-            html: 'Para que actualices tus datos así llevar a cabo este gran evento',
+            html: 'Para que actualices tus datos y así llevar a cabo este gran evento',
             timer: 5000,
             timerProgressBar: true,
             didOpen: () => {

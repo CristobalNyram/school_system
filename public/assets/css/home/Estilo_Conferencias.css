@@ -2,234 +2,56 @@
 
 
 *{
-    
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
-    margin: 0;
-    padding:0;
+    font-family: sans-serif;
 }
-
-body{
-    font-family: 'biko', sans-serif;
-    
+.tarjetas{
+    margin-top: 100vh;
+    display: grid;
+    grid-auto-rows: 33rem;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    margin: 20px 70px;
 }
-
-#tope img{
-    width: 27%;
-    top: 0;
-    left: 0;
-} 
-
-.tex{
-width: 200px;
-}
-
-.tex1{
-    width: 250px;
-}
-
-.menu{
-    background: #000;
-    color: #f8f8f8;
-    height: 10vh;
-    display: block;
-   
-    
-}
-
-.menu__container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.tarjeta{
     width: 100%;
-    max-width: 1200px;
-    height: 100%;
-    margin: 0 auto;
-    
-}
-
-.menu__links{
-    height: 100%;
-    transition: transform .5s;
+    height: 430px;
     display: flex;
+    justify-content: center;
+    margin: auto;
 }
-
-.menu__item{
-    list-style: none;
-    position: relative;
-    height: 20%;
-    --clip: polygon(0 0, 100% 0, 100% 0, 0 0);
-    --transform: rotate(-90deg);
-    top: 5vh;
+.tarjeta .tarjeta-contenedor{
+    width: 400px;
+    height: 500px;
+    overflow: hidden;
+    margin: 0 10px;
+    text-align: center;
+    transition: all .5s;
+    border-radius: 5px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
 }
-
-.menu__item:hover{
-    --clip: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-    --transform: rotate(0);
+.tarjeta .tarjeta-contenedor:hover{
+    transform: translateY(-15px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .5);
 }
-
-.menu__link{
-    color: #fff;
+.tarjeta .tarjeta-contenedor a img{
+    width: 100%;
+}
+.tarjeta .tarjeta-contenedor a h3{
+    padding: 1rem;
+}
+.tarjeta .tarjeta-contenedor a{
     text-decoration: none;
-    padding: 0 30px;
-    display: flex;
-    height: 100%;
-    align-items: center;
-    margin: 0;
+    color: #000;
 }
-
-.menu__link:hover{
-    color: #34b015;
-    transition: 0.1s;
-    transform: all 0.3s ease-in-out;
+.tarjeta .tarjeta-contenedor p{
+    padding: 1.5rem 1.3rem;
+    text-align: justify;
 }
-
-.menu__link::before {
-    content: "";
-    position: absolute;
-    background-color: #34b015;
-    height: 1px;
-    width: 0;
-    left: 0;
-    bottom: -10px;
-    transition: 0.5s;
-}
-
-.menu__link::after {
-    content: "";
-    position: absolute;
-    background-color: #ff6200;
-    height: 1px;
-    width: 0;
-    right: 0;
-    bottom: -10px;
-    transition: 0.5s;
-}
-
-.menu__item:hover .menu__link::before{
+.tarjeta .tarjeta-contenedor hr{
     width: 50%;
-    transform: translate(100%);
 }
-
-.menu__item:hover .menu__link::after{
-    width: 50%;
-    transform: translate(-100%);
-}
-
-.menu__link--inside{
-    padding: 30px 100px 30px 20px;
-}
-
-.menu__link--inside:hover{
-    background-color: #f0f8ff20;
-}
-
-.menu__hamburguer{
-    height: 100%;
-    display: flex;
-    align-items: center;
-    padding: 0 15px;
-    cursor: pointer;
-    display: none;
-}
-
-.menu__img{
-    display: block;
-    width: 36px;
-}
-
-center{
-    height: 40px;
-    background-color: #000;
-}
-
-.gal{
-    margin-top: 20px;
-}
-
-.gal img {
-    
-    object-fit: cover;
-    transition: transform 1s;
-    display: flex;
-    width: 100%;
-    height: 30vh;
-}
-
-.gal :hover img {
-    transform: scale(1.3);
-}
-
-
-.gal figure{
-        position: relative;
-        
-        
-        overflow: hidden;
-        
-        box-shadow: 0px 15px 25px
-        rgba(0, 0, 0, 0.50);
-        cursor: pointer;
-    }
-    
-    .gal figure img{
-       
-        
-        transition: all 500ms ease-out;
-    }
-    
-    .gal figure .con{
-        position: absolute;
-        top: 0;
-        
-        background: rgba(199, 199, 199, 0.6);
-        transition: all 250ms ease-out;
-        opacity: 0;
-        visibility: hidden;
-        text-align: center;
-    }
-    
-    .gal figure:hover > .con{
-        opacity: 1;
-        visibility: visible;
-    }
-    
-    .gal figure:hover > .con h3{
-        margin-top: 70px;
-        margin-bottom: 15px;
-    }
-    
-    .gal figure h3{
-        font-size: 40px;
-        color: #fff;
-        
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    
-        transition: all 250ms ease-out;
-        
-    }
-    
-    .gal figure p{
-        color: #fff;
-        font-size: 20px;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        line-height: 1.5;
-        
-      
-    }
-
-
-@media (max-width: 416px) {
-  
-    
-
-    .gal{
-        margin-top: 30px;
-    }
-
-}
-
-
-
 
 footer {
     position: absolute;
