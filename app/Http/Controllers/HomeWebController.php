@@ -97,14 +97,10 @@ class HomeWebController extends Controller
         return view('home_page.conference')->with($variables);
     }
 
-    public function ConferenceInterface($talk_id)
+    public function ConferenceInterface()
     {
-        $current_conference=Talk::findOrFail($talk_id);
-
-        $variables=[
-            'current_conference'=>$current_conference,
-        ];
-        return view('home_page.conference_interface')->with($variables);
+        
+        return view('home_page.publications');
     }
 
     public function souvenir()
