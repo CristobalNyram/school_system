@@ -110,21 +110,85 @@
             
             
         </header>
-@foreach($conference_active as $conference)      
-<section class="gal">
-    
-    <a href="{{ route('conference_interface', $conference) }}">
-        <figure id="cur">
-            <img src="{{asset($conference->url_img )}}">
-            <div class="con">
-                <h3>{{$conference->name}}</h3>
-                <p>{{$conference->description}}</p>
+        <div class="tarjetas">
+        <article class="tarjeta">
+            <div class="tarjeta-contenedor">
+                <a href="/HTML/conferencia.html"><img src="{{ asset('assets/img/home/img') }}/img-3.jpg"></a>
+                <a href="/HTML/conferencia.html"><h3>Primera conferencia</h3></a>
+                <hr color="#ff8000">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Nostrum quidem doloribus nulla, commodi
+                    esse dicta dolore est voluptas vitae, aspernatur dignissimos
+                    ducimus? Dolore optio id error eligendi hic sed nam!</p>
             </div>
-        </figure>
-    </a>
+        </article>
 
-</section>
-@endforeach
+        <article class="tarjeta">
+            <div class="tarjeta-contenedor">
+            <a href="/HTML/conferencia.html"><img src="{{ asset('assets/img/home/img') }}/img-3.jpg"></a>
+                <a href=""><h3>Primera conferencia</h3></a>
+                <hr color="#ff8000">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Nostrum quidem doloribus nulla, commodi
+                    esse dicta dolore est voluptas vitae, aspernatur dignissimos
+                    ducimus? Dolore optio id error eligendi hic sed nam!</p>
+            </div>
+        </article>
+
+        <article class="tarjeta">
+            <div class="tarjeta-contenedor">
+            <a href="/HTML/conferencia.html"><img src="{{ asset('assets/img/home/img') }}/img-3.jpg"></a>
+                <a href=""><h3>Primera conferencia</h3></a>
+                <hr color="#ff8000">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Nostrum quidem doloribus nulla, commodi
+                    esse dicta dolore est voluptas vitae, aspernatur dignissimos
+                    ducimus? Dolore optio id error eligendi hic sed nam!</p>
+            </div>
+        </article>
+    </div>
+    
+
+    <div class="tarjetas">
+
+        <article class="tarjeta">
+            <div class="tarjeta-contenedor">
+            <a href="/HTML/conferencia.html"><img src="{{ asset('assets/img/home/img') }}/img-3.jpg"></a>
+                <a href=""><h3>Primera conferencia</h3></a>
+                <hr color="#ff8000">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                        Nostrum quidem doloribus nulla, commodi
+                        esse dicta dolore est voluptas vitae, aspernatur dignissimos
+                        ducimus? Dolore optio id error eligendi hic sed nam!</p>
+            </div>
+        </article>
+
+        <article class="tarjeta">
+            <div class="tarjeta-contenedor">
+            <a href="/HTML/conferencia.html"><img src="{{ asset('assets/img/home/img') }}/img-3.jpg"></a>
+                <a href=""><h3>Primera conferencia</h3></a>
+                <hr color="#ff8000">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Nostrum quidem doloribus nulla, commodi
+                    esse dicta dolore est voluptas vitae, aspernatur dignissimos
+                    ducimus? Dolore optio id error eligendi hic sed nam!
+                </p>
+            </div>
+        </article>
+
+        <article class="tarjeta">
+            <div class="tarjeta-contenedor">
+            <a href="/HTML/conferencia.html"><img src="{{ asset('assets/img/home/img') }}/img-3.jpg"></a>
+                <a href=""><h3>Primera conferencia</h3></a>
+                <hr color="#ff8000">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Nostrum quidem doloribus nulla, commodi
+                    esse dicta dolore est voluptas vitae, aspernatur dignissimos
+                    ducimus? Dolore optio id error eligendi hic sed nam!</p>
+            </div>
+        </article>
+
+    </div>
 <footer>
     <div class="container">
     <p>&copy; Copyright Software-Freedom Day 2022<br><br>Todos los derechos reservados. <br>Deasarrollado por REEB

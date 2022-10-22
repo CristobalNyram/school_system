@@ -110,14 +110,39 @@
             
         </header>
         <body>
-            <div>
-            <img src="{{asset($current_conference->url_img )}}">
-            <h3>{{$current_conference->name}}</h3>
-            <p>{{$current_conference->description}}</p>
-            <a href="{{ route('home_page_create') }}">
-                   <button>+Inscribirse</button>
-                </a>
+        <div class="titulo">
+        <img src="/img/logo 1.svg" alt="">
+            <h1>Conferencias</h1>
+    </div>
+
+    <div class="division">
+        <img src="/img/holocaust_600x400.jpg" alt="">
+        <div class="pri-informacion">
+            <p><span class="letras">Nombre: </span>Justus Oehler </p>
+            <p><span class="letras">Edad: </span>45 </p>
+            <P><span class="letras">Experiencia: </span> Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Quaerat rerum, laborum at quis eius ut vel natus molestiae dolor quam,
+                odio ratione architecto maxime accusantium consequuntur voluptate
+                delectus ex explicabo?</P>
         </div>
+    </div>
+
+
+    <div class="informacion">
+        <h3>Primer coferencia</h3>
+        <hr color="#0f8000">
+        <div class="info">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid quo veritatis impedit
+                qui laudantium eum corrupti asperiores quasi? Necessitatibus, sapiente exercitationem.
+                Voluptatem voluptatibus repudiandae reprehenderit provident consequatur! Eius, architecto iusto.</p>
+        </div>
+        <div class="iconos">
+            <a href=""><ion-icon name="logo-facebook" style="box-shadow: red -2px 0;"></ion-icon></a>
+            <a href=""><ion-icon name="logo-twitter" style="box-shadow: cyan -2px 0;"></ion-icon></a>
+            <a href=""><ion-icon name="logo-instagram" style="box-shadow: greenyellow -2px 0;"></ion-icon></a>
+            
+        </div>
+    </div>
 
         </body>
        

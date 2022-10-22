@@ -35,7 +35,7 @@
                                     </svg>
                                     <!-- etiqueta para el contador, en este caso el dia -->
                                     <span class="text center-abs" id="days"></span>
-                                    <h3 id="textcolor1">Dias</h3>
+                                    <h3 id="texttcolor1">Dias</h3>
                                 </div>
                                 <div class="chart">
                                     <div class="circle center-abs"></div>
@@ -110,13 +110,7 @@
             
             
         </header>
-<div class="inf">
-    <img class="img" src="{{asset($current_user->user_image )}}">
-    <h2>{{$current_user->name}}</h2>
-    <h3>{{$current_user->first_surname}}</h3>
-    <h3>{{$current_user->second_surname}}</h3>
-    <p>{{$current_user->email}}</p>
-</div>
+
 
 </header>
 
@@ -129,7 +123,7 @@
                         <img src="{{asset($current_user->user_image )}}">
                     </div>
                 </div>
-                <div class="profileText">
+                <div class="profiletextt">
                     <h3>{{$current_user->name}}<br>{{$current_user->first_surname}}<br>{{$current_user->second_surname}}<br> <span>Ponenete</span></h3>
                 </div>
             </div>
@@ -141,26 +135,26 @@
                             <span class="icon">
                                 <ion-icon name="call-outline"></ion-icon>
                             </span>
-                            <span class="text">+1 222 147 51 60</span>
+                            <span class="textt">+1 222 147 51 60</span>
                         </li>
                         <li>
                             <span class="icon">
                                 <ion-icon name="mail-outline"></ion-icon>
                             </span>
-                            <span class="text">{{$current_user->email}}</span>
+                            <span class="textt">{{$current_user->email}}</span>
                         </li>
                         <li>
                             <span class="icon">
                                 <ion-icon name="earth-outline"></ion-icon>
                             </span>
-                            <span class="text">www.apple.com</span>
+                            <span class="textt">www.apple.com</span>
                         </li>
 
                         <li>
                             <span class="icon">
                                 <ion-icon name="location-outline"></ion-icon>
                             </span>
-                            <span class="text"> San Francisco, California, Estados Unidos</span>
+                            <span class="textt"> San Francisco, California, Estados Unidos</span>
                         </li>
                     </ul>
                     <h3>Educación</h3>
@@ -185,13 +179,13 @@
                     <h3>Language</h3>
                     <ul class="Language">
                         <li>
-                            <span class="text">English</span>
+                            <span class="textt">English</span>
                             <span class="percent">
                                 <div style="width: 90%"></div>
                             </span>
                         </li>
                         <li>
-                            <span class="text">Spanish</span>
+                            <span class="textt">Spanish</span>
                             <span class="percent">
                                 <div style="width: 48%"></div>
                             </span>
@@ -212,7 +206,7 @@
                     </ul>
                 </div>
                 <div class="rightSide">
-                    <div class="about">
+                    <div class="aboutt">
                         <h3>Profile</h3>
                         <p>Lorem ipsum dolor sit amet consectetur
                             adipisicing elit. Facilis, reiciendis amet
@@ -233,7 +227,7 @@
                                 <h5>2014-2016</h5>
                                 <h5>Company Name</h5>
                             </div>
-                            <div class="text">
+                            <div class="textt">
                                 <h4>Senior UX</h4>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing
                                     elit. Minima nulla quas cupiditate illo modi,
@@ -248,7 +242,7 @@
                                 <h5>2016-2019</h5>
                                 <h5>Company Name</h5>
                             </div>
-                            <div class="text">
+                            <div class="textt">
                                 <h4>Senior UX</h4>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing
                                     elit. Minima nulla quas cupiditate illo modi,
@@ -303,7 +297,7 @@
                     <p><span class="icon">
                             <ion-icon name="mail-outline"></ion-icon>
                         </span>
-                        <span class="text">{{$current_user1->email}}</span>
+                        <span class="">{{$current_user1->email}}</span>
                     </p>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, laboriosam.</p>
                     <input type="button" value="Leer Más">
@@ -320,7 +314,7 @@
                     <p><span class="icon">
                             <ion-icon name="mail-outline"></ion-icon>
                         </span>
-                        <span class="text">{{$current_user2->email}}</span>
+                        <span class="">{{$current_user2->email}}</span>
                     </p>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, laboriosam.</p>
                     <input type="button" value="Leer Más">
@@ -337,7 +331,7 @@
                     <p><span class="icon">
                             <ion-icon name="mail-outline"></ion-icon>
                         </span>
-                        <span class="text">{{$current_user3->email}}</span>
+                        <span class="">{{$current_user3->email}}</span>
                     </p>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, laboriosam.</p>
                     <input type="button" value="Leer Más">
@@ -355,25 +349,24 @@
 
 
 <footer>
-    <div class="container">
-        <p>&copy; Copyright Software-Freedom Day 2022<br><br>Todos los derechos reservados. <br>Deasarrollado por REEB
-        </p>
-        <center>
-            <a href="https://www.facebook.com/Freedom-Day-TI-Uttecam-477721659417275">
-                <span class="icono"></span>
-                <ion-icon class="tam" name="logo-facebook"></ion-icon>
-                <span class="texto"> </span>
-            </a>
+    <div class="containerF">
+    <p>&copy; Copyright Software-Freedom Day 2022<br><br>Todos los derechos reservados. <br>Deasarrollado por REEB
+    </p>
+    <center>
+        <a href="https://www.facebook.com/Freedom-Day-TI-Uttecam-477721659417275">
+            <span class="icono"></span>
+            <ion-icon class="tam" name="logo-facebook"></ion-icon>
+            <span class="texto"> </span>
+        </a>
 
-            <a class="icon" href="https://goo.gl/maps/BWKybpucUgH8QXzf6">
-                <span class="icono"></span>
-                <ion-icon name="location-outline"></ion-icon>
-                <span class="texto"> </span>
-            </a>
-        </center>
+        <a class="icon" href="https://goo.gl/maps/BWKybpucUgH8QXzf6">
+            <span class="icono"></span>
+            <ion-icon name="location-outline"></ion-icon>
+            <span class="texto"> </span>
+        </a>
+    </center>
     </div>
 </footer>
-
 <script src="{{ asset('assets/js/home') }}/galeria.js"></script>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
