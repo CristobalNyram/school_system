@@ -89,22 +89,24 @@ class HomeWebController extends Controller
 
     public function conference()
     {
-        $conference_active=Talk::all()->where('status','=','2');
-
-        $variables=[
-            'conference_active'=>$conference_active,
-        ];
-        return view('home_page.conference')->with($variables);
+        
+        return view('home_page.conference');
     }
 
-    public function ConferenceInterface($talk_id)
+    public function ConferenceInterface()
     {
-        $current_conference=Talk::findOrFail($talk_id);
-
-        $variables=[
-            'current_conference'=>$current_conference,
-        ];
-        return view('home_page.conference_interface')->with($variables);
+        
+        return view('home_page.conference_interface');
+    }
+    public function timeline()
+    {
+        
+        return view('home_page.timeline');
+    }
+    
+    public function really()
+    {
+        return view('home_page.Really_games');
     }
 
     public function souvenir()

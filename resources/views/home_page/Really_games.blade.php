@@ -7,7 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FreedoomDay</title>
+    
     <link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilos_Videojuegos.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilo_index_R.css">
+    
     <link href="/estilosmenu.css" rel="stylesheet" type="text/css">
 </head>
 <header>
@@ -15,11 +18,16 @@
             <section class="menu__container">
                 <ul class="menu__links">
                     <li class="menu_item">
+                    <a href="#" class="logo" id="tope"><img src="{{ asset('assets/img/home/img') }}/logo.png"></a>
+                    
+                    </li>
+
+
+                    <li class="menu_item">
                         <section class="containerR">
                             
                             <div class="charts">
-                             <a href="#" class="logo" id="tope"><img src="{{ asset('assets/img/home/img') }}/logo.png"></a>
-                    
+                             
                                 <div class="chart">
                                     <!-- un circulo inicial de fondo -->
                                     <div class="circle center-abs"></div>
@@ -60,14 +68,18 @@
                         </section>
                     </li>
                     <li class="menu__item">
-                        <a href="#" class="menu__link">Inicio</a>
+                        <a href="#" class="menu__link">Really</a>
                     </li>
                     
         
                     <li class="menu__item">
-                        <div class="tex1">
-                             <a href="#" class="menu__link">Nuestros<span style="color:black">_</span>Patrocinadores</a>
-                        </div>
+                        <a href="{{ route('home_page_index') }}" class="menu__link">Horario</a>
+                    </li>
+        
+                    <li class="menu__item">
+                        
+                             <a href="{{ route('home_page_sponsor') }}" class="menu__link">Patrocinadores</a>
+                       
                     </li>
     
                     <li class="menu__item">
@@ -83,20 +95,22 @@
                     </li>
         
                     <li class="menu__item">
-                        <div class="tex">
-    
-                            <a href="#" class="menu__link">Inicio de Sesión</a>
-                        </div>
+                      
+                            <a href="#" class="menu__link">Inicio<span style="color:black">_</span>de<span style="color:black">_</span>Sesión</a>
+                     
                     </li>
                     
                 </ul>
     
                 <div class="menu__hamburguer">
-                    <img src="/menu.svg" class="menu__img">
+                <img src="{{ asset('assets/img/home/img') }}/menu.svg" class="menu__img">
                 </div>
             </section> 
         </nav>
-            
+        <script src="{{ asset('assets/js/home') }}/reloj.js"></script>
+
+
+        <script src="{{ asset('assets/js/home') }}/app.js"></script>
             
         </header>
         <body>
@@ -161,7 +175,7 @@
                     
                     <article class="tarjeta">
                         <div class="tarjeta-contenedor">
-                            <a href="/HTML/conferencia.html"><img src="/media/clash.png"  alt="" width="150px" height="350px"></a>
+                            <a href="/HTML/conferencia.html"><img src="{{ asset('assets/img/home/img') }}/clash.png"  alt="" width="150px" height="350px"></a>
                             <a href="/HTML/conferencia.html"><h3>CLASH ROYALE</h3></a>
                             <hr color="#ff8000">
                            
@@ -217,7 +231,7 @@
             
                     <article class="tarjeta">
                         <div class="tarjeta-contenedor">
-                            <a href=""><img src="/media/gears.png" alt="" width="150px" height="350px"></a>
+                            <a href=""><img src="{{ asset('assets/img/home/img') }}/gears.png" alt="" width="150px" height="350px"></a>
                             <a href=""><h3>GEARS 5</h3></a>
                             <hr color="#ff8000">
                             <br>
@@ -259,7 +273,7 @@
             
                     <article class="tarjeta">
                         <div class="tarjeta-contenedor">
-                            <a href=""><img src="/media/king.png" alt="" width="150px" height="350px"></a>
+                            <a href=""><img src="{{ asset('assets/img/home/img') }}/king.png" alt="" width="150px" height="350px"></a>
                             <a href=""><h3>The King of Fighters</h3></a>
                             <hr color="#ff8000">
                             <br>
