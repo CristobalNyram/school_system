@@ -1,6 +1,8 @@
 
 
 <div class="d-flex">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css">
+
     <script>
             function fnSolicitarPaquete(package_id,package_name)
             {
@@ -52,6 +54,7 @@
 
     </script>
 
+
     @foreach ($packages_available as $package)
     <div class="col-md-4 mt-3">
 
@@ -79,7 +82,7 @@
             <br>
 
         </ul>
-        <button type="button" class="btn btn-link text-white mb-3" >Ver detalles</button>
+        <button type="button" class="btn btn-link text-white mb-3" data-toggle="modal" data-target="#modal-notification" >Ver detalles</button>
         </div>
         <div class="card-footer bg-transparent">
         <a  onclick="fnSolicitarPaquete('{{$package->id }}','{{$package->name }}');" class=" text-white" style="cursor: -webkit-grab; cursor: grab;">Solicitar paquete</a>
@@ -90,7 +93,78 @@
 
     @endforeach
 
+    <div class="row">
 
+        <div class="col-md-4">
+        <div class="modal fade" id="modal-notification" tabindex="-1" role="dialog" aria-labelledby="modal-notification" aria-hidden="true">
+        <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
+            <div class="modal-content bg-gradient-info">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-title-notification">Detalles del paquete</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+
+                    <div class="py-3 text-center">
+                        <i class="ni ni-bell-55 ni-3x"></i>
+                        <h2 class="text-white mt-4">¡Paquete XXX  XXXXX!</h2>
+
+                    </div>
+                    <div class="py-3 ">
+
+                        <h2 class="heading mt-4">Descripción:</h2>
+
+                    </div>
+                    <div class="py-3 ">
+
+                        <h2 class="heading mt-4">Tallerista:</h2>
+
+                    </div>
+
+                    <div class="py-3 ">
+
+                        <h2 class="heading mt-4">Curso:</h2>
+
+                    </div>
+                    <div class="py-3 ">
+
+                        <h2 class="heading mt-4">Descripción:</h2>
+
+                    </div>
+                    <div class="py-3 ">
+
+                        <h2 class="heading mt-4">Requerimientos:</h2>
+
+                    </div>
+
+                    <div class="py-3 ">
+
+                        <h2 class="heading mt-4">Precio:</h2>
+
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-white  ml-auto" data-dismiss="modal">Cerrar</button>
+                </div>
+
+            </div>
+        </div>
+        </div>
+        </div>
+
+</div>
+
+
+
+    <!-- Large modal -->
+
+<!-- Small modal -->
 
 
 
