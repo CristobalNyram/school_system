@@ -235,12 +235,19 @@
 
                     <div class="form-group">
                         <label for="speaker_cv">Curriculum Viate del Conferencista/Tallerista</label>
-                        <input type="file" onBlur='LimitAttach1(this,1)' accept="application/pdf" class="form-control form-control-lg" id="speaker_cv" name="speaker_cv" value="{{ old('speaker_cv') }}" placeholder=" " max="50" required>
+                        <input type="file" onBlur='LimitAttach1(this,1)' accept="application/pdf" class="form-control form-control-lg" id="speaker_cv" name="speaker_cv" value="{{ old('gender') }}" placeholder=" " max="50" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="course">Curso a Impartir</label>
-                        <input type="text" class="form-control form-control-lg" id="course" name="course" value="{{   old('course') }}" placeholder="Curso a Impartir" max="50" required oninput="uppercaseLetters(event);">
+                        <label for="speaker_id">Curso a Impartir</label>
+
+                        <select class="form-control form-control-lg  single-select-2" data-toggle="select2" name="speaker_id" id="speaker_id">
+                            <option value="-2" selected>Seleccionar</option>
+                            @foreach ($course_available as $course )
+                            <option value="{{ old('id', auth()->user()->id) }}">{{ $course->title }}</option>
+
+                            @endforeach
+                        </select>
                     </div>
 
                     <div class="form-group">

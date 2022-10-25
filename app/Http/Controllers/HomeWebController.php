@@ -96,6 +96,7 @@ class HomeWebController extends Controller
     public function ConferenceInterface()
     {
         
+<<<<<<< HEAD
         return view('home_page.conference_interface');
     }
     public function timeline()
@@ -107,6 +108,9 @@ class HomeWebController extends Controller
     public function really()
     {
         return view('home_page.Really_games');
+=======
+        return view('home_page.publications');
+>>>>>>> 725cb04f8f987d7fcbe251400f4c819a7af58bea
     }
 
     public function souvenir()

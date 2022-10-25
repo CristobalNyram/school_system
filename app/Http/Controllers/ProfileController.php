@@ -7,6 +7,7 @@ use App\Http\Requests\ProfileRequest;
 use App\Http\Requests\PasswordRequest;
 use App\Models\Logbook;
 use App\Models\Carrer;
+use App\Models\Course;
 use Illuminate\Support\Carbon;
 use App\Models\Role;
 use Illuminate\Support\Facades\Hash;
@@ -29,9 +30,6 @@ class ProfileController extends Controller
                 'menu'=>'',
                 'title_page'=>'Acceso denegado',
              
-
-
-
             ];
             return view('errors.notaccess')->with($variables);
 
@@ -39,12 +37,14 @@ class ProfileController extends Controller
         $log->activity_done($description='Accedió al módulo editar perfil.',$table_id=0,$menu_id=36,$user_id=Auth::id(),$kind_acction=1);
 
         $carrers_available=Carrer::all()->where('status','=','2');
+        $course_available=Course::all()->where('status', '=', '2');
 
 
         $variables=[
             'menu'=>'',
             'title_page'=>'Perfil',
             'carrers_available' => $carrers_available,
+            'course_available' => $course_available,
 
 
         ];
@@ -72,6 +72,10 @@ class ProfileController extends Controller
 
 
         $current_user=User::findOrFail(Auth::id());
+        
+       
+        
+        
         // global variables
         $current_user->name=$request->name;
         $current_user->first_surname=$request->first_surname;
@@ -88,6 +92,9 @@ class ProfileController extends Controller
         $current_user->speaker_cv=$request->speaker_cv;
         $current_user->speaker_cv=$request->speaker_cv;
 
+        $course = new Course();
+
+        $course->speaker_id = $request->get('speaker_id');
         //student
         $current_user->career=$request->career;
         $current_user->quarter=$request->quarter;
@@ -141,11 +148,8 @@ class ProfileController extends Controller
             $variables=[
                 'menu'=>'',
                 'title_page'=>'Acceso denegado',
-
-
             ];
             return view('errors.notaccess')->with($variables);
-
         }
 
         if (auth()->user()->id == 1) {

@@ -119,8 +119,13 @@
         <div class="tarjetas">
         <article class="tarjeta">
             <div class="tarjeta-contenedor">
+<<<<<<< HEAD
                 <a href="#"><img src="{{ asset('assets/img/home/img') }}/img-3.jpg"></a>
                 <a href="{{ route('conference_interface') }}"><h3>Primera conferenciaK</h3></a>
+=======
+                <a href="{{ route('conference_interface') }}"><img src="{{ asset('assets/img/home/img') }}/img-3.jpg"></a>
+                <a href="{{ route('conference_interface') }}"><h3>Primera conferencia</h3></a>
+>>>>>>> 725cb04f8f987d7fcbe251400f4c819a7af58bea
                 <hr color="#ff8000">
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                     Nostrum quidem doloribus nulla, commodi

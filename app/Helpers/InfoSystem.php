@@ -1,8 +1,15 @@
 
 <?php
 
+// use App\Http\Controllers\Relpaymentpackagesstudent;
 use App\Models\Role;
+use App\Models\Relpaymentpackagesstudent;
+
+
 use App\Models\Configuration;
+use App\Models\Relcoursestudent;
+use App\Models\Relpackagessourvenir;
+use Illuminate\Support\Facades\Auth;
 
 ////Here is for security of the system
 if (! function_exists('check_acces_to_this_permission')) {
@@ -75,4 +82,36 @@ if (! function_exists('config_author_system')) {
         }
       }
 }
+
+// helpers for check payments start
+if (! function_exists('check_if_paid_package')) {
+
+        //check if the user has bought his/her ticket
+      function check_if_paid_package()
+      {
+            $check_if_paid_package = Relpaymentpackagesstudent::where('user_student_id','=',Auth::id())->where('status','=',2)->first();
+
+      }
+}
+if (! function_exists('check_if_requested_package')) {
+
+        //check if the user has requested the package
+        function check_if_requested_package()
+        {
+                $check_if_requested_package = Relpaymentpackagesstudent::where('user_student_id','=',Auth::id())->where('status','=',1)->first();
+
+        }
+}
+if (! function_exists('check_if_enrolled_in_course')) {
+
+    //check if the user has enrrolled in any  course
+    function check_if_enrolled_in_course()
+    {
+            $check_if_enrolled_in_course = Relcoursestudent::where('user_student_id','=',Auth::id())->where('status','=',2)->first();
+
+    }
+}
+// helpers for check payments end
+
+
 
