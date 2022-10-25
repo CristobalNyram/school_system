@@ -6,12 +6,12 @@
 
 
 body {
-    background-image: url('/img/ins.png');
+    background-image: url('5053309.jpg');
     background-repeat: no-repeat;
     background-size: 100% 130%;
 }
 
-.contenedorC {
+.contenedor {
     margin: 0 auto;
     text-align: center;
     border-radius: 8px;
@@ -21,15 +21,13 @@ body {
 }
 
 .titulo {
-    padding: 90px 20px;
-    background: rgba(0, 0, 0, 1);
     color: #fff;
     margin: auto auto;
     border-radius: 100%;
 }
 
-.titulo h1 {
-    width: 90%;
+.titulo img {
+    width: 50%;
 }
 
 .cuadros {
@@ -45,6 +43,8 @@ body {
     width: 80%;
     margin: 20px auto;
     border-radius: 50px;
+    box-shadow: yellow -2px 2px 0,
+                green 2px -2px 0;
 
 }
 
@@ -108,3 +108,58 @@ body {
     left: -250px;
 }
 
+@media(max-width:850px) {
+    .espacio p{
+        margin-top: 10px;
+    }
+    .es1{
+        position: relative;
+        left: 0;
+    }
+    
+    .es2{
+        position: relative;
+        left: 0;
+    }
+    
+    .es3{
+        position: relative;
+        left: 0;
+    }
+    
+    .es4{
+        position: relative;
+        left: 0;
+    }
+    
+    .es5{
+        position: relative;
+        left: 0;
+    }
+    
+    .es6{
+        position: relative;
+        left: 0;
+    }
+    
+    .es7{
+        position: relative;
+        left: 0;
+    }
+    
+    .es8{
+        position: relative;
+        left: 0;
+    }
+    
+    .es9{
+        position: relative;
+        left: 0;
+    }
+    
+    .es10{
+        position: relative;
+        left: 0;
+    }
+    
+}

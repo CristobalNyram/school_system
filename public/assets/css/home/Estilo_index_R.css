@@ -4,6 +4,8 @@
 *{
     
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body{
@@ -16,9 +18,9 @@ body{
     width: 140px;
     height: 90px;
     
-    position: absolute;
-    top: 10px;
-    left: 40px;
+    position: relative;
+    top: 0px;
+    left: 0px;
 } 
 
 .tex{
@@ -45,7 +47,7 @@ width: 200px;
     width: 100%;
     max-width: 1200px;
     height: 100%;
-    margin: 0 auto;
+    margin: 0;
     
 }
 
@@ -784,7 +786,12 @@ p{
     }
 
 }
-
+@media(max-width:1454px){
+    .menu__link{
+        padding: 0 20px;
+        
+    }
+}
 @media(max-width:320px){
     .barra{
         left: 8px;
@@ -829,13 +836,18 @@ p{
 
 
 @media (max-width:800px){
+    .containerR {
+        max-width: 900px;
+        margin: 0;
+        margin-left: 100px;
+    }
     .container{
         margin: 0 0 -50px 50px;
     }
     .charts{
-        margin-top: 150px;
+        margin-top: 50px;
         left: 0%;
-        margin-left: 0%;
+        margin-left: -50px;
         padding: 0;
     }
     .tex1{
@@ -848,6 +860,7 @@ p{
         margin-top: 0;
         left: 0;
         z-index: 10;
+        margin-top: 20px;
     } 
 
     .menu__hamburguer{

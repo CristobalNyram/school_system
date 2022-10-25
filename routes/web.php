@@ -57,6 +57,8 @@ Route::prefix('web')->group(function () {
     Route::get('/souvenir',[HomeWebController::class, 'souvenir'])->name('home_page_souvenir');
     Route::get('/login',[HomeWebController::class, 'login'])->name('home_page_login');
     Route::get('/create',[HomeWebController::class, 'create'])->name('home_page_create');
+    Route::get('/really',[HomeWebController::class, 'really'])->name('really_index');
+    Route::get('/timeline',[HomeWebController::class, 'timeline'])->name('timeline_index');
 
 });
 Auth::routes();
