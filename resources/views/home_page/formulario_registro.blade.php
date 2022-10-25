@@ -9,7 +9,7 @@
     <title>FreedoomDay</title>
     <link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilo_Formulario_R.css">
     <link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilo_index_R.css">
-    
+
     <script src="{{ asset('argon') }}/vendor/jquery/dist/jquery.min.js"></script>
         <script src="{{ asset('argon') }}/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -28,17 +28,17 @@
 <header>
     <nav class="menu">
             <section class="menu__container">
-                
-    
+
+
                 <ul class="menu__links">
-                    
-                        
+
+
                     <li class="menu_item">
                         <section class="containerR">
-                            
+
                             <div class="charts">
                              <a href="{{ route('home_page_index') }}" class="logo" id="tope"><img src="{{ asset('assets/img/home/img') }}/logo.png"></a>
-                    
+
                                 <div class="chart">
                                     <!-- un circulo inicial de fondo -->
                                     <div class="circle center-abs"></div>
@@ -81,8 +81,8 @@
                     <li class="menu__item">
                         <a href="{{ route('home_page_index') }}" class="menu__link">Inicio</a>
                     </li>
-                    
-        
+
+
                     <li class="menu__item">
                         <div class="tex1">
                              <a href="{{ route('home_page_sponsor') }}" class="menu__link">Nuestros<span style="color:black">_</span>Patrocinadores</a>
@@ -95,40 +95,40 @@
                         </div>
 
                     </li>
-    
+
                     <li class="menu__item">
                         <a href="{{ route('home_page_course') }}" class="menu__link">Talleres</a>
                     </li>
-        
+
                     <li class="menu__item">
                         <a href="{{ route('home_page_conference') }}" class="menu__link">Conferencias</a>
                     </li>
-    
+
                     <li class="menu__item">
                         <a href="{{ route('home_page_souvenir') }}" class="menu__link">Souvenirs</a>
                     </li>
-        
+
                     <li class="menu__item">
                         <div class="tex">
-    
+
                             <a href="{{ route('home_page_login') }}" class="menu__link">Inicio de Sesión</a>
                         </div>
                     </li>
-                    
+
                 </ul>
-    
+
                 <div class="menu__hamburguer">
                     <img src="{{ asset('assets/img/home/img') }}/menu.svg" class="menu__img">
                 </div>
-            </section> 
+            </section>
         </nav>
 
         <script src="{{ asset('assets/js/home') }}/reloj.js"></script>
 
 
         <script src="{{ asset('assets/js/home') }}/app.js"></script>
-            
-            
+
+
         </header>
         <div id="posi">
 
@@ -136,7 +136,7 @@
             <section class="forma">
                 <h1>Registro</h1>
                 <br>
-                
+
                 <form method="POST" action="{{route('student_store')}}">
                 @csrf
                 @if(session('success'))
@@ -194,6 +194,20 @@
                     </div>
 
                     <div class="con">
+                        <label for="kind_inscription">Tipo de inscripción</label>
+
+                        <select class="con" style="color:black;" onchange="check_inscription(event);" data-toggle="select2" name="kind_inscription" id="kind_inscription">
+                            <option value="-1" selected >Seleccionar...</option>
+                            <option value="1">Interno</option>
+                            <option value="2">Externo</option>
+
+                        </select>
+                    </div>
+
+
+                {{-- Inputs for studen --}}
+                <div id="box_inputs_student" style="display: none;">
+                    <div class="con">
                         <label for="career">Carrera</label>
 
                         <select class="con" style="color:black;" data-toggle="select2" name="career" id="career">
@@ -204,84 +218,86 @@
                             @endforeach
                         </select>
                     </div>
-                
-                <div class="con">
-                        <label for="quarter">Cuatrimestre</label>
+                        <div class="con">
+                            <label for="quarter">Cuatrimestre</label>
 
-                        <select class="con" style="color:black;" data-toggle="select2" id="quarter" name="quarter">
-                            <option value="-3" selected>Seleccionar</option>
-                            <option value="first">1° Primero</option>
-                            <option value="second">2° Segundo</option>
-                            <option value="third">3° Tercero</option>
-                            <option value="fourth">4° Cuarto</option>
-                            <option value="fifth">5° Quinto</option>
-                            <option value="sixth">6° Sexto</option>
-                            <option value="seventh">7° Séptimo</option>
-                            <option value="eighth">8° Octavo</option>
-                            <option value="nineth">9° Noveno</option>
-                            <option value="tenth">10° Décimo</option>
+                            <select class="con" style="color:black;" data-toggle="select2" id="quarter" name="quarter">
+                                <option value="-3" selected>Seleccionar</option>
+                                <option value="first">1° Primero</option>
+                                <option value="second">2° Segundo</option>
+                                <option value="third">3° Tercero</option>
+                                <option value="fourth">4° Cuarto</option>
+                                <option value="fifth">5° Quinto</option>
+                                <option value="sixth">6° Sexto</option>
+                                <option value="seventh">7° Séptimo</option>
+                                <option value="eighth">8° Octavo</option>
+                                <option value="nineth">9° Noveno</option>
+                                <option value="tenth">10° Décimo</option>
+                            </select>
+                        </div>
+
+                        <div class="con">
+                            <label for="group">Grupo</label>
+
+                            <select class="con" style="color:black;" data-toggle="select2" id="group" name="group">
+                                <option value="-4" selected>Seleccionar</option>
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>
+                                <option value="D">D</option>
+
+                            </select>
+                        </div>
 
 
 
-                        </select>
+                </div>
+
+                <div id="box_others_inputs" style="display: none;">
+                            <div class="con">
+                                <label for="email">Correo electronico</label>
+                                <input type="email" style="color:black;" class="con" id="email" name="email" value=" {{ old('email') }}" placeholder="Correo electronico ." required maxlength="50">
+                            </div>
+
+                            <div class="con">
+                                <label for="password">Password</label>
+                                <input type="password"  class="con" id="password" value="{{ old('password') }}" name="password" placeholder="Crear Contraseña." required maxlength="50">
+                            </div>
+
+                            <div class="con">
+                                <label for="password_confirmation">Confirmar contraseña</label>
+                                <input type="password"  class="con" id=" password_confirmation" name="password_confirmation" placeholder="Confirmar contraseña." required maxlength="50">
+                            </div>
+
+                            <div class="con">
+                                <label for="user_image">Foto de perfil</label>
+                                <input type="file" onBlur='LimitAttach(this,1)' ; accept="image/*" class="con" id="user_image" name="user_image" placeholder="Foto del Conferencista" max="50" required oninput="uppercaseLetters(event);">
+                            </div>
+
+                            <div class="alert alert-warning alert-dismissible fade show" id="alerta" role="alert" style="display: none" role="alert">
+                                <span class="alert-inner--text"><strong>Advertencia: </strong> Sólo se aceptan archivos con extensiones .jpeg, .jpe, .jpg, .png</span>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                </div>
+
+
+
+
+                    <div id="box_input_submit" style="display: none">
+                        <button type="submit">Enviar</button>
+
                     </div>
 
-                    <div class="con">
-                        <label for="group">Grupo</label>
-
-                        <select class="con" style="color:black;" data-toggle="select2" id="group" name="group">
-                            <option value="-4" selected>Seleccionar</option>
-                            <option value="A">A</option>
-                            <option value="B">B</option>
-                            <option value="C">C</option>
-                            <option value="D">D</option>
-
-
-
-
-                        </select>
-                    </div>
-                
-                    <div class="con">
-                        <label for="email">Correo electronico</label>
-                        <input type="email" style="color:black;" class="con" id="email" name="email" value=" {{ old('email') }}" placeholder="Correo electronico ." required maxlength="50">
-                    </div>
-
-                    <div class="con">
-                        <label for="password">Password</label>
-                        <input type="password"  class="con" id="password" value="{{ old('password') }}" name="password" placeholder="Crear Contraseña." required maxlength="50">
-                    </div>
-
-                    <div class="con">
-                        <label for="password_confirmation">Confirmar contraseña</label>
-                        <input type="password"  class="con" id=" password_confirmation" name="password_confirmation" placeholder="Confirmar contraseña." required maxlength="50">
-                    </div>
-
-                    <div class="con">
-                        <label for="user_image">Foto del Estudiante</label>
-                        <input type="file" onBlur='LimitAttach(this,1)' ; accept="image/*" class="con" id="user_image" name="user_image" placeholder="Foto del Conferencista" max="50" required oninput="uppercaseLetters(event);">
-                    </div>
-
-                    <div class="alert alert-warning alert-dismissible fade show" id="alerta" role="alert" style="display: none" role="alert">
-                        <span class="alert-inner--text"><strong>Advertencia: </strong> Sólo se aceptan archivos con extensiones .jpeg, .jpe, .jpg, .png</span>
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-            
-               
-
-               
-                <button type="submit">Enviar</button> 
-                
                 </form>
-                
-                
-         
 
-               
-                
-                
+
+
+
+
+
+
             </section>
 
 
@@ -299,7 +315,7 @@
                     <ion-icon class="tam" name="logo-facebook"></ion-icon>
                     <span class="texto"> </span>
                 </a>
-    
+
             <a class="icon" href="https://goo.gl/maps/BWKybpucUgH8QXzf6">
                 <span class="icono"></span>
                 <ion-icon name="location-outline"></ion-icon>
@@ -307,6 +323,42 @@
             </a>
             </center>
         </footer>
-    
+
           <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script>
+function check_inscription(event)
+{
+    // console.log(event.target.value);
+    let value_select=event.target.value;
+
+    if(value_select==1)
+    {
+        $('#box_inputs_student').slideDown('slow');
+        $('#box_input_submit').slideDown('slow');
+        $('#box_others_inputs').slideDown('slow');
+
+
+
+    }
+    if(value_select==2)
+    {
+        $('#box_inputs_student').slideUp('slow');
+        $('#box_input_submit').slideDown('slow');
+        $('#box_others_inputs').slideDown('slow');
+
+
+    }
+    if(value_select==-1)
+    {
+        $('#box_others_inputs').slideUp('slow');
+        $('#box_inputs_student').slideUp('slow');
+
+        $('#box_input_submit').slideUp('slow');
+
+    }
+
+
+
+}
+</script>
