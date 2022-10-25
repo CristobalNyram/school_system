@@ -54,6 +54,14 @@ div {
 
 }
 
+#ri4 {
+    width: 100px;
+    position: absolute;
+    left: 300px;
+    top: 230px;
+
+}
+
 #nombre {
     position: absolute;
     bottom: 160px;

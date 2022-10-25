@@ -100,7 +100,7 @@ class HomeWebController extends Controller
     public function ConferenceInterface()
     {
         
-        return view('home_page.publications');
+        return view('home_page.conference_interface');
     }
 
     public function souvenir()

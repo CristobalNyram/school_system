@@ -92,9 +92,6 @@ class ProfileController extends Controller
         $current_user->speaker_cv=$request->speaker_cv;
         $current_user->speaker_cv=$request->speaker_cv;
 
-        $course = new Course();
-
-        $course->speaker_id = $request->get('speaker_id');
         //student
         $current_user->career=$request->career;
         $current_user->quarter=$request->quarter;
