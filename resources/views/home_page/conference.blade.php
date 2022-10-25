@@ -113,8 +113,8 @@
         <div class="tarjetas">
         <article class="tarjeta">
             <div class="tarjeta-contenedor">
-                <a href="/HTML/conferencia.html"><img src="{{ asset('assets/img/home/img') }}/img-3.jpg"></a>
-                <a href="/HTML/conferencia.html"><h3>Primera conferencia</h3></a>
+                <a href="{{ route('home_page_sponsor') }}"><img src="{{ asset('assets/img/home/img') }}/img-3.jpg"></a>
+                <a href="{{ route('home_page_sponsor') }}"><h3>Primera conferencia</h3></a>
                 <hr color="#ff8000">
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                     Nostrum quidem doloribus nulla, commodi
@@ -125,7 +125,7 @@
 
         <article class="tarjeta">
             <div class="tarjeta-contenedor">
-            <a href="/HTML/conferencia.html"><img src="{{ asset('assets/img/home/img') }}/img-3.jpg"></a>
+            <a href="{{ route('home_page_sponsor') }}"><img src="{{ asset('assets/img/home/img') }}/img-3.jpg"></a>
                 <a href=""><h3>Primera conferencia</h3></a>
                 <hr color="#ff8000">
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -137,7 +137,7 @@
 
         <article class="tarjeta">
             <div class="tarjeta-contenedor">
-            <a href="/HTML/conferencia.html"><img src="{{ asset('assets/img/home/img') }}/img-3.jpg"></a>
+            <a href="{{ route('home_page_sponsor') }}"><img src="{{ asset('assets/img/home/img') }}/img-3.jpg"></a>
                 <a href=""><h3>Primera conferencia</h3></a>
                 <hr color="#ff8000">
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -153,7 +153,7 @@
 
         <article class="tarjeta">
             <div class="tarjeta-contenedor">
-            <a href="/HTML/conferencia.html"><img src="{{ asset('assets/img/home/img') }}/img-3.jpg"></a>
+            <a href="{{ route('home_page_sponsor') }}><img src="{{ asset('assets/img/home/img') }}/img-3.jpg"></a>
                 <a href=""><h3>Primera conferencia</h3></a>
                 <hr color="#ff8000">
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -165,7 +165,7 @@
 
         <article class="tarjeta">
             <div class="tarjeta-contenedor">
-            <a href="/HTML/conferencia.html"><img src="{{ asset('assets/img/home/img') }}/img-3.jpg"></a>
+            <a href="{{ route('home_page_sponsor') }}"><img src="{{ asset('assets/img/home/img') }}/img-3.jpg"></a>
                 <a href=""><h3>Primera conferencia</h3></a>
                 <hr color="#ff8000">
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -178,7 +178,7 @@
 
         <article class="tarjeta">
             <div class="tarjeta-contenedor">
-            <a href="/HTML/conferencia.html"><img src="{{ asset('assets/img/home/img') }}/img-3.jpg"></a>
+            <a href="{{ route('home_page_sponsor') }}"><img src="{{ asset('assets/img/home/img') }}/img-3.jpg"></a>
                 <a href=""><h3>Primera conferencia</h3></a>
                 <hr color="#ff8000">
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
