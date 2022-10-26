@@ -71,9 +71,8 @@
                     <li class="menu__item">
                         <a href="{{ route('really_index') }}" class="menu__link">Really</a>
                     </li>
-        
                     <li class="menu__item">
-                        <a href="{{ route('home_page_index') }}" class="menu__link">Horario</a>
+                        <a href="{{ route('timeline_index') }}" class="menu__link">Horario</a>
                     </li>
         
                     <li class="menu__item">

@@ -68,12 +68,10 @@
                         </section>
                     </li>
                     <li class="menu__item">
-                        <a href="#" class="menu__link">Really</a>
+                        <a href="{{ route('really_index') }}" class="menu__link">Really</a>
                     </li>
-                    
-        
                     <li class="menu__item">
-                        <a href="{{ route('home_page_index') }}" class="menu__link">Horario</a>
+                        <a href="{{ route('timeline_index') }}" class="menu__link">Horario</a>
                     </li>
         
                     <li class="menu__item">
@@ -83,21 +81,22 @@
                     </li>
     
                     <li class="menu__item">
-                        <a href="#" class="menu__link">Talleres</a>
+                        <a href="{{ route('home_page_course') }}" class="menu__link">Talleres</a>
                     </li>
         
                     <li class="menu__item">
-                        <a href="#" class="menu__link">Conferencias</a>
+                        <a href="{{ route('home_page_conference') }}" class="menu__link">Conferencias</a>
                     </li>
     
                     <li class="menu__item">
-                        <a href="#" class="menu__link">Souvenirs</a>
+                        <a href="{{ route('home_page_souvenir') }}" class="menu__link">Souvenirs</a>
                     </li>
         
                     <li class="menu__item">
-                      
-                            <a href="#" class="menu__link">Inicio<span style="color:black">_</span>de<span style="color:black">_</span>Sesión</a>
-                     
+                        
+    
+                            <a href="{{ route('home_page_login') }}" class="menu__link">Inicio<span style="color:black">_</span>de<span style="color:black">_</span>Sesión</a>
+                        
                     </li>
                     
                 </ul>
