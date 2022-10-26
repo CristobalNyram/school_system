@@ -235,6 +235,24 @@
                     </a>
                 </li>
                 @endif
+                @if ( check_acces_to_this_permission(Auth::user()->role_id,44))
+                <li class="nav-item">
+                    <a class="nav-link @if($menu === 'badge_all')  custom-active text-white @endif"
+                        href="{{ route('badge_index') }}">
+                        <i class="ni ni-shop text-primary" aria-hidden="true"></i>
+                        Obtener Gafet
+                    </a>
+                </li>
+                @endif
+                @if ( check_acces_to_this_permission(Auth::user()->role_id,44))
+                <li class="nav-item">
+                    <a class="nav-link @if($menu === 'certificate_all')  custom-active text-white @endif"
+                        href="{{ route('certificate_index') }}">
+                        <i class="ni ni-shop text-primary" aria-hidden="true"></i>
+                        Obtener Certificado
+                    </a>
+                </li>
+                @endif
                 @if ( check_acces_to_this_permission(Auth::user()->role_id,32))
                 <!-- El rol id pertenece al 32 no al 19, se cambiara una vez se agrege el menu para asignar roles -->
                 <!-- Tambien cambiar en el controlador de paquetes -->

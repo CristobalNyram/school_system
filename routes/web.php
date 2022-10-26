@@ -92,9 +92,18 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/student/update/{student_id}', [StudentController::class, "update"])->name('student_update');
         Route::post('/student/edit', [StudentController::class, "edit"])->name('student_edit');
         Route::post('/student/delete/{user_id}', [StudentController::class, "delete"])->name('student_delete');
-
-
         // student end--------------------------------------------
+
+        //star get badge
+        Route::get('/badge', [GetBadgeController::class, "index"])->name('badge_index');
+        Route::get('/badge/pdf', [GetBadgeController::class, "pdf"])->name('gafet_pdf');
+        //end get badge
+
+        //start certificate
+        Route::get('/certificate', [GetCertificateController::class, "index"])->name('certificate_index');
+        Route::get('/certificate/pdf', [GetCertificateController::class, "pdf"])->name('certificate_pdf');
+
+        //end certificate
 
 
          // Example start------------------------------------------
@@ -125,9 +134,9 @@ Route::group(['middleware' => 'auth'], function () {
         // payment start--------------------------------------------
 
         Route::get('/payments', [PaymentController::class, "index"])->name('payment_index');
-        // Route::get('/payments/required/{id}', [PaymentController::class, "index"])->name('payment_index');
-        // Route::get('/payments/aprove/{id}', [PaymentController::class, "index"])->name('payment_index');
-        // Route::get('/payments/cancel/{id}', [PaymentController::class, "index"])->name('payment_index');
+         Route::post('/payments/required/', [RelpaymentpackagesstudentController::class, "requiredPaymetPackageStudent"])->name('payment_required_package');
+         Route::post('/payments/required/', [RelpaymentpackagesstudentController::class, "aprovePaymetPackageStudent"])->name('payment_required_package');
+        //  Route::get('/payments/required/', [RelpaymentpackagesstudentController::class, "requiredPaymetPackageStudent"])->name('payment_required_package');
 
         // payment end--------------------------------------------
 
@@ -231,6 +240,9 @@ Route::group(['middleware' => 'auth'], function () {
         Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
         Route::get('profile', ['as' => 'profile.edit', 'uses' => 'App\Http\Controllers\ProfileController@edit']);
         Route::put('profile', ['as' => 'profile.update', 'uses' => 'App\Http\Controllers\ProfileController@update']);
+
+
+        /*
         Route::get('upgrade', function () {
             return view('pages.upgrade');
         })->name('upgrade');
@@ -243,6 +255,6 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('table-list', function () {
             return view('pages.tables');
         })->name('table');
-        Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
+        Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);*/
     });
 });
