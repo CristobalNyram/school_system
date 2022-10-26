@@ -19,6 +19,7 @@ use App\Http\Controllers\SettingController;
 use App\Http\Controllers\HomeWebController;
 use App\Http\Controllers\ExampleController;
 use App\Http\Controllers\RallyController;
+use App\Http\Controllers\RelpaymentpackagesstudentController;
 use App\Models\Sponsor;
 
 
@@ -123,9 +124,9 @@ Route::group(['middleware' => 'auth'], function () {
         // payment start--------------------------------------------
 
         Route::get('/payments', [PaymentController::class, "index"])->name('payment_index');
-        // Route::get('/payments/required/{id}', [PaymentController::class, "index"])->name('payment_index');
-        // Route::get('/payments/aprove/{id}', [PaymentController::class, "index"])->name('payment_index');
-        // Route::get('/payments/cancel/{id}', [PaymentController::class, "index"])->name('payment_index');
+         Route::post('/payments/required/', [RelpaymentpackagesstudentController::class, "requiredPaymetPackageStudent"])->name('payment_required_package');
+         Route::post('/payments/required/', [RelpaymentpackagesstudentController::class, "aprovePaymetPackageStudent"])->name('payment_required_package');
+        //  Route::get('/payments/required/', [RelpaymentpackagesstudentController::class, "requiredPaymetPackageStudent"])->name('payment_required_package');
 
         // payment end--------------------------------------------
 
@@ -229,6 +230,9 @@ Route::group(['middleware' => 'auth'], function () {
         Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
         Route::get('profile', ['as' => 'profile.edit', 'uses' => 'App\Http\Controllers\ProfileController@edit']);
         Route::put('profile', ['as' => 'profile.update', 'uses' => 'App\Http\Controllers\ProfileController@update']);
+
+
+        /*
         Route::get('upgrade', function () {
             return view('pages.upgrade');
         })->name('upgrade');
@@ -241,6 +245,6 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('table-list', function () {
             return view('pages.tables');
         })->name('table');
-        Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
+        Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);*/
     });
 });
