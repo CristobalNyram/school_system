@@ -14,14 +14,15 @@
                 
     
                 <ul class="menu__links">
+                    <li class="menu_item">
+                    <a href="{{ route('home_page_index') }}" class="logo" id="tope"><img src="{{ asset('assets/img/home/img') }}/logo.png"></a>
                     
-                        
+                    </li>
                     <li class="menu_item">
                         <section class="containerR">
                             
                             <div class="charts">
-                             <a href="{{ route('home_page_index') }}" class="logo" id="tope"><img src="{{ asset('assets/img/home/img') }}/logo.png"></a>
-                    
+                             
                                 <div class="chart">
                                     <!-- un circulo inicial de fondo -->
                                     <div class="circle center-abs"></div>
@@ -62,14 +63,18 @@
                         </section>
                     </li>
                     <li class="menu__item">
-                        <a href="{{ route('home_page_index') }}" class="menu__link">Inicio</a>
+                        <a href="{{ route('home_page_index') }}" class="menu__link">Really</a>
                     </li>
                     
         
                     <li class="menu__item">
-                        <div class="tex1">
-                             <a href="{{ route('home_page_sponsor') }}" class="menu__link">Nuestros<span style="color:black">_</span>Patrocinadores</a>
-                        </div>
+                        <a href="{{ route('home_page_index') }}" class="menu__link">Horario</a>
+                    </li>
+        
+                    <li class="menu__item">
+                        
+                             <a href="{{ route('home_page_sponsor') }}" class="menu__link">Patrocinadores</a>
+                       
                     </li>
     
                     <li class="menu__item">
@@ -85,10 +90,10 @@
                     </li>
         
                     <li class="menu__item">
-                        <div class="tex">
+                        
     
-                            <a href="{{ route('home_page_login') }}" class="menu__link">Inicio de Sesión</a>
-                        </div>
+                    <a href="{{ route('home_page_login') }}" class="menu__link">Inicio<span style="color:black">_</span>de<span style="color:black">_</span>Sesión</a>
+                  
                     </li>
                     
                 </ul>
@@ -108,8 +113,8 @@
         </header>
 <body>
 
-    <div class="contenedorC">
-        <div class="titulo"><h1>Cronograma</h1></div>
+<div class="contenedor">
+        <div class="titulo"><img src="{{ asset('assets/img/home/img') }}/Logos_circulo 1 (1).svg" alt=""></div>
         <div class="cuadros">
             <div class="espacio es1"> <ion-icon class="icono" name="golf-outline"></ion-icon> <p>Registro 8:00 am – 8:30 am </p> </div>
             <div class="espacio es2"> <ion-icon class="icono" name="ribbon-outline"></ion-icon> <p>Bienvenida  8:30 am – 9:00 am  </p> </div>
@@ -127,5 +132,6 @@
     </div>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
 </body>
 </html>

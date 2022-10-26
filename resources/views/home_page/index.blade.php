@@ -17,11 +17,16 @@
     <nav class="menu">
             <section class="menu__container">
                 <ul class="menu__links">
+                
+                    <li clas="menu_item">
+                    <a href="{{ route('home_page_index') }}" class="logo" id="tope"><img src="{{ asset('assets/img/home/img') }}/logo.png" width="100px"></a>
+                    </li>
+
                     <li class="menu_item">
                         <section class="containerR">
                             
                             <div class="charts">
-                             <a href="{{ route('home_page_index') }}" class="logo" id="tope"><img src="{{ asset('assets/img/home/img') }}/logo.png" width="100px"></a>
+                             
                     
                                 <div class="chart">
                                     <!-- un circulo inicial de fondo -->
@@ -62,15 +67,18 @@
                             </div>
                         </section>
                     </li>
-                    <li class="menu__item">
-                        <a href="{{ route('home_page_index') }}" class="menu__link">Inicio</a>
-                    </li>
                     
+                    <li class="menu__item">
+                        <a href="{{ route('really_index') }}" class="menu__link">Really</a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="{{ route('timeline_index') }}" class="menu__link">Horario</a>
+                    </li>
         
                     <li class="menu__item">
-                        <div class="tex1">
-                             <a href="{{ route('home_page_sponsor') }}" class="menu__link">Nuestros<span style="color:black">_</span>Patrocinadores</a>
-                        </div>
+                        
+                             <a href="{{ route('home_page_sponsor') }}" class="menu__link">Patrocinadores</a>
+                       
                     </li>
     
                     <li class="menu__item">
@@ -86,10 +94,10 @@
                     </li>
         
                     <li class="menu__item">
-                        <div class="tex">
+                        
     
-                            <a href="{{ route('home_page_login') }}" class="menu__link">Inicio de Sesión</a>
-                        </div>
+                            <a href="{{ route('home_page_login') }}" class="menu__link">Inicio<span style="color:black">_</span>de<span style="color:black">_</span>Sesión</a>
+                        
                     </li>
                     
                 </ul>

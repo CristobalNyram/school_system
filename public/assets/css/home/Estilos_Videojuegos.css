@@ -16,240 +16,6 @@ body{
     
 }
 
-#tope img{
-    width: 140px;
-    height: 90px;
-    
-    position: absolute;
-    top: 10px;
-    left: 40px;
-} 
-
-.tex{
-width: 200px;
-}
-
-.tex1{
-    width: 250px;
-}
-
-.menu{
-    list-style: none;
-    background: #000;
-    color: #f8f8f8;
-    height: 17vh;
-    display: block;
-   
-    
-}
-
-.menu__container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    height: 100%;
-    margin: 0 auto;
-    
-}
-
-.menu__links{
-    list-style: none;
-    height: 100%;
-    transition: transform .5s;
-    display: flex;
-}
-
-.menu__item{
-    list-style: none;
-    position: relative;
-    height: 20%;
-    --clip: polygon(0 0, 100% 0, 100% 0, 0 0);
-    --transform: rotate(-90deg);
-    top: 5vh;
-}
-
-.menu__item:hover{
-    --clip: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-    --transform: rotate(0);
-}
-
-.menu__link{
-    color: #fff;
-    text-decoration: none;
-    padding: 0 30px;
-    display: flex;
-    height: 100%;
-    align-items: center;
-    margin: 0;
-}
-
-.menu__link:hover{
-    color: #34b015;
-    transition: 0.1s;
-    transform: all 0.3s ease-in-out;
-}
-
-.menu__link::before {
-    content: "";
-    position: absolute;
-    background-color: #34b015;
-    height: 1px;
-    width: 0;
-    left: 0;
-    bottom: -10px;
-    transition: 0.5s;
-}
-
-.menu__link::after {
-    content: "";
-    position: absolute;
-    background-color: #ff6200;
-    height: 1px;
-    width: 0;
-    right: 0;
-    bottom: -10px;
-    transition: 0.5s;
-}
-
-.menu__item:hover .menu__link::before{
-    width: 50%;
-    transform: translate(100%);
-}
-
-.menu__item:hover .menu__link::after{
-    width: 50%;
-    transform: translate(-100%);
-}
-
-.menu__link--inside{
-    padding: 30px 100px 30px 20px;
-}
-
-.menu__link--inside:hover{
-    background-color: #f0f8ff20;
-}
-
-.menu__hamburguer{
-    height: 100%;
-    display: flex;
-    align-items: center;
-    padding: 0 15px;
-    cursor: pointer;
-    display: none;
-}
-
-.menu__img{
-    display: block;
-    width: 36px;
-}
-
-*{
-    box-sizing: border-box;    
-}
-/*
-Rejol
-*/
-
-.containerR{
-    max-width: 900px;
-    margin:50px auto;
-    margin-left: 100px;
-}
-.containerR h1,
-.containerR p{
-    color:#fff;
-    text-align: center;
-    padding: 20px 0;
-}
-.containerR h1{
-    font-size: 4em;
-}
-.containerR p{
-    font-size: 2em;
-}
-.center-abs{
-    top:0%;
-    left:0%;
-    transform:translate(-50%, -50%);
-    position: absolute;
-}
-.charts{
-    display: flex;
-}
-.chart{
-    position: relative;
-    width: 9%;
-    height: 60px;
-    padding: 40px;
-}
-.chart h3{
-    color:#fff;
-    font-size: 1em;
-    position: absolute;
-    bottom:10px;
-    text-align: center;
-    width: 100%;
-    text-shadow: 1px 1px 10px #000;
-    margin-left: -75px;
-}
-.chart svg{
-    z-index: 2;
-}
-/* DIV CIRCULO DE FONDO */
-.circle{
-    width: 75px;
-    height:75px;
-    border-radius: 50%;
-    z-index:1;
-    border:10px #000 solid;
-}
-.text{
-    z-index: 3;
-    text-align: center;
-    width: 100%;
-    font-size: 1.8em;
-    font-weight: 700;
-    color:#fff
-}
-/* SVG CIRCULO */
-.outer{
-    
-    fill:transparent;
-    stroke: #3aaa35;
-    stroke-width: 5; /* grosor del borde */
-    stroke-dasharray: 189; /* numero de relleno del borde, se usa el mismo valor en el script.js */
-    transform: rotate(270deg) translate(-150px, 0); 
-    /* giramos el circulo para que su apertura sea en la parte superior 
-    y ajustamos su posicion
-    */
-}
-#circulo1{
-    stroke: #3aaa35;
-}
-#circulo2{
-    stroke: #f8ea1b;
-}
-#circulo3{
-    stroke: #e94e1a;
-}
- #circulo4{
-    stroke: #0096da;
-}
-#textcolor1{
-   color: #f0f8ff;
-}
-#textcolor2{
-   color: #f0f8ff;
-}
-#textcolor3{
-   color:#f0f8ff;
-}
-#textcolor4{
-   color: #f0f8ff;
-   
-}
 .Titulo_Juegos {
     top: 5vh;
     position: relative;
@@ -354,10 +120,11 @@ Rejol
     width: 320px;
     height: 10%;
     background: #000;
-    position: absolute;
+    position:absolute;
     display: block;
     border-radius: 20px;
-    margin-top: 80vh;
+    margin-top: 570px;
+    
     color: #fff;
 }
 .btn_modal{
@@ -423,7 +190,7 @@ footer {
     height: 30vh;
     left: 0;
     width: 100%;
-    margin-top: 30vh;
+    margin-top: 40vh;
 }
 
 footer .container{
@@ -521,12 +288,12 @@ ion-icon{
 }
 .tarjeta .tarjeta-contenedor a img {
     width: 100%;
-    height: 60%;
+    height: 250px;
 }
 .tarjeta .tarjeta-contenedor{
     
     width: 320px;
-    height: 60%;
+    height: 440px;
     
 }
 .Titulo_Juegos {
@@ -537,7 +304,7 @@ ion-icon{
 .tarjeta .boton_tc{
     width: 55%;
     height: 8%;
-    margin-top: 53vh;
+    margin-top: 455px;
     font-size: 20px;
     }
 .ob{

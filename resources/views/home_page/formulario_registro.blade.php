@@ -31,14 +31,27 @@
 
 
                 <ul class="menu__links">
+<<<<<<< HEAD
+                    <li class="menu_item">
+                    <a href="{{ route('home_page_index') }}" class="logo" id="tope"><img src="{{ asset('assets/img/home/img') }}/logo.png"></a>
+                    </li>
+                    
+                        
+=======
 
 
+>>>>>>> 725cb04f8f987d7fcbe251400f4c819a7af58bea
                     <li class="menu_item">
                         <section class="containerR">
 
                             <div class="charts">
+<<<<<<< HEAD
+                             
+                    
+=======
                              <a href="{{ route('home_page_index') }}" class="logo" id="tope"><img src="{{ asset('assets/img/home/img') }}/logo.png"></a>
 
+>>>>>>> 725cb04f8f987d7fcbe251400f4c819a7af58bea
                                 <div class="chart">
                                     <!-- un circulo inicial de fondo -->
                                     <div class="circle center-abs"></div>
@@ -79,23 +92,25 @@
                         </section>
                     </li>
                     <li class="menu__item">
-                        <a href="{{ route('home_page_index') }}" class="menu__link">Inicio</a>
+                        <a href="{{ route('home_page_index') }}" class="menu__link">Really</a>
                     </li>
 
 
                     <li class="menu__item">
-                        <div class="tex1">
-                             <a href="{{ route('home_page_sponsor') }}" class="menu__link">Nuestros<span style="color:black">_</span>Patrocinadores</a>
-                        </div>
+                        <a href="{{ route('home_page_index') }}" class="menu__link">Horario</a>
                     </li>
-                    <li class="text1">
-                        <div class="text1">
-                            <a href="{{ route('home_page_sponsor')}}" class="menu_link">Really de torneo <span style="color:#000"></span></a>
-
-                        </div>
-
+        
+                    <li class="menu__item">
+                        
+                             <a href="{{ route('home_page_sponsor') }}" class="menu__link">Patrocinadores</a>
+                       
                     </li>
+<<<<<<< HEAD
+                    
+    
+=======
 
+>>>>>>> 725cb04f8f987d7fcbe251400f4c819a7af58bea
                     <li class="menu__item">
                         <a href="{{ route('home_page_course') }}" class="menu__link">Talleres</a>
                     </li>
@@ -109,10 +124,18 @@
                     </li>
 
                     <li class="menu__item">
+<<<<<<< HEAD
+                      
+    
+                    <a href="{{ route('home_page_login') }}" class="menu__link">Inicio<span style="color:black">_</span>de<span style="color:black">_</span>Sesión</a>
+                  
+                       
+=======
                         <div class="tex">
 
                             <a href="{{ route('home_page_login') }}" class="menu__link">Inicio de Sesión</a>
                         </div>
+>>>>>>> 725cb04f8f987d7fcbe251400f4c819a7af58bea
                     </li>
 
                 </ul>

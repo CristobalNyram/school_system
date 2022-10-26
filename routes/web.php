@@ -19,7 +19,6 @@ use App\Http\Controllers\SettingController;
 use App\Http\Controllers\HomeWebController;
 use App\Http\Controllers\ExampleController;
 use App\Http\Controllers\RallyController;
-use App\Http\Controllers\RelpaymentpackagesstudentController;
 use App\Models\Sponsor;
 
 
@@ -56,6 +55,8 @@ Route::prefix('web')->group(function () {
     Route::get('/souvenir',[HomeWebController::class, 'souvenir'])->name('home_page_souvenir');
     Route::get('/login',[HomeWebController::class, 'login'])->name('home_page_login');
     Route::get('/create',[HomeWebController::class, 'create'])->name('home_page_create');
+    Route::get('/really',[HomeWebController::class, 'really'])->name('really_index');
+    Route::get('/timeline',[HomeWebController::class, 'timeline'])->name('timeline_index');
 
 });
 Auth::routes();
@@ -91,9 +92,18 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/student/update/{student_id}', [StudentController::class, "update"])->name('student_update');
         Route::post('/student/edit', [StudentController::class, "edit"])->name('student_edit');
         Route::post('/student/delete/{user_id}', [StudentController::class, "delete"])->name('student_delete');
-
-
         // student end--------------------------------------------
+
+        //star get badge
+        Route::get('/badge', [GetBadgeController::class, "index"])->name('badge_index');
+        Route::get('/badge/pdf', [GetBadgeController::class, "pdf"])->name('gafet_pdf');
+        //end get badge
+
+        //start certificate
+        Route::get('/certificate', [GetCertificateController::class, "index"])->name('certificate_index');
+        Route::get('/certificate/pdf', [GetCertificateController::class, "pdf"])->name('certificate_pdf');
+
+        //end certificate
 
 
          // Example start------------------------------------------

@@ -134,9 +134,119 @@ class UsersTableSeeder extends Seeder
             'first_surname' => 'Conferencista5',
             'second_surname' => 'Conferencista5',
             'role_id' => 6,
-            'email' => 'Conferencistya5@gmail.com',
+            'email' => 'Conferencista5@gmail.com',
             'email_verified_at' => now(),
             'password' => Hash::make('conferencista5'),
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+        DB::table('users')->insert([
+            'name' => 'Tallerista1',
+            'first_surname' => 'Tallerista1',
+            'second_surname' => 'Tallerista1',
+            'role_id' => 6,
+            'email' => 'Tallerista1@gmail.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make('tallerista1'),
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+        DB::table('users')->insert([
+            'name' => 'Tallerista2',
+            'first_surname' => 'Tallerista2',
+            'second_surname' => 'Tallerista2',
+            'role_id' => 6,
+            'email' => 'Tallerista2@gmail.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make('tallerista2'),
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+        DB::table('users')->insert([
+            'name' => 'Tallerista3',
+            'first_surname' => 'Tallerista3',
+            'second_surname' => 'Tallerista3',
+            'role_id' => 6,
+            'email' => 'Tallerista3@gmail.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make('tallerista3'),
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+        DB::table('users')->insert([
+            'name' => 'Tallerista4',
+            'first_surname' => 'Tallerista4',
+            'second_surname' => 'Tallerista4',
+            'role_id' => 6,
+            'email' => 'Tallerista4@gmail.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make('tallerista4'),
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+        DB::table('users')->insert([
+            'name' => 'Tallerista5',
+            'first_surname' => 'Tallerista5',
+            'second_surname' => 'Tallerista5',
+            'role_id' => 6,
+            'email' => 'Tallerista5@gmail.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make('tallerista5'),
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+        DB::table('users')->insert([
+            'name' => 'Tallerista6',
+            'first_surname' => 'Tallerista6',
+            'second_surname' => 'Tallerista6',
+            'role_id' => 6,
+            'email' => 'Tallerista6@gmail.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make('tallerista6'),
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+        DB::table('users')->insert([
+            'name' => 'Tallerista7',
+            'first_surname' => 'Tallerista7',
+            'second_surname' => 'Tallerista7',
+            'role_id' => 6,
+            'email' => 'Tallerista7@gmail.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make('tallerista7'),
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+        DB::table('users')->insert([
+            'name' => 'Tallerista8',
+            'first_surname' => 'Tallerista8',
+            'second_surname' => 'Tallerista8',
+            'role_id' => 6,
+            'email' => 'Tallerista8@gmail.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make('tallerista8'),
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+        DB::table('users')->insert([
+            'name' => 'Tallerista9',
+            'first_surname' => 'Tallerista9',
+            'second_surname' => 'Tallerista9',
+            'role_id' => 6,
+            'email' => 'Tallerista9@gmail.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make('tallerista9'),
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+        DB::table('users')->insert([
+            'name' => 'Tallerista10',
+            'first_surname' => 'Tallerista10',
+            'second_surname' => 'Tallerista10',
+            'role_id' => 6,
+            'email' => 'Tallerista10@gmail.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make('tallerista10'),
             'created_at' => now(),
             'updated_at' => now()
         ]);
