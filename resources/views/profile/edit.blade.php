@@ -290,7 +290,7 @@
                         @endif
                     </div>
 
-                    <div class="form-group{{ $errors->has('') ? ' has-danger' : '' }}">
+                    <div id="ocultardiv" class="form-group{{ $errors->has('') ? ' has-danger' : '' }}">
                         <label class="form-control-label"  for="user_image">{{ __('foto de perfil') }}</label>
                         <input type="file" accept="image/*"  onBlur='LimitAttach1(this,2)' name="user_image" id="user_image" class="form-control form-control-alternative{{ $errors->has(' ') ? ' is-invalid' : '' }}" placeholder="{{ __('user_image') }}" value="{{ old('user_image', auth()->user()->user_image) }}" required>
 
@@ -380,67 +380,6 @@
 <script src="/assets/vendor/select2/dist/js/select2.min.js" defer></script>
 
 
-<script type="text/javascript">
-    function LimitAttach1(tField, iType) {
-        file = tField.value;
-        if (iType == 1) {
-            extArray = new Array(".pdf");
-        }
-        allowSubmit = false;
-        if (!file) return;
-        while (file.indexOf("\\") != -1) file = file.slice(file.indexOf("\\") + 1);
-        ext = file.slice(file.indexOf(".")).toLowerCase();
-        for (var i = 0; i < extArray.length; i++) {
-            if (extArray[i] == ext) {
-                allowSubmit = true;
-                break;
-            }
-        }
-        if (allowSubmit) {} else {
-            tField.value = "";
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'El archivo que intenta subir no es valido',
-                footer: '<a href="">Por favor sube un archivo con extensión .pdf</a>'
-            })
-
-
-        }
-
-    }
-</script>
-
-<script type="text/javascript">
-    function LimitAttach1(tField, iType) {
-        file = tField.value;
-        if (iType == 2) {
-            extArray = new Array(".png", ".jpg");
-        }
-        allowSubmit = false;
-        if (!file) return;
-        while (file.indexOf("\\") != -1) file = file.slice(file.indexOf("\\") + 1);
-        ext = file.slice(file.indexOf(".")).toLowerCase();
-        for (var i = 0; i < extArray.length; i++) {
-            if (extArray[i] == ext) {
-                allowSubmit = true;
-                break;
-            }
-        }
-        if (allowSubmit) {} else {
-            tField.value = "";
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'El archivo que intenta subir no es valido',
-                footer: '<a href="">Por favor sube un archivo con extensión .png o extensión .jpg</a>'
-            })
-
-
-        }
-
-    }
-</script>
 
 
 

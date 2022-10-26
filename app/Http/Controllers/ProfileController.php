@@ -72,6 +72,8 @@ class ProfileController extends Controller
 
 
         $current_user=User::findOrFail(Auth::id());
+
+        $Foto = auth()->user()->user_image_updated;
         
        
         
@@ -84,6 +86,7 @@ class ProfileController extends Controller
         $current_user->gender=$request->gender;
         $current_user->user_image = $request->user_image;
         $current_user->user_image_updated = Carbon::now()->format('Y-m-d');
+
 
         //Speaker
         $current_user->academic_level=$request->academic_level;
