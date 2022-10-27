@@ -31,32 +31,23 @@
 
 
                 <ul class="menu__links">
-<<<<<<< HEAD
-=======
 
->>>>>>> 50d156b8c2002a86f5e665019a9c4b505d0a7d82
                     <li class="menu_item">
                     <a href="{{ route('home_page_index') }}" class="logo" id="tope"><img src="{{ asset('assets/img/home/img') }}/logo.png"></a>
                     </li>
                     
                         
-<<<<<<< HEAD
 
-=======
->>>>>>> 50d156b8c2002a86f5e665019a9c4b505d0a7d82
 
                     <li class="menu_item">
                         <section class="containerR">
 
                             <div class="charts">
-<<<<<<< HEAD
                              
-=======
 
                              <a href="{{ route('home_page_index') }}" class="logo" id="tope"><img src="{{ asset('assets/img/home/img') }}/logo.png"></a>
 
 
->>>>>>> 50d156b8c2002a86f5e665019a9c4b505d0a7d82
                                 <div class="chart">
                                     <!-- un circulo inicial de fondo -->
                                     <div class="circle center-abs"></div>
@@ -110,10 +101,6 @@
                              <a href="{{ route('home_page_sponsor') }}" class="menu__link">Patrocinadores</a>
                        
                     </li>
-<<<<<<< HEAD
-=======
-
->>>>>>> 50d156b8c2002a86f5e665019a9c4b505d0a7d82
                     <li class="menu__item">
                         <a href="{{ route('home_page_course') }}" class="menu__link">Talleres</a>
                     </li>
@@ -132,13 +119,8 @@
     
                     <a href="{{ route('home_page_login') }}" class="menu__link">Inicio<span style="color:black">_</span>de<span style="color:black">_</span>Sesión</a>
                   
-                       
 
-<<<<<<< HEAD
-=======
-                        
 
->>>>>>> 50d156b8c2002a86f5e665019a9c4b505d0a7d82
                     </li>
 
                 </ul>
