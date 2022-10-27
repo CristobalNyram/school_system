@@ -35,17 +35,16 @@
                     <li class="menu_item">
                     <a href="{{ route('home_page_index') }}" class="logo" id="tope"><img src="{{ asset('assets/img/home/img') }}/logo.png"></a>
                     </li>
-                    
-                        
+
+
 
 
                     <li class="menu_item">
                         <section class="containerR">
 
                             <div class="charts">
-                             
 
-                             <a href="{{ route('home_page_index') }}" class="logo" id="tope"><img src="{{ asset('assets/img/home/img') }}/logo.png"></a>
+
 
 
                                 <div class="chart">
@@ -95,11 +94,11 @@
                     <li class="menu__item">
                         <a href="{{ route('timeline_index') }}" class="menu__link">Horario</a>
                     </li>
-        
+
                     <li class="menu__item">
-                        
+
                              <a href="{{ route('home_page_sponsor') }}" class="menu__link">Patrocinadores</a>
-                       
+
                     </li>
                     <li class="menu__item">
                         <a href="{{ route('home_page_course') }}" class="menu__link">Talleres</a>
@@ -115,10 +114,10 @@
 
                     <li class="menu__item">
 
-                      
-    
+
+
                     <a href="{{ route('home_page_login') }}" class="menu__link">Inicio<span style="color:black">_</span>de<span style="color:black">_</span>Sesión</a>
-                  
+
 
 
                     </li>
