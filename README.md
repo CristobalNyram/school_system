@@ -1,1 +1,1 @@
-$Freedom day - CRM EVENT
+#Freedom day - CRM EVENT
