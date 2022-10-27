@@ -35,15 +35,15 @@
                     <li class="menu_item">
                     <a href="{{ route('home_page_index') }}" class="logo" id="tope"><img src="{{ asset('assets/img/home/img') }}/logo.png"></a>
                     </li>
-                    
-                        
+
+
 
 
                     <li class="menu_item">
                         <section class="containerR">
 
                             <div class="charts">
-                             
+
                                 <div class="chart">
                                     <!-- un circulo inicial de fondo -->
                                     <div class="circle center-abs"></div>
@@ -91,11 +91,11 @@
                     <li class="menu__item">
                         <a href="{{ route('timeline_index') }}" class="menu__link">Horario</a>
                     </li>
-        
+
                     <li class="menu__item">
-                        
+
                              <a href="{{ route('home_page_sponsor') }}" class="menu__link">Patrocinadores</a>
-                       
+
                     </li>
                     <li class="menu__item">
                         <a href="{{ route('home_page_course') }}" class="menu__link">Talleres</a>
@@ -111,10 +111,10 @@
 
                     <li class="menu__item">
 
-                      
-    
+
+
                     <a href="{{ route('home_page_login') }}" class="menu__link">Inicio<span style="color:black">_</span>de<span style="color:black">_</span>Sesión</a>
-                  
+
 
 
                     </li>
@@ -141,7 +141,7 @@
                 <h1>Registro</h1>
                 <br>
 
-                <form method="POST" action="{{route('student_store')}}">
+                <form method="POST" action="{{route('student_store_web')}}">
                 @csrf
                 @if(session('success'))
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -336,7 +336,6 @@ function check_inscription(event)
     // console.log(event.target.value);
     let value_select=event.target.value;
 
-    alert("He cambiado de estado");
 
     if(value_select==1)
     {

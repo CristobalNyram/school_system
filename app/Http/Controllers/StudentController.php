@@ -114,6 +114,40 @@ class StudentController extends Controller
         $user->email = $request->email;
         $user->password = Hash::make($request->password) ;
         $user->user_image = $request->user_image;
+        if ($request->hasFile('user_image')) {
+            $file = $request->file('user_image');
+            $destiantionPath = 'argon/img/user/';
+            $filename = time() . '-' . $file->getClientOriginalName();
+            $uploadSuccess = $request->file('user_image')->move($destiantionPath, $filename);
+            $user->user_image = $destiantionPath . $filename;
+        }
+
+        if ($user->save()) {
+            $log=new Logbook();
+            $log->activity_done($description='Se registro al estudiante'. $user->name. 'correctamente' ,$table_id=0,$menu_id=12,$user_id=Auth::id(),$kind_acction=6);
+            return back()->with('success','Se ha registrado el usuario exitosamente...');
+        }
+        else
+        {
+            return  back()->withErrors('No se ha registrado el usuario...');
+
+        }
+    }
+    public function store_web(Request $request)
+    {
+        die();
+        $user =new User();
+        $user->name = $request->name;
+        $user->first_surname = $request->first_surname;
+        $user->second_surname = $request->second_surname;
+        $user->gender = $request->gender;
+        $user->role_id =$request->role_id;
+        $user->career = $request->career;
+        $user->quarter = $request->quarter;
+        $user->group = $request->group;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password) ;
+        $user->user_image = $request->user_image;
 
         if ($request->hasFile('user_image')) {
             $file = $request->file('user_image');
