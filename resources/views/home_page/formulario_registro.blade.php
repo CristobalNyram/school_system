@@ -44,10 +44,6 @@
 
                             <div class="charts">
                              
-
-                             <a href="{{ route('home_page_index') }}" class="logo" id="tope"><img src="{{ asset('assets/img/home/img') }}/logo.png"></a>
-
-
                                 <div class="chart">
                                     <!-- un circulo inicial de fondo -->
                                     <div class="circle center-abs"></div>

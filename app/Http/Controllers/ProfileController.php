@@ -89,7 +89,7 @@ class ProfileController extends Controller
         
         $current_user->user_image_updated = Carbon::now()->format('Y-m-d');
 
-          if($request->user_imagen){
+          if($request->user_image){
             $current_user->user_image_updated = Carbon::now()->format('Y-m-d');
             $foto = Auth()->user()->user_image;
             $fecha = Carbon::now()->format('Y-m-d');
@@ -99,7 +99,6 @@ class ProfileController extends Controller
             }
         }
 
-        //addDay(3)
 
 
         //Speaker
