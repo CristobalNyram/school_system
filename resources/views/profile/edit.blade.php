@@ -94,6 +94,7 @@
         <div class="card-header bg-white border-0">
             <div class="row align-items-center">
                 <h3 class="mb-0">{{ __('Editar perfil') }}</h3>
+                <h3 class="mb-0">{{ $Foto }}</h3>
             </div>
         </div>
         <div class="card-body">

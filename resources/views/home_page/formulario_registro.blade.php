@@ -31,27 +31,18 @@
 
 
                 <ul class="menu__links">
-<<<<<<< HEAD
                     <li class="menu_item">
                     <a href="{{ route('home_page_index') }}" class="logo" id="tope"><img src="{{ asset('assets/img/home/img') }}/logo.png"></a>
                     </li>
                     
                         
-=======
 
 
->>>>>>> 725cb04f8f987d7fcbe251400f4c819a7af58bea
                     <li class="menu_item">
                         <section class="containerR">
 
                             <div class="charts">
-<<<<<<< HEAD
                              
-                    
-=======
-                             <a href="{{ route('home_page_index') }}" class="logo" id="tope"><img src="{{ asset('assets/img/home/img') }}/logo.png"></a>
-
->>>>>>> 725cb04f8f987d7fcbe251400f4c819a7af58bea
                                 <div class="chart">
                                     <!-- un circulo inicial de fondo -->
                                     <div class="circle center-abs"></div>
@@ -105,12 +96,6 @@
                              <a href="{{ route('home_page_sponsor') }}" class="menu__link">Patrocinadores</a>
                        
                     </li>
-<<<<<<< HEAD
-                    
-    
-=======
-
->>>>>>> 725cb04f8f987d7fcbe251400f4c819a7af58bea
                     <li class="menu__item">
                         <a href="{{ route('home_page_course') }}" class="menu__link">Talleres</a>
                     </li>
@@ -124,18 +109,13 @@
                     </li>
 
                     <li class="menu__item">
-<<<<<<< HEAD
+
                       
     
                     <a href="{{ route('home_page_login') }}" class="menu__link">Inicio<span style="color:black">_</span>de<span style="color:black">_</span>Sesión</a>
                   
                        
-=======
-                        <div class="tex">
 
-                            <a href="{{ route('home_page_login') }}" class="menu__link">Inicio de Sesión</a>
-                        </div>
->>>>>>> 725cb04f8f987d7fcbe251400f4c819a7af58bea
                     </li>
 
                 </ul>
@@ -184,7 +164,7 @@
                     @endforeach
                     @endif
                 <div class="con">
-                        <label for="name">Nombre</label>
+                        <label onmouseover="alert('Me has dado click');" for="name">Nombre</label>
                         <input type="text" style="color:black;" class="con" id="name" name="name" value="{{   old('name') }}" placeholder="Nombre " max="50" required oninput="uppercaseLetters(event);">
                 </div>
 
@@ -354,6 +334,8 @@ function check_inscription(event)
 {
     // console.log(event.target.value);
     let value_select=event.target.value;
+
+    alert("He cambiado de estado");
 
     if(value_select==1)
     {

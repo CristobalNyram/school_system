@@ -36,6 +36,11 @@ class ProfileController extends Controller
         }
         $log->activity_done($description='Accedió al módulo editar perfil.',$table_id=0,$menu_id=36,$user_id=Auth::id(),$kind_acction=1);
 
+        $Foto = auth()->user()->user_image_updated;
+        
+
+        $fotoPosterio = $Foto;
+
         $carrers_available=Carrer::all()->where('status','=','2');
         $course_available=Course::all()->where('status', '=', '2');
 
@@ -45,6 +50,7 @@ class ProfileController extends Controller
             'title_page'=>'Perfil',
             'carrers_available' => $carrers_available,
             'course_available' => $course_available,
+            'Foto' => $Foto,
 
 
         ];
@@ -73,10 +79,6 @@ class ProfileController extends Controller
 
         $current_user=User::findOrFail(Auth::id());
 
-        $Foto = auth()->user()->user_image_updated;
-        
-       
-        
         
         // global variables
         $current_user->name=$request->name;
@@ -84,8 +86,20 @@ class ProfileController extends Controller
         $current_user->second_surname=$request->second_surname;
         $current_user->email=$request->email;
         $current_user->gender=$request->gender;
-        $current_user->user_image = $request->user_image;
+        
         $current_user->user_image_updated = Carbon::now()->format('Y-m-d');
+
+          if($request->user_imagen){
+            $current_user->user_image_updated = Carbon::now()->format('Y-m-d');
+            $foto = Auth()->user()->user_image;
+            $fecha = Carbon::now()->format('Y-m-d');
+
+            while($current_user->user_image_updated == $fecha){
+                $current_user->user_image = $request->user_image;
+            }
+        }
+
+        //addDay(3)
 
 
         //Speaker
