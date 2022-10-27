@@ -94,7 +94,10 @@ class HomeWebController extends Controller
     }
 
     public function ConferenceInterface()
-    { 
+
+
+   {
+        
         return view('home_page.conference_interface');
     }
 
@@ -106,7 +109,8 @@ class HomeWebController extends Controller
     
     public function really()
     {
-        return view('home_page.Really_games');
+    
+        return view('home_page.publications');
 
     }
 

@@ -18,36 +18,40 @@
                     }).then((result) => {
                     /* Read more about isConfirmed, isDenied below */
                     if (result.isConfirmed) {
-                        Swal.fire('Saved!', '', 'success')
+
+                            let url_enviar=
+                                    $.ajax({
+                                    type: "POST",
+                                    url:url_enviar ,
+                                    success: function(res)
+                                        {
+                                            if(res[0]==2)
+                                            {
+                                            alertify.alert(res['titular'],res['mensaje'], function(){
+                                                location.reload();
+                                            });
+                                            }
+                                            else
+                                            {
+                                            alertify.alert(res['Error'],res['mensaje'], function(){
+                                                location.reload();
+                                            });
+                                            }
+                                        },
+                                    error: function(res)
+                                    {
+
+                                    }
+                                });
+
+                        // Swal.fire('Saved!', '', 'success')
                     } else if (result.isDenied) {
                         Swal.fire('Cancelado', '', 'error')
                     }
             })
-            /*
-                    $.ajax({
-                        type: "POST",
-                        url:url_enviar ,
-                        success: function(res)
-                            {
-                                if(res[0]==2)
-                                {
-                                alertify.alert(res['titular'],res['mensaje'], function(){
-                                    location.reload();
-                                });
-                                }
-                                else
-                                {
-                                alertify.alert(res['Error'],res['mensaje'], function(){
-                                    location.reload();
-                                });
-                                }
-                            },
-                        error: function(res)
-                        {
 
-                        }
-                    });
-                    */
+
+
 
             }
 
