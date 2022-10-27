@@ -114,7 +114,6 @@ class StudentController extends Controller
         $user->email = $request->email;
         $user->password = Hash::make($request->password) ;
         $user->user_image = $request->user_image;
-        dd();
         if ($request->hasFile('user_image')) {
             $file = $request->file('user_image');
             $destiantionPath = 'argon/img/user/';
@@ -136,6 +135,7 @@ class StudentController extends Controller
     }
     public function store_web(Request $request)
     {
+        die();
         $user =new User();
         $user->name = $request->name;
         $user->first_surname = $request->first_surname;

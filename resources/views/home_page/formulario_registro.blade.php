@@ -144,7 +144,7 @@
                 <h1>Registro</h1>
                 <br>
 
-                <form method="POST" action="{{route('student_store')}}">
+                <form method="POST" action="{{route('student_store_web')}}">
                 @csrf
                 @if(session('success'))
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -339,7 +339,6 @@ function check_inscription(event)
     // console.log(event.target.value);
     let value_select=event.target.value;
 
-    alert("He cambiado de estado");
 
     if(value_select==1)
     {

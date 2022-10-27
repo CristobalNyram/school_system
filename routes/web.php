@@ -89,6 +89,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/student', [StudentController::class, "index"])->name('student_index');
         Route::get('/student/create', [StudentController::class, "create"])->name('student_create');
         Route::post('/student/store', [StudentController::class, "store"])->name('student_store');
+        Route::post('/student/storeweb', [StudentController::class, "store_web"])->name('student_store_web');
         Route::get('/student/update/{student_id}', [StudentController::class, "update"])->name('student_update');
         Route::post('/student/edit', [StudentController::class, "edit"])->name('student_edit');
         Route::post('/student/delete/{user_id}', [StudentController::class, "delete"])->name('student_delete');
