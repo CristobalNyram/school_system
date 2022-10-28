@@ -86,18 +86,35 @@ class ProfileController extends Controller
         $current_user->second_surname=$request->second_surname;
         $current_user->email=$request->email;
         $current_user->gender=$request->gender;
+
+        $photo = Auth()->user()->user_image; // obtiene el dato del usuario logeado en la base de datos en este caso su foto
+        $Datephoto = Auth()->user()->user_image_updated; // obtiene la fecha que actualizo la foto
+        $Date = Carbon::now()->format('Y-m-d'); // variable en que obtiene la fecha actual
+
         
-        $current_user->user_image_updated = Carbon::now()->format('Y-m-d');
+        
 
-          if($request->user_image){
-            $current_user->user_image_updated = Carbon::now()->format('Y-m-d');
-            $foto = Auth()->user()->user_image;
-            $fecha = Carbon::now()->format('Y-m-d');
+         if($request -> user_image){ // se comprueba si la variable user_image trae respuesta
 
-            while($current_user->user_image_updated == $fecha){
-                $current_user->user_image = $request->user_image;
+            if(is_null($photo)) { // se comprueba si la variable photo esta vacia
+
+             $current_user->user_image_updated = Carbon::now()->format('Y-m-d');
+             $current_user->user_image = $request->user_image; //almacena el archivo del input
+            } else {
+                if($Datephoto == $Date) { //comprueba si la variable date photo es igual a la variable date
+
+                    $variables=[
+                        'menu'=>'',
+                        'title_page'=>'Acceso denegado',
+                    ];
+                    return view('errors.notaccess')->with($variables); //retorna un mensaje de error 
+                } else {
+                    $current_user->user_image_updated = Carbon::now()->format('Y-m-d');
+                    $current_user->user_image = $request->user_image; //guarda el registro del input 
+                }
             }
-        }
+            
+         }
 
 
 
