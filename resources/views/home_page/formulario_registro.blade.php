@@ -141,7 +141,7 @@
                 <h1>Registro</h1>
                 <br>
 
-                <form method="POST" action="{{route('student_store_web')}}">
+                <form method="POST" action="{{route('student_create')}}">
                 @csrf
                 @if(session('success'))
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
