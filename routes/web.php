@@ -19,6 +19,8 @@ use App\Http\Controllers\SettingController;
 use App\Http\Controllers\HomeWebController;
 use App\Http\Controllers\ExampleController;
 use App\Http\Controllers\RallyController;
+use App\Http\Controllers\GetBadgeController;
+use App\Http\Controllers\GetCertificateController;
 use App\Models\Sponsor;
 
 
