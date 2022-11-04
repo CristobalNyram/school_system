@@ -135,7 +135,7 @@
             <div class="tokyus">
 
                 <input type="email" id="usna" class="un" autocomplete="off" name="email" placeholder="{{ __('Email') }}" value="{{ old('email') }}" value="admin@argon.com" required autofocus/>
-            <label>Correo Electrónico</label>
+            
 
             </div>
             @if ($errors->has('email'))
@@ -146,7 +146,7 @@
 
             <div id="pass" class="tokyus">
                 <input type="password" id="usna" class="un" autocomplete="off" name="password" placeholder="{{ __('Password') }}" value="secret" required/>
-            <label>Contraseña</label>
+            
             </div>
 
             @if ($errors->has('password'))

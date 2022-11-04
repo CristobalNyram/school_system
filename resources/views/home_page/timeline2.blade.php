@@ -113,8 +113,7 @@
 
 <div class="contenedor">
         <div class="botones">
-
-            <a href="{{ route('timeline_index') }}">
+<a href="{{ route('timeline_index') }}">
             <button class="bo">Dia 1</button>
             </a>
             <a href="{{ route('timeline_index2') }}">
@@ -122,7 +121,7 @@
             </a>
             <div class="titulo"><img src="{{ asset('assets/img/home/img') }}/Logos_circulo 1 (1).svg" alt=""></div>
             <p id="Texto_Descripcion">
-            Cronograma de actividades del dia 30 de Noviembre
+            Cronograma de actividades del dia 01 de Diciembre
             Talleres en el edificio TI en laboratorio K y
             Conferecias Roberto Ceballos
 
@@ -130,16 +129,16 @@
         </div>
         <div class="cuadros">
             <div class="espacio es1"> <ion-icon class="icono" name="golf-outline"></ion-icon> <p>Registro 8:00 am – 8:30 am </p> </div>
-            <div class="espacio es2"> <ion-icon class="icono" name="ribbon-outline"></ion-icon> <p>Bienvenida  8:30 am – 9:00 am  </p> </div>
-            <div class="espacio es3"> <ion-icon class="icono" name="person-outline"></ion-icon> <p>1ra. conferencia(Ciberseguridad)  9:00 am – 9:40 am </p></div>
-            <div class="espacio es4"> <ion-icon class="icono" name="people-outline"></ion-icon> <p>2da Conferencia Desarrollo de proyectos 9:40 am – 10:20 am 
+            <div class="espacio es2"> <ion-icon class="icono" name="ribbon-outline"></ion-icon> <p>4ta. intro a PBX  8:30 am – 9:10 am  </p> </div>
+            <div class="espacio es3"> <ion-icon class="icono" name="person-outline"></ion-icon> <p>5ta (realidad aumentada virtual)  9:10 am – 9:50 am </p></div>
+            <div class="espacio es4"> <ion-icon class="icono" name="people-outline"></ion-icon> <p> Coffe Breake 9:50 am – 10:20 am 
                 </p></div>
-            <div class="espacio es5"> <ion-icon class="icono" name="cafe-outline"></ion-icon> <p>Coffe Breake 10:20 am – 10:50 am</p></div>
-            <div class="espacio es6"> <ion-icon class="icono" name="person-outline"></ion-icon>  <p>3ra. Conferencia (Tips financieros) 11:00 am – 11:40 am </p> </div>
-            <div class="espacio es7"> <ion-icon class="icono" name="people-outline"></ion-icon><p>Charla empresarial (sanitización) 12:00 pm – 12:30 pm</p> </div>
-            <div class="espacio es8"> <ion-icon class="icono" name="people-outline"></ion-icon> <p>Charla empresarial (transporte) 12:30pm – 1:00pm</p></div>
-            <div class="espacio es9"> <ion-icon class="icono" name="fast-food-outline"></ion-icon><p>Comida 13:00 pm – 14:00 pm  </p></div>
-            <div class="espacio es10"> <ion-icon  class="icono"name="school-outline"></ion-icon> <p>Talleres 14:00 pm – 18:00 pm  
+            <div class="espacio es5"> <ion-icon class="icono" name="cafe-outline"></ion-icon> <p>6ta. Hare 28  10:20 am – 10:50 am</p></div>
+            <div class="espacio es6"> <ion-icon class="icono" name="person-outline"></ion-icon>  <p>7ta. Inteligencia Artificial 11:00 am – 11:40 am </p> </div>
+            <div class="espacio es7"> <ion-icon class="icono" name="people-outline"></ion-icon><p> Torneo de videojuegos 12:00 pm – 13:00 pm</p> </div>
+            <div class="espacio es8"> <ion-icon class="icono" name="people-outline"></ion-icon> <p> Comida 13:00 pm – 14:00pm</p></div>
+            <div class="espacio es9"> <ion-icon class="icono" name="fast-food-outline"></ion-icon><p>Talleres  14:00 pm – 17:00 pm  </p></div>
+            <div class="espacio es10"> <ion-icon  class="icono"name="school-outline"></ion-icon> <p> Cierre: evento sorpresa 17:00 pm – 18:00 pm  
             </p></div>
         </div>
     </div>

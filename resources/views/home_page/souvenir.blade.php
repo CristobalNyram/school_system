@@ -120,7 +120,7 @@
     @foreach($souvenir1 as $souvenir)
     <div class="card">
         <div class="circleS" style="--clr:#bdc3c7">
-            <img id="img" src="{{asset($souvenir->url_img )}}" class="logo">
+            <img id="img" src="{{asset('assets/img/home/img')}}/cup.png" class="logo">
         </div>
         <div class="content">
             <p><b>{{$souvenir->name}}</b><br>Incluye:</p>
@@ -131,7 +131,7 @@
             <p><b>Precio: ${{$souvenir->price}}</b></p>
             <!-- <a href="{{ route('home_page_create') }}">Comprar</a> -->
         </div>
-        <img id="bs" src="{{asset($souvenir->url_img )}}" class="product_img">
+        <img id="bs" src="{{asset('assets/img/home/img')}}/cup.png" class="product_img">
  </div>
  @endforeach
 

@@ -731,6 +731,16 @@ ion-icon{
 }
 
 @media(max-width:416px){
+    #patro {
+        
+        margin-top: 50%;
+    }
+    #patro h2 {
+       
+        margin-top: 20%;
+        margin-bottom: 10%;
+    
+    }
 .ob{
     padding-left: 80px;
     padding-right: 80px;
@@ -743,7 +753,7 @@ ion-icon{
 
 .gal{
    
-    margin-top: 2200px;
+    margin-top: 2900px;
   
 }
 
@@ -766,6 +776,22 @@ p{
 }
 
 
+}
+@media(max-width:391px){
+    
+    .gal{
+       
+        margin-top: 2700px;
+      
+    }
+}
+@media(max-width:377px){
+    
+    .gal{
+       
+        margin-top: 2100px;
+      
+    }
 }
 
 @media(max-width:1300px){
@@ -796,6 +822,7 @@ p{
     .barra{
         left: 8px;
     }
+    
 }
 
 @keyframes des {

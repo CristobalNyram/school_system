@@ -97,6 +97,7 @@ class HomeWebController extends Controller
    {
 
         return view('home_page.conference_interface');
+
     }
 
     public function timeline()
@@ -105,10 +106,19 @@ class HomeWebController extends Controller
         return view('home_page.timeline');
     }
 
+    public function timeline2()
+    {
+        
+        return view('home_page.timeline2');
+    }
+    
+
     public function really()
     {
 
+
         return view('home_page.publications');
+
 
     }
 

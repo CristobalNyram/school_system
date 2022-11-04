@@ -44,6 +44,10 @@
 
                             <div class="charts">
 
+<<<<<<< HEAD
+                             
+=======
+>>>>>>> f4c9c2174f733f15dc85b15c44c31a69e1bad157
                                 <div class="chart">
                                     <!-- un circulo inicial de fondo -->
                                     <div class="circle center-abs"></div>
