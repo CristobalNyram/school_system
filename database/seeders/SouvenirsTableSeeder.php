@@ -22,7 +22,7 @@ class SouvenirsTableSeeder extends Seeder
             *Entrada
             *Libreta
             *Stickers',
-            'url_img' => 'argon/img/souvenir/1665088211-bottel.png',
+            'url_img' => 'argon/souvenir/1665088211-bottel.png',
             
         ]);
 
@@ -33,7 +33,7 @@ class SouvenirsTableSeeder extends Seeder
             *Entrada
             *Libreta
             *Taza personalizada',
-            'url_img' => 'argon/img/souvenir/1665092042-cup.png',
+            'url_img' => 'argon/souvenir/1665092042-cup.png',
         ]);
         DB::table('souvenirs')->insert([
             'name' => 'Paquete Master',
@@ -42,7 +42,7 @@ class SouvenirsTableSeeder extends Seeder
             *Entrada
             *Libreta
             *Playera personalizada del Frreedomday',
-            'url_img' => 'argon/img/souvenir/1665088826-playera.png',
+            'url_img' => 'argon/souvenir/1665088826-playera.png',
         ]);
     }
 }
