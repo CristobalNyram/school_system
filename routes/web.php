@@ -19,6 +19,8 @@ use App\Http\Controllers\SettingController;
 use App\Http\Controllers\HomeWebController;
 use App\Http\Controllers\ExampleController;
 use App\Http\Controllers\RallyController;
+use App\Http\Controllers\GetBadgeController;
+use App\Http\Controllers\GetCertificateController;
 use App\Models\Sponsor;
 
 
@@ -241,6 +243,8 @@ Route::group(['middleware' => 'auth'], function () {
         Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
         Route::get('profile', ['as' => 'profile.edit', 'uses' => 'App\Http\Controllers\ProfileController@edit']);
         Route::put('profile', ['as' => 'profile.update', 'uses' => 'App\Http\Controllers\ProfileController@update']);
+        Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
+        Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
 
 
         /*

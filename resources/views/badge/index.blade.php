@@ -11,7 +11,48 @@
         <a href="{{ route('gafet_pdf') }}" type="button" class="btn btn-info">Descargar Gafet</a>
         @endif
 
-        <!-- <button id="boton" onclick="mostrar();" class="btn btn-info">Generar Frase Descriptiva</button> -->
+        <script type="text/javascript">
+            // $(document).ready(function() {
+            // alert("Ya cargue");
+            let contador = 0;
+
+            function prueba() {
+                alert("Funcion");
+            }
+
+            function mostrarFrase() {
+
+                let frases = document.querySelectorAll(".frase");
+                //  console.log(frases);
+                for (let index = 0; index < frases.length; index++) {
+                    const element = frases[index];
+                    if (contador == index) {
+                        element.style.display = "block";
+                        // console.log(element);
+                        console.log(index);
+                        console.log(contador);
+
+                        if (contador == frases.length) {
+                            contador = 0;
+                        }
+
+                    } else {
+                        element.style.display = "none";
+                        if (contador == frases.length) {
+                            contador = 0;
+                        }
+                    }
+
+                    // arreglo =["maria" "jose"]
+
+                    //print(arreglo[0])
+
+                }
+                contador += 1;
+            }
+            // });
+        </script>
+        <a id="boton" onclick="mostrarFrase();" class="btn btn-info">Generar Frase Descriptiva</a>
 
     </div>
 
@@ -20,14 +61,19 @@
 
         <div class="card-body pt-2">
             <div class="gafet">
-                <img id="bloque" src="{{ asset('assets/img/home/img/gafet') }}/ci_4.png">
-                <img id="ri2" src="{{ asset('assets/img/home/img/gafet') }}/ri_2.png">
-                <img id="logo" src="{{ asset('assets/img/home/img/gafet') }}/freedom.png">
-                <img id="perfil" src="{{asset(old('user_image', auth()->user()->user_image)) }}">
-                <img id="ri3" src="{{ asset('assets/img/home/img/gafet') }}/ri_3.png">
-                <img id="ri4" src="{{ asset('assets/img/home/img/gafet') }}/ri_4.png">
+                <img id="bloque" src="https://i.ibb.co/WxVP3sH/ci-4.png">
+                <img id="ri2" src="https://i.ibb.co/SBqY7YT/ri-2.png">
+                <img id="perfil" src="{{old('user_image', auth()->user()->user_image)}}">
+                <img id="logo" src="https://i.ibb.co/87XSQ16/ri-5.png">
+                <img id="ri3" src="https://i.ibb.co/qp7W9gt/ri-3.png">
+                <img id="ri4" src="https://i.ibb.co/xmffJMq/ri-4.png">
 
-                <h1 id="nombre">{{ old('name', auth()->user()->name) }}</h1>
+                <div class="NombreUsuario">
+                    <h1>{{ old('name', auth()->user()->name) }}</h1>
+                </div>
+
+
+
                 <h2 id="apellidos">{{ old('first_surname', auth()->user()->first_surname) }} {{ old('second_surname', auth()->user()->second_surname) }}</h2>
                 @foreach($consulta as $rol)
                 <h3 id="roles">{{$rol->name}}</h3>
@@ -35,15 +81,15 @@
                 <h4 id="CODERS">CODERSTI</h4>
                 <h4 id="frase">#HAZLODIFERENTE</h4>
 
-                <!-- <div class="texto" id="texto">
-                    <label id="Frase1">"El no querer es la causa, el no poder el pretexto"</label>
-                    <label id="Frase2">"El ordenador nació para resolver problemas que antes no existían"</label>
-                    <label id="Frase3">"El optimismo es un riesgo laboral de la programación; el feedback es el tratamiento"</label>
-                    <label id="Frase4">"No temo a los ordenadores; lo que temo es quedarme sin ellos"</label>
-                    <label id="Frase5">"Los ordenadores son buenos siguiendo instrucciones, no leyendo tu mente"</label>
-                    <label id="Frase6">"Antes de que un software sea reutilizable debería ser utilizable"</label>
-                    <label id="Frase7">"Una vez un ordenador me venció jugando al ajedrez, pero no me opuso resistencia cuando pasamos al kick boxing"</label>
-                </div> -->
+                <div class="texto" id="texto">
+                    <label class="frase" id="Frase1" style="display: none;">"El no querer es la causa, el no poder el pretexto"</label>
+                    <label class="frase" id="Frase2" style="display: none;">"El ordenador nació para resolver problemas que antes no existían"</label>
+                    <label class="frase" id="Frase3" style="display: none;">"El optimismo es un riesgo laboral de la programación; el feedback es el tratamiento"</label>
+                    <label class="frase" id="Frase4" style="display: none;">"No temo a los ordenadores; lo que temo es quedarme sin ellos"</label>
+                    <label class="frase" id="Frase5" style="display: none;">"Los ordenadores son buenos siguiendo instrucciones, no leyendo tu mente"</label>
+                    <label class="frase" id="Frase6" style="display: none;">"Antes de que un software sea reutilizable debería ser utilizable"</label>
+                    <label class="frase" id="Frase7" style="display: none;">"Una vez un ordenador me venció jugando al ajedrez, pero no me opuso resistencia cuando pasamos al kick boxing"</label>
+                </div>
 
             </div>
 
@@ -96,17 +142,6 @@
 
 
 
-<script type="text/javascript">
-    var contador = 0;
-    var contador1 = 0;
-    var contador2 =0;
-        function mostrar(){    
-            
-            
-        }
-    
 
-    
-</script>
 
 @endpush

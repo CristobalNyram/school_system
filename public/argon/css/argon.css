@@ -5785,11 +5785,16 @@ input[type='button'].btn-block
 
 
 
-#nombre 
+.NombreUsuario 
 {
-    position: absolute;
-    top: 160px;
+    position: relative;
     margin-left: 5rem;
+    margin-bottom: 300px;
+    z-index: 1;
+}
+
+.NombreUsuario h1 {
+    position: absolute;
 }
 
 #apellidos 
@@ -5797,6 +5802,7 @@ input[type='button'].btn-block
     position: absolute;
     top: 200px;
     margin-left: 3rem;
+    word-wrap: break-word;
 }
 
 #roles 

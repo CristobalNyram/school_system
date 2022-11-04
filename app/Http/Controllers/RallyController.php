@@ -151,8 +151,6 @@ class RallyController extends Controller
 
         if ($rally->save()) {
 
-            $role->activity_done($description = 'Creo el Rally ' . $rally->name . ' correctamente', $table_id = 0, $menu_id = 22, $user_id = Auth::id(), $kind_acction = 6);
-
             $log->activity_done($description = 'Creo el Rally ' . $rally->name . ' correctamente', $table_id = 0, $menu_id = 22, $user_id = Auth::id(), $kind_acction = 6);
 
             return back()->with('success', 'Se ha registrado el Rally exitosamente...');

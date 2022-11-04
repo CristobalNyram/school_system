@@ -114,7 +114,6 @@ class StudentController extends Controller
         $user->email = $request->email;
         $user->password = Hash::make($request->password) ;
         $user->user_image = $request->user_image;
-
         if ($request->hasFile('user_image')) {
             $file = $request->file('user_image');
             $destiantionPath = 'argon/img/user/';
@@ -134,7 +133,7 @@ class StudentController extends Controller
 
         }
     }
-
+   
     /**
      * Display the specified resource.
      *

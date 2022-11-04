@@ -89,31 +89,35 @@ class HomeWebController extends Controller
 
     public function conference()
     {
-        
+
         return view('home_page.conference');
     }
 
     public function ConferenceInterface()
-    {
-        
+   {
 
         return view('home_page.conference_interface');
 
     }
+
     public function timeline()
     {
-        
+
         return view('home_page.timeline');
     }
+
     public function timeline2()
     {
         
         return view('home_page.timeline2');
     }
     
+
     public function really()
     {
-        return view('home_page.Really_games');
+
+
+        return view('home_page.publications');
 
 
     }
@@ -142,7 +146,7 @@ class HomeWebController extends Controller
         $carrers_available=Carrer::all()->where('status','=','2');
 
         $variables=[
-        
+
             'carrers_available'=>$carrers_available,
         ];
 

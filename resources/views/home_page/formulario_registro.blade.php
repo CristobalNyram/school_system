@@ -35,15 +35,19 @@
                     <li class="menu_item">
                     <a href="{{ route('home_page_index') }}" class="logo" id="tope"><img src="{{ asset('assets/img/home/img') }}/logo.png"></a>
                     </li>
-                    
-                        
+
+
+
 
                     <li class="menu_item">
                         <section class="containerR">
 
                             <div class="charts">
 
+<<<<<<< HEAD
                              
+=======
+>>>>>>> f4c9c2174f733f15dc85b15c44c31a69e1bad157
                                 <div class="chart">
                                     <!-- un circulo inicial de fondo -->
                                     <div class="circle center-abs"></div>
@@ -91,13 +95,12 @@
                     <li class="menu__item">
                         <a href="{{ route('timeline_index') }}" class="menu__link">Horario</a>
                     </li>
-        
-                    <li class="menu__item">
-                        
-                             <a href="{{ route('home_page_sponsor') }}" class="menu__link">Patrocinadores</a>
-                       
-                    </li>
 
+                    <li class="menu__item">
+
+                             <a href="{{ route('home_page_sponsor') }}" class="menu__link">Patrocinadores</a>
+
+                    </li>
                     <li class="menu__item">
                         <a href="{{ route('home_page_course') }}" class="menu__link">Talleres</a>
                     </li>
@@ -112,13 +115,11 @@
 
                     <li class="menu__item">
 
-                      
-    
-                    <a href="{{ route('home_page_login') }}" class="menu__link">Inicio<span style="color:black">_</span>de<span style="color:black">_</span>Sesión</a>
-                  
-                       
 
-                        
+
+                    <a href="{{ route('home_page_login') }}" class="menu__link">Inicio<span style="color:black">_</span>de<span style="color:black">_</span>Sesión</a>
+
+
 
                     </li>
 
@@ -168,7 +169,7 @@
                     @endforeach
                     @endif
                 <div class="con">
-                        <label for="name">Nombre</label>
+                        <label onmouseover="alert('Me has dado click');" for="name">Nombre</label>
                         <input type="text" style="color:black;" class="con" id="name" name="name" value="{{   old('name') }}" placeholder="Nombre " max="50" required oninput="uppercaseLetters(event);">
                 </div>
 
@@ -338,6 +339,7 @@ function check_inscription(event)
 {
     // console.log(event.target.value);
     let value_select=event.target.value;
+
 
     if(value_select==1)
     {
