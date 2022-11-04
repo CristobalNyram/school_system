@@ -117,7 +117,7 @@ class HomeWebController extends Controller
     {
 
 
-        return view('home_page.publications');
+        return view('home_page.Really_games');
 
 
     }
