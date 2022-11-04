@@ -60,6 +60,7 @@ Route::prefix('web')->group(function () {
     Route::get('/really',[HomeWebController::class, 'really'])->name('really_index');
     Route::get('/timeline',[HomeWebController::class, 'timeline'])->name('timeline_index');
     Route::get('/timeline2',[HomeWebController::class, 'timeline2'])->name('timeline_index2');
+    Route::post('/student/register',[HomeWebController::class, 'createStudent'])->name('student_register');
 
 });
 Auth::routes();
