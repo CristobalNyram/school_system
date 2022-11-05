@@ -91,7 +91,7 @@ class HomeWebController extends Controller
     public function conference()
     {
 
-        return view('home_page.conference');
+        return view('home_page.prueba');
     }
 
     public function ConferenceInterface()
