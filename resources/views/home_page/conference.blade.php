@@ -198,7 +198,7 @@
     </div>
 <footer>
     <div class="container">
-    <p>&copy; Copyright Software-Freedom Day 2022<br><br>Todos los derechos reservados. <br>Deasarrollado por REEB
+    <p>&copy; Copyright Software-Freedom Day 2022<br><br>Todos los derechos reservados. <br>Deasarrollado por {{ config_author_system() }}
     </p>
     <center>
         <a href="https://www.facebook.com/Freedom-Day-TI-Uttecam-477721659417275">
