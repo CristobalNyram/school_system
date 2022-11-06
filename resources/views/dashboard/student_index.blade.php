@@ -186,9 +186,19 @@
 
 </div>
 @endif
-
-{{-- enrrol to curse start --}}
 @if (check_if_requested_package()==true && check_if_enrolled_in_course()==false)
+<div class="container mt-2">
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <span class="alert-inner--icon"><i class="ni ni-app"></i></span>
+        <span class="alert-inner--text h3 text-white"><strong class="h1 text-danger">Aviso!</strong> <br> Tu solicitud de pago se ha realizado correctamente, por favor ve con un administrador del evento para poder validar tu pago...</span>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+</div>
+@endif
+{{-- enrrol to curse start --}}
+@if (check_if_requested_package_paid_out()==true && check_if_enrolled_in_course()==false)
 
 
 
@@ -197,9 +207,9 @@
 
 
         @foreach ($courses_available as $course)
-        <div class="col-12 col-lg-6 mt-2 ">
+        <div class="col-12 col-lg-6">
 
-          <div class="card card-profile" data-image="img-raised">
+          <div class="card card-profile border border-primary m-2 " data-image="img-raised">
         <div class="card-header-image">
           <a href="javascript:;">
             <div >
