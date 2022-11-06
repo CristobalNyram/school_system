@@ -54,7 +54,20 @@ class PaymentController extends Controller
     }
     public function paymenstRequest(Request $request)
     {
-        return $request;
+        $answer=[];
+        $is_requrired_package=Relpaymentpackagesstudent::all()->where('user_student_id','=',Auth::id())->where('status','=',1);
+        if($is_requrired_package==null){
+            return $is_requrired_package;
+
+        }else{
+            $answer['status']=-2;
+            $answer['title']=-2;
+            $answer['message']=-2;
+            return $answer;
+
+        }
+
+
     }
 
 }
