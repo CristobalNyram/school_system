@@ -55,15 +55,33 @@ class PaymentController extends Controller
     public function paymenstRequest(Request $request)
     {
         $answer=[];
-        $is_requrired_package=Relpaymentpackagesstudent::all()->where('user_student_id','=',Auth::id())->where('status','=',1);
-        if($is_requrired_package==null){
-            return $is_requrired_package;
+        $is_requrired_package=Relpaymentpackagesstudent::all()->where('user_student_id','=',Auth::id())->where('status','=',1)->first();
+        if($is_requrired_package){
+
+                $answer['status']=-2;
+                $answer['title']='ERROR';
+                $answer['message']='Usted ya ha hecho una solicitud pago...';
+                return $answer;
 
         }else{
-            $answer['status']=-2;
-            $answer['title']=-2;
-            $answer['message']=-2;
-            return $answer;
+                $new_required_package=new Relpaymentpackagesstudent();
+                $new_required_package->user_student_id=Auth::id();
+                $new_required_package->package_id=$request->package_id;
+                $new_required_package->status=1;
+
+            if($new_required_package->save()){
+                $answer['status']=2;
+                $answer['title']='Éxito';
+                $answer['message']='Su solicitud de pago se ha procesado correctamente...';
+                return $answer;
+            }else{
+                $answer['status']=-2;
+                $answer['title']='ERROR';
+                $answer['message']='Se produjó un error al momento de procesar los datos...';
+                return $answer;
+            }
+
+
 
         }
 

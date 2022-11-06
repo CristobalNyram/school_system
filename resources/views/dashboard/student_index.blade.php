@@ -1,7 +1,7 @@
 
 
 
-
+@if (check_if_requested_package()!=true)
 <div class="d-flex">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css">
 
@@ -14,7 +14,7 @@
             Swal.fire({
                     title: '¿Estás seguro de que quieres solicitar el paquete '+package_name+' ?',
                      showDenyButton: true,
-                    // showCancelButton: true,
+                    icon:'question',
                     confirmButtonText: 'Si, si quiero solicitarlo',
                     denyButtonText: `Cancelar solicitud`,
                     }).then((result) => {
@@ -35,11 +35,25 @@
 
                                 },
                                 success: function(response) {
-                                    console.log(response)
+                                    if(response['status']===2){
+                                          Swal.fire({title:response['title'],text:response['message'],icon:"success"})
+                                                        .then((value) => {
+
+
+                                                        })
+
+                                    }else{
+                                        Swal.fire({title:response['title'],text:response['message'],icon:"error"})
+                                                        .then((value) => {
+                                                            location.reload();
+
+                                                        })
+                                    }
+
 
                                 },
                                 error: function(xhr) {
-                                    //Do Something to handle error
+                                    alert('Error en el servidor...');
                                 }});
                         // Swal.fire('Saved!', '', 'success')
                     } else if (result.isDenied) {
@@ -59,7 +73,7 @@
     @foreach ($packages_available as $package)
     <div class="col-md-4 mt-3">
 
-        <div class="card card-pricing bg-success border-0 text-center mb-4" style="background-image: url('../../../assets/img/ill/pattern_pricing1.svg">
+        <div class="card card-pricing bg-success border-0 text-center mb-4 col-12" >
         <div class="card-header bg-transparent">
         <h2 class="text-uppercase ls-1 text-white py-3 mb-0">Paquete: {{ $package->name }}</h2>
         </div>
@@ -171,4 +185,10 @@
 
 
 </div>
+@endif
 
+{{-- enrrol to curse start --}}
+@if (check_if_requested_package()==true && check_if_enrolled_in_course()==false)
+
+@endif
+{{-- enrrol to curse end --}}
