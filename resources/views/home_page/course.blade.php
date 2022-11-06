@@ -5,29 +5,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FreedoomDay</title>
+    <title>{{ config_name_system() }}</title>
     <link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilo_Talleres.css">
     <link rel="stylesheet" href="{{ asset('assets/css/home') }}/barra.css">
-    <link rel="icon" href="{{ asset('assets/img/home/img')}}/logo.png">
+    <link href="{{ asset('argon/brand') }}/favicon.png" rel="icon" type="image/png">
     <link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilo_index_R.css">
 </head>
 <header>
     <nav class="menu">
             <section class="menu__container">
-                
-    
+
+
                 <ul class="menu__links">
-                    
+
                 <li clas="menu_item">
                     <a href="{{ route('home_page_index') }}" class="logo" id="tope"><img src="{{ asset('assets/img/home/img') }}/logo.png" width="100px"></a>
                     </li>
                     <li class="menu_item">
-                    
+
                         <section class="containerR">
-                            
+
                             <div class="charts">
-                             
-                    
+
+
                                 <div class="chart">
                                     <!-- un circulo inicial de fondo -->
                                     <div class="circle center-abs"></div>
@@ -70,59 +70,59 @@
                     <li class="menu__item">
                         <a href="{{ route('really_index') }}" class="menu__link">Really</a>
                     </li>
-                    
-        
+
+
                     <li class="menu__item">
                         <a href="{{ route('timeline_index') }}" class="menu__link">Horario</a>
                     </li>
-        
+
                     <li class="menu__item">
-                        
+
                              <a href="{{ route('home_page_sponsor') }}" class="menu__link">Patrocinadores</a>
-                       
+
                     </li>
-    
+
                     <li class="menu__item">
                         <a href="{{ route('home_page_course') }}" class="menu__link">Talleres</a>
                     </li>
-        
+
                     <li class="menu__item">
                         <a href="{{ route('home_page_conference') }}" class="menu__link">Conferencias</a>
                     </li>
-    
+
                     <li class="menu__item">
                         <a href="{{ route('home_page_souvenir') }}" class="menu__link">Souvenirs</a>
                     </li>
-        
+
                     <li class="menu__item">
-                        
-    
+
+
                             <a href="{{ route('home_page_login') }}" class="menu__link">Inicio<span style="color:black">_</span>de<span style="color:black">_</span>Sesión</a>
-                      
+
                     </li>
-                    
+
                 </ul>
-    
+
                 <div class="menu__hamburguer">
                     <img src="{{ asset('assets/img/home/img') }}/menu.svg" class="menu__img">
                 </div>
-            </section> 
+            </section>
         </nav>
 
         <script src="{{ asset('assets/js/home') }}/reloj.js"></script>
 
 
         <script src="{{ asset('assets/js/home') }}/app.js"></script>
-            
-            
+
+
         </header>
 
 <div class="carta">
 @foreach($courses1 as $course1)
     <div class="separador">
-        
+
         <div class="spx">
-            
+
             <figure>
                 <img src="{{asset($course1->url_img )}}">
                 <div class="capa">
@@ -134,14 +134,14 @@
 
                 </div>
             </figure>
-        </div> 
-    </div> 
-    @endforeach  
+        </div>
+    </div>
+    @endforeach
     @foreach($courses2 as $course2)
     <div class="separador">
-        
+
         <div class="spx">
-            
+
             <figure>
                 <img src="{{asset($course2->url_img )}}">
                 <div class="capa">
@@ -153,14 +153,14 @@
 
                 </div>
             </figure>
-        </div> 
-    </div> 
-    @endforeach  
+        </div>
+    </div>
+    @endforeach
     @foreach($courses3 as $course3)
     <div class="separador">
-        
+
         <div class="spx">
-            
+
             <figure>
                 <img src="{{asset($course3->url_img )}}">
                 <div class="capa">
@@ -172,14 +172,14 @@
 
                 </div>
             </figure>
-        </div> 
-    </div> 
-    @endforeach  
+        </div>
+    </div>
+    @endforeach
     @foreach($courses4 as $course4)
     <div class="separador">
-        
+
         <div class="spx">
-            
+
             <figure>
                 <img src="{{asset($course4->url_img )}}">
                 <div class="capa">
@@ -191,14 +191,14 @@
 
                 </div>
             </figure>
-        </div> 
-    </div> 
-    @endforeach  
+        </div>
+    </div>
+    @endforeach
     @foreach($courses5 as $course5)
     <div class="separador">
-        
+
         <div class="spx">
-            
+
             <figure>
                 <img src="{{asset($course5->url_img )}}">
                 <div class="capa">
@@ -210,14 +210,14 @@
 
                 </div>
             </figure>
-        </div> 
-    </div> 
-    @endforeach  
+        </div>
+    </div>
+    @endforeach
     @foreach($courses6 as $course6)
     <div class="separador">
-        
+
         <div class="spx">
-            
+
             <figure>
                 <img src="{{asset($course6->url_img )}}">
                 <div class="capa">
@@ -229,14 +229,14 @@
 
                 </div>
             </figure>
-        </div> 
-    </div> 
-    @endforeach  
+        </div>
+    </div>
+    @endforeach
     @foreach($courses7 as $course7)
     <div class="separador">
-        
+
         <div class="spx">
-            
+
             <figure>
                 <img src="{{asset($course7->url_img )}}">
                 <div class="capa">
@@ -248,14 +248,14 @@
 
                 </div>
             </figure>
-        </div> 
-    </div> 
-    @endforeach  
+        </div>
+    </div>
+    @endforeach
     @foreach($courses8 as $course8)
     <div class="separador">
-        
+
         <div class="spx">
-            
+
             <figure>
                 <img src="{{asset($course8->url_img )}}">
                 <div class="capa">
@@ -267,14 +267,14 @@
 
                 </div>
             </figure>
-        </div> 
-    </div> 
-    @endforeach  
+        </div>
+    </div>
+    @endforeach
     @foreach($courses9 as $course9)
     <div class="separador">
-        
+
         <div class="spx">
-            
+
             <figure>
                 <img src="{{asset($course9->url_img )}}">
                 <div class="capa">
@@ -286,14 +286,14 @@
 
                 </div>
             </figure>
-        </div> 
-    </div> 
-    @endforeach  
+        </div>
+    </div>
+    @endforeach
     @foreach($courses10 as $course10)
     <div class="separador">
-        
+
         <div class="spx">
-            
+
             <figure>
                 <img src="{{asset($course10->url_img )}}">
                 <div class="capa">
@@ -305,9 +305,9 @@
 
                 </div>
             </figure>
-        </div> 
-    </div> 
-    @endforeach  
+        </div>
+    </div>
+    @endforeach
 </div>
 
 
