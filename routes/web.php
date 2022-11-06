@@ -138,9 +138,8 @@ Route::group(['middleware' => 'auth'], function () {
         // payment start--------------------------------------------
 
         Route::get('/payments', [PaymentController::class, "index"])->name('payment_index');
-         Route::post('/payments/required/', [RelpaymentpackagesstudentController::class, "requiredPaymetPackageStudent"])->name('payment_required_package');
-         Route::post('/payments/required/', [RelpaymentpackagesstudentController::class, "aprovePaymetPackageStudent"])->name('payment_required_package');
-        //  Route::get('/payments/required/', [RelpaymentpackagesstudentController::class, "requiredPaymetPackageStudent"])->name('payment_required_package');
+        Route::post('/payments/required', [PaymentController::class, "paymenstRequest"])->name('paymentRequest');
+
 
         // payment end--------------------------------------------
 

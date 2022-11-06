@@ -52,5 +52,9 @@ class PaymentController extends Controller
         ];
         return view('payments.index')->with($variables);
     }
+    public function paymenstRequest(Request $request)
+    {
+        return $request;
+    }
 
 }
