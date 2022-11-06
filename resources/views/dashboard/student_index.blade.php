@@ -190,5 +190,46 @@
 {{-- enrrol to curse start --}}
 @if (check_if_requested_package()==true && check_if_enrolled_in_course()==false)
 
+
+
+    <div class="row">
+
+
+
+        @foreach ($courses_available as $course)
+        <div class="col-12 col-lg-6 mt-2 ">
+
+          <div class="card card-profile" data-image="img-raised">
+        <div class="card-header-image">
+          <a href="javascript:;">
+            <div >
+                   <img class="" src="{{asset($course->url_img )}}" width="100%"  height="300px" alt="No cargo la imagen del curso {{ $course->title }}">
+             </div>
+          </a>
+        <div class="card-title text-danger text-center">
+           Profesor: {{ $course->teacher->name }}
+          </div>
+        </div>
+        <div class="card-body">
+          <h6 class="card-category text-warning text-center h3">{{ $course->title }}</h6>
+          <p class="card-description text-center">
+            {{ $course->description }}
+          </p>
+        </div>
+        <div class="card-footer text-center">
+
+          <button type="button" class="btn btn-simple btn btn-dribbble">
+            <span class="btn-inner--icon"><i class="fab fa-book"></i></span>
+            Incribirme a este curso
+          </button>
+
+        </div>
+      </div>
+
+        </div>
+
+
+      @endforeach
+    </div>
 @endif
 {{-- enrrol to curse end --}}

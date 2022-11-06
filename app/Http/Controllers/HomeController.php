@@ -37,7 +37,7 @@ class HomeController extends Controller
         $variables=[
             'menu'=>'dashboard',
             'title_page'=>'dashboard',
-            'course_available'=>$courses_available,
+            'courses_available'=>$courses_available,
             'packages_available'=>$packages,
 
 
