@@ -27,37 +27,37 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 1,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 1,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 1,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 1,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 1,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 1,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 1,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
 
 
@@ -70,37 +70,37 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 2,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 2,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 2,
-            'role_id' => 4,
-            'status' => 2,
+            'role_id' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 2,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 2,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 2,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 2,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
 
         //menu3
@@ -112,37 +112,37 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 3,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 3,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 3,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 3,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 3,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 3,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 3,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
 
 
@@ -155,37 +155,37 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 4,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 4,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 4,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 4,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 4,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 4,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 4,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
 
         //menu5
@@ -197,37 +197,37 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 5,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 5,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 5,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 5,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 5,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 5,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 5,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
 
         // //menu6 bitacora
@@ -239,37 +239,37 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 6,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 6,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 6,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 6,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 6,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 6,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 6,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
 
         //menu7
@@ -281,37 +281,37 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 7,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 7,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 7,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 7,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 7,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 7,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 7,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
 
         //menu8
@@ -323,37 +323,37 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 8,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 8,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 8,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 8,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 8,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 8,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 8,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
 
         //menu9
@@ -365,41 +365,41 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 9,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 9,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 9,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 9,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 9,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 9,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 9,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
 
-          //menu10
-          DB::table('relrolmenus')->insert([
+        //menu10
+        DB::table('relrolmenus')->insert([
             'menu_id' => 10,
             'role_id' => 1,
             'status' => 2,
@@ -407,37 +407,37 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 10,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 10,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 10,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 10,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 10,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 10,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 10,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
 
         //menu11
@@ -449,42 +449,42 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 11,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 11,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 11,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 11,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 11,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 11,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 11,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
 
 
-         //menu12
-         DB::table('relrolmenus')->insert([
+        //menu12
+        DB::table('relrolmenus')->insert([
             'menu_id' => 12,
             'role_id' => 1,
             'status' => 2,
@@ -492,37 +492,37 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 12,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 12,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 12,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 12,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 12,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 12,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 12,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
 
         //menu13
@@ -534,37 +534,37 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 13,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 13,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 13,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 13,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 13,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 13,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 13,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
 
         //menu14
@@ -576,37 +576,37 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 14,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 14,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 14,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 14,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 14,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 14,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 14,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
 
         //menu15
@@ -618,37 +618,37 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 15,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 15,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 15,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 15,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 15,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 15,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 15,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
 
 
@@ -661,37 +661,37 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 16,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 16,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 16,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 16,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 16,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 16,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 16,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
 
         //menu17
@@ -703,37 +703,37 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 17,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 17,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 17,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 17,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 17,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 17,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 17,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
 
 
@@ -746,41 +746,41 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 18,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 18,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 18,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 18,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 18,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 18,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 18,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
 
-          //menu19
-          DB::table('relrolmenus')->insert([
+        //menu19
+        DB::table('relrolmenus')->insert([
             'menu_id' => 19,
             'role_id' => 1,
             'status' => 2,
@@ -788,42 +788,41 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 19,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 19,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 19,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 19,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 19,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 19,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 19,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
-      
 
         //menu20
-          DB::table('relrolmenus')->insert([
+        DB::table('relrolmenus')->insert([
             'menu_id' => 20,
             'role_id' => 1,
             'status' => 2,
@@ -831,37 +830,37 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 20,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 20,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 20,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 20,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 20,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 20,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 20,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
 
         //menu21
@@ -873,37 +872,37 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 21,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 21,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 21,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 21,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 21,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 21,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 21,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
 
         //menu22
@@ -915,37 +914,37 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 22,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 22,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 22,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 22,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 22,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 22,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 22,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
 
 
@@ -958,37 +957,37 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 23,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 23,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 23,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 23,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 23,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 23,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 23,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
 
         //menu24
@@ -1000,37 +999,37 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 24,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 24,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 24,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 24,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 24,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 24,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 24,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
 
         //menu25
@@ -1042,37 +1041,37 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 25,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 25,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 25,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 25,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 25,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 25,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 25,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
 
 
@@ -1086,37 +1085,37 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 26,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 26,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 26,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 26,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 26,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 26,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 26,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
 
         //menu27
@@ -1128,41 +1127,41 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 27,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 27,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 27,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 27,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 27,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 27,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 27,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
 
-           //menu28
-         DB::table('relrolmenus')->insert([
+        //menu28
+        DB::table('relrolmenus')->insert([
             'menu_id' => 28,
             'role_id' => 1,
             'status' => 2,
@@ -1170,37 +1169,37 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 28,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 28,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 28,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 28,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 28,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 28,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 28,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
         
 
@@ -1213,41 +1212,41 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 29,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 29,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 29,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 29,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 29,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 29,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 29,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
 
-          //menu30
-          DB::table('relrolmenus')->insert([
+        //menu30
+        DB::table('relrolmenus')->insert([
             'menu_id' => 30,
             'role_id' => 1,
             'status' => 2,
@@ -1255,41 +1254,41 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 30,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 30,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 30,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 30,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 30,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 30,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 30,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
 
-         //menu31
-         DB::table('relrolmenus')->insert([
+        //menu31
+        DB::table('relrolmenus')->insert([
             'menu_id' => 31,
             'role_id' => 1,
             'status' => 2,
@@ -1297,37 +1296,37 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 31,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 31,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 31,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 31,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 31,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 31,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 31,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
 
         //menu32
@@ -1339,37 +1338,37 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 32,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 32,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 32,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 32,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 32,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 32,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 32,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
 
         //menu33
@@ -1381,37 +1380,37 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 33,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 33,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 33,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 33,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 33,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 33,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 33,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
 
         //menu34
@@ -1424,37 +1423,37 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 34,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 34,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 34,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 34,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 34,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 34,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 34,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
 
         //menu35
@@ -1467,37 +1466,37 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 35,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 35,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 35,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 35,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 35,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 35,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 35,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
 
         //menu36
@@ -1510,37 +1509,37 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 36,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 36,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 36,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 36,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 36,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 36,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 36,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
 
         //menu37
@@ -1553,37 +1552,37 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 37,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 37,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 37,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 37,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 37,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 37,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 37,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
 
         //menu38
@@ -1596,37 +1595,37 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 38,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 38,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 38,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 38,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 38,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 38,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 38,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
 
         //menu39
@@ -1639,37 +1638,37 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 39,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 39,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 39,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 39,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 39,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 39,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 39,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
 
         //menu40
@@ -1682,37 +1681,37 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 40,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 40,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 40,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 40,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 40,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 40,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 40,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
 
         //menu41
@@ -1725,37 +1724,37 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 41,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 41,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 41,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 41,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 41,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 41,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 41,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
 
         //menu42
@@ -1768,37 +1767,37 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 42,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 42,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 42,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 42,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 42,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 42,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 42,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
 
         //menu43
@@ -1811,37 +1810,37 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 43,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 43,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 43,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 43,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 43,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 43,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 43,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
 
         //menu44
@@ -1854,37 +1853,37 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 44,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 44,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 44,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 44,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 44,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 44,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 44,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
 
         //menu45
@@ -1897,37 +1896,37 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 45,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 45,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 45,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 45,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 45,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 45,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 45,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
 
         //menu46
@@ -1940,37 +1939,37 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 46,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 46,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 46,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 46,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 46,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 46,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 46,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
 
         //menu47
@@ -1983,37 +1982,37 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 47,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 47,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 47,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 47,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 47,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 47,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 47,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
 
         //menu48
@@ -2026,37 +2025,37 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 48,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 48,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 48,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 48,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 48,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 48,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 48,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
 
         //menu49
@@ -2069,37 +2068,37 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 49,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 49,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 49,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 49,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 49,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 49,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 49,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
 
         //menu50
@@ -2112,37 +2111,37 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 50,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 50,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 50,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 50,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 50,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 50,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 50,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
 
         //menu51
@@ -2155,37 +2154,37 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 51,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 51,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 51,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 51,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 51,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 51,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 51,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
 
         //menu52
@@ -2198,37 +2197,37 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 52,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 52,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 52,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 52,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 52,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 52,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 52,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
 
         //menu53
@@ -2241,37 +2240,37 @@ class RelrolmenuTableSeeder extends Seeder
         DB::table('relrolmenus')->insert([
             'menu_id' => 53,
             'role_id' => 2,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 53,
             'role_id' => 3,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 53,
             'role_id' => 4,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 53,
             'role_id' => 5,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 53,
             'role_id' => 6,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 53,
             'role_id' => 7,
-            'status' => 2,
+            'status' => -2,
         ]);
         DB::table('relrolmenus')->insert([
             'menu_id' => 53,
             'role_id' => 8,
-            'status' => 2,
+            'status' => -2,
         ]);
         
 
