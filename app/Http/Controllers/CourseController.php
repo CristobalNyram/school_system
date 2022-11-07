@@ -295,6 +295,8 @@ class CourseController extends Controller
             $new_registation_in_course->course_id=$request->course_id;
             $new_registation_in_course->user_student_id=Auth::id();
             $new_registation_in_course->user_student_id=2;
+            $new_registation_in_course->user_approved_id=0;
+
 
             if($new_registation_in_course->save()){
                 $log->activity_done($description = 'Se incribió a un curso ' . $course->title . ' correctamente', $table_id = 0, $menu_id = 14, $user_id = Auth::id(), $kind_acction = 3);
