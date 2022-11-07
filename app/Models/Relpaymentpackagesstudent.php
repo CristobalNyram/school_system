@@ -44,7 +44,7 @@ class Relpaymentpackagesstudent extends Model
 
             case '2':
 
-                return 'success' ;
+                return 'badge-success' ;
                 break;
         }
     }
