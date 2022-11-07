@@ -99,12 +99,14 @@
                               </a>
                               <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
 
+                                @if ($payment->status!=2)
+                                    <form class="input-group form-aprovar"  action="{{route('payment_aprove',$payment->id)}}" method="POST">
+                                        @csrf
+                                    <input type="submit" class="dropdown-item text-success" data-toggle="modal" data-target="#modal-notification" value="Aprobar pago" >
+                                    </input>
+                                    </form>
+                                @endif
 
-                              <form class="input-group form-aprovar"  action="{{route('payment_aprove',$payment->id)}}" method="POST">
-                                @csrf
-                              <input type="submit" class="dropdown-item text-success" data-toggle="modal" data-target="#modal-notification" value="Aprobar pago" >
-                              </input>
-                              </form>
 
                                 <form class="input-group form-eliminar"  action="{{route('payment_cancel',$payment->id)}}" method="POST">
                                   @csrf
