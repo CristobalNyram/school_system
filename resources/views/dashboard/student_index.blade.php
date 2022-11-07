@@ -1,7 +1,7 @@
 
 
 
-@if (check_if_requested_package()!=true)
+@if (check_if_requested_package()!=true && check_if_requested_package_paid_out()!=true)
 <div class="d-flex">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css">
 
@@ -39,6 +39,7 @@
                                           Swal.fire({title:response['title'],text:response['message'],icon:"success"})
                                                         .then((value) => {
 
+                                                            location.reload();
 
                                                         })
 

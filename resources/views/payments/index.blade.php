@@ -98,17 +98,18 @@
                                 <i class="fas fa-ellipsis-v"></i>
                               </a>
                               <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                              <a class="dropdown-item" href="{{route('user_update', $payment->id )}}">
-                                <i class="fas fa-edit"></i> Aprobar pago
-                              </a>
-                              <a class="dropdown-item" href="{{route('user_update',$payment->id)}}">
-                                <i class="fas fa-edit"></i> Cancelar pago
-                              </a>
 
-                                <form class="input-group form-eliminar"  action="{{route('course_delete',$payment->id)}}" method="POST">
+
+                              <form class="input-group form-aprovar"  action="{{route('payment_aprove',$payment->id)}}" method="POST">
+                                @csrf
+                              <input type="submit" class="dropdown-item text-success" data-toggle="modal" data-target="#modal-notification" value="Aprobar pago" >
+                              </input>
+                              </form>
+
+                                <form class="input-group form-eliminar"  action="{{route('payment_cancel',$payment->id)}}" method="POST">
                                   @csrf
-
-                                <input type="submit" class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-notification" value="Eliminar" ></input>
+                                <input type="submit" class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-notification" value="Cancelar pago" >
+                                </input>
                                 </form>
                               </div>
                             </div>
@@ -185,27 +186,58 @@ $(document).ready(function() {
          <script type="text/javascript">
 
               Swal.fire(
-              '¡Eliminado!',
-              'Tu archivo se ha borrado completamente.',
+              'Cancelado!',
+              'Tu solicitud de pago se ha cancelado correctamente.',
               'success'
            )
 
          </script>
 
       @endif
+      @if (session('aprobar') == 'ok')
+      <script type="text/javascript">
+
+           Swal.fire(
+           'Aprovado!',
+           'Tu solicitud de pago se ha aprovado correctamente.',
+           'success'
+        )
+
+      </script>
+
+      @endif
+
 
       <script type="text/javascript">
         $('.form-eliminar').submit(function(e){
           e.preventDefault();
 
           Swal.fire({
-          title: '¿Está seguro de que desea eliminarlo....?',
+          title: '¿Está seguro de que desea cancelarlo....?',
           text: "¡Después de completar la acción no se podrá revertir los cambios!",
           icon: 'warning',
           showCancelButton: true,
           confirmButtonColor: '#3085d6',
           cancelButtonColor: '#d33',
-          confirmButtonText: 'Sí. ¡Deseo eliminarlo!'
+          confirmButtonText: 'Sí. ¡Deseo cancelarlo!'
+       }).then((result) => {
+         if (result.isConfirmed) {
+
+          this.submit();
+        }
+      })
+        });
+        $('.form-aprovar').submit(function(e){
+          e.preventDefault();
+
+          Swal.fire({
+          title: '¿Está seguro de que desea aprobar esta solicitud de pago....?',
+          text: "¡Esta accion sera registrada!",
+          icon: 'question',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Sí. ¡Deseo aprovar!'
        }).then((result) => {
          if (result.isConfirmed) {
 
