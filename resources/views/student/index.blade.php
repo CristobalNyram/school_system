@@ -146,7 +146,7 @@
 
 
 
-<script>
+<script type="text/javascript">
 
 $(document).ready(function() {
     $('#table_users_all').DataTable( {
@@ -175,7 +175,7 @@ $(document).ready(function() {
 @push('js')
     {{-- <script src="{{ asset() }}/vendor/datatables.net/js/jquery.dataTables.min.js"></script> --}}
 
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script  src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 @if (session('eliminar') == 'ok')
    <script type="text/javascript">

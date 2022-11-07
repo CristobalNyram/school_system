@@ -5,7 +5,9 @@
     @include('dashboard.admin_info')
 
     @case(4)
-    {{-- @include('dashboard.student_info') --}}
+    @case(5)
+    @include('dashboard.student_info')
+
 
         @break
 
