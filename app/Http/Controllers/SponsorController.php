@@ -142,7 +142,7 @@ class SponsorController extends Controller
 
 
         if ($sponsor->save()) {
-        $role->activity_done($description = 'Actualizó el patrocinador ' . $sponsor->name . ' correctamente', $table_id = 0, $menu_id = 30, $user_id = Auth::id(), $kind_acction = 3);
+        $log->activity_done($description = 'Actualizó el patrocinador ' . $sponsor->name . ' correctamente', $table_id = 0, $menu_id = 30, $user_id = Auth::id(), $kind_acction = 3);
           return back()->with('success', 'Se ha actualizado el Patrocinador exitosamente...');
         } else {
           return  back()->withErrors('No se ha actualizado el Patrocinador...');

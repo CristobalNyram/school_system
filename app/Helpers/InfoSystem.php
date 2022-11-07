@@ -140,6 +140,21 @@ if (! function_exists('check_if_requested_package_paid_out')) {
         }
     }
 }
+if (! function_exists('get_id_request_payment')) {
+
+    //check if the user has enrrolled in any  course
+    function get_id_request_payment()
+    {
+        $request_payment = Relpaymentpackagesstudent::where('user_student_id','=',Auth::id())->where('status','=',1)->first();
+        if( $request_payment)
+        {
+            return $request_payment->id;
+        }else
+        {
+            return false;
+        }
+    }
+}
 // helpers for check payments end
 
 

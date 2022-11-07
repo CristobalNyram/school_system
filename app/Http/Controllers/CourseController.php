@@ -6,6 +6,7 @@ use App\Models\Course;
 use Illuminate\Http\Request;
 use App\Models\Role;
 use App\Models\Logbook;
+use App\Models\Relcoursestudent;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
@@ -16,10 +17,10 @@ class CourseController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
-     * 
+     *
      */
 
-     
+
     public function index()
     {
         $role = New Role();
@@ -264,7 +265,6 @@ class CourseController extends Controller
     {
         $course = Course::findOrFail($course_id);
         $course->status=-2;
-        $log = new Logbook();
 
         $log = new Logbook();
 
@@ -275,5 +275,45 @@ class CourseController extends Controller
         } else {
             return back()->with('success','No se ha eliminado el curso exitosamente...');
         }
+    }
+    public function course_enroll_me(Request $request)
+    {
+        $log = new Logbook();
+        $course = Course::findOrFail($request->course_id);
+        $count_enrrolles_in_course=Relcoursestudent::all()->where('course_id','=',$request->course_id)->where('status','=',2)->count();
+        if($count_enrrolles_in_course>=$course->maximum_person){
+
+            $answer['status']=-1;
+            $answer['title']='Aviso';
+            $answer['message']='El cupo a este curso a sido completado, intenta inscribirte a otro curso o hablar con un administrador del evento...';
+            return $answer;
+
+
+        }else
+        {
+            $new_registation_in_course=new Relcoursestudent();
+            $new_registation_in_course->course_id=$request->course_id;
+            $new_registation_in_course->user_student_id=Auth::id();
+            $new_registation_in_course->user_student_id=2;
+            $new_registation_in_course->user_approved_id=0;
+
+
+            if($new_registation_in_course->save()){
+                $log->activity_done($description = 'Se incribió a un curso ' . $course->title . ' correctamente', $table_id = 0, $menu_id = 14, $user_id = Auth::id(), $kind_acction = 3);
+
+                $answer['status']=2;
+                $answer['title']='Éxito';
+                $answer['message']='Te has inscrito correctamente a el curso '.$course->title.'...';
+                return $answer;
+            }else{
+                $answer['status']=-2;
+                $answer['title']='Error';
+                $answer['message']='Error al procesar sus datos...';
+                return $answer;
+            }
+
+
+        }
+
     }
 }

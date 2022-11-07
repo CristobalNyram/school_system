@@ -10,11 +10,19 @@ use App\Models\Talk;
 use App\Models\Sponsor;
 use App\Models\Souvenir;
 use App\Models\User;
+use App\Http\Controllers\Controller;
+use App\Providers\RouteServiceProvider;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class HomeWebController extends Controller
 {
+   
     public function index()
     {
+        
+
+
+
         $sponsors2=Sponsor::all()->where('status','=','2');
 
         $variables=[
@@ -196,7 +204,7 @@ class HomeWebController extends Controller
 
         if ($user->save()) {
 
-            return back()->with('success','Se ha registrado el usuario exitosamente...');
+            return redirect()->action('App\Http\Controllers\HomeController@index');
         }
         else
         {

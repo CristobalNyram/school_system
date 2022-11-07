@@ -138,6 +138,9 @@ Route::group(['middleware' => 'auth'], function () {
         // payment start--------------------------------------------
 
         Route::get('/payments', [PaymentController::class, "index"])->name('payment_index');
+        Route::post('/payments/cancel/{payment_id}', [PaymentController::class, "payment_cancel"])->name('payment_cancel');
+        Route::post('/payments/aprove/{payment_id}', [PaymentController::class, "payment_aprove"])->name('payment_aprove');
+
         Route::post('/payments/required', [PaymentController::class, "paymenstRequest"])->name('paymentRequest');
 
 
@@ -173,6 +176,8 @@ Route::group(['middleware' => 'auth'], function () {
 
         // courses start-----------------------------------
         Route::get('/course', [CourseController::class, "index"])->name('course_index');
+        Route::post('/course/enroll', [CourseController::class, "course_enroll_me"])->name('course_enroll_me');
+
         Route::get('/course/create', [CourseController::class, "create"])->name('course_create');
         Route::post('/course/store', [CourseController::class, "store"])->name('course_store');
         Route::get('/course/update/{course_id}', [CourseController::class, "update"])->name('course_update');
