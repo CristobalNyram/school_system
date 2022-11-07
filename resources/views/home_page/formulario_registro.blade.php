@@ -178,16 +178,12 @@
                 <input type="text" style="color:black;" class="con" id="second_surname" name="second_surname" value="{{ old('second_surname') }}" placeholder="Apellido materno " max="50" required oninput="uppercaseLetters(event);">
             </div>
 
-            <div class="form-group">
-                <label for="role_id"></label>
-                <input type="hidden" class="form-control form-control-lg" id="role_id" name="role_id" value="4" placeholder="Rol del estudiante" max="50" required oninput="uppercaseLetters(event);">
-            </div>
 
             <div class="con">
                 <label for="gender">Genero</label>
 
                 <select class="con" style="color:black;" data-toggle="select2" id="gender" name="gender">
-                    <option value="-1" selected>Seleccionar</option>
+                    <option value="-2" selected>Seleccionar</option>
                     <option value="H">Masculino</option>
                     <option value="M">Feminino</option>
                     <option value="N/A">No binario</option>
@@ -197,12 +193,12 @@
             </div>
 
             <div class="con">
-                <label for="kind_inscription">Tipo de inscripción</label>
+                <label for="role_id">Tipo de inscripción</label>
 
-                <select class="con" style="color:black;" onchange="check_inscription(event);" data-toggle="select2" name="kind_inscription" id="kind_inscription">
+                <select class="con" style="color:black;" onchange="check_inscription(event);" data-toggle="select2" name="role_id" id="role_id">
                     <option value="-1" selected>Seleccionar...</option>
-                    <option value="1">Interno</option>
-                    <option value="2">Externo</option>
+                    <option  value="4">Interno</option>
+                    <option   value="5">Externo</option>
 
                 </select>
             </div>
@@ -214,7 +210,7 @@
                     <label for="career">Carrera</label>
 
                     <select class="con" style="color:black;" data-toggle="select2" name="career" id="career">
-                        <option value="-2" selected>Seleccionar</option>
+                        <option value=" " selected>Seleccionar</option>
                         @foreach ($carrers_available as $carrer )
                         <option value="{{ $carrer->id }}">{{ $carrer->name }}</option>
 
@@ -225,17 +221,11 @@
                     <label for="quarter">Cuatrimestre</label>
 
                     <select class="con" style="color:black;" data-toggle="select2" id="quarter" name="quarter">
-                        <option value="-3" selected>Seleccionar</option>
-                        <option value="first">1° Primero</option>
-                        <option value="second">2° Segundo</option>
-                        <option value="third">3° Tercero</option>
-                        <option value="fourth">4° Cuarto</option>
-                        <option value="fifth">5° Quinto</option>
-                        <option value="sixth">6° Sexto</option>
-                        <option value="seventh">7° Séptimo</option>
-                        <option value="eighth">8° Octavo</option>
-                        <option value="nineth">9° Noveno</option>
-                        <option value="tenth">10° Décimo</option>
+                        <option value=" " selected>Seleccionar</option>
+                        <option value="1° Primero">1° Primero</option>
+                        <option value="4° Cuarto">4° Cuarto</option>
+                        <option value="7° Séptimo">7° Séptimo</option>
+                        <option value="10° Décimo">10° Décimo</option>
                     </select>
                 </div>
 
@@ -243,7 +233,7 @@
                     <label for="group">Grupo</label>
 
                     <select class="con" style="color:black;" data-toggle="select2" id="group" name="group">
-                        <option value="-4" selected>Seleccionar</option>
+                        <option value=" " selected>Seleccionar</option>
                         <option value="A">A</option>
                         <option value="B">B</option>
                         <option value="C">C</option>
@@ -255,6 +245,7 @@
 
 
             </div>
+            
 
             <div id="box_others_inputs" style="display: none;">
                 <div class="con">
@@ -293,8 +284,7 @@
 
             </div>
 
-        </form>
-
+        </form>       
 
 
 
@@ -335,7 +325,7 @@
         let value_select = event.target.value;
 
 
-        if (value_select == 1) {
+        if (value_select == 4) {
             $('#box_inputs_student').slideDown('slow');
             $('#box_input_submit').slideDown('slow');
             $('#box_others_inputs').slideDown('slow');
@@ -343,7 +333,7 @@
 
 
         }
-        if (value_select == 2) {
+        if (value_select == 5) {
             $('#box_inputs_student').slideUp('slow');
             $('#box_input_submit').slideDown('slow');
             $('#box_others_inputs').slideDown('slow');

@@ -108,12 +108,15 @@ class StudentController extends Controller
         $user->second_surname = $request->second_surname;
         $user->gender = $request->gender;
         $user->role_id =$request->role_id;
-        $user->career = $request->career;
-        $user->quarter = $request->quarter;
-        $user->group = $request->group;
         $user->email = $request->email;
         $user->password = Hash::make($request->password) ;
         $user->user_image = $request->user_image;
+        $user->career = $request->career;
+        $user->quarter = $request->quarter;
+        $user->group = $request->group;
+        
+
+
         if ($request->hasFile('user_image')) {
             $file = $request->file('user_image');
             $destiantionPath = 'argon/img/user/';
