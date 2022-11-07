@@ -308,4 +308,9 @@
       @endforeach
     </div>
 @endif
+
+@if (check_if_requested_package_paid_out()==true && check_if_enrolled_in_course()==true)
+@endif
+
+
 {{-- enrrol to curse end --}}
