@@ -12,8 +12,8 @@
 
             let url_enviar='';
             Swal.fire({
-                    title: '¿Estás seguro de que quieres solicitar el paquete '+package_name+' ?',
-                     showDenyButton: true,
+                    html: '¿Estás seguro de que quieres solicitar <strong> el paquete '+package_name+' ?</strong>',
+                    showDenyButton: true,
                     icon:'question',
                     confirmButtonText: 'Si, si quiero solicitarlo',
                     denyButtonText: `Cancelar solicitud`,
@@ -200,6 +200,71 @@
 @endif
 {{-- enrrol to curse start --}}
 @if (check_if_requested_package_paid_out()==true && check_if_enrolled_in_course()==false)
+<script>
+    function fnSolicitarCurso(course_id,course_name)
+    {
+        // alert();
+
+    let url_enviar='';
+    Swal.fire({
+            html: '¿Estás seguro de que quieres inscribirte <strong> a  el curso '+course_name+' ? </strong>',
+             showDenyButton: true,
+            icon:'question',
+            confirmButtonText: 'Si, si quiero inscribirme',
+            denyButtonText: `Cancelar inscripción`,
+            }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            let _token="{{ csrf_token()}}";
+            if (result.isConfirmed) {
+
+
+                    let route = "{{ route('course_enroll_me') }}";
+                    let token = "{{ csrf_token()}}";
+                    $.ajax({
+                        url: route,
+                        type: 'POST',
+                        data: {
+                            _token:token,
+                            course_id:course_id,
+
+
+                        },
+                        success: function(response) {
+                            /*
+                            if(response['status']===2){
+                                  Swal.fire({title:response['title'],text:response['message'],icon:"success"})
+                                                .then((value) => {
+
+                                                    location.reload();
+
+                                                })
+
+                            }else{
+                                Swal.fire({title:response['title'],text:response['message'],icon:"error"})
+                                                .then((value) => {
+                                                    location.reload();
+
+                                                })
+                            }*/
+
+                            console.log(response);
+                        },
+                        error: function(xhr) {
+                            alert('Error en el servidor...');
+                        }});
+                // Swal.fire('Saved!', '', 'success')
+            } else if (result.isDenied) {
+                Swal.fire('Cancelado', '', 'error')
+            }
+    })
+
+
+
+
+    }
+
+
+</script>
 
 
 
@@ -210,11 +275,11 @@
         @foreach ($courses_available as $course)
         <div class="col-12 col-lg-6">
 
-          <div class="card card-profile border border-primary m-2 " data-image="img-raised">
+          <div class="card card-profile  m-5 " data-image="img-raised">
         <div class="card-header-image">
           <a href="javascript:;">
             <div >
-                   <img class="" src="{{asset($course->url_img )}}" width="100%"  height="300px" alt="No cargo la imagen del curso {{ $course->title }}">
+                   <img class="" src="{{asset($course->url_img )}}" width="100%"  height="200px" alt="No cargo la imagen del curso {{ $course->title }}">
              </div>
           </a>
         <div class="card-title text-danger text-center">
@@ -229,9 +294,9 @@
         </div>
         <div class="card-footer text-center">
 
-          <button type="button" class="btn btn-simple btn btn-dribbble">
+          <button type="button" onclick="fnSolicitarCurso('{{$course->id }}','{{$course->title }}');" class="btn  btn btn-dribbble">
             <span class="btn-inner--icon"><i class="fab fa-book"></i></span>
-            Incribirme a este curso
+            Inscribirme
           </button>
 
         </div>

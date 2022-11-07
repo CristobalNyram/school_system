@@ -176,6 +176,8 @@ Route::group(['middleware' => 'auth'], function () {
 
         // courses start-----------------------------------
         Route::get('/course', [CourseController::class, "index"])->name('course_index');
+        Route::post('/course/enroll', [CourseController::class, "course_enroll_me"])->name('course_enroll_me');
+
         Route::get('/course/create', [CourseController::class, "create"])->name('course_create');
         Route::post('/course/store', [CourseController::class, "store"])->name('course_store');
         Route::get('/course/update/{course_id}', [CourseController::class, "update"])->name('course_update');
