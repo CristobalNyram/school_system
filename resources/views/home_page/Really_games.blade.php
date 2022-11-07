@@ -6,15 +6,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FreedoomDay</title>
-    
-    
-    
-    
-    
+    <title>{{ config_name_system() }}</title>
+    <link href="{{ asset('argon/brand') }}/favicon.png" rel="icon" type="image/png">
+
+
+
+
+
     <link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilos_Videojuegos.css">
     <link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilo_index_R.css">
-    
+
     <link href="/estilosmenu.css" rel="stylesheet" type="text/css">
 </head>
 <header>
@@ -28,7 +29,7 @@
                     <section class="containerR">
 
                         <div class="charts">
-                            
+
 
                             <div class="chart">
                                 <!-- un circulo inicial de fondo -->
@@ -78,9 +79,9 @@
 
 
                 <li class="menu__item">
-                   
+
                     <a href="{{ route('home_page_sponsor') }}" class="menu__link">Patrocinadores</a>
-                   
+
                 </li>
 
                 <li class="menu__item">
@@ -96,7 +97,7 @@
                 </li>
 
                 <li class="menu__item">
-                    <a href="{{ route('home_page_login') }}" class="menu__link">Inicio<span style="color:black">_</span>de<span style="color:black">_</span>Sesión</a>  
+                    <a href="{{ route('home_page_login') }}" class="menu__link">Inicio<span style="color:black">_</span>de<span style="color:black">_</span>Sesión</a>
                 </li>
 
             </ul>
@@ -330,11 +331,11 @@
                 </div>
 
 
-                
+
                 <button class="boton_tc" id="open">
                     <FONT SIZE=4.5>REGISTRATE</FONT>
                 </button>
-               
+
                 <div id="modal_container" class="modal-container">
                     <div class="modal">
                         <h1>Ventana Modal</h1>
@@ -357,7 +358,7 @@
     <footer>
         <div class="container">
             <p>&copy; Copyright Software-Freedom Day 2022<br><br>Todos los derechos reservados. <br>Deasarrollado por
-                REEB
+                {{ config_author_system() }}
             </p>
             <center>
                 <a href="https://www.facebook.com/Freedom-Day-TI-Uttecam-477721659417275">

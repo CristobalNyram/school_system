@@ -10,8 +10,9 @@ class RelpaymentpackagesstudentController extends Controller
      {
 
      }
-     public function requiredPaymetPackageStudent()
+     public function paymenstRequest(Request $request)
      {
+        return json_encode('a');
 
         /*
          $payment_package= new Relpaymentpackagesstudent();

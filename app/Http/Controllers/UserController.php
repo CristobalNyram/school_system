@@ -40,11 +40,10 @@ class UserController extends Controller
 
         }
         $log->activity_done($description='Accedió al módulo de Usuarios.',$table_id=0,$menu_id=4,$user_id=Auth::id(),$kind_acction=1);
-
-        $users_active=User::all()->sortByDesc('id')->where('status','=','2');
-        $users_active_number=User::all()->where('status','=','2')->count();
-
-
+        
+        $user_current = Auth::user()->role_id;
+        $users_active = User::all()->sortByDesc('id')->where('status', '=', '2')->where('role_id', '>', $user_current);
+        $users_active_number=User::all()->where('status','=','2')->where('role_id', '>', $user_current)->count();
 
         $variables=[
             'menu'=>'users_all',
@@ -87,15 +86,15 @@ class UserController extends Controller
     public function store(UserRequest $request)
     {
 
-       $user =new User();
-       $user->name = $request->name;
-       $user->first_surname = $request->first_surname;
-       $user->second_surname = $request->second_surname;
-       $user->gender = $request->gender;
-       $user->quarter = $request->quarter;
-       $user->role_id = $request->role_id;
-       $user->email = $request->email;
-       $user->password = Hash::make($request->password) ;
+        $user =new User();
+        $user->name = $request->name;
+        $user->first_surname = $request->first_surname;
+        $user->second_surname = $request->second_surname;
+        $user->gender = $request->gender;
+        $user->quarter = $request->quarter;
+        $user->role_id = $request->role_id;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password) ;
 
         if ($user->save()) {
             return back()->with('success','Se ha registrado el usuario exitosamente...');

@@ -25,6 +25,8 @@ class DatabaseSeeder extends Seeder
         $this->call([SouvenirsTableSeeder::class]);
         $this->call([SponsorTableSeeder::class]);
         $this->call([TalksTableSeeder::class]);
+        $this->call([PackageTableSeeder::class]);
+
     }
 
 }

@@ -39,7 +39,7 @@ class ConfigurationsTableSeeder extends Seeder
             'title' => 'Autor del sistema',
             'type' => 'Info',
             'description' => 'Indica información del creador del sistema',
-            'content' => '',
+            'content' => 'Coders TI',
             'created_at' => now(),
         ]);
     }

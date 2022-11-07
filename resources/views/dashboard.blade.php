@@ -9,6 +9,8 @@
     @endif
 
     @if (Auth::user()->role_id==4)
+    @include('dashboard.student_info')
+
     @include('dashboard.student_index')
 
     @endif

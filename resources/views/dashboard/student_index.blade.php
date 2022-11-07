@@ -1,5 +1,7 @@
 
 
+
+@if (check_if_requested_package()!=true && check_if_requested_package_paid_out()!=true)
 <div class="d-flex">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css">
 
@@ -12,38 +14,48 @@
             Swal.fire({
                     title: '¿Estás seguro de que quieres solicitar el paquete '+package_name+' ?',
                      showDenyButton: true,
-                    // showCancelButton: true,
+                    icon:'question',
                     confirmButtonText: 'Si, si quiero solicitarlo',
                     denyButtonText: `Cancelar solicitud`,
                     }).then((result) => {
                     /* Read more about isConfirmed, isDenied below */
+                    let _token="{{ csrf_token()}}";
                     if (result.isConfirmed) {
 
-                            let url_enviar=
-                                    $.ajax({
-                                    type: "POST",
-                                    url:url_enviar ,
-                                    success: function(res)
-                                        {
-                                            if(res[0]==2)
-                                            {
-                                            alertify.alert(res['titular'],res['mensaje'], function(){
-                                                location.reload();
-                                            });
-                                            }
-                                            else
-                                            {
-                                            alertify.alert(res['Error'],res['mensaje'], function(){
-                                                location.reload();
-                                            });
-                                            }
-                                        },
-                                    error: function(res)
-                                    {
 
+                            let route = "{{ route('paymentRequest') }}";
+                            let token = "{{ csrf_token()}}";
+                            $.ajax({
+                                url: route,
+                                type: 'POST',
+                                data: {
+                                    _token:token,
+                                    package_id:package_id,
+
+
+                                },
+                                success: function(response) {
+                                    if(response['status']===2){
+                                          Swal.fire({title:response['title'],text:response['message'],icon:"success"})
+                                                        .then((value) => {
+
+                                                            location.reload();
+
+                                                        })
+
+                                    }else{
+                                        Swal.fire({title:response['title'],text:response['message'],icon:"error"})
+                                                        .then((value) => {
+                                                            location.reload();
+
+                                                        })
                                     }
-                                });
 
+
+                                },
+                                error: function(xhr) {
+                                    alert('Error en el servidor...');
+                                }});
                         // Swal.fire('Saved!', '', 'success')
                     } else if (result.isDenied) {
                         Swal.fire('Cancelado', '', 'error')
@@ -62,7 +74,7 @@
     @foreach ($packages_available as $package)
     <div class="col-md-4 mt-3">
 
-        <div class="card card-pricing bg-success border-0 text-center mb-4" style="background-image: url('../../../assets/img/ill/pattern_pricing1.svg">
+        <div class="card card-pricing bg-success border-0 text-center mb-4 col-12" >
         <div class="card-header bg-transparent">
         <h2 class="text-uppercase ls-1 text-white py-3 mb-0">Paquete: {{ $package->name }}</h2>
         </div>
@@ -174,4 +186,61 @@
 
 
 </div>
+@endif
+@if (check_if_requested_package()==true && check_if_enrolled_in_course()==false)
+<div class="container mt-2">
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <span class="alert-inner--icon"><i class="ni ni-app"></i></span>
+        <span class="alert-inner--text h3 text-white"><strong class="h1 text-white">¡Aviso!</strong> <br> Tu solicitud de pago se ha realizado correctamente, por favor ve con un administrador del evento para poder validar tu pago, tu solicitud de pago es la <u> No.{{ get_id_request_payment() }} </u>...</span>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+</div>
+@endif
+{{-- enrrol to curse start --}}
+@if (check_if_requested_package_paid_out()==true && check_if_enrolled_in_course()==false)
 
+
+
+    <div class="row">
+
+
+
+        @foreach ($courses_available as $course)
+        <div class="col-12 col-lg-6">
+
+          <div class="card card-profile border border-primary m-2 " data-image="img-raised">
+        <div class="card-header-image">
+          <a href="javascript:;">
+            <div >
+                   <img class="" src="{{asset($course->url_img )}}" width="100%"  height="300px" alt="No cargo la imagen del curso {{ $course->title }}">
+             </div>
+          </a>
+        <div class="card-title text-danger text-center">
+           Profesor: {{ $course->teacher->name }}
+          </div>
+        </div>
+        <div class="card-body">
+          <h6 class="card-category text-warning text-center h3">{{ $course->title }}</h6>
+          <p class="card-description text-center">
+            {{ $course->description }}
+          </p>
+        </div>
+        <div class="card-footer text-center">
+
+          <button type="button" class="btn btn-simple btn btn-dribbble">
+            <span class="btn-inner--icon"><i class="fab fa-book"></i></span>
+            Incribirme a este curso
+          </button>
+
+        </div>
+      </div>
+
+        </div>
+
+
+      @endforeach
+    </div>
+@endif
+{{-- enrrol to curse end --}}
