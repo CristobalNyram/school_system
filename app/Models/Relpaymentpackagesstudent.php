@@ -16,6 +16,38 @@ class Relpaymentpackagesstudent extends Model
     {
         return $this->belongsTo(Package::class,'package_id');
     }
+    public function get_name_status()
+    {
+        $answer=[];
+
+        switch ($this->status) {
+            case '1':
+
+                return 'solicitado' ;
+                break;
+
+            case '2':
+
+                return 'pagado' ;
+                break;
+        }
+    }
+    public function get_name_badge_status()
+    {
+        $answer=[];
+
+        switch ($this->status) {
+            case '1':
+
+                return 'badge-warning' ;
+                break;
+
+            case '2':
+
+                return 'success' ;
+                break;
+        }
+    }
 
 
 }

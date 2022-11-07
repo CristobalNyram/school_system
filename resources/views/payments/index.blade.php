@@ -54,7 +54,7 @@
                             <div class="media align-items-center">
 
                               <div class="media-body">
-                                <span class="name mb-0 text-sm">{{ $payment->student->name }} </span>
+                                <span class="name mb-0 text-sm">{{ $payment->student->name }} {{ $payment->student->first_surname }} {{ $payment->student->second_surname }} </span>
                               </div>
                             </div>
                         </th>
@@ -80,7 +80,8 @@
                             <div class="media align-items-center">
 
                               <div class="media-body">
-                                <span class="name mb-0 text-sm"> {{ $payment->status }}</span>
+
+                                <span class="name mb-0 text-sm badge  {{ $payment->get_name_badge_status() }}"> {{ $payment->get_name_status() }}</span>
                               </div>
                             </div>
                         </th>

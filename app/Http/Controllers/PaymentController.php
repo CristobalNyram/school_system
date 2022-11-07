@@ -18,6 +18,7 @@ class PaymentController extends Controller
         $role = New Role();
         $log=new Logbook();
 
+
         if ($role->checkAccesToThisFunctionality(Auth::user()->role_id, 29) == null) {
             $variables = [
               'menu' => '',
@@ -36,7 +37,7 @@ class PaymentController extends Controller
         $packages_active=Package::all()->where('status','=','2');
 
         $payments_student=Relpaymentpackagesstudent::all()->where('status','>=','1');
-
+        $objPayment=new Payment();
 
 
         $variables=[
@@ -45,7 +46,8 @@ class PaymentController extends Controller
             'users_actives'=>$users_active,
             'users_active_number'=> $users_active_number,
             'packages_active'=> $packages_active,
-            'payments_student'=>$payments_student
+            'payments_student'=>$payments_student,
+            'objPayment'=> $objPayment
 
 
 
