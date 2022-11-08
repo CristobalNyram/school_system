@@ -4,7 +4,7 @@
 @include('layouts.navbars.navs.header')
 
 <script scr="js/modal.js"></script>
-<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css" crossorigin="anonymous">
 
 <script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js" defer></script>
 
@@ -23,12 +23,7 @@
                         "loadingRecords": "Cargando...",
                         "search":         "Buscar:",
                         "emptyTable":     "No hay información disponible en la tabla.",
-                        "paginate": {
-                            "first":      "Primero",
-                            "last":       "Ultimo",
-                            "next":       ">",
-                            "previous":   "<"
-                         },
+
 
                     }
 
