@@ -6,14 +6,43 @@
 
 
     <div class="container-fluid mt--6">
-    
+
+                  <script>
+                $('#table_users_all').DataTable( {
+                    "pageLength": 100,
+                            scrollY:        "300px",
+                            // scrollX:        true,
+                            scrollCollapse: true,
+                            columnDefs: [
+                              { "visible": true, "targets": 0 }
+                            ],
+                    "language": {
+                        "lengthMenu": "Mostrar _MENU_ registros por página",
+                        "zeroRecords": "No encontramos nada.",
+                        "info": "Mostrando página _PAGE_ de _PAGES_",
+                        "infoEmpty": "No hay registros existentes.",
+                        "infoFiltered": "(Fitrado de _MAX_  registros existentes)",
+                        "loadingRecords": "Cargando...",
+                        "search":         "Buscar:",
+                        "emptyTable":     "No hay información disponible en la tabla.",
+                        "paginate": {
+                            "first":      "Primero",
+                            "last":       "Ultimo",
+                            "next":       ">",
+                            "previous":   "<"
+                         },
+
+                    }
+
+                } );
+            </script>
 
         <div class="row">
           <div class="col">
             <div class="card">
               <!-- Card header -->
               <div class="card-header border-0">
-                <h3 class="mb-0">Souvenirs registrados</h3>
+                <h3 class="mb-0">Configuraciones</h3>
               </div>
               <!-- Light table -->
               <script>
@@ -94,9 +123,9 @@
                               <a class="dropdown-item" href="{{route('setting_update',$configuration->id)}}"> <i class="fas fa-edit"></i>Actualizar</a>
                               <form action="{{route('souvenir_delete',$configuration->id)}}" class="input-group form-eliminar" method="POST">
                                @csrf
-                              
+
                                 <input type="submit" class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-notification" value="Eliminar" ></input>
-                                
+
                               </form>
                               </div>
                             </div>
@@ -119,41 +148,7 @@
         @include('layouts.footers.auth')
     </div>
 
-    <script>
 
-
-
-
-$(document).ready(function() {
-    $('#table_users_all').DataTable( {
-        "pageLength": 100,
-                scrollY:        "300px",
-                // scrollX:        true,
-                scrollCollapse: true,
-                columnDefs: [
-                  { "visible": true, "targets": 0 }
-                ],
-        "language": {
-            "lengthMenu": "Mostrar _MENU_ registros por página",
-            "zeroRecords": "No encontramos nada.",
-            "info": "Mostrando página _PAGE_ de _PAGES_",
-            "infoEmpty": "No hay registros existentes.",
-            "infoFiltered": "(Fitrado de _MAX_  registros existentes)",
-            "loadingRecords": "Cargando...",
-            "search":         "Buscar:",
-            "emptyTable":     "No hay información disponible en la tabla.",
-            "paginate": {
-                "first":      "Primero",
-                "last":       "Ultimo",
-                "next":       ">",
-                "previous":   "<"
-             },
-
-        }
-
-    } );
-} );
-</script>
 
 @endsection
 
@@ -205,7 +200,7 @@ $(document).ready(function() {
     confirmButtonText: 'Sí. ¡Deseo eliminarlo!'
  }).then((result) => {
    if (result.isConfirmed) {
-        
+
     this.submit();
   }
 })
