@@ -10,9 +10,11 @@
 
     <div class="container-fluid mt--6">
 
-        <style></style>
+        <script>
+            var jq = jQuery.noConflict(true);
+        </script>
                   <script>
-                $('#table_users_all').DataTable( {
+                 jq('#table_users_all').DataTable( {
 
                     "language": {
                         "lengthMenu": "Mostrar _MENU_ registros por página",
