@@ -25,7 +25,7 @@ class ConfigurationsTableSeeder extends Seeder
             'title' => 'Título de sistema',
             'type' => 'Info',
             'description' => 'Contiene las configuraciones grandes',
-            'content' => 'Sistema escolar',
+            'content' => 'Freedom Day 2022',
             'created_at' => now(),
         ]);
         DB::table('configurations')->insert([
