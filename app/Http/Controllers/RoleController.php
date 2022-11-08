@@ -20,7 +20,10 @@ class RoleController extends Controller
         // die();
 
 
-        if(Role::checkAccesToThisFunctionality(Auth::user()->role_id,2)==null)
+        $role = New Role();
+        $log=new Logbook();
+        ////id del rol y el id del menu
+        if($role->checkAccesToThisFunctionality(Auth::user()->role_id,2)==null)
         {
             $variables=[
                 'menu'=>'',
@@ -31,7 +34,7 @@ class RoleController extends Controller
             return view('errors.notaccess')->with($variables);
 
         }
-        Logbook::activity_done($description='Accedió al módulo de Rol.',$table_id=0,$menu_id=2,$user_id=Auth::id(),$kind_acction=1);
+        $log->activity_done($description='Accedió al módulo de Rol.',$table_id=0,$menu_id=2,$user_id=Auth::id(),$kind_acction=1);
 
 
         $roles=Role::all();
@@ -54,13 +57,14 @@ class RoleController extends Controller
      */
     public function create()
     {
-        if(Role::checkAccesToThisFunctionality(Auth::user()->role_id,2)==null)
+        $role = New Role();
+        $log=new Logbook();
+
+        if($role->checkAccesToThisFunctionality(Auth::user()->role_id,2)==null)
         {
             $variables=[
                 'menu'=>'',
                 'title_page'=>'Acceso denegado',
-
-
             ];
             return view('errors.notaccess')->with($variables);
 
@@ -154,13 +158,14 @@ class RoleController extends Controller
     //when we indicate the object this object has a funtion for default and this is findOrFail
     public function assign($role_id)
     {
-        if(Role::checkAccesToThisFunctionality(Auth::user()->role_id,2)==null)
+        $role = New Role();
+        $log=new Logbook();
+
+        if($role->checkAccesToThisFunctionality(Auth::user()->role_id,2)==null)
         {
             $variables=[
                 'menu'=>'',
                 'title_page'=>'Acceso denegado',
-
-
             ];
             return view('errors.notaccess')->with($variables);
 
@@ -188,7 +193,7 @@ class RoleController extends Controller
     public function assign_permission(Request $request)
     {
 
-         Relrolmenu::where('role_id',$request->role_id)->update(['status'=>-2]);
+        Relrolmenu::where('role_id',$request->role_id)->update(['status'=>-2]);
 
         $requestData =$request->all();
 
@@ -199,7 +204,8 @@ class RoleController extends Controller
             }
             else
             {
-                $relrolmenu=Relrolmenu::find($key);
+                $relrolmenuObj=new Relrolmenu();
+                $relrolmenu=$relrolmenuObj->find($key);
                 $relrolmenu->status=2;
 
                 if(!$relrolmenu->save())

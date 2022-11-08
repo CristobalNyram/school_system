@@ -2,6 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
+use App\Models\Logbook;
+use App\Models\Package;
+use Illuminate\Support\Facades\Auth;
+
 class HomeController extends Controller
 {
     /**
@@ -21,25 +26,37 @@ class HomeController extends Controller
      */
     public function index()
     {
+
+        //$role = New Role();
+
+        $log = new Logbook();
+        $log->activity_done($description = 'Accedió a la página principal', $table_id = 0, $menu_id = 5, $user_id = Auth::id(), $kind_acction = 1);
+        //Logbook::activity_done($description = 'Accedió a la página principal', $table_id = 0, $menu_id = 5, $user_id = Auth::id(), $kind_acction = 1);
+        $courses_available= Course::all()->where('status','=','2');
+        $packages=Package::all()->where('status','=',2);
         $variables=[
             'menu'=>'dashboard',
             'title_page'=>'dashboard',
+            'courses_available'=>$courses_available,
+            'packages_available'=>$packages,
 
 
         ];
+
+
         return view('dashboard')->with($variables);
     }
     public function home()
     {
         $variables=[
             'menu'=>'dashboard',
-            'title_page'=>'dashboard',
+            'title_page'=>'dashsboard',
 
 
         ];
         return view('home_page.index')->with($variables);
     }
-    public function school_secretary()
+    public function Sponsor()
     {
         $variables=[
             'menu'=>'dashboard',

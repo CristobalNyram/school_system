@@ -17,20 +17,19 @@ class LogbookController extends Controller
      */
     public function index()
     {
-        if(Role::checkAccesToThisFunctionality(Auth::user()->role_id,6)==null)
-        {
-            $variables=[
-                'menu'=>'',
-                'title_page'=>'Acceso denegado',
+        $role = New Role();
+        $log = new Logbook();
 
-
+        if ($role->checkAccesToThisFunctionality(Auth::user()->role_id, 31) == null) {
+            $variables = [
+                'menu' => '',
+                'title_page' => 'Acceso denegado',
             ];
             return view('errors.notaccess')->with($variables);
-
         }
-        Logbook::activity_done($description='Accedió al módulo de bitácora.',$table_id=0,$menu_id=6,$user_id=Auth::id(),$kind_acction=6);
 
-        $logbook = Logbook::all();
+        $log->activity_done($description = 'Accedió al módulo de Bitácora.', $table_id = 0, $menu_id = 6, $user_id = Auth::id(), $kind_acction = 1);
+        $logbook = Logbook::all()->sortByDesc('id');
         $variables=[
             'menu'=>'logbook',
             'title_page'=>'Bitácora',

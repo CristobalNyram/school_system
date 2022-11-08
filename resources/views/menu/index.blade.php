@@ -26,7 +26,7 @@
 
               <!-- Light table -->
               <div class="table-responsive">
-                <table class="table align-items-center table-flush">
+                <table class="table align-items-center table-striped table-flush table-bordered dt-responsive" id="table_menu_all">
                   <thead class="thead-light">
                     <tr>
                       <th scope="col" class="sort" data-sort="name">ID</th>
@@ -86,32 +86,7 @@
                   </tbody>
                 </table>
               </div>
-              <!-- Card footer -->
-              <div class="card-footer py-4">
-                <nav aria-label="...">
-                  <ul class="pagination justify-content-end mb-0">
-                    <li class="page-item disabled">
-                      <a class="page-link" href="#" tabindex="-1">
-                        <i class="fas fa-angle-left"></i>
-                        <span class="sr-only">Previous</span>
-                      </a>
-                    </li>
-                    <li class="page-item active">
-                      <a class="page-link" href="#">1</a>
-                    </li>
-                    <li class="page-item">
-                      <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                      <a class="page-link" href="#">
-                        <i class="fas fa-angle-right"></i>
-                        <span class="sr-only">Next</span>
-                      </a>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
+
             </div>
           </div>
         </div>
@@ -119,6 +94,47 @@
 
         @include('layouts.footers.auth')
     </div>
+
+
+    <script>
+
+        $(document).ready(function() {
+            $('#table_menu_all').DataTable( {
+                "language": {
+                    "lengthMenu": "Mostrar _MENU_ registros por página",
+                    "zeroRecords": "No encontramos nada.",
+                    "info": "Mostrando página _PAGE_ de _PAGES_",
+                    "infoEmpty": "No hay registros existentes.",
+                    "infoFiltered": "(Fitrado de _MAX_  registros existentes)",
+                    "loadingRecords": "Cargando...",
+                    "search":         "Buscar:",
+                    "emptyTable":     "No hay información disponible en la tabla.",
+                    "Paginate": {
+                                "first":      "Primero",
+                                "last":       "Ultimo",
+                                "next":       ">",
+                                "previous":   "<"
+                            },
+                            "oAria": {
+                                "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
+                                "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                            },
+                            "buttons": {
+                                "copy": "Copiar",
+                                "colvis": "Personalizar",
+                                "excel":"Excel",
+                                "pdf":"PDF",
+                                "print":"PDF"
+
+                            },
+                            "order": [[ 1, "desc" ]]
+
+                            },
+
+
+            } );
+        } );
+        </script>
 @endsection
 
 @push('js')

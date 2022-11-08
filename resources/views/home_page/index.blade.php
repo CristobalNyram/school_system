@@ -1,210 +1,294 @@
+
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Inicio</title>
-	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/normalize.css">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="css/style.css">
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script>window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')</script>
-	<script src="js/modernizr.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/main.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ config_name_system() }}</title>
+    <link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilo_index.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/home') }}/barra.css">
+    <link href="{{ asset('argon/brand') }}/favicon.png" rel="icon" type="image/png">
+    <link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilo_index_R.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
-<body>
-	<!--======================================== Boton ir arriba ========================================-->
-	<i class="btn-up fa fa-arrow-circle-o-up hidden-xs"></i>
-	<!--======================================== Navegación ========================================-->
-	<header class="full-reset header">
-		<!--======================================== Logo(Nombre INS) ========================================-->
-		<div class="full-reset logo">
-			<span class="hidden-lg hidden-md">J.D.P.</span>
-			<span class="hidden-xs hidden-sm">Juan de Dios Peza</span>
-		</div>
-		<!--======================================== Links de navegación ========================================-->
-		<nav class="full-reset navigation">
-			<ul class="full-reset list-unstyled">
-				<li><a href="index.html">Inicio</a></li>
-				<li><a href="institucion.html">¿Quienes somos?</a></li>
-				<li><a href="secretaria.html">Servicios Escolares</a></li>
-				<li><a href="#" class="btm-mega-menu">Más &nbsp;<i class="fa fa-caret-down"></i></a></li>
-				<li><a href="../index.php">Iniciar sesión</a></li>
-			</ul>
-		</nav>
-		<!--======================================== Mega menu ========================================-->
-		<div class="full-reset mega-menu">
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12 col-sm-4">
-						<span class="full-reset titles">Información del plantel</span>
-						<ul class="list-unstyled full-reset">
-							<ul class="list-unstyled full-reset">
-								<li><a href="galeria.html" class="open-link-newTab"><i class=""></i>&nbsp; Galeria</a></li>
-								<li><a href="bachilleratos.html" class="open-link-newTab"><i class=""></i>&nbsp; Institución</a></li>
-							</ul>
-					</div>
-				</div>
-			</div>
-			<i class="fa fa-times-circle btm-mega-menu close-mega-menu fa-2x"></i>
-		</div>
-		<!--======================================== Boton menu mobil ========================================-->
-		<a href="#" class=" hidden-sm hidden-md hidden-lg pull-right button-menu-mobile show-close-menu-m"><i class="fa fa-ellipsis-v"></i></a>
-	</header>
-	<!--======================================== Logo & Lema ========================================-->
-	<section class="full-reset font-cover" style="background-image: url(assets/img/font-index1.jpg);">
-		<div class="full-reset" style="height: 100%; background-color: rgba(255,255,255,.6); padding: 60px 0;">
-			<h1 class="text-center titles">Juan de Dios Peza</h1>
-			<figure class="Logo-Ins-Index">
-				<img src="assets/img/logo2.jpeg" alt="Logo" class="img-responsive">
-			</figure>
-			<p class="lead text-center">
-				"Construyendo el Futuro"
-			</p>
-		</div>
-	</section>
-	<div class="divider-general"></div>
-	<!--======================================== carrusel========================================-->
-	<section class="full-reset" style="background-color: rgb(242, 242, 242); padding: 40px 0;">
-		<div class="container">
-			<h2 class="text-center titles">Información Estudiantil</h2>
-			<br><br>
-			<!--======================================== Carrusel ========================================-->
-			<div class="row">
-				<div class="col-xs-12 col-sm-6 col-sm-push-6">
-					<h3 class="text-center titles"> Instalaciones</h3>
-					<p class="lead"> La escuela telesecundaria cuenta actualmente con 3 secciones educativas de las cuales se encuentran divididas de la siguiente forma:
-					<br>
-						 1er sección para 1° y 2° grado escolar cómo también la dirección de plantel y biblioteca.
-						 2a sección para comedor, bodega y sanitarios.<br>
-						
-						3a sección para 3er grado escolar cómo también algunos laboratorios que aún no están en funcionamiento por la pausa momentánea.
-					<a href="galeria.html" class="open-link-newTab">Galeria</a>
-					</p>
-					<i class="fa fa-picture-o icon-index hidden-xs hidden-sm"></i>
-				</div>
-				<div class="col-xs-12 col-sm-6 col-sm-pull-6">
-					<div id="slider-ins" class="carousel slide" data-ride="carousel">
-					  <!-- Indicadores -->
-					  <ol class="carousel-indicators">
-					    <li data-target="#slider-ins" data-slide-to="0" class="active"></li>
-					    <li data-target="#slider-ins" data-slide-to="1"></li>
-					    <li data-target="#slider-ins" data-slide-to="2"></li>
-					  </ol>
+<header>
+    <nav class="menu">
+            <section class="menu__container">
+                <ul class="menu__links">
 
-					  <!-- Imagenes -->
-					  <div class="carousel-inner" role="listbox">
-						
-						<!-- Primera imagen -->
-					    <div class="item active">
-					      <img src="assets/gallery/1.jpg" alt="Default">
-					      <div class="carousel-caption">
-					        
-					      </div>
-					    </div>
-						
-						<!-- Segunda imagen -->
-					    <div class="item">
-					      <img src="assets/gallery/2.jpg" alt="Default">
-					      <div class="carousel-caption">
-					       
-					      </div>
-					    </div>
-						
-						<!-- Tercera imagen -->
-					    <div class="item">
-					      <img src="assets/gallery/3.jpg" alt="Default">
-					      <div class="carousel-caption">
-					        
-					      </div>
-					    </div>
-					    
-					  </div>
+                    <li clas="menu_item">
+                    <a href="{{ route('home_page_index') }}" class="logo" id="tope"><img src="{{ asset('assets/img/home/img') }}/logo.png" width="100px"></a>
+                    </li>
 
-					  <!-- Controles -->
-					  <a class="left carousel-control" href="#slider-ins" role="button" data-slide="prev">
-					    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-					    <span class="sr-only">Atras</span>
-					  </a>
-					  <a class="right carousel-control" href="#slider-ins" role="button" data-slide="next">
-					    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-					    <span class="sr-only">Siguiente</span>
-					  </a>
-					</div>
-				</div>
-			</div>
-			<br>
-			<div class="divider-general"></div>
-			<br>
-			
-	<!--======================================== Acontecer institucional ========================================-->
-	<section class="events-ins">
-		<div class="container-fluid">
-			<h2 class="text-center titles">Noticias </h2>
-			<br><br>
-			<div class="row">
-				<!--======================================== Articulo 1 ========================================-->
-				<article class="col-xs-12 col-sm-6 col-md-4">
-					<div class="thumbnail">
-				      <img src="assets/gallery/benito.jpg" alt="IMG" class="img-responsive img-rounded">
-				      <div class="caption">
-				        <h3 class="text-center">Beca Benito Juárez</h3>
-				        <p class="text-justify">Se otorgará a los alumnos con promedio de 9 en adelante</p>
-				        <p class="text-center"><a href="#" class="btn btn-primary" role="button">Ver noticia</a></p>
-				      </div>
-				    </div>
-				</article>
-				<!--======================================== Articulo 2 ========================================-->
-				<article class="col-xs-12 col-sm-6 col-md-4">
-					<div class="thumbnail">
-				      <img src="assets/gallery/5.jpg" alt="IMG" class="img-responsive img-rounded">
-				      <div class="caption">
-				        <h3 class="text-center">Puente de vacaniones del mes</h3>
-				        <p class="text-justify">Las vacaciones iniciaran de Septiembre a Noviembre en los dias.</p>
-				        <p class="text-center"><a href="#" class="btn btn-primary" role="button">Ver noticia</a></p>
-				      </div>
-				    </div>
-				</article>
-				<!--======================================== Articulo 3 ========================================-->
-				<article class="col-xs-12 col-sm-6 col-md-4">
-					<div class="thumbnail">
-				      <img src="assets/gallery/6.jpg" alt="IMG" class="img-responsive img-rounded">
-				      <div class="caption">
-				        <h3 class="text-center">Celebraacion del natalició </h3>
-				        <p class="text-justify">Se conmemorá el nacimiento del héroe de la independencia.</p>
-				        <p class="text-center"><a href="#" class="btn btn-primary" role="button">Ver noticia</a></p>
-				      </div>
-				    </div>
-				</article>
-			</div>
-		</div>
-	</section>
-	<div class="divider-general"></div>
-	<!--======================================== Pie de pagina ========================================-->
-	<footer class="full-reset footer">
-		<div class="full-reset" style="padding: 15px 0;">
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12 col-sm-4">
-						<h4 class="titles text-center">Aviso de privacidad</h4>
-					</div>
-					<div class="col-xs-12 col-sm-4">
-						<h4 class="titles text-center">Tratamiento de datos</h4>
-					</div>
-					<div class="col-xs-12 col-sm-4">
-						<h4 class="titles text-center">Calle 3 Poniente No. 21, San Lorenzo Ometepec, Tochtepec, Puebla, C.P. 75617</h4>	
-					</div>
-					
-					<div class="col-xs-12">
-						<div class="full-reset footer-copyright"><i class="fa fa-copyright"></i> 2022 Juan de Dios Peza</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
-</body>
-</html>
+                    <li class="menu_item">
+                        <section class="containerR">
+
+                            <div class="charts">
+
+
+                                <div class="chart">
+                                    <!-- un circulo inicial de fondo -->
+                                    <div class="circle center-abs"></div>
+                                    <!-- area para SVG -->
+                                    <svg class="center-abs" width="150" height="150">
+                                        <!-- un segundo circulo en SVG con su ubicacion en coordenadas x,y y el radio de expansion -->
+                                        <circle class="outer" id="circulo1" cx="75" cy="75" r="30" />
+                                    </svg>
+                                    <!-- etiqueta para el contador, en este caso el dia -->
+                                    <span class="text center-abs" id="days"></span>
+                                    <h3 id="textcolor1">Dias</h3>
+                                </div>
+                                <div class="chart">
+                                    <div class="circle center-abs"></div>
+                                    <svg class="center-abs" width="150" height="150">
+                                        <circle class="outer" id="circulo2" cx="75" cy="75" r="30" />
+                                    </svg>
+                                    <span class="text center-abs" id="hours"></span>
+                                    <h3 id="textcolor2">Horas</h3>
+                                </div>
+                                <div class="chart">
+                                    <div class="circle center-abs"></div>
+                                    <svg class="center-abs" width="150" height="150">
+                                        <circle class="outer"  id="circulo3" cx="75" cy="75" r="30" />
+                                    </svg>
+                                    <span class="text center-abs" id="minutes"></span>
+                                    <h3 id="textcolor3">Minutos</h3>
+                                </div>
+                                <div class="chart">
+                                    <div class="circle center-abs"></div>
+                                    <svg class="center-abs" width="150" height="150">
+                                        <circle class="outer" id="circulo4"cx="75" cy="75" r="30" />
+                                    </svg>
+                                    <span class="text center-abs" id="seconds"></span>
+                                    <h3 id="textcolor4">Segundos</h3>
+                                </div>
+                            </div>
+                        </section>
+                    </li>
+
+                    <li class="menu__item">
+                        <a href="{{ route('really_index') }}" class="menu__link">Really</a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="{{ route('timeline_index') }}" class="menu__link">Horario</a>
+                    </li>
+
+                    <li class="menu__item">
+
+                             <a href="{{ route('home_page_sponsor') }}" class="menu__link">Patrocinadores</a>
+
+                    </li>
+
+                    <li class="menu__item">
+                        <a href="{{ route('home_page_course') }}" class="menu__link">Talleres</a>
+                    </li>
+
+                    <li class="menu__item">
+                        <a href="{{ route('home_page_conference') }}" class="menu__link">Conferencias</a>
+                    </li>
+
+                    <li class="menu__item">
+                        <a href="{{ route('home_page_souvenir') }}" class="menu__link">Souvenirs</a>
+                    </li>
+
+                    <li class="menu__item">
+
+
+                            <a href="{{ route('home_page_login') }}" class="menu__link">Inicio<span style="color:black">_</span>de<span style="color:black">_</span>Sesión</a>
+
+                    </li>
+
+                </ul>
+
+                <div class="menu__hamburguer">
+                    <img src="{{ asset('assets/img/home/img') }}/menu.svg" class="menu__img">
+                </div>
+            </section>
+        </nav>
+
+        <script src="{{ asset('assets/js/home') }}/reloj.js"></script>
+
+
+        <script src="{{ asset('assets/js/home') }}/app.js"></script>
+
+
+        </header>
+        <div class="fondo">
+            <div class="textos">
+
+            <img class=" ha animate__animated animate__pulse animate__delay-2s animate__infinite"  src="{{ asset('assets/img/home/img') }}/logo.png">
+            </div>
+
+
+
+        </div>
+        <div class="shib">
+            <div class="barra">
+                <span class="oki"> <i class="sec"></i>--</span>
+                <ul class="lis">
+                    <li><a href="#q"><i class="vi"></i>¿Qué es?</a></li>
+                    <li><a href="#o"><i class="vi"></i>Objetivo</a></li>
+                    <li><a href="#p"><i class="vi"></i>Proposito</a></li>
+                    <li><a href="#g"><i class="vi"></i>Galería</a></li>
+                </ul>
+            </div>
+        </div>
+        <script src="{{ asset('assets/js/home') }}/menu.js"></script>
+        <div id="q" class="que">
+            <h1>¿QUÉ ES SOFTWARE-</span><span class="freed">FREEDOM <span class="day">DAY</span></span>?</h1><br>
+            <p>Es un evento organizado por alumnos y docentes de la carrera de Tecnologías de la Información en la
+                Univesidad Tecnológica de Tecamachalco,
+                ahora en nuestra 6ta Edición. El evento esta enfocado en el area de Desarrollo de Software y Redes
+                Inteligentes.<br>El
+                evento Software-Freedom Day te invitamos a participar los dias 25 y 26 de noviembre en este
+                gran evento.
+            </p>
+            <img class="logo22" src="{{ asset('assets/img/home/img') }}/logo.png">
+        </div>
+
+        <div id="o" class="pro">
+            <h1>Objetivo</h1><br>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi atque explicabo repudiandae. Omnis, facilis
+                nihil, reiciendis ea enim commodi qui, deserunt nulla tempora et optio impedit cumque obcaecati porro
+                recusandae.</p>
+        </div>
+
+
+        <div id="p" class="ob">
+            <h1>Proposito</h1><br>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus nesciunt ut veniam eos, doloremque nam
+                totam aperiam modi quidem est laborum, vero beatae repellendus quam. Nisi earum assumenda rem odio.</p>
+        </div>
+        <!--Galeria-->
+<div id="g" class="gal">
+    <h2>GALERÍA</h2>
+</div>
+
+<div class="toky">
+    <div class="reze" style="background-image: url(assets/img/home/img/galeria/01.png);" >
+        <h3></h3>
+
+    </div>
+
+
+    <div class="reze" style="background-image: url(assets/img/home/img/galeria/02.png);">
+        <h3></h3>
+    </div>
+
+    <div class="reze" style="background-image: url(assets/img/home/img/galeria/03.png);">
+        <h3></h3>
+    </div>
+
+    <div class="reze" style="background-image: url(assets/img/home/img/galeria/04.png);">
+    </div>
+
+    <div class="reze" style="background-image: url(assets/img/home/img/galeria/05.png);">
+    </div>
+
+    <div class="reze active" style="background-image: url(assets/img/home/img/galeria/06.png);">
+    </div>
+
+    <div class="reze" style="background-image: url(assets/img/home/img/galeria/07.png);">
+    </div>
+
+    <div class="reze" style="background-image: url(assets/img/home/img/galeria/08.png);">
+    </div>
+
+    <div class="reze" style="background-image: url(assets/img/home/img/galeria/09.png);">
+    </div>
+
+    <div class="reze" style="background-image: url(assets/img/home/img/galeria/10.png);">
+    </div>
+
+    <div class="reze" style="background-image: url(assets/img/home/img/galeria/11.png);">
+    </div>
+
+    <div class="reze" style="background-image: url(assets/img/home/img/galeria/12.png);">
+    </div>
+
+    <div class="reze" style="background-image: url(assets/img/home/img/galeria/13.png);">
+    </div>
+
+    <div class="reze" style="background-image: url(assets/img/home/img/galeria/14.png);">
+    </div>
+
+    <div class="reze" style="background-image: url(assets/img/home/img/galeria/15.png);">
+    </div>
+
+    <div class="reze" style="background-image: url(assets/img/home/img/galeria/16.png);">
+    </div>
+
+    <div class="reze" style="background-image: url(assets/img/home/img/galeria/17.png);">
+    </div>
+
+</div>
+<script src="{{ asset('assets/js/home') }}/galeria.js"></script>
+<section id="patro">
+
+
+    <h2>Patrocinios</h2>
+@foreach($sponsors2 as $sponsor)
+<ul>
+        <li>
+            <img src="{{asset($sponsor->url_img )}}" width="100">
+        </li>
+        <li>
+            <img src="{{asset($sponsor->url_img )}}" width="100">
+
+        </li>
+        <li>
+            <img src="{{asset($sponsor->url_img )}}" width="100">
+        </li>
+        <li>
+            <img src="{{asset($sponsor->url_img )}}" width="100">
+        </li>
+        <li>
+            <img src="{{asset($sponsor->url_img )}}" width="100">
+        </li>
+        <li>
+            <img src="{{asset($sponsor->url_img )}}" width="100">
+        </li>
+        <li>
+            <img src="{{asset($sponsor->url_img )}}" width="100">
+        </li>
+        <li>
+            <img src="{{asset($sponsor->url_img )}}" width="100">
+        </li>
+        <li>
+            <img src="{{asset($sponsor->url_img )}}" width="100">
+        </li>
+        <li>
+            <img src="{{asset($sponsor->url_img )}}" width="100">
+        </li>
+
+    </ul>
+    @endforeach
+</section>
+
+<footer>
+        <div class="container">
+        <p>&copy; Copyright Software-Freedom Day 2022<br><br>Todos los derechos reservados. <br>Deasarrollado por {{ config_author_system() }}
+        </p>
+        <center>
+            <a href="https://www.facebook.com/Freedom-Day-TI-Uttecam-477721659417275">
+                <span class="icono"></span>
+                <ion-icon class="tam" name="logo-facebook"></ion-icon>
+                <span class="texto"> </span>
+            </a>
+
+            <a class="icon" href="https://goo.gl/maps/BWKybpucUgH8QXzf6">
+                <span class="icono"></span>
+                <ion-icon name="location-outline"></ion-icon>
+                <span class="texto"> </span>
+            </a>
+        </center>
+        </div>
+    </footer>
+
+    <script src="{{ asset('assets/js/home') }}/galeria.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="{{ asset('assets/js/home') }}/menu.js"></script>

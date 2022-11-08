@@ -18,19 +18,18 @@ class MenuController extends Controller
      */
     public function index()
     {
-        if(Role::checkAccesToThisFunctionality(Auth::user()->role_id,3)==null)
-        {
-            $variables=[
-                'menu'=>'',
-                'title_page'=>'Acceso denegado',
+        $role = New Role();
+        $log = new Logbook();
 
-
+        if ($role->checkAccesToThisFunctionality(Auth::user()->role_id, 1) == null) {
+            $variables = [
+                'menu' => '',
+                'title_page' => 'Acceso denegado',
             ];
             return view('errors.notaccess')->with($variables);
-
         }
-        Logbook::activity_done('Accedió al módulo Menu.',0,3,Auth::id(),1);
 
+        $log->activity_done('Accedió al módulo de Menús.',0,3,Auth::id(),1);
 
         $menus=Menu::all();
         $menus_numbers=Menu::all()->count();
@@ -52,17 +51,15 @@ class MenuController extends Controller
      */
     public function create()
     {
+        $role = New Role();
+        $log = new Logbook();
 
-        if(Role::checkAccesToThisFunctionality(Auth::user()->role_id,3)==null)
-        {
-            $variables=[
-                'menu'=>'',
-                'title_page'=>'Acceso denegado',
-
-
+        if ($role->checkAccesToThisFunctionality(Auth::user()->role_id, 3) == null) {
+            $variables = [
+                'menu' => '',
+                'title_page' => 'Acceso denegado',
             ];
             return view('errors.notaccess')->with($variables);
-
         }
 
         $variables=[
@@ -113,7 +110,11 @@ class MenuController extends Controller
 
         if ($menu->new_registration($request) === true) {
 
-            Logbook::activity_done($description='Creo un menu.',$table_id=0,$menu_id=3,$user_id=Auth::id(),$kind_acction=6);
+          
+        $log = new Logbook();
+
+
+            $log->activity_done($description='Creo un menu.',$table_id=0,$menu_id=3,$user_id=Auth::id(),$kind_acction=6);
 
             return back()->with('success','Se ha registrado el menú exitosamente...');
 
