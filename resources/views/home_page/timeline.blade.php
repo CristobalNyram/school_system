@@ -131,11 +131,11 @@
         <div class="cuadros">
             <div class="espacio es1"> <ion-icon class="icono" name="golf-outline"></ion-icon> <p>Registro 8:00 am – 8:30 am </p> </div>
             <div class="espacio es2"> <ion-icon class="icono" name="ribbon-outline"></ion-icon> <p>Bienvenida  8:30 am – 9:00 am  </p> </div>
-            <div class="espacio es3"> <ion-icon class="icono" name="person-outline"></ion-icon> <p>1ra. conferencia(Ciberseguridad)  9:00 am – 9:40 am </p></div>
+            <div class="espacio es3"> <ion-icon class="icono" name="person-outline"></ion-icon> <p>1ra Conferencia(Ciberseguridad)  9:00 am – 9:40 am </p></div>
             <div class="espacio es4"> <ion-icon class="icono" name="people-outline"></ion-icon> <p>2da Conferencia Desarrollo de proyectos 9:40 am – 10:20 am 
                 </p></div>
             <div class="espacio es5"> <ion-icon class="icono" name="cafe-outline"></ion-icon> <p>Coffe Breake 10:20 am – 10:50 am</p></div>
-            <div class="espacio es6"> <ion-icon class="icono" name="person-outline"></ion-icon>  <p>3ra. Conferencia (Tips financieros) 11:00 am – 11:40 am </p> </div>
+            <div class="espacio es6"> <ion-icon class="icono" name="person-outline"></ion-icon>  <p>3ra Conferencia (Tips financieros) 11:00 am – 11:40 am </p> </div>
             <div class="espacio es7"> <ion-icon class="icono" name="people-outline"></ion-icon><p>Charla empresarial (sanitización) 12:00 pm – 12:30 pm</p> </div>
             <div class="espacio es8"> <ion-icon class="icono" name="people-outline"></ion-icon> <p>Charla empresarial (transporte) 12:30pm – 1:00pm</p></div>
             <div class="espacio es9"> <ion-icon class="icono" name="fast-food-outline"></ion-icon><p>Comida 13:00 pm – 14:00 pm  </p></div>
