@@ -1,19 +1,21 @@
-<script src="/assets/vendor/jquery/dist/jquery.min.js"></script>
-<script src="/assets/vendor/jquery/dist/jquery.slim.min.js"></script>
+{{-- <script src="/assets/vendor/jquery/dist/jquery.min.js"></script>
+<script src="/assets/vendor/jquery/dist/jquery.slim.min.js"></script> --}}
 
 {{-- <link rel="stylesheet" href="/assets/vendor/select2/dist/css/select2.min.css">
 <script src="/assets/vendor/select2/dist/js/select2.min.js" defer></script> --}}
-
+{{--
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js" defer></script> --}}
 
 {{-- <script src="/assets/vendor/sweetalert2/dist/sweetalert2.all.min.js"></script>
 <link rel="stylesheet" href="/assets/vendor/sweetalert2/dist/sweetalert2.min.css">
+
  --}}
+ <script src="/assets/vendor/datatables.net/js/jquery.dataTables.min.js" defer></script>
+
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+{{--
 
-
-<script src="/assets/vendor/datatables.net/js/jquery.dataTables.min.js" defer></script>
 
 <link rel="stylesheet" href="/assets/vendor/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
 <script src="/assets/vendor/datatables.net-bs4/js/dataTables.bootstrap4.min.js" defer></script>
@@ -21,19 +23,19 @@
 <script src="/assets/vendor/datatables.net-buttons/js/dataTables.buttons.min.js" defer></script>
 
 <link rel="stylesheet" href="/assets/vendor/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css">
-<script src="/assets/vendor/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js" defer></script>
+<script src="/assets/vendor/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js" defer></script> --}}
 
 
-<link rel="stylesheet" href="/assets/vendor/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css">
+{{-- <link rel="stylesheet" href="/assets/vendor/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css"> --}}
 {{-- <script src="/assets/vendor/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js" defer></script> --}}
 
-
+{{--
 <script src="/assets/vendor/datatables.net-select/js/dataTables.select.min.js" defer></script>
 
 
 <link rel="stylesheet" href="/assets/vendor/datatables.net-select-bs4/css/select.bootstrap4.min.css">
 
-<script src="/assets/vendor/datatables.net-select-bs4/js/select.bootstrap4.min.js" defer></script>
+<script src="/assets/vendor/datatables.net-select-bs4/js/select.bootstrap4.min.js" defer></script> --}}
 
 
 

@@ -17,9 +17,9 @@ class SettingController extends Controller
 
 
     if ($rol->checkAccesToThisFunctionality(Auth::user()->role_id, 19) == null) {
-      $variables = [ 
+      $variables = [
 
-        
+
         'menu' => '',
         'title_page' => 'Acceso denegado',
 
@@ -42,7 +42,7 @@ class SettingController extends Controller
       'configuration_active' => $configuration_active,
       'configuration_active_number' => $configuration_active_number,
     ];
-    return view('setting.index')->with($variables);
+    return view('setting_local.index')->with($variables);
   }
 
   public function update($setting_id)
@@ -89,7 +89,7 @@ class SettingController extends Controller
 
      }
 
-  
+
 
     if ($setting->save()) {
 
