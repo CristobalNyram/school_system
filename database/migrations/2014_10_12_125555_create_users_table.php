@@ -36,7 +36,7 @@ class CreateUsersTable extends Migration
       $table->string('license_plate')->nullable()->unique();//matricula
       $table->unsignedBigInteger('career')->nullable();
       $table->string('enrollment',8)->nullable();
-      $table->string('quarter',4,['1° Primero','4° Cuarto','7° Séptimo','10° Décimo'])->nullable();
+      $table->string('quarter',['1° Primero','4° Cuarto','7° Séptimo','10° Décimo'])->nullable();
       $table->string('group',1,['A','B','C','D'])->nullable();
       //data of the students
 

@@ -47,11 +47,11 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="first_surname">Apellido de parterno</label>
+                        <label for="first_surname">Apellido Parterno</label>
                         <input type="text" class="form-control form-control-lg" id="first_surname" name="first_surname" value="{{ old('first_surname') }}" placeholder="Apellido paterno" max="50" required oninput="uppercaseLetters(event);">
                     </div>
                     <div class="form-group">
-                        <label for="second_surname">Apellido de materno</label>
+                        <label for="second_surname">Apellido Materno</label>
                         <input type="text" class="form-control form-control-lg" id="second_surname" name="second_surname" value="{{ old('second_surname') }}" placeholder="Apellido materno " max="50" required oninput="uppercaseLetters(event);">
                     </div>
 
@@ -69,7 +69,7 @@
                         <select class="form-control form-control-lg single-select-2 " data-toggle="select2" id="gender" name="gender">
                             <option value="-1" selected>Seleccionar</option>
                             <option value="H">Masculino</option>
-                            <option value="M">Feminino</option>
+                            <option value="M">Femenino</option>
                             <option value="N/A">No binario</option>
 
 
