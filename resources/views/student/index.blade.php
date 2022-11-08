@@ -3,9 +3,6 @@
 @section('content')
 @include('student.headers_cards')
 
-<link href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
-
-
     <div class="container-fluid mt--6">
         <div class="row d-flex mb-3 mr-5 justify-content-end">
             @if ( check_acces_to_this_permission(Auth::user()->role_id,26))
@@ -177,7 +174,6 @@ $(document).ready(function() {
 
 @push('js')
     {{-- <script src="{{ asset() }}/vendor/datatables.net/js/jquery.dataTables.min.js"></script> --}}
-   {{--<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>--}} 
 
     <script  src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 

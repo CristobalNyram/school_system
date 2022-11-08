@@ -165,17 +165,17 @@
             @endforeach
             @endif
             <div class="con">
-                <label onmouseover="alert('Me has dado click');" for="name">Nombre</label>
+                <label for="name">Nombre</label>
                 <input type="text" style="color:black;" class="con" id="name" name="name" value="{{   old('name') }}" placeholder="Nombre " max="50" required oninput="uppercaseLetters(event);">
             </div>
 
             <div class="con">
-                <label for="first_surname">Apellido de parterno</label>
+                <label for="first_surname">Apellido Paterno</label>
                 <input type="text" style="color:black;" class="con" id="first_surname" name="first_surname" value="{{ old('first_surname') }}" placeholder="Apellido paterno" max="50" required oninput="uppercaseLetters(event);">
             </div>
 
             <div class="con">
-                <label for="second_surname">Apellido de materno</label>
+                <label for="second_surname">Apellido Materno</label>
                 <input type="text" style="color:black;" class="con" id="second_surname" name="second_surname" value="{{ old('second_surname') }}" placeholder="Apellido materno " max="50" required oninput="uppercaseLetters(event);">
             </div>
 
@@ -186,7 +186,7 @@
                 <select class="con" style="color:black;" data-toggle="select2" id="gender" name="gender">
                     <option value="-2" selected>Seleccionar</option>
                     <option value="H">Masculino</option>
-                    <option value="M">Feminino</option>
+                    <option value="M">Femenino</option>
                     <option value="N/A">No binario</option>
 
 
