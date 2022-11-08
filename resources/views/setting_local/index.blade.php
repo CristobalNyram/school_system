@@ -2,20 +2,18 @@
 
 @section('content')
 @include('layouts.navbars.navs.header')
-<script scr="js/modal.js"></script>
 
+<script scr="js/modal.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js" defer></script>
 
     <div class="container-fluid mt--6">
 
+        <style></style>
                   <script>
                 $('#table_users_all').DataTable( {
-                    "pageLength": 100,
-                            scrollY:        "300px",
-                            // scrollX:        true,
-                            scrollCollapse: true,
-                            columnDefs: [
-                              { "visible": true, "targets": 0 }
-                            ],
+
                     "language": {
                         "lengthMenu": "Mostrar _MENU_ registros por página",
                         "zeroRecords": "No encontramos nada.",
