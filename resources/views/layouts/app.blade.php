@@ -13,6 +13,9 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
 
+        <!--DATABLE-->
+        <link href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+
 
         <!-- Extra details for Live View on GitHub Pages -->
 
@@ -22,6 +25,7 @@
         <!-- Argon CSS -->
         <link type="text/css" href="{{ asset('argon') }}/css/argon.css?v=1.0.0" rel="stylesheet">
         <link type="text/css" href="/assets/css/modificado.css" rel="stylesheet">
+
 
     </head>
     <body class="{{ $class ?? '' }}">
@@ -42,6 +46,7 @@
         @endguest
 
         <script src="{{ asset('argon') }}/vendor/jquery/dist/jquery.min.js"></script>
+        <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
         <script src="{{ asset('argon') }}/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
         @stack('js')
