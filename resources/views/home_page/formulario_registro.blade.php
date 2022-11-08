@@ -170,7 +170,7 @@
             </div>
 
             <div class="con">
-                <label for="first_surname">Apellido Parterno</label>
+                <label for="first_surname">Apellido Paterno</label>
                 <input type="text" style="color:black;" class="con" id="first_surname" name="first_surname" value="{{ old('first_surname') }}" placeholder="Apellido paterno" max="50" required oninput="uppercaseLetters(event);">
             </div>
 
