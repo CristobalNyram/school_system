@@ -17,9 +17,10 @@ class CreateRelcoursestudentsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('course_id');
             $table->unsignedBigInteger('user_student_id');
-            $table->unsignedBigInteger('user_approved_id');
-            $table->unsignedBigInteger('user_canceled_id');
-            $table->unsignedBigInteger('previous_course_id');
+            $table->unsignedBigInteger('user_approved_id')->nullable();
+            $table->unsignedBigInteger('user_cancel_id')->nullable();
+            $table->unsignedBigInteger('user_canceled_id')->nullable();
+            $table->unsignedBigInteger('previous_course_id')->nullable();
             $table->string('status')->default(2);
             $table->timestamps();
             //-3 no alcanzo cupo en ningun curso // -2 borrado //-1 inactivo // 1 pendiente //2 activo

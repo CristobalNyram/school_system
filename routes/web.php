@@ -60,6 +60,7 @@ Route::prefix('web')->group(function () {
     Route::get('/really',[HomeWebController::class, 'really'])->name('really_index');
     Route::get('/timeline',[HomeWebController::class, 'timeline'])->name('timeline_index');
     Route::get('/timeline2',[HomeWebController::class, 'timeline2'])->name('timeline_index2');
+    Route::post('/student/register',[HomeWebController::class, 'createStudent'])->name('student_register');
 
 });
 Auth::routes();
@@ -137,9 +138,11 @@ Route::group(['middleware' => 'auth'], function () {
         // payment start--------------------------------------------
 
         Route::get('/payments', [PaymentController::class, "index"])->name('payment_index');
-         Route::post('/payments/required/', [RelpaymentpackagesstudentController::class, "requiredPaymetPackageStudent"])->name('payment_required_package');
-         Route::post('/payments/required/', [RelpaymentpackagesstudentController::class, "aprovePaymetPackageStudent"])->name('payment_required_package');
-        //  Route::get('/payments/required/', [RelpaymentpackagesstudentController::class, "requiredPaymetPackageStudent"])->name('payment_required_package');
+        Route::post('/payments/cancel/{payment_id}', [PaymentController::class, "payment_cancel"])->name('payment_cancel');
+        Route::post('/payments/aprove/{payment_id}', [PaymentController::class, "payment_aprove"])->name('payment_aprove');
+
+        Route::post('/payments/required', [PaymentController::class, "paymenstRequest"])->name('paymentRequest');
+
 
         // payment end--------------------------------------------
 
@@ -173,6 +176,8 @@ Route::group(['middleware' => 'auth'], function () {
 
         // courses start-----------------------------------
         Route::get('/course', [CourseController::class, "index"])->name('course_index');
+        Route::post('/course/enroll', [CourseController::class, "course_enroll_me"])->name('course_enroll_me');
+
         Route::get('/course/create', [CourseController::class, "create"])->name('course_create');
         Route::post('/course/store', [CourseController::class, "store"])->name('course_store');
         Route::get('/course/update/{course_id}', [CourseController::class, "update"])->name('course_update');

@@ -4,16 +4,26 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Course;
+use Illuminate\Support\Facades\Hash;
 use App\Models\Carrer;
 use App\Models\Talk;
 use App\Models\Sponsor;
 use App\Models\Souvenir;
 use App\Models\User;
+use App\Http\Controllers\Controller;
+use App\Models\Package;
+use App\Providers\RouteServiceProvider;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class HomeWebController extends Controller
 {
+   
     public function index()
     {
+        
+
+
+
         $sponsors2=Sponsor::all()->where('status','=','2');
 
         $variables=[
@@ -127,10 +137,16 @@ class HomeWebController extends Controller
         $souvenir1=Souvenir::all()->where('status','=','2')->where('id','=','1');
         $souvenir2=Souvenir::all()->where('status','=','2')->where('id','=','2');
         $souvenir3=Souvenir::all()->where('status','=','2')->where('id','=','3');
+        $precio1= Package::all()->where('status','=','2')->where('id','=','1');
+        $precio2= Package::all()->where('status','=','2')->where('id','=','2');
+        $precio3= Package::all()->where('status','=','2')->where('id','=','3');
         $variables=[
             'souvenir1'=>$souvenir1,
             'souvenir2'=>$souvenir2,
             'souvenir3'=>$souvenir3,
+            'precio1'=>$precio1,
+            'precio2'=>$precio2,
+            'precio3'=>$precio3,
         ];
         return view('home_page.souvenir')->with($variables);
     }
@@ -169,5 +185,39 @@ class HomeWebController extends Controller
         ];
 
         return view('home_page.speaker')->with($variables);
+    }
+
+    public function createStudent(Request $request) {
+
+        $user =new User();
+        $user->name = $request->name;
+        $user->first_surname = $request->first_surname;
+        $user->second_surname = $request->second_surname;
+        $user->gender = $request->gender;
+        $user->role_id =$request->role_id;
+        $user->career = $request->career;
+        $user->quarter = $request->quarter;
+        $user->group = $request->group;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password) ;
+        $user->user_image = $request->user_image;
+        if ($request->hasFile('user_image')) {
+            $file = $request->file('user_image');
+            $destiantionPath = 'argon/img/user/';
+            $filename = time() . '-' . $file->getClientOriginalName();
+            $uploadSuccess = $request->file('user_image')->move($destiantionPath, $filename);
+            $user->user_image = $destiantionPath . $filename;
+        }
+
+        if ($user->save()) {
+
+            return redirect()->action('App\Http\Controllers\HomeController@index');
+        }
+        else
+        {
+            return  back()->withErrors('No se ha registrado el usuario...');
+
+        }
+
     }
 }

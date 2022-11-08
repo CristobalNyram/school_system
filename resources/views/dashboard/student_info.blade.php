@@ -3,8 +3,6 @@
         <div class="header-body">
             <!-- Card stats -->
             <div class="row">
-
-
                 <div class="col-xl-6 col-lg-6">
                     <div class="card card-stats mb-4 mb-xl-0">
                         <div class="card-body">
@@ -14,8 +12,8 @@
                                     <span class="h2 font-weight-bold mb-0">$</span>
                                 </div>
                                 <div class="col-auto">
-                                    <div class="icon icon-shape bg-info text-white rounded-circle shadow">
-                                        <i class="fas fa-dollar-sign"></i>
+                                    <div class="icon icon-shape bg-success text-white rounded-circle shadow">
+                                        <i class="fas fa-book"></i>
                                     </div>
                                 </div>
                             </div>
@@ -32,11 +30,11 @@
                             <div class="row">
                                 <div class="col">
                                     <h5 class="card-title text-uppercase text-muted mb-0">Curso al que estas inscrito</h5>
-                                    <span class="h2 font-weight-bold mb-0">$</span>
+                                    <span class="h2 font-weight-bold mb-0"> </span>
                                 </div>
                                 <div class="col-auto">
                                     <div class="icon icon-shape bg-info text-white rounded-circle shadow">
-                                        <i class="fas fa-dollar-sign"></i>
+                                        <i class="fas fa-book"></i>
                                     </div>
                                 </div>
                             </div>
@@ -48,13 +46,6 @@
                     </div>
                 </div>
             </div>
-
-
-
-
         </div>
     </div>
 </div>
-
-
-

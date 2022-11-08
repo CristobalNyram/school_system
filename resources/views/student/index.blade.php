@@ -3,7 +3,6 @@
 @section('content')
 @include('student.headers_cards')
 
-
     <div class="container-fluid mt--6">
         <div class="row d-flex mb-3 mr-5 justify-content-end">
             @if ( check_acces_to_this_permission(Auth::user()->role_id,26))
@@ -146,7 +145,8 @@
 
 
 
-<script>
+<script type="text/javascript">
+
 
 $(document).ready(function() {
     $('#table_users_all').DataTable( {
@@ -175,7 +175,7 @@ $(document).ready(function() {
 @push('js')
     {{-- <script src="{{ asset() }}/vendor/datatables.net/js/jquery.dataTables.min.js"></script> --}}
 
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script  src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 @if (session('eliminar') == 'ok')
    <script type="text/javascript">

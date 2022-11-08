@@ -29,7 +29,7 @@ class ProfileController extends Controller
             $variables=[
                 'menu'=>'',
                 'title_page'=>'Acceso denegado',
-             
+            
             ];
             return view('errors.notaccess')->with($variables);
 

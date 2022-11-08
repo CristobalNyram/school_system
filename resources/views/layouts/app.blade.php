@@ -13,6 +13,8 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
 
+        <!--DATABLE-->
+
 
         <!-- Extra details for Live View on GitHub Pages -->
 
@@ -22,6 +24,7 @@
         <!-- Argon CSS -->
         <link type="text/css" href="{{ asset('argon') }}/css/argon.css?v=1.0.0" rel="stylesheet">
         <link type="text/css" href="/assets/css/modificado.css" rel="stylesheet">
+
 
     </head>
     <body class="{{ $class ?? '' }}">

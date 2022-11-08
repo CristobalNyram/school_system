@@ -6,10 +6,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FreedoomDay</title>
+    <title>{{ config_name_system() }}</title>
     <link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilo_index.css">
     <link rel="stylesheet" href="{{ asset('assets/css/home') }}/barra.css">
-    <link rel="icon" href="{{ asset('assets/img/home/img') }}/logo.png">
+    <link href="{{ asset('argon/brand') }}/favicon.png" rel="icon" type="image/png">
     <link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilo_index_R.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
@@ -17,17 +17,17 @@
     <nav class="menu">
             <section class="menu__container">
                 <ul class="menu__links">
-                
+
                     <li clas="menu_item">
                     <a href="{{ route('home_page_index') }}" class="logo" id="tope"><img src="{{ asset('assets/img/home/img') }}/logo.png" width="100px"></a>
                     </li>
 
                     <li class="menu_item">
                         <section class="containerR">
-                            
+
                             <div class="charts">
-                             
-                    
+
+
                                 <div class="chart">
                                     <!-- un circulo inicial de fondo -->
                                     <div class="circle center-abs"></div>
@@ -67,62 +67,62 @@
                             </div>
                         </section>
                     </li>
-                    
+
                     <li class="menu__item">
                         <a href="{{ route('really_index') }}" class="menu__link">Really</a>
                     </li>
                     <li class="menu__item">
                         <a href="{{ route('timeline_index') }}" class="menu__link">Horario</a>
                     </li>
-        
+
                     <li class="menu__item">
-                        
+
                              <a href="{{ route('home_page_sponsor') }}" class="menu__link">Patrocinadores</a>
-                       
+
                     </li>
-    
+
                     <li class="menu__item">
                         <a href="{{ route('home_page_course') }}" class="menu__link">Talleres</a>
                     </li>
-        
+
                     <li class="menu__item">
                         <a href="{{ route('home_page_conference') }}" class="menu__link">Conferencias</a>
                     </li>
-    
+
                     <li class="menu__item">
                         <a href="{{ route('home_page_souvenir') }}" class="menu__link">Souvenirs</a>
                     </li>
-        
+
                     <li class="menu__item">
-                        
-    
+
+
                             <a href="{{ route('home_page_login') }}" class="menu__link">Inicio<span style="color:black">_</span>de<span style="color:black">_</span>Sesión</a>
-                        
+
                     </li>
-                    
+
                 </ul>
-    
+
                 <div class="menu__hamburguer">
                     <img src="{{ asset('assets/img/home/img') }}/menu.svg" class="menu__img">
                 </div>
-            </section> 
+            </section>
         </nav>
 
         <script src="{{ asset('assets/js/home') }}/reloj.js"></script>
 
 
         <script src="{{ asset('assets/js/home') }}/app.js"></script>
-            
-            
+
+
         </header>
         <div class="fondo">
             <div class="textos">
-    
+
             <img class=" ha animate__animated animate__pulse animate__delay-2s animate__infinite"  src="{{ asset('assets/img/home/img') }}/logo.png">
             </div>
-    
-           
-    
+
+
+
         </div>
         <div class="shib">
             <div class="barra">
@@ -145,7 +145,7 @@
             </p>
             <img class="logo22" src="{{ asset('assets/img/home/img') }}/logo.png">
         </div>
-    
+
         <div id="o" class="pro">
             <h1>Objetivo</h1><br>
             <p>Incentivar el interés por la ciencia y la tecnologia en los alumnos de la
@@ -154,8 +154,8 @@
                 actuales ademas de prepararlos con herramientas que sean de utilidad
                 para su incorporación  en el ambito laboral.</p>
         </div>
-    
-    
+
+
         <div id="p" class="ob">
             <h1>Proposito</h1><br>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus nesciunt ut veniam eos, doloremque nam
@@ -171,7 +171,7 @@
         <h3></h3>
 
     </div>
-    
+
 
     <div class="reze" style="background-image: url(assets/img/home/img/galeria/02.png);">
         <h3></h3>
@@ -227,7 +227,7 @@
 <script src="{{ asset('assets/js/home') }}/galeria.js"></script>
 <section id="patro">
 
-        
+
     <h2>Patrocinios</h2>
 @foreach($sponsors2 as $sponsor)
 <ul>
@@ -269,7 +269,8 @@
 
 <footer>
         <div class="container">
-        <p>&copy; Copyright Software-Freedom Day 2022<br><br>Todos los derechos reservados. <br>Deasarrollado por Coders TI
+
+        <p>&copy; Copyright Software-Freedom Day 2022<br><br>Todos los derechos reservados. <br>Deasarrollado por {{ config_author_system() }}
         </p>
         <center>
             <a href="https://www.facebook.com/Freedom-Day-TI-Uttecam-477721659417275">

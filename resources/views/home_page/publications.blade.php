@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FreedoomDay</title>
+    <title>{{ config_name_system() }}</title>
     <link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilo_publicaciones.css">
-   
+    <link href="{{ asset('argon/brand') }}/favicon.png" rel="icon" type="image/png">
+
 </head>
 
 <body>
@@ -25,10 +26,10 @@
                         </li>
                         <li class="menu_item">
                             <section class="containerR">
-                                
+
                                 <div class="charts">
-                                 
-                        
+
+
                                     <div class="chart">
                                         <!-- un circulo inicial de fondo -->
                                         <div class="circle center-abs"></div>
@@ -71,46 +72,46 @@
                         <li class="menu__item">
                             <a href="{{ route('really_index') }}" class="menu__link">Really</a>
                         </li>
-                        
-            
+
+
                         <li class="menu__item">
                         <a href="{{ route('timeline_index') }}" class="menu__link">Horario</a>
                     </li>
-        
+
                     <li class="menu__item">
-                        
+
                              <a href="{{ route('home_page_sponsor') }}" class="menu__link">Patrocinadores</a>
-                       
+
                     </li>
-        
+
                         <li class="menu__item">
                             <a href="{{ route('home_page_course') }}" class="menu__link">Talleres</a>
                         </li>
-            
+
                         <li class="menu__item">
                             <a href="{{ route('home_page_conference') }}" class="menu__link">Conferencias</a>
                         </li>
-        
+
                         <li class="menu__item">
                             <a href="{{ route('home_page_souvenir') }}" class="menu__link">Souvenirs</a>
                         </li>
-            
+
                         <li class="menu__item">
-                           
-        
+
+
                                 <a href="{{ route('home_page_login') }}" class="menu__link">Inicio<span style="color:#000 ;">_</span>de<span style="color:#000 ;">_</span>Sesión</a>
-                            
+
                         </li>
-                        
+
                     </ul>
-        
+
                     <div class="menu__hamburguer">
                         <img src="/menu.svg" class="menu__img">
                     </div>
-                </section> 
+                </section>
             </nav>
-                
-                
+
+
             </header>
 
     <div class="container__cards">
@@ -124,7 +125,7 @@
             </div>
             <div class="texto">
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui sunt eius dolore pariatur. Error, provident et similique sunt voluptate odit eos facere expedita, culpa at officia magnam quia vel eius!</p>
-            
+
 
             </div><hr>
             <div class="footer__card">
@@ -142,7 +143,7 @@
             </div>
             <div class="texto">
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui sunt eius dolore pariatur. Error, provident et similique sunt voluptate odit eos facere expedita, culpa at officia magnam quia vel eius!</p>
-            
+
 
             </div>
             <hr>
@@ -159,10 +160,10 @@
                 <h2>Sabemos cómo aumentar los beneficios</h2>
 
             </div>
-            
+
             <div class="texto">
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui sunt eius dolore pariatur. Error, provident et similique sunt voluptate odit eos facere expedita, culpa at officia magnam quia vel eius!</p>
-            
+
 
             </div><hr>
             <div class="footer__card">
