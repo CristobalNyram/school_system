@@ -11,6 +11,7 @@ use App\Models\Sponsor;
 use App\Models\Souvenir;
 use App\Models\User;
 use App\Http\Controllers\Controller;
+use App\Models\Package;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -136,10 +137,16 @@ class HomeWebController extends Controller
         $souvenir1=Souvenir::all()->where('status','=','2')->where('id','=','1');
         $souvenir2=Souvenir::all()->where('status','=','2')->where('id','=','2');
         $souvenir3=Souvenir::all()->where('status','=','2')->where('id','=','3');
+        $precio1= Package::all()->where('status','=','2')->where('id','=','1');
+        $precio2= Package::all()->where('status','=','2')->where('id','=','2');
+        $precio3= Package::all()->where('status','=','2')->where('id','=','3');
         $variables=[
             'souvenir1'=>$souvenir1,
             'souvenir2'=>$souvenir2,
             'souvenir3'=>$souvenir3,
+            'precio1'=>$precio1,
+            'precio2'=>$precio2,
+            'precio3'=>$precio3,
         ];
         return view('home_page.souvenir')->with($variables);
     }

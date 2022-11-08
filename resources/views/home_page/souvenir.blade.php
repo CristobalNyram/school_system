@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -15,163 +14,170 @@
 </head>
 <header>
     <nav class="menu">
-            <section class="menu__container">
-                <ul class="menu__links">
+        <section class="menu__container">
+            <ul class="menu__links">
 
-                    <li clas="menu_item">
+                <li clas="menu_item">
                     <a href="{{ route('home_page_index') }}" class="logo" id="tope"><img src="{{ asset('assets/img/home/img') }}/logo.png" width="100px"></a>
-                    </li>
+                </li>
 
-                    <li class="menu_item">
-                        <section class="containerR">
+                <li class="menu_item">
+                    <section class="containerR">
 
-                            <div class="charts">
+                        <div class="charts">
 
 
-                                <div class="chart">
-                                    <!-- un circulo inicial de fondo -->
-                                    <div class="circle center-abs"></div>
-                                    <!-- area para SVG -->
-                                    <svg class="center-abs" width="150" height="150">
-                                        <!-- un segundo circulo en SVG con su ubicacion en coordenadas x,y y el radio de expansion -->
-                                        <circle class="outer" id="circulo1" cx="75" cy="75" r="30" />
-                                    </svg>
-                                    <!-- etiqueta para el contador, en este caso el dia -->
-                                    <span class="text center-abs" id="days"></span>
-                                    <h3 id="textcolor1">Dias</h3>
-                                </div>
-                                <div class="chart">
-                                    <div class="circle center-abs"></div>
-                                    <svg class="center-abs" width="150" height="150">
-                                        <circle class="outer" id="circulo2" cx="75" cy="75" r="30" />
-                                    </svg>
-                                    <span class="text center-abs" id="hours"></span>
-                                    <h3 id="textcolor2">Horas</h3>
-                                </div>
-                                <div class="chart">
-                                    <div class="circle center-abs"></div>
-                                    <svg class="center-abs" width="150" height="150">
-                                        <circle class="outer"  id="circulo3" cx="75" cy="75" r="30" />
-                                    </svg>
-                                    <span class="text center-abs" id="minutes"></span>
-                                    <h3 id="textcolor3">Minutos</h3>
-                                </div>
-                                <div class="chart">
-                                    <div class="circle center-abs"></div>
-                                    <svg class="center-abs" width="150" height="150">
-                                        <circle class="outer" id="circulo4"cx="75" cy="75" r="30" />
-                                    </svg>
-                                    <span class="text center-abs" id="seconds"></span>
-                                    <h3 id="textcolor4">Segundos</h3>
-                                </div>
+                            <div class="chart">
+                                <!-- un circulo inicial de fondo -->
+                                <div class="circle center-abs"></div>
+                                <!-- area para SVG -->
+                                <svg class="center-abs" width="150" height="150">
+                                    <!-- un segundo circulo en SVG con su ubicacion en coordenadas x,y y el radio de expansion -->
+                                    <circle class="outer" id="circulo1" cx="75" cy="75" r="30" />
+                                </svg>
+                                <!-- etiqueta para el contador, en este caso el dia -->
+                                <span class="text center-abs" id="days"></span>
+                                <h3 id="textcolor1">Dias</h3>
                             </div>
-                        </section>
-                    </li>
+                            <div class="chart">
+                                <div class="circle center-abs"></div>
+                                <svg class="center-abs" width="150" height="150">
+                                    <circle class="outer" id="circulo2" cx="75" cy="75" r="30" />
+                                </svg>
+                                <span class="text center-abs" id="hours"></span>
+                                <h3 id="textcolor2">Horas</h3>
+                            </div>
+                            <div class="chart">
+                                <div class="circle center-abs"></div>
+                                <svg class="center-abs" width="150" height="150">
+                                    <circle class="outer" id="circulo3" cx="75" cy="75" r="30" />
+                                </svg>
+                                <span class="text center-abs" id="minutes"></span>
+                                <h3 id="textcolor3">Minutos</h3>
+                            </div>
+                            <div class="chart">
+                                <div class="circle center-abs"></div>
+                                <svg class="center-abs" width="150" height="150">
+                                    <circle class="outer" id="circulo4" cx="75" cy="75" r="30" />
+                                </svg>
+                                <span class="text center-abs" id="seconds"></span>
+                                <h3 id="textcolor4">Segundos</h3>
+                            </div>
+                        </div>
+                    </section>
+                </li>
 
-                    <li class="menu__item">
-                        <a href="{{ route('really_index') }}" class="menu__link">Really</a>
-                    </li>
-                    <li class="menu__item">
-                        <a href="{{ route('timeline_index') }}" class="menu__link">Horario</a>
-                    </li>
+                <li class="menu__item">
+                    <a href="{{ route('really_index') }}" class="menu__link">Really</a>
+                </li>
+                <li class="menu__item">
+                    <a href="{{ route('timeline_index') }}" class="menu__link">Horario</a>
+                </li>
 
-                    <li class="menu__item">
+                <li class="menu__item">
 
-                             <a href="{{ route('home_page_sponsor') }}" class="menu__link">Patrocinadores</a>
+                    <a href="{{ route('home_page_sponsor') }}" class="menu__link">Patrocinadores</a>
 
-                    </li>
+                </li>
 
-                    <li class="menu__item">
-                        <a href="{{ route('home_page_course') }}" class="menu__link">Talleres</a>
-                    </li>
+                <li class="menu__item">
+                    <a href="{{ route('home_page_course') }}" class="menu__link">Talleres</a>
+                </li>
 
-                    <li class="menu__item">
-                        <a href="{{ route('home_page_conference') }}" class="menu__link">Conferencias</a>
-                    </li>
+                <li class="menu__item">
+                    <a href="{{ route('home_page_conference') }}" class="menu__link">Conferencias</a>
+                </li>
 
-                    <li class="menu__item">
-                        <a href="{{ route('home_page_souvenir') }}" class="menu__link">Souvenirs</a>
-                    </li>
+                <li class="menu__item">
+                    <a href="{{ route('home_page_souvenir') }}" class="menu__link">Souvenirs</a>
+                </li>
 
-                    <li class="menu__item">
-
-
-                            <a href="{{ route('home_page_login') }}" class="menu__link">Inicio<span style="color:black">_</span>de<span style="color:black">_</span>Sesión</a>
-
-                    </li>
-
-                </ul>
-
-                <div class="menu__hamburguer">
-                    <img src="{{ asset('assets/img/home/img') }}/menu.svg" class="menu__img">
-                </div>
-            </section>
-        </nav>
-
-        <script src="{{ asset('assets/js/home') }}/reloj.js"></script>
+                <li class="menu__item">
 
 
-        <script src="{{ asset('assets/js/home') }}/app.js"></script>
+                    <a href="{{ route('home_page_login') }}" class="menu__link">Inicio<span style="color:black">_</span>de<span style="color:black">_</span>Sesión</a>
+
+                </li>
+
+            </ul>
+
+            <div class="menu__hamburguer">
+                <img src="{{ asset('assets/img/home/img') }}/menu.svg" class="menu__img">
+            </div>
+        </section>
+    </nav>
+
+    <script src="{{ asset('assets/js/home') }}/reloj.js"></script>
 
 
-        </header>
+    <script src="{{ asset('assets/js/home') }}/app.js"></script>
+
+
+</header>
 
 <div class="pos1">
-    @foreach($souvenir1 as $souvenir)
+    @foreach($souvenir3 as $souvenir)
+    @foreach($precio3 as $packages)
     <div class="card">
         <div class="circleS" style="--clr:#bdc3c7">
             <img id="img" src="{{asset('assets/img/home/img')}}/cup.png" class="logo">
         </div>
         <div class="content">
-            <p><b>{{$souvenir->name}}</b><br>Incluye:</p>
-                <li class="li">Entrada</li>
-                <li class="li">Libreta</li>
-                <li class="li">Sticker</li>
+            <p><b>{{$packages->name}}</b><br>Incluye:</p>
+            <li class="li">Entrada</li>
+            <li class="li">Libreta</li>
+            <li class="li">Sticker</li>
             <br>
-            <p><b>Precio: ${{$souvenir->price}}</b></p>
+            <!-- <p><b>Precio: ${{$packages -> price}}</b></p> -->
+            <p><b>Precio: $300</b></p>
             <!-- <a href="{{ route('home_page_create') }}">Comprar</a> -->
         </div>
         <img id="bs" src="{{asset('assets/img/home/img')}}/cup.png" class="product_img">
- </div>
- @endforeach
+    </div>
+    @endforeach
+    @endforeach
 
 
     @foreach($souvenir2 as $souvenir)
+    @foreach($precio2 as $packages)
     <div class="card">
         <div class="circleS" style="--clr:#bdc3c7">
             <img id="taza" src="{{asset($souvenir->url_img )}}" class="logo">
         </div>
         <div class="content">
-            <p><b>{{$souvenir->name}}</b><br></p>
-                <li class="li">Entrada</li>
-                <li class="li">Libreta</li>
-                <li class="li">Taza personalizada</li>
-                <br>
-            <p><b>Precio: ${{$souvenir->price}}</b></p>
+            <p><b>{{$packages->name}}</b><br></p>
+            <li class="li">Entrada</li>
+            <li class="li">Libreta</li>
+            <li class="li">Taza personalizada</li>
+            <br>
+            <p><b>Precio: ${{$packages->price}}</b></p>
             <!-- <a href="{{ route('home_page_create') }}">Comprar</a> -->
         </div>
         <img id="xa" src="{{asset($souvenir->url_img )}}" class="product_img">
     </div>
     @endforeach
+    @endforeach
 
-    @foreach($souvenir3 as $souvenir)
+    @foreach($souvenir1 as $souvenir)
+    @foreach($precio1 as $packages)
     <div class="card">
         <div class="circleS" style="--clr:#bdc3c7">
             <img id="pl" src="{{asset($souvenir->url_img )}}" class="logo">
         </div>
         <div class="content">
-            <p><b>{{$souvenir->name}}</b><br>Incluye:</p>
-                <li class="li">Entrada</li>
-                <li class="li">Libreta</li>
-                <li class="li">Playera</li>
-                <li class="li">Stikers</li>
-                <br>
-            <p><b>Precio: ${{$souvenir->price}}</b></p>
+            <p><b>{{$packages->name}}</b><br>Incluye:</p>
+            <li class="li">Entrada</li>
+            <li class="li">Libreta</li>
+            <li class="li">Playera</li>
+            <li class="li">Stikers</li>
+            <br>
+            <p><b>Precio: ${{$packages->price}}</b></p>
             <!-- <a href="{{ route('home_page_create') }}">Comprar</a> -->
         </div>
         <img id="pla" src="{{asset($souvenir->url_img )}}" class="product_img">
     </div>
-@endforeach
+    @endforeach
+    @endforeach
 
 
 
@@ -181,21 +187,21 @@
 
 <footer>
     <div class="container">
-    <p>&copy; Copyright Software-Freedom Day 2022<br><br>Todos los derechos reservados. <br>Deasarrollado por {{ config_author_system() }}
-    </p>
-    <center>
-        <a href="https://www.facebook.com/Freedom-Day-TI-Uttecam-477721659417275">
-            <span class="icono"></span>
-            <ion-icon class="tam" name="logo-facebook"></ion-icon>
-            <span class="texto"> </span>
-        </a>
+        <p>&copy; Copyright Software-Freedom Day 2022<br><br>Todos los derechos reservados. <br>Deasarrollado por {{ config_author_system() }}
+        </p>
+        <center>
+            <a href="https://www.facebook.com/Freedom-Day-TI-Uttecam-477721659417275">
+                <span class="icono"></span>
+                <ion-icon class="tam" name="logo-facebook"></ion-icon>
+                <span class="texto"> </span>
+            </a>
 
-        <a class="icon" href="https://goo.gl/maps/BWKybpucUgH8QXzf6">
-            <span class="icono"></span>
-            <ion-icon name="location-outline"></ion-icon>
-            <span class="texto"> </span>
-        </a>
-    </center>
+            <a class="icon" href="https://goo.gl/maps/BWKybpucUgH8QXzf6">
+                <span class="icono"></span>
+                <ion-icon name="location-outline"></ion-icon>
+                <span class="texto"> </span>
+            </a>
+        </center>
     </div>
 </footer>
 
@@ -204,4 +210,3 @@
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <script src="https://unpkg.com/scrollreveal"></script>
 <script src="{{ asset('assets/js/home') }}/menu.js"></script>
-
