@@ -3,6 +3,8 @@
 @section('content')
 @include('student.headers_cards')
 
+<link href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+
 
     <div class="container-fluid mt--6">
         <div class="row d-flex mb-3 mr-5 justify-content-end">
@@ -148,6 +150,7 @@
 
 <script type="text/javascript">
 
+
 $(document).ready(function() {
     $('#table_users_all').DataTable( {
         "language": {
@@ -174,6 +177,7 @@ $(document).ready(function() {
 
 @push('js')
     {{-- <script src="{{ asset() }}/vendor/datatables.net/js/jquery.dataTables.min.js"></script> --}}
+   {{--<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>--}} 
 
     <script  src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
