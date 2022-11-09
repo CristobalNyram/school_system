@@ -310,6 +310,7 @@
             <ion-icon class="tam" name="logo-facebook"></ion-icon>
             <span class="texto"> </span>
         </a>
+
         <a class="icon" href="https://goo.gl/maps/BWKybpucUgH8QXzf6">
             <span class="icono"></span>
             <ion-icon name="location-outline"></ion-icon>
