@@ -174,7 +174,7 @@
             <p><b>Precio: ${{$packages->price}}</b></p>
             <!-- <a href="{{ route('home_page_create') }}">Comprar</a> -->
         </div>
-        <img id="pla" src="{{asset($souvenir->url_img )}}" class="product_img">
+        <img id="xa" src="{{asset($souvenir->url_img )}}" class="product_img">
     </div>
     @endforeach
     @endforeach
