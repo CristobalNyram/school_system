@@ -300,17 +300,6 @@
 
 
 
-<<<<<<< HEAD
-        <footer>
-            <div class="container"></div>
-            <p>&copy; Copyright Software-Freedom Day 2022<br><br>Todos los derechos reservados. <br>Deasarrollado por Coders TI</p>
-            <center>
-                <a href="https://www.facebook.com/Freedom-Day-TI-Uttecam-477721659417275">
-                    <span class="icono"></span>
-                    <ion-icon class="tam" name="logo-facebook"></ion-icon>
-                    <span class="texto"> </span>
-                </a>
-=======
 <footer>
     <div class="container"></div>
     <p>&copy; Copyright Software-Freedom Day 2022<br><br>Todos los derechos reservados. <br>Deasarrollado por {{ config_author_system() }}</p>
@@ -320,7 +309,6 @@
             <ion-icon class="tam" name="logo-facebook"></ion-icon>
             <span class="texto"> </span>
         </a>
->>>>>>> ea11ff85c591e7fc710bbc3fc4708301009e0a96
 
         <a class="icon" href="https://goo.gl/maps/BWKybpucUgH8QXzf6">
             <span class="icono"></span>

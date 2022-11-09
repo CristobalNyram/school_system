@@ -158,8 +158,8 @@
 
         <div id="p" class="ob">
             <h1>Proposito</h1><br>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus nesciunt ut veniam eos, doloremque nam
-                totam aperiam modi quidem est laborum, vero beatae repellendus quam. Nisi earum assumenda rem odio.</p>
+            <p>Integrar y promover nuevos aprendizajes para todos los participantes que quieran 
+             actualizarse en los nuevos conocimientos y conceptos tecnológicos</p>
         </div>
         <!--Galeria-->
 <div id="g" class="gal">
