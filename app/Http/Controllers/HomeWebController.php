@@ -11,6 +11,7 @@ use App\Models\Sponsor;
 use App\Models\Souvenir;
 use App\Models\User;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\RegisterRequest;
 use App\Models\Package;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -53,28 +54,11 @@ class HomeWebController extends Controller
 
     public function course()
     {
-        $courses1=Course::all()->where('status','=','2')->where('id', '=', '1');
-        $courses2=Course::all()->where('status','=','2')->where('id', '=', '2');
-        $courses3=Course::all()->where('status','=','2')->where('id', '=', '3');
-        $courses4=Course::all()->where('status','=','2')->where('id', '=', '4');
-        $courses5=Course::all()->where('status','=','2')->where('id', '=', '5');
-        $courses6=Course::all()->where('status','=','2')->where('id', '=', '6');
-        $courses7=Course::all()->where('status','=','2')->where('id', '=', '7');
-        $courses8=Course::all()->where('status','=','2')->where('id', '=', '8');
-        $courses9=Course::all()->where('status','=','2')->where('id', '=', '9');
-        $courses10=Course::all()->where('status','=','2')->where('id', '=', '10');
+        $courses1=Course::all()->where('status','=','2');
+       
 
         $variables=[
             'courses1'=>$courses1,
-            'courses2'=>$courses2,
-            'courses3'=>$courses3,
-            'courses4'=>$courses4,
-            'courses5'=>$courses5,
-            'courses6'=>$courses6,
-            'courses7'=>$courses7,
-            'courses8'=>$courses8,
-            'courses9'=>$courses9,
-            'courses10'=>$courses10,
         ];
         return view('home_page.course')->with($variables);
     }
@@ -99,14 +83,25 @@ class HomeWebController extends Controller
 
     public function conference()
     {
+        $conference=Talk::all()->where('status','=','2');
 
-        return view('home_page.conference');
+        $variables=[
+            'conference'=>$conference,
+        ];
+
+        return view('home_page.conference')->with($variables);
     }
 
-    public function ConferenceInterface()
-   {
+    public function ConferenceInterface($talk_id)
+    {
 
-        return view('home_page.conference_interface');
+    $current_conference=Talk::findOrFail($talk_id);
+
+    $variables=[
+        'current_conference'=>$current_conference,
+    ];
+
+        return view('home_page.conference_interface')->with($variables);
 
     }
 
@@ -187,7 +182,7 @@ class HomeWebController extends Controller
         return view('home_page.speaker')->with($variables);
     }
 
-    public function createStudent(Request $request) {
+    public function createStudent(RegisterRequest $request) {
 
         $user =new User();
         $user->name = $request->name;

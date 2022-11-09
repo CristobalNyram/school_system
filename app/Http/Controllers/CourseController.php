@@ -180,7 +180,7 @@ class CourseController extends Controller
 
         if($request -> hasFile ('url_img')){
             $file = $request ->file('url_img');
-            $destiantionPath = 'argon/img/course/';
+            $destiantionPath = 'argon/course/';
             $filename = time() .'-'. $file->getClientOriginalName();
             $uploadSuccess = $request->file('url_img')->move($destiantionPath, $filename);
             $course->url_img = $destiantionPath . $filename;
