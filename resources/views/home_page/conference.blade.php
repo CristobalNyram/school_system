@@ -122,10 +122,10 @@
         
             <div class="tarjeta-contenedor">
 
-                <a href="{{ route('conference_interface') }}">
+                <a href="{{ route('conference_interface', $talk) }}">
                     <img src="{{asset($talk->url_img )}}">
                 </a>
-                <a href="{{ route('conference_interface') }}"><h3>{{$talk->name}}</h3></a>
+                <a href="{{ route('conference_interface', $talk) }}"><h3>{{$talk->name}}</h3></a>
                 <hr color="#ff8000">
                 <p>{{$talk->description}}</p>
             </div>
