@@ -119,7 +119,7 @@
     </div>
 
     <div class="division">
-        <img src="/img/holocaust_600x400.jpg" alt="">
+        <img src="{{asset($current_conference->url_img )}}" alt="">
         <div class="pri-informacion">
             <p><span class="letras">Nombre: </span>Justus Oehler </p>
             <p><span class="letras">Edad: </span>45 </p>
@@ -132,12 +132,10 @@
 
 
     <div class="informacion">
-        <h3>Primer coferencia</h3>
+        <h3>{{$current_conference->name}}</h3>
         <hr color="#0f8000">
         <div class="info">
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid quo veritatis impedit
-                qui laudantium eum corrupti asperiores quasi? Necessitatibus, sapiente exercitationem.
-                Voluptatem voluptatibus repudiandae reprehenderit provident consequatur! Eius, architecto iusto.</p>
+            <p>{{$current_conference->description}}</p>
         </div>
         <div class="iconos">
             <a href=""><ion-icon name="logo-facebook" style="box-shadow: red -2px 0;"></ion-icon></a>
@@ -152,6 +150,7 @@
 
 <footer>
     <div class="container">
+
     <p>&copy; Copyright Software-Freedom Day 2022<br><br>Todos los derechos reservados. <br>Deasarrollado por {{ config_author_system() }}
     </p>
     <center>

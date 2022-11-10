@@ -812,9 +812,10 @@ p{
     }
 
 }
-@media(max-width:1454px){
+@media(max-width:1500px){
     .menu__link{
         padding: 0 20px;
+        font-size: 14px;
         
     }
 }
@@ -862,15 +863,13 @@ p{
 
 
 
-@media (max-width:800px){
+@media (max-width:1310px){
     .containerR {
         max-width: 900px;
         margin: 0;
         margin-left: 100px;
     }
-    .container{
-        margin: 0 0 -50px 50px;
-    }
+    
     .charts{
         margin-top: 50px;
         left: 0%;

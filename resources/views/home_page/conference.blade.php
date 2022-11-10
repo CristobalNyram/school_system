@@ -117,87 +117,29 @@
     </header>
 
         <div class="tarjetas">
+        @foreach($conference as $talk)
         <article class="tarjeta">
+        
             <div class="tarjeta-contenedor">
 
-                <a href="{{ route('conference_interface') }}"><img src="{{ asset('assets/img/home/img') }}/img-3.jpg"></a>
-                <a href="{{ route('conference_interface') }}"><h3>Primera conferencia</h3></a>
+                <a href="{{ route('conference_interface', $talk) }}">
+                    <img src="{{asset($talk->url_img )}}">
+                </a>
+                <a href="{{ route('conference_interface', $talk) }}"><h3>{{$talk->name}}</h3></a>
                 <hr color="#ff8000">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Nostrum quidem doloribus nulla, commodi
-                    esse dicta dolore est voluptas vitae, aspernatur dignissimos
-                    ducimus? Dolore optio id error eligendi hic sed nam!</p>
+                <p>{{$talk->description}}</p>
             </div>
+        
         </article>
-
-        <article class="tarjeta">
-            <div class="tarjeta-contenedor">
-            <a href="#"><img src="{{ asset('assets/img/home/img') }}/img-3.jpg"></a>
-                <a href="#"><h3>Primera conferencia</h3></a>
-                <hr color="#ff8000">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Nostrum quidem doloribus nulla, commodi
-                    esse dicta dolore est voluptas vitae, aspernatur dignissimos
-                    ducimus? Dolore optio id error eligendi hic sed nam!</p>
-            </div>
-        </article>
-
-        <article class="tarjeta">
-            <div class="tarjeta-contenedor">
-            <a href="#"><img src="{{ asset('assets/img/home/img') }}/img-3.jpg"></a>
-                <a href="#"><h3>Primera conferencia</h3></a>
-                <hr color="#ff8000">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Nostrum quidem doloribus nulla, commodi
-                    esse dicta dolore est voluptas vitae, aspernatur dignissimos
-                    ducimus? Dolore optio id error eligendi hic sed nam!</p>
-            </div>
-        </article>
+        @endforeach
+ 
     </div>
 
 
-    <div class="tarjetas">
 
-        <article class="tarjeta">
-            <div class="tarjeta-contenedor">
-            <a href="#"><img src="{{ asset('assets/img/home/img') }}/img-3.jpg"></a>
-                <a href="#"><h3>Primera conferencia</h3></a>
-                <hr color="#ff8000">
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                        Nostrum quidem doloribus nulla, commodi
-                        esse dicta dolore est voluptas vitae, aspernatur dignissimos
-                        ducimus? Dolore optio id error eligendi hic sed nam!</p>
-            </div>
-        </article>
-
-        <article class="tarjeta">
-            <div class="tarjeta-contenedor">
-            <a href="#"><img src="{{ asset('assets/img/home/img') }}/img-3.jpg"></a>
-                <a href="#"><h3>Primera conferencia</h3></a>
-                <hr color="#ff8000">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Nostrum quidem doloribus nulla, commodi
-                    esse dicta dolore est voluptas vitae, aspernatur dignissimos
-                    ducimus? Dolore optio id error eligendi hic sed nam!
-                </p>
-            </div>
-        </article>
-
-        <article class="tarjeta">
-            <div class="tarjeta-contenedor">
-            <a href="#"><img src="{{ asset('assets/img/home/img') }}/img-3.jpg"></a>
-                <a href="#"><h3>Primera conferencia</h3></a>
-                <hr color="#ff8000">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Nostrum quidem doloribus nulla, commodi
-                    esse dicta dolore est voluptas vitae, aspernatur dignissimos
-                    ducimus? Dolore optio id error eligendi hic sed nam!</p>
-            </div>
-        </article>
-
-    </div>
 <footer>
     <div class="container">
+
     <p>&copy; Copyright Software-Freedom Day 2022<br><br>Todos los derechos reservados. <br>Deasarrollado por {{ config_author_system() }}
     </p>
     <center>

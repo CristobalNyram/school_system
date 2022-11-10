@@ -258,6 +258,7 @@
 
     <footer>
         <div class="container">
+
         <p>&copy; Copyright Software-Freedom Day 2022<br><br>Todos los derechos reservados. <br>Deasarrollado por {{ config_author_system() }}
         </p>
         <center>

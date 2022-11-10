@@ -174,7 +174,7 @@
             <p><b>Precio: ${{$packages->price}}</b></p>
             <!-- <a href="{{ route('home_page_create') }}">Comprar</a> -->
         </div>
-        <img id="pla" src="{{asset($souvenir->url_img )}}" class="product_img">
+        <img id="xa" src="{{asset($souvenir->url_img )}}" class="product_img">
     </div>
     @endforeach
     @endforeach
@@ -187,6 +187,7 @@
 
 <footer>
     <div class="container">
+
         <p>&copy; Copyright Software-Freedom Day 2022<br><br>Todos los derechos reservados. <br>Deasarrollado por {{ config_author_system() }}
         </p>
         <center>
@@ -195,6 +196,7 @@
                 <ion-icon class="tam" name="logo-facebook"></ion-icon>
                 <span class="texto"> </span>
             </a>
+
 
             <a class="icon" href="https://goo.gl/maps/BWKybpucUgH8QXzf6">
                 <span class="icono"></span>

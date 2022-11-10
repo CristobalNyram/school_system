@@ -131,12 +131,14 @@
         </div>
         <div class="cuadros">
             <div class="espacio es1"> <ion-icon class="icono" name="golf-outline"></ion-icon> <p>Registro 8:00 am – 8:30 am </p> </div>
-            <div class="espacio es2"> <ion-icon class="icono" name="ribbon-outline"></ion-icon> <p>4ta. intro a PBX  8:30 am – 9:10 am  </p> </div>
-            <div class="espacio es3"> <ion-icon class="icono" name="person-outline"></ion-icon> <p>5ta (realidad aumentada virtual)  9:10 am – 9:50 am </p></div>
-            <div class="espacio es4"> <ion-icon class="icono" name="people-outline"></ion-icon> <p> Coffe Breake 9:50 am – 10:20 am
+
+            <div class="espacio es2"> <ion-icon class="icono" name="ribbon-outline"></ion-icon> <p>4ta Conferencia intro a PBX  8:30 am – 9:10 am  </p> </div>
+            <div class="espacio es3"> <ion-icon class="icono" name="person-outline"></ion-icon> <p>5ta Conferencia (realidad aumentada virtual)  9:10 am – 9:50 am </p></div>
+            <div class="espacio es4"> <ion-icon class="icono" name="people-outline"></ion-icon> <p> Coffe Breake 9:50 am – 10:20 am 
+
                 </p></div>
-            <div class="espacio es5"> <ion-icon class="icono" name="cafe-outline"></ion-icon> <p>6ta. Hare 28  10:20 am – 10:50 am</p></div>
-            <div class="espacio es6"> <ion-icon class="icono" name="person-outline"></ion-icon>  <p>7ta. Inteligencia Artificial 11:00 am – 11:40 am </p> </div>
+            <div class="espacio es5"> <ion-icon class="icono" name="cafe-outline"></ion-icon> <p>6ta Conferencia Hare 28  10:20 am – 10:50 am</p></div>
+            <div class="espacio es6"> <ion-icon class="icono" name="person-outline"></ion-icon>  <p>7ta Conferencia Inteligencia Artificial 11:00 am – 11:40 am </p> </div>
             <div class="espacio es7"> <ion-icon class="icono" name="people-outline"></ion-icon><p> Torneo de videojuegos 12:00 pm – 13:00 pm</p> </div>
             <div class="espacio es8"> <ion-icon class="icono" name="people-outline"></ion-icon> <p> Comida 13:00 pm – 14:00pm</p></div>
             <div class="espacio es9"> <ion-icon class="icono" name="fast-food-outline"></ion-icon><p>Talleres  14:00 pm – 17:00 pm  </p></div>

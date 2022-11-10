@@ -24,8 +24,11 @@ body{
     margin-top: 2%;
 }
 
-.inf .img{
+.inf .imge{
+    width: 100%;
+    height: 100%;
     margin: 0 auto;
+
 }
 .inf .contenedor_img{
     margin: 50px auto;

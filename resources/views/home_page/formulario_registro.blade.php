@@ -44,42 +44,42 @@
 
                         <div class="charts">
 
-                            <div class="chart">
-                                <!-- un circulo inicial de fondo -->
-                                <div class="circle center-abs"></div>
-                                <!-- area para SVG -->
-                                <svg class="center-abs" width="150" height="150">
-                                    <!-- un segundo circulo en SVG con su ubicacion en coordenadas x,y y el radio de expansion -->
-                                    <circle class="outer" id="circulo1" cx="75" cy="75" r="30" />
-                                </svg>
-                                <!-- etiqueta para el contador, en este caso el dia -->
-                                <span class="text center-abs" id="days"></span>
-                                <h3 id="textcolor1">Dias</h3>
-                            </div>
-                            <div class="chart">
-                                <div class="circle center-abs"></div>
-                                <svg class="center-abs" width="150" height="150">
-                                    <circle class="outer" id="circulo2" cx="75" cy="75" r="30" />
-                                </svg>
-                                <span class="text center-abs" id="hours"></span>
-                                <h3 id="textcolor2">Horas</h3>
-                            </div>
-                            <div class="chart">
-                                <div class="circle center-abs"></div>
-                                <svg class="center-abs" width="150" height="150">
-                                    <circle class="outer" id="circulo3" cx="75" cy="75" r="30" />
-                                </svg>
-                                <span class="text center-abs" id="minutes"></span>
-                                <h3 id="textcolor3">Minutos</h3>
-                            </div>
-                            <div class="chart">
-                                <div class="circle center-abs"></div>
-                                <svg class="center-abs" width="150" height="150">
-                                    <circle class="outer" id="circulo4" cx="75" cy="75" r="30" />
-                                </svg>
-                                <span class="text center-abs" id="seconds"></span>
-                                <h3 id="textcolor4">Segundos</h3>
-                            </div>
+                                <div class="chart">
+                                    <!-- un circulo inicial de fondo -->
+                                    <div class="circle center-abs"></div>
+                                    <!-- area para SVG -->
+                                    <svg class="center-abs" width="150" height="150">
+                                        <!-- un segundo circulo en SVG con su ubicacion en coordenadas x,y y el radio de expansion -->
+                                        <circle class="outer" id="circulo1" cx="75" cy="75" r="30" />
+                                    </svg>
+                                    <!-- etiqueta para el contador, en este caso el dia -->
+                                    <span class="text center-abs" id="days"></span>
+                                    <h3 id="textcolor1">Dias</h3>
+                                </div>
+                                <div class="chart">
+                                    <div class="circle center-abs"></div>
+                                    <svg class="center-abs" width="150" height="150">
+                                        <circle class="outer" id="circulo2" cx="75" cy="75" r="30" />
+                                    </svg>
+                                    <span class="text center-abs" id="hours"></span>
+                                    <h3 id="textcolor2">Horas</h3>
+                                </div>
+                                <div class="chart">
+                                    <div class="circle center-abs"></div>
+                                    <svg class="center-abs" width="150" height="150">
+                                        <circle class="outer"  id="circulo3" cx="75" cy="75" r="30" />
+                                    </svg>
+                                    <span class="text center-abs" id="minutes"></span>
+                                    <h3 id="textcolor3">Minutos</h3>
+                                </div>
+                                <div class="chart">
+                                    <div class="circle center-abs"></div>
+                                    <svg class="center-abs" width="150" height="150">
+                                        <circle class="outer" id="circulo4"cx="75" cy="75" r="30" />
+                                    </svg>
+                                    <span class="text center-abs" id="seconds"></span>
+                                    <h3 id="textcolor4">Segundos</h3>
+                                </div>
                         </div>
                     </section>
                 </li>
@@ -296,6 +296,7 @@
 
 
 </div>
+
 
 
 

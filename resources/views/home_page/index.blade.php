@@ -138,11 +138,9 @@
         <script src="{{ asset('assets/js/home') }}/menu.js"></script>
         <div id="q" class="que">
             <h1>¿QUÉ ES SOFTWARE-</span><span class="freed">FREEDOM <span class="day">DAY</span></span>?</h1><br>
-            <p>Es un evento organizado por alumnos y docentes de la carrera de Tecnologías de la Información en la
-                Univesidad Tecnológica de Tecamachalco,
-                ahora en nuestra 6ta Edición. El evento esta enfocado en el area de Desarrollo de Software y Redes
-                Inteligentes.<br>El
-                evento Software-Freedom Day te invitamos a participar los dias 25 y 26 de noviembre en este
+            <p>Es un evento organizado por alumnos y docentes de la carrera de Tecnologías de la Información en la Universidad Tecnológica de Tecamachalco, 
+                ahora en nuestra 6ta Edición. El evento está enfocado en el área de Desarrollo de Software y Redes Inteligentes.<br>El
+                evento Software-Freedom Day te invitamos a participar el dia 30 de Noviembre y 1 de Diciembre en este
                 gran evento.
             </p>
             <img class="logo22" src="{{ asset('assets/img/home/img') }}/logo.png">
@@ -150,16 +148,18 @@
 
         <div id="o" class="pro">
             <h1>Objetivo</h1><br>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi atque explicabo repudiandae. Omnis, facilis
-                nihil, reiciendis ea enim commodi qui, deserunt nulla tempora et optio impedit cumque obcaecati porro
-                recusandae.</p>
+            <p>Incentivar el interés por la ciencia y la tecnologia en los alumnos de la
+                carrera de tecnologias de la información y comunicacion con el fin de
+                ampliar su perspectiva y conocimientos en las tendencias tecnologias 
+                actuales ademas de prepararlos con herramientas que sean de utilidad
+                para su incorporación  en el ambito laboral.</p>
         </div>
 
 
         <div id="p" class="ob">
             <h1>Proposito</h1><br>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus nesciunt ut veniam eos, doloremque nam
-                totam aperiam modi quidem est laborum, vero beatae repellendus quam. Nisi earum assumenda rem odio.</p>
+            <p>Integrar y promover nuevos aprendizajes para todos los participantes que quieran 
+             actualizarse en los nuevos conocimientos y conceptos tecnológicos</p>
         </div>
         <!--Galeria-->
 <div id="g" class="gal">
@@ -269,6 +269,7 @@
 
 <footer>
         <div class="container">
+
         <p>&copy; Copyright Software-Freedom Day 2022<br><br>Todos los derechos reservados. <br>Deasarrollado por {{ config_author_system() }}
         </p>
         <center>
