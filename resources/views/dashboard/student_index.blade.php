@@ -114,39 +114,40 @@
 
     <!-- Para escritorio -->
     <!-- <div class="r"> -->
-        @foreach ($packages_available as $package)
-        <div class="col-xl-4 col-lg-4 mt-3 d-none d-sm-none d-md-block">
-            <div class="card card-pricing bg-success border-0 text-center col-12">
-                <div class="card-header bg-transparent">
-                    <h2 class="text-uppercase ls-1 text-white py-3 mb-0">Paquete: {{ $package->name }}</h2>
-                </div>
-                <div class="card-body">
-                    <div class="display-2 text-white">${{ $package->price }}</div>
+    @foreach ($packages_available as $package)
+    <div class="col-xl-4 col-lg-4 mt-3 d-none d-sm-none d-md-block">
+        <div class="card card-pricing bg-success border-0 text-center col-12">
+            <div class="card-header bg-transparent">
+                <h2 class="text-uppercase ls-1 text-white py-3 mb-0">Paquete: {{ $package->name }}</h2>
+            </div>
+            <div class="card-body">
+                <div class="display-2 text-white">${{ $package->price }}</div>
+                <br>
+                <span class=" text-white">Por persona</span>
+                <!-- <ul class="list-unstyled my-4"> -->
+                    <!-- <li> -->
+                        <!-- <div class="d-flex align-items-center justify-content-center"> -->
+                            <!-- <div> -->
+                                <!-- <div class="icon icon-xs icon-shape bg-white shadow rounded-circle text-success"> -->
+                                    <!-- <i class="ni ni-book-bookmark"></i> -->
+                                <!-- </div> -->
+                            <!-- </div> -->
+                            <!-- <div class=' '> -->
+                                <!-- <span class="pl-2  pb-4 text-sm text-white">{{ $package->description }}</span> -->
+                            <!-- </div> -->
+                        <!-- </div> -->
+                    <!-- </li> -->
                     <br>
-                    <span class=" text-white">Por persona</span>
-                    <ul class="list-unstyled my-4">
-                        <li>
-                            <div class="d-flex align-items-center justify-content-center">
-                                <div>
-                                    <div class="icon icon-xs icon-shape bg-white shadow rounded-circle text-success">
-                                        <i class="ni ni-book-bookmark"></i>
-                                    </div>
-                                </div>
-                                <div class=' '>
-                                    <span class="pl-2  pb-4 text-sm text-white">{{ $package->description }}</span>
-                                </div>
-                            </div>
-                        </li>
-                        <br>
-                    </ul>
-                    <button type="button" class="btn btn-link text-white mb-3" data-toggle="modal" data-target="#modal-notification">Ver detalles</button>
-                </div>
-                <div class="card-footer bg-transparent">
-                    <a onclick="fnSolicitarPaquete('{{$package->id }}','{{$package->name }}');" class=" text-white" style="cursor: -webkit-grab; cursor: grab;">Solicitar paquete</a>
-                </div>
+                    <br>
+                <!-- </ul> -->
+                <button onclick="detalles('{{$package->id}}','{{ $package->name }}','{{$package->price}}');" type="button" class="btn btn-link text-white mb-1" data-toggle="modal" data-target="#modal-notification">Ver detalles</button>
+            </div>
+            <div class="card-footer bg-transparent">
+                <a onclick="fnSolicitarPaquete('{{$package->id }}','{{$package->name }}');" class=" text-white" style="cursor: -webkit-grab; cursor: grab;">Solicitar paquete</a>
             </div>
         </div>
-        @endforeach
+    </div>
+    @endforeach
     <!-- </div> -->
 
     <div class="row">
@@ -166,40 +167,19 @@
                         <div class="modal-body">
 
                             <div class="py-3 text-center">
-                                <i class="ni ni-bell-55 ni-3x"></i>
-                                <h2 class="text-white mt-4">¡Paquete XXX XXXXX!</h2>
+                                <i class="ni ni-box-2 ni-3x"></i>
+                                <h2 id="titulopaquete" class="text-white"></h2>
 
                             </div>
                             <div class="py-3 ">
 
-                                <h2 class="heading mt-4">Descripción:</h2>
-
+                                <p id="d" class="text-justify text-white text-break">Descripción:</p>
+                                <h4 id="frases" class=" text-white text-center mt-4"></h4>
+                                <h5 id="asiste" class="mt-4 text-white text-break text-center"></h5>
                             </div>
                             <div class="py-3 ">
 
-                                <h2 class="heading mt-4">Tallerista:</h2>
-
-                            </div>
-
-                            <div class="py-3 ">
-
-                                <h2 class="heading mt-4">Curso:</h2>
-
-                            </div>
-                            <div class="py-3 ">
-
-                                <h2 class="heading mt-4">Descripción:</h2>
-
-                            </div>
-                            <div class="py-3 ">
-
-                                <h2 class="heading mt-4">Requerimientos:</h2>
-
-                            </div>
-
-                            <div class="py-3 ">
-
-                                <h2 class="heading mt-4">Precio:</h2>
+                                <h2 id="preciopaquete" class="heading mt-4"></h2>
 
                             </div>
 
@@ -352,5 +332,53 @@
 @if (check_if_requested_package_paid_out()==true && check_if_enrolled_in_course()==true)
 @endif
 
+<script>
+    function detalles(id, name, price) {
+        let nombre = document.getElementById('titulopaquete');
+        let f = document.getElementById('frases');
+        let a = document.getElementById('asiste');
+        var names = '¡Paquete ' + name + '!';
+        nombre.innerHTML = names;
+
+        if (id == 1) {
+            let descripcion = document.getElementById('d');
+            let f = document.getElementById('frases');
+            let a = document.getElementById('asiste');
+            var descri = 'Con este paquete obtendrás acceso a las diferentes conferencias magistrales, así como la inscripción a uno de los diferentes talleres que brinda el evento ¡Freedom Day!, y una playera con logo del evento, además podrás llevarte sin ningún costo adicional un sticker, acceso a cafetería y un regalo sorpresa, y por si fuera poco al concluir el evento podrás obtener un certificado con valor curricular.';
+            var frse = '¡La vida es muy corta para dejar que solo te cuenten sobre nuestro evento!';
+            var as = 'Asiste y vive la experiencia mas grandiosa';
+            descripcion.innerHTML = descri;
+            f.innerHTML = frse;
+            a.innerHTML = as;
+        }
+        if (id == 2) {
+            let descripcion = document.getElementById('d');
+            let f = document.getElementById('frases');
+            let a = document.getElementById('asiste');
+            var descri = 'Con este paquete obtendrás acceso a las diferentes conferencias magistrales, así como la inscripción a uno de los diferentes talleres que brinda el evento ¡Freedom Day!, y una taza personalizada con tu nombre y el logo del evento, además podrás llevarte sin ningún costo adicional un sticker, acceso a cafetería y un regalo sorpresa, y por si fuera poco al concluir el evento podrás obtener un certificado con valor curricular.';
+            var frse = '¡La vida es muy corta para dejar que solo te cuenten sobre nuestro evento!';
+            var as = 'Asiste y vive la experiencia mas grandiosa';
+            descripcion.innerHTML = descri;
+            f.innerHTML = frse;
+            a.innerHTML = as;
+        }
+        if (id == 3) {
+            let descripcion = document.getElementById('d');
+            let f = document.getElementById('frases');
+            let a = document.getElementById('asiste');
+            var descri = 'Con este paquete obtendrás acceso a las diferentes conferencias magistrales, así como la inscripción a uno de los diferentes talleres que brinda el evento ¡Freedom Day!, además podrás llevarte sin ningún costo adicional un sticker, acceso a cafetería y un regalo sorpresa, y por si fuera poco al concluir el evento podrás obtener un certificado con valor curricular.';
+            var frse = '¡La vida es muy corta para dejar que solo te cuenten sobre nuestro evento!';
+            var as = 'Asiste y vive la experiencia mas grandiosa';
+            descripcion.innerHTML = descri;
+            f.innerHTML = frse;
+            a.innerHTML = as;
+        }
+
+        let precio = document.getElementById('preciopaquete');
+        var prices = 'Precio: $' + price;
+        precio.innerText = prices;
+
+    }
+</script>
 
 {{-- enrrol to curse end --}}
