@@ -7,9 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ config_name_system() }}</title>
-    <link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilo_Conferencia_Interfaz.css">
+    
     <link href="{{ asset('argon/brand') }}/favicon.png" rel="icon" type="image/png">
+    
     <link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilo_index_R.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilo_Conferencia_Interfaz.css">
+    
 </head>
 <header>
     <nav class="menu">
@@ -156,10 +159,10 @@
 
     <div class="iconos">
 
-    <a class="icon" href="https://www.facebook.com/Freedom-Day-TI-Uttecam-477721659417275">
+    <a class="iconn" href="https://www.facebook.com/Freedom-Day-TI-Uttecam-477721659417275">
             <ion-icon name="logo-facebook"></ion-icon>
     </a>
-    <a class="icon" href="https://goo.gl/maps/BWKybpucUgH8QXzf6">
+    <a class="iconn" href="https://goo.gl/maps/BWKybpucUgH8QXzf6">
         <ion-icon name="location-outline"></ion-icon>
     </a>
     </div>

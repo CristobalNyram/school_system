@@ -124,17 +124,7 @@
 
 
         </div>
-        <div class="shib">
-            <div class="barra">
-                <span class="oki"> <i class="sec"></i>--</span>
-                <ul class="lis">
-                    <li><a href="#q"><i class="vi"></i>¿Qué es?</a></li>
-                    <li><a href="#o"><i class="vi"></i>Objetivo</a></li>
-                    <li><a href="#p"><i class="vi"></i>Proposito</a></li>
-                    <li><a href="#g"><i class="vi"></i>Galería</a></li>
-                </ul>
-            </div>
-        </div>
+       
         <script src="{{ asset('assets/js/home') }}/menu.js"></script>
         <div id="q" class="que">
             <h1>¿QUÉ ES SOFTWARE-</span><span class="freed">FREEDOM <span class="day">DAY</span></span>?</h1><br>
@@ -162,11 +152,12 @@
              actualizarse en los nuevos conocimientos y conceptos tecnológicos</p>
         </div>
         <!--Galeria-->
+
+
+<div class="toky">
 <div id="g" class="gal">
     <h2>GALERÍA</h2>
 </div>
-
-<div class="toky">
     <div class="reze" style="background-image: url(assets/img/home/img/galeria/01.png);" >
         <h3></h3>
 
@@ -229,8 +220,9 @@
 
 
     <h2>Patrocinios</h2>
-@foreach($sponsors2 as $sponsor)
+    @foreach($sponsors2 as $sponsor)
 <ul>
+
         <li>
             <img src="{{asset($sponsor->url_img )}}" width="100">
         </li>

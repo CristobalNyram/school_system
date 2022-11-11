@@ -11,7 +11,7 @@
     margin-top: 100vh;
     display: grid;
     grid-auto-rows: 33rem;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
     margin: 20px 70px;
 }
 .tarjeta{
@@ -56,7 +56,15 @@
 
 
 
-
+@media(max-width:1116px){
+    .tarjetas{
+        margin-top: 100vh;
+        display: grid;
+        grid-auto-rows: 33rem;
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+        margin: 20px 70px;
+    }
+}
 
 @media(max-width:416px){
     footer p {
