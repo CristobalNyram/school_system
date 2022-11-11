@@ -10,14 +10,7 @@ body {
     font-family: 'biko', sans-serif;
 }
 
-footer {
-    position: absolute;
-    background: #000;
-    height: 30vh;
-    left: 0;
-    width: 100%;
-    margin-top: 90px;
-}
+
 /*Fondos*/
 .jk {
     background-image: url('ins.png');
@@ -163,31 +156,6 @@ button:hover {
     border: transparent;
 }
 /*footer*/
-footer .container {
-    text-align: center;
-}
-footer p {
-    margin: 0;
-    color: #f0f8ff;
-    background-position: top;
-    text-align: center;
-    font-size: 18px;
-    padding: 3%;
-}
-footer a {
-    text-decoration: none;
-    font-weight: bold;
-    color: #f0f8ff;
-}
-footer .ico {
-    align-items: center;
-    text-align: center;
-    height: 90px;
-}
-ion-icon {
-    font-size: 1.5em;
-    padding: 5px 15px;
-}
 @media (max-width:1300px){
     .forma{
         width: 30%;
