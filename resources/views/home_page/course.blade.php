@@ -128,7 +128,7 @@
                 <div class="capa">
                     <h3>{{$course1->title}}</h3>
                     <p>{{$course1->description}}</p>
-                    <a href="{{ route('course_interface', $courses1[0]) }}">
+                    <a href="{{ route('course_interface', $courses1) }}">
                         <button>+INFO</button>
                     </a>
 
