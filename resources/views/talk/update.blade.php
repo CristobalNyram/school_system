@@ -58,7 +58,7 @@
 
                     <div class="form-group">
                         <label for="time">Hora de la conferencia</label>
-                        <input type="text" class="form-control form-control-lg" id="date" name="time" value="{{ $current_talk->time }}" placeholder="Hora de la conferencia" max="50" required >
+                        <input type="date" class="form-control form-control-lg" id="date" name="time" value="{{ $current_talk->time }}" placeholder="Hora de la conferencia" max="50" required >
                     </div>
 
                     <div class="form-group">

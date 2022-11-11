@@ -127,7 +127,9 @@
             <div class="contenedor_texto">
             <h3>{{$current_course->title}}</h3>
             <p>{{$current_course->description}}</p>
-            <h4>Curso impartido por: <span id="hj">Enrique Vazarez</span></h4>
+            @foreach($consulta as $speaker)
+            <h4>Curso impartido por: <span id="hj">{{$speaker->name}}</span></h4>
+            @endforeach
             <H4>Horario: <span id="hj">14:00 A.M. - 18:00 A.M.</span></H4>
 
             <a href="{{ route('home_page_create') }}">
