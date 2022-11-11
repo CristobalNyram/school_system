@@ -57,7 +57,7 @@
                     </div>
                     <div class="form-group">
                         <label for="hour">Hora del curso</label>
-                        <input type="date" class="form-control form-control-lg" id="hour" name="hour" value="{{ $current_course->hour }}" placeholder="Hora del curso" max="50" required >
+                        <input type="text" class="form-control form-control-lg" id="hour" name="hour" value="{{ $current_course->hour }}" placeholder="Hora del curso" max="50" required >
                     </div>
                     <div class="form-group">
                         <label for="duration">Duración del curso</label>
