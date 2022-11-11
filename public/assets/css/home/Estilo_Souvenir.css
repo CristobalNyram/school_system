@@ -17,7 +17,7 @@ body{
 
 .pos1{
     display: flex;
-    margin-left: 170px;
+    
     justify-content: center;
     flex-wrap: wrap;
     background: #fff;
@@ -29,10 +29,10 @@ body{
     width: 300px;
     height: 350px;
     border-radius: 30px;
-    margin-block: 60px;
+    
     transition: 0.5s;
     transition-delay: 00.5s;
-    
+    margin: 60px auto;
     justify-content: flex-start;
     align-items: center;
 }
@@ -165,8 +165,8 @@ body{
 }
 
 #pla{
-    width: 68%;
-    left: 72%;
+    width: 43%;
+    left: 75%;
 }
 
 #pl{
@@ -236,7 +236,7 @@ ion-icon{
 
     .pos1{
         display: block;
-        margin-left: 10%;
+        
     }
     
 

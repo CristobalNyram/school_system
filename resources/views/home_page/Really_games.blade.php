@@ -348,30 +348,23 @@
 
 
     </div>
-
-
-
-
-
-
-
     <footer>
         <div class="container">
             <p>&copy; Copyright Software-Freedom Day 2022<br><br>Todos los derechos reservados. <br>Deasarrollado por{{ config_author_system() }}
             </p>
             <center>
-                <a href="https://www.facebook.com/Freedom-Day-TI-Uttecam-477721659417275">
-                    <span class="icono"></span>
-                    <ion-icon class="tam" name="logo-facebook"></ion-icon>
-                    <span class="texto"> </span>
-                </a>
+        <a href="https://www.facebook.com/Freedom-Day-TI-Uttecam-477721659417275">
+            <span class="icono"></span>
+            <ion-icon class="tam" name="logo-facebook"></ion-icon>
+            <span class="texto"> </span>
+        </a>
 
-                <a class="icon" href="https://goo.gl/maps/BWKybpucUgH8QXzf6">
-                    <span class="icono"></span>
-                    <ion-icon name="location-outline"></ion-icon>
-                    <span class="texto"> </span>
-                </a>
-            </center>
+        <a class="icon" href="https://goo.gl/maps/BWKybpucUgH8QXzf6">
+            <span class="icono"></span>
+            <ion-icon name="location-outline"></ion-icon>
+            <span class="texto"> </span>
+        </a>
+    </center>
         </div>
     </footer>
 </body>
