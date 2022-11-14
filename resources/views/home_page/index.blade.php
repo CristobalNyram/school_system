@@ -124,17 +124,7 @@
 
 
         </div>
-        <div class="shib">
-            <div class="barra">
-                <span class="oki"> <i class="sec"></i>--</span>
-                <ul class="lis">
-                    <li><a href="#q"><i class="vi"></i>¿Qué es?</a></li>
-                    <li><a href="#o"><i class="vi"></i>Objetivo</a></li>
-                    <li><a href="#p"><i class="vi"></i>Proposito</a></li>
-                    <li><a href="#g"><i class="vi"></i>Galería</a></li>
-                </ul>
-            </div>
-        </div>
+       
         <script src="{{ asset('assets/js/home') }}/menu.js"></script>
         <div id="q" class="que">
             <h1>¿QUÉ ES SOFTWARE-</span><span class="freed">FREEDOM <span class="day">DAY</span></span>?</h1><br>
@@ -162,11 +152,12 @@
              actualizarse en los nuevos conocimientos y conceptos tecnológicos</p>
         </div>
         <!--Galeria-->
+
+
+<div class="toky">
 <div id="g" class="gal">
     <h2>GALERÍA</h2>
 </div>
-
-<div class="toky">
     <div class="reze" style="background-image: url(assets/img/home/img/galeria/01.png);" >
         <h3></h3>
 
@@ -229,8 +220,9 @@
 
 
     <h2>Patrocinios</h2>
-@foreach($sponsors2 as $sponsor)
+    @foreach($sponsors2 as $sponsor)
 <ul>
+
         <li>
             <img src="{{asset($sponsor->url_img )}}" width="100">
         </li>
@@ -268,25 +260,25 @@
 </section>
 
 <footer>
-        <div class="container">
+    <h3>© Copyright Software-Freedom Day 2022</h3>
+    <p>Todos los derechos reservados.</p>
+    <p>Deasarrollado por {{ config_author_system() }}</p>
 
-        <p>&copy; Copyright Software-Freedom Day 2022<br><br>Todos los derechos reservados. <br>Deasarrollado por {{ config_author_system() }}
-        </p>
-        <center>
-            <a href="https://www.facebook.com/Freedom-Day-TI-Uttecam-477721659417275">
-                <span class="icono"></span>
-                <ion-icon class="tam" name="logo-facebook"></ion-icon>
-                <span class="texto"> </span>
-            </a>
 
-            <a class="icon" href="https://goo.gl/maps/BWKybpucUgH8QXzf6">
-                <span class="icono"></span>
-                <ion-icon name="location-outline"></ion-icon>
-                <span class="texto"> </span>
-            </a>
-        </center>
-        </div>
-    </footer>
+    <div class="iconos">
+
+    <a class="icon" href="https://www.facebook.com/Freedom-Day-TI-Uttecam-477721659417275">
+            <ion-icon name="logo-facebook"></ion-icon>
+    </a>
+    <a class="icon" href="https://goo.gl/maps/BWKybpucUgH8QXzf6">
+        <ion-icon name="location-outline"></ion-icon>
+    </a>
+    </div>
+
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</footer>
 
     <script src="{{ asset('assets/js/home') }}/galeria.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
