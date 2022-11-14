@@ -132,9 +132,7 @@
             @endforeach
             <H4>Horario: <span id="hj">14:00 A.M. - 18:00 A.M.</span></H4>
 
-            <a href="{{ route('home_page_create') }}">
-               <button class="boton">+Inscribirse</button>
-            </a>
+           
 
             </div>
         </div>

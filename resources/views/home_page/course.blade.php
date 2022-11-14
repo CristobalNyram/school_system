@@ -127,7 +127,6 @@
                 <img src="{{asset($course1->url_img )}}">
                 <div class="capa">
                     <h3>{{$course1->title}}</h3>
-                    <p>{{$course1->description}}</p>
                     <a href="{{ route('course_interface', $course1) }}">
                         <button>+INFO</button>
                     </a>
