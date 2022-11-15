@@ -127,7 +127,7 @@
             <div class="contenedor_texto">
             <h3>{{$current_course->title}}</h3>
             <p>{{$current_course->description}}</p>
-            <h4>Curso impartido por: <span id="hj">{{$consulta}}</span></h4>
+            <h4>Curso impartido por: <span id="hj"></span></h4>
             <H4>Horario: <span id="hj">{{$current_course->date}}</span></H4>
             </div>
         </div>
