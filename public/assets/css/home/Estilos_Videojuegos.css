@@ -260,13 +260,21 @@ Rejol
     
 }
 .intrucciones{
-    align-items: center;
+    margin-top: -100px;
     text-align: center;
     background: #000;
     color: #fff;
 }
 .intrucciones .contenedor_m{
     margin-top: 100px;
+}
+.intrucciones .contenedorimg{
+    margin-top: -870px;
+    margin-right: 0px;
+    margin-left: 40%;
+    height: 160%;
+    width: 50%;
+    position: absolute;
 }
 
 
@@ -286,8 +294,9 @@ Rejol
 }
 /*uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu*/
 .intrucciones .Pasos{
-    margin-top: 100px;
-    height: 400px;
+    margin-top: 120px;
+    height: 100px;
+    width: 50%;
 }
 .FondoBlanco{
     margin-top: 10vh;
@@ -416,16 +425,18 @@ Rejol
     width: 100%;
     text-align: center;
     color: #fff;
-    margin-top: 180px;
+    margin-top: 400px;
 }
 .contenido_titulo h1{
     font-size: 60px;
     font-weight: 600;
-    margin-bottom: 40px;
+    margin-bottom: -25px;
     text-align: center;
 }
 
 .back-video{
+    top: 12vh;
+    
     position: absolute;
     right: 0;
     bottom: 0;

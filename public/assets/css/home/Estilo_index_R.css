@@ -74,7 +74,7 @@ width: 200px;
 .menu__link{
     color: #fff;
     text-decoration: none;
-    padding: 0 30px;
+    padding: 0 20px;
     display: flex;
     height: 100%;
     align-items: center;
@@ -680,6 +680,7 @@ center{
 
 
 footer{
+    margin-top: 50px;
     background: #000;
     
     font-family: 'biko', sans-serif;
@@ -769,6 +770,14 @@ p{
 .ha{
     margin-top: 170px;
    
+}
+@media(max-width:200px){
+    
+    .gal{
+       
+        margin-top: 2100px;
+      
+    }
 }
 
 

@@ -69,7 +69,7 @@
                     </li>
 
                     <li class="menu__item">
-                        <a href="{{ route('really_index') }}" class="menu__link">Really</a>
+                        <a href="{{ route('really_index') }}" class="menu__link">Torneo<span style="color:black">_</span>de<span style="color:black">_</span>Videojuegos</a>
                     </li>
                     <li class="menu__item">
                         <a href="{{ route('timeline_index') }}" class="menu__link">Horario</a>
@@ -220,9 +220,9 @@
 
 
     <h2>Patrocinios</h2>
-    @foreach($sponsors2 as $sponsor)
+    
 <ul>
-
+@foreach($sponsors2 as $sponsor)
         <li>
             <img src="{{asset($sponsor->url_img )}}" width="100">
         </li>
@@ -254,9 +254,9 @@
         <li>
             <img src="{{asset($sponsor->url_img )}}" width="100">
         </li>
-
+        @endforeach
     </ul>
-    @endforeach
+    
 </section>
 
 <footer>

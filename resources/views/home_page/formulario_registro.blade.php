@@ -84,7 +84,7 @@
                     </section>
                 </li>
                 <li class="menu__item">
-                    <a href="{{ route('really_index') }}" class="menu__link">Really</a>
+                    <a href="{{ route('really_index') }}" class="menu__link">Torneo<span style="color:black">_</span>de<span style="color:black">_</span>Videojuegos</a>
                 </li>
 
 
