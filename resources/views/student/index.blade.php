@@ -73,7 +73,7 @@
                             <div class="media align-items-center">
 
                               <div class="media-body">
-                                <span class="name mb-0 text-sm">{{$user->carrers->name}}</span>
+                                <span class="name mb-0 text-sm"></span>
                               </div>
                             </div>
                         </th>
