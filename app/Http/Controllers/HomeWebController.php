@@ -73,11 +73,9 @@ class HomeWebController extends Controller
     public function CourseInterface($course_id){
 
         $current_course=Course::findOrFail($course_id);
-        $consulta = Course::join('users', 'users.id', '=', 'courses.id')->select('courses.speaker_id', 'users.name')->where($current_course, '=', 'users.id')->get();
 
         $variables=[
             'current_course'=>$current_course,
-            'consulta' => $consulta,
         ];
 
         return view('home_page.course_interface')->with($variables);
