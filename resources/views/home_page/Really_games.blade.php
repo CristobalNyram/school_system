@@ -71,7 +71,7 @@
                     </section>
                 </li>
                 <li class="menu__item">
-                        <a href="{{ route('really_index') }}" class="menu__link">Torneo<span style="color:black">_</span>de<span style="color:black">_</span>videojuegos</a>
+                        <a href="{{ route('really_index') }}" class="menu__link">Really</a>
                     </li>
                 <li class="menu__item">
                 <a href="{{ route('timeline_index') }}" class="menu__link">Horario</a>
@@ -116,12 +116,16 @@
     <div class="">
 
         <video autoplay loop class="back-video" muted plays-inline>
-            <source src="{{ asset('assets/img/home/img') }}/Esto es Xbox Game Pass  - Tráiler.mp4" type="video/mp4">
+            <source src="{{ asset('assets/img/home/img') }}/video.mp4" type="video/mp4">
 
         </video>
 
 
         <div class="contenido_titulo">
+            <h1>Bienvenidos a Pangea</h1>
+            <p>LIGA MEXICANA DE FREEDOMDAY</p>
+
+
         </div>
     </div>
     <!---pppppppppppppppppppppppppppppppppppppppppp--->

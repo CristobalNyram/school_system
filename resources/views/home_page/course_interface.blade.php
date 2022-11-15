@@ -67,7 +67,7 @@
                         </section>
                     </li>
                     <li class="menu__item">
-                        <a href="{{ route('home_page_index') }}" class="menu__link">Torneo<span style="color:black">_</span>de<span style="color:black">_</span>videojuegos</a>
+                        <a href="{{ route('home_page_index') }}" class="menu__link">Really</a>
                     </li>
 
 
@@ -131,11 +131,6 @@
             <h4>Curso impartido por: <span id="hj">{{$speaker->name}}</span></h4>
             @endforeach
             <H4>Horario: <span id="hj">14:00 A.M. - 18:00 A.M.</span></H4>
-
-            <a href="{{ route('home_page_login') }}">
-               <button class="boton">+Inscribirse</button>
-            </a>
-
             </div>
         </div>
 
