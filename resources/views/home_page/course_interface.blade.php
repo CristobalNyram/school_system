@@ -127,7 +127,9 @@
             <div class="contenedor_texto">
             <h3>{{$current_course->title}}</h3>
             <p>{{$current_course->description}}</p>
-            <h4>Curso impartido por: <span id="hj"></span></h4>
+            @foreach($consulta as $taller)
+            <h4>Curso impartido por: <span id="hj">{{$taller->name}}</span></h4>
+            @endforeach
             <H4>Horario: <span id="hj">{{$current_course->hour}}</span></H4>
             <H4>Fecha: <span id="hj">{{$current_course->date}}</span></H4>
             </div>
