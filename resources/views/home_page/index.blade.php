@@ -222,13 +222,14 @@
     <h2>Patrocinios</h2>
     
 <ul>
-@foreach($sponsors2 as $sponsor)
-        <li>
+
+    @foreach($sponsors2 as $sponsor)
+
+        <li> 
             <img src="{{asset($sponsor->url_img )}}" width="100">
         </li>
         <li>
             <img src="{{asset($sponsor->url_img )}}" width="100">
-
         </li>
         <li>
             <img src="{{asset($sponsor->url_img )}}" width="100">
@@ -257,6 +258,9 @@
         @endforeach
     </ul>
     
+
+    </ul>
+
 </section>
 
 <footer>
