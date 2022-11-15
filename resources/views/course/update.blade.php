@@ -65,7 +65,7 @@
                     </div>
                     <div class="form-group">
                         <label for="text">fecha del curso</label>
-                        <input type="date" class="form-control form-control-lg" id="date" name="date" value="{{ $current_course->date }}" placeholder="Fecha del curso" max="50" required>
+                        <input type="text" class="form-control form-control-lg" id="date" name="date" value="{{ $current_course->date }}" placeholder="Fecha del curso" max="50" required>
                     </div>
 
                     <div class="form-group">
