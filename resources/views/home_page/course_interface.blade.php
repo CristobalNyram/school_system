@@ -129,6 +129,7 @@
             <p>{{$current_course->description}}</p>
             <h4>Curso impartido por: <span id="hj"></span></h4>
             <H4>Horario: <span id="hj">{{$current_course->hour}}</span></H4>
+            <H4>Fecha: <span id="hj">{{$current_course->date}}</span></H4>
             </div>
         </div>
 
