@@ -220,43 +220,17 @@
 
 
     <h2>Patrocinios</h2>
-    @foreach($sponsors2 as $sponsor)
+    
 <ul>
-
+    @foreach($sponsors2 as $sponsor)
         <li>
+       
             <img src="{{asset($sponsor->url_img )}}" width="100">
+           
         </li>
-        <li>
-            <img src="{{asset($sponsor->url_img )}}" width="100">
-
-        </li>
-        <li>
-            <img src="{{asset($sponsor->url_img )}}" width="100">
-        </li>
-        <li>
-            <img src="{{asset($sponsor->url_img )}}" width="100">
-        </li>
-        <li>
-            <img src="{{asset($sponsor->url_img )}}" width="100">
-        </li>
-        <li>
-            <img src="{{asset($sponsor->url_img )}}" width="100">
-        </li>
-        <li>
-            <img src="{{asset($sponsor->url_img )}}" width="100">
-        </li>
-        <li>
-            <img src="{{asset($sponsor->url_img )}}" width="100">
-        </li>
-        <li>
-            <img src="{{asset($sponsor->url_img )}}" width="100">
-        </li>
-        <li>
-            <img src="{{asset($sponsor->url_img )}}" width="100">
-        </li>
-
-    </ul>
     @endforeach
+    </ul>
+   
 </section>
 
 <footer>
