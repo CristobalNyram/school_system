@@ -67,7 +67,7 @@
                         </section>
                     </li>
                     <li class="menu__item">
-                        <a href="{{ route('home_page_index') }}" class="menu__link">Really</a>
+                        <a href="{{ route('home_page_index') }}" class="menu__link">Torneo<span style="color:black">_</span>de<span style="color:black">_</span>videojuegos</a>
                     </li>
 
 
