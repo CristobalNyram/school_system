@@ -146,11 +146,15 @@
 
             </ul>
             <hr class="my-3">
+            @if ( check_acces_to_this_permission(Auth::user()->role_id,25))
             <h6 class="navbar-heading text-muted">Reportes</h6>
+            @endif
 
 
             <hr class="my-3">
+            @if ( check_acces_to_this_permission(Auth::user()->role_id,25))
             <h6 class="navbar-heading text-muted">Admnistración</h6>
+            @endif
             <ul class="navbar-nav">
 
             @if ( check_acces_to_this_permission(Auth::user()->role_id,25))
