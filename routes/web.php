@@ -37,10 +37,10 @@ use App\Models\Sponsor;
 */
 
  Route::get('/', function () {
-    $sponsors2=Sponsor::all()->where('status','=','2');
+    $sponsors=Sponsor::all()->where('status','=','2');
 
         $variables=[
-            'sponsors2'=>$sponsors2,
+            'sponsors2'=>$sponsors,
         ];
     return view('home_page.index')->with($variables);
  });
@@ -139,7 +139,6 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/payments', [PaymentController::class, "index"])->name('payment_index');
         Route::post('/payments/cancel/{payment_id}', [PaymentController::class, "payment_cancel"])->name('payment_cancel');
         Route::post('/payments/aprove/{payment_id}', [PaymentController::class, "payment_aprove"])->name('payment_aprove');
-
         Route::post('/payments/required', [PaymentController::class, "paymenstRequest"])->name('paymentRequest');
 
 
@@ -175,13 +174,12 @@ Route::group(['middleware' => 'auth'], function () {
 
         // courses start-----------------------------------
         Route::get('/course', [CourseController::class, "index"])->name('course_index');
-        Route::post('/course/enroll', [CourseController::class, "course_enroll_me"])->name('course_enroll_me');
-
         Route::get('/course/create', [CourseController::class, "create"])->name('course_create');
         Route::post('/course/store', [CourseController::class, "store"])->name('course_store');
         Route::get('/course/update/{course_id}', [CourseController::class, "update"])->name('course_update');
         Route::post('/course/edit', [CourseController::class, "edit"])->name('course_edit');
         Route::post('/course/delete/{course_id}', [CourseController::class, "delete"])->name('course_delete');
+        Route::post('/course/required', [CourseController::class, "course_enroll_me"])->name('course_enroll');
         // Route::post('/course/enrol/{course_id}', [CourseController::class, "delete"])->name('course_delete');
         // Route::post('/course/enrol/{course_id}', [CourseController::class, "delete"])->name('course_delete');
 

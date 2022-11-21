@@ -15,6 +15,7 @@
 
     <link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilos_Videojuegos.css">
     <link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilo_index_R.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/home') }}/barra.css">
 
     <link href="/estilosmenu.css" rel="stylesheet" type="text/css">
 </head>

@@ -10,7 +10,7 @@
                 <a href="https://www.creative-tim.com" class="nav-link" target="_blank">Politicas de privacidad</a>
             </li>
             <li class="nav-item">
-                <a href="https://www.updivision.com" class="nav-link" target="_blank">Página principal</a>
+                <a href="{{route('home_page_index')}}" class="nav-link" target="_blank">Página principal</a>
             </li>
 
             <li class="nav-item">

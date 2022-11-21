@@ -8,9 +8,9 @@
 
     @endif
 
-    @if (Auth::user()->role_id==4)
-
-    @include('dashboard.student_index')
+    @if (Auth::user()->role_id==4 || Auth::user()->role_id==5)
+    @include('dashboard.student_package')
+    @include('dashboard.student_course')
 
     @endif
 

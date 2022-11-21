@@ -279,6 +279,7 @@ class CourseController extends Controller
     public function course_enroll_me(Request $request)
     {
         $log = new Logbook();
+        $answer=[];
         $course = Course::findOrFail($request->course_id);
         $count_enrrolles_in_course=Relcoursestudent::all()->where('course_id','=',$request->course_id)->where('status','=',2)->count();
         if($count_enrrolles_in_course>=$course->maximum_person){
@@ -294,8 +295,7 @@ class CourseController extends Controller
             $new_registation_in_course=new Relcoursestudent();
             $new_registation_in_course->course_id=$request->course_id;
             $new_registation_in_course->user_student_id=Auth::id();
-            $new_registation_in_course->user_student_id=2;
-            $new_registation_in_course->user_approved_id=0;
+            $new_registation_in_course->user_approved_id=Auth::id();
 
 
             if($new_registation_in_course->save()){

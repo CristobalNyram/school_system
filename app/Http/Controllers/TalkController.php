@@ -153,7 +153,7 @@ class TalkController extends Controller
 
         if($request -> hasFile('url_img')){
             $file = $request ->file('url_img');
-            $destiantionPath = 'argon/img/talk/';
+            $destiantionPath = 'argon/talk/';
             $filename = time() .'-'. $file->getClientOriginalName();
             $uploadSuccess = $request->file('url_img')->move($destiantionPath, $filename);
             $talk->url_img = $destiantionPath . $filename;

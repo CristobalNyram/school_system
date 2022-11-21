@@ -228,33 +228,6 @@
         <li> 
             <img src="{{asset($sponsor->url_img )}}" width="100">
         </li>
-        <li>
-            <img src="{{asset($sponsor->url_img )}}" width="100">
-        </li>
-        <li>
-            <img src="{{asset($sponsor->url_img )}}" width="100">
-        </li>
-        <li>
-            <img src="{{asset($sponsor->url_img )}}" width="100">
-        </li>
-        <li>
-            <img src="{{asset($sponsor->url_img )}}" width="100">
-        </li>
-        <li>
-            <img src="{{asset($sponsor->url_img )}}" width="100">
-        </li>
-        <li>
-            <img src="{{asset($sponsor->url_img )}}" width="100">
-        </li>
-        <li>
-            <img src="{{asset($sponsor->url_img )}}" width="100">
-        </li>
-        <li>
-            <img src="{{asset($sponsor->url_img )}}" width="100">
-        </li>
-        <li>
-            <img src="{{asset($sponsor->url_img )}}" width="100">
-        </li>
         @endforeach
     </ul>
     
