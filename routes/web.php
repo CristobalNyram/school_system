@@ -119,7 +119,7 @@ Route::group(['middleware' => 'auth'], function () {
          Route::post('/password/edit',[PasswordController::class,"edit"])->name('password_edit');
 
         // password start-------------------------------------------
-        Route::get('/password/update/{user_id}', [PasswordController::class, "update"])->name('password_update');
+        Route::get('/password/update/{speaker_id}', [PasswordController::class, "update"])->name('password_update');
         Route::post('/password/edit', [PasswordController::class, "edit"])->name('password_edit');
 
         // password end--------------------------------------------
