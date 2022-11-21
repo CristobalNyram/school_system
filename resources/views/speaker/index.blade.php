@@ -2,6 +2,7 @@
 
 @section('content')
     @include('speaker.headers_cards')
+    <link type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" rel="stylesheet">
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
 
     <div class="container-fluid mt--6">
@@ -145,10 +146,10 @@ $(document).ready(function() {
 @endsection
 
 @push('js')
-    {{-- <script src="{{ asset() }}/vendor/datatables.net/js/jquery.dataTables.min.js"></script> --}}
+    {{-- <script src="{{ asset(assets) }}/vendor/datatables.net/js/jquery.dataTables.min.js"></script> --}}
     <script src="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
       
-    </script>
+    </script>--}}
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
