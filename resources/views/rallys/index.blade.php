@@ -2,6 +2,8 @@
 
 @section('content')
 @include('layouts.navbars.navs.header')
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
 
 
 <div class="container-fluid mt--6">
@@ -25,8 +27,7 @@
 
                 </script>
                 <div class="table-responsive">
-                    <table class="table align-items-center table-striped table-flush table-bordered dt-responsive"
-                        id="table_users_all">
+                    <table class="table align-items-center table-striped table-flush table-bordered dt-responsive" id="table_users_all">
                         <thead class="thead-light">
                             <tr>
                                 <th scope="col" class="sort" data-sort="name">ID</th>
@@ -62,21 +63,17 @@
                                 </th>
 
                                 <th scope="row">
-                                    <button onclick="set_image_modal('{{asset($rally->img)}}' , '{{ $rally->name}}')"
-                                        class="btn" data-toggle="modal" data-target="#ventanaModal">
+                                    <button onclick="set_image_modal('{{asset($rally->img)}}' , '{{ $rally->name}}')" class="btn" data-toggle="modal" data-target="#ventanaModal">
                                         <div class="media align-items-center">
                                             <div class="media-body">
-                                                <span class="name mb-0 text-sm"><a src="{{asset($rally->img)}}"><img
-                                                            src="{{asset($rally->img)}}" alt="{{$rally->name}}"
-                                                            class="img-fluid img-thumbnail" width="80px"> </a> </span>
+                                                <span class="name mb-0 text-sm"><a src="{{asset($rally->img)}}"><img src="{{asset($rally->img)}}" alt="{{$rally->name}}" class="img-fluid img-thumbnail" width="80px"> </a> </span>
                                             </div>
                                         </div>
                                     </button>
                                 </th>
 
                                 <!--Modal -->
-                                <div class="modal" id="ventanaModal" tableindex="-1" role="dialog"
-                                    aria-labellebdy="titulo" aria-hidden="true">
+                                <div class="modal" id="ventanaModal" tableindex="-1" role="dialog" aria-labellebdy="titulo" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -89,9 +86,7 @@
 
                                                 <div class="media align-items-center">
                                                     <div class="media-body">
-                                                        <span class="name mb-0 text-sm"><img
-                                                                id="modal_watch_image_rally" alt="{{$rally->name}}"
-                                                                class="img-fluid img-thumbnail" width="100%"> </span>
+                                                        <span class="name mb-0 text-sm"><img id="modal_watch_image_rally" alt="{{$rally->name}}" class="img-fluid img-thumbnail" width="100%"> </span>
                                                     </div>
                                                 </div>
 
@@ -138,21 +133,16 @@
                                     @if ( check_acces_to_this_permission(Auth::user()->role_id,33))
 
                                     <div class="dropdown">
-                                        <a class="btn btn-sm btn-icon-only text-danger" href="#" role="button"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <a class="btn btn-sm btn-icon-only text-danger" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <i class="fas fa-ellipsis-v"></i>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                            <a class="dropdown-item"
-                                                href="{{ route('rally_update',$rally->id)}}">Actualizar
+                                            <a class="dropdown-item" href="{{ route('rally_update',$rally->id)}}">Actualizar
                                                 información</a>
-                                            <form action="{{ route('rally_delete',$rally->id)}}"
-                                                class="input-group form-eliminar" method="post">
+                                            <form action="{{ route('rally_delete',$rally->id)}}" class="input-group form-eliminar" method="post">
                                                 @csrf
 
-                                                <input class="dropdown-item text-danger" type="submit"
-                                                    data-toggle="modal" data-target="#modal-notification"
-                                                    value="Eliminar"></input>
+                                                <input class="dropdown-item text-danger" type="submit" data-toggle="modal" data-target="#modal-notification" value="Eliminar"></input>
                                             </form>
                                         </div>
                                     </div>
@@ -180,80 +170,81 @@
 
 
 <script>
-$(document).ready(function() {
-    $('#table_users_all').DataTable({
-        "language": {
-            "lengthMenu": "Mostrar _MENU_ registros por página",
-            "zeroRecords": "No encontramos nada.",
-            "info": "Mostrando página _PAGE_ de _PAGES_",
-            "infoEmpty": "No hay registros existentes.",
-            "infoFiltered": "(Fitrado de _MAX_  registros existentes)",
-            "loadingRecords": "Cargando...",
-            "search": "Buscar:",
-            "emptyTable": "No hay información disponible en la tabla.",
-            "paginate": {
-                "first": "First",
-                "last": "Last",
-                "next": "Next",
-                "previous": "Previous"
-            },
-        }
+    $(document).ready(function() {
+        $('#table_users_all').DataTable({
+            language: {
+                lengthMenu: "Mostrar _MENU_ registros por página",
+                zeroRecords: "No encontramos nada.",
+                info: "Mostrando página _PAGE_ de _PAGES_",
+                infoEmpty: "No hay registros existentes.",
+                infoFiltered: "(Fitrado de _MAX_  registros existentes)",
+                loadingRecords: "Cargando...",
+                search: "Buscar:",
+                emptyTable: "No hay información disponible en la tabla.",
+                paginate: {
+                    first: "First",
+                    last: "Last",
+                    next: "Next",
+                    previous: "Previous"
+                },
+            }
+        });
     });
-});
 </script>
 
 @endsection
 
 @push('js')
-{{-- <script src="{{ asset() }}/vendor/datatables.net/js/jquery.dataTables.min.js"></script> --}}
+{{-- <script src="{{ asset(assets) }}/vendor/datatables.net/js/jquery.dataTables.min.js"></script> --}}
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
 
 <!-- Mostar modal de imagen -->
 <script>
-function set_image_modal(img, name) {
+    function set_image_modal(img, name) {
 
-    let imagemodal = document.getElementById('modal_watch_image_rally');
-    imagemodal.src = '';
-    imagemodal.src = img;
+        let imagemodal = document.getElementById('modal_watch_image_rally');
+        imagemodal.src = '';
+        imagemodal.src = img;
 
-    let titlemodal = document.getElementById('titulo');
-    titlemodal.innerText = '';
-    titlemodal.innerText = name;
+        let titlemodal = document.getElementById('titulo');
+        titlemodal.innerText = '';
+        titlemodal.innerText = name;
 
-}
+    }
 </script>
 
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 @if (session('eliminar') == 'ok')
 <script type="text/javascript">
-Swal.fire(
-    '¡Eliminado!',
-    'Tu archivo se ha borrado completamente.',
-    'success'
-)
+    Swal.fire(
+        '¡Eliminado!',
+        'Tu archivo se ha borrado completamente.',
+        'success'
+    )
 </script>
 
 @endif
 
 <script type="text/javascript">
-$('.form-eliminar').submit(function(e) {
-    e.preventDefault();
+    $('.form-eliminar').submit(function(e) {
+        e.preventDefault();
 
-    Swal.fire({
-        title: '¿Está seguro de que desea eliminarlo....?',
-        text: "¡Después de completar la acción no se podrá revertir los cambios!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Sí. ¡Deseo eliminarlo!'
-    }).then((result) => {
-        if (result.isConfirmed) {
+        Swal.fire({
+            title: '¿Está seguro de que desea eliminarlo....?',
+            text: "¡Después de completar la acción no se podrá revertir los cambios!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sí. ¡Deseo eliminarlo!'
+        }).then((result) => {
+            if (result.isConfirmed) {
 
-            this.submit();
-        }
-    })
-});
+                this.submit();
+            }
+        })
+    });
 </script>
 
 @endpush

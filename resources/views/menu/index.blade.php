@@ -114,18 +114,18 @@
           first: "Primero",
           last: "Ultimo",
           next: ">",
-          previous: "<"
+          previous: "<",
         },
-        "oAria": {
-          "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
-          "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+        oAria: {
+          sSortAscending: " Activar para ordenar la columna de manera ascendente",
+          sSortDescending:" Activar para ordenar la columna de manera descendente",
         },
-        "buttons": {
-          "copy": "Copiar",
-          "colvis": "Personalizar",
-          "excel": "Excel",
-          "pdf": "PDF",
-          "print": "PDF"
+        buttons: {
+          copy: "Copiar",
+          colvis: "Personalizar",
+          excel: "Excel",
+          pdf: "PDF",
+          print: "PDF"
 
         },
         "order": [
