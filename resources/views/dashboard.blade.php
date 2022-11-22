@@ -9,8 +9,14 @@
     @endif
 
     @if (Auth::user()->role_id==4 || Auth::user()->role_id==5)
+    @if(check_student_enrollment()==true)
+        @include('dashboard.student_enrollment')
+    @endif
+    @if(check_student_enrollment()==false)
     @include('dashboard.student_package')
     @include('dashboard.student_course')
+    @endif
+    
 
     @endif
 

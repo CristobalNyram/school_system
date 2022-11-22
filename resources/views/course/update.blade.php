@@ -56,6 +56,10 @@
                         <input type="file" class="form-control form-control-lg" id="requeriments" name="requeriments" value="{{ $current_course->requeriments }}" placeholder=" " max="50" required >
                     </div>
                     <div class="form-group">
+                        <label for="maximum_person">Máximo de personas</label>
+                        <input type="text" class="form-control form-control-lg" id="maximum_person" name="maximum_person" value="{{ $current_course->maximum_person }}" placeholder="Máximo de personas del curso" max="50" required >
+                    </div>
+                    <div class="form-group">
                         <label for="hour">Hora del curso</label>
                         <input type="text" class="form-control form-control-lg" id="hour" name="hour" value="{{ $current_course->hour }}" placeholder="Hora del curso" max="50" required >
                     </div>

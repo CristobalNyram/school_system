@@ -170,6 +170,7 @@ class CourseController extends Controller
         $course = Course::findOrFail($request->id);
         $course->title=$request->title;
         $course->description = $request->description;
+        $course->maximum_person = $request->maximum_person;
         $course->date = $request->date;
         $course->requeriments = $request->requeriments;
         $course->hour = $request->hour;

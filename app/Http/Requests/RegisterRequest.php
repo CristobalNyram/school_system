@@ -27,6 +27,7 @@ class RegisterRequest extends FormRequest
             'name' => 'required',
             'first_surname' => 'required',
             'second_surname' => 'required',
+            'enrollment' => 'numeric|max:8',
             'email' => 'required|email|unique:users'
         ];
     }

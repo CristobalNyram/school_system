@@ -129,6 +129,7 @@ class ProfileController extends Controller
         $current_user->career=$request->career;
         $current_user->quarter=$request->quarter;
         $current_user->group=$request->group;
+        $current_user->enrollment=$request->enrollment;
 
 
         if ($request->hasFile('user_image')) {

@@ -33,18 +33,18 @@
                         <div class="col">
                             <div class="card-profile-stats d-flex justify-content-center mt-md-5">
                                 @if(Auth::user()->role_id==4)
-                                <div>
-                                    <span class="heading">Semmi Sennior</span>
+                                <!-- <div>
+                                    <span class="heading">Junior</span>
                                     <span class="description">{{ __('Paquete') }}</span>
-                                </div>
+                                </div> -->
                                 {{-- <div>
                                                 <span class="heading">10</span>
                                                 <span class="description">{{ __('Photos') }}</span>
                             </div> --}}
-                            <div>
+                            <!-- <div>
                                 <span class="heading">Base de datos</span>
                                 <span class="description">{{ __('Curso inscrito') }}</span>
-                            </div>
+                            </div> -->
                             @endif
                             @if(Auth::user()->role_id==6)
                             <div>
@@ -200,6 +200,11 @@
 
 
                         </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="enrollment">Matricula</label>
+                        <input type="text" class="form-control form-control-lg" id="enrollment" name="enrollment" value="{{   old('enrollment') }}" placeholder="Cuatrimestre" max="8" required>
                     </div>
 
                     <div class="form-group">

@@ -17,6 +17,8 @@ use App\Models\Relpackagessourvenir;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
+use function PHPUnit\Framework\isNull;
+
 ////Here is for security of the system
 if (! function_exists('check_acces_to_this_permission')) {
 
@@ -221,3 +223,19 @@ if(! function_exists('check_student_register_course')) {
     }
 }
 
+//Helpers incorporate registration
+
+if(! function_exists('check_student_enrollment')) {
+    function check_student_enrollment()
+    {
+      $enrollment = Auth::user()->enrollment;
+      $register_enroll=User::where('enrollment','=',NULL)->where('id','=',5)->first();
+
+      if($register_enroll) {
+        return true;
+      } else {
+        return false;
+      }
+
+    }
+}
