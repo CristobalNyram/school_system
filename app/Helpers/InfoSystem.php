@@ -2,14 +2,19 @@
 <?php
 
 // use App\Http\Controllers\Relpaymentpackagesstudent;
+
+use App\Http\Controllers\UserController;
 use App\Models\Role;
 use App\Models\Course;
 use App\Models\Relpaymentpackagesstudent;
 
 
 use App\Models\Configuration;
+use App\Models\Package;
+use App\Models\Payment;
 use App\Models\Relcoursestudent;
 use App\Models\Relpackagessourvenir;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 ////Here is for security of the system
@@ -175,3 +180,44 @@ if (! function_exists('check_if_requested_course')) {
         }
     }
 }
+
+//helpers for statistics of app
+
+if(! function_exists('check_register_student')) {
+    //check register the student
+    function check_register_student()
+    {
+        
+        $users_active_number=User::all()->where('status','=','2')->where('role_id', '=', '4')->count();
+        
+        return $users_active_number;
+    }
+}
+
+if(! function_exists('check_paid_packages')) {
+    function check_paid_package()
+    {
+      $paid_package=Relpaymentpackagesstudent::all()->where('status','=','2')->count();
+
+      return $paid_package;
+    }
+}
+
+if(! function_exists('check_requested_packages')) {
+    function check_requested_package()
+    {
+      $requested_package=Relpaymentpackagesstudent::all()->where('status','=','1')->count();
+
+      return $requested_package;
+    }
+}
+
+if(! function_exists('check_student_register_course')) {
+    function check_student_register_course()
+    {
+      $register_course=Relcoursestudent::all()->where('status','=','2')->count();
+
+      return $register_course;
+    }
+}
+

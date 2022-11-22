@@ -152,7 +152,7 @@
     <div class="row">
 
         <div class="col-md-4">
-            <div class="modal fade" id="modal-notification" tabindex="-1" role="dialog" aria-labelledby="modal-notification" aria-hidden="true">
+            <div class="modal fade" id="modal-notification" tabindex="-1" role="dialog" aria-labelledby="modal-notification" aria-hidden="true" style="width: 100%;">
                 <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
                     <div class="modal-content bg-gradient-info">
 
@@ -163,7 +163,7 @@
                             </button>
                         </div>
 
-                        <div class="modal-body">
+                        <div class="modal-body" style="width: 100%;">
 
                             <div class="py-3 text-center">
                                 <i class="ni ni-box-2 ni-3x"></i>
