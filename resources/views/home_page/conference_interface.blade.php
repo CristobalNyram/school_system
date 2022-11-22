@@ -117,9 +117,8 @@
         </header>
         <body>
         <div class="titulo">
-        <img src="/img/logo 1.svg" alt="">
             <h1>Conferencias</h1>
-    </div>
+        </div>
 
     <div class="division">
         <img src="{{asset($current_conference->url_img )}}" alt="">

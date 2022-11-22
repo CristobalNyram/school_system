@@ -718,15 +718,17 @@ ion-icon{
 
 
 @media(max-width:416px){
-    footer p {
-      
-        font-size: 13px;
- 
-        
+    footer p { 
+        font-size: 25px;      
     }
 
 }
-
+@media (max-width: 925px){
+    .ob{
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+}
 @media(max-width:416px){
     #patro {
         
@@ -738,21 +740,14 @@ ion-icon{
         margin-bottom: 10%;
     
     }
-.ob{
-    padding-left: 80px;
-    padding-right: 80px;
-}
+
 
 .pro{
     padding-left: 80px;
     padding-right: 80px;
 }
 
-.gal{
-   
-    margin-top: 2900px;
-  
-}
+
 
 .shib{   
     left: 190px;
@@ -762,66 +757,34 @@ ion-icon{
 h1{
     font-size: 30px;
 }
-
 p{
     font-size: 15px;
 }
-
 .ha{
     margin-top: 170px;
-   
 }
 @media(max-width:200px){
-    
     .gal{
-       
         margin-top: 2100px;
-      
     }
 }
-
-
 }
-@media(max-width:391px){
-    
-    .gal{
-       
-        margin-top: 2700px;
-      
-    }
-}
-@media(max-width:377px){
-    
-    .gal{
-       
-        margin-top: 2100px;
-      
-    }
-}
-
 @media(max-width:1300px){
     .ha{
         margin-top: 170px;
-        
-       
     }
-
     .shib{
-   
         left: 190px;
         margin-left: 100px;
     }
- 
     .barra{
         left: 55px;
     }
-
 }
 @media(max-width:1500px){
     .menu__link{
         padding: 0 20px;
         font-size: 14px;
-        
     }
 }
 @media(max-width:320px){
