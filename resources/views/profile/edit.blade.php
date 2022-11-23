@@ -234,8 +234,8 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="description">Descripción del curso</label>
-                        <input type="text"   class="form-control form-control-lg" id="description" name="description" value="{{ old('description') }}" placeholder=" " max="50" required>
+                        <label for="description">Requisitos para impartir el curso</label>
+                        <input type="file"   class="form-control form-control-lg" accept="application/pdf" id="description" name="description" value="{{ old('description') }}" placeholder=" " max="50" required>
                     </div>
 
 

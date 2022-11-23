@@ -119,9 +119,9 @@ class ProfileController extends Controller
 
 
         //Speaker
-        $course = Course::findOrFail($request->speaker_id);
+        
         $current_user->academic_level=$request->academic_level;
-        $course->description=$request->description;
+        $current_user->description=$request->description;
         $current_user->specialty=$request->specialty;
         $current_user->speaker_cv=$request->speaker_cv;
         $current_user->speaker_cv=$request->speaker_cv;
