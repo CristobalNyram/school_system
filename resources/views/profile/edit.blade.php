@@ -234,8 +234,8 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="description">Requisitos para impartir Curso/Conferencia</label>
-                        <input type="file" onBlur='LimitAttach1(this,1)' accept="application/pdf"  class="form-control form-control-lg" id="description" name="description" value="{{ old('description') }}" placeholder=" " max="50" required oninput="uppercaseLetters(event);">
+                        <label for="description">Descripción del curso</label>
+                        <input type="text"   class="form-control form-control-lg" id="description" name="description" value="{{ old('description') }}" placeholder=" " max="50" required>
                     </div>
 
 

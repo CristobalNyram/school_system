@@ -84,7 +84,7 @@ class SponsorController extends Controller
 
       if($request -> hasFile ('url_img')){
         $file = $request ->file('url_img');
-        $destiantionPath = 'argon/sponsor/';
+        $destiantionPath = 'argon/img/sponsor/';
         $filename = time() .'-'. $file->getClientOriginalName();
         $uploadSuccess = $request->file('url_img')->move($destiantionPath, $filename);
         $sponsor->url_img = $destiantionPath . $filename;
