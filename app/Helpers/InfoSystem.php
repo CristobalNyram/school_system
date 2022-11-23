@@ -229,7 +229,7 @@ if(! function_exists('check_student_enrollment')) {
     function check_student_enrollment()
     {
       $enrollment = Auth::user()->enrollment;
-      $register_enroll=User::where('enrollment','=',NULL)->where('id','=',5)->first();
+      $register_enroll=User::where('enrollment','=',NULL)->where('id','=',Auth::id())->first();
 
       if($register_enroll) {
         return true;
