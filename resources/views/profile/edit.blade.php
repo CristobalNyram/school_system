@@ -148,6 +148,18 @@
                         @endif
                     </div>
 
+                    <div class="form-group">
+                        <label for="gender">Genero</label>
+
+                        <select class="form-control form-control-lg  " data-toggle="select2" id="gender" name="gender">
+                            <option value="-1" selected>Seleccionar</option>
+                            <option value="H">Masculino</option>
+                            <option value="M">Feminino</option>
+                            <option value="N/A">No binario</option>
+
+                        </select>
+                    </div>
+
 
                     @switch(Auth::user()->role_id)
 
@@ -242,18 +254,6 @@
                     <div class="form-group">
                         <label for="speaker_cv">Curriculum Viate del Conferencista/Tallerista</label>
                         <input type="file" onBlur='LimitAttach1(this,1)' accept="application/pdf" class="form-control form-control-lg" id="speaker_cv" name="speaker_cv" value="{{ old('gender') }}" placeholder=" " max="50" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="speaker_id">Curso a Impartir</label>
-
-                        <select class="form-control form-control-lg  single-select-2" data-toggle="select2" name="speaker_id" id="speaker_id">
-                            <option value="-2" selected>Seleccionar</option>
-                            @foreach ($course_available as $course )
-                            <option value="{{ old('id', auth()->user()->id) }}">{{ $course->title }}</option>
-
-                            @endforeach
-                        </select>
                     </div>
 
                     <div class="form-group">
