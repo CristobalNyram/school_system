@@ -129,7 +129,7 @@
         </div>
     </div>
     <!---pppppppppppppppppppppppppppppppppppppppppp--->
-    <div class="intrucciones" style="margin-top: 100vh;">
+    <div class="intrucciones" style="margin-top: 90vh;">
 
         <div class="contenedor_m">
             <p class="titulo_i" style="margin-top: 15vh;">¿Como funciona?</p>
@@ -161,12 +161,13 @@
                 <br>
                 
             </div>
-            <div class="contenedorimg">
-                 <img src="{{ asset('assets/img/home/img') }}/BannerFifa.png" width="100%" height="70%">
-            </div>
+           
 
 
         </div>
+        <div class="contenedorimg">
+                 <img src="{{ asset('assets/img/home/img') }}/BannerFifa.png" width="100%" height="70%">
+            </div>
         
 
 

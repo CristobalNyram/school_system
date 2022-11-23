@@ -220,6 +220,13 @@
     </div>
 </div>
 @endif
+
+
+
+
+
+
+
 {{-- enrrol to curse start --}}
 @if (check_if_requested_package_paid_out()==true && check_if_enrolled_in_course()==false)
 <script>
@@ -252,6 +259,12 @@
                     },
                     success: function(response) {
 
+                        
+                        if(response['status']===2){
+                              Swal.fire({title:response['title'],text:response['message'],icon:"success"})
+                                            .then((value) => {
+
+
                         if (response['status'] === 2) {
                             Swal.fire({
                                     title: response['title'],
@@ -264,6 +277,7 @@
 
                                 })
 
+
                         } else {
                             Swal.fire({
                                     title: response['title'],
@@ -274,6 +288,9 @@
                                     location.reload();
 
                                 })
+
+                                            
+
                         }
 
                     },

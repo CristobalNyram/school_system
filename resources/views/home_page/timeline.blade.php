@@ -131,20 +131,17 @@
             </p>
         </div>
         <div class="cuadros">
-            <div class="espacio es1"> <ion-icon class="icono" name="golf-outline"></ion-icon> <p>Registro 8:00 am – 8:30 am </p> </div>
-            <div class="espacio es2"> <ion-icon class="icono" name="ribbon-outline"></ion-icon> <p>Bienvenida  8:30 am – 9:00 am  </p> </div>
-
-            <div class="espacio es3"> <ion-icon class="icono" name="person-outline"></ion-icon> <p>1ra Conferencia(Ciberseguridad)  9:00 am – 9:40 am </p></div>
-            <div class="espacio es4"> <ion-icon class="icono" name="people-outline"></ion-icon> <p>2da Conferencia Desarrollo de proyectos 9:40 am – 10:20 am 
-
-                </p></div>
-            <div class="espacio es5"> <ion-icon class="icono" name="cafe-outline"></ion-icon> <p>Coffe Breake 10:20 am – 10:50 am</p></div>
-            <div class="espacio es6"> <ion-icon class="icono" name="person-outline"></ion-icon>  <p>3ra Conferencia (Tips financieros) 11:00 am – 11:40 am </p> </div>
-            <div class="espacio es7"> <ion-icon class="icono" name="people-outline"></ion-icon><p>Charla empresarial (sanitización) 12:00 pm – 12:30 pm</p> </div>
-            <div class="espacio es8"> <ion-icon class="icono" name="people-outline"></ion-icon> <p>Charla empresarial (transporte) 12:30pm – 1:00pm</p></div>
-            <div class="espacio es9"> <ion-icon class="icono" name="fast-food-outline"></ion-icon><p>Comida 13:00 pm – 14:00 pm  </p></div>
-            <div class="espacio es10"> <ion-icon  class="icono"name="school-outline"></ion-icon> <p>Talleres 14:00 pm – 18:00 pm
-            </p></div>
+            <div class="espacio es1"> <ion-icon class="icono" name="golf-outline"></ion-icon> <p>Bienvenida por la Doc. Maria luisa  8:00 am – 8:30 am </p> </div>
+            <div class="espacio es2"> <ion-icon class="icono" name="ribbon-outline"></ion-icon> <p>1ra. Conferencia: Introducción a la criptografia  8:30 am – 9:00 am  </p> </div>
+            <div class="espacio es3"> <ion-icon class="icono" name="person-outline"></ion-icon> <p>2da. Conferencia: Desarrollo de proyectos de desarrollo tecnológico en la industria 9:00 am – 9:40 am </p></div>
+            <div class="espacio es4"> <ion-icon class="icono" name="people-outline"></ion-icon> <p>Coffee Breaker 9:40 am – 10:00 am </p></div>
+            <div class="espacio es5"> <ion-icon class="icono" name="cafe-outline"></ion-icon> <p>3ra. Conferencia: Tips Financieros para Emprendedores 10:00 am – 10:40 am</p></div>
+            <div class="espacio es6"> <ion-icon class="icono" name="person-outline"></ion-icon>  <p>Mesa empresarial 10:40 am – 11:00 am </p> </div>
+            <div class="espacio es7"> <ion-icon class="icono" name="people-outline"></ion-icon><p>Coffee Breaker 11:00 pm – 11:15 pm</p> </div>
+            <div class="espacio es8"> <ion-icon class="icono" name="people-outline"></ion-icon> <p>4ta. Conferencia bachoco 11:15pm – 11:40pm</p></div>
+            <div class="espacio es9"> <ion-icon class="icono" name="fast-food-outline"></ion-icon><p>5ta. Conferencia: Desarrollo de Aplicaciones Netcore en Linux 11:40 pm – 12:30 pm  </p></div>
+            <div class="espacio es10"> <ion-icon  class="icono"name="school-outline"></ion-icon> <p>Comida 12:30 pm – 14:00 pm</p></div>
+            <div class="espacio es11"> <ion-icon  class="icono"name="school-outline"></ion-icon> <p>Talleres 14:00 pm – 18:00 pm</p></div>
         </div>
     </div>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

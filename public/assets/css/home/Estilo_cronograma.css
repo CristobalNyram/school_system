@@ -132,6 +132,14 @@ body {
     position: relative;
     left: -250px;
 }
+.es10{
+    position: relative;
+    left: -250px;
+}
+.es11{
+    position: relative;
+    left: -300px;
+}
 
 @media(max-width:1000px) {
    
