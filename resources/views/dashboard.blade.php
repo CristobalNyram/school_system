@@ -12,7 +12,7 @@
 
     <script>
 
-        let question = confirm("El equipo de Coders TI hemos desarrollado un pequeño videojuego. ¿Quieres probarlo?"); // The "hello" means to show the following text
+        let question = confirm("El equipo de Coders TI hemos desarrollado un pequeño videojuego. ¿Quieres probarlo? (se recomienda usar un PC y un navegador Chrome)"); // The "hello" means to show the following text
         if (question === true) {
             window.location.href="{{ route('game_index') }}";
         } else {
