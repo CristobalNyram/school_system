@@ -12,10 +12,6 @@ body{
     font-family: 'biko', sans-serif;
     
 }
-
-
-
-
 /*Introduccion*/
 .intro{
     background-color: #000;
@@ -52,40 +48,35 @@ body{
 /*marcas*/
 
 .todo{
-    display: flex;
-    flex-wrap: wrap;
-    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 0 440px;
 
 
 }
 
 .mar{
-    flex: 1;
-    min-width: 250px;
-    margin: 20px;
+    margin: 0 auto;
  
   
 }
 
 
-.mar:first-child{
-    flex: 1;
-    margin: 20px;
-    margin-bottom: 0%;
 
-
-   
-}
 
 .mar div{
-    padding: 25px;
     margin: 30px;
 }
 
 
 .roj{
-    width: 30%;
+    width: 90%;
 
+}
+
+.todo .mar h4,p{
+    text-align: center;
+    margin: 10px 0;
 }
 
 .rojj{

@@ -114,7 +114,7 @@
     <!-- Para escritorio -->
     <!-- <div class="r"> -->
     @foreach ($packages_available as $package)
-    <div class="col-xl-4 col-lg-4 mt-3 d-none d-sm-none d-md-block">
+    <div class="col-xl-3 col-lg-3 mt-3 d-none d-sm-none d-md-block">
         <div class="card card-pricing bg-success border-0 text-center col-12">
             <div class="card-header bg-transparent">
                 <h2 class="text-uppercase ls-1 text-white py-3 mb-0">Paquete: {{ $package->name }}</h2>
@@ -149,12 +149,13 @@
     @endforeach
     <!-- </div> -->
 
-    <div class="row">
+    <div class="row" >
 
         <div class="col-md-4">
             <div class="modal fade" id="modal-notification" tabindex="-1" role="dialog" aria-labelledby="modal-notification" aria-hidden="true" style="width: 100%;">
                 <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
-                    <div class="modal-content bg-gradient-info">
+                    <div class="modal-content bg-gradient-info" style="width: 100px;">
+
 
                         <div class="modal-header">
                             <h5 class="modal-title" id="modal-title-notification">Detalles del paquete</h5>
@@ -252,6 +253,17 @@
             let f = document.getElementById('frases');
             let a = document.getElementById('asiste');
             var descri = 'Con este paquete obtendrás acceso a las diferentes conferencias magistrales, así como la inscripción a uno de los diferentes talleres que brinda el evento ¡Freedom Day!, además podrás llevarte sin ningún costo adicional un sticker, acceso a cafetería y un regalo sorpresa, y por si fuera poco al concluir el evento podrás obtener un certificado con valor curricular.';
+            var frse = '¡La vida es muy corta para dejar que solo te cuenten sobre nuestro evento!';
+            var as = 'Asiste y vive la experiencia mas grandiosa';
+            descripcion.innerHTML = descri;
+            f.innerHTML = frse;
+            a.innerHTML = as;
+        }
+        if (id == 4) {
+            let descripcion = document.getElementById('d');
+            let f = document.getElementById('frases');
+            let a = document.getElementById('asiste');
+            var descri = 'Con este paquete obtendrás acceso a las diferentes conferencias magistrales, así como la inscripción a uno de los diferentes talleres que brinda el evento ¡Freedom Day!, además podrás llevarte sin ningún costo adicional un sticker, acceso a cafetería y por si fuera poco al concluir el evento podrás obtener un certificado con valor curricular.';
             var frse = '¡La vida es muy corta para dejar que solo te cuenten sobre nuestro evento!';
             var as = 'Asiste y vive la experiencia mas grandiosa';
             descripcion.innerHTML = descri;

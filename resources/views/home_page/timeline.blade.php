@@ -131,7 +131,7 @@
             </p>
         </div>
         <div class="cuadros">
-            <div class="espacio es1"> <ion-icon class="icono" name="golf-outline"></ion-icon> <p>Bienvenida por la Doc. Maria luisa  8:00 am – 8:30 am </p> </div>
+            <div class="espacio es1"> <ion-icon class="icono" name="golf-outline"></ion-icon> <p>Bienvenida por la Dra. Maria Luisa Juarez Hernandez 8:00 am – 8:30 am </p> </div>
             <div class="espacio es2"> <ion-icon class="icono" name="ribbon-outline"></ion-icon> <p>1ra. Conferencia: Introducción a la criptografia  8:30 am – 9:00 am  </p> </div>
             <div class="espacio es3"> <ion-icon class="icono" name="person-outline"></ion-icon> <p>2da. Conferencia: Desarrollo de proyectos de desarrollo tecnológico en la industria 9:00 am – 9:40 am </p></div>
             <div class="espacio es4"> <ion-icon class="icono" name="people-outline"></ion-icon> <p>Coffee Breaker 9:40 am – 10:00 am </p></div>

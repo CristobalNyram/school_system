@@ -74,7 +74,7 @@ body {
     
 
 .espacio p {
-    margin-top: 20px;
+    margin-top: 8px;
 }
 
 .espacio .icono {
@@ -145,6 +145,7 @@ body {
    
     .espacio p{
         margin-top: 10px;
+        font-size: 14px;
     }
     .es1{
         position: relative;
@@ -195,6 +196,11 @@ body {
         position: relative;
         left: 0;
     }
+    .es11{
+        position: relative;
+        left: 0;
+    }
+    
     
 }
 
