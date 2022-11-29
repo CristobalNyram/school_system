@@ -16,7 +16,7 @@ class GetCertificateController extends Controller
 
         $rol= new Role();
         $log= new Logbook();
-        if($rol->checkAccesToThisFunctionality(Auth::user()->role_id,44)==null)
+        if($rol->checkAccesToThisFunctionality(Auth::user()->role_id,45)==null)
         {
            
 
