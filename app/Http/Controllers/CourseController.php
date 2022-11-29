@@ -170,6 +170,7 @@ class CourseController extends Controller
         $course = Course::findOrFail($request->id);
         $course->title=$request->title;
         $course->description = $request->description;
+        $course->maximum_person = $request->maximum_person;
         $course->date = $request->date;
         $course->requeriments = $request->requeriments;
         $course->hour = $request->hour;
@@ -180,7 +181,7 @@ class CourseController extends Controller
 
         if($request -> hasFile ('url_img')){
             $file = $request ->file('url_img');
-            $destiantionPath = 'argon/course/';
+            $destiantionPath = 'argon/img/course/';
             $filename = time() .'-'. $file->getClientOriginalName();
             $uploadSuccess = $request->file('url_img')->move($destiantionPath, $filename);
             $course->url_img = $destiantionPath . $filename;
@@ -189,7 +190,7 @@ class CourseController extends Controller
 
         if($request -> hasFile ('requeriments')){
             $file = $request ->file('requeriments');
-            $destiantionPath = 'argon/course/';
+            $destiantionPath = 'argon/img/course/';
             $filename = time() .'-'. $file->getClientOriginalName();
             $uploadSuccess = $request->file('requeriments')->move($destiantionPath, $filename);
             $course->requeriments = $destiantionPath . $filename;
@@ -279,6 +280,7 @@ class CourseController extends Controller
     public function course_enroll_me(Request $request)
     {
         $log = new Logbook();
+        $answer=[];
         $course = Course::findOrFail($request->course_id);
         $count_enrrolles_in_course=Relcoursestudent::all()->where('course_id','=',$request->course_id)->where('status','=',2)->count();
         if($count_enrrolles_in_course>=$course->maximum_person){
@@ -294,8 +296,7 @@ class CourseController extends Controller
             $new_registation_in_course=new Relcoursestudent();
             $new_registation_in_course->course_id=$request->course_id;
             $new_registation_in_course->user_student_id=Auth::id();
-            $new_registation_in_course->user_student_id=2;
-            $new_registation_in_course->user_approved_id=0;
+            $new_registation_in_course->user_approved_id=Auth::id();
 
 
             if($new_registation_in_course->save()){

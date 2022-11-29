@@ -20,6 +20,7 @@ use App\Http\Controllers\ExampleController;
 use App\Http\Controllers\RallyController;
 use App\Http\Controllers\GetBadgeController;
 use App\Http\Controllers\GetCertificateController;
+use App\Http\Controllers\VideogameController;
 use App\Models\Sponsor;
 
 
@@ -37,10 +38,10 @@ use App\Models\Sponsor;
 */
 
  Route::get('/', function () {
-    $sponsors2=Sponsor::all()->where('status','=','2');
+    $sponsors=Sponsor::all()->where('status','=','2');
 
         $variables=[
-            'sponsors2'=>$sponsors2,
+            'sponsors2'=>$sponsors,
         ];
     return view('home_page.index')->with($variables);
  });
@@ -119,7 +120,7 @@ Route::group(['middleware' => 'auth'], function () {
          Route::post('/password/edit',[PasswordController::class,"edit"])->name('password_edit');
 
         // password start-------------------------------------------
-        Route::get('/password/update/{user_id}', [PasswordController::class, "update"])->name('password_update');
+        Route::get('/password/update/{speaker_id}', [PasswordController::class, "update"])->name('password_update');
         Route::post('/password/edit', [PasswordController::class, "edit"])->name('password_edit');
 
         // password end--------------------------------------------
@@ -139,7 +140,6 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/payments', [PaymentController::class, "index"])->name('payment_index');
         Route::post('/payments/cancel/{payment_id}', [PaymentController::class, "payment_cancel"])->name('payment_cancel');
         Route::post('/payments/aprove/{payment_id}', [PaymentController::class, "payment_aprove"])->name('payment_aprove');
-
         Route::post('/payments/required', [PaymentController::class, "paymenstRequest"])->name('paymentRequest');
 
 
@@ -175,13 +175,12 @@ Route::group(['middleware' => 'auth'], function () {
 
         // courses start-----------------------------------
         Route::get('/course', [CourseController::class, "index"])->name('course_index');
-        Route::post('/course/enroll', [CourseController::class, "course_enroll_me"])->name('course_enroll_me');
-
         Route::get('/course/create', [CourseController::class, "create"])->name('course_create');
         Route::post('/course/store', [CourseController::class, "store"])->name('course_store');
         Route::get('/course/update/{course_id}', [CourseController::class, "update"])->name('course_update');
         Route::post('/course/edit', [CourseController::class, "edit"])->name('course_edit');
         Route::post('/course/delete/{course_id}', [CourseController::class, "delete"])->name('course_delete');
+        Route::post('/course/required', [CourseController::class, "course_enroll_me"])->name('course_enroll');
         // Route::post('/course/enrol/{course_id}', [CourseController::class, "delete"])->name('course_delete');
         // Route::post('/course/enrol/{course_id}', [CourseController::class, "delete"])->name('course_delete');
 
@@ -251,6 +250,11 @@ Route::group(['middleware' => 'auth'], function () {
         Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
 
 
+
+        // video  game start
+        Route::get('/video-game-freedomday', [VideogameController::class, "index"])->name('game_index');
+
+        ///video game end
         /*
         Route::get('upgrade', function () {
             return view('pages.upgrade');

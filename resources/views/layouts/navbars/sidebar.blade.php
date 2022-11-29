@@ -61,7 +61,7 @@
                     aria-expanded="false">
                     <div class="media align-items-center">
                         <span class="avatar avatar-sm rounded-circle">
-                            <img alt="Image placeholder" src="{{ asset('argon') }}/img/theme/team-1-800x800.jpg">
+                            <img alt="Image placeholder" src="{{asset(Auth::user()->user_image)}}">
                         </span>
                     </div>
                 </a>
@@ -138,6 +138,13 @@
                     </a>
                 </li>
 
+                  <li class="nav-item">
+                    <a class="nav-link @if($menu === 'videogame')  custom-active text-white @endif"
+                        href="{{ route('game_index') }}">
+                        <i class="ni ni-app-2 text-primary"></i> {{ __('Video juego') }}
+                    </a>
+                </li>
+
 
 
                 </li>
@@ -145,6 +152,7 @@
             </ul>
 
             </ul>
+            @if ( check_acces_to_this_permission(Auth::user()->role_id,25))
             <hr class="my-3">
             <h6 class="navbar-heading text-muted">Reportes</h6>
 
@@ -152,7 +160,6 @@
             <hr class="my-3">
             <h6 class="navbar-heading text-muted">Admnistración</h6>
             <ul class="navbar-nav">
-
 
                 <li class="nav-item">
                     <a class="nav-link  @if($menu === 'payments')  custom-active text-white  @endif"
@@ -166,7 +173,6 @@
                         <i class="fas fa-school text-primary"></i>Alumnos
                     </a>
                 </li>
-
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('home') }}">
                         <i class="fa fa-city text-primary"></i>
@@ -174,6 +180,7 @@
                     </a>
                 </li>
 
+
                 </li>
 
 
@@ -182,10 +189,12 @@
                 </li>
 
             </ul>
+            @endif
 
 
 
             </ul>
+
 
             <hr class="my-3">
             <h6 class="navbar-heading text-muted">Página principal</h6>

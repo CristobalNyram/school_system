@@ -26,7 +26,7 @@
             <!-- Navbar items -->
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link nav-link-icon" href="{{ route('home') }}">
+                    <a class="nav-link nav-link-icon" href="{{ route('home_page_index') }}">
                         <i class="ni ni-world"></i>
                         <span class="nav-link-inner--text">Página princial</span>
                     </a>

@@ -67,7 +67,7 @@
                         </section>
                     </li>
                     <li class="menu__item">
-                        <a href="{{ route('home_page_index') }}" class="menu__link">Really</a>
+                        <a href="{{ route('home_page_index') }}" class="menu__link">Torneo<span style="color:black">_</span>de<span style="color:black">_</span>Videojuegos</a>
                     </li>
 
 
@@ -127,13 +127,11 @@
             <div class="contenedor_texto">
             <h3>{{$current_course->title}}</h3>
             <p>{{$current_course->description}}</p>
-            <h4>Curso impartido por: <span id="hj">Enrique Vazarez</span></h4>
-            <H4>Horario: <span id="hj">14:00 A.M. - 18:00 A.M.</span></H4>
-
-            <a href="{{ route('home_page_create') }}">
-               <button class="boton">+Inscribirse</button>
-            </a>
-
+            @foreach($consulta as $taller)
+            <h4>Curso impartido por: <span id="hj">{{$taller->name}}</span></h4>
+            @endforeach
+            <H4>Horario: <span id="hj">{{$current_course->hour}}</span></H4>
+            <H4>Fecha: <span id="hj">{{$current_course->date}}</span></H4>
             </div>
         </div>
 

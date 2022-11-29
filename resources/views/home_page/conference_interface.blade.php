@@ -7,9 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ config_name_system() }}</title>
-    <link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilo_Conferencia_Interfaz.css">
+    
     <link href="{{ asset('argon/brand') }}/favicon.png" rel="icon" type="image/png">
+    
     <link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilo_index_R.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilo_Conferencia_Interfaz.css">
+    
 </head>
 <header>
     <nav class="menu">
@@ -67,7 +70,7 @@
                         </section>
                     </li>
                     <li class="menu__item">
-                        <a href="{{ route('really_index') }}" class="menu__link">Really</a>
+                        <a href="{{ route('really_index') }}" class="menu__link">Torneo<span style="color:black">_</span>de<span style="color:black">_</span>Videojuegos</a>
                     </li>
 
 
@@ -114,9 +117,8 @@
         </header>
         <body>
         <div class="titulo">
-        <img src="/img/logo 1.svg" alt="">
             <h1>Conferencias</h1>
-    </div>
+        </div>
 
     <div class="division">
         <img src="{{asset($current_conference->url_img )}}" alt="">
@@ -149,24 +151,24 @@
 
 
 <footer>
-    <div class="container">
+    <h3>© Copyright Software-Freedom Day 2022</h3>
+    <p>Todos los derechos reservados.</p>
+    <p>Deasarrollado por {{ config_author_system() }}</p>
 
-    <p>&copy; Copyright Software-Freedom Day 2022<br><br>Todos los derechos reservados. <br>Deasarrollado por {{ config_author_system() }}
-    </p>
-    <center>
-        <a href="https://www.facebook.com/Freedom-Day-TI-Uttecam-477721659417275">
-            <span class="icono"></span>
-            <ion-icon class="tam" name="logo-facebook"></ion-icon>
-            <span class="texto"> </span>
-        </a>
 
-        <a class="icon" href="https://goo.gl/maps/BWKybpucUgH8QXzf6">
-            <span class="icono"></span>
-            <ion-icon name="location-outline"></ion-icon>
-            <span class="texto"> </span>
-        </a>
-    </center>
+    <div class="iconos">
+
+    <a class="iconn" href="https://www.facebook.com/Freedom-Day-TI-Uttecam-477721659417275">
+            <ion-icon name="logo-facebook"></ion-icon>
+    </a>
+    <a class="iconn" href="https://goo.gl/maps/BWKybpucUgH8QXzf6">
+        <ion-icon name="location-outline"></ion-icon>
+    </a>
     </div>
+
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </footer>
 
 <script src="{{ asset('assets/js/home') }}/galeria.js"></script>

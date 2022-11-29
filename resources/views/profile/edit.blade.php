@@ -17,7 +17,7 @@
                     <div class="col-lg-3 order-lg-2">
                         <div class="card-profile-image">
                             <a href="#">
-                                <img src="{{ asset('argon') }}/img/theme/team-4-800x800.jpg" class="rounded-circle">
+                                <img src="{{asset(Auth::user()->user_image)}}" class="rounded-circle">
                             </a>
                         </div>
                     </div>
@@ -33,18 +33,18 @@
                         <div class="col">
                             <div class="card-profile-stats d-flex justify-content-center mt-md-5">
                                 @if(Auth::user()->role_id==4)
-                                <div>
-                                    <span class="heading">Semmi Sennior</span>
+                                <!-- <div>
+                                    <span class="heading">Junior</span>
                                     <span class="description">{{ __('Paquete') }}</span>
-                                </div>
+                                </div> -->
                                 {{-- <div>
                                                 <span class="heading">10</span>
                                                 <span class="description">{{ __('Photos') }}</span>
                             </div> --}}
-                            <div>
+                            <!-- <div>
                                 <span class="heading">Base de datos</span>
                                 <span class="description">{{ __('Curso inscrito') }}</span>
-                            </div>
+                            </div> -->
                             @endif
                             @if(Auth::user()->role_id==6)
                             <div>
@@ -148,6 +148,18 @@
                         @endif
                     </div>
 
+                    <div class="form-group">
+                        <label for="gender">Genero</label>
+
+                        <select class="form-control form-control-lg  " data-toggle="select2" id="gender" name="gender">
+                            <option value="-1" selected>Seleccionar</option>
+                            <option value="H">Masculino</option>
+                            <option value="M">Feminino</option>
+                            <option value="N/A">No binario</option>
+
+                        </select>
+                    </div>
+
 
                     @switch(Auth::user()->role_id)
 
@@ -203,6 +215,11 @@
                     </div>
 
                     <div class="form-group">
+                        <label for="enrollment">Matricula</label>
+                        <input type="text" class="form-control form-control-lg" id="enrollment" name="enrollment" value="{{   old('enrollment') }}" placeholder="Cuatrimestre" max="8" required>
+                    </div>
+
+                    <div class="form-group">
                         <label for="gender">Genero</label>
 
                         <select class="form-control form-control-lg single-select-2 " data-toggle="select2" id="gender" name="gender">
@@ -229,26 +246,14 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="description">Requisitos para impartir Curso/Conferencia</label>
-                        <input type="file" onBlur='LimitAttach1(this,1)' accept="application/pdf"  class="form-control form-control-lg" id="description" name="description" value="{{ old('description') }}" placeholder=" " max="50" required oninput="uppercaseLetters(event);">
+                        <label for="description">Requisitos para impartir el curso</label>
+                        <input type="file"   class="form-control form-control-lg" accept="application/pdf" id="description" name="description" value="{{ old('description') }}" placeholder=" " max="50" required>
                     </div>
 
 
                     <div class="form-group">
                         <label for="speaker_cv">Curriculum Viate del Conferencista/Tallerista</label>
                         <input type="file" onBlur='LimitAttach1(this,1)' accept="application/pdf" class="form-control form-control-lg" id="speaker_cv" name="speaker_cv" value="{{ old('gender') }}" placeholder=" " max="50" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="speaker_id">Curso a Impartir</label>
-
-                        <select class="form-control form-control-lg  single-select-2" data-toggle="select2" name="speaker_id" id="speaker_id">
-                            <option value="-2" selected>Seleccionar</option>
-                            @foreach ($course_available as $course )
-                            <option value="{{ old('id', auth()->user()->id) }}">{{ $course->title }}</option>
-
-                            @endforeach
-                        </select>
                     </div>
 
                     <div class="form-group">

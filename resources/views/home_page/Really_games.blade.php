@@ -15,6 +15,7 @@
 
     <link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilos_Videojuegos.css">
     <link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilo_index_R.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/home') }}/barra.css">
 
     <link href="/estilosmenu.css" rel="stylesheet" type="text/css">
 </head>
@@ -71,7 +72,7 @@
                     </section>
                 </li>
                 <li class="menu__item">
-                        <a href="{{ route('really_index') }}" class="menu__link">Really</a>
+                        <a href="{{ route('really_index') }}" class="menu__link">Torneo<span style="color:black">_</span>de<span style="color:black">_</span>Videojuegos</a>
                     </li>
                 <li class="menu__item">
                 <a href="{{ route('timeline_index') }}" class="menu__link">Horario</a>
@@ -116,20 +117,20 @@
     <div class="">
 
         <video autoplay loop class="back-video" muted plays-inline>
-            <source src="{{ asset('assets/img/home/img') }}/video.mp4" type="video/mp4">
+            <source src="{{ asset('assets/img/home/img') }}/Esto es Xbox Game Pass  - Tráiler.mp4" type="video/mp4">
 
         </video>
 
 
         <div class="contenido_titulo">
-            <h1>Bienvenidos a Pangea</h1>
-            <p>LIGA MEXICANA DE FREEDOMDAY</p>
+            
 
 
         </div>
     </div>
     <!---pppppppppppppppppppppppppppppppppppppppppp--->
-    <div class="intrucciones" style="margin-top: 20vh;">
+    <div class="intrucciones" style="margin-top: 90vh;">
+
         <div class="contenedor_m">
             <p class="titulo_i" style="margin-top: 15vh;">¿Como funciona?</p>
             <p class="Cuadro_P">Para participar registrate en 3 sencillos pasos</p>
@@ -140,28 +141,34 @@
                     Gears 5.<br>
                     The King of Fighters.</p>
                 <br>
-                <img src="{{ asset('assets/img/home/img') }}/15.png" width="150px">
+                <img src="{{ asset('assets/img/home/img') }}/15.png" width="80px">
             </div>
             <div class="Pasos">
                 <p class="Titulo_Paso">Paso 2</p>
                 <p>Revisa el reglamento y práctica.</p>
                 <br>
-                <img src="{{ asset('assets/img/home/img') }}/15.png" width="150px">
+                <img src="{{ asset('assets/img/home/img') }}/15.png" width="80px">
             </div>
             <div class="Pasos">
                 <p class="Titulo_Paso">Paso 3</p>
                 <p>Busca la parte de registro y rellena los datos .</p>
                 <br>
-                <img src="{{ asset('assets/img/home/img') }}/15.png" width="150px">
+                <img src="{{ asset('assets/img/home/img') }}/15.png" width="80px">
             </div>
             <div class="Pasos">
                 <p class="Titulo_Paso">Listo</p>
                 <p>Revisa la información y asiste </p>
                 <br>
-                <img src="{{ asset('assets/img/home/img') }}/16.png" width="150px">
+                
             </div>
+           
+
 
         </div>
+        <div class="contenedorimg">
+                 <img src="{{ asset('assets/img/home/img') }}/BannerFifa.png" width="100%" height="70%">
+            </div>
+        
 
 
     </div>
@@ -220,12 +227,6 @@
 
                 </div>
 
-
-                <button class="boton_tc" id="open">
-                    <FONT SIZE=4.5 >REGISTRATE</FONT>
-                </button>
-
-
                 <div id="modal_container" class="modal-container">
                     <div class="modal">
                         <h1>Registro Clash Royale</h1>
@@ -279,9 +280,7 @@
 
                 </div>
 
-                <button class="boton_tc" id="open">
-                    <FONT SIZE=4.5>REGISTRATE</FONT>
-                </button>
+                
 
                 <div id="modal_container" class="modal-container">
                     <div class="modal">
@@ -332,9 +331,7 @@
 
 
 
-                <button class="boton_tc" id="open">
-                    <FONT SIZE=4.5>REGISTRATE</FONT>
-                </button>
+                
 
                 <div id="modal_container" class="modal-container">
                     <div class="modal">
@@ -348,32 +345,26 @@
 
 
     </div>
-
-
-
-
-
-
-
     <footer>
-        <div class="container">
-            <p>&copy; Copyright Software-Freedom Day 2022<br><br>Todos los derechos reservados. <br>Deasarrollado por{{ config_author_system() }}
-            </p>
-            <center>
-                <a href="https://www.facebook.com/Freedom-Day-TI-Uttecam-477721659417275">
-                    <span class="icono"></span>
-                    <ion-icon class="tam" name="logo-facebook"></ion-icon>
-                    <span class="texto"> </span>
-                </a>
+    <h3>© Copyright Software-Freedom Day 2022</h3>
+    <p>Todos los derechos reservados.</p>
+    <p>Deasarrollado por {{ config_author_system() }}</p>
 
-                <a class="icon" href="https://goo.gl/maps/BWKybpucUgH8QXzf6">
-                    <span class="icono"></span>
-                    <ion-icon name="location-outline"></ion-icon>
-                    <span class="texto"> </span>
-                </a>
-            </center>
-        </div>
-    </footer>
+
+    <div class="iconos">
+
+    <a class="icon" href="https://www.facebook.com/Freedom-Day-TI-Uttecam-477721659417275">
+            <ion-icon name="logo-facebook"></ion-icon>
+    </a>
+    <a class="icon" href="https://goo.gl/maps/BWKybpucUgH8QXzf6">
+        <ion-icon name="location-outline"></ion-icon>
+    </a>
+    </div>
+
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</footer>
 </body>
 
 

@@ -69,7 +69,7 @@
                         </section>
                     </li>
                     <li class="menu__item">
-                        <a href="{{ route('really_index') }}" class="menu__link">Really</a>
+                        <a href="{{ route('really_index') }}" class="menu__link">Torneo<span style="color:black">_</span>de<span style="color:black">_</span>Videojuegos</a>
                     </li>
                     <li class="menu__item">
                         <a href="{{ route('timeline_index') }}" class="menu__link">Horario</a>
@@ -158,124 +158,28 @@
             </div>
         </div>
         @endforeach
-        @foreach($sponsors2 as $sponsor)
-        <div class="mar">
-            <div>
-                <img class="roj" src="{{asset($sponsor->url_img )}}">
-                <h4>{{$sponsor->name}}</h4>
-                <p> {{$sponsor->slogan}}</p>
-                <a class="icon" href="https://www.facebook.com/Freedom-Day-TI-Uttecam-477721659417275">
-                    <span class="icono"></span>
-                    <ion-icon class="tam" name="logo-facebook"></ion-icon>
-                    <span class="texto"> </span>
-                </a>
-                <a class="icon" href="https://goo.gl/maps/BWKybpucUgH8QXzf6">
-                    <span class="icono"></span>
-                    <ion-icon name="location-outline"></ion-icon>
-                    <span class="texto"> </span>
-                </a>
-                <a class="icon" href="https://goo.gl/maps/BWKybpucUgH8QXzf6">
-                    <span class="icono"></span>
-                    <ion-icon name="logo-instagram"></ion-icon>
-                    <span class="texto"> </span>
-                </a>
-            </div>
-        </div>
-        @endforeach
-        @foreach($sponsors3 as $sponsor)
-        <div class="mar">
-            <div>
-                <img class="roj" src="{{asset($sponsor->url_img )}}">
-                <h4>{{$sponsor->name}}</h4>
-                <p> {{$sponsor->slogan}}</p>
-                <a class="icon" href="https://www.facebook.com/Freedom-Day-TI-Uttecam-477721659417275">
-                    <span class="icono"></span>
-                    <ion-icon class="tam" name="logo-facebook"></ion-icon>
-                    <span class="texto"> </span>
-                </a>
-                <a class="icon" href="https://goo.gl/maps/BWKybpucUgH8QXzf6">
-                    <span class="icono"></span>
-                    <ion-icon name="location-outline"></ion-icon>
-                    <span class="texto"> </span>
-                </a>
-                <a class="icon" href="https://goo.gl/maps/BWKybpucUgH8QXzf6">
-                    <span class="icono"></span>
-                    <ion-icon name="logo-instagram"></ion-icon>
-                    <span class="texto"> </span>
-                </a>
-            </div>
-        </div>
-        @endforeach
-        @foreach($sponsors4 as $sponsor)
-        <div class="mar">
-            <div>
-                <img class="roj" src="{{asset($sponsor->url_img )}}">
-                <h4>{{$sponsor->name}}</h4>
-                <p> {{$sponsor->slogan}}</p>
-                <a class="icon" href="https://www.facebook.com/Freedom-Day-TI-Uttecam-477721659417275">
-                    <span class="icono"></span>
-                    <ion-icon class="tam" name="logo-facebook"></ion-icon>
-                    <span class="texto"> </span>
-                </a>
-                <a class="icon" href="https://goo.gl/maps/BWKybpucUgH8QXzf6">
-                    <span class="icono"></span>
-                    <ion-icon name="location-outline"></ion-icon>
-                    <span class="texto"> </span>
-                </a>
-                <a class="icon" href="https://goo.gl/maps/BWKybpucUgH8QXzf6">
-                    <span class="icono"></span>
-                    <ion-icon name="logo-instagram"></ion-icon>
-                    <span class="texto"> </span>
-                </a>
-            </div>
-        </div>
-        @endforeach
-        @foreach($sponsors5 as $sponsor)
-        <div class="mar">
-            <div>
-                <img class="roj" src="{{asset($sponsor->url_img )}}">
-                <h4>{{$sponsor->name}}</h4>
-                <p> {{$sponsor->slogan}}</p>
-                <a class="icon" href="https://www.facebook.com/Freedom-Day-TI-Uttecam-477721659417275">
-                    <span class="icono"></span>
-                    <ion-icon class="tam" name="logo-facebook"></ion-icon>
-                    <span class="texto"> </span>
-                </a>
-                <a class="icon" href="https://goo.gl/maps/BWKybpucUgH8QXzf6">
-                    <span class="icono"></span>
-                    <ion-icon name="location-outline"></ion-icon>
-                    <span class="texto"> </span>
-                </a>
-                <a class="icon" href="https://goo.gl/maps/BWKybpucUgH8QXzf6">
-                    <span class="icono"></span>
-                    <ion-icon name="logo-instagram"></ion-icon>
-                    <span class="texto"> </span>
-                </a>
-            </div>
-        </div>
-        @endforeach
     </section>
 
     <footer>
-        <div class="container">
+    <h3>© Copyright Software-Freedom Day 2022</h3>
+    <p>Todos los derechos reservados.</p>
+    <p>Deasarrollado por {{ config_author_system() }}</p>
 
-        <p>&copy; Copyright Software-Freedom Day 2022<br><br>Todos los derechos reservados. <br>Deasarrollado por {{ config_author_system() }}
-        </p>
-        <center>
-            <a href="https://www.facebook.com/Freedom-Day-TI-Uttecam-477721659417275">
-                <span class="icono"></span>
-                <ion-icon class="tam" name="logo-facebook"></ion-icon>
-                <span class="texto"> </span>
-            </a>
 
-            <a class="icon" href="https://goo.gl/maps/BWKybpucUgH8QXzf6">
-                <span class="icono"></span>
-                <ion-icon name="location-outline"></ion-icon>
-                <span class="texto"> </span>
-            </a>
-        </center>
-        </div>
-    </footer>
+    <div class="iconos">
+
+    <a class="icon" href="https://www.facebook.com/Freedom-Day-TI-Uttecam-477721659417275">
+            <ion-icon name="logo-facebook"></ion-icon>
+    </a>
+    <a class="icon" href="https://goo.gl/maps/BWKybpucUgH8QXzf6">
+        <ion-icon name="location-outline"></ion-icon>
+    </a>
+    </div>
+
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</footer>
 
     <script src="{{ asset('assets/js/home') }}/galeria.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

@@ -68,7 +68,7 @@
                 </li>
 
                 <li class="menu__item">
-                    <a href="{{ route('really_index') }}" class="menu__link">Really</a>
+                    <a href="{{ route('really_index') }}" class="menu__link">Torneo<span style="color:black">_</span>de<span style="color:black">_</span>Videojuegos</a>
                 </li>
                 <li class="menu__item">
                     <a href="{{ route('timeline_index') }}" class="menu__link">Horario</a>
@@ -120,7 +120,7 @@
     @foreach($precio3 as $packages)
     <div class="card">
         <div class="circleS" style="--clr:#bdc3c7">
-            <img id="img" src="{{asset('assets/img/home/img')}}/cup.png" class="logo">
+            <img id="img" src="{{asset($souvenir->url_img )}}" class="logo">
         </div>
         <div class="content">
             <p><b>{{$packages->name}}</b><br>Incluye:</p>
@@ -132,7 +132,7 @@
             <p><b>Precio: $300</b></p>
             <!-- <a href="{{ route('home_page_create') }}">Comprar</a> -->
         </div>
-        <img id="bs" src="{{asset('assets/img/home/img')}}/cup.png" class="product_img">
+        <img id="bs" src="{{asset($souvenir->url_img )}}" class="product_img">
     </div>
     @endforeach
     @endforeach
@@ -174,7 +174,7 @@
             <p><b>Precio: ${{$packages->price}}</b></p>
             <!-- <a href="{{ route('home_page_create') }}">Comprar</a> -->
         </div>
-        <img id="pla" src="{{asset($souvenir->url_img )}}" class="product_img">
+        <img id="xa" src="{{asset($souvenir->url_img )}}" class="product_img">
     </div>
     @endforeach
     @endforeach
@@ -186,25 +186,24 @@
 
 
 <footer>
-    <div class="container">
-
-        <p>&copy; Copyright Software-Freedom Day 2022<br><br>Todos los derechos reservados. <br>Deasarrollado por {{ config_author_system() }}
-        </p>
-        <center>
-            <a href="https://www.facebook.com/Freedom-Day-TI-Uttecam-477721659417275">
-                <span class="icono"></span>
-                <ion-icon class="tam" name="logo-facebook"></ion-icon>
-                <span class="texto"> </span>
-            </a>
+    <h3>© Copyright Software-Freedom Day 2022</h3>
+    <p>Todos los derechos reservados.</p>
+    <p>Deasarrollado por {{ config_author_system() }}</p>
 
 
-            <a class="icon" href="https://goo.gl/maps/BWKybpucUgH8QXzf6">
-                <span class="icono"></span>
-                <ion-icon name="location-outline"></ion-icon>
-                <span class="texto"> </span>
-            </a>
-        </center>
+    <div class="iconos">
+
+    <a class="icon" href="https://www.facebook.com/Freedom-Day-TI-Uttecam-477721659417275">
+            <ion-icon name="logo-facebook"></ion-icon>
+    </a>
+    <a class="icon" href="https://goo.gl/maps/BWKybpucUgH8QXzf6">
+        <ion-icon name="location-outline"></ion-icon>
+    </a>
     </div>
+
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </footer>
 
 <script src="{{ asset('assets/js/home') }}/galeria.js"></script>

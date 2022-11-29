@@ -2,14 +2,22 @@
 <?php
 
 // use App\Http\Controllers\Relpaymentpackagesstudent;
+
+use App\Http\Controllers\UserController;
 use App\Models\Role;
+use App\Models\Course;
 use App\Models\Relpaymentpackagesstudent;
 
 
 use App\Models\Configuration;
+use App\Models\Package;
+use App\Models\Payment;
 use App\Models\Relcoursestudent;
 use App\Models\Relpackagessourvenir;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+
+use function PHPUnit\Framework\isNull;
 
 ////Here is for security of the system
 if (! function_exists('check_acces_to_this_permission')) {
@@ -83,36 +91,51 @@ if (! function_exists('config_author_system')) {
       }
 }
 
-// helpers for check payments start
-if (! function_exists('check_if_paid_package')) {
+//helper for check payments start
 
-        //check if the user has bought his/her ticket
-      function check_if_paid_package()
-      {
-            $check_if_paid_package = Relpaymentpackagesstudent::where('user_student_id','=',Auth::id())->where('status','=',2)->first();
-
-      }
+if(! function_exists('check_if_paid_package')) {
+    //check if the user has bought his/her ticket
+    function check_if_paid_package()
+    {
+        $check_if_paid_package = Relpaymentpackagesstudent::where('user_student_id', '=', Auth::id())->where('status', '=',2)->first();
+    }
 }
+
 if (! function_exists('check_if_requested_package')) {
-
-        //check if the user has requested the package
-        function check_if_requested_package()
+    //check if the user has requested the package 
+    function check_if_requested_package()
+    {
+        $check_if_requested_package = Relpaymentpackagesstudent::where('user_student_id', '=', Auth::id())->where('status', '=',1)->first();
+        if($check_if_requested_package)
         {
-                $check_if_requested_package = Relpaymentpackagesstudent::where('user_student_id','=',Auth::id())->where('status','=',1)->first();
-                if( $check_if_requested_package)
-                {
-                    return true;
-                }else
-                {
-                    return false;
-                }
-
+            return true;
+        }else
+        {
+            return false;
         }
+    }
 }
 if (! function_exists('check_if_enrolled_in_course')) {
 
     //check if the user has enrrolled in any  course
     function check_if_enrolled_in_course()
+    {
+            
+            $check_if_enrolled_in_course = Relcoursestudent::where('user_student_id','=',Auth::id())->where('status','=',2)->first();
+            if($check_if_enrolled_in_course == $check_if_enrolled_in_course)
+            {
+                return true;
+            }else
+            {
+                return false;
+            }
+    }
+}
+
+if (! function_exists('check_if_requested_course_paid_out')) {
+
+    //check if the user has enrrolled in any  course
+    function check_if_requested_course_paid_out()
     {
             $check_if_enrolled_in_course = Relcoursestudent::where('user_student_id','=',Auth::id())->where('status','=',2)->first();
             if( $check_if_enrolled_in_course)
@@ -140,6 +163,7 @@ if (! function_exists('check_if_requested_package_paid_out')) {
         }
     }
 }
+
 if (! function_exists('get_id_request_payment')) {
 
     //check if the user has enrrolled in any  course
@@ -155,7 +179,79 @@ if (! function_exists('get_id_request_payment')) {
         }
     }
 }
-// helpers for check payments end
 
+//helpers for check payments end
 
+//helpers for check register course start
 
+if (! function_exists('check_if_requested_course')) {
+    //check if the user has requested the package 
+    function check_if_requested_course()
+    {
+        $check_if_requested_course = Relcoursestudent::where('user_student_id', '=', Auth::id())->where('user_approved_id', '=',Auth::id())->first();
+        if($check_if_requested_course)
+        {
+            return true;
+        }else
+        {
+            return false;
+        }
+    }
+}
+
+//helpers for statistics of app
+
+if(! function_exists('check_register_student')) {
+    //check register the student
+    function check_register_student()
+    {
+        
+        $users_active_number=User::all()->where('status','=','2')->where('role_id', '=', '4')->count();
+        
+        return $users_active_number;
+    }
+}
+
+if(! function_exists('check_paid_packages')) {
+    function check_paid_package()
+    {
+      $paid_package=Relpaymentpackagesstudent::all()->where('status','=','2')->count();
+
+      return $paid_package;
+    }
+}
+
+if(! function_exists('check_requested_packages')) {
+    function check_requested_package()
+    {
+      $requested_package=Relpaymentpackagesstudent::all()->where('status','=','1')->count();
+
+      return $requested_package;
+    }
+}
+
+if(! function_exists('check_student_register_course')) {
+    function check_student_register_course()
+    {
+      $register_course=Relcoursestudent::all()->where('status','=','2')->count();
+
+      return $register_course;
+    }
+}
+
+//Helpers incorporate registration
+
+if(! function_exists('check_student_enrollment')) {
+    function check_student_enrollment()
+    {
+      $enrollment = Auth::user()->enrollment;
+      $register_enroll=User::where('enrollment','=',NULL)->where('id','=',Auth::id())->first();
+
+      if($register_enroll) {
+        return true;
+      } else {
+        return false;
+      }
+
+    }
+}

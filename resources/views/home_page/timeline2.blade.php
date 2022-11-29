@@ -65,7 +65,7 @@
                         </section>
                     </li>
                     <li class="menu__item">
-                        <a href="{{ route('really_index') }}" class="menu__link">Really</a>
+                        <a href="{{ route('really_index') }}" class="menu__link">Torneo<span style="color:black">_</span>de<span style="color:black">_</span>Videojuegos</a>
                     </li>
                     <li class="menu__item">
                         <a href="{{ route('timeline_index') }}" class="menu__link">Horario</a>
@@ -130,24 +130,40 @@
             </p>
         </div>
         <div class="cuadros">
-            <div class="espacio es1"> <ion-icon class="icono" name="golf-outline"></ion-icon> <p>Registro 8:00 am – 8:30 am </p> </div>
-
-            <div class="espacio es2"> <ion-icon class="icono" name="ribbon-outline"></ion-icon> <p>4ta Conferencia intro a PBX  8:30 am – 9:10 am  </p> </div>
-            <div class="espacio es3"> <ion-icon class="icono" name="person-outline"></ion-icon> <p>5ta Conferencia (realidad aumentada virtual)  9:10 am – 9:50 am </p></div>
-            <div class="espacio es4"> <ion-icon class="icono" name="people-outline"></ion-icon> <p> Coffe Breake 9:50 am – 10:20 am 
-
-                </p></div>
-            <div class="espacio es5"> <ion-icon class="icono" name="cafe-outline"></ion-icon> <p>6ta Conferencia Hare 28  10:20 am – 10:50 am</p></div>
-            <div class="espacio es6"> <ion-icon class="icono" name="person-outline"></ion-icon>  <p>7ta Conferencia Inteligencia Artificial 11:00 am – 11:40 am </p> </div>
-            <div class="espacio es7"> <ion-icon class="icono" name="people-outline"></ion-icon><p> Torneo de videojuegos 12:00 pm – 13:00 pm</p> </div>
-            <div class="espacio es8"> <ion-icon class="icono" name="people-outline"></ion-icon> <p> Comida 13:00 pm – 14:00pm</p></div>
-            <div class="espacio es9"> <ion-icon class="icono" name="fast-food-outline"></ion-icon><p>Talleres  14:00 pm – 17:00 pm  </p></div>
-            <div class="espacio es10"> <ion-icon  class="icono"name="school-outline"></ion-icon> <p> Cierre: evento sorpresa 17:00 pm – 18:00 pm
-            </p></div>
+            <div class="espacio es1"> <ion-icon class="icono" name="golf-outline"></ion-icon> <p>6ta. Conferencia: Introducción a PBX híbridos e IP 9:00 am – 9:30 am </p> </div>
+            <div class="espacio es2"> <ion-icon class="icono" name="ribbon-outline"></ion-icon> <p>7ma. Conferencia: Realidad virtual como brain hacking  9:30 am – 10:10 am  </p> </div>
+            <div class="espacio es3"> <ion-icon class="icono" name="person-outline"></ion-icon> <p>Coffee Breaker  10:10 am – 10:20 am </p></div>
+            <div class="espacio es4"> <ion-icon class="icono" name="people-outline"></ion-icon> <p> 8va. La Coherencia Cerebral y Cardíaca que hace a los emprendedores, empresarios exitosos 10:20 am – 11:00 am     </p></div>
+            <div class="espacio es5"> <ion-icon class="icono" name="cafe-outline"></ion-icon> <p>9na. Conferencia: Inteligencia Artificial y sus aplicaciones 11:00 am – 11:40 am</p></div>
+            <div class="espacio es6"> <ion-icon class="icono" name="person-outline"></ion-icon>  <p>Coffee Breaker 11:40 am – 12:00 am </p> </div>
+            <div class="espacio es7"> <ion-icon class="icono" name="people-outline"></ion-icon><p> 10ma. Aplicación de la Gestión de riesgos en proyectos de desarrollo tecnológico 12:00 pm – 12:40 pm</p> </div>
+            <div class="espacio es8"> <ion-icon class="icono" name="people-outline"></ion-icon> <p> Comida 12:40 pm – 13:30 pm</p></div>
+            <div class="espacio es9"> <ion-icon class="icono" name="fast-food-outline"></ion-icon><p>Talleres  13:30 pm – 17:00 pm  </p></div>
+            <div class="espacio es10"> <ion-icon  class="icono"name="school-outline"></ion-icon> <p> Cierre: evento sorpresa 17:00 pm – 18:00 pm </p></div>
         </div>
     </div>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 </body>
+<footer>
+    <h3>© Copyright Software-Freedom Day 2022</h3>
+    <p>Todos los derechos reservados.</p>
+    <p>Deasarrollado por {{ config_author_system() }}</p>
+
+
+    <div class="iconos">
+
+    <a class="icon" href="https://www.facebook.com/Freedom-Day-TI-Uttecam-477721659417275">
+            <ion-icon name="logo-facebook"></ion-icon>
+    </a>
+    <a class="icon" href="https://goo.gl/maps/BWKybpucUgH8QXzf6">
+        <ion-icon name="location-outline"></ion-icon>
+    </a>
+    </div>
+
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</footer>
 </html>

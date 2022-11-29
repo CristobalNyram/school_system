@@ -260,13 +260,20 @@ Rejol
     
 }
 .intrucciones{
-    align-items: center;
+    margin-top: -100px;
     text-align: center;
     background: #000;
     color: #fff;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem,1fr));
+    padding-bottom: 40px;
 }
 .intrucciones .contenedor_m{
-    margin-top: 100px;
+    margin: 0 auto;
+}
+.intrucciones .contenedorimg{
+    margin: 0 auto;
+    margin-top: 250px;
 }
 
 
@@ -285,10 +292,7 @@ Rejol
     font-size: 50px;
 }
 /*uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu*/
-.intrucciones .Pasos{
-    margin-top: 100px;
-    height: 400px;
-}
+
 .FondoBlanco{
     margin-top: 10vh;
     width: 100%;
@@ -410,69 +414,24 @@ Rejol
     font-size: 14px;
   }
 
-footer {
-    
-    position: relative;
-    background: #000;
-    height: 30vh;
-    left: 0;
-    width: 100%;
-    margin-top: 30vh;
-}
-
-footer .container{
-    text-align: center;
-}
-
-footer p {
-    margin: 0;
-    color: #f0f8ff;
-    background-position: top;
-    text-align: center;
-    font-size: 18px;
-    padding: 3%;
-    
-}
-
-footer a {
-   
-    text-decoration: none;
-    font-weight: bold;
-    color: #f0f8ff;
-}
-
-footer .ico{
-    align-items: center;
-    text-align: center;
-    height: 90px;
-  
-   
-}
-
-footer a:hover{
-    color: #34b015;
-}
-
-ion-icon{
-    font-size: 1.5em;
-    padding: 2px 15px;
-}
 
 /*hhhhhhhhhhhhhhhhh*/
 .contenido_titulo{
     width: 100%;
     text-align: center;
     color: #fff;
-    margin-top: 180px;
+    margin-top: 400px;
 }
 .contenido_titulo h1{
     font-size: 60px;
     font-weight: 600;
-    margin-bottom: 40px;
+    margin-bottom: -25px;
     text-align: center;
 }
 
 .back-video{
+    top: 12vh;
+    
     position: absolute;
     right: 0;
     bottom: 0;
@@ -496,7 +455,14 @@ ion-icon{
 }
 
 
+@media(max-width:985px){
+    .intrucciones .contenedorimg{
+    
+        position: flex;
+    }
+    
 
+}
 
 
 @media(max-width:1300px){
@@ -661,12 +627,6 @@ ion-icon{
         font-size: 25px;
         
     }
-
-    .intrucciones .Pasos{
-        margin-top: 60px;
-        height: 300px;
-    }
-
     .intrucciones .Titulo_Paso{
         font-size: 30px;
         margin: 20px 0;

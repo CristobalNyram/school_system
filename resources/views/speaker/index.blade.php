@@ -2,7 +2,8 @@
 
 @section('content')
     @include('speaker.headers_cards')
-
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
 
     <div class="container-fluid mt--6">
         <div class="row d-flex mb-3 mr-5 justify-content-end">
@@ -122,20 +123,20 @@
 
 $(document).ready(function() {
     $('#table_users_all').DataTable( {
-        "language": {
-            "lengthMenu": "Mostrar _MENU_ registros por página",
-            "zeroRecords": "No encontramos nada.",
-            "info": "Mostrando página _PAGE_ de _PAGES_",
-            "infoEmpty": "No hay registros existentes.",
-            "infoFiltered": "(Fitrado de _MAX_  registros existentes)",
-            "loadingRecords": "Cargando...",
-            "search":         "Buscar:",
-            "emptyTable":     "No hay información disponible en la tabla.",
-            "paginate": {
-                "first":      "Primero",
-                "last":       "ultimo",
-                "next":       ">",
-                "previous":   "<"
+        language: {
+            lengthMenu: "Mostrar _MENU_ registros por página",
+            zeroRecords: "No encontramos nada.",
+            info: "Mostrando página _PAGE_ de _PAGES_",
+            infoEmpty: "No hay registros existentes.",
+            infoFiltered: "(Fitrado de _MAX_  registros existentes)",
+            loadingRecords: "Cargando...",
+            search:         "Buscar:",
+            emptyTable:     "No hay información disponible en la tabla.",
+            paginate: {
+                first:      "Primero",
+                last:       "ultimo",
+                next:       ">",
+                previous:   "<"
              },
         }
     } );
@@ -145,8 +146,8 @@ $(document).ready(function() {
 @endsection
 
 @push('js')
-    {{-- <script src="{{ asset() }}/vendor/datatables.net/js/jquery.dataTables.min.js"></script> --}}
-
+    {{-- <script src="{{ asset(assets) }}/vendor/datatables.net/js/jquery.dataTables.min.js"></script> --}}
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 @if (session('eliminar') == 'ok')

@@ -12,7 +12,7 @@ use App\Models\Logbook;
 
 class PasswordController extends Controller
 {
-    public function update($user_id)
+    public function update($speaker_id)
     {
         $rol= new Role();
         if ($rol->checkAccesToThisFunctionality(Auth::user()->role_id, 29) == null) {
@@ -26,7 +26,7 @@ class PasswordController extends Controller
           $log->activity_done($description = 'Accedió al módulo de Actualizar Contraseña.', $table_id = 0, $menu_id = 30, $user_id = Auth::id(), $kind_acction = 1);
 
 
-        $current_user=User::findOrFail($user_id);
+        $current_user=User::findOrFail($speaker_id);
          $rol_available=Role::all()->where('status','=','2');
 
         $variables=[

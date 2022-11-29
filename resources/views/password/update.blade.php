@@ -13,7 +13,7 @@
               <!-- Card header -->
 
               <div class="card-header border-0">
-                <h2 class="mb-0">Actualizar contraseña del usuario: {{ $current_user->name }}</h2>
+                <h2 class="mb-0">Actualizar contraseña del usuario:{{ $current_user->name }}  {{ $current_user->first_surname}} {{$current_user->second_surname}}</h2>
 
               </div>
 
@@ -44,7 +44,7 @@
                            <div class="form-group">
 
                                 <label for="password">Nueva Contraseña</label>
-                                <input type="text" name="id" id="id" value="{{$current_user->id}}">
+                                <input type="hidden" name="id" id="id" value="{{$current_user->id}}">
                                 <input type="password" class="form-control form-control-lg" id="password" name="password" value="{{ old('password')}}" placeholder="Nueva Contraseña"  max="50" required  oninput="uppercaseLetters(event);">
                             </div>
                             <div class="form-group">

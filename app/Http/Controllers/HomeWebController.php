@@ -36,18 +36,10 @@ class HomeWebController extends Controller
 
     public function sponsor()
     {
-        $sponsors1=Sponsor::all()->where('status','=','2')->where('id', '=', '1');
-        $sponsors2=Sponsor::all()->where('status','=','2')->where('id', '=', '2');
-        $sponsors3=Sponsor::all()->where('status','=','2')->where('id', '=', '3');
-        $sponsors4=Sponsor::all()->where('status','=','2')->where('id', '=', '4');
-        $sponsors5=Sponsor::all()->where('status','=','2')->where('id', '=', '5');
+        $sponsors1=Sponsor::all()->where('status','=','2');
 
         $variables=[
             'sponsors1'=>$sponsors1,
-            'sponsors2'=>$sponsors2,
-            'sponsors3'=>$sponsors3,
-            'sponsors4'=>$sponsors4,
-            'sponsors5'=>$sponsors5,
         ];
         return view('home_page.sponsor')->with($variables);
     }
@@ -74,8 +66,13 @@ class HomeWebController extends Controller
 
         $current_course=Course::findOrFail($course_id);
 
+        $nombre = $current_course->speaker_id; 
+
+        $consulta = Course::join('users', 'courses.speaker_id', '=', 'users.id')->select('courses.speaker_id', 'users.name')->where('users.id', '=', $nombre)->get();
+
         $variables=[
             'current_course'=>$current_course,
+            'consulta'=>$consulta
         ];
 
         return view('home_page.course_interface')->with($variables);
@@ -94,6 +91,8 @@ class HomeWebController extends Controller
 
     public function ConferenceInterface($talk_id)
     {
+
+       
 
     $current_conference=Talk::findOrFail($talk_id);
 
@@ -206,7 +205,7 @@ class HomeWebController extends Controller
 
         if ($user->save()) {
 
-            return redirect()->action('App\Http\Controllers\HomeController@index');
+            return redirect()->route('home_page_login');
         }
         else
         {
