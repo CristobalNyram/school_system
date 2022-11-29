@@ -188,7 +188,7 @@ if (! function_exists('check_if_requested_course')) {
     //check if the user has requested the package 
     function check_if_requested_course()
     {
-        $check_if_requested_course = Relcoursestudent::where('user_student_id', '=', Auth::id())->where('user_approved_id', '=',Auth::id())->first();
+        $check_if_requested_course = Relcoursestudent::where('user_student_id', '=', Auth::id())->where('status', '=','2')->first();
         if($check_if_requested_course)
         {
             return true;
