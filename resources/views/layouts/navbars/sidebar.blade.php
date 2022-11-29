@@ -255,7 +255,7 @@
                     </a>
                 </li>
                 @endif
-                @if ( check_acces_to_this_permission(Auth::user()->role_id,44))
+                @if ( check_acces_to_this_permission(Auth::user()->role_id,45))
                 <li class="nav-item">
                     <a class="nav-link @if($menu === 'certificate_all')  custom-active text-white @endif"
                         href="{{ route('certificate_index') }}">
