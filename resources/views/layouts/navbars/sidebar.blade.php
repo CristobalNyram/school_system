@@ -138,6 +138,13 @@
                     </a>
                 </li>
 
+                  <li class="nav-item">
+                    <a class="nav-link @if($menu === 'videogame')  custom-active text-white @endif"
+                        href="{{ route('game_index') }}">
+                        <i class="ni ni-app-2 text-primary"></i> {{ __('Video juego') }}
+                    </a>
+                </li>
+
 
 
                 </li>
@@ -172,7 +179,7 @@
                         Extranjeros
                     </a>
                 </li>
-                
+
 
                 </li>
 
@@ -187,7 +194,7 @@
 
 
             </ul>
-            
+
 
             <hr class="my-3">
             <h6 class="navbar-heading text-muted">Página principal</h6>
@@ -248,7 +255,7 @@
                     </a>
                 </li>
                 @endif
-                @if ( check_acces_to_this_permission(Auth::user()->role_id,44))
+                @if ( check_acces_to_this_permission(Auth::user()->role_id,45))
                 <li class="nav-item">
                     <a class="nav-link @if($menu === 'certificate_all')  custom-active text-white @endif"
                         href="{{ route('certificate_index') }}">

@@ -20,6 +20,7 @@ use App\Http\Controllers\ExampleController;
 use App\Http\Controllers\RallyController;
 use App\Http\Controllers\GetBadgeController;
 use App\Http\Controllers\GetCertificateController;
+use App\Http\Controllers\VideogameController;
 use App\Models\Sponsor;
 
 
@@ -249,6 +250,11 @@ Route::group(['middleware' => 'auth'], function () {
         Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
 
 
+
+        // video  game start
+        Route::get('/video-game-freedomday', [VideogameController::class, "index"])->name('game_index');
+
+        ///video game end
         /*
         Route::get('upgrade', function () {
             return view('pages.upgrade');

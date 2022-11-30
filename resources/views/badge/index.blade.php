@@ -2,7 +2,7 @@
 
 @section('content')
 @include('layouts.navbars.navs.header')
-
+<link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilo_Gafet.css">
 
 <div class="container-fluid mt--6">
     <div class="row d-flex mb-3 mr-5 justify-content-end">
@@ -52,7 +52,7 @@
             }
             // });
         </script>
-        <a id="boton" onclick="mostrarFrase();" class="btn btn-info">Generar Frase Descriptiva</a>
+        <!-- <a id="boton" onclick="mostrarFrase();" class="btn btn-info">Generar Frase Descriptiva</a> -->
 
     </div>
 
@@ -66,7 +66,6 @@
                 <img id="perfil" src="{{old('user_image', auth()->user()->user_image)}}">
                 <img id="logo" src="https://i.ibb.co/87XSQ16/ri-5.png">
                 <img id="ri3" src="https://i.ibb.co/qp7W9gt/ri-3.png">
-                <img id="ri4" src="https://i.ibb.co/xmffJMq/ri-4.png">
 
                 <div class="NombreUsuario">
                     <h1>{{ old('name', auth()->user()->name) }}</h1>
@@ -81,7 +80,7 @@
                 <h4 id="CODERS">CODERSTI</h4>
                 <h4 id="frase">#HAZLODIFERENTE</h4>
 
-                <div class="texto" id="texto">
+                <!-- <div class="texto" id="texto">
                     <label class="frase" id="Frase1" style="display: none;">"El no querer es la causa, el no poder el pretexto"</label>
                     <label class="frase" id="Frase2" style="display: none;">"El ordenador nació para resolver problemas que antes no existían"</label>
                     <label class="frase" id="Frase3" style="display: none;">"El optimismo es un riesgo laboral de la programación; el feedback es el tratamiento"</label>
@@ -89,7 +88,7 @@
                     <label class="frase" id="Frase5" style="display: none;">"Los ordenadores son buenos siguiendo instrucciones, no leyendo tu mente"</label>
                     <label class="frase" id="Frase6" style="display: none;">"Antes de que un software sea reutilizable debería ser utilizable"</label>
                     <label class="frase" id="Frase7" style="display: none;">"Una vez un ordenador me venció jugando al ajedrez, pero no me opuso resistencia cuando pasamos al kick boxing"</label>
-                </div>
+                </div> -->
 
             </div>
 

@@ -104,6 +104,7 @@
             font-size: 14px;
             opacity: 0.5;
         }
+
     </style>
     <title>Gafet</title>
 </head>
@@ -115,7 +116,6 @@
         <img id="perfil" src="{{old('user_image', auth()->user()->user_image)}}">
         <img id="logo" src="https://i.ibb.co/87XSQ16/ri-5.png">
         <img id="ri3" src="https://i.ibb.co/qp7W9gt/ri-3.png">
-        <img id="ri4" src="https://i.ibb.co/xmffJMq/ri-4.png">
 
         <h1 id="nombre">{{ old('name', auth()->user()->name) }}</h1>
         <h2 id="apellidos">{{ old('first_surname', auth()->user()->first_surname) }} {{ old('second_surname', auth()->user()->second_surname) }}</h2>
