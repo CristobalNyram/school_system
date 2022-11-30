@@ -199,6 +199,17 @@ if (! function_exists('check_if_requested_course')) {
     }
 }
 
+if (! function_exists('card_course')) {
+    //check if the user has requested the package 
+    function card_course()
+    {
+        $data = Course::join('relcoursestudents', 'courses.id', '=', 'relcoursestudents.course_id')->select('courses.title', 'courses.url_img', 'courses.description')->where('courses.id', '=', 'relcoursestudents.course_id')->get();
+
+        return $data;
+    
+    }
+}
+
 //helpers for statistics of app
 
 if(! function_exists('check_register_student')) {

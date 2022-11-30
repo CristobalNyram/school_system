@@ -124,7 +124,6 @@ class ProfileController extends Controller
         $current_user->description=$request->description;
         $current_user->specialty=$request->specialty;
         $current_user->speaker_cv=$request->speaker_cv;
-        $current_user->speaker_cv=$request->speaker_cv;
 
         //student
         $current_user->career=$request->career;

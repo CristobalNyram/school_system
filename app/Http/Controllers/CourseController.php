@@ -285,9 +285,11 @@ class CourseController extends Controller
         $count_enrrolles_in_course=Relcoursestudent::all()->where('course_id','=',$request->course_id)->where('status','=',2)->count();
         if($count_enrrolles_in_course>=$course->maximum_person){
 
+            
             $answer['status']=-1;
             $answer['title']='Aviso';
             $answer['message']='El cupo a este curso a sido completado, intenta inscribirte a otro curso o hablar con un administrador del evento...';
+            $course->status_course = "2";
             return $answer;
 
 

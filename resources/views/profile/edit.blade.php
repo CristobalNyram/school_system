@@ -148,20 +148,25 @@
                         @endif
                     </div>
 
+                    @switch(Auth::user()->role_id)
+
+                    @case(1)
+
+                    
                     <div class="form-group">
                         <label for="gender">Genero</label>
 
-                        <select class="form-control form-control-lg  " data-toggle="select2" id="gender" name="gender">
+                        <select class="form-control form-control-lg single-select-2 " data-toggle="select2" id="gender" name="gender">
                             <option value="-1" selected>Seleccionar</option>
                             <option value="H">Masculino</option>
                             <option value="M">Feminino</option>
                             <option value="N/A">No binario</option>
 
+
                         </select>
                     </div>
 
-
-                    @switch(Auth::user()->role_id)
+                    @break
 
                     @case(4)
                     <div class="form-group">
@@ -233,6 +238,14 @@
                     </div>
 
 
+
+                    @break
+
+                    @case(5)
+                    <div class="form-group">
+                        <label for="enrollment">Matricula</label>
+                        <input type="text" class="form-control form-control-lg" id="enrollment" name="enrollment" value="{{   old('enrollment') }}" placeholder="Cuatrimestre" max="8" required>
+                    </div>
 
                     @break
 

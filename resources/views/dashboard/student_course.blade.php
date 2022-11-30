@@ -75,8 +75,9 @@
 <div class="row">
 
 
-
+    
     @foreach ($courses_available as $course)
+    @if($course->status_course == 2)
     <div class="col-12 col-lg-6">
 
         <div class="card card-profile  m-5 " data-image="img-raised">
@@ -107,6 +108,7 @@
         </div>
 
     </div>
+    @endif
 
 
     @endforeach
@@ -119,5 +121,7 @@
         <span class="alert-inner--icon"><i class="ni ni-app"></i></span>
         <span class="alert-inner--text h3 text-white"><strong class="h1 text-white">¡Aviso!</strong> <br> Tu solicitud para inscribirte a un curso se ha realizado correctamente <u> </u>...</span>
     </div>
+
 </div>
+
 @endif
