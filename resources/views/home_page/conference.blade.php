@@ -9,7 +9,7 @@
     <title>{{ config_name_system() }}</title>
     <link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilo_Conferencias.css">
     <link rel="stylesheet" href="{{ asset('assets/css/home') }}/barra.css">
-    <link href="{{ asset('argon/brand') }}/favicon.png" rel="icon" type="image/png">
+    <link href="{{ asset('argon/brand') }}/{{ config_icon_logo_system() }}" rel="icon" type="image/png">
     <link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilo_index_R.css">
 </head>
 <header>
@@ -119,7 +119,7 @@
         <div class="tarjetas">
         @foreach($conference as $talk)
         <article class="tarjeta">
-        
+
             <div class="tarjeta-contenedor">
 
                 <a href="{{ route('conference_interface', $talk) }}">
@@ -129,10 +129,10 @@
                 <hr color="#ff8000">
                 <p>{{$talk->description}}</p>
             </div>
-        
+
         </article>
         @endforeach
- 
+
     </div>
 
 

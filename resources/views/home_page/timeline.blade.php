@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ config_name_system() }}</title>
-    <link href="{{ asset('argon/brand') }}/favicon.png" rel="icon" type="image/png">
+    <link href="{{ asset('argon/brand') }}/{{ config_icon_logo_system() }}" rel="icon" type="image/png">
 
     <link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilo_cronograma.css">
     <link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilo_index_R.css">

@@ -9,7 +9,7 @@
     <title>{{ config_name_system() }}</title>
     <link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilo_index.css">
     <link rel="stylesheet" href="{{ asset('assets/css/home') }}/barra.css">
-    <link href="{{ asset('argon/brand') }}/favicon.png" rel="icon" type="image/png">
+    <link href="{{ asset('argon/brand') }}/{{ config_icon_logo_system() }}" rel="icon" type="image/png">
     <link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilo_index_R.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
@@ -124,11 +124,11 @@
 
 
         </div>
-       
+
         <script src="{{ asset('assets/js/home') }}/menu.js"></script>
         <div id="q" class="que">
             <h1>¿QUÉ ES SOFTWARE-</span><span class="freed">FREEDOM <span class="day">DAY</span></span>?</h1><br>
-            <p>Es un evento organizado por alumnos y docentes de la carrera de Tecnologías de la Información en la Universidad Tecnológica de Tecamachalco, 
+            <p>Es un evento organizado por alumnos y docentes de la carrera de Tecnologías de la Información en la Universidad Tecnológica de Tecamachalco,
                 ahora en nuestra 6ta Edición. El evento está enfocado en el área de Desarrollo de Software y Redes Inteligentes.<br>El
                 evento Software-Freedom Day te invitamos a participar el dia 30 de Noviembre y 1 de Diciembre en este
                 gran evento.
@@ -140,7 +140,7 @@
             <h1>Objetivo</h1><br>
             <p>Incentivar el interés por la ciencia y la tecnologia en los alumnos de la
                 carrera de tecnologias de la información y comunicacion con el fin de
-                ampliar su perspectiva y conocimientos en las tendencias tecnologias 
+                ampliar su perspectiva y conocimientos en las tendencias tecnologias
                 actuales ademas de prepararlos con herramientas que sean de utilidad
                 para su incorporación  en el ambito laboral.</p>
         </div>
@@ -148,7 +148,7 @@
 
         <div id="p" class="ob">
             <h1>Proposito</h1><br>
-            <p>Integrar y promover nuevos aprendizajes para todos los participantes que quieran 
+            <p>Integrar y promover nuevos aprendizajes para todos los participantes que quieran
              actualizarse en los nuevos conocimientos y conceptos tecnológicos</p>
         </div>
         <!--Galeria-->
@@ -220,17 +220,17 @@
 
 
     <h2>Patrocinios</h2>
-    
+
 <ul>
 
     @foreach($sponsors2 as $sponsor)
 
-        <li> 
+        <li>
             <img src="{{asset($sponsor->url_img )}}" width="100">
         </li>
         @endforeach
     </ul>
-    
+
 
     </ul>
 

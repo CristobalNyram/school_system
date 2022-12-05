@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ config_name_system() }}</title>
-    <link href="{{ asset('argon/brand') }}/favicon.png" rel="icon" type="image/png">
+    <link href="{{ asset('argon/brand') }}/{{ config_icon_logo_system() }}" rel="icon" type="image/png">
 
 
 
@@ -123,7 +123,7 @@
 
 
         <div class="contenido_titulo">
-            
+
 
 
         </div>
@@ -159,16 +159,16 @@
                 <p class="Titulo_Paso">Listo</p>
                 <p>Revisa la información y asiste </p>
                 <br>
-                
+
             </div>
-           
+
 
 
         </div>
         <div class="contenedorimg">
                  <img src="{{ asset('assets/img/home/img') }}/BannerFifa.png" width="100%" height="70%">
             </div>
-        
+
 
 
     </div>
@@ -280,7 +280,7 @@
 
                 </div>
 
-                
+
 
                 <div id="modal_container" class="modal-container">
                     <div class="modal">
@@ -331,7 +331,7 @@
 
 
 
-                
+
 
                 <div id="modal_container" class="modal-container">
                     <div class="modal">

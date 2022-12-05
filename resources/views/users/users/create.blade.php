@@ -60,7 +60,7 @@
                             <div class="form-group">
                                 <label for="name">Rol</label>
 
-                                <select class="form-control form-control-lg  single-select-2  " data-toggle="select2" id="rol_id" name="rol_id" >
+                                <select class="form-control form-control-lg  single-select-2  " data-toggle="select2" id="role_id" name="role_id" >
                                     <option value="-1" selected>Seleccionar</option>
                                     @foreach ($rol_available as $rol )
                                     <option value="{{ $rol->id }}" selected>{{ $rol->name }}</option>

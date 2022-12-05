@@ -8,7 +8,7 @@
     <title>{{ config_name_system() }}</title>
     <link rel="stylesheet" href="{{ asset('assets/css/home') }}/barra.css">
 
-    <link href="{{ asset('argon/brand') }}/favicon.png" rel="icon" type="image/png">
+    <link href="{{ asset('argon/brand') }}/{{ config_icon_logo_system() }}" rel="icon" type="image/png">
 
     <link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilo_index_R.css">
     <link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilo_Ponente.css">

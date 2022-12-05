@@ -8,7 +8,7 @@
     <title>{{ config_name_system() }}</title>
     <link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilo_Formulario_R.css">
     <link rel="stylesheet" href="{{ asset('assets/css/home') }}/Estilo_index_R.css">
-    <link href="{{ asset('argon/brand') }}/favicon.png" rel="icon" type="image/png">
+    <link href="{{ asset('argon/brand') }}/{{ config_icon_logo_system() }}" rel="icon" type="image/png">
 
     <script src="{{ asset('argon') }}/vendor/jquery/dist/jquery.min.js"></script>
     <script src="{{ asset('argon') }}/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -246,7 +246,7 @@
 
 
             </div>
-            
+
 
             <div id="box_others_inputs" style="display: none;">
                 <div class="con">
@@ -285,7 +285,7 @@
 
             </div>
 
-        </form>       
+        </form>
 
 
 
