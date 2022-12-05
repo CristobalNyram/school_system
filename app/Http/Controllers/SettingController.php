@@ -70,7 +70,7 @@ class SettingController extends Controller
       'title_page' => 'Configuración',
       'current_setting' => $current_setting,
     ];
-    return view('setting.update')->with($variables);
+    return view('setting_local.update')->with($variables);
   }
 
   public function edit(Request $request)
